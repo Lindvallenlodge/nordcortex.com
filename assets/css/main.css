@@ -3264,10 +3264,10 @@ input, select, textarea {
 }
 
 /* Fix lightbox group visibility */
-.thumb a.image {
+.thumb.image img {
   display: none;
 }
 
-.thumb a.image:first-of-type {
+.thumb.image img:first-of-type {
   display: inline-block;
 }
