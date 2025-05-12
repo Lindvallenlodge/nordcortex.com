@@ -2143,7 +2143,8 @@ input, select, textarea {
 
 			.image.avatar img {
 				border-radius: 100%;
-				width: 100%;
+				width: 150px;
+				height: 150px;
 			}
 
 /* List */
@@ -3219,3 +3220,45 @@ input, select, textarea {
 			}
 
 	}
+
+/* Homepage Gallery Section */
+
+/* Lightbox Grouping */
+#gallery .thumb a.image[data-group] {
+  display: none;
+}
+
+#gallery .thumb a.image[data-group]:first-of-type {
+  display: inline-block;
+}
+
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+#gallery .thumb {
+  position: relative;
+}
+
+#gallery .thumb img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.35em;
+  transition: transform 0.3s ease;
+}
+
+#gallery .thumb img:hover {
+  transform: scale(1.03);
+}
+
+#gallery .thumb h2 {
+  text-align: center;
+  margin-top: 0.5em;
+}
+
+/* Show only the first image per category directly on homepage */
+#gallery .thumb a.image:not(:first-of-type) {
+  display: none;
+}
