@@ -2637,6 +2637,11 @@ input, select, textarea {
 			font-size: 1.35em;
 			line-height: 1.75em;
 			margin: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			text-align: center;
 		}
 
 		#header .image.avatar {
@@ -3258,16 +3263,7 @@ input, select, textarea {
   margin-top: 0.5em;
 }
 
-/* Show only the first image per category directly on homepage */
-#gallery .thumb a.image:not(:first-of-type) {
-  display: none;
-}
-
-/* Fix lightbox group visibility */
-.thumb.image img {
-  display: none;
-}
-
-.thumb.image img:first-of-type {
+/* Show all images in gallery */
+#gallery .thumb a.image {
   display: inline-block;
 }
