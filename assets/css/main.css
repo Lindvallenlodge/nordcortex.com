@@ -3262,3 +3262,12 @@ input, select, textarea {
 #gallery .thumb a.image:not(:first-of-type) {
   display: none;
 }
+
+/* Fix lightbox group visibility */
+.thumb a.image {
+  display: none;
+}
+
+.thumb a.image:first-of-type {
+  display: inline-block;
+}
