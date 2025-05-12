@@ -2636,16 +2636,17 @@ input, select, textarea {
 			color: rgba(255, 255, 255, 0.5);
 			font-size: 1.35em;
 			line-height: 1.75em;
-			margin: 0;
+			margin: 0 auto;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			height: 100%;
 			text-align: center;
+			flex-direction: column;
 		}
 
 		#header .image.avatar {
-			margin: 0 0 1em 0;
+			margin: 0 auto 1em auto;
 			width: 6.25em;
 		}
 
