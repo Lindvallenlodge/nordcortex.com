@@ -2645,14 +2645,17 @@ input, select, textarea {
 			flex-direction: column;
 		}
 
-		#header .image.avatar {
-			margin: 0 auto;
-			width: 6.25em;
-			position: absolute;
-			top: 20%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-		}
+	/* Only position the avatar absolutely for screens wider than 980px */
+	@media screen and (min-width: 981px) {
+	  #header .image.avatar {
+	    margin: 0 auto;
+	    width: 6.25em;
+	    position: absolute;
+	    top: 20%;
+	    left: 50%;
+	    transform: translate(-50%, -50%);
+	  }
+	}
 
 /* Footer */
 
