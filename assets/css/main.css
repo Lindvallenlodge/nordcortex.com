@@ -2645,6 +2645,10 @@ input, select, textarea {
 			flex-direction: column;
 		}
 
+		#header h1 + p {
+			margin-top: 2em;
+		}
+
 	/* Only position the avatar absolutely for screens wider than 980px */
 	@media screen and (min-width: 981px) {
 	  #header .image.avatar {
