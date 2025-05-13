@@ -2580,7 +2580,10 @@ input, select, textarea {
 		  flex-direction: column;
 		  align-items: flex-end;
 		  justify-content: space-between;
-		  background: linear-gradient(to bottom, #fff7e6 0%, #f0f4ff 100%);
+		  background: #1f1815 url("../images/overlay.png"), url("../images/bg.jpg");
+		  background-position: top left, center center;
+		  background-repeat: repeat, no-repeat;
+		  background-size: auto, cover;
 		  color: rgba(255, 255, 255, 0.5);
 		  height: 100%;
 		  left: 0;
