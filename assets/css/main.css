@@ -2721,6 +2721,15 @@ input, select, textarea {
 				padding-top: 0;
 			}
 
+/* Intro text style */
+.intro-text {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 3em;
+	font-size: 1.25em;
+	line-height: 1.8em;
+}
+
 /* Poptrox */
 
 	@-moz-keyframes spin {
