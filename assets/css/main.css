@@ -2612,12 +2612,21 @@ input, select, textarea {
 
 	#header .logo {
 	  margin-bottom: 1.5em;
-	  width: 200px;
-	  height: 200px;
-	  object-fit: contain;
+	  width: 180px;
+	  height: 180px;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  overflow: hidden;
 	  border-radius: 50%;
 	  background-color: #d5f0ff;
-	  padding: 20px;
+	  padding: 15px;
+	}
+
+	#header .logo img {
+	  width: 100%;
+	  height: auto;
+	  border-radius: 50%;
 	}
 
 /* (Removed extra or conflicting #header styles to avoid overrides) */
