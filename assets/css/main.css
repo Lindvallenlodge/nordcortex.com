@@ -2681,10 +2681,10 @@ body, input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 35%;
+		margin-left: 0;
 		max-width: 54em;
 		padding: 8em 4em 4em 4em;
-		width: calc(100% - 35%);
+		width: 100%;
 	}
 
 		#main > section {
@@ -3034,10 +3034,10 @@ body, input, select, textarea {
 		/* Main */
 
 			#main {
-				margin-left: 30%;
+				margin-left: 0;
 				max-width: none;
 				padding: 6em 3em 3em 3em;
-				width: calc(100% - 30%);
+				width: 100%;
 			}
 
 	}
@@ -3241,16 +3241,14 @@ body, input, select, textarea {
     height: auto;
     object-fit: contain;
   }
+  /* Removed padding-top from #main for full-width layout */
+  /* #main {
+    padding-top: 2em;
+  } */
 }
 #main, #main * {
   color: #49bf9d !important;
 }
 #header, #header *:not(h1) {
   color: #49bf9d !important;
-}
-
-@media screen and (min-width: 981px) {
-  #main {
-    padding-top: 2em;
-  }
 }
