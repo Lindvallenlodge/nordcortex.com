@@ -3219,8 +3219,8 @@ input, select, textarea {
 
 @media screen and (min-width: 981px) {
   #header .logo {
-    width: 300px;
-    height: 300px;
+    width: 600px;
+    height: 600px;
   }
 
   #header .logo img {
