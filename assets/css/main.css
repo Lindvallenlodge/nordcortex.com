@@ -3224,7 +3224,7 @@ input, select, textarea {
   }
 
   #header .logo img {
-    transform: scaleX(1.176);
+    transform: scaleX(1.18);
     width: 100%;
     height: auto;
     object-fit: contain;
