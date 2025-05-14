@@ -784,7 +784,7 @@ body, input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
 
 			.row {
 				display: flex;
@@ -3038,6 +3038,7 @@ body, input, select, textarea {
 				max-width: none;
 				padding: 6em 3em 3em 3em;
 				width: 100%;
+				padding-top: 4em;
 			}
 
 	}
@@ -3241,10 +3242,9 @@ body, input, select, textarea {
     height: auto;
     object-fit: contain;
   }
-  /* Removed padding-top from #main for full-width layout */
-  /* #main {
-    padding-top: 2em;
-  } */
+  #main {
+    padding-top: 4em;
+  }
 }
 #main, #main * {
   color: #49bf9d !important;
