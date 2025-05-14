@@ -2578,8 +2578,8 @@ input, select, textarea {
 	#header {
 	  display: flex;
 	  flex-direction: column;
-	  align-items: flex-end;
-	  justify-content: space-between;
+	  align-items: center;
+	  justify-content: center;
 	  background: #1f1815 url("../images/overlay.png"), url("../images/bg.jpg");
 	  background-position: top left, center center;
 	  background-repeat: repeat, no-repeat;
@@ -2589,7 +2589,7 @@ input, select, textarea {
 	  left: 0;
 	  padding: 8em 4em;
 	  position: fixed;
-	  text-align: right;
+	  text-align: center;
 	  top: 0;
 	  width: 35%;
 	  overflow: hidden;
