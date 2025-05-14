@@ -3232,12 +3232,12 @@ body, input, select, textarea {
 
 @media screen and (min-width: 981px) {
   #header .logo {
-    width: 390px;
-    height: 390px;
+    width: 321px;
+    height: 321px;
   }
 
   #header .logo img {
-    transform: scaleX(1.18);
+    transform: scaleX(1.10);
     width: 100%;
     height: auto;
     object-fit: contain;
