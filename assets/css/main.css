@@ -2612,9 +2612,12 @@ input, select, textarea {
 
 	#header .logo {
 	  margin-bottom: 1.5em;
-	  width: 150px;
-	  height: 150px;
+	  width: 200px;
+	  height: 200px;
 	  object-fit: contain;
+	  border-radius: 50%;
+	  background-color: #d5f0ff;
+	  padding: 20px;
 	}
 
 /* (Removed extra or conflicting #header styles to avoid overrides) */
