@@ -2588,14 +2588,10 @@ body, input, select, textarea {
 	  justify-content: center;
 	  background: none;
 	  color: #49bf9d;
-	  height: 100%;
-	  left: 0;
 	  padding: 8em 4em;
-	  position: fixed;
 	  text-align: center;
-	  top: 0;
-	  width: 35%;
-	  overflow: hidden;
+	  width: 100%;
+	  height: auto;
 	  position: relative;
 	}
 
@@ -3251,7 +3247,8 @@ body, input, select, textarea {
   #main {
     padding-top: 4em;
     margin: 0 auto;
-    max-width: 65%;
+    max-width: 100%;
+    width: 100%;
   }
 }
 #main, #main * {
@@ -3267,4 +3264,11 @@ body, input, select, textarea {
   margin-left: auto;
   margin-right: auto;
   max-width: 800px;
+}
+#header .logo img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
 }
