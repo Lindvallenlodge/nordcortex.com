@@ -2612,8 +2612,8 @@ input, select, textarea {
 
 	#header .logo {
 	  margin-bottom: 1.5em;
-	  width: 150px;
-	  height: 150px;
+	  width: 247.5px;
+	  height: 247.5px;
 	  border-radius: 50%;
 	  overflow: hidden;
 	}
@@ -3219,8 +3219,8 @@ input, select, textarea {
 
 @media screen and (min-width: 981px) {
   #header .logo {
-    width: 600px;
-    height: 600px;
+    width: 390px;
+    height: 390px;
   }
 
   #header .logo img {
