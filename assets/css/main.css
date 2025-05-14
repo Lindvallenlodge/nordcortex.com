@@ -2586,11 +2586,8 @@ body, input, select, textarea {
 	  flex-direction: column;
 	  align-items: center;
 	  justify-content: center;
-	  background: #1f1815 url("../images/overlay.png"), url("../images/bg.jpg");
-	  background-position: top left, center center;
-	  background-repeat: repeat, no-repeat;
-	  background-size: auto, cover;
-	  color: rgba(255, 255, 255, 0.5);
+	  background: none;
+	  color: #49bf9d;
 	  height: 100%;
 	  left: 0;
 	  padding: 8em 4em;
@@ -2610,7 +2607,7 @@ body, input, select, textarea {
 	  margin-bottom: 0.5em;
 	  position: relative;
 	  z-index: 1;
-	  color: #787878 !important;
+	  color: black !important;
 	}
 
 	#header p {
@@ -3246,5 +3243,8 @@ body, input, select, textarea {
   }
 }
 #main, #main * {
+  color: #49bf9d !important;
+}
+#header, #header *:not(h1) {
   color: #49bf9d !important;
 }
