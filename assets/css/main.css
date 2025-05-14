@@ -3301,6 +3301,6 @@ body, input, select, textarea {
   }
 
   body {
-    padding-top: 70px; /* To prevent content from hiding behind fixed nav */
+    padding-top: 100px;
   }
 }
