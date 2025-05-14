@@ -104,7 +104,7 @@ input, select, textarea {
 		}
 
 body, input, select, textarea {
-  color: #49bf9d;
+  color: #ffffff;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 16pt;
   font-weight: 400;
@@ -3247,10 +3247,10 @@ body, input, select, textarea {
   }
 }
 #main, #main * {
-  color: #49bf9d !important;
+  color: #ffffff !important;
 }
 #header, #header *:not(h1) {
-  color: #49bf9d !important;
+  color: #ffffff !important;
 }
 
 # Centered Content Utility
