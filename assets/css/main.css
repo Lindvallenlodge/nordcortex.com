@@ -3251,6 +3251,6 @@ body, input, select, textarea {
 
 @media screen and (min-width: 981px) {
   #main {
-    padding-top: 4em;
+    padding-top: 8em;
   }
 }
