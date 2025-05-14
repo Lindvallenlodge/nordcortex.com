@@ -3250,6 +3250,8 @@ body, input, select, textarea {
   }
   #main {
     padding-top: 4em;
+    margin: 0 auto;
+    max-width: 65%;
   }
 }
 #main, #main * {
