@@ -2619,7 +2619,8 @@ input, select, textarea {
 	}
 
 	#header .logo img {
-	  width: 125%;
+	  transform: scaleX(1.25);
+	  width: 100%;
 	  height: auto;
 	  max-width: none;
 	  object-fit: contain;
