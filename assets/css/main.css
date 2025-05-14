@@ -3252,3 +3252,11 @@ body, input, select, textarea {
 #header, #header *:not(h1) {
   color: #49bf9d !important;
 }
+
+# Centered Content Utility
+.centered-content {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
