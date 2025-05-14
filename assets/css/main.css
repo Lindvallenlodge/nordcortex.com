@@ -2619,9 +2619,9 @@ input, select, textarea {
 	}
 
 	#header .logo img {
-	  width: 100%;
+	  width: 125%;
 	  height: auto;
-	  max-width: 150px;
+	  max-width: none;
 	  object-fit: contain;
 	  border-radius: 50%;
 	  display: block;
