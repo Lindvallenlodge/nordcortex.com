@@ -2681,9 +2681,15 @@ body, input, select, textarea {
 /* Main */
 
 	#main {
-		margin-left: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		margin-left: 35%;
+		padding-top: 8em;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
+		padding-right: 4em;
+		padding-bottom: 4em;
+		padding-left: 4em;
 		width: 100%;
 	}
 
