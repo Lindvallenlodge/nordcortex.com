@@ -82,8 +82,14 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
+	/* body {
 		background: #fff;
+	} */
+
+	body {
+	  background: url("../images/background.png") no-repeat center center fixed;
+	  background-size: cover;
+	  backdrop-filter: blur(5px);
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
