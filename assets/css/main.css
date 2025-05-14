@@ -3272,3 +3272,35 @@ body, input, select, textarea {
   display: block;
   margin: 0 auto;
 }
+@media screen and (min-width: 737px) {
+  .top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    padding: 1em 0;
+  }
+
+  .top-nav a {
+    margin: 0 1em;
+    padding: 0.5em 1em;
+    border: 2px solid #ffffff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+  }
+
+  .top-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  body {
+    padding-top: 70px; /* To prevent content from hiding behind fixed nav */
+  }
+}
