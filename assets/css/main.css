@@ -104,7 +104,7 @@ input, select, textarea {
 		}
 
 body, input, select, textarea {
-  color: #000;
+  color: #49bf9d;
   font-family: "Source Sans Pro", Helvetica, sans-serif;
   font-size: 16pt;
   font-weight: 400;
@@ -3243,8 +3243,14 @@ body, input, select, textarea {
   }
 }
 #main, #main * {
-  color: #000 !important;
+  color: #49bf9d !important;
 }
 #header, #header *:not(h1) {
-  color: #000 !important;
+  color: #49bf9d !important;
+}
+
+@media screen and (min-width: 981px) {
+  #main {
+    padding-top: 4em;
+  }
 }
