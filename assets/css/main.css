@@ -3249,7 +3249,6 @@ body, input, select, textarea {
   }
 
   #header .logo img {
-    transform: scaleX(1.10);
     width: 100%;
     height: auto;
     object-fit: contain;
@@ -3376,7 +3375,7 @@ body, input, select, textarea {
 }
 # Custom header logo and text styles
 #header .logo-img {
-  width: 220px;
+  width: 280px;
   height: auto;
   display: block;
   margin: 0 auto;
