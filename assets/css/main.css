@@ -2611,7 +2611,7 @@ body, input, select, textarea {
 	#header p {
 	  font-size: 1.25em;
 	  line-height: 1.6em;
-	  margin: 2em 0 0.5em 0;
+	  margin: 3em 0 2em 0;
 	  padding: 0 1em;
 	  position: relative;
 	  z-index: 1;
