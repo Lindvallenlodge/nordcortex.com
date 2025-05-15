@@ -9,6 +9,27 @@
     body {
       color: #000;
     }
+    .gear-gallery {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+      padding: 2em;
+    }
+    .gear-gallery img {
+      max-width: 90%;
+      margin: 1em;
+    }
+    .gear-gallery .close {
+      position: absolute;
+      top: 2em; right: 3em;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body class="is-preload">
@@ -51,9 +72,16 @@
             justify-content: space-between;
             gap: 1em;
           }
-          #gear-row .work-item {
+          #gear-row .gear-category {
             flex: 0 0 auto;
-            width: 18%;
+            width: 22%;
+            text-align: center;
+          }
+          #gear-row .gear-category img.main-gear {
+            cursor: pointer;
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 0.5em;
           }
         }
 
@@ -62,48 +90,65 @@
             display: block;
             padding: 0;
           }
-          #gear-row .work-item {
+          #gear-row .gear-category {
             width: 100%;
             margin-bottom: 2em;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
           }
-          #gear-row .work-item img {
+          #gear-row .gear-category img.main-gear {
             max-width: 80%;
             height: auto;
-            margin: 0 auto;
+            margin: 0 auto 0.5em auto;
+            cursor: pointer;
           }
         }
       </style>
       <div id="gear-row" class="row">
-        <article class="col work-item">
-          <a href="assets/images/fulls/stroller-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/stroller-1.jpg" alt="Stroller" /></a>
-          <h3 style="color: #000;">Premium Strollers</h3>
-          <p style="color: #000;">Perfect for urban adventures with your little one.</p>
-        </article>
-        <article class="col work-item">
-          <a href="assets/images/fulls/crib-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/crib-1.jpg" alt="Crib" /></a>
-          <h3 style="color: #000;">Premium Cribs</h3>
-          <p style="color: #000;">Perfect for a sleep on the cloud, wherever you are.</p>
-        </article>
-        <article class="col work-item">
-          <a href="assets/images/fulls/bike-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/bike-1.jpg" alt="Bicycle" /></a>
+        <div class="gear-category">
+          <h3 style="color: #000;">Strollers</h3>
+          <img src="assets/images/thumbs/stroller-1.jpg" alt="Strollers" class="main-gear" onclick="openGallery('strollers')">
+          <div id="gallery-strollers" class="gear-gallery">
+            <span class="close" onclick="closeGallery('strollers')">&times;</span>
+            <img src="assets/images/fulls/stroller-1.jpg">
+            <img src="assets/images/fulls/stroller-2.jpg">
+            <img src="assets/images/fulls/stroller-3.jpg">
+            <img src="assets/images/fulls/stroller-4.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
+          <h3 style="color: #000;">Travel Cots</h3>
+          <img src="assets/images/thumbs/crib-1.jpg" alt="Travel Cots" class="main-gear" onclick="openGallery('travel-cots')">
+          <div id="gallery-travel-cots" class="gear-gallery">
+            <span class="close" onclick="closeGallery('travel-cots')">&times;</span>
+            <img src="assets/images/fulls/crib-1.jpg">
+            <img src="assets/images/fulls/crib-2.jpg">
+            <img src="assets/images/fulls/crib-3.jpg">
+            <img src="assets/images/fulls/crib-4.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
+          <h3 style="color: #000;">Accessories, Books &amp; Toys</h3>
+          <img src="assets/images/thumbs/accessories-1.jpg" alt="Accessories, Books & Toys" class="main-gear" onclick="openGallery('accessories')">
+          <div id="gallery-accessories" class="gear-gallery">
+            <span class="close" onclick="closeGallery('accessories')">&times;</span>
+            <img src="assets/images/fulls/accessories-1.jpg">
+            <img src="assets/images/fulls/accessories-2.jpg">
+            <img src="assets/images/fulls/accessories-3.jpg">
+            <img src="assets/images/fulls/accessories-4.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
           <h3 style="color: #000;">Kids Bicycles</h3>
-          <p style="color: #000;">Enjoy those safe rides.</p>
-        </article>
-        <article class="col work-item">
-          <a href="assets/images/fulls/humidifier-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/humidifier-1.jpg" alt="Humidifier" /></a>
-          <h3 style="color: #000;">Humidifiers</h3>
-          <p style="color: #000;">Nothing beats easy breaths at night.</p>
-        </article>
-        <article class="col work-item">
-          <a href="assets/images/fulls/accessories-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/accessories-1.jpg" alt="Accessories" /></a>
-          <h3 style="color: #000;">Accessories, Books & Toys</h3>
-          <p style="color: #000;">Fun, calm, and comfort in one package.</p>
-        </article>
+          <img src="assets/images/thumbs/bike-1.jpg" alt="Kids Bicycles" class="main-gear" onclick="openGallery('kids-bicycles')">
+          <div id="gallery-kids-bicycles" class="gear-gallery">
+            <span class="close" onclick="closeGallery('kids-bicycles')">&times;</span>
+            <img src="assets/images/fulls/bike-1.jpg">
+            <img src="assets/images/fulls/bike-2.jpg">
+            <img src="assets/images/fulls/bike-3.jpg">
+            <img src="assets/images/fulls/bike-4.jpg">
+          </div>
+        </div>
       </div>
     </section>
 
@@ -252,5 +297,18 @@
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    function openGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'block';
+    }
+    function closeGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'none';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
+      }
+    });
+  </script>
 </body>
 </html>
