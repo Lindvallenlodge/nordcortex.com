@@ -2600,7 +2600,7 @@ body, input, select, textarea {
 	  font-size: 1.75em;
 	  font-weight: 400;
 	  line-height: 1.4em;
-	  margin-bottom: 1.5em;
+	  margin-bottom: 2.5em;
 	  position: relative;
 	  z-index: 1;
 	  color: black !important;
@@ -2616,7 +2616,7 @@ body, input, select, textarea {
 	}
 
 	#header .logo {
-	  margin-bottom: 2.5em;
+	  margin-bottom: 4em;
 	  width: 247.5px;
 	  height: 247.5px;
 	  border-radius: 50%;
