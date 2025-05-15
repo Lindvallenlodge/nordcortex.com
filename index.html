@@ -39,7 +39,32 @@
     <!-- Two -->
     <section id="two">
       <h2>Our Gear</h2>
-      <div class="row" style="display: flex; flex-wrap: nowrap; overflow-x: auto; justify-content: space-between; gap: 1em;">
+      <style>
+        @media (min-width: 768px) {
+          #gear-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: space-between;
+            gap: 1em;
+          }
+          #gear-row .work-item {
+            flex: 0 0 auto;
+            width: 18%;
+          }
+        }
+
+        @media (max-width: 767px) {
+          #gear-row {
+            display: block;
+          }
+          #gear-row .work-item {
+            width: 100%;
+            margin-bottom: 2em;
+          }
+        }
+      </style>
+      <div id="gear-row" class="row">
         <article class="col work-item" style="flex: 0 0 auto; width: 18%;">
           <a href="assets/images/fulls/stroller-1.jpg" class="image fit thumb"><img src="assets/images/thumbs/stroller-1.jpg" alt="Stroller" /></a>
           <h3>Premium Strollers</h3>
