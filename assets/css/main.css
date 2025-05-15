@@ -3304,3 +3304,63 @@ body, input, select, textarea {
     padding-top: 100px;
   }
 }
+# Gear Gallery Layout */
+.gear-category {
+  margin-bottom: 4em;
+}
+
+.gear-category h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #000;
+}
+
+.gear-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.gear-thumbnail {
+  flex: 0 0 18%;
+  max-width: 18%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gear-thumbnail:hover {
+  transform: scale(1.05);
+  border-color: #49bf9d;
+}
+
+.gear-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gear-thumbnail-caption {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 980px) {
+  .gear-thumbnail {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .gear-thumbnail {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
