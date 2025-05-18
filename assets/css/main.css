@@ -3491,6 +3491,7 @@ body::before {
 
 /* === Override: Top Navigation - always fixed, full width, no margin/padding shift === */
 /* === Top Navigation Bar === */
+# Top Navigation Bar
 .top-nav {
   position: fixed;
   top: 0;
@@ -3502,17 +3503,28 @@ body::before {
   justify-content: space-between;
   padding: 0 2em;
   z-index: 9999;
-  background-color: #fff;
+  background-color: #ffffff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
 }
 
 body {
   padding-top: 70px !important;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body::before {
   content: none !important;
   display: none !important;
+}
+
+# Ensure html has no margin/padding
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 #header .logo {
   margin-top: 70px;
