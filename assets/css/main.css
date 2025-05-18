@@ -3309,7 +3309,7 @@ body, input, select, textarea {
 /* Top Navigation - global, always visible and fixed */
 /* Top Navigation - global, always visible and fixed */
 .top-nav {
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
   right: 0;
@@ -3464,7 +3464,7 @@ body, input, select, textarea {
 }
 # Ensure body always has padding for fixed nav
 body {
-  padding-top: 120px !important;
+  padding-top: 130px !important;
 }
 
 /* === Fix for top navigation bar and eliminate beige gap === */
