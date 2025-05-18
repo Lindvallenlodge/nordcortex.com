@@ -3310,7 +3310,7 @@ body, input, select, textarea {
   right: 0;
   width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
-  z-index: 1000;
+  z-index: 10000;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -3446,4 +3446,18 @@ body, input, select, textarea {
 # Ensure body always has padding for fixed nav
 body {
   padding-top: 100px !important;
+}
+# Mobile-specific layout for .top-nav
+@media screen and (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+  }
+
+  .top-nav a {
+    margin: 0.5em 0;
+    width: 100%;
+    text-align: center;
+  }
 }
