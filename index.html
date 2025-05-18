@@ -9,6 +9,8 @@
     body {
       color: #000;
       background-color: rgba(225, 215, 200, 0.95); /* slightly darker and warmer beige tone */
+      margin: 0;
+      padding-top: 60px;
     }
     body::before {
       content: "";
@@ -36,11 +38,19 @@
       z-index: 10000;
       box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     }
-    body {
-      padding-top: 60px;
+    .top-bar-logo-link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      width: 60px;
+      min-width: 60px;
     }
     .top-bar-logo {
-      height: 60px;
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
     }
     .order-now-btn {
       background-color: black;
