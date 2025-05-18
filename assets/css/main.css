@@ -3462,6 +3462,40 @@ body, input, select, textarea {
 body {
   padding-top: 120px !important;
 }
+
+/* === Fix for top navigation bar and eliminate beige gap === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(255, 255, 255, 0.98);
+  z-index: 10000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 2em;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+body::before {
+  content: '';
+  display: block;
+  height: 120px; /* Same as top-nav height + padding */
+}
 # Mobile-specific layout for .top-nav
 @media screen and (max-width: 768px) {
   .top-nav {
