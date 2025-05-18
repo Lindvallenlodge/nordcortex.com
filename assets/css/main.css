@@ -3488,12 +3488,29 @@ body::before {
   }
 }
 
-/* === Override: Top Navigation - always fixed, highest priority === */
+
+/* === Override: Top Navigation - always fixed, full width, no margin/padding shift === */
 .top-nav {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
   z-index: 10000 !important;
   background-color: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  padding-top: 70px !important;
+}
+
+body::before {
+  display: none !important;
+  content: none !important;
+  height: 0 !important;
 }
