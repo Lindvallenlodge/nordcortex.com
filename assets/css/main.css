@@ -3303,9 +3303,10 @@ body, input, select, textarea {
 }
 @media screen and (min-width: 737px) {
   .top-nav {
-    position: fixed !important;
+    position: fixed;
     top: 0;
     left: 0;
+    right: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95);
     z-index: 1000;
@@ -3444,4 +3445,8 @@ body, input, select, textarea {
     max-width: 100%;
     padding: 4em 2em;
   }
+}
+# Ensure body always has padding for fixed nav
+body {
+  padding-top: 100px !important;
 }
