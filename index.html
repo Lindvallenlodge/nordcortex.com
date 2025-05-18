@@ -6,6 +6,9 @@
   <title>Strollby Stockholm</title>
   <link rel="stylesheet" href="assets/css/main.css" />
   <style>
+    html {
+      scroll-padding-top: 70px; /* makes anchor targets not hidden under fixed header */
+    }
     body {
       color: #000;
       background-color: rgba(225, 215, 200, 0.95); /* slightly darker and warmer beige tone */
@@ -25,7 +28,7 @@
     }
     /* Top Bar Styles */
     #top-bar {
-      position: fixed;
+      position: sticky;
       top: 0;
       left: 0;
       width: 100%;
@@ -84,6 +87,7 @@
   </style>
 </head>
 <body class="is-preload">
+  <div id="page-wrapper">
   <div id="top-bar">
     <a href="#header" class="top-bar-logo-link">
       <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" class="top-bar-logo" />
@@ -381,5 +385,6 @@
       }
     });
   </script>
+</div>
 </body>
 </html>
