@@ -3309,20 +3309,7 @@ body, input, select, textarea {
 /* Top Navigation - global, always visible and fixed */
 /* Top Navigation - global, always visible and fixed */
 /* Top Navigation - global, always visible and fixed */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(255, 255, 255, 0.98);
-  z-index: 10000;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.5em 2em;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5px);
-}
+/* .top-nav block is now overridden at the end of the file */
 
 .top-logo {
   height: 70px;
@@ -3464,7 +3451,7 @@ body, input, select, textarea {
 }
 # Ensure body always has padding for fixed nav
 body {
-  padding-top: 130px !important;
+  padding-top: 100px !important;
 }
 
 /* === Fix for top navigation bar and eliminate beige gap === */
@@ -3484,8 +3471,7 @@ body {
 
 body::before {
   content: '';
-  display: block;
-  height: 80px; /* Adjust if needed to match navbar height */
+  display: none;
 }
 # Mobile-specific layout for .top-nav
 @media screen and (max-width: 768px) {
@@ -3500,4 +3486,14 @@ body::before {
     width: 100%;
     text-align: center;
   }
+}
+
+/* === Override: Top Navigation - always fixed, highest priority === */
+.top-nav {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 10000 !important;
+  background-color: rgba(255, 255, 255, 0.98) !important;
 }
