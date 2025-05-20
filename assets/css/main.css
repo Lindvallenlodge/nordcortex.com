@@ -3503,7 +3503,7 @@ body::before {
   justify-content: space-between;
   padding: 0 2em;
   z-index: 9999;
-  background-color: #ffffff;
+  background-color: transparent;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   width: 100%;
 }
@@ -3527,5 +3527,5 @@ html {
   height: 100%;
 }
 #header .logo {
-  margin-top: 70px;
+  margin-top: 0;
 }
