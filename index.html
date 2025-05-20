@@ -1,67 +1,93 @@
-/* Base Reset and Layout */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #fff;
-  color: #333;
-  line-height: 1.6;
-}
-
-a {
-  color: #49bf9d;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-/* Navigation Bar */
+/* NAVIGATION */
 #main-nav {
-  background-color: rgba(255, 255, 255, 0.95);
-  position: sticky;
-  top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  z-index: 9999;
+  padding: 1em 2em;
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.nav-logo img {
-  height: 48px;
+.nav-logo-icon img {
+  width: 40px;
 }
 
-.order-now-btn {
-  background-color: black;
-  color: white;
-  padding: 10px 20px;
+.nav-links {
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-links a {
+  color: #111;
   text-decoration: none;
-  border-radius: 5px;
+  font-weight: 500;
+}
+
+.order-now-outline {
+  border: 1px solid #000;
+  padding: 0.5em 1em;
+  text-decoration: none;
   font-weight: bold;
+  color: #000;
+  border-radius: 4px;
 }
 
-/* Page Content */
-#page-content {
-  padding: 3em 1em;
-  max-width: 960px;
-  margin: auto;
+/* HERO SECTION */
+.hero {
+  position: relative;
   text-align: center;
-  opacity: 1;
-  transition: opacity 0.3s ease;
+  color: #222;
+  padding: 4em 1em;
 }
 
-#page-content h2 {
-  font-size: 2em;
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.hero-logo {
+  width: 70px;
   margin-bottom: 0.5em;
-  color: #444;
 }
 
-#page-content p {
-  font-size: 1.2em;
-  color: #555;
-  max-width: 700px;
-  margin: 0 auto;
+.tagline {
+  font-weight: 500;
+  letter-spacing: 2px;
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 2em;
+}
+
+.main-heading {
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.hero-content p {
+  margin-bottom: 0.8em;
+}
+
+.hero-cta {
+  margin-top: 1.5em;
+  display: inline-block;
+  background: #111;
+  color: #fff;
+  padding: 0.8em 2em;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
 }
