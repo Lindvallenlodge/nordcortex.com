@@ -82,8 +82,20 @@ input, select, textarea {
 		box-sizing: inherit;
 	}
 
-	body {
+	/* body {
 		background: #fff;
+	} */
+
+	body {
+	  background-color: #f7f7f7;
+	  background-image: url("../images/background.png");
+	  background-repeat: no-repeat;
+	  background-position: center center;
+	  background-attachment: fixed;
+	  background-size: cover;
+	  -webkit-backdrop-filter: blur(4px);
+	  backdrop-filter: blur(4px);
+	  overflow-x: hidden;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -97,13 +109,13 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-	body, input, select, textarea {
-		color: #a2a2a2;
-		font-family: "Source Sans Pro", Helvetica, sans-serif;
-		font-size: 16pt;
-		font-weight: 400;
-		line-height: 1.75em;
-	}
+body, input, select, textarea {
+  color: #000000;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 16pt;
+  font-weight: 400;
+  line-height: 1.75em;
+}
 
 	a {
 		-moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
@@ -778,7 +790,7 @@ input, select, textarea {
 
 		}
 
-		@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1280px) {
 
 			.row {
 				display: flex;
@@ -2049,7 +2061,7 @@ input, select, textarea {
 			-webkit-transition: opacity 0.2s ease-in-out;
 			-ms-transition: opacity 0.2s ease-in-out;
 			transition: opacity 0.2s ease-in-out;
-			background: url("images/overlay.png");
+			background: url("../images/overlay.png");
 			border-radius: 0.35em;
 			content: '';
 			display: block;
@@ -2094,7 +2106,7 @@ input, select, textarea {
 			}
 
 			.image.thumb:hover:before {
-				background: url("images/overlay.png"), url("images/overlay.png");
+				background: url("../images/overlay.png"), url("../images/overlay.png");
 				opacity: 1.0;
 			}
 
@@ -2143,7 +2155,8 @@ input, select, textarea {
 
 			.image.avatar img {
 				border-radius: 100%;
-				width: 100%;
+				width: 150px;
+				height: 150px;
 			}
 
 /* List */
@@ -2575,73 +2588,69 @@ input, select, textarea {
 /* Header */
 
 	#header {
-		display: -moz-flex;
-		display: -webkit-flex;
-		display: -ms-flex;
-		display: flex;
-		-moz-flex-direction: column;
-		-webkit-flex-direction: column;
-		-ms-flex-direction: column;
-		flex-direction: column;
-		-moz-align-items: -moz-flex-end;
-		-webkit-align-items: -webkit-flex-end;
-		-ms-align-items: -ms-flex-end;
-		align-items: flex-end;
-		-moz-justify-content: space-between;
-		-webkit-justify-content: space-between;
-		-ms-justify-content: space-between;
-		justify-content: space-between;
-		background-color: #1f1815;
-		background-attachment: scroll,								scroll;
-		background-image: url("images/overlay.png"), url("../../images/bg.jpg");
-		background-position: top left,							top left;
-		background-repeat: repeat,								no-repeat;
-		background-size: auto,								150%;
-		color: rgba(255, 255, 255, 0.5);
-		height: 100%;
-		left: 0;
-		padding: 8em 4em;
-		position: fixed;
-		text-align: right;
-		top: 0;
-		width: 35%;
+	  display: -webkit-box;
+	  display: -ms-flexbox;
+	  display: flex;
+	  -webkit-box-orient: vertical;
+	  -webkit-box-direction: normal;
+	  -ms-flex-direction: column;
+	  flex-direction: column;
+	  -webkit-box-align: center;
+	  -ms-flex-align: center;
+	  align-items: center;
+	  -webkit-box-pack: center;
+	  -ms-flex-pack: center;
+	  justify-content: center;
+	  background: none;
+	  color: #49bf9d;
+	  padding: 8em 4em;
+	  text-align: center;
+	  width: 100%;
+	  height: auto;
+	  position: relative;
 	}
 
-		#header > * {
-			-moz-flex-shrink: 0;
-			-webkit-flex-shrink: 0;
-			-ms-flex-shrink: 0;
-			flex-shrink: 0;
-			width: 100%;
-		}
 
-		#header > .inner {
-			-moz-flex-grow: 1;
-			-webkit-flex-grow: 1;
-			-ms-flex-grow: 1;
-			flex-grow: 1;
-			margin: 0 0 2em 0;
-		}
+	#header h1 {
+	  font-size: 1.75em;
+	  font-weight: 400;
+	  line-height: 1.4em;
+	  margin-bottom: 2.5em;
+	  position: relative;
+	  z-index: 1;
+	  color: black !important;
+	}
 
-		#header strong, #header b {
-			color: #ffffff;
-		}
+	#header p {
+	  font-size: 1.25em;
+	  line-height: 1.6em;
+	  margin: 3em 0 2em 0;
+	  padding: 0 1em;
+	  position: relative;
+	  z-index: 1;
+	}
 
-		#header h2, #header h3, #header h4, #header h5, #header h6 {
-			color: #ffffff;
-		}
+	#header .logo {
+	  margin-bottom: 4em;
+	  width: 247.5px;
+	  height: 247.5px;
+	  border-radius: 50%;
+	  overflow: hidden;
+	  position: relative;
+	  z-index: 1;
+	}
 
-		#header h1 {
-			color: rgba(255, 255, 255, 0.5);
-			font-size: 1.35em;
-			line-height: 1.75em;
-			margin: 0;
-		}
+	#header .logo img {
+	  width: 100%;
+	  height: auto;
+	  max-width: none;
+	  object-fit: contain;
+	  border-radius: 50%;
+	  display: block;
+	  margin: 0 auto;
+	}
 
-		#header .image.avatar {
-			margin: 0 0 1em 0;
-			width: 6.25em;
-		}
+/* (Removed extra or conflicting #header styles to avoid overrides) */
 
 /* Footer */
 
@@ -2682,10 +2691,16 @@ input, select, textarea {
 /* Main */
 
 	#main {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 		margin-left: 35%;
+		padding-top: 8em;
 		max-width: 54em;
-		padding: 8em 4em 4em 4em;
-		width: calc(100% - 35%);
+		padding-right: 4em;
+		padding-bottom: 4em;
+		padding-left: 4em;
+		width: 100%;
 	}
 
 		#main > section {
@@ -2699,6 +2714,15 @@ input, select, textarea {
 				margin-top: 0;
 				padding-top: 0;
 			}
+
+/* Intro text style */
+.intro-text {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 3em;
+	font-size: 1.25em;
+	line-height: 1.8em;
+}
 
 /* Poptrox */
 
@@ -2998,7 +3022,6 @@ input, select, textarea {
 
 			#header {
 				padding: 6em 3em 3em 3em;
-				width: 30%;
 			}
 
 				#header h1 {
@@ -3026,10 +3049,11 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				margin-left: 30%;
+				margin-left: 0;
 				max-width: none;
 				padding: 6em 3em 3em 3em;
-				width: calc(100% - 30%);
+				width: 100%;
+				padding-top: 4em;
 			}
 
 	}
@@ -3078,7 +3102,7 @@ input, select, textarea {
 			#footer {
 				background-attachment: scroll;
 				background-color: #1f1815;
-				background-image: url("images/overlay.png"), url("../../images/bg.jpg");
+				background-image: url("../images/overlay.png"), url("../images/bg.jpg");
 				background-position: top left,						bottom center;
 				background-repeat: repeat,							no-repeat;
 				background-size: auto,							cover;
@@ -3219,3 +3243,289 @@ input, select, textarea {
 			}
 
 	}
+
+
+@media screen and (min-width: 981px) {
+  #header {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 6em 4em;
+  }
+
+  #header .logo {
+    width: 321px;
+    height: 321px;
+    margin: 0 auto 3em auto;
+  }
+
+  #header .logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  #header h1 {
+    font-size: 2.6em;
+    text-align: center;
+  }
+
+  #header p {
+    font-size: 1.2em;
+    text-align: center;
+    margin: 1.2em 0 2em;
+  }
+
+  #main {
+    padding-top: 4em;
+    margin: 0 auto;
+    max-width: 960px;
+    width: 100%;
+  }
+}
+#main, #main * {
+  color: #000000 !important;
+}
+#header, #header *:not(h1) {
+  color: #000000 !important;
+}
+
+# Centered Content Utility
+.centered-content {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 800px;
+}
+#header .logo img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Top Navigation - global, always visible and fixed */
+/* Top Navigation - global, always visible and fixed */
+/* Top Navigation - global, always visible and fixed */
+/* .top-nav block is now overridden at the end of the file */
+
+.top-logo {
+  height: 70px;
+  width: auto;
+  margin-right: auto;
+}
+# Order Now button highlight
+.top-nav a.order-now {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+}
+
+.top-nav a.order-now:hover {
+  background-color: #49bf9d;
+  border-color: #49bf9d;
+  color: #fff;
+}
+
+.top-nav a {
+  margin: 0 0.5em;
+  padding: 0.4em 1em;
+  border: 2px solid #000;
+  color: #000;
+  background-color: transparent;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.top-nav a:hover {
+  background-color: #49bf9d;
+  color: #fff;
+  border-color: #49bf9d;
+}
+# Gear Gallery Layout */
+.gear-category {
+  margin-bottom: 4em;
+}
+
+.gear-category h2 {
+  text-align: center;
+  font-size: 1.5em;
+  margin-bottom: 1em;
+  color: #000;
+}
+
+.gear-thumbnails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.gear-thumbnail {
+  flex: 0 0 18%;
+  max-width: 18%;
+  cursor: pointer;
+  border: 2px solid #ccc;
+  border-radius: 0.5em;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.gear-thumbnail:hover {
+  transform: scale(1.05);
+  border-color: #49bf9d;
+}
+
+.gear-thumbnail img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gear-thumbnail-caption {
+  text-align: center;
+  font-size: 0.9em;
+  padding: 0.5em;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+@media screen and (max-width: 980px) {
+  .gear-thumbnail {
+    flex: 0 0 45%;
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .gear-thumbnail {
+    flex: 0 0 90%;
+    max-width: 90%;
+  }
+}
+# Custom header logo and text styles
+#header .logo-img {
+  width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+#header h1 {
+  font-size: 2.6em;
+  margin-bottom: 1em;
+  color: #000;
+}
+
+#header p {
+  font-size: 1.1em;
+  margin: 0.6em auto;
+  line-height: 1.75;
+  max-width: 700px;
+  color: #000;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  #header .logo-img {
+    width: 160px;
+  }
+
+  #header h1 {
+    font-size: 1.8em;
+  }
+
+  #header p {
+    font-size: 1em;
+  }
+}
+/* Mobile-aware constraint for header */
+@media screen and (max-width: 768px) {
+  #header {
+    max-width: 100%;
+    padding: 4em 2em;
+  }
+}
+# Ensure body always has padding for fixed nav
+body {
+  padding-top: 100px !important;
+}
+
+/* === Fix for top navigation bar and eliminate beige gap === */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-attachment: fixed;
+}
+
+/* (Removed duplicate .top-nav block to avoid conflicts) */
+
+body::before {
+  content: '';
+  display: none;
+}
+# Mobile-specific layout for .top-nav
+@media screen and (max-width: 768px) {
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1em;
+  }
+
+  .top-nav a {
+    margin: 0.5em 0;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+/* === Override: Top Navigation - always fixed, full width, no margin/padding shift === */
+/* === Top Navigation Bar === */
+# Top Navigation Bar
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em;
+  z-index: 9999;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+body {
+  padding-top: 70px !important;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body::before {
+  content: none !important;
+  display: none !important;
+}
+
+# Ensure html has no margin/padding
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#header .logo {
+  margin-top: 70px;
+}
