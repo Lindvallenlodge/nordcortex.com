@@ -38,7 +38,7 @@
       z-index: -1;
     }
     /* Top Bar Styles */
-    #top-bar {
+    /* #top-bar {
       position: fixed;
       top: 0;
       left: 0;
@@ -52,9 +52,6 @@
       justify-content: space-between;
       backdrop-filter: none;
       box-shadow: none;
-    }
-    #page-wrapper {
-      padding-top: 60px;
     }
     .top-bar-logo-link {
       display: flex;
@@ -70,14 +67,7 @@
       display: block;
       margin: auto;
     }
-    .order-now-btn {
-      background-color: black;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
+    */
     .gear-gallery {
       display: none;
       position: fixed;
@@ -102,12 +92,14 @@
   </style>
 </head>
 <body class="is-preload">
-  <div id="top-bar">
-    <a href="#header" class="top-bar-logo-link">
-      <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" class="top-bar-logo" />
-    </a>
-    <a href="https://www.babonbo.com/en/bb-stockholm" target="_blank" class="order-now-btn">Order Now</a>
-  </div>
+  <header id="main-nav">
+    <div class="nav-container">
+      <a href="#header" class="nav-logo">
+        <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" />
+      </a>
+      <a href="https://www.babonbo.com/en/bb-stockholm" target="_blank" class="order-now-btn">Order Now</a>
+    </div>
+  </header>
   <div id="page-wrapper">
   <!-- Header -->
   <header id="header">
@@ -401,5 +393,44 @@
     });
   </script>
 </div>
+</body>
+<!-- New nav styles -->
+<style>
+#main-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+.nav-container {
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-logo img {
+  height: 48px;
+  width: 48px;
+  object-fit: contain;
+}
+.order-now-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* Push content below nav */
+#page-wrapper {
+  padding-top: 60px;
+}
+</style>
 </body>
 </html>
