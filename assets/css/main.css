@@ -1,3 +1,12 @@
+#page-content {
+  margin-top: 4em;
+  padding: 1em 2em;
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
@@ -3528,4 +3537,51 @@ html {
 }
 #header .logo {
   margin-top: 0;
+}
+
+#page-content h2 {
+  font-size: 2em;
+  margin-bottom: 0.4em;
+  color: #444;
+}
+
+#page-content p {
+  font-size: 1.2em;
+  line-height: 1.6em;
+  color: #333;
+}
+
+.hero-image {
+  max-width: 700px;
+  margin: 2em auto;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.quick-links {
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+}
+
+.quick-links a {
+  padding: 0.8em 1.4em;
+  background-color: #49bf9d;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.quick-links a:hover {
+  background-color: #3ca98a;
 }
