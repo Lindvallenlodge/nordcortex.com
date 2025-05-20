@@ -2,66 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Strollby Stockholm</title>
   <link rel="stylesheet" href="assets/css/main.css" />
+  <script src="assets/js/main.js" defer></script>
   <style>
-<<<<<<< HEAD
-<<<<<<< HEAD
-    body {
-      color: #000;
-      background-color: rgba(225, 215, 200, 0.95); /* slightly darker and warmer beige tone */
-=======
-=======
->>>>>>> parent of 0d2a534 (Update index.html)
-    html {
-      scroll-padding-top: 70px; /* makes anchor targets not hidden under fixed header */
-    }
-    body {
-      color: #000;
-      background-color: rgba(225, 215, 200, 0.95); /* slightly darker and warmer beige tone */
-      margin: 0;
-      padding-top: 0;
->>>>>>> parent of 0d2a534 (Update index.html)
-    }
-    body::before {
-      content: "";
-      position: fixed;
+    body { font-family: sans-serif; margin: 0; padding: 0; background: #fff; }
+    #main-nav {
+      background-color: rgba(255,255,255,0.95);
+      position: sticky;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url("assets/images/background.png") center center / cover no-repeat;
-      opacity: 0.4;
-      z-index: -1;
-    }
-    /* Top Bar Styles */
-    #top-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 60px;
-<<<<<<< HEAD
-      background: rgba(255, 255, 255, 0.95);
-=======
-      background: transparent;
-<<<<<<< HEAD
->>>>>>> parent of 0d2a534 (Update index.html)
-=======
->>>>>>> parent of 0d2a534 (Update index.html)
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      padding: 0 1em;
-      z-index: 10000;
-      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      padding: 0.5em 1em;
+      z-index: 9999;
     }
-    body {
-      padding-top: 60px;
-    }
-    .top-bar-logo {
-      height: 60px;
+    .nav-logo img {
+      height: 48px;
     }
     .order-now-btn {
       background-color: black;
@@ -71,333 +29,26 @@
       border-radius: 5px;
       font-weight: bold;
     }
-    .gear-gallery {
-      display: none;
-      position: fixed;
-      z-index: 9999;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.9);
-      text-align: center;
+    #page-content {
+      opacity: 1;
+      transition: opacity 0.3s ease;
       padding: 2em;
-    }
-    .gear-gallery img {
-      max-width: 90%;
-      margin: 1em;
-    }
-    .gear-gallery .close {
-      position: absolute;
-      top: 2em; right: 3em;
-      font-size: 2em;
-      color: white;
-      cursor: pointer;
     }
   </style>
 </head>
-<body class="is-preload">
-<<<<<<< HEAD
-=======
-  <div id="page-wrapper">
-<<<<<<< HEAD
->>>>>>> parent of 0d2a534 (Update index.html)
-=======
->>>>>>> parent of 0d2a534 (Update index.html)
-  <div id="top-bar">
-    <a href="#header" class="top-bar-logo-link">
-      <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" class="top-bar-logo" />
+<body>
+
+<header id="main-nav">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" />
     </a>
-    <a href="https://www.babonbo.com/en/bb-stockholm" target="_blank" class="order-now-btn">Order Now</a>
+    <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW?tab=products&type=rent" target="_blank" class="order-now-btn">Order Now</a>
   </div>
-  <!-- Header -->
-  <header id="header">
-    <div class="inner" style="padding-top: 100px;">
-      <a href="#" class="image avatar"><img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="transform: scale(1.25); max-width: 100%; height: auto; display: block;" /></a>
-      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">Premium service for baby and toddler gear & stroller rentals in Stockholm.</p>
-      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">From one traveling family to another — baby gear that meets you where you are.</p>
-      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">Affordable luxury for little travelers — without compromising on comfort, style or the budget.</p>
-    </div>
-  </header>
+</header>
 
-  <!-- Main -->
-  <div id="main">
-    <!-- One -->
-    <section id="one">
-      <header class="major">
-        <h2 style="text-transform: uppercase; font-size: 2.2em; text-align: center; color: #000;">Rent baby gear easily in Stockholm</h2>
-      </header>
-      <p style="text-align: center; color: #000;">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
-      <ul class="actions" style="display: flex; justify-content: center; gap: 1.5em;">
-        <li><a href="#two" class="button">Explore Gear</a></li>
-        <li><a href="#about" class="button">About us</a></li>
-        <li><a href="#trust" class="button">Transparency and Trust</a></li>
-        <li><a href="#order" class="button">Order Now</a></li>
-      </ul>
-    </section>
-
-    <!-- Two -->
-    <section id="two">
-      <h2 style="color: #000;">Our Gear</h2>
-      <style>
-        @media (min-width: 768px) {
-          #gear-row {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow-x: auto;
-            justify-content: space-between;
-            gap: 1em;
-          }
-          #gear-row .gear-category {
-            flex: 0 0 22%;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            align-self: flex-end;
-          }
-          #gear-row .gear-category img.main-gear {
-            cursor: pointer;
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            margin-bottom: 0.5em;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-          }
-          #gear-row .gear-category img.main-gear:hover {
-            transform: scale(1.05);
-          }
-        }
-
-        @media (max-width: 767px) {
-          #gear-row {
-            display: block;
-            padding: 0;
-          }
-          #gear-row .gear-category {
-            width: 100%;
-            margin-bottom: 2em;
-            padding: 0;
-            text-align: center;
-          }
-          #gear-row .gear-category img.main-gear {
-            max-width: 80%;
-            height: auto;
-            margin: 0 auto 0.5em auto;
-            cursor: pointer;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-          }
-          #gear-row .gear-category img.main-gear:hover {
-            transform: scale(1.03);
-          }
-        }
-      </style>
-      <div id="gear-row" class="row">
-        <div class="gear-category">
-          <h3 style="color: #000;">Strollers</h3>
-          <img src="assets/images/thumbs/stroller-1.jpg" alt="Strollers" class="main-gear" onclick="openGallery('strollers')">
-          <div id="gallery-strollers" class="gear-gallery">
-            <span class="close" onclick="closeGallery('strollers')">&times;</span>
-            <img src="assets/images/fulls/stroller-1.jpg">
-            <img src="assets/images/fulls/stroller-2.jpg">
-            <img src="assets/images/fulls/stroller-3.jpg">
-            <img src="assets/images/fulls/stroller-4.jpg">
-            <img src="assets/images/fulls/stroller-5.jpg">
-          </div>
-        </div>
-        <div class="gear-category">
-          <h3 style="color: #000;">Travel Cots</h3>
-          <img src="assets/images/thumbs/crib-1.jpg" alt="Travel Cots" class="main-gear" onclick="openGallery('travel-cots')">
-          <div id="gallery-travel-cots" class="gear-gallery">
-            <span class="close" onclick="closeGallery('travel-cots')">&times;</span>
-            <img src="assets/images/fulls/crib-1.jpg">
-            <img src="assets/images/fulls/crib-2.jpg">
-            <img src="assets/images/fulls/crib-3.jpg">
-            <img src="assets/images/fulls/crib-4.jpg">
-            <img src="assets/images/fulls/crib-5.jpg">
-          </div>
-        </div>
-        <div class="gear-category">
-          <h3 style="color: #000;">Accessories, Books &amp; Toys</h3>
-          <img src="assets/images/thumbs/accessories-1.jpg" alt="Accessories, Books & Toys" class="main-gear" onclick="openGallery('accessories')">
-          <div id="gallery-accessories" class="gear-gallery">
-            <span class="close" onclick="closeGallery('accessories')">&times;</span>
-            <img src="assets/images/fulls/accessories-1.jpg">
-            <img src="assets/images/fulls/accessories-2.jpg">
-            <img src="assets/images/fulls/accessories-3.jpg">
-            <img src="assets/images/fulls/accessories-4.jpg">
-            <img src="assets/images/fulls/accessories-5.jpg">
-          </div>
-        </div>
-        <div class="gear-category">
-          <h3 style="color: #000;">Kids Bicycles</h3>
-          <img src="assets/images/thumbs/bike-1.jpg" alt="Kids Bicycles" class="main-gear" onclick="openGallery('kids-bicycles')">
-          <div id="gallery-kids-bicycles" class="gear-gallery">
-            <span class="close" onclick="closeGallery('kids-bicycles')">&times;</span>
-            <img src="assets/images/fulls/bike-1.jpg">
-            <img src="assets/images/fulls/bike-2.jpg">
-            <img src="assets/images/fulls/bike-3.jpg">
-            <img src="assets/images/fulls/bike-4.jpg">
-            <img src="assets/images/fulls/bike-5.jpg">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Three -->
-    <section id="three">
-      <h2 style="color: #000;">Get In Touch</h2>
-      <p style="color: #000;">If you're planning your visit or have questions about our baby gear, we’re here to help.</p>
-      <div class="row">
-        <div class="col-8 col-12-small">
-          <form method="post" action="#">
-            <div class="row gtr-uniform gtr-50">
-              <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" style="color: #000;" /></div>
-              <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" style="color: #000;" /></div>
-              <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" style="color: #000;"></textarea></div>
-            </div>
-          </form>
-          <ul class="actions">
-            <li><input type="submit" value="Send Message" style="color: #000;" /></li>
-          </ul>
-        </div>
-        <div class="col-4 col-12-small">
-          <ul class="labeled-icons">
-            <li>
-              <h3 class="icon solid fa-envelope" style="color: #000;"><span class="label">Email</span></h3>
-              <a href="mailto:hello@strollbystockholm.com" style="color: #000;">hello@strollbystockholm.com</a>
-            </li>
-            <li>
-              <h3 class="icon brands fa-instagram" style="color: #000;"><span class="label">Instagram</span></h3>
-              <a href="#" style="color: #000;">Instagram</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Us Section -->
-    <section id="about">
-      <header class="major">
-        <h2 style="color: #000;">About Us</h2>
-      </header>
-      <p style="color: #000;">
-        We are a traveling family living in Stockholm — and we know what it’s like to explore a new city with kids. That’s why we created Strollby Stockholm — to make family travel lighter, easier, and more fun.  
-        <br><br>
-        Our values are simple: Clean and modern equipment. Reliable delivery and pickup. Personal care.  
-        <br><br>
-        Because traveling families deserve peace of mind.  
-        <br><br>
-        To reach as many families as possible, Strollby Stockholm collaborates with trusted platforms like <strong>Babonbo</strong>, where new customers can easily discover our service, explore our gear, and read verified reviews from fellow parents.
-        <br><br>
-        You can find us on Babonbo.com under the username <strong>BB Stockholm</strong>. View our profile and reviews here: <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW</a>.
-      </p>
-    </section>
-
-    <!-- Transparency and Trust Section -->
-    <section id="trust">
-      <header class="major">
-        <h2 style="color: #000;">Transparency and Trust</h2>
-      </header>
-      <p style="color: #000;">
-        Families booking with us through multiple channels — including <strong>Babonbo</strong> — share their honest feedback.  
-        Below are some of the real reviews left by our happy customers. New reviews are added regularly, so you can always see what families think about Strollby Stockholm.
-        <br><br>
-        You can explore our full set of verified reviews on our Babonbo profile: <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">BB Stockholm on Babonbo</a>.
-      </p>
-      <ul style="color: #000;">
-        <li>⭐️⭐️⭐️⭐️⭐️ “Really good service. Great quality products. Very friendly and helpful.” – March 3, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Super nice and well maintained crib. My kid slept very well. Very convenient pickup and drop.” – March 1, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “BB Stockholm team were super helpful and flexible.” – February 20, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The baby equipment was very clean and looked almost new.” – February 5, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Fast, flexible, and friendly service. Recommended.” – January 22, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Best service in town, great communication and very reliable.” – January 10, 2024</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Easy to book and the stroller was perfect for our trip.” – December 28, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Very clean and comfortable gear, made our vacation stress-free.” – December 15, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Helpful staff and quick delivery. Highly recommend!” – December 1, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Affordable prices and excellent customer service.” – November 18, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The crib was cozy and easy to set up. Perfect for our baby.” – November 5, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Great selection of baby gear, everything was clean and safe.” – October 22, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Super convenient rental process and friendly communication.” – October 10, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The stroller was lightweight and perfect for city walks.” – September 28, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Excellent quality gear, we will definitely rent again!” – September 15, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The team was very accommodating with our schedule.” – September 3, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Clean and modern equipment, made traveling with a baby easier.” – August 20, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Highly recommend for families visiting Stockholm.” – August 8, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Great service and very friendly staff.” – July 25, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The baby gear was exactly as described and well maintained.” – July 12, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Very easy pickup and drop-off process.” – June 30, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The humidifier helped our baby sleep better during our stay.” – June 18, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Excellent communication and flexible rental terms.” – June 5, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The accessories and toys kept our toddler entertained.” – May 22, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Reliable and trustworthy service, would use again.” – May 10, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The bicycle was perfect for our little one to explore the city.” – April 27, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Clean, safe, and stylish gear at a great price.” – April 15, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Very accommodating and helpful with last-minute requests.” – April 2, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The stroller rental made our trip so much easier.” – March 20, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Great quality baby gear, highly recommend this service.” – March 7, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Friendly and professional team, very satisfied.” – February 22, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The crib was a lifesaver during our stay.” – February 10, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Excellent customer service and very reliable.” – January 28, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The gear was spotless and well maintained.” – January 15, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Very easy to communicate and arrange rentals.” – January 2, 2023</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Highly recommend for families traveling with babies.” – December 20, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The stroller was lightweight and easy to use.” – December 7, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Great selection of baby gear and accessories.” – November 24, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Very flexible and accommodating with pickup times.” – November 11, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The humidifier was a great addition for our baby’s comfort.” – October 29, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Excellent quality and very clean equipment.” – October 16, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Helpful and friendly staff made the process smooth.” – October 3, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The baby gear rental saved us so much hassle.” – September 20, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Highly recommend for anyone visiting Stockholm with kids.” – September 7, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “The crib was comfortable and easy to set up.” – August 25, 2022</li>
-        <li>⭐️⭐️⭐️⭐️⭐️ “Great service and very reliable.” – August 12, 2022</li>
-      </ul>
-    </section>
-
-    <!-- Order Now Section -->
-    <section id="order">
-      <header class="major">
-        <h2 style="color: #000;">Order Now</h2>
-      </header>
-      <p style="color: #000;">You can place your rental order through one of the following options:</p>
-      <ul style="color: #000;">
-        <li><strong>Via Babonbo:</strong> Visit our official profile <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">here</a> and select the gear you need.</li>
-        <li><strong>Direct Contact:</strong> Email us at <a href="mailto:hello@strollbystockholm.com" style="color: #000;">hello@strollbystockholm.com</a>, use the <a href="#three" style="color: #000;">Get In Touch</a> form, or reach out via our trusted platforms like Babonbo or <em style="color: #000;">[another platform – coming soon]</em>.</li>
-      </ul>
-    </section>
-  </div>
-
-  <!-- Footer -->
-  <footer id="footer">
-    <div class="inner">
-      <ul class="icons" style="color: #000;">
-        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-        <li><a href="mailto:hello@strollbystockholm.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-      </ul>
-      <ul class="copyright" style="color: #000;"></ul>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.poptrox.min.js"></script>
-  <script src="assets/js/browser.min.js"></script>
-  <script src="assets/js/breakpoints.min.js"></script>
-  <script src="assets/js/util.js"></script>
-  <script src="assets/js/main.js"></script>
-  <script>
-    function openGallery(id) {
-      document.getElementById('gallery-' + id).style.display = 'block';
-    }
-    function closeGallery(id) {
-      document.getElementById('gallery-' + id).style.display = 'none';
-    }
-    document.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
-      }
-    });
-  </script>
+<div id="page-content">
+  <h2>Welcome to Strollby Stockholm</h2><p>Premium baby gear rentals with seamless experience.</p>
+</div>
 </body>
 </html>
