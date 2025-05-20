@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strollby Stockholm</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <style>
+    /* Global box model and spacing reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-padding-top: 70px; /* makes anchor targets not hidden under fixed header */
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      color: #000;
+      background-color: transparent;
+      margin: 0;
+      padding-top: 0;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("assets/images/background.png") center center / cover no-repeat;
+      opacity: 0.4;
+      z-index: -1;
+    }
+    /* Top Bar Styles */
+    #top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: transparent;
+      backdrop-filter: none;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1em;
+      z-index: 10000;
+    }
+    .top-bar-logo-link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      width: 60px;
+      min-width: 60px;
+    }
+    .top-bar-logo {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+    }
+    .order-now-btn {
+      background-color: black;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .gear-gallery {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+      padding: 2em;
+    }
+    .gear-gallery img {
+      max-width: 90%;
+      margin: 1em;
+    }
+    .gear-gallery .close {
+      position: absolute;
+      top: 2em; right: 3em;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+  <div id="top-bar" style="position: fixed; top: 0; left: 0; right: 0; z-index: 9999;">
+    <a href="#header" class="top-bar-logo-link">
+      <img src="assets/images/avatar.png" alt="Strollby Stockholm Logo" class="top-bar-logo" />
+    </a>
+    <a href="https://www.babonbo.com/en/bb-stockholm" target="_blank" class="order-now-btn">Order Now</a>
+  </div>
+  <!-- Header -->
+  <header id="header">
+    <div class="inner" style="padding-top: 60px;">
+      <a href="#" class="image avatar"><img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="transform: scale(1.25); max-width: 100%; height: auto; display: block;" /></a>
+      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">Premium service for baby and toddler gear & stroller rentals in Stockholm.</p>
+      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">From one traveling family to another — baby gear that meets you where you are.</p>
+      <p style="font-size: 1.3em; margin: 0.5em auto; max-width: 65vw; text-align: center; color: #000;">Affordable luxury for little travelers — without compromising on comfort, style or the budget.</p>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <div id="main">
+    <!-- About Us Section -->
+    <section id="about">
+      <header class="major">
+        <h2 style="color: #000;">About Us</h2>
+      </header>
+      <p style="color: #000;">
+        We are a traveling family living in Stockholm — and we know what it’s like to explore a new city with kids. That’s why we created Strollby Stockholm — to make family travel lighter, easier, and more fun.  
+        <br><br>
+        Our values are simple: Clean and modern equipment. Reliable delivery and pickup. Personal care.  
+        <br><br>
+        Because traveling families deserve peace of mind.  
+        <br><br>
+        To reach as many families as possible, Strollby Stockholm collaborates with trusted platforms like <strong>Babonbo</strong>, where new customers can easily discover our service, explore our gear, and read verified reviews from fellow parents.
+        <br><br>
+        You can find us on Babonbo.com under the username <strong>BB Stockholm</strong>. View our profile and reviews here: <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW</a>.
+      </p>
+    </section>
+
+    <!-- Transparency and Trust Section -->
+    <section id="trust">
+      <header class="major">
+        <h2 style="color: #000;">Transparency and Trust</h2>
+      </header>
+      <p style="color: #000;">
+        Families booking with us through multiple channels — including <strong>Babonbo</strong> — share their honest feedback.  
+        Below are some of the real reviews left by our happy customers. New reviews are added regularly, so you can always see what families think about Strollby Stockholm.
+        <br><br>
+        You can explore our full set of verified reviews on our Babonbo profile: <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">BB Stockholm on Babonbo</a>.
+      </p>
+      <ul style="color: #000;">
+        <li>⭐️⭐️⭐️⭐️⭐️ “Really good service. Great quality products. Very friendly and helpful.” – March 3, 2024</li>
+        <li>⭐️⭐️⭐️⭐️⭐️ “Super nice and well maintained crib. My kid slept very well. Very convenient pickup and drop.” – March 1, 2024</li>
+        <li>⭐️⭐️⭐️⭐️⭐️ “BB Stockholm team were super helpful and flexible.” – February 20, 2024</li>
+        <li>⭐️⭐️⭐️⭐️⭐️ “The baby equipment was very clean and looked almost new.” – February 5, 2024</li>
+        <li>⭐️⭐️⭐️⭐️⭐️ “Fast, flexible, and friendly service. Recommended.” – January 22, 2024</li>
+      </ul>
+    </section>
+
+    <!-- Get In Touch Section -->
+    <section id="three">
+      <h2 style="color: #000;">Get In Touch</h2>
+      <p style="color: #000;">If you're planning your visit or have questions about our baby gear, we’re here to help.</p>
+      <div class="row">
+        <div class="col-8 col-12-small">
+          <form method="post" action="#">
+            <div class="row gtr-uniform gtr-50">
+              <div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" style="color: #000;" /></div>
+              <div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" style="color: #000;" /></div>
+              <div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="4" style="color: #000;"></textarea></div>
+            </div>
+          </form>
+          <ul class="actions">
+            <li><input type="submit" value="Send Message" style="color: #000;" /></li>
+          </ul>
+        </div>
+        <div class="col-4 col-12-small">
+          <ul class="labeled-icons">
+            <li>
+              <h3 class="icon solid fa-envelope" style="color: #000;"><span class="label">Email</span></h3>
+              <a href="mailto:hello@strollbystockholm.com" style="color: #000;">hello@strollbystockholm.com</a>
+            </li>
+            <li>
+              <h3 class="icon brands fa-instagram" style="color: #000;"><span class="label">Instagram</span></h3>
+              <a href="#" style="color: #000;">Instagram</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Order Now Section -->
+    <section id="order">
+      <header class="major">
+        <h2 style="color: #000;">Order Now</h2>
+      </header>
+      <p style="color: #000;">You can place your rental order through one of the following options:</p>
+      <ul style="color: #000;">
+        <li><strong>Via Babonbo:</strong> Visit our official profile <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: #000;">here</a> and select the gear you need.</li>
+        <li><strong>Direct Contact:</strong> Email us at <a href="mailto:hello@strollbystockholm.com" style="color: #000;">hello@strollbystockholm.com</a>, use the <a href="#three" style="color: #000;">Get In Touch</a> form, or reach out via our trusted platforms like Babonbo or <em style="color: #000;">[another platform – coming soon]</em>.</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Footer -->
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons" style="color: #000;">
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="mailto:hello@strollbystockholm.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+      <ul class="copyright" style="color: #000;"></ul>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'block';
+    }
+    function closeGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'none';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
+      }
+    });
+  </script>
+</div>
+</body>
+</html>
