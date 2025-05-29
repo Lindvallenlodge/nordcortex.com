@@ -8,6 +8,7 @@
   </p>
 </section>
 
+<<<<<<< HEAD
 <section id="order">
   <h2 class="section-title">Order Now</h2>
   <p class="section-text">
@@ -20,3 +21,170 @@
     We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.
   </p>
 </section>
+=======
+  <main id="main">
+    <section id="intro">
+      <h2 class="section-title">Rent baby gear easily in Stockholm</h2>
+      <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
+      <ul class="actions">
+        <li><a href="#gear" class="button">Explore Gear</a></li>
+        <li><a href="#about" class="button">About us</a></li>
+        <li><a href="#trust" class="button">Transparency and Trust</a></li>
+        <li><a href="#order" class="button">Order Now</a></li>
+      </ul>
+    </section>
+
+    <section id="gear">
+      <h2 class="section-title">Our Gear</h2>
+      <!-- Gear display section left unchanged -->
+      <style>
+        @media (min-width: 768px) {
+          #gear-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: space-between;
+            gap: 1em;
+          }
+          #gear-row .gear-category {
+            flex: 0 0 22%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: flex-end;
+          }
+          #gear-row .gear-category img.main-gear {
+            cursor: pointer;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            margin-bottom: 0.5em;
+            transition: transform 0.3s ease;
+          }
+          #gear-row .gear-category img.main-gear:hover {
+            transform: scale(1.02);
+          }
+        }
+
+        @media (max-width: 767px) {
+          #gear-row {
+            display: block;
+            padding: 0;
+          }
+          #gear-row .gear-category {
+            width: 100%;
+            margin-bottom: 2em;
+            padding: 0;
+            text-align: center;
+          }
+          #gear-row .gear-category img.main-gear {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 0.5em auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+          }
+          #gear-row .gear-category img.main-gear:hover {
+            transform: scale(1.02);
+          }
+        }
+      </style>
+      <div id="gear-row" class="row">
+        <div class="gear-category">
+          <h3 style="color: #000;">Strollers</h3>
+          <img src="assets/images/thumbs/stroller-1.jpg" alt="Strollers" class="main-gear" onclick="openGallery('strollers')">
+          <div id="gallery-strollers" class="gear-gallery">
+            <span class="close" onclick="closeGallery('strollers')">&times;</span>
+            <img src="assets/images/fulls/stroller-1.jpg">
+            <img src="assets/images/fulls/stroller-2.jpg">
+            <img src="assets/images/fulls/stroller-3.jpg">
+            <img src="assets/images/fulls/stroller-4.jpg">
+            <img src="assets/images/fulls/stroller-5.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
+          <h3 style="color: #000;">Travel Cots</h3>
+          <img src="assets/images/thumbs/crib-1.jpg" alt="Travel Cots" class="main-gear" onclick="openGallery('travel-cots')">
+          <div id="gallery-travel-cots" class="gear-gallery">
+            <span class="close" onclick="closeGallery('travel-cots')">&times;</span>
+            <img src="assets/images/fulls/crib-1.jpg">
+            <img src="assets/images/fulls/crib-2.jpg">
+            <img src="assets/images/fulls/crib-3.jpg">
+            <img src="assets/images/fulls/crib-4.jpg">
+            <img src="assets/images/fulls/crib-5.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
+          <h3 style="color: #000;">Accessories, Books &amp; Toys</h3>
+          <img src="assets/images/thumbs/accessories-1.jpg" alt="Accessories, Books & Toys" class="main-gear" onclick="openGallery('accessories')">
+          <div id="gallery-accessories" class="gear-gallery">
+            <span class="close" onclick="closeGallery('accessories')">&times;</span>
+            <img src="assets/images/fulls/accessories-1.jpg">
+            <img src="assets/images/fulls/accessories-2.jpg">
+            <img src="assets/images/fulls/accessories-3.jpg">
+            <img src="assets/images/fulls/accessories-4.jpg">
+            <img src="assets/images/fulls/accessories-5.jpg">
+          </div>
+        </div>
+        <div class="gear-category">
+          <h3 style="color: #000;">Kids Bicycles</h3>
+          <img src="assets/images/thumbs/bike-1.jpg" alt="Kids Bicycles" class="main-gear" onclick="openGallery('kids-bicycles')">
+          <div id="gallery-kids-bicycles" class="gear-gallery">
+            <span class="close" onclick="closeGallery('kids-bicycles')">&times;</span>
+            <img src="assets/images/fulls/bike-1.jpg">
+            <img src="assets/images/fulls/bike-2.jpg">
+            <img src="assets/images/fulls/bike-3.jpg">
+            <img src="assets/images/fulls/bike-4.jpg">
+            <img src="assets/images/fulls/bike-5.jpg">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-text">Strollby Stockholm was born from the experience of traveling parents who understand the challenges of moving around with young children. We provide a premium rental service for baby and toddler gear, offering high-quality strollers, car seats, and travel cots that meet the highest safety and comfort standards. Our mission is to make your stay in Stockholm easier and more enjoyable by providing everything you need for your little ones — without the hassle of bringing your own gear.</p>
+    </section>
+
+    <section id="trust">
+      <h2 class="section-title">Transparency and Trust</h2>
+      <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers.</p>
+    </section>
+
+    <section id="order">
+      <h2 class="section-title">Order Now</h2>
+      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="color: navy; font-weight: 700; text-decoration: underline;">BB Stockholm at Babonbo</a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="mailto:hello@strollbystockholm.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+  </footer>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'block';
+    }
+    function closeGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'none';
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
+      }
+    });
+  </script>
+</body>
+</html>
+>>>>>>> parent of ecae8c0 (Update index.html)
