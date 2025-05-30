@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thank You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: radial-gradient(circle at 25% 25%, #a7e0ff 20%, transparent 50%),
+                  radial-gradient(circle at 75% 25%, #ffc2d1 10%, transparent 50%),
+                  radial-gradient(circle at 50% 75%, #ffffff 15%, transparent 50%);
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      animation: movingBlobs 6.66s ease-in-out infinite;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      padding: 2em;
+    }
+
+    @keyframes movingBlobs {
+      0% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+      33% {
+        background-position: 30% 70%, 70% 30%, 40% 60%;
+      }
+      66% {
+        background-position: 70% 70%, 30% 30%, 60% 40%;
+      }
+      100% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 0.5em;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 2em;
+      max-width: 600px;
+    }
+
+    a {
+      font-weight: bold;
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Thank you for reaching out!</h1>
+  <p>Your message is now flying through the digital skies of Stockholm. We'll get back to you faster than a toddler chasing a scooter (and that’s pretty fast).</p>
+  <a href="index.html">← Back to homepage</a>
+</body>
+</html>
