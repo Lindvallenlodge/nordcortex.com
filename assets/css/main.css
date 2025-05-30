@@ -3570,5 +3570,5 @@ body {
               radial-gradient(circle at 50% 80%, #ffffff 15%, transparent 50%);
   background-size: 200% 200%;
   background-repeat: no-repeat;
-  animation: randomizedBlobs 10s ease-in-out infinite;
+  animation: randomizedBlobs 20s ease-in-out infinite;
 }
