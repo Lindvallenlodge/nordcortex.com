@@ -118,6 +118,11 @@
         border-radius: 50%;
       }
     }
+    body.gallery-open main,
+    body.gallery-open header,
+    body.gallery-open footer {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -284,14 +289,17 @@
   <script src="assets/js/main.js"></script>
   <script>
     function openGallery(id) {
-      document.getElementById('gallery-' + id).style.display = 'block';
+      document.getElementById('gallery-' + id).style.display = 'grid';
+      document.body.classList.add('gallery-open');
     }
     function closeGallery(id) {
       document.getElementById('gallery-' + id).style.display = 'none';
+      document.body.classList.remove('gallery-open');
     }
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') {
         document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
+        document.body.classList.remove('gallery-open');
       }
     });
   </script>
