@@ -78,31 +78,21 @@
       display: none;
       position: fixed;
       z-index: 9999;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: white;
-      padding: 2em 1em;
-      overflow-y: auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-      gap: 1em;
-      align-content: start;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+      padding: 2em;
     }
     .gear-gallery img {
-      max-width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 4px;
-      display: block;
-      margin: 0 auto;
+      max-width: 90%;
+      margin: 1em;
     }
     .gear-gallery .close {
       position: absolute;
       top: 2em; right: 3em;
       font-size: 2em;
-      color: #000;
+      color: white;
       cursor: pointer;
     }
     .section-title {
@@ -215,7 +205,6 @@
           <h3 style="color: #000;">Strollers</h3>
           <img src="assets/images/thumbs/stroller-1.jpg" alt="Strollers" class="main-gear" onclick="openGallery('strollers')">
           <div id="gallery-strollers" class="gear-gallery">
-            <img src="assets/images/avatar.png" alt="Logo" style="max-width: 100px; margin: 0 auto 1em auto; display: block;" />
             <span class="close" onclick="closeGallery('strollers')">&times;</span>
             <img src="assets/images/fulls/stroller-1.jpg">
             <img src="assets/images/fulls/stroller-2.jpg">
@@ -228,7 +217,6 @@
           <h3 style="color: #000;">Travel Cots</h3>
           <img src="assets/images/thumbs/crib-1.jpg" alt="Travel Cots" class="main-gear" onclick="openGallery('travel-cots')">
           <div id="gallery-travel-cots" class="gear-gallery">
-            <img src="assets/images/avatar.png" alt="Logo" style="max-width: 100px; margin: 0 auto 1em auto; display: block;" />
             <span class="close" onclick="closeGallery('travel-cots')">&times;</span>
             <img src="assets/images/fulls/crib-1.jpg">
             <img src="assets/images/fulls/crib-2.jpg">
@@ -241,7 +229,6 @@
           <h3 style="color: #000;">Accessories, Books &amp; Toys</h3>
           <img src="assets/images/thumbs/accessories-1.jpg" alt="Accessories, Books & Toys" class="main-gear" onclick="openGallery('accessories')">
           <div id="gallery-accessories" class="gear-gallery">
-            <img src="assets/images/avatar.png" alt="Logo" style="max-width: 100px; margin: 0 auto 1em auto; display: block;" />
             <span class="close" onclick="closeGallery('accessories')">&times;</span>
             <img src="assets/images/fulls/accessories-1.jpg">
             <img src="assets/images/fulls/accessories-2.jpg">
@@ -254,7 +241,6 @@
           <h3 style="color: #000;">Kids Bicycles</h3>
           <img src="assets/images/thumbs/bike-1.jpg" alt="Kids Bicycles" class="main-gear" onclick="openGallery('kids-bicycles')">
           <div id="gallery-kids-bicycles" class="gear-gallery">
-            <img src="assets/images/avatar.png" alt="Logo" style="max-width: 100px; margin: 0 auto 1em auto; display: block;" />
             <span class="close" onclick="closeGallery('kids-bicycles')">&times;</span>
             <img src="assets/images/fulls/bike-1.jpg">
             <img src="assets/images/fulls/bike-2.jpg">
