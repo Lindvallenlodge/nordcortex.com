@@ -23,9 +23,12 @@
       height: 100%;
     }
     body {
-      background: linear-gradient(270deg, #ffe4f2, #d8f3ff, #ffffff, #ffe4f2);
-      background-size: 800% 800%;
-      animation: fluidGradient 20s ease infinite;
+      background: radial-gradient(circle at 20% 30%, #ffe4f2 20%, transparent 60%),
+                  radial-gradient(circle at 80% 70%, #d8f3ff 20%, transparent 60%),
+                  radial-gradient(circle at 50% 50%, #ffffff 20%, transparent 60%);
+      background-size: 400% 400%;
+      background-repeat: no-repeat;
+      animation: multiInkFlow 20s ease-in-out infinite;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 16px;
       line-height: 1.6;
@@ -37,15 +40,21 @@
       display: none;
     }
 
-    @keyframes fluidGradient {
+    @keyframes multiInkFlow {
       0% {
-        background-position: 0% 50%;
+        background-position: 20% 30%, 80% 70%, 50% 50%;
+      }
+      25% {
+        background-position: 30% 60%, 70% 40%, 45% 55%;
       }
       50% {
-        background-position: 100% 50%;
+        background-position: 80% 20%, 20% 80%, 55% 45%;
+      }
+      75% {
+        background-position: 60% 60%, 30% 30%, 60% 50%;
       }
       100% {
-        background-position: 0% 50%;
+        background-position: 20% 30%, 80% 70%, 50% 50%;
       }
     }
     /* Top Bar Styles */
