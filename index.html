@@ -1,5 +1,387 @@
-  <div style="max-width: 380px; text-align: justify; font-size: 0.62em; font-weight: 300; color: #333; margin-left: auto; margin-right: 0;">
-    <p>
-      <em>Note:</em> By clicking “Order now,” you’ll be redirected to our trusted provider profile on the Babonbo marketplace, where we securely manage all bookings.
-    </p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strollby Stockholm</title>
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    @media (max-width: 767px) {
+      .mobile-tight-spacing {
+        margin-bottom: 0.5em;
+      }
+    }
+    /* Global box model and spacing reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html {
+      scroll-padding-top: 70px; /* makes anchor targets not hidden under fixed header */
+      scroll-behavior: smooth;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+    }
+    body {
+      background: radial-gradient(circle at 25% 25%, #a7e0ff 20%, transparent 50%),
+                  radial-gradient(circle at 75% 25%, #c4f0c2 10%, transparent 50%),
+                  radial-gradient(circle at 50% 75%, #ffffff 15%, transparent 50%);
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      animation: movingBlobs 6.66s ease-in-out infinite;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      margin: 0;
+      padding-top: 0;
+      color: #000;
+    }
+    body::before {
+      display: none;
+    }
+
+    @keyframes movingBlobs {
+      0% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+      33% {
+        background-position: 30% 70%, 70% 30%, 40% 60%;
+      }
+      66% {
+        background-position: 70% 70%, 30% 30%, 60% 40%;
+      }
+      100% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+    }
+    /* Top Bar Styles */
+    #top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 60px;
+      background: transparent;
+      backdrop-filter: none;
+      box-shadow: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 1em;
+      z-index: 10000;
+    }
+    .top-bar-logo-link {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      width: 60px;
+      min-width: 60px;
+    }
+    .top-bar-logo {
+      height: 48px;
+      width: 48px;
+      object-fit: contain;
+      display: block;
+      margin: auto;
+    }
+    .order-now-btn {
+      background: #000;
+      color: #fff;
+      padding: 10px 25px;
+      border-radius: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 14px;
+      text-decoration: none;
+    }
+    .gear-gallery {
+      display: none;
+      position: fixed;
+      z-index: 9999;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.9);
+      text-align: center;
+      padding: 2em;
+    }
+    .gear-gallery img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 0.5em;
+      border-radius: 4px;
+    }
+    .gear-gallery .close {
+      position: absolute;
+      top: 2em; right: 3em;
+      font-size: 2em;
+      color: white;
+      cursor: pointer;
+    }
+    .section-title {
+      font-size: 2.5em;
+      color: #000;
+      text-align: center;
+      font-weight: 600;
+      margin-bottom: 1em;
+      letter-spacing: -0.5px;
+    }
+    .section-text {
+      color: #000;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: 700px;
+      margin: 0 auto 2em auto;
+      text-align: center;
+    }
+    @media (max-width: 767px) {
+      .logo-img {
+        max-width: 524px !important;
+        margin-top: 1em;
+        border-radius: 50%;
+      }
+    }
+    body.gallery-open main,
+    body.gallery-open header,
+    body.gallery-open footer {
+      display: none;
+    }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      padding: 24px;
+    }
+    @media (max-width: 768px) {
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .category-item {
+      text-align: center;
+    }
+
+    .category-item img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .category-item p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
+      <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</button>
+      <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank">
+        <button>Order now</button>
+      </a>
+    </div>
+    <div style="max-width: 380px; text-align: justify; font-size: 0.68em; font-weight: 300; color: #333; margin-left: auto; margin-right: 0;">
+      <p>
+        <em>Note:</em> By clicking “Order now,” you’ll be redirected to our trusted provider profile on the Babonbo marketplace, where we securely manage all bookings.
+      </p>
+    </div>
   </div>
+  <header id="header">
+    <div class="inner" style="padding-top: 0; margin-top: -80px;">
+      <a href="#" class="image avatar">
+        <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
+      </a>
+      <p class="section-text" style="max-width: 960px;">
+        From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We’re also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We’re located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
+      </p>
+    </div>
+  </header>
+
+  <main id="main">
+    <section id="intro">
+      <h2 class="section-title">Quality Gear for Little Travelers</h2>
+      <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
+      <div style="display: flex; justify-content: center;">
+        <ul class="actions" style="text-align: center;">
+          <li><a href="#gear" class="button">Explore Gear</a></li>
+          <li><a href="#about" class="button">About us</a></li>
+          <li><a href="#trust" class="button">Transparency and Trust</a></li>
+          <li><a href="#order" class="button">Order Now</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="gear">
+      <h2 class="section-title">Our Gear</h2>
+      <!-- Gear display section left unchanged -->
+      <style>
+        @media (min-width: 768px) {
+          #gear-row {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            justify-content: space-between;
+            gap: 1em;
+          }
+          #gear-row .gear-category {
+            flex: 0 0 22%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            align-self: flex-end;
+          }
+          #gear-row .gear-category img.main-gear {
+            cursor: pointer;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            margin-bottom: 0.5em;
+            transition: transform 0.3s ease;
+          }
+          #gear-row .gear-category img.main-gear:hover {
+            transform: scale(1.02);
+          }
+        }
+
+        @media (max-width: 767px) {
+          #gear-row {
+            display: block;
+            padding: 0;
+          }
+          #gear-row .gear-category {
+            width: 100%;
+            margin-bottom: 2em;
+            padding: 0;
+            text-align: center;
+          }
+          #gear-row .gear-category img.main-gear {
+            max-width: 80%;
+            height: auto;
+            margin: 0 auto 0.5em auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+          }
+          #gear-row .gear-category img.main-gear:hover {
+            transform: scale(1.02);
+          }
+        }
+      </style>
+    </section>
+
+    <section class="category-grid">
+      <div class="category-item">
+        <img src="assets/images/categories/strollers_category.png" alt="Strollers">
+        <p>Strollers</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/car_seats_category.png" alt="Car Seats">
+        <p>Car Seats</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/carriers_bouncers_category.png" alt="Carriers and Bouncers">
+        <p>Carriers & Bouncers</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/category_outwear_category.png" alt="Outwear">
+        <p>Outwear</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/gear_toys_books_category.png" alt="Toys and Books">
+        <p>Toys & Books</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/highchairs_category.png" alt="Highchairs">
+        <p>Highchairs</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/cribs_cots_category.png" alt="Cribs and Cots">
+        <p>Cribs & Cots</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/wellness_category.png" alt="Wellness">
+        <p>Wellness</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-text">Strollby Stockholm was born from the experience of traveling parents who understand the challenges of moving around with young children. We provide a premium rental service for baby and toddler gear, offering high-quality strollers, car seats, and travel cots that meet the highest safety and comfort standards. Our mission is to make your stay in Stockholm easier and more enjoyable by providing everything you need for your little ones — without the hassle of bringing your own gear.</p>
+    </section>
+
+    <section id="trust">
+      <h2 class="section-title">Transparency and Trust</h2>
+      <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers.</p>
+    </section>
+
+    <section id="order">
+      <h2 class="section-title">Order Now</h2>
+      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <div class="inner" style="margin-top: -1em;">
+      <ul class="icons mobile-tight-spacing">
+        <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+        <li><a href="mailto:hello@strollbystockholm.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+      </ul>
+    </div>
+  </footer>
+  <style>
+    @media (max-width: 767px) {
+      #footer .icons {
+        margin-bottom: 0.5em;
+      }
+    }
+  </style>
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.poptrox.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function openGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'grid';
+      document.body.classList.add('gallery-open');
+    }
+    function closeGallery(id) {
+      document.getElementById('gallery-' + id).style.display = 'none';
+      document.body.classList.remove('gallery-open');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
+        document.body.classList.remove('gallery-open');
+      }
+    });
+  </script>
+</body>
+  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto;">
+    <h2>Contact Us</h2>
+    <p class="section-text">Contact us directly by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
+    or reach us via SMS, Call, WhatsApp, or Viber at <a href="tel:+46762066128">+46 76 206 61 28</a>.</p>
+    <form action="https://formspree.io/f/mldnrgar" method="POST">
+      <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
+      
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <input type="submit" value="Send">
+    </form>
+  </section>
+</html>
