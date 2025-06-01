@@ -3487,8 +3487,8 @@ body::before {
 }
 
 body {
-  background: radial-gradient(circle at 25% 25%, #ffffff 40%, transparent 70%),
-              radial-gradient(circle at 75% 70%, #a7e0ff 30%, transparent 60%);
+  background: radial-gradient(circle at 20% 30%, #ffffff 55%, transparent 75%),
+              radial-gradient(circle at 80% 70%, #a7e0ff 25%, transparent 65%);
   background-size: 200% 200%;
   background-repeat: no-repeat;
   animation: randomizedBlobs 20s ease-in-out infinite;
