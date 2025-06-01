@@ -193,10 +193,15 @@
 </head>
 <body>
   <video autoplay muted loop playsinline id="bg-video">
-    <source src="assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-    <source src="assets/video/hero.mp4" type="video/mp4" media="(min-width: 768px)">
+    <source id="video-source" src="" type="video/mp4" />
     Your browser does not support the video tag.
   </video>
+  <script>
+    const source = document.getElementById('video-source');
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
+    source.src = isMobile ? 'assets/video/hero-mobile.mp4' : 'assets/video/hero.mp4';
+    document.getElementById('bg-video').load();
+  </script>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
       <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</button>
