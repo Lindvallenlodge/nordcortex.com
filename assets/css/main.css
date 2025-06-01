@@ -86,17 +86,11 @@ input, select, textarea {
 		background: #fff;
 	} */
 
-	body {
-	  background-color: #f7f7f7;
-	  background-image: url("../images/background.png");
-	  background-repeat: no-repeat;
-	  background-position: center center;
-	  background-attachment: fixed;
-	  background-size: cover;
-	  -webkit-backdrop-filter: blur(4px);
-	  backdrop-filter: blur(4px);
-	  overflow-x: hidden;
-	}
+body {
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  overflow-x: hidden;
+}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -3571,4 +3565,10 @@ body {
   background-size: 200% 200%;
   background-repeat: no-repeat;
   animation: randomizedBlobs 20s ease-in-out infinite;
+  padding-top: 70px !important;
+  margin: 0;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
