@@ -3532,19 +3532,19 @@ button:hover {
 /* === Randomized Color Transitions for Background === */
 @keyframes randomizedBlobs {
   0% {
-    background-position: 20% 20%, 80% 20%, 50% 80%;
+    background-position: 20% 20%, 50% 80%;
   }
   25% {
-    background-position: 80% 10%, 20% 80%, 60% 40%;
+    background-position: 80% 10%, 60% 40%;
   }
   50% {
-    background-position: 10% 90%, 90% 10%, 50% 50%;
+    background-position: 10% 90%, 50% 50%;
   }
   75% {
-    background-position: 60% 20%, 30% 70%, 80% 60%;
+    background-position: 60% 20%, 80% 60%;
   }
   100% {
-    background-position: 20% 20%, 80% 20%, 50% 80%;
+    background-position: 20% 20%, 50% 80%;
   }
 }
 
