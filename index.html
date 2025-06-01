@@ -146,6 +146,27 @@
     body.gallery-open footer {
       display: none;
     }
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 24px;
+      padding: 24px;
+    }
+
+    .category-item {
+      text-align: center;
+    }
+
+    .category-item img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .category-item p {
+      margin-top: 8px;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -273,6 +294,41 @@
           <img src="assets/icons/bicycle.svg" alt="Bicycles" width="48">
           <div>Bicycles</div>
         </div>
+      </div>
+    </section>
+
+    <section class="category-grid">
+      <div class="category-item">
+        <img src="assets/images/categories/strollers-category.png" alt="Strollers">
+        <p>Strollers</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/car-seats-category.png" alt="Car Seats">
+        <p>Car Seats</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/carriers-bouncers-category.png" alt="Carriers and Bouncers">
+        <p>Carriers & Bouncers</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/outwear-category.png" alt="Outwear">
+        <p>Outwear</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/toys-books-category.png" alt="Toys and Books">
+        <p>Toys & Books</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/highchairs-category.png" alt="Highchairs">
+        <p>Highchairs</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/cribs-cots-category.jpeg" alt="Cribs and Cots">
+        <p>Cribs & Cots</p>
+      </div>
+      <div class="category-item">
+        <img src="assets/images/categories/wellness-category.png" alt="Wellness">
+        <p>Wellness</p>
       </div>
     </section>
 
