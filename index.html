@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    @media (max-width: 767px) {
+      .mobile-tight-spacing {
+        margin-bottom: 0.5em;
+      }
+    }
     /* Global box model and spacing reset */
     * {
       margin: 0;
@@ -323,12 +328,19 @@
 
   <footer id="footer">
     <div class="inner" style="margin-top: -1em;">
-      <ul class="icons">
+      <ul class="icons mobile-tight-spacing">
         <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
         <li><a href="mailto:hello@strollbystockholm.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
       </ul>
     </div>
   </footer>
+  <style>
+    @media (max-width: 767px) {
+      #footer .icons {
+        margin-bottom: 0.5em;
+      }
+    }
+  </style>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.poptrox.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
