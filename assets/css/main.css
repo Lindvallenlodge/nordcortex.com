@@ -3562,22 +3562,19 @@ button:hover {
   background-size: cover;
   background-position: center;
   border-radius: 50%;
-  opacity: 0;
-  animation: showLogoOverlay 3s ease-in-out;
+  animation: alternateLogo 6s ease-in-out infinite;
   z-index: 2;
+  opacity: 0;
 }
 
-@keyframes showLogoOverlay {
-  0% {
+@keyframes alternateLogo {
+  0%, 100% {
     opacity: 0;
   }
-  10% {
+  25% {
     opacity: 1;
   }
-  90% {
+  75% {
     opacity: 1;
-  }
-  100% {
-    opacity: 0;
   }
 }
