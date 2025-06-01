@@ -3565,16 +3565,14 @@ button:hover {
   animation: alternateLogo 6s ease-in-out infinite;
   z-index: 2;
   opacity: 0;
+  transition: opacity 1s ease-in-out;
 }
 
 @keyframes alternateLogo {
-  0%, 100% {
+  0%, 45% {
     opacity: 0;
   }
-  25% {
-    opacity: 1;
-  }
-  75% {
+  50%, 95% {
     opacity: 1;
   }
 }
