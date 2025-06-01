@@ -16,11 +16,24 @@
       object-fit: cover;
       z-index: -1;
     }
+    #bg-video-2 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      opacity: 0.5;
+    }
     @media (max-width: 767px) {
       .mobile-tight-spacing {
         margin-bottom: 0.5em;
       }
       #bg-video {
+        object-position: 120% center;
+      }
+      #bg-video-2 {
         object-position: 120% center;
       }
     }
@@ -201,6 +214,17 @@
     const isMobile = window.matchMedia("(max-width: 767px)").matches;
     source.src = isMobile ? 'assets/video/hero-mobile.mp4' : 'assets/video/hero.mp4';
     document.getElementById('bg-video').load();
+  </script>
+  <video autoplay muted loop playsinline id="bg-video-2">
+    <source id="video-source-2" src="" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+  <script>
+    const source2 = document.getElementById('video-source-2');
+    source2.src = window.matchMedia("(max-width: 767px)").matches
+      ? 'assets/video/hero2-mobile.mp4'
+      : 'assets/video/hero2.mp4';
+    document.getElementById('bg-video-2').load();
   </script>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
