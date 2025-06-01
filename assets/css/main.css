@@ -86,11 +86,6 @@ input, select, textarea {
 		background: #fff;
 	} */
 
-body {
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-  overflow-x: hidden;
-}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 			-moz-animation: none !important;
@@ -3444,10 +3439,7 @@ body, input, select, textarea {
     padding: 4em 2em;
   }
 }
-# Ensure body always has padding for fixed nav
-body {
-  padding-top: 100px !important;
-}
+/* (removed duplicate/override body rules below) */
 
 /* === Fix for top navigation bar and eliminate beige gap === */
 html, body {
@@ -3455,11 +3447,6 @@ html, body {
   padding: 0;
   height: 100%;
   overflow-x: hidden;
-}
-
-body {
-  scroll-behavior: smooth;
-  background-attachment: fixed;
 }
 
 /* (Removed duplicate .top-nav block to avoid conflicts) */
@@ -3504,10 +3491,18 @@ body::before {
 }
 
 body {
+  background: radial-gradient(circle at 20% 20%, #a7e0ff 20%, transparent 50%),
+              radial-gradient(circle at 80% 20%, #468bb3 10%, transparent 50%),
+              radial-gradient(circle at 50% 80%, #ffffff 15%, transparent 50%);
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  animation: randomizedBlobs 20s ease-in-out infinite;
   padding-top: 70px !important;
   margin: 0;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
 }
 
 body::before {
@@ -3558,17 +3553,3 @@ button:hover {
   }
 }
 
-body {
-  background: radial-gradient(circle at 20% 20%, #a7e0ff 20%, transparent 50%),
-              radial-gradient(circle at 80% 20%, #468bb3 10%, transparent 50%),
-              radial-gradient(circle at 50% 80%, #ffffff 15%, transparent 50%);
-  background-size: 200% 200%;
-  background-repeat: no-repeat;
-  animation: randomizedBlobs 20s ease-in-out infinite;
-  padding-top: 70px !important;
-  margin: 0;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-}
