@@ -201,37 +201,15 @@
       margin-top: 8px;
       font-weight: bold;
     }
-
-    .background-video-container {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-    }
-
-    .section-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      animation: bounce 8s ease-in-out infinite alternate;
-    }
-
-    @keyframes bounce {
-      0%   { transform: scale(1); }
-      100% { transform: scale(1.02); }
-    }
-
-    section, header, footer {
-      position: relative;
-      z-index: 1;
-    }
   </style>
 </head>
 <body>
+  <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; overflow: hidden;">
+    <video autoplay muted loop playsinline style="min-width: 100vw; min-height: 100vh; object-fit: cover;">
+      <source src="assets/video/background-video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
   <div id="video-overlay"></div>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
@@ -240,12 +218,6 @@
         <button>Order now</button>
       </a>
     </div>
-  </div>
-
-  <div class="background-video-container">
-    <video class="section-video" autoplay muted loop playsinline>
-      <source src="assets/video/section_1.mp4" type="video/mp4" />
-    </video>
   </div>
   <header id="header">
     <div class="inner" style="padding-top: 0; margin-top: -80px;">
@@ -259,11 +231,6 @@
     </div>
   </header>
 
-  <div class="background-video-container">
-    <video class="section-video" autoplay muted loop playsinline>
-      <source src="assets/video/section_2.mp4" type="video/mp4" />
-    </video>
-  </div>
   <main id="main">
     <section id="intro">
       <h2 class="section-title">Quality Gear for Little Travelers</h2>
@@ -278,11 +245,6 @@
       </div>
     </section>
 
-    <div class="background-video-container">
-      <video class="section-video" autoplay muted loop playsinline>
-        <source src="assets/video/section_3.mp4" type="video/mp4" />
-      </video>
-    </div>
     <section id="gear">
       <h2 class="section-title">Our Gear</h2>
       <!-- Gear display section left unchanged -->
@@ -376,61 +338,21 @@
       </div>
     </section>
 
-    <div class="background-video-container">
-      <video class="section-video" autoplay muted loop playsinline>
-        <source src="assets/video/section_4.mp4" type="video/mp4" />
-      </video>
-    </div>
     <section id="about">
       <h2 class="section-title">About Us</h2>
       <p class="section-text">Strollby Stockholm was born from the experience of traveling parents who understand the challenges of moving around with young children. We provide a premium rental service for baby and toddler gear, offering high-quality strollers, car seats, and travel cots that meet the highest safety and comfort standards. Our mission is to make your stay in Stockholm easier and more enjoyable by providing everything you need for your little ones — without the hassle of bringing your own gear.</p>
     </section>
 
-    <div class="background-video-container">
-      <video class="section-video" autoplay muted loop playsinline>
-        <source src="assets/video/section_5.mp4" type="video/mp4" />
-      </video>
-    </div>
     <section id="trust">
       <h2 class="section-title">Transparency and Trust</h2>
       <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers.</p>
     </section>
 
-    <div class="background-video-container">
-      <video class="section-video" autoplay muted loop playsinline>
-        <source src="assets/video/section_6.mp4" type="video/mp4" />
-      </video>
-    </div>
     <section id="order">
       <h2 class="section-title">Order Now</h2>
       <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
   </main>
-
-  <div class="background-video-container">
-    <video class="section-video" autoplay muted loop playsinline>
-      <source src="assets/video/section_7.mp4" type="video/mp4" />
-    </video>
-  </div>
-  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto;">
-    <h2>Contact Us</h2>
-    <p class="section-text">Contact us directly by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
-    or reach us via SMS, Call, WhatsApp, or Viber at <a href="tel:+46762066128">+46 76 206 61 28</a>.</p>
-    <form action="https://formspree.io/f/mldnrgar" method="POST">
-      <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
-      
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
-
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
-
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
-      <input type="submit" value="Send">
-    </form>
-  </section>
 
   <footer id="footer">
     <div class="inner" style="margin-top: -1em;">
@@ -470,4 +392,23 @@
     });
   </script>
 </body>
+  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto;">
+    <h2>Contact Us</h2>
+    <p class="section-text">Contact us directly by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
+    or reach us via SMS, Call, WhatsApp, or Viber at <a href="tel:+46762066128">+46 76 206 61 28</a>.</p>
+    <form action="https://formspree.io/f/mldnrgar" method="POST">
+      <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
+      
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name" required><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email" required><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+      <input type="submit" value="Send">
+    </form>
+  </section>
 </html>
