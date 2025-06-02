@@ -3557,3 +3557,27 @@ button:hover {
   border-radius: 50%;
   overflow: hidden;
 }
+
+/* === Panoramic Background Video Fullscreen Style === */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Optional: Add overlay for readability */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.3); /* Adjust opacity as needed */
+  z-index: -1;
+}
