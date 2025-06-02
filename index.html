@@ -207,7 +207,7 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline id="video-bg-1-desktop" class="desktop-only" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
+  <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();" id="video-bg-1-desktop" class="desktop-only" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-desktop.mp4" type="video/mp4">
   </video>
   <video autoplay muted loop playsinline id="video-bg-2-desktop" class="desktop-only" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
