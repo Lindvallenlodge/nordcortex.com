@@ -216,9 +216,6 @@
         </ul>
       </div>
     </section>
-    <video autoplay muted loop playsinline id="video-bg-2" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
-      <source src="assets/videos/section_2.mp4" type="video/mp4">
-    </video>
 
     <section id="gear">
       <h2 class="section-title">Our Gear</h2>
@@ -327,6 +324,18 @@
       <h2 class="section-title">Order Now</h2>
       <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
+    <!-- Background videos for both sections, placed after main content blocks -->
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2; overflow: hidden;">
+      <video autoplay muted loop playsinline style="width: 100vw; height: 100vh; object-fit: cover;">
+        <source src="assets/video/background-video.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div style="position: absolute; top: 100vh; left: 0; width: 100%; height: 100vh; z-index: -2; overflow: hidden;">
+      <video autoplay muted loop playsinline style="width: 100vw; height: 100vh; object-fit: cover;">
+        <source src="assets/video/section_2.mp4" type="video/mp4">
+      </video>
+    </div>
   </main>
 
   <footer id="footer">
