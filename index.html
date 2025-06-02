@@ -199,27 +199,6 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline id="bg-video">
-    <source id="video-source" src="" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <script>
-    const source = document.getElementById('video-source');
-    const isMobile = window.matchMedia("(max-width: 767px)").matches;
-    const mainVideo = document.getElementById('bg-video');
-    source.src = isMobile ? 'assets/video/hero-mobile.mp4' : 'assets/video/hero.mp4';
-    mainVideo.load();
-    mainVideo.onloadedmetadata = () => {
-      mainVideo.playbackRate = 0.7;
-    };
-
-    document.addEventListener("DOMContentLoaded", () => {
-      const secondVideo = document.getElementById('bg-video-2');
-      if (secondVideo) {
-        secondVideo.playbackRate = 0.7;
-      }
-    });
-  </script>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
       <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</button>
@@ -242,13 +221,6 @@
     </div>
   </header>
 
-  <section id="second-video-section" style="height: 100vh; margin: 0; padding: 0;">
-    <video autoplay muted loop playsinline id="bg-video-2" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -1;">
-      <source src="assets/video/hero2.mp4" type="video/mp4" media="(min-width: 768px)">
-      <source src="assets/video/hero2-mobile.mp4" type="video/mp4" media="(max-width: 767px)">
-      Your browser does not support the video tag.
-    </video>
-  </section>
 
   <main id="main">
     <section id="intro" style="margin-top: -100vh;">
