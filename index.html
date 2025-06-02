@@ -7,6 +7,21 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    @media (min-width: 768px) {
+      .video-bottom-fade-desktop {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 80px;
+        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+        z-index: -1;
+        pointer-events: none;
+      }
+      #gear h2.section-title {
+        margin-top: 1cm;
+      }
+    }
     @keyframes bounceLoop {
       0%, 100% {
         transform: translateY(0);
@@ -225,6 +240,7 @@
   <video autoplay muted loop playsinline id="video-bg-2-desktop" class="desktop-only" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-2-desktop.mp4" type="video/mp4">
   </video>
+  <div class="video-bottom-fade-desktop"></div>
   <video autoplay muted loop playsinline id="video-bg-1-mobile" class="mobile-only" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-mobile.mp4" type="video/mp4">
   </video>
@@ -269,9 +285,7 @@
     </section>
 
     <section id="gear">
-      <div class="intro-blur-bg">
-        <h2 class="section-title" style="margin-bottom: 0;">Our Gear</h2>
-      </div>
+      <h2 class="section-title" style="margin: 1cm auto 0 auto;">Our Gear</h2>
       <!-- Gear display section left unchanged -->
       <style>
         @media (min-width: 768px) {
