@@ -17,50 +17,6 @@
       object-fit: cover;
     }
 
-    /* Video Sections for scroll-sync simulation */
-    #video-sections {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100%;
-      z-index: -2;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .video-section {
-      position: absolute;
-      width: 100vw;
-      height: 100vh;
-      top: 0;
-      left: 0;
-      background: black;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      will-change: transform;
-    }
-
-    .video-section::before {
-      content: "";
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: -1;
-      background: url('assets/video/background-video.mp4') center center no-repeat;
-      background-size: cover;
-      animation: scrollVideo 100s linear infinite;
-    }
-
-    @keyframes scrollVideo {
-      0% { transform: translateY(0); }
-      100% { transform: translateY(-700vh); }
-    }
-
     body {
       position: relative;
     }
@@ -248,18 +204,11 @@
   </style>
 </head>
 <body>
-  <!--
-    This layout visually simulates multiple scroll-synced video sections by looping the video and visually adjusting the vertical scrolling effect using keyframes.
-    If actual timed scrub control is required, a more advanced JavaScript solution with a video.currentTime mapping to scroll position is recommended.
-  -->
-  <div id="video-sections">
-    <div class="video-section" style="--start: 0;"></div>
-    <div class="video-section" style="--start: 14.2;"></div>
-    <div class="video-section" style="--start: 28.4;"></div>
-    <div class="video-section" style="--start: 42.6;"></div>
-    <div class="video-section" style="--start: 56.8;"></div>
-    <div class="video-section" style="--start: 71;"></div>
-    <div class="video-section" style="--start: 85.2;"></div>
+  <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; overflow: hidden;">
+    <video autoplay muted loop playsinline style="min-width: 100vw; min-height: 100vh; object-fit: cover;">
+      <source src="assets/video/background-video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
   </div>
   <div id="video-overlay"></div>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
