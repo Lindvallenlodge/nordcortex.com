@@ -319,6 +319,14 @@
           #gear-row .gear-category img.main-gear:hover {
             transform: scale(1.02);
           }
+          /* Remove horizontal line near Our Gear heading on desktop */
+          #gear .desktop-only hr,
+          #gear .desktop-only .horizontal-line,
+          #gear .desktop-only [style*="border-top"],
+          #gear .desktop-only [style*="border-bottom"] {
+            display: none !important;
+            border: none !important;
+          }
         }
 
         @media (max-width: 767px) {
