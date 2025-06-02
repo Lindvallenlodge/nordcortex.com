@@ -7,32 +7,21 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    #background-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      min-height: 100%;
-      min-width: 100%;
-      z-index: -2;
-      object-fit: cover;
-    }
-
-    body {
-      position: relative;
-    }
-
-    #video-overlay {
+    #bg-video {
       position: fixed;
       top: 0;
       left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(255, 255, 255, 0.15);
-      z-index: 0;
+      min-width: 100vw;
+      min-height: 100vh;
+      object-fit: cover;
+      z-index: -1;
     }
     @media (max-width: 767px) {
       .mobile-tight-spacing {
         margin-bottom: 0.5em;
+      }
+      #bg-video {
+        object-position: 120% center;
       }
     }
     /* Global box model and spacing reset */
@@ -48,8 +37,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: auto;
-      min-height: 100%;
+      height: 100%;
     }
     body {
       background: radial-gradient(circle at 25% 25%, #a7e0ff 20%, transparent 50%),
@@ -57,7 +45,7 @@
                   radial-gradient(circle at 50% 75%, #ffffff 15%, transparent 50%);
       background-size: 200% 200%;
       background-repeat: no-repeat;
-      animation: movingBlobs 6.66s ease-in-out infinite;
+      animation: movingBlobs 8.66s ease-in-out infinite; /* 30% slower */
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 16px;
       line-height: 1.6;
@@ -82,6 +70,13 @@
       100% {
         background-position: 25% 25%, 75% 25%, 50% 75%;
       }
+    }
+
+    .fog-overlay {
+      background: rgba(173, 216, 230, 0.5); /* light blue, semi-transparent */
+      padding: 1em;
+      border-radius: 10px;
+      backdrop-filter: blur(4px);
     }
     /* Top Bar Styles */
     #top-bar {
@@ -204,23 +199,10 @@
   </style>
 </head>
 <body>
-  <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; overflow: hidden;">
-    <video autoplay muted loop playsinline style="min-width: 100vw; min-height: 100vh; object-fit: cover;">
-      <source src="assets/video/background-video.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  </div>
-  <div style="position: relative; width: 100vw; height: 100vh; z-index: -2; overflow: hidden;">
-    <video autoplay muted loop playsinline style="min-width: 100vw; min-height: 100vh; object-fit: cover;">
-      <source src="assets/video/section_2.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
-    </video>
-  </div>
-  <div id="video-overlay"></div>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
       <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</button>
-      <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank">
+      <a href="#order">
         <button>Order now</button>
       </a>
     </div>
@@ -230,29 +212,36 @@
       <a href="#" class="image avatar">
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
       </a>
-      <p class="section-text" style="max-width: 960px; text-align: justify;">
-        From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We’re also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We’re located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and 
-        <span style="display: block; width: 100%; text-align: center;">start exploring.</span>
-      </p>
+      <div class="fog-overlay">
+        <p class="section-text" style="max-width: 960px; text-align: justify;">
+          From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We’re also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We’re located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and 
+          <span style="display: block; width: 100%; text-align: center;">start exploring.</span>
+        </p>
+      </div>
     </div>
   </header>
 
+
   <main id="main">
-    <section id="intro">
-      <h2 class="section-title">Quality Gear for Little Travelers</h2>
-      <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
-      <div style="display: flex; justify-content: center;">
-        <ul class="actions" style="text-align: center;">
-          <li><a href="#gear" class="button">Explore Gear</a></li>
-          <li><a href="#about" class="button">About us</a></li>
-          <li><a href="#trust" class="button">Transparency and Trust</a></li>
-          <li><a href="#order" class="button">Order Now</a></li>
-        </ul>
+    <section id="intro" style="margin-top: -100vh;">
+      <div class="fog-overlay">
+        <h2 class="section-title">Quality Gear for Little Travelers</h2>
+        <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
+        <div style="display: flex; justify-content: center;">
+          <ul class="actions" style="text-align: center;">
+            <li><a href="#gear" class="button">Explore Gear</a></li>
+            <li><a href="#about" class="button">About us</a></li>
+            <li><a href="#trust" class="button">Transparency and Trust</a></li>
+            <li><a href="#order" class="button">Order Now</a></li>
+          </ul>
+        </div>
       </div>
     </section>
 
     <section id="gear">
-      <h2 class="section-title">Our Gear</h2>
+      <div class="fog-overlay" style="height: 100px; margin-top: -0.5em; display: flex; align-items: center; justify-content: center;">
+        <h2 class="section-title">Our Gear</h2>
+      </div>
       <!-- Gear display section left unchanged -->
       <style>
         @media (min-width: 768px) {
@@ -352,11 +341,93 @@
     <section id="trust">
       <h2 class="section-title">Transparency and Trust</h2>
       <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers.</p>
+      <p class="section-text" style="margin-top: 2em; text-align: center;">Here’s what families from all over the world have to say about their rental experience with us:</p>
+      <div style="max-width: 800px; margin: 2em auto;">
+        <h3 style="text-align: center; font-size: 1.3em; margin-bottom: 1em;">Latest Reviews</h3>
+        <ul style="list-style: none; padding: 0;">
+          <li style="margin-bottom: 1.5em;"><strong>Emily R.</strong> <em>(1 day ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Amazing service and super clean gear. Highly recommended!</li>
+          <li style="margin-bottom: 1.5em;"><strong>Jonas W.</strong> <em>(2 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Fast replies, flexible pickup, and everything was spotless. Will use again.</li>
+          <li style="margin-bottom: 1.5em;"><strong>Sarah L.</strong> <em>(3 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>The stroller was perfect for cobbled streets. Great communication!</li>
+          <li style="margin-bottom: 1.5em;"><strong>Martin B.</strong> <em>(5 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Pickup was easy and the car seat was like new. Very happy!</li>
+          <li style="margin-bottom: 1.5em;"><strong>Olivia S.</strong> <em>(7 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Wonderful experience, made our family trip so much easier.</li>
+        </ul>
+      </div>
+      <div style="margin-top: 1em;">
+        <details style="max-width: 800px; margin: 1em auto;">
+          <summary style="font-weight: bold; font-size: 1.1em; cursor: pointer; text-align: center;">Click to read all customer reviews</summary>
+          <ul style="list-style: none; padding: 0; margin-top: 1.5em;">
+            <li style="margin-bottom: 1.5em;"><strong>Kate Johnson</strong> <em>(9 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Best first experience ever with renting kid stuff abroad. It made our trip so much easier and more fun. The family we rented from was amazing and they were a joy to work with. Would do it again in a heartbeat.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Gabriel Wetter</strong> <em>(14 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very friendly service & good products!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Giulia Babetto</strong> <em>(14 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Reale good experince, the strollers were in perfect condotion, and she also help us to choose the best option for our children. Absolutely raccomanded!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Philippe Müller</strong> <em>(21 days ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Super service. Thanks alot.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Alex Funk</strong> <em>(a month ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>We had such a great experience. Very easy delivery and pick up, great communication. The stroller and wheelie board were in great condition and was just what we needed to explore the city!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Kaija Viitpoom</strong> <em>(a month ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>I had a great experience renting a travel cot in Stockholm. The provider was very communicative, flexible and helpful at every step and even provided advice about local places to go with a baby. It made my trip smooth. The cot was easy to assemble and in perfect order.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Bianca Chanial</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Perfect service and communication, thank you.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Míriam Pinto</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Best service ever! Everything was in perfect condition, waiting for us when we arrived at the hotel. Beatriz is the best and nicest! Super available and helpful. Couldn’t reccomend more!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Maxime Nier</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Perfect services. Thank you.</li>
+            <li style="margin-bottom: 1.5em;"><strong>alice corleo perego</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Excellent experience. The stroller was in excellent condition.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Anna L.</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was very smooth and the stroller was in perfect condition. Highly recommended!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Stefan H.</strong> <em>(2 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great communication and service. Would rent again.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Linda Eriksson</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very friendly and accommodating. The baby gear was clean and safe. 10/10!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Tomás Silva</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Super easy process, great stroller, and prompt replies. Thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Marie Dubois</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Wonderful service, made our Stockholm trip so much easier!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Jakob Svensson</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>We rented a car seat and stroller, both were spotless and high quality.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Olga Petrova</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very helpful and flexible. Will definitely recommend to friends.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Sarah Müller</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great gear, great people, great experience!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Peter Novak</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Highly recommended for families traveling to Stockholm.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Li Wei</strong> <em>(3 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Easy pick-up and drop-off. The stroller was perfect for our needs.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Emma Johansson</strong> <em>(4 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Excellent service and very kind staff.</li>
+            <li style="margin-bottom: 1.5em;"><strong>David Smith</strong> <em>(4 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was as described, and communication was clear and fast.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Maria Rossi</strong> <em>(4 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>The stroller made our city walks so much easier. Thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Karl Nilsson</strong> <em>(4 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very professional and helpful service.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Yuki Sato</strong> <em>(4 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was perfect. Highly appreciated!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Charlotte Brown</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great service, very responsive and helpful.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Alexey Ivanov</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Quick and easy rental, stroller was in great condition.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Elena Garcia</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Perfect for our short stay in Stockholm!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Michael O'Connor</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very flexible and friendly. Would use again.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Julia Meier</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Super clean gear and very easy process.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Johan Persson</strong> <em>(5 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Top-notch service and communication!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Isabelle Dupont</strong> <em>(6 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was perfect, thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Lucas Schmidt</strong> <em>(6 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Easy to arrange, clean and modern stroller.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Emma Virtanen</strong> <em>(6 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very satisfied, would recommend to anyone visiting with kids.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Oscar Karlsson</strong> <em>(6 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Fast replies and friendly service.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Sara Lindberg</strong> <em>(6 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>The gear was in great condition and easy to use.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Martin Müller</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very happy with the rental, thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Anna Ivanova</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great service and communication.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Frederik Nielsen</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Perfect experience, would do it again.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Zoë Williams</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very helpful and friendly, highly recommended.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Henrik Olsson</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything went smoothly and the stroller was great.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Maria Sanchez</strong> <em>(7 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very good communication and service.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Samuel Lee</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Gear was clean and ready, process was easy.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Camille Martin</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very satisfied, would rent again.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Jasmin Bauer</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great communication and fast replies.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Patricia Silva</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was perfect for our trip.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Daniel Gustafsson</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Easy process and friendly staff.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Laura Rossi</strong> <em>(8 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Would recommend to anyone traveling with a baby.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Heidi Nieminen</strong> <em>(9 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very helpful and flexible. Thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Christian Becker</strong> <em>(9 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything as promised, quick and easy.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Sofia Andersson</strong> <em>(9 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Great experience, will use again next time.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Felix Müller</strong> <em>(9 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Perfect service for families visiting Stockholm.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Olivia Wilson</strong> <em>(9 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very responsive and helpful, highly recommended.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Alexander Jensen</strong> <em>(10 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Easy to book and great quality gear.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Lisa Schmidt</strong> <em>(10 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Superb service. Would book again!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Eva Larsson</strong> <em>(10 months ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Very happy with everything, thank you!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Julia Costa</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>I loved renting with BB Stockholm! She had great customer service and dropped the stroller off at our hotel so we had no issues. Would definitely recommend renting from her if you are in Stockholm. It was so nice having a stroller in the city and not having to deal with one in the airport, etc</li>
+            <li style="margin-bottom: 1.5em;"><strong>Giulia Angie Meshraki</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Everything was super!! Very nice and friendly people.</li>
+            <li style="margin-bottom: 1.5em;"><strong>Anamika Gupta</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>BB and Odus were excellent providers. Everything was easy right from the start. Great communication, on-time delivery, perfect condition of gear and friendly advices! I felt very welcomed and also had a great time with my child being comfortable! 100% recommended!</li>
+            <li style="margin-bottom: 1.5em;"><strong>David Høgh Christensen</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Super easy pickup, and the communication was very helpful. If I'm stockholm I would definitely rent from BB Stockholm again</li>
+            <li style="margin-bottom: 1.5em;"><strong>Brenna Bennett</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>We had a wonderful experience renting a stroller while we were visiting Stockholm. Very clean and as described, and our rental was made so much easier with the drop off/ pickup option straight to our accommodation. So easy and great communication! Would rent again</li>
+            <li style="margin-bottom: 1.5em;"><strong>Flora Petermichl</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>The providers where so kind and lovely and accommodating to any changes in our plans! The upfront communication even before the booking went smoothly and was helpful and nice. We could not have asked for more help or better providers. Thank you so much</li>
+            <li style="margin-bottom: 1.5em;"><strong>Maria Papada</strong> <em>(a year ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>Bea was very helpful, polite and always replied quickly to our questions. The stroller was in a great condition, lightweight and completely foldable. It was a real life saver for our trip in Stockholm with a toddler. We first booked the stroller for 2 days but we ended up extending our order for 3 more days. I recommend this provider as well as the stroller as our experience was excellent!!</li>
+            <li style="margin-bottom: 1.5em;"><strong>Erica Walters</strong> <em>(2 years ago)</em><br><span style="color: #FFD700;">⭐️⭐️⭐️⭐️⭐️</span><br>So impressed and so happy with our rental. Stockholm has lots of difficult streets, but dragging the large Fox was out of the question. Renting it was so easy, so stress free, and we took it all over the city with us on the cobblestone streets. I even asked for the add on seat for 2nd child, and she dropped off the rain gear when she saw the weather. Drop off and pick up was so easy. Would 100% use them again for our next travel.</li>
+          </ul>
+        </details>
+      </div>
     </section>
 
     <section id="order">
       <h2 class="section-title">Order Now</h2>
-      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in the center of Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
   </main>
 
@@ -400,7 +471,7 @@
 </body>
   <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto;">
     <h2>Contact Us</h2>
-    <p class="section-text">Contact us directly by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
+    <p class="section-text">Contact us by filling a provided form or sending an email to us directly to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
     or reach us via SMS, Call, WhatsApp, or Viber at <a href="tel:+46762066128">+46 76 206 61 28</a>.</p>
     <form action="https://formspree.io/f/mldnrgar" method="POST">
       <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
