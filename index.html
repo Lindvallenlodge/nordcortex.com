@@ -7,6 +7,22 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    .section-video-background {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -2;
+    }
+    .section-video-background video {
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+    }
+    section {
+      position: relative;
+      z-index: 1;
+    }
     #background-video {
       position: absolute;
       top: 0;
@@ -204,10 +220,10 @@
   </style>
 </head>
 <body>
-  <div style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -2; overflow: hidden;">
-    <video autoplay muted loop playsinline style="min-width: 100vw; min-height: 100vh; object-fit: cover;">
-      <source src="assets/video/background-video.mp4" type="video/mp4">
-      Your browser does not support HTML5 video.
+  <!-- Section 1 video background for header -->
+  <div class="section-video-background">
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/section_1.mp4" type="video/mp4" />
     </video>
   </div>
   <div id="video-overlay"></div>
@@ -220,6 +236,12 @@
     </div>
   </div>
   <header id="header">
+    <!-- Section 2 video background for intro -->
+    <div class="section-video-background">
+      <video autoplay muted loop playsinline>
+        <source src="assets/video/section_2.mp4" type="video/mp4" />
+      </video>
+    </div>
     <div class="inner" style="padding-top: 0; margin-top: -80px;">
       <a href="#" class="image avatar">
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
@@ -233,6 +255,12 @@
 
   <main id="main">
     <section id="intro">
+      <!-- Section 3 video background for gear -->
+      <div class="section-video-background">
+        <video autoplay muted loop playsinline>
+          <source src="assets/video/section_3.mp4" type="video/mp4" />
+        </video>
+      </div>
       <h2 class="section-title">Quality Gear for Little Travelers</h2>
       <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
       <div style="display: flex; justify-content: center;">
@@ -304,6 +332,12 @@
     </section>
 
     <section class="category-grid">
+      <!-- Section 4 video background for about -->
+      <div class="section-video-background">
+        <video autoplay muted loop playsinline>
+          <source src="assets/video/section_4.mp4" type="video/mp4" />
+        </video>
+      </div>
       <div class="category-item">
         <img src="assets/images/categories/strollers_category.png" alt="Strollers">
         <p>Strollers</p>
@@ -339,16 +373,34 @@
     </section>
 
     <section id="about">
+      <!-- Section 5 video background for trust -->
+      <div class="section-video-background">
+        <video autoplay muted loop playsinline>
+          <source src="assets/video/section_5.mp4" type="video/mp4" />
+        </video>
+      </div>
       <h2 class="section-title">About Us</h2>
       <p class="section-text">Strollby Stockholm was born from the experience of traveling parents who understand the challenges of moving around with young children. We provide a premium rental service for baby and toddler gear, offering high-quality strollers, car seats, and travel cots that meet the highest safety and comfort standards. Our mission is to make your stay in Stockholm easier and more enjoyable by providing everything you need for your little ones — without the hassle of bringing your own gear.</p>
     </section>
 
     <section id="trust">
+      <!-- Section 6 video background for order -->
+      <div class="section-video-background">
+        <video autoplay muted loop playsinline>
+          <source src="assets/video/section_6.mp4" type="video/mp4" />
+        </video>
+      </div>
       <h2 class="section-title">Transparency and Trust</h2>
       <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers.</p>
     </section>
 
     <section id="order">
+  <!-- Section 7 video background for contact-form -->
+  <div class="section-video-background">
+    <video autoplay muted loop playsinline>
+      <source src="assets/video/section_7.mp4" type="video/mp4" />
+    </video>
+  </div>
       <h2 class="section-title">Order Now</h2>
       <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
