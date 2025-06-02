@@ -7,6 +7,11 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    @keyframes bounce {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
     @media (max-width: 767px) {
       .mobile-tight-spacing {
         margin-bottom: 0.5em;
@@ -324,18 +329,6 @@
       <h2 class="section-title">Order Now</h2>
       <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
-    <!-- Background videos for both sections, placed after main content blocks -->
-    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100vh; z-index: -2; overflow: hidden;">
-      <video autoplay muted loop playsinline style="width: 100vw; height: 100vh; object-fit: cover;">
-        <source src="assets/video/background-video.mp4" type="video/mp4">
-      </video>
-    </div>
-
-    <div style="position: absolute; top: 100vh; left: 0; width: 100%; height: 100vh; z-index: -2; overflow: hidden;">
-      <video autoplay muted loop playsinline style="width: 100vw; height: 100vh; object-fit: cover;">
-        <source src="assets/video/section_2.mp4" type="video/mp4">
-      </video>
-    </div>
   </main>
 
   <footer id="footer">
