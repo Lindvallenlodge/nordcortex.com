@@ -74,6 +74,13 @@
       height: 100%;
     }
     body {
+      background: radial-gradient(circle at 25% 25%, #a7e0ff 20%, transparent 50%),
+                  radial-gradient(circle at 75% 25%, #c4f0c2 10%, transparent 50%),
+                  radial-gradient(circle at 50% 75%, #ffffff 15%, transparent 50%),
+                  radial-gradient(circle at 15% 50%, #a7e0ff 10%, transparent 50%);
+      background-size: 200% 200%;
+      background-repeat: no-repeat;
+      animation: movingBlobs 6.66s ease-in-out infinite;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 16px;
       line-height: 1.6;
@@ -85,6 +92,20 @@
       display: none;
     }
 
+    @keyframes movingBlobs {
+      0% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+      33% {
+        background-position: 30% 70%, 70% 30%, 40% 60%;
+      }
+      66% {
+        background-position: 70% 70%, 30% 30%, 60% 40%;
+      }
+      100% {
+        background-position: 25% 25%, 75% 25%, 50% 75%;
+      }
+    }
     /* Top Bar Styles */
     #top-bar {
       position: fixed;
