@@ -7,41 +7,6 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-  #sticky-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    z-index: 10001;
-    padding: 0.5em 1em;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-
-  .sticky-inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 960px;
-    margin: 0 auto;
-  }
-
-  .sticky-nav a {
-    margin-left: 1em;
-    text-decoration: none;
-    font-weight: 600;
-    color: #000;
-  }
-
-  .sticky-nav .order-now-btn {
-    background: #000;
-    color: #fff;
-    padding: 0.5em 1em;
-    border-radius: 4px;
-    font-size: 0.9em;
-    margin-left: 1em;
-  }
     @media (min-width: 768px) {
       .video-bottom-fade-desktop {
         position: fixed;
@@ -269,18 +234,6 @@
   </style>
 </head>
 <body>
-  <header id="sticky-header">
-    <div class="sticky-inner">
-      <a href="#" class="logo">Strollby Stockholm</a>
-      <nav class="sticky-nav">
-        <a href="#gear">Gear</a>
-        <a href="#about">About</a>
-        <a href="#trust">Trust</a>
-        <a href="#order">Order</a>
-        <a href="#contact-form" class="order-now-btn">Order Now</a>
-      </nav>
-    </div>
-  </header>
   <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();" id="video-bg-1-desktop" class="desktop-only bouncing-video" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-desktop.mp4" type="video/mp4">
   </video>
