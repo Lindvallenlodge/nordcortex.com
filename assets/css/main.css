@@ -3679,3 +3679,49 @@ button:hover {
 .sticky-header nav a.order-button:hover {
   background-color: #0056b3;
 }
+/* === Custom Sticky Header Styles (from prompt) === */
+.sticky-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 9999;
+  padding: 10px 20px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+  text-decoration: none;
+}
+
+.nav-links a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.order-button {
+  padding: 8px 16px;
+  background-color: #0074D9;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+body {
+  padding-top: 70px; /* Adjust based on actual header height */
+}
