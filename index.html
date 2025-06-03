@@ -426,23 +426,25 @@
     });
   </script>
 </body>
-  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto;">
+  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto; text-align: left;">
     <h2>Contact Us</h2>
-    <p class="section-text">Contact us directly by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
-    or reach us via SMS, Call, WhatsApp, or Viber at <a href="tel:+46762066128">+46 76 206 61 28</a>.</p>
-    <form action="https://formspree.io/f/mldnrgar" method="POST">
+    <p class="section-text" style="text-align: left;">
+      Contact us by filling out the form below or by sending an email to <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
+      You can also reach us via Call, SMS, or WhatsApp at <a href="tel:+46767667055">+46 76 766 70 55</a>.
+    </p>
+    <form action="https://formspree.io/f/mldnrgar" method="POST" style="text-align: left;">
       <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
-      
+
       <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required><br><br>
+      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5em;"><br><br>
 
       <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required><br><br>
+      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5em;"><br><br>
 
       <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required></textarea><br><br>
+      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.5em;"></textarea><br><br>
 
-      <input type="submit" value="Send">
+      <input type="submit" value="Send" style="padding: 0.5em 1em; font-weight: bold;">
     </form>
   </section>
 </html>
