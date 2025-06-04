@@ -1,6 +1,80 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
 
+/* Dynamic Background Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Reset and base styles */
+html, body, div, span, applet, object,
+iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite,
+code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b,
+u, i, center, dl, dt, dd, ol, ul, li, fieldset,
+form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside,
+canvas, details, embed, figure, figcaption,
+footer, header, hgroup, menu, nav, output, ruby,
+section, summary, time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* Base styles with animated background */
+body {
+    line-height: 1.6;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    color: #000;
+    background: linear-gradient(
+        -45deg,
+        rgba(173, 216, 230, 0.7),
+        rgba(255, 255, 255, 0.7),
+        rgba(144, 238, 144, 0.7),
+        rgba(255, 255, 255, 0.7)
+    ) !important;
+    background-size: 400% 400% !important;
+    animation: gradientAnimation 15s ease infinite !important;
+}
+
+/* Remove default body::before background */
+body::before {
+    display: none;
+}
+
+/* Main content area */
+#main {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* Header styles */
+#header {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
+
 /*
 	Strata by HTML5 UP
 	html5up.net | @ajlkn
@@ -3611,3 +3685,56 @@ button:hover {
   }
 }
 # Remove sticky header and top bar styles (reverted)
+
+/* Dynamic Background Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000;
+    background: linear-gradient(
+        -45deg,
+        rgba(173, 216, 230, 0.7),  /* light blue */
+        rgba(255, 255, 255, 0.7),   /* white */
+        rgba(144, 238, 144, 0.7),   /* light green */
+        rgba(255, 255, 255, 0.7)    /* white */
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+body::before {
+    content: none;
+}
+
+/* Ensure content is readable on the animated background */
+#main {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+}
+
+#header {
+    position: relative;
+    z-index: 2;
+    background: transparent;
+}
