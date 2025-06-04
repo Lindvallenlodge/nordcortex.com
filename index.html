@@ -195,17 +195,32 @@
 
     .category-item {
       text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .category-item:hover {
+      transform: scale(1.05);
     }
 
     .category-item img {
       width: 100%;
-      border-radius: 8px;
-      object-fit: cover;
+      max-width: 150px;
+      height: auto;
+      object-fit: contain;
+      margin-bottom: 15px;
+      transition: opacity 0.3s ease;
+    }
+
+    .category-item:hover img {
+      opacity: 0.8;
     }
 
     .category-item p {
       margin-top: 8px;
       font-weight: bold;
+      color: #000;
+      font-size: 1.1em;
     }
     .intro-blur-bg {
       background: rgba(200, 225, 255, 0.4); /* increased opacity from 0.25 to 0.4 */
@@ -221,16 +236,10 @@
   <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();" id="video-bg-1-desktop" class="desktop-only bouncing-video" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-desktop.mp4" type="video/mp4">
   </video>
-  <video autoplay muted loop playsinline id="video-bg-2-desktop" class="desktop-only" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
-    <source src="assets/videos/background-video-2-desktop.mp4" type="video/mp4">
-  </video>
-  <div class="video-bottom-fade-desktop"></div>
   <video autoplay muted loop playsinline id="video-bg-1-mobile" class="mobile-only" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-mobile.mp4" type="video/mp4">
   </video>
-  <video autoplay muted loop playsinline id="video-bg-2-mobile" class="mobile-only" style="position: fixed; top: 100vh; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
-    <source src="assets/videos/background-video-2-mobile.mp4" type="video/mp4">
-  </video>
+  <div class="video-bottom-fade-desktop"></div>
   <div style="max-width: 960px; margin: 1em auto; padding: 0 1em; text-align: center;">
     <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
       <button onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</button>
@@ -246,7 +255,7 @@
       </a>
       <div class="intro-blur-bg">
         <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
-          From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We’re also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We’re located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
+          From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
         </p>
       </div>
     </div>
@@ -339,35 +348,35 @@
 
     <section class="category-grid">
       <div class="category-item">
-        <img src="assets/images/categories/strollers_category.png" alt="Strollers">
+        <img src="assets/images/icons/stroller_icon_trasnsparent.png" alt="Strollers">
         <p>Strollers</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/car_seats_category.png" alt="Car Seats">
+        <img src="assets/images/icons/carseat_icon_trasnsparent.png" alt="Car Seats">
         <p>Car Seats</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/carriers_bouncers_category.png" alt="Carriers and Bouncers">
+        <img src="assets/images/icons/carriers_n_bouncers_icon_trasnsparent.png" alt="Carriers and Bouncers">
         <p>Carriers & Bouncers</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/category_outwear_category.png" alt="Outwear">
+        <img src="assets/images/icons/Outdoor_icon_trasnsparent.png" alt="Outwear">
         <p>Outwear</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/gear_toys_books_category.png" alt="Toys and Books">
+        <img src="assets/images/icons/bookstoys_icon_trasnsparent.png" alt="Toys and Books">
         <p>Toys & Books</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/highchairs_category.png" alt="Highchairs">
+        <img src="assets/images/icons/highchairs_icon_transparent.png" alt="Highchairs">
         <p>Highchairs</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/cribs_cots_category.png" alt="Cribs and Cots">
+        <img src="assets/images/icons/travelcot_icon_trasnsparent.png" alt="Cribs and Cots">
         <p>Cribs & Cots</p>
       </div>
       <div class="category-item">
-        <img src="assets/images/categories/wellness_category.png" alt="Wellness">
+        <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness">
         <p>Wellness</p>
       </div>
     </section>
@@ -379,7 +388,7 @@
 
     <section id="trust">
       <h2 class="section-title">Transparency and Trust</h2>
-      <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family’s needs. We believe in honest communication and strive to build lasting relationships with our customers. See what our happy customers are saying — we consistently receive 5-star reviews from families visiting Stockholm.</p>
+      <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family's needs. We believe in honest communication and strive to build lasting relationships with our customers. See what our happy customers are saying — we consistently receive 5-star reviews from families visiting Stockholm.</p>
       <div class="reviews-section" style="margin-top: 2em;">
         <div class="review" style="text-align: center;">
           <p><strong>Kate Johnson</strong><br>
@@ -776,7 +785,7 @@
             <p><strong>Page Carter</strong><br>
             <span style="font-size: 1.2em;">⭐⭐⭐⭐⭐</span><br>
             <em>9 months ago</em><br>
-            BB Stockholm was extremely professional and helpful. The portable crib was like new and had a sparkling clean sheet and mattress cover. Delivery and pickup were very convenient (we were staying in a very busy part of the city) and well timed. We appreciated this service in Stockholm and would do it again next time we’re here. Highly recommend!</p>
+            BB Stockholm was extremely professional and helpful. The portable crib was like new and had a sparkling clean sheet and mattress cover. Delivery and pickup were very convenient (we were staying in a very busy part of the city) and well timed. We appreciated this service in Stockholm and would do it again next time we're here. Highly recommend!</p>
           </div>
           <div class="review" style="margin-bottom: 1em; text-align: center;">
             <p><strong>Margaux Brassinais</strong><br>
@@ -818,7 +827,7 @@
             <p><strong>Amanda Gwost</strong><br>
             <span style="font-size: 1.2em;">⭐⭐⭐⭐⭐</span><br>
             <em>10 months ago</em><br>
-            Our experience was perfect. Our airline lost all of our luggage and stroller. We were so defeated when we got to our destination in Stockholm, but babonbo made things simple, quick and easy. We did everything online to rent a stroller and they brought it right to our hotel and even picked it up when we were done with using it. They even went the extra mile to give us some recommendations on things to do with children in Stockholm. They made the travel nightmare we were living so much better and we can’t thank them enough for everything they did for us to enjoy our time there.</p>
+            Our experience was perfect. Our airline lost all of our luggage and stroller. We were so defeated when we got to our destination in Stockholm, but babonbo made things simple, quick and easy. We did everything online to rent a stroller and they brought it right to our hotel and even picked it up when we were done with using it. They even went the extra mile to give us some recommendations on things to do with children in Stockholm. They made the travel nightmare we were living so much better and we can't thank them enough for everything they did for us to enjoy our time there.</p>
           </div>
           <div class="review" style="margin-bottom: 1em; text-align: center;">
             <p><strong>Aurelia Pons</strong><br>
@@ -836,7 +845,7 @@
             <p><strong>Martin Hewes</strong><br>
             <span style="font-size: 1.2em;">⭐⭐⭐⭐⭐</span><br>
             <em>a year ago</em><br>
-            Wonderful experience from start to finish. Friendly and responsive from the initial booking and happy to give recommendations of things to do. We felt really looked after the entire time! Definitely use these guys if you’re in Stockholm!!</p>
+            Wonderful experience from start to finish. Friendly and responsive from the initial booking and happy to give recommendations of things to do. We felt really looked after the entire time! Definitely use these guys if you're in Stockholm!!</p>
           </div>
           <div class="review" style="margin-bottom: 1em; text-align: center;">
             <p><strong>Kenn Ghaffarian</strong><br>
@@ -998,7 +1007,7 @@
 
     <section id="order">
       <h2 class="section-title">Order Now</h2>
-      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you’ll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you'll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
     </section>
   </main>
 
