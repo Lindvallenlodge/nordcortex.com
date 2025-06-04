@@ -3,19 +3,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Questrial&display=swap');
 
-/* Reset all backgrounds */
-html, body, div, section, main, header, footer, form, .intro-blur-bg, #contact-form, .category-grid {
-    background: #ffffff !important;
+/* Reset backgrounds but preserve images */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff !important;
+}
+
+/* Remove any gradients or animations */
+main, section, article, .intro-blur-bg, #contact-form, .category-grid {
     background-color: #ffffff !important;
     background-image: none !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
 }
 
-/* Remove any gradients or animations */
-* {
+/* Preserve the logo/avatar image */
+.image.avatar {
     background: none !important;
-    animation: none !important;
+}
+
+.image.avatar img {
+    display: block;
+    margin: 0 auto;
 }
 
 /* Remove video background effects */

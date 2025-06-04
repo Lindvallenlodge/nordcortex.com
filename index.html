@@ -8,16 +8,20 @@
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* Remove all background colors from elements */
-    * {
-      background: none !important;
-    }
-    body, html, main, section, div {
+    /* Remove only background colors but keep images */
+    html, body {
       background-color: #ffffff !important;
     }
+    
+    main, section, div:not(.image.avatar) {
+      background-color: #ffffff !important;
+    }
+
     .video-bottom-fade-desktop {
       display: none !important;
     }
+
+    /* Keep other existing styles */
     @media (min-width: 768px) {
       #gear h2.section-title {
         margin-top: 4cm;
