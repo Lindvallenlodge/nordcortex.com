@@ -31,11 +31,11 @@ video {
     z-index: -2;
 }
 
-/* Button styles */
-button {
-    background: transparent !important;
-    border: 2px solid #000;
-    color: #000;
+/* Button base styles */
+.button, button, input[type="submit"], input[type="reset"], input[type="button"], .top-nav a {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 2px solid #000000 !important;
+    color: #000000 !important;
     padding: 10px 25px;
     border-radius: 3px;
     font-weight: 600;
@@ -43,9 +43,11 @@ button {
     transition: all 0.3s ease;
 }
 
-button:hover {
-    background: #000 !important;
-    color: #fff;
+/* Button hover styles */
+.button:hover, button:hover, input[type="submit"]:hover, input[type="reset"]:hover, input[type="button"]:hover, .top-nav a:hover {
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-color: #0066CC !important;
+    color: #000000 !important;
 }
 
 /* Remove any potential background colors from form elements */
@@ -2259,6 +2261,11 @@ button:hover {
 /* First section special treatment */
 .intro-section {
     background: rgba(255, 255, 255, 0.85) !important;
+    max-width: 800px;
+    width: 90%;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 8px;
 }
 
 /* Main content area */
@@ -2348,9 +2355,9 @@ a.button,
 input[type="submit"],
 input[type="reset"],
 input[type="button"] {
-    background: transparent !important;
-    border: 2px solid #000;
-    color: #000;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border: 2px solid #0066CC !important;
+    color: #000000 !important;
     padding: 10px 25px;
     border-radius: 3px;
     font-weight: 600;
@@ -2365,37 +2372,8 @@ a.button:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
 input[type="button"]:hover {
-    background-color: #0066CC !important;
+    background: rgba(255, 255, 255, 0.85) !important;
     border-color: #0066CC !important;
-    color: #ffffff !important;
-}
-
-/* Navigation buttons specific styling */
-nav a,
-.nav-button,
-#gear a,
-#about a,
-#trust a,
-#order a {
-    display: inline-block;
-    padding: 0.8em 1.5em;
-    margin: 0.5em;
-    text-decoration: none;
-    border: 2px solid #000;
-    border-radius: 3px;
-    transition: all 0.3s ease;
-    background: transparent;
-    color: #000;
-}
-
-nav a:hover,
-.nav-button:hover,
-#gear a:hover,
-#about a:hover,
-#trust a:hover,
-#order a:hover {
-    background-color: #0066CC !important;
-    border-color: #0066CC !important;
-    color: #ffffff !important;
+    color: #000000 !important;
 }
 }
