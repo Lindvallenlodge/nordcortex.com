@@ -492,7 +492,7 @@
           </div>
           <p>I had a great experience renting a travel cot in Stockholm...</p>
         </div>
-        <div id="more-reviews" style="display: none;">
+        <div id="more-reviews">
           <div class="review" style="margin-bottom: 1em; text-align: center;">
             <div class="review-header">
               <span class="review-name">Bianca Chanial</span>
@@ -1297,9 +1297,7 @@
         showMoreBtn.onclick = function(e) {
           e.preventDefault();
           moreReviews.style.display = 'block';
-          setTimeout(() => {
-            moreReviews.classList.add('show');
-          }, 10);
+          moreReviews.classList.add('show');
           closeReviewsContainer.style.display = 'block';
           this.style.display = 'none';
           
