@@ -2354,15 +2354,17 @@ a.button,
 .top-nav a,
 input[type="submit"],
 input[type="reset"],
-input[type="button"] {
+input[type="button"],
+nav a {
     background: rgba(255, 255, 255, 0.85) !important;
-    border: 2px solid #0066CC !important;
+    border: 2px solid #000000 !important;
     color: #000000 !important;
     padding: 10px 25px;
     border-radius: 3px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 button:hover,
@@ -2371,9 +2373,13 @@ a.button:hover,
 .top-nav a:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover,
-input[type="button"]:hover {
-    background: rgba(255, 255, 255, 0.85) !important;
+input[type="button"]:hover,
+nav a:hover {
     border-color: #0066CC !important;
-    color: #000000 !important;
+}
+
+/* About section heading */
+#about h2 {
+    text-transform: none !important;
 }
 }
