@@ -1665,697 +1665,77 @@ input, select, textarea {
 	}
 
 
-# Remove or override previous min-width:981px header/logo/h1/p rules for desktop so new header/logo/h1/p rules apply
+/* Desktop header/logo/h1/p rules */
 @media screen and (min-width: 981px) {
-  #header {
-    width: 100%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 4em 2em;
-  }
-  #header .logo {
-    width: 300px;
-    height: 300px;
-    margin: 0 auto 1.5em auto;
-  }
-  #header h1 {
-    font-size: 2.4em;
-    margin-bottom: 1.2em;
-    text-align: center;
-  }
-  #header p {
-    font-size: 1.1em;
-    text-align: center;
-    margin: 0.8em auto;
-    max-width: 700px;
-    line-height: 1.6em;
-  }
-  #main {
-    padding-top: 4em;
-    margin: 0 auto;
-    max-width: 960px;
-    width: 100%;
-  }
+    #header {
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 4em 2em;
+    }
+    #header .logo {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto 1.5em auto;
+    }
 }
+
+/* Main text color */
 #main, #main * {
-  color: #000000 !important;
-}
-#header, #header *:not(h1) {
-  color: #000000 !important;
-}
-
-# Centered Content Utility
-.centered-content {
-  text-align: center;
-  margin: 0 auto;
-  max-width: 800px;
-  width: 100%;
-  padding: 0 2em;
-  box-sizing: border-box;
-}
-#header .logo img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
-
-/* Top Navigation - global, always visible and fixed */
-/* Top Navigation - global, always visible and fixed */
-/* Top Navigation - global, always visible and fixed */
-/* .top-nav block is now overridden at the end of the file */
-
-.top-logo {
-  height: 70px;
-  width: auto;
-  margin-right: auto;
-}
-# Order Now button highlight
-.top-nav a.order-now {
-  background-color: #000;
-  color: #fff;
-  font-weight: bold;
-}
-
-.top-nav a.order-now:hover {
-  background-color: #49bf9d;
-  border-color: #49bf9d;
-  color: #fff;
-}
-
-.top-nav a {
-  margin: 0 0.5em;
-  padding: 0.4em 1em;
-  border: 2px solid #000;
-  color: #000;
-  background-color: transparent;
-  text-decoration: none;
-  border-radius: 4px;
-  font-size: 1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.top-nav a:hover {
-  background-color: #49bf9d;
-  color: #fff;
-  border-color: #49bf9d;
-}
-# Gear Gallery Layout */
-.gear-category {
-  margin-bottom: 4em;
-}
-
-.gear-category h2 {
-  text-align: center;
-  font-size: 1.5em;
-  margin-bottom: 1em;
-  color: #000;
-}
-
-.gear-thumbnails {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5em;
-}
-
-.gear-thumbnail {
-  flex: 0 0 18%;
-  max-width: 18%;
-  cursor: pointer;
-  border: 2px solid #ccc;
-  border-radius: 0.5em;
-  overflow: hidden;
-  transition: transform 0.3s ease;
-}
-
-.gear-thumbnail:hover {
-  transform: scale(1.05);
-  border-color: #49bf9d;
-}
-
-.gear-thumbnail img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.gear-thumbnail-caption {
-  text-align: center;
-  font-size: 0.9em;
-  padding: 0.5em;
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-@media screen and (max-width: 980px) {
-  .gear-thumbnail {
-    flex: 0 0 45%;
-    max-width: 45%;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .gear-thumbnail {
-    flex: 0 0 90%;
-    max-width: 90%;
-  }
-}
-# Custom header logo and text styles
-#header .logo-img {
-  width: 280px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-#header h1 {
-  font-size: 2.6em;
-  margin-bottom: 1em;
-  color: #000;
-}
-
-#header p {
-  font-size: 1.1em;
-  margin: 0.6em auto;
-  line-height: 1.75;
-  max-width: 700px;
-  color: #000;
-  text-align: center;
-}
-
-@media (max-width: 768px) {
-  #header .logo-img {
-    width: 160px;
-  }
-
-  #header h1 {
-    font-size: 1.8em;
-  }
-
-  #header p {
-    font-size: 1em;
-  }
-}
-/* Mobile-aware constraint for header */
-@media screen and (max-width: 768px) {
-  #header {
-    max-width: 100%;
-    padding: 4em 2em;
-  }
-}
-/* (removed duplicate/override body rules below) */
-
-/* === Fix for top navigation bar and eliminate beige gap === */
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  overflow-x: hidden;
-}
-
-/* (Removed duplicate .top-nav block to avoid conflicts) */
-
-body::before {
-  content: '';
-  display: none;
-}
-# Mobile-specific layout for .top-nav
-@media screen and (max-width: 768px) {
-  .top-nav {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 1em;
-  }
-
-  .top-nav a {
-    margin: 0.5em 0;
-    width: 100%;
-    text-align: center;
-  }
-}
-
-
-/* === Override: Top Navigation - always fixed, full width, no margin/padding shift === */
-/* === Top Navigation Bar === */
-# Top Navigation Bar
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 2em;
-  z-index: 9999;
-  background-color: #ffffff;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 100%;
-}
-
-body {
-  background: radial-gradient(circle at 20% 30%, #ffffff 55%, transparent 75%),
-              radial-gradient(circle at 80% 70%, #a7e0ff 25%, transparent 65%);
-  background-size: 200% 200%;
-  background-repeat: no-repeat;
-  animation: randomizedBlobs 20s ease-in-out infinite;
-  padding-top: 70px !important;
-  margin: 0;
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
-}
-
-body::before {
-  content: none !important;
-  display: none !important;
-}
-
-# Ensure html has no margin/padding
-html {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-#header .logo {
-  /* margin-top: 30px; */
-}
-/* === Custom Button Styles for Contact/Order Section === */
-button {
-  background: transparent !important;
-  border: 2px solid #000;
-  color: #000;
-  padding: 10px 25px;
-  border-radius: 3px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-button:hover {
-  background: #000 !important;
-  color: #fff;
-}
-
-/* === Randomized Color Transitions for Background === */
-@keyframes randomizedBlobs {
-  0% {
-    background-position: 20% 20%, 80% 60%;
-  }
-  25% {
-    background-position: 60% 80%, 40% 30%;
-  }
-  50% {
-    background-position: 10% 50%, 70% 90%;
-  }
-  75% {
-    background-position: 90% 10%, 30% 70%;
-  }
-  100% {
-    background-position: 20% 20%, 80% 60%;
-  }
-}
-
-
-
-/* === Logo Alternating Animation === */
-.logo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-
-
-/* === Background Video Containers === */
-
-.video-section {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  overflow: hidden;
-}
-
-.video-section video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-}
-
-/* Desktop Video Sections */
-@media screen and (min-width: 769px) {
-  .desktop-video-1,
-  .desktop-video-2 {
-    display: block;
-  }
-  .mobile-video-1,
-  .mobile-video-2 {
-    display: none;
-  }
-}
-
-/* Mobile Video Sections */
-@media screen and (max-width: 768px) {
-  .desktop-video-1,
-  .desktop-video-2 {
-    display: none;
-  }
-  .mobile-video-1,
-  .mobile-video-2 {
-    display: block;
-  }
-}
-# Remove sticky header and top bar styles (reverted)
-
-/* Dynamic Background Animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color: #000;
-    background: linear-gradient(
-        -45deg,
-        rgba(173, 216, 230, 0.7),  /* light blue */
-        rgba(255, 255, 255, 0.7),   /* white */
-        rgba(144, 238, 144, 0.7),   /* light green */
-        rgba(255, 255, 255, 0.7)    /* white */
-    ) !important;
-    background-size: 400% 400% !important;
-    animation: gradientAnimation 15s ease infinite !important;
-}
-
-body::before {
-    content: none;
-}
-
-/* Ensure content is readable on the animated background */
-#main {
-    position: relative;
-    z-index: 1;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-radius: 0;
-    box-shadow: none !important;
-    margin: 20px;
-    padding: 20px;
-}
-
-#header {
-    position: relative;
-    z-index: 2;
-    background: transparent !important;
-}
-
-/* Remove all background colors and blur effects */
-#main, #header, section, .intro-blur-bg, .category-grid, .category-item, #gear, #about, #trust, #order {
-    background: #ffffff !important;
-    background-color: #ffffff !important;
-    background-image: none !important;
-}
-
-/* Keep only one specific intro text with background */
-.intro-text-special {
-    background: rgba(200, 225, 255, 0.4);
-    padding: 1.5em;
-    border-radius: 16px;
-    max-width: 960px;
-    margin: 0 auto 1.5em auto;
-}
-
-/* Ensure text remains readable */
-.section-text, .section-title, p, h1, h2, h3, h4, h5, h6 {
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
-}
-
-/* Remove any remaining white backgrounds */
-.category-grid, .category-item, #gear, #about, #trust, #order {
-    background: transparent !important;
-}
-
-/* Update animation for more prominent blue */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
-/* Ensure icons are transparent */
-.category-item img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    object-fit: contain;
-    margin-bottom: 15px;
-    transition: opacity 0.3s ease;
-    background: transparent !important;
-}
-
-@media (max-width: 767px) {
-  #gear .section-title {
-    color: #000 !important;
-  }
-  #gear h2.section-title {
-    color: #000 !important;
-  }
-}
-
-/* Show More Reviews Button Styling */
-.show-more-btn {
-    background-color: #49bf9d !important;
-    color: #ffffff !important;
-    padding: 12px 24px !important;
-    border-radius: 4px !important;
-    cursor: pointer !important;
-    transition: all 0.3s ease !important;
-    border: none !important;
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 500 !important;
-    font-size: 16px !important;
-    text-transform: none !important;
-}
-
-.show-more-btn:hover {
-    background-color: #3da997 !important;
-    transform: translateY(-2px) !important;
-}
-
-/* Update all text elements to use Montserrat */
-h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, .section-title, .section-text {
-    font-family: 'Montserrat', sans-serif !important;
-}
-
-/* Update typography to match stenswed.com exactly */
-.section-title, h1, h2 {
-    font-family: 'Questrial', sans-serif !important;
-    font-size: 48px !important;
-    line-height: 1.1 !important;
-    font-weight: 400 !important;
-    letter-spacing: -0.5px !important;
     color: #000000 !important;
-    margin-bottom: 24px !important;
 }
 
-.section-text, p {
-    font-family: 'Montserrat', sans-serif !important;
-    font-size: 16px !important;
-    line-height: 1.6 !important;
-    font-weight: 400 !important;
-    color: #333333 !important;
-    margin-bottom: 16px !important;
+/* Centered Content Utility */
+.centered-content {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    width: 100%;
+    padding: 0 2em;
+    box-sizing: border-box;
 }
 
-/* Top Bar Styles */
-#top-bar {
+/* Top Navigation */
+.top-nav {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 60px;
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none;
+    right: 0;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 1em;
-    z-index: 10000;
+    padding: 0 2em;
+    z-index: 9999;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
-button {
-    background: transparent !important;
-    border: 2px solid #000;
-    color: #000;
-    padding: 10px 25px;
-    border-radius: 3px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background: #000 !important;
+/* Order Now button highlight */
+.top-nav a.order-now {
+    background-color: #000;
     color: #fff;
+    font-weight: bold;
 }
 
-/* Button container styles */
-.button-container {
-    background: transparent !important;
-}
-
-.button-container * {
-    background: transparent !important;
-}
-
-/* Content Container Styles - Global */
-.section-content, 
-#main > section,
-.centered-content,
-#gear,
-#about,
-#trust,
-#order,
-.contact-section {
-    max-width: 800px;
-    width: 90%;
-    margin: 0 auto;
-    padding: 2em;
-    background: rgba(255, 255, 255, 0.85) !important;
-    border-radius: 8px;
-    box-sizing: border-box;
-}
-
-/* First section special treatment */
-.intro-section {
-    background: rgba(255, 255, 255, 0.85) !important;
-    max-width: 800px;
-    width: 90%;
-    margin: 2em auto;
-    padding: 2em;
-    border-radius: 8px;
-}
-
-/* Main content area */
-#main {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    background: transparent !important;
-}
-
-/* Section Headings */
-.section-title,
-h1, h2 {
-    text-align: center;
-    margin-bottom: 1em;
-}
-
-/* Mobile Adjustments */
-@media screen and (max-width: 768px) {
-    .section-content,
-    #main > section,
-    .centered-content,
-    #gear,
-    #about,
-    #trust,
-    #order,
-    .contact-section,
-    .intro-section {
-        width: 85%;
-        padding: 1.5em;
-        margin: 1em auto;
-    }
-}
-
-/* Ensure background video is always visible */
-.video-section {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    overflow: hidden;
-}
-
-.video-section video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-}
-
-/* Remove any unwanted backgrounds */
-body, html, #main, #header {
-    background: transparent !important;
-}
-
-/* Ensure proper spacing between sections */
+/* Content sections */
 section {
-    margin: 2em auto;
-}
-
-/* Intro section and content sections consistent styling */
-.intro-section,
-.section-content,
-#main > section {
-    background: rgba(255, 255, 255, 0.85) !important;
     max-width: 800px;
     width: 90%;
     margin: 2em auto;
     padding: 2em;
+    background: rgba(255, 255, 255, 0.85) !important;
     border-radius: 8px;
-    box-sizing: border-box;
 }
 
-/* Button styling with stroller blue hover */
-button,
-.button,
-a.button,
-.top-nav a,
-input[type="submit"],
-input[type="reset"],
-input[type="button"],
-nav a {
+/* Button styles */
+.button, 
+button, 
+input[type="submit"], 
+input[type="reset"], 
+input[type="button"], 
+.top-nav a {
     background: rgba(255, 255, 255, 0.85) !important;
     border: 2px solid #000000 !important;
     color: #000000 !important;
@@ -2364,22 +1744,38 @@ nav a {
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    text-decoration: none;
 }
 
-button:hover,
-.button:hover,
-a.button:hover,
-.top-nav a:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
-nav a:hover {
+/* Button hover styles */
+.button:hover, 
+button:hover, 
+input[type="submit"]:hover, 
+input[type="reset"]:hover, 
+input[type="button"]:hover, 
+.top-nav a:hover {
+    background: rgba(255, 255, 255, 0.85) !important;
     border-color: #0066CC !important;
+    color: #000000 !important;
 }
 
 /* About section heading */
 #about h2 {
     text-transform: none !important;
 }
+
+/* Mobile navigation */
+@media screen and (max-width: 768px) {
+    .top-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1em;
+    }
+    
+    .top-nav a {
+        margin: 0.5em 0;
+        width: 100%;
+        text-align: center;
+    }
 }
+
+/* ... existing code ... */
