@@ -6,19 +6,15 @@
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
-        background-color: rgba(236, 245, 255, 0.95); /* Very light blue */
+        background-color: rgba(240, 248, 255, 0.97); /* Very light cool blue */
     }
-    33% {
-        background-position: 50% 100%;
-        background-color: rgba(255, 255, 255, 0.98); /* Almost pure white */
-    }
-    66% {
+    50% {
         background-position: 100% 50%;
-        background-color: rgba(236, 252, 236, 0.95); /* Very light mint */
+        background-color: rgba(255, 255, 255, 0.99); /* Almost pure white */
     }
     100% {
         background-position: 0% 50%;
-        background-color: rgba(236, 245, 255, 0.95); /* Back to very light blue */
+        background-color: rgba(240, 248, 255, 0.97); /* Back to very light cool blue */
     }
 }
 
@@ -52,7 +48,7 @@ body {
     line-height: 1.6;
     color: #000;
     background-size: 200% 200%;
-    animation: gradientAnimation 12s ease infinite;
+    animation: gradientAnimation 8s ease infinite;
 }
 
 body::before {
