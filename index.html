@@ -14,7 +14,7 @@
         left: 0;
         width: 100vw;
         height: 80px;
-        background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.4) 100%);
+        background: none;
         z-index: -1;
         pointer-events: none;
       }
@@ -223,12 +223,13 @@
       font-size: 1.1em;
     }
     .intro-blur-bg {
-      background: rgba(200, 225, 255, 0.4); /* increased opacity from 0.25 to 0.4 */
-      padding: 1.5em; /* reduced padding to decrease height */
+      background: none;
+      padding: 1.5em;
       border-radius: 16px;
       max-width: 960px;
-      margin: 0 auto 1.5em auto; /* adjusted margin to slightly lower spacing */
-      backdrop-filter: blur(3px);
+      margin: 0 auto 1.5em auto;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
   </style>
 </head>
@@ -253,7 +254,7 @@
       <a href="#" class="image avatar">
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
       </a>
-      <div class="intro-blur-bg">
+      <div class="intro-text-special">
         <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
           From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
         </p>
@@ -263,7 +264,7 @@
 
   <main id="main">
     <section id="intro">
-      <div class="intro-blur-bg">
+      <div style="margin-top: 2em;">
         <h2 class="section-title">Quality Gear for Little Travelers</h2>
         <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
         <div style="display: flex; justify-content: center;">

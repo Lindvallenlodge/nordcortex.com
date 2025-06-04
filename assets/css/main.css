@@ -41,13 +41,12 @@ body {
     background: linear-gradient(
         -45deg,
         rgba(0, 120, 255, 0.9),  /* More intense blue */
-        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.7),
         rgba(144, 238, 144, 0.7),
-        rgba(255, 255, 255, 0.8)
-    ) !important;
-    background-size: 400% 400% !important;
-    animation: gradientAnimation 10s ease infinite !important;
-    transition: all 0.5s ease-in-out;
+        rgba(255, 255, 255, 0.7)
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
 body::before {
@@ -58,26 +57,26 @@ body::before {
 #main {
     position: relative;
     z-index: 1;
-    background: transparent;
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
     border-radius: 0;
-    box-shadow: none;
+    box-shadow: none !important;
     margin: 20px;
     padding: 20px;
 }
 
 /* Ensure text remains readable on gradient background */
 #main, #main * {
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
 /* Header styles */
 #header {
     position: relative;
     z-index: 2;
-    background: transparent;
-    backdrop-filter: blur(5px);
+    background: transparent !important;
+    backdrop-filter: none !important;
 }
 
 /*
@@ -1946,12 +1945,15 @@ button:hover {
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
+        background-color: rgba(0, 120, 255, 0.9);
     }
     50% {
         background-position: 100% 50%;
+        background-color: rgba(0, 140, 255, 0.9);
     }
     100% {
         background-position: 0% 50%;
+        background-color: rgba(0, 120, 255, 0.9);
     }
 }
 
@@ -1965,10 +1967,10 @@ body {
     color: #000;
     background: linear-gradient(
         -45deg,
-        rgba(173, 216, 230, 0.7),  /* light blue */
-        rgba(255, 255, 255, 0.7),   /* white */
-        rgba(144, 238, 144, 0.7),   /* light green */
-        rgba(255, 255, 255, 0.7)    /* white */
+        rgba(0, 120, 255, 0.9),  /* More intense blue */
+        rgba(255, 255, 255, 0.7),
+        rgba(144, 238, 144, 0.7),
+        rgba(255, 255, 255, 0.7)
     );
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
@@ -1992,5 +1994,48 @@ body::before {
 #header {
     position: relative;
     z-index: 2;
-    background: transparent;
+    background: transparent !important;
+}
+
+/* Remove all background colors and blur effects */
+#main, #header, section, .intro-blur-bg {
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+}
+
+/* Keep only one specific intro text with background */
+.intro-text-special {
+    background: rgba(200, 225, 255, 0.4);
+    padding: 1.5em;
+    border-radius: 16px;
+    max-width: 960px;
+    margin: 0 auto 1.5em auto;
+}
+
+/* Ensure text remains readable */
+.section-text, .section-title, p, h1, h2, h3, h4, h5, h6 {
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+/* Remove any remaining white backgrounds */
+.category-grid, .category-item, #gear, #about, #trust, #order {
+    background: transparent !important;
+}
+
+/* Update animation for more prominent blue */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+        background-color: rgba(0, 120, 255, 0.9);
+    }
+    50% {
+        background-position: 100% 50%;
+        background-color: rgba(0, 140, 255, 0.9);
+    }
+    100% {
+        background-position: 0% 50%;
+        background-color: rgba(0, 120, 255, 0.9);
+    }
 }
