@@ -423,7 +423,6 @@ input, select, textarea {
 			background: #787878;
 			border-color: #787878;
 			color: #fff;
-			content: '\f00c';
 		}
 
 		input[type="checkbox"]:focus + label:before,
@@ -2259,12 +2258,7 @@ button:hover {
 
 /* First section special treatment */
 .intro-section {
-    background: rgba(255, 255, 255, 0.85);
-    max-width: 800px;
-    width: 90%;
-    margin: 2em auto;
-    padding: 2em;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.85) !important;
 }
 
 /* Main content area */
@@ -2331,5 +2325,77 @@ body, html, #main, #header {
 /* Ensure proper spacing between sections */
 section {
     margin: 2em auto;
+}
+
+/* Intro section and content sections consistent styling */
+.intro-section,
+.section-content,
+#main > section {
+    background: rgba(255, 255, 255, 0.85) !important;
+    max-width: 800px;
+    width: 90%;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* Button styling with stroller blue hover */
+button,
+.button,
+a.button,
+.top-nav a,
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+    background: transparent !important;
+    border: 2px solid #000;
+    color: #000;
+    padding: 10px 25px;
+    border-radius: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover,
+.button:hover,
+a.button:hover,
+.top-nav a:hover,
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover {
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+    color: #ffffff !important;
+}
+
+/* Navigation buttons specific styling */
+nav a,
+.nav-button,
+#gear a,
+#about a,
+#trust a,
+#order a {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    margin: 0.5em;
+    text-decoration: none;
+    border: 2px solid #000;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #000;
+}
+
+nav a:hover,
+.nav-button:hover,
+#gear a:hover,
+#about a:hover,
+#trust a:hover,
+#order a:hover {
+    background-color: #0066CC !important;
+    border-color: #0066CC !important;
+    color: #ffffff !important;
 }
 }
