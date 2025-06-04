@@ -8,17 +8,17 @@
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Remove all background colors from elements */
+    * {
+      background: none !important;
+    }
+    body, html, main, section, div {
+      background-color: #ffffff !important;
+    }
+    .video-bottom-fade-desktop {
+      display: none !important;
+    }
     @media (min-width: 768px) {
-      .video-bottom-fade-desktop {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100vw;
-        height: 80px;
-        background: none;
-        z-index: -1;
-        pointer-events: none;
-      }
       #gear h2.section-title {
         margin-top: 4cm;
       }
@@ -78,7 +78,6 @@
       height: 100%;
     }
     body {
-      background: none;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       font-size: 16px;
       line-height: 1.6;
@@ -224,7 +223,6 @@
       font-size: 1.1em;
     }
     .intro-blur-bg {
-      background: none;
       padding: 1.5em;
       border-radius: 16px;
       max-width: 960px;
