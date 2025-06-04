@@ -155,15 +155,41 @@ body::before {
 
 /* Main content area */
 #main {
-    position: relative;
-    z-index: 1;
-    background: #ffffff !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border-radius: 0;
-    box-shadow: none !important;
-    margin: 20px;
-    padding: 20px;
+    margin: 0 auto;
+    padding: 2em;
+    width: 100%;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 1280px) {
+    #main {
+        max-width: 100%;
+        padding: 2em;
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #main {
+        padding: 1.5em;
+    }
+}
+
+/* Remove margin-left from desktop view */
+@media screen and (min-width: 981px) {
+    #main {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* Ensure proper content width */
+.section-content {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2em;
+    box-sizing: border-box;
 }
 
 /* Ensure text remains readable on gradient background */
@@ -171,12 +197,14 @@ body::before {
     text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8);
 }
 
-/* Header styles */
+/* Header alignment */
 #header {
-    position: relative;
-    z-index: 2;
-    background: #ffffff !important;
-    backdrop-filter: none !important;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4em 2em;
+    text-align: center;
+    box-sizing: border-box;
 }
 
 /*
@@ -1004,52 +1032,6 @@ input, select, textarea {
 			margin: 0;
 		}
 
-/* Header */
-
-	#header {
-	  display: -webkit-box;
-	  display: -ms-flexbox;
-	  display: flex;
-	  -webkit-box-orient: vertical;
-	  -webkit-box-direction: normal;
-	  -ms-flex-direction: column;
-	  flex-direction: column;
-	  -webkit-box-align: center;
-	  -ms-flex-align: center;
-	  align-items: center;
-	  -webkit-box-pack: center;
-	  -ms-flex-pack: center;
-	  justify-content: center;
-	  background: none;
-	  color: #49bf9d;
-	  padding: 4em 2em;
-	  text-align: center;
-	  width: 100%;
-	  height: auto;
-	  position: relative;
-	}
-
-
-	#header h1 {
-	  font-size: 2.4em;
-	  font-weight: 400;
-	  line-height: 1.4em;
-	  margin-bottom: 1.2em;
-	  position: relative;
-	  z-index: 1;
-	  color: black !important;
-	}
-
-	#header p {
-	  font-size: 1.1em;
-	  line-height: 1.6em;
-	  margin: 0.8em auto;
-	  padding: 0 1em;
-	  position: relative;
-	  z-index: 1;
-	  max-width: 700px;
-	}
-
 /* Header Logo with animation overlay effect */
 #header .logo {
   margin: 0 auto 1.5em auto;
@@ -1443,7 +1425,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 6em 3em 3em 3em;
+				padding: 3em 2em;
 			}
 
 				#header h1 {
@@ -1471,11 +1453,9 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				margin-left: 0;
-				max-width: none;
-				padding: 6em 3em 3em 3em;
-				width: 100%;
-				padding-top: 4em;
+				padding: 2em;
+				margin: 0 auto;
+				max-width: 100%;
 			}
 
 	}
@@ -1503,7 +1483,7 @@ input, select, textarea {
 				background-position: top left, center center;
 				background-size: auto,		cover;
 				left: auto;
-				padding: 6em 4em;
+				padding: 3em 2em;
 				position: relative;
 				text-align: center;
 				top: auto;
@@ -1555,9 +1535,9 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				margin: 0;
-				padding: 6em 4em;
-				width: 100%;
+				padding: 2em;
+				margin: 0 auto;
+				max-width: 100%;
 			}
 
 	}
@@ -1603,7 +1583,7 @@ input, select, textarea {
 		/* Header */
 
 			#header {
-				padding: 2.25em 1.5em;
+				padding: 2em 1.5em;
 			}
 
 				#header h1 {
@@ -1619,7 +1599,9 @@ input, select, textarea {
 		/* Main */
 
 			#main {
-				padding: 2.25em 1.5em 0.25em 1.5em;
+				padding: 1.5em;
+				margin: 0 auto;
+				max-width: 100%;
 			}
 
 				#main > section {
@@ -1709,9 +1691,11 @@ input, select, textarea {
 # Centered Content Utility
 .centered-content {
   text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
   max-width: 800px;
+  width: 100%;
+  padding: 0 2em;
+  box-sizing: border-box;
 }
 #header .logo img {
   width: 100%;
