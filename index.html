@@ -8,17 +8,24 @@
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
-    /* Remove only background colors but keep images */
-    html, body {
-      background-color: #ffffff !important;
+    /* Remove all backgrounds */
+    html, body, div, section, main, header, footer, article, aside, nav {
+      background: transparent !important;
     }
     
-    main, section, div:not(.image.avatar) {
-      background-color: #ffffff !important;
+    * {
+      background: transparent !important;
     }
 
-    .video-bottom-fade-desktop {
-      display: none !important;
+    /* Keep video background */
+    video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
     }
 
     /* Keep other existing styles */
