@@ -52,19 +52,22 @@ section, summary, time, mark, audio, video {
 body {
     margin: 0;
     padding: 0;
-    background: #ffffff;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
+    animation: none !important;
     font-family: 'Montserrat', sans-serif;
 }
 
 body::before {
-    content: none;
+    display: none !important;
 }
 
 /* Main content area */
 #main {
     position: relative;
     z-index: 1;
-    background: transparent !important;
+    background: #ffffff !important;
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
     border-radius: 0;
@@ -82,7 +85,7 @@ body::before {
 #header {
     position: relative;
     z-index: 2;
-    background: transparent !important;
+    background: #ffffff !important;
     backdrop-filter: none !important;
 }
 
@@ -2005,10 +2008,9 @@ body::before {
 
 /* Remove all background colors and blur effects */
 #main, #header, section, .intro-blur-bg, .category-grid, .category-item, #gear, #about, #trust, #order {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    box-shadow: none !important;
+    background: #ffffff !important;
+    background-color: #ffffff !important;
+    background-image: none !important;
 }
 
 /* Keep only one specific intro text with background */
