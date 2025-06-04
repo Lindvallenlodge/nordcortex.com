@@ -254,6 +254,25 @@
       color: #666;
       font-style: italic;
     }
+    #more-reviews {
+      transition: all 0.5s ease-in-out;
+      max-height: 0;
+      overflow: hidden;
+    }
+    #more-reviews.show {
+      max-height: 5000px; /* Adjust based on content */
+    }
+    .show-more-btn {
+      background: #000;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    .show-more-btn:hover {
+      background: #333;
+    }
   </style>
 </head>
 <body>
@@ -1257,35 +1276,47 @@
     });
     // Show Less/Close Reviews button functionality
     document.addEventListener('DOMContentLoaded', function() {
-      var closeBtn = document.getElementById('close-reviews');
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-          var moreReviews = document.getElementById('more-reviews');
-          if (moreReviews) {
-            moreReviews.style.display = 'none';
-            // Hide the "Show Less" button container again
-            var closeReviewsContainer = document.getElementById('close-reviews-container');
-            if (closeReviewsContainer) closeReviewsContainer.style.display = 'none';
-            // Show the "Show more reviews" button again
-            var showMoreBtn = document.querySelector('.reviews-section > button[onclick*="more-reviews"]');
-            if (showMoreBtn) showMoreBtn.style.display = '';
-          }
-        });
-      }
-      // Also ensure the close-reviews-container is hidden on page load
+      var showMoreBtn = document.querySelector('button[onclick*="more-reviews"]');
       var moreReviews = document.getElementById('more-reviews');
-      if (moreReviews) {
-        moreReviews.style.display = 'none';
-        var closeReviewsContainer = document.getElementById('close-reviews-container');
-        if (closeReviewsContainer) closeReviewsContainer.style.display = 'none';
+      var closeBtn = document.getElementById('close-reviews');
+      var closeReviewsContainer = document.getElementById('close-reviews-container');
+      
+      if (showMoreBtn) {
+        showMoreBtn.className = 'show-more-btn';
+        showMoreBtn.onclick = function(e) {
+          e.preventDefault();
+          moreReviews.style.display = 'block';
+          setTimeout(() => {
+            moreReviews.classList.add('show');
+          }, 10);
+          closeReviewsContainer.style.display = 'block';
+          this.style.display = 'none';
+          
+          // Smooth scroll to show the start of new reviews
+          moreReviews.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+      }
+      
+      if (closeBtn) {
+        closeBtn.className = 'show-more-btn';
+        closeBtn.onclick = function() {
+          moreReviews.classList.remove('show');
+          setTimeout(() => {
+            moreReviews.style.display = 'none';
+            closeReviewsContainer.style.display = 'none';
+            showMoreBtn.style.display = '';
+          }, 500);
+          
+          // Smooth scroll back to the initial reviews
+          document.querySelector('.reviews-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
       }
     });
   </script>
 </body>
   <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto; text-align: left;">
-    <h2 class="section-title">Contact Us</h2>
+    <h2 class="section-title">Contact us in the way that suits you best</h2>
     <p class="section-text" style="text-align: left;">
-      Contact us in the way that suits you best:<br>
       - ✉️ Email us at: <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
       - 📞 Reach us via Call, SMS or WhatsApp at: <a href="tel:+46767667055">+46 76 766 70 55</a><br>
       - 📝 Or simply fill in the form below:

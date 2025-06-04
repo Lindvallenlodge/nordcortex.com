@@ -5,11 +5,11 @@
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
-        background-color: rgba(135, 206, 250, 0.9); /* light sky blue */
+        background-color: rgba(0, 191, 255, 0.95); /* deep sky blue */
     }
     25% {
         background-position: 50% 100%;
-        background-color: rgba(173, 216, 230, 0.8); /* lighter blue */
+        background-color: rgba(255, 255, 255, 0.9); /* white */
     }
     50% {
         background-position: 100% 50%;
@@ -17,11 +17,11 @@
     }
     75% {
         background-position: 50% 0%;
-        background-color: rgba(100, 149, 237, 0.8); /* cornflower blue */
+        background-color: rgba(30, 144, 255, 0.95); /* dodger blue */
     }
     100% {
         background-position: 0% 50%;
-        background-color: rgba(135, 206, 250, 0.9); /* back to light sky blue */
+        background-color: rgba(0, 191, 255, 0.95); /* deep sky blue */
     }
 }
 
@@ -2062,4 +2062,10 @@ body::before {
     margin-bottom: 15px;
     transition: opacity 0.3s ease;
     background: transparent !important;
+}
+
+@media (max-width: 767px) {
+  #gear .section-title {
+    color: #000 !important;
+  }
 }
