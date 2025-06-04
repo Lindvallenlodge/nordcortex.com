@@ -155,40 +155,63 @@ body::before {
 
 /* Main content area */
 #main {
-    margin: 0 auto;
-    padding: 2em;
     width: 100%;
-    max-width: 1200px;
-    box-sizing: border-box;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent !important;
 }
 
-@media screen and (max-width: 1280px) {
-    #main {
-        max-width: 100%;
-        padding: 2em;
-    }
+section {
+    max-width: 800px;
+    width: 90%;
+    margin: 2em auto;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
 }
 
-@media screen and (max-width: 736px) {
-    #main {
+@media screen and (max-width: 768px) {
+    section {
+        width: 85%;
         padding: 1.5em;
+        margin: 1em auto;
     }
 }
 
-/* Remove margin-left from desktop view */
-@media screen and (min-width: 981px) {
-    #main {
-        margin-left: auto;
-        margin-right: auto;
-    }
+.video-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Remove all backgrounds */
+body, html, #main, #header, .top-nav {
+    background: transparent !important;
 }
 
 /* Ensure proper content width */
 .section-content {
-    width: 100%;
-    max-width: 1000px;
+    max-width: 800px;
+    width: 90%;
     margin: 0 auto;
-    padding: 0 2em;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
@@ -1095,29 +1118,21 @@ input, select, textarea {
 /* Main */
 
 	#main {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		margin-left: 35%;
-		padding-top: 8em;
-		max-width: 54em;
-		padding-right: 4em;
-		padding-bottom: 4em;
-		padding-left: 4em;
 		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+		background: transparent !important;
 	}
 
-		#main > section {
-			border-top: solid 2px #efefef;
-			margin: 4em 0 0 0;
-			padding: 4em 0 0 0;
-		}
-
-			#main > section:first-child {
-				border-top: 0;
-				margin-top: 0;
-				padding-top: 0;
-			}
+	#main > section {
+		max-width: 800px;
+		width: 90%;
+		margin: 2em auto;
+		padding: 2em;
+		background: rgba(255, 255, 255, 0.85);
+		border-radius: 8px;
+	}
 
 /* Intro text style */
 .intro-text {
@@ -1976,11 +1991,13 @@ button:hover {
 /* === Background Video Containers === */
 
 .video-section {
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100vh;
-  overflow: hidden;
+  height: 100%;
   z-index: -1;
+  overflow: hidden;
 }
 
 .video-section video {
@@ -1989,16 +2006,10 @@ button:hover {
   left: 50%;
   min-width: 100%;
   min-height: 100%;
+  width: auto;
+  height: auto;
   transform: translate(-50%, -50%);
   object-fit: cover;
-  z-index: -1;
-  animation: bounceLoop 12s ease-in-out infinite alternate;
-}
-
-@keyframes bounceLoop {
-  0% { transform: translate(-50%, -50%) scale(1); }
-  50% { transform: translate(-50%, -50%) scale(1.03); }
-  100% { transform: translate(-50%, -50%) scale(1); }
 }
 
 /* Desktop Video Sections */
@@ -2226,5 +2237,99 @@ button:hover {
 
 .button-container * {
     background: transparent !important;
+}
+
+/* Content Container Styles - Global */
+.section-content, 
+#main > section,
+.centered-content,
+#gear,
+#about,
+#trust,
+#order,
+.contact-section {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 2em;
+    background: rgba(255, 255, 255, 0.85) !important;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+/* First section special treatment */
+.intro-section {
+    background: rgba(255, 255, 255, 0.85);
+    max-width: 800px;
+    width: 90%;
+    margin: 2em auto;
+    padding: 2em;
+    border-radius: 8px;
+}
+
+/* Main content area */
+#main {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: transparent !important;
+}
+
+/* Section Headings */
+.section-title,
+h1, h2 {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+/* Mobile Adjustments */
+@media screen and (max-width: 768px) {
+    .section-content,
+    #main > section,
+    .centered-content,
+    #gear,
+    #about,
+    #trust,
+    #order,
+    .contact-section,
+    .intro-section {
+        width: 85%;
+        padding: 1.5em;
+        margin: 1em auto;
+    }
+}
+
+/* Ensure background video is always visible */
+.video-section {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.video-section video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Remove any unwanted backgrounds */
+body, html, #main, #header {
+    background: transparent !important;
+}
+
+/* Ensure proper spacing between sections */
+section {
+    margin: 2em auto;
 }
 }
