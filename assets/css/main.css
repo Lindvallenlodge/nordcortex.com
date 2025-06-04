@@ -1,23 +1,24 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 /* Dynamic Background Animation */
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
-        background-color: rgba(240, 248, 255, 0.9); /* aliceblue */
+        background-color: rgba(236, 245, 255, 0.95); /* Very light blue */
     }
     33% {
         background-position: 50% 100%;
-        background-color: rgba(255, 255, 255, 0.95); /* white */
+        background-color: rgba(255, 255, 255, 0.98); /* Almost pure white */
     }
     66% {
         background-position: 100% 50%;
-        background-color: rgba(240, 255, 240, 0.9); /* honeydew */
+        background-color: rgba(236, 252, 236, 0.95); /* Very light mint */
     }
     100% {
         background-position: 0% 50%;
-        background-color: rgba(240, 248, 255, 0.9); /* back to aliceblue */
+        background-color: rgba(236, 245, 255, 0.95); /* Back to very light blue */
     }
 }
 
@@ -46,12 +47,12 @@ body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: #000;
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background-size: 200% 200%;
+    animation: gradientAnimation 12s ease infinite;
 }
 
 body::before {
@@ -2063,16 +2064,25 @@ body::before {
 
 /* Show More Reviews Button Styling */
 .show-more-btn {
-    background: #49bf9d;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
+    background-color: #49bf9d !important;
+    color: #ffffff !important;
+    padding: 12px 24px !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    border: none !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    text-transform: none !important;
 }
 
 .show-more-btn:hover {
-    background: #3da997;
-    transform: translateY(-2px);
+    background-color: #3da997 !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Update all text elements to use Montserrat */
+h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, .section-title, .section-text {
+    font-family: 'Montserrat', sans-serif !important;
 }
