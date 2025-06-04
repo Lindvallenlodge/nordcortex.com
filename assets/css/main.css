@@ -5,12 +5,23 @@
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
+        background-color: rgba(135, 206, 250, 0.9); /* light sky blue */
+    }
+    25% {
+        background-position: 50% 100%;
+        background-color: rgba(173, 216, 230, 0.8); /* lighter blue */
     }
     50% {
         background-position: 100% 50%;
+        background-color: rgba(144, 238, 144, 0.7); /* light green */
+    }
+    75% {
+        background-position: 50% 0%;
+        background-color: rgba(100, 149, 237, 0.8); /* cornflower blue */
     }
     100% {
         background-position: 0% 50%;
+        background-color: rgba(135, 206, 250, 0.9); /* back to light sky blue */
     }
 }
 
@@ -45,13 +56,14 @@ body {
     color: #000;
     background: linear-gradient(
         -45deg,
-        rgba(173, 216, 230, 0.7),  /* light blue */
+        rgba(135, 206, 250, 0.9),  /* light sky blue */
         rgba(255, 255, 255, 0.7),   /* white */
+        rgba(100, 149, 237, 0.8),   /* cornflower blue */
         rgba(144, 238, 144, 0.7),   /* light green */
-        rgba(255, 255, 255, 0.7)    /* white */
+        rgba(173, 216, 230, 0.8)    /* lighter blue */
     ) !important;
     background-size: 400% 400% !important;
-    animation: gradientAnimation 15s ease infinite !important;
+    animation: gradientAnimation 20s ease-in-out infinite !important;
 }
 
 body::before {
