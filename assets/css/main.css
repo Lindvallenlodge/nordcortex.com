@@ -2068,4 +2068,7 @@ body::before {
   #gear .section-title {
     color: #000 !important;
   }
+  #gear h2.section-title {
+    color: #000 !important;
+  }
 }
