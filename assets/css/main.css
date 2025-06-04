@@ -5,23 +5,19 @@
 @keyframes gradientAnimation {
     0% {
         background-position: 0% 50%;
-        background-color: rgba(0, 191, 255, 0.95); /* deep sky blue */
+        background-color: rgba(240, 248, 255, 0.9); /* aliceblue */
     }
-    25% {
+    33% {
         background-position: 50% 100%;
-        background-color: rgba(255, 255, 255, 0.9); /* white */
+        background-color: rgba(255, 255, 255, 0.95); /* white */
     }
-    50% {
+    66% {
         background-position: 100% 50%;
-        background-color: rgba(144, 238, 144, 0.7); /* light green */
-    }
-    75% {
-        background-position: 50% 0%;
-        background-color: rgba(30, 144, 255, 0.95); /* dodger blue */
+        background-color: rgba(240, 255, 240, 0.9); /* honeydew */
     }
     100% {
         background-position: 0% 50%;
-        background-color: rgba(0, 191, 255, 0.95); /* deep sky blue */
+        background-color: rgba(240, 248, 255, 0.9); /* back to aliceblue */
     }
 }
 
@@ -54,16 +50,8 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #000;
-    background: linear-gradient(
-        -45deg,
-        rgba(135, 206, 250, 0.9),  /* light sky blue */
-        rgba(255, 255, 255, 0.7),   /* white */
-        rgba(100, 149, 237, 0.8),   /* cornflower blue */
-        rgba(144, 238, 144, 0.7),   /* light green */
-        rgba(173, 216, 230, 0.8)    /* lighter blue */
-    ) !important;
-    background-size: 400% 400% !important;
-    animation: gradientAnimation 20s ease-in-out infinite !important;
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
 }
 
 body::before {
@@ -2071,4 +2059,20 @@ body::before {
   #gear h2.section-title {
     color: #000 !important;
   }
+}
+
+/* Show More Reviews Button Styling */
+.show-more-btn {
+    background: #49bf9d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.show-more-btn:hover {
+    background: #3da997;
+    transform: translateY(-2px);
 }
