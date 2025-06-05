@@ -288,7 +288,18 @@
     .show-more-btn:hover {
       background: #333;
     }
+    /* Utility: box-style, for consistent white box styling */
+    .box-style {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2em;
+      border-radius: 16px;
+      max-width: 960px;
+      margin: 0 auto 1.5em auto;
+      position: relative;
+      z-index: 10;
+    }
     .intro-text-special {
+      /* Now uses box-style utility */
       background: rgba(255, 255, 255, 0.85) !important;
       padding: 2em;
       border-radius: 16px;
@@ -320,7 +331,7 @@
       <a href="#" class="image avatar">
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
       </a>
-      <div class="intro-text-special">
+      <div class="intro-text-special box-style">
         <div class="container-max">
           <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
             From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
@@ -332,7 +343,7 @@
 
   <main id="main">
     <section id="intro">
-      <div class="container-max" style="margin-top: 2em;">
+      <div class="box-style container-max">
         <h2 class="section-title">Quality Gear for Little Travelers</h2>
         <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
         <div style="display: flex; justify-content: center;">
@@ -450,14 +461,14 @@
     </section>
 
     <section id="about">
-      <div class="container-max">
+      <div class="box-style container-max">
         <h2 class="section-title">About Us</h2>
         <p class="section-text">Strollby Stockholm was born from the experience of traveling parents who understand the challenges of moving around with young children. We provide a premium rental service for baby and toddler gear, offering high-quality strollers, car seats, and travel cots that meet the highest safety and comfort standards. Our mission is to make your stay in Stockholm easier and more enjoyable by providing everything you need for your little ones — without the hassle of bringing your own gear.</p>
       </div>
     </section>
 
     <section id="trust">
-      <div class="container-max">
+      <div class="box-style container-max">
         <h2 class="section-title">Transparency and Trust</h2>
         <p class="section-text">Your trust is our priority. All our gear is carefully cleaned and inspected before each rental. We provide detailed product descriptions and clear pricing with no hidden fees. Our team is always available to answer your questions and help you choose the right equipment for your family's needs. We believe in honest communication and strive to build lasting relationships with our customers. See what our happy customers are saying — we consistently receive 5-star reviews from families visiting Stockholm.</p>
         <div class="reviews-section" style="margin-top: 2em;">
@@ -1262,8 +1273,10 @@
     </section>
 
     <section id="order">
-      <h2 class="section-title">Order Now</h2>
-      <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you'll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+      <div class="box-style container-max">
+        <h2 class="section-title">Order Now</h2>
+        <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Place your order securely via our <a href="https://www.babonbo.com/en/bb-stockholm/bs/81Eva6B5DW" target="_blank" style="font-weight: 700; text-decoration: underline; color: #000;">Stockholm Provider Profile at Babonbo – <span style="color: #2c5aa0;">BB Stockholm</span></a>, where you'll meet Bea, who takes care of every booking personally. We look forward to helping you travel light and enjoy your stay in Stockholm with your little ones.</p>
+      </div>
     </section>
   </main>
 
@@ -1355,7 +1368,7 @@
     });
   </script>
 </body>
-  <section id="contact-form" style="padding: 2em; max-width: 600px; margin: 4em auto; text-align: left;">
+  <section id="contact-form" class="box-style container-max">
     <h2 class="section-title">Contact us in the way that suits you best</h2>
     <p class="section-text" style="text-align: left;">
       - ✉️ Email us at: <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
