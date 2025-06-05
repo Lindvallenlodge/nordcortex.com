@@ -2395,3 +2395,9 @@ nav a:hover {
     width: 85%;
     margin: 0 auto 2em auto;
 }
+/* Responsive: .intro-text-special width for mobile */
+@media screen and (max-width: 768px) {
+  .intro-text-special {
+    width: 85% !important;
+  }
+}
