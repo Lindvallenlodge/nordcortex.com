@@ -293,7 +293,7 @@
       background: rgba(255, 255, 255, 0.85);
       padding: 2em;
       border-radius: 16px;
-      max-width: 960px;
+      max-width: 1140px; /* Adjusted to match actual intro block width */
       margin: 0 auto 1.5em auto;
       position: relative;
       z-index: 10;
@@ -303,7 +303,7 @@
       background: rgba(255, 255, 255, 0.85) !important;
       padding: 2em;
       border-radius: 16px;
-      max-width: 960px;
+      max-width: 1140px;
       margin: 0 auto 1.5em auto;
       position: relative;
       z-index: 10;
@@ -1301,7 +1301,7 @@
       background: rgba(255, 255, 255, 0.85) !important;
       padding: 2em;
       border-radius: 16px;
-      max-width: 960px;
+      max-width: 1140px;
       margin: 0 auto 1.5em auto;
       position: relative;
       z-index: 10;
@@ -1368,26 +1368,28 @@
     });
   </script>
 </body>
-  <section id="contact-form" class="box-style container-max">
-    <h2 class="section-title">Contact us in the way that suits you best</h2>
-    <p class="section-text" style="text-align: left;">
-      - ✉️ Email us at: <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
-      - 📞 Reach us via Call, SMS or WhatsApp at: <a href="tel:+46767667055">+46 76 766 70 55</a><br>
-      - 📝 Or simply fill in the form below:
-    </p>
-    <form action="https://formspree.io/f/mldnrgar" method="POST" style="text-align: left;">
-      <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
+  <section id="contact-form">
+    <div class="box-style container-max">
+      <h2 class="section-title">Contact us in the way that suits you best</h2>
+      <p class="section-text" style="text-align: left;">
+        - ✉️ Email us at: <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
+        - 📞 Reach us via Call, SMS or WhatsApp at: <a href="tel:+46767667055">+46 76 766 70 55</a><br>
+        - 📝 Or simply fill in the form below:
+      </p>
+      <form action="https://formspree.io/f/mldnrgar" method="POST" style="text-align: left;">
+        <input type="hidden" name="_redirect" value="https://www.strollbystockholm.com/thankyou.html">
 
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5em;"><br><br>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width: 100%; padding: 0.5em;"><br><br>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5em;"><br><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required style="width: 100%; padding: 0.5em;"><br><br>
 
-      <label for="message">Message:</label><br>
-      <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.5em;"></textarea><br><br>
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 0.5em;"></textarea><br><br>
 
-      <input type="submit" value="Send" style="padding: 0.5em 1em; font-weight: bold;">
-    </form>
+        <input type="submit" value="Send" style="padding: 0.5em 1em; font-weight: bold;">
+      </form>
+    </div>
   </section>
 </html>
