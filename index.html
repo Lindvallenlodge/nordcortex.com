@@ -302,6 +302,20 @@
       max-width: 960px;
       margin: 0 auto;
     }
+    .intro-text-special {
+      background: rgba(255, 255, 255, 0.85) !important;
+      padding: 2em;
+      border-radius: 16px;
+      max-width: 1140px;
+      margin: 0 auto 1.5em auto;
+      position: relative;
+      z-index: 10;
+    }
+
+    .intro-text-special > .container-max {
+      max-width: 100%;
+      padding: 0;
+    }
   </style>
 </head>
 <body>
@@ -320,26 +334,34 @@
       </a>
     </div>
   </div>
-  <section class="intro-section box-style">
-      From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
-  </section>
-
   <header id="header">
-    <h1><a href="index.html">Strollby Stockholm</a></h1>
+    <div class="inner" style="padding-top: 0; margin-top: -80px;">
+      <a href="#" class="image avatar">
+        <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
+      </a>
+      <div class="intro-text-special box-style">
+        <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
+          From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
+        </p>
+      </div>
+    </div>
   </header>
+
   <main id="main">
     <section id="intro">
       <div class="box-style">
-        <div class="content-wrapper">
-          <h2 class="section-title">Quality Gear for Little Travelers</h2>
-          <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
-          <div style="display: flex; justify-content: center;">
-            <ul class="actions" style="text-align: center; flex-wrap: wrap; gap: 1em;">
-              <li><a href="#gear" class="button">Explore Gear</a></li>
-              <li><a href="#about" class="button">About us</a></li>
-              <li><a href="#trust" class="button">Transparency and Trust</a></li>
-              <li><a href="#order" class="button">Order Now</a></li>
-            </ul>
+        <div class="inner">
+          <div class="content-wrapper">
+            <h2 class="section-title">Quality Gear for Little Travelers</h2>
+            <p class="section-text">We offer clean, safe, stylish strollers, car seats, baby cribs and baby essentials — picked up by you or delivered right to you.</p>
+            <div style="display: flex; justify-content: center;">
+              <ul class="actions" style="text-align: center; flex-wrap: wrap; gap: 1em;">
+                <li><a href="#gear" class="button">Explore Gear</a></li>
+                <li><a href="#about" class="button">About us</a></li>
+                <li><a href="#trust" class="button">Transparency and Trust</a></li>
+                <li><a href="#order" class="button">Order Now</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -1287,6 +1309,18 @@
       #footer .icons {
         margin-bottom: 0.5em;
       }
+    }
+  </style>
+  <!-- Ensure .intro-text-special always overlays correctly and is visible -->
+  <style>
+    .intro-text-special {
+      background: rgba(255, 255, 255, 0.85) !important;
+      padding: 2em;
+      border-radius: 16px;
+      max-width: 1140px;
+      margin: 0 auto 1.5em auto;
+      position: relative;
+      z-index: 10;
     }
   </style>
   <script src="assets/js/jquery.min.js"></script>

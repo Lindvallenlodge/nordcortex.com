@@ -2104,21 +2104,12 @@ body::before {
 
 /* Keep only one specific intro text with background */
 .intro-text-special {
-    background: rgba(255, 255, 255, 0.85);
-    padding: 2em;
-    border-radius: 8px;
+    background: rgba(200, 225, 255, 0.4);
+    padding: 1.5em;
+    border-radius: 16px;
     max-width: 960px;
-    width: 90%;
-    margin: 2em auto;
-    box-sizing: border-box;
-}
-
-@media screen and (max-width: 768px) {
-    .intro-text-special {
-        width: 85%;
-        padding: 1.5em;
-        margin: 1em auto;
-    }
+    width: 85%;
+    margin: 0 auto 1.5em auto;
 }
 
 /* Ensure text remains readable */
@@ -2403,4 +2394,10 @@ nav a:hover {
     max-width: 960px;
     width: 85%;
     margin: 0 auto 2em auto;
+}
+/* Responsive: .intro-text-special width for mobile */
+@media screen and (max-width: 768px) {
+  .intro-text-special {
+    width: 85% !important;
+  }
 }
