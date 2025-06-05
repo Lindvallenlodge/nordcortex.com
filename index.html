@@ -299,7 +299,6 @@
       z-index: 10;
     }
     .intro-text-special {
-      /* Now uses box-style utility */
       background: rgba(255, 255, 255, 0.85) !important;
       padding: 2em;
       border-radius: 16px;
@@ -307,6 +306,11 @@
       margin: 0 auto 1.5em auto;
       position: relative;
       z-index: 10;
+    }
+
+    .intro-text-special > .container-max {
+      max-width: 100%;
+      padding: 0;
     }
   </style>
 </head>
@@ -332,11 +336,9 @@
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
       </a>
       <div class="intro-text-special box-style">
-        <div class="container-max">
-          <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
-            From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
-          </p>
-        </div>
+        <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
+          From our family to yours — baby gear rentals that make exploring Stockholm simpler and lighter. Whether you're here for a weekend or a longer stay, we've got what you need to keep your little one safe, comfy, and happy while you enjoy the city. We're also happy to share local tips and family-friendly recommendations to help you get the most out of your visit to Stockholm. We're located just a 5-minute walk from T-Centralen, making it easy to pick up your gear and start exploring.
+        </p>
       </div>
     </div>
   </header>
