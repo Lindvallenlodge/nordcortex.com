@@ -2401,3 +2401,16 @@ nav a:hover {
     width: 85% !important;
   }
 }
+
+/* Box Style - semi-transparent background, fully opaque text */
+.box-style {
+    background-color: rgba(255, 255, 255, 0.85) !important; /* semi-transparent white background */
+    color: #000 !important; /* ensure text remains fully opaque and readable */
+    z-index: 10;
+    position: relative;
+}
+
+/* Ensure .box-style .inner remains visually transparent */
+.box-style .inner {
+    background: transparent !important;
+}
