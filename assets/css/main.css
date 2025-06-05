@@ -2388,7 +2388,7 @@ nav a:hover {
 }
 /* Contact section block styled like .intro-text-special */
 .contact-section {
-    background: rgba(200, 225, 255, 0.6);
+    background: rgba(200, 225, 255, 0.85);
     padding: 1.5em;
     border-radius: 16px;
     max-width: 960px;
