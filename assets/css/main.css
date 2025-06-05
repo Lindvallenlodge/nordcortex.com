@@ -68,10 +68,12 @@ input, textarea, select {
 
 /* Contact form section */
 #contact-form {
-    background: #ffffff !important;
-    padding: 2em;
-    max-width: 600px;
-    margin: 4em auto;
+    background: rgba(200, 225, 255, 0.4) !important;
+    padding: 1.5em;
+    border-radius: 16px;
+    max-width: 960px;
+    width: 85%;
+    margin: 0 auto 2em auto;
     text-align: left;
     box-shadow: none !important;
 }
@@ -2383,4 +2385,13 @@ nav a:hover {
 #about h2 {
     text-transform: none !important;
 }
+}
+/* Contact section block styled like .intro-text-special */
+.contact-section {
+    background: rgba(200, 225, 255, 0.4);
+    padding: 1.5em;
+    border-radius: 16px;
+    max-width: 960px;
+    width: 85%;
+    margin: 0 auto 2em auto;
 }
