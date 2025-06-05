@@ -2249,7 +2249,7 @@ button:hover {
 #trust,
 #order,
 .contact-section {
-    max-width: 800px;
+    max-width: 960px;
     width: 90%;
     margin: 0 auto;
     padding: 2em;
@@ -2261,7 +2261,7 @@ button:hover {
 /* First section special treatment */
 .intro-section {
     background: rgba(255, 255, 255, 0.85) !important;
-    max-width: 800px;
+    max-width: 960px;
     width: 90%;
     margin: 2em auto;
     padding: 2em;
@@ -2339,7 +2339,7 @@ section {
 .section-content,
 #main > section {
     background: rgba(255, 255, 255, 0.85) !important;
-    max-width: 800px;
+    max-width: 960px;
     width: 90%;
     margin: 2em auto;
     padding: 2em;
