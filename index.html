@@ -306,11 +306,12 @@
       max-width: 960px;
       margin: 0 auto;
     }
-    /* Responsive: Make .box-style wider on mobile */
+    /* Responsive: Make .box-style span full viewport width on mobile */
     @media (max-width: 768px) {
       .box-style {
-        width: 100%;
-        padding: 1.5rem;
+        width: 100vw;
+        max-width: 100vw;
+        padding: 1.5rem 1rem;
       }
     }
   </style>
