@@ -1913,6 +1913,22 @@ body::before {
     padding: 0 1rem;
     box-sizing: border-box;
   }
+
+  /* Absolute overlay box for intro text */
+  .intro-overlay-box {
+    position: absolute;
+    top: 350px; /* Adjust as needed to appear below logo */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 960px;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 1.5em;
+    border-radius: 8px;
+    z-index: 5;
+    box-sizing: border-box;
+    text-align: left;
+  }
 }
 
 
