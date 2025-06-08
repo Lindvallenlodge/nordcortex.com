@@ -2296,11 +2296,16 @@ h1, h2 {
     #about,
     #trust,
     #order,
-    .contact-section,
-    .intro-section {
+    .contact-section {
         width: 85%;
         padding: 1.5em;
         margin: 1em auto;
+    }
+    .intro-section {
+        width: 90% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1.5em;
     }
 }
 
