@@ -2417,7 +2417,7 @@ nav a:hover {
 /* Responsive: .intro-text-special width for mobile */
 @media screen and (max-width: 768px) {
   .intro-text-special {
-      width: 90% !important;
+      width: 85% !important;
       max-width: 960px;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -2431,7 +2431,7 @@ nav a:hover {
 
 @media screen and (min-width: 481px) and (max-width: 960px) {
   .intro-text-special {
-      width: 90% !important;
+      width: 85% !important;
       max-width: 960px;
       margin-left: auto !important;
       margin-right: auto !important;
@@ -2440,6 +2440,20 @@ nav a:hover {
       background: rgba(255, 255, 255, 0.85) !important;
       box-sizing: border-box;
       display: block;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 960px) and (orientation: landscape) {
+  .intro-text-special {
+    width: 85% !important;
+    max-width: 960px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 1.5em;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.85) !important;
+    box-sizing: border-box;
+    display: block;
   }
 }
 
