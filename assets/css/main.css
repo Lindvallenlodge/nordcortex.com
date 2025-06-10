@@ -2487,8 +2487,8 @@ nav a:hover {
     width: 85%;
     max-width: 600px;
     margin: 2em auto;
-    background: #ffffffcc; /* white with light transparency */
-    padding: 1em 1.5em; /* reduced vertical and horizontal padding */
+    background: rgba(255, 255, 255, 0.95); /* whiter background */
+    padding: 0.75em 1em; /* tighter text margins */
     border-radius: 8px;
     box-sizing: border-box;
   }
