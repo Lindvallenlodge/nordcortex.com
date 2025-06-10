@@ -2484,12 +2484,13 @@ nav a:hover {
 
 @media screen and (max-width: 768px) {
   .contact-box-style {
-    width: 85%;
-    max-width: 600px;
+    width: 90% !important;
+    max-width: 960px;
     margin: 2em auto;
-    background: rgba(255, 255, 255, 0.95); /* whiter background */
-    padding: 0.75em 1em; /* tighter text margins */
+    background: rgba(255, 255, 255, 0.95) !important; /* Stronger white background */
+    padding: 1.5em 1.25em !important; /* Wider text padding inside */
     border-radius: 8px;
     box-sizing: border-box;
+    text-align: left;
   }
 }
