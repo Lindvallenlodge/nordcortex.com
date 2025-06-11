@@ -452,13 +452,19 @@
           #gear-row .gear-category img.main-gear {
             max-width: 80%;
             height: auto;
-            margin: 0.05em auto 0.05em auto; /* Minimal vertical margin */
+            margin-bottom: 4px; /* Reduce spacing under the icon */
+            margin-top: 0.05em;
             cursor: pointer;
             transition: transform 0.3s ease;
             display: block;
           }
           #gear-row .gear-category img.main-gear:hover {
             transform: scale(1.02);
+          }
+          #gear-row .gear-category .gear-description,
+          #gear-row .gear-category p {
+            margin-top: 2px !important; /* Tighten gap between icon and description */
+            padding-top: 0 !important;
           }
         }
       </style>
