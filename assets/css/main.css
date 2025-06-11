@@ -1924,11 +1924,23 @@ body::before {
     width: 90%;
     max-width: 960px;
     background: rgba(255, 255, 255, 0.85);
-    padding: 1.5em;
+    padding: 2.8em; /* Increased padding for more top spacing (approx. 2 lines) */
     border-radius: 8px;
     z-index: 5;
     box-sizing: border-box;
     text-align: left;
+  }
+
+  /* --- Mobile .logo and .intro positioning adjustments --- */
+  #header .logo {
+    margin-top: 2.8em !important; /* Visually center logo above intro */
+    margin-bottom: 1.5em;
+  }
+  .intro-section,
+  .intro-text-special,
+  .intro,
+  .intro-overlay-box {
+    margin-top: 2.8em !important; /* Add extra space above intro container */
   }
 }
 
