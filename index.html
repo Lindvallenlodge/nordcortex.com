@@ -543,7 +543,7 @@
             <p>Super easy process, clean and modern baby gear. Highly recommended!</p>
           </div>
           <!-- Remaining reviews hidden initially -->
-          <div id="more-reviews" style="display: none;">
+          <div id="more-reviews">
             <div class="review" style="text-align: center;">
               <div class="review-header">
                 <span class="review-name">Nina L.</span>
@@ -707,9 +707,7 @@
             </div>
             <!-- ... and so on for all 47 remaining reviews, preserving name, stars, date, and text ... -->
           </div>
-          <div style="text-align: center; margin-top: 1em;">
-            <button class="cta-button show-more-btn" id="toggle-reviews">Show more reviews</button>
-          </div>
+          <!-- Show more reviews button removed -->
         </div>
     </section>
 
@@ -766,22 +764,6 @@
         document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
         document.body.classList.remove('gallery-open');
       }
-    });
-  </script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const toggleBtn = document.getElementById('toggle-reviews');
-      const moreReviews = document.getElementById('more-reviews');
-
-      toggleBtn.addEventListener('click', function () {
-        if (moreReviews.classList.contains('show')) {
-          moreReviews.classList.remove('show');
-          toggleBtn.textContent = 'Show more reviews';
-        } else {
-          moreReviews.classList.add('show');
-          toggleBtn.textContent = 'Show less reviews';
-        }
-      });
     });
   </script>
 </body>
