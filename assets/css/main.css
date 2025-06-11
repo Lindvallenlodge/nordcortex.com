@@ -2501,3 +2501,8 @@ nav a:hover {
 #order p {
   text-align: justify;
 }
+
+/* Remove underline from Babonbo BB Stockholm provider link */
+#about a[href*="babonbo.com"][href*="bb-stockholm"] {
+  text-decoration: none !important;
+}
