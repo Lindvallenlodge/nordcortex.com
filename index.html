@@ -771,12 +771,11 @@
   <script>
     const toggleBtn = document.getElementById('toggle-reviews');
     const moreReviews = document.getElementById('more-reviews');
-    let expanded = false;
 
     toggleBtn.addEventListener('click', () => {
-      expanded = !expanded;
-      moreReviews.style.display = expanded ? 'block' : 'none';
-      toggleBtn.textContent = expanded ? 'Show less reviews' : 'Show more reviews';
+      moreReviews.classList.toggle('show');
+      const isShown = moreReviews.classList.contains('show');
+      toggleBtn.textContent = isShown ? 'Show less reviews' : 'Show more reviews';
     });
   </script>
 </body>
