@@ -963,11 +963,7 @@
               <p>Great solution for traveling parents. Everything worked out perfectly.</p>
             </div>
           </div>
-          <div style="text-align: center; margin-top: 1em;">
-            <button id="show-more-reviews-btn" class="show-more-btn" style="padding: 0.5em 1em; font-weight: bold;">
-              Show more reviews
-            </button>
-          </div>
+          <button id="toggle-reviews">Show more reviews</button>
           <!-- Babonbo reviews end -->
         </div>
     </section>
@@ -1026,24 +1022,16 @@
         document.body.classList.remove('gallery-open');
       }
     });
-    // Show more/less reviews functionality for Babonbo reviews
-    document.addEventListener('DOMContentLoaded', function() {
-      var showMoreBtn = document.getElementById('show-more-reviews-btn');
-      var moreReviews = document.querySelector('.more-reviews');
-      if (!showMoreBtn || !moreReviews) return;
-      showMoreBtn.addEventListener('click', function() {
-        if (moreReviews.style.display === 'none' || moreReviews.style.display === '') {
-          moreReviews.style.display = 'block';
-          showMoreBtn.textContent = 'Show less';
-          // Scroll to the start of the newly revealed reviews
-          moreReviews.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        } else {
-          moreReviews.style.display = 'none';
-          showMoreBtn.textContent = 'Show more reviews';
-          // Scroll back to the reviews section
-          document.querySelector('.reviews-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
+  </script>
+  <script>
+    const toggleButton = document.getElementById("toggle-reviews");
+    const moreReviews = document.querySelector(".more-reviews");
+    let expanded = false;
+
+    toggleButton.addEventListener("click", () => {
+      expanded = !expanded;
+      moreReviews.style.display = expanded ? "block" : "none";
+      toggleButton.textContent = expanded ? "Show less reviews" : "Show more reviews";
     });
   </script>
 </body>
