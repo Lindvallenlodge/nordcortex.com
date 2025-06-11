@@ -368,7 +368,7 @@
   </video>
   <div class="video-bottom-fade-desktop"></div>
   <div class="container-max text-center">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
+    <div class="intro-top-actions">
       <a href="#contact-form" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;" onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</a>
       <a href="#order" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
     </div>
@@ -1038,3 +1038,31 @@
     </div>
   </section>
 </html>
+  <style>
+    /* Desktop: Align top intro buttons to match .box-style (intro area) edges */
+    @media (min-width: 768px) {
+      .intro-top-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 0.5em;
+        /* Match .box-style width and centering */
+      }
+    }
+    @media (max-width: 767px) {
+      .intro-top-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 0.5em;
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  </style>
