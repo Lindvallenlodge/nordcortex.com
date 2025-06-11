@@ -2515,3 +2515,60 @@ nav a:hover {
   font-size: 1.2em;
   text-decoration: underline;
 }
+/* === Review List and Review Styles === */
+.review-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+}
+
+.review {
+  background-color: #ffffffcc; /* semi-transparent white */
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  margin: 0;
+}
+
+.review-toggle {
+  margin-top: 1.5rem;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+
+.review-toggle:hover,
+.review-toggle:focus {
+  background-color: #e0e0e0;
+}
+
+@media screen and (max-width: 768px) {
+  .review-list {
+    gap: 1rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .review {
+    font-size: 0.98rem;
+    padding: 0.85rem;
+    border-radius: 8px;
+  }
+  .review-toggle {
+    font-size: 0.98rem;
+    padding: 0.7rem 1rem;
+    margin-top: 1.2rem;
+  }
+}
