@@ -317,6 +317,27 @@
       }
     }
   </style>
+  <style>
+    @media screen and (max-width: 767px) and (orientation: landscape) {
+      .actions {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1em !important;
+        width: 100%;
+      }
+
+      .actions li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+      }
+
+      .actions a.button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
   <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();" id="video-bg-1-desktop" class="desktop-only bouncing-video" style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
@@ -359,6 +380,7 @@
               <li><a href="#about" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">About us</a></li>
               <li><a href="#trust" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Transparency and Trust</a></li>
               <li><a href="#order" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order Now</a></li>
+              <li><a href="#contact-form" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Contact us</a></li>
             </ul>
           </div>
         </div>
