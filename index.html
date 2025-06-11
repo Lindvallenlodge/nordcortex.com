@@ -440,18 +440,19 @@
           #gear-row {
             display: block;
             padding: 0;
+            gap: 8px; /* Reduce vertical gap if grid/flex is used */
           }
           #gear-row .gear-category {
             width: 100%;
-            margin-bottom: 8px;  /* Further reduce vertical spacing */
-            padding: 4px 0;      /* Further reduce vertical padding */
+            margin-bottom: 8px;  /* Reduced vertical spacing */
+            padding: 2px 0;      /* Even less vertical padding */
             text-align: center;
             margin-top: 8px;
           }
           #gear-row .gear-category img.main-gear {
             max-width: 80%;
             height: auto;
-            margin: 0.1em auto 0.1em auto; /* Even less vertical margin */
+            margin: 0.05em auto 0.05em auto; /* Minimal vertical margin */
             cursor: pointer;
             transition: transform 0.3s ease;
             display: block;
