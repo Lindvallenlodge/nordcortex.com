@@ -410,7 +410,56 @@
       <div class="desktop-only" style="display: flex; justify-content: center; align-items: center; height: 100px;">
         <h2 class="section-title" style="margin: 1em 0;">Our Gear</h2>
       </div>
-      <!-- Gear display section left unchanged -->
+      <div id="gear-row">
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Strollers">
+            <img src="assets/images/icons/stroller_icon_trasnsparent.png" alt="Strollers" class="main-gear" />
+          </a>
+          <p>Strollers</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Car Seats">
+            <img src="assets/images/icons/carseat_icon_trasnsparent.png" alt="Car Seats" class="main-gear" />
+          </a>
+          <p>Car Seats</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Carriers and Bouncers">
+            <img src="assets/images/icons/carriers_n_bouncers_icon_trasnsparent.png" alt="Carriers and Bouncers" class="main-gear" />
+          </a>
+          <p>Carriers & Bouncers</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Outwear">
+            <img src="assets/images/icons/Outdoor_icon_trasnsparent.png" alt="Outwear" class="main-gear" />
+          </a>
+          <p>Outwear</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Toys and Books">
+            <img src="assets/images/icons/bookstoys_icon_trasnsparent.png" alt="Toys and Books" class="main-gear" />
+          </a>
+          <p>Toys & Books</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Highchairs">
+            <img src="assets/images/icons/highchairs_icon_transparent.png" alt="Highchairs" class="main-gear" />
+          </a>
+          <p>Highchairs</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Cribs and Cots">
+            <img src="assets/images/icons/travelcot_icon_trasnsparent.png" alt="Cribs and Cots" class="main-gear" />
+          </a>
+          <p>Cribs & Cots</p>
+        </div>
+        <div class="gear-category">
+          <a href="#order-now" class="icon-link" title="Wellness">
+            <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness" class="main-gear" />
+          </a>
+          <p>Wellness</p>
+        </div>
+      </div>
       <style>
         @media (min-width: 768px) {
           #gear-row {
@@ -490,40 +539,7 @@
       </style>
     </section>
 
-    <section class="category-grid">
-      <div class="category-item">
-        <img src="assets/images/icons/stroller_icon_trasnsparent.png" alt="Strollers">
-        <p>Strollers</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/carseat_icon_trasnsparent.png" alt="Car Seats">
-        <p>Car Seats</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/carriers_n_bouncers_icon_trasnsparent.png" alt="Carriers and Bouncers">
-        <p>Carriers & Bouncers</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/Outdoor_icon_trasnsparent.png" alt="Outwear">
-        <p>Outwear</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/bookstoys_icon_trasnsparent.png" alt="Toys and Books">
-        <p>Toys & Books</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/highchairs_icon_transparent.png" alt="Highchairs">
-        <p>Highchairs</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/travelcot_icon_trasnsparent.png" alt="Cribs and Cots">
-        <p>Cribs & Cots</p>
-      </div>
-      <div class="category-item">
-        <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness">
-        <p>Wellness</p>
-      </div>
-    </section>
+    <!-- Removed duplicate icon grid; icons are now interactive above -->
 
     <section id="about">
       <div class="content-wrapper">
@@ -959,7 +975,7 @@
         <!-- REVIEWS END -->
     </section>
 
-    <section id="order">
+    <section id="order-now">
       <div class="content-wrapper">
         <h2 class="section-title">Order Now</h2>
         <p class="section-text">Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation.
@@ -1012,6 +1028,16 @@
         document.querySelectorAll('.gear-gallery').forEach(g => g.style.display = 'none');
         document.body.classList.remove('gallery-open');
       }
+    });
+    // Smooth scroll for gear icons
+    document.querySelectorAll('.icon-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector('#order-now');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
     });
   </script>
 </body>
