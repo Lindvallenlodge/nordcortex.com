@@ -367,9 +367,11 @@
     <source src="assets/videos/background-video-1-mobile.mp4" type="video/mp4">
   </video>
   <div class="video-bottom-fade-desktop"></div>
-  <div class="top-buttons-container">
-    <a href="#contact-form" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;" onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</a>
-    <a href="#order" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
+  <div class="container-max text-center">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5em;">
+      <a href="#contact-form" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;" onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</a>
+      <a href="#order" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
+    </div>
   </div>
   <header id="header">
     <div class="inner" style="padding-top: 0; margin-top: -80px;">
@@ -1036,23 +1038,3 @@
     </div>
   </section>
 </html>
-  <style>
-    .top-buttons-container {
-      max-width: 960px;
-      margin: 0 auto 1.5em auto;
-      display: flex;
-      justify-content: flex-end;
-      gap: 10px;
-    }
-    @media (max-width: 767px) {
-      .top-buttons-container {
-        max-width: 100vw;
-        width: 100vw;
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 1em;
-        padding-right: 1em;
-        justify-content: flex-end;
-      }
-    }
-  </style>
