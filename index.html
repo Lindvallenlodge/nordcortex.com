@@ -769,13 +769,19 @@
     });
   </script>
   <script>
-    const toggleBtn = document.getElementById('toggle-reviews');
-    const moreReviews = document.getElementById('more-reviews');
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggleBtn = document.getElementById('toggle-reviews');
+      const moreReviews = document.getElementById('more-reviews');
 
-    toggleBtn.addEventListener('click', () => {
-      moreReviews.classList.toggle('show');
-      const isShown = moreReviews.classList.contains('show');
-      toggleBtn.textContent = isShown ? 'Show less reviews' : 'Show more reviews';
+      toggleBtn.addEventListener('click', function () {
+        if (moreReviews.style.display === 'none' || !moreReviews.style.display) {
+          moreReviews.style.display = 'block';
+          toggleBtn.textContent = 'Show less reviews';
+        } else {
+          moreReviews.style.display = 'none';
+          toggleBtn.textContent = 'Show more reviews';
+        }
+      });
     });
   </script>
 </body>
