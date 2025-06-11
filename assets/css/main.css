@@ -2506,3 +2506,10 @@ nav a:hover {
 #about a[href*="babonbo.com"][href*="bb-stockholm"] {
   text-decoration: none !important;
 }
+
+/* Highlight "BB Stockholm" text */
+.highlight-bb {
+  color: #1E90FF; /* DodgerBlue for better visibility */
+  font-weight: bold;
+  font-size: 1.1em;
+}
