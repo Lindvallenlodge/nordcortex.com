@@ -270,12 +270,12 @@
       font-style: italic;
     }
     #more-reviews {
-      transition: all 0.5s ease-in-out;
+      transition: max-height 0.5s ease-in-out;
       max-height: 0;
       overflow: hidden;
     }
     #more-reviews.show {
-      max-height: 5000px; /* Adjust based on content */
+      max-height: 5000px;
     }
     .show-more-btn {
       background: #000;
@@ -774,12 +774,12 @@
       const moreReviews = document.getElementById('more-reviews');
 
       toggleBtn.addEventListener('click', function () {
-        if (moreReviews.style.display === 'none' || !moreReviews.style.display) {
-          moreReviews.style.display = 'block';
-          toggleBtn.textContent = 'Show less reviews';
-        } else {
-          moreReviews.style.display = 'none';
+        if (moreReviews.classList.contains('show')) {
+          moreReviews.classList.remove('show');
           toggleBtn.textContent = 'Show more reviews';
+        } else {
+          moreReviews.classList.add('show');
+          toggleBtn.textContent = 'Show less reviews';
         }
       });
     });
