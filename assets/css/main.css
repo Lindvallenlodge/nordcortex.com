@@ -2492,3 +2492,8 @@ nav a:hover {
       box-sizing: border-box;
   }
 }
+
+
+.justify-text {
+  text-align: justify;
+}
