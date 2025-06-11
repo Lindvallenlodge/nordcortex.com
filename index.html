@@ -963,7 +963,8 @@
               <p>Great solution for traveling parents. Everything worked out perfectly.</p>
             </div>
           </div>
-          <button id="toggle-reviews">Show more reviews</button>
+          <button id="show-more-reviews" onclick="toggleReviews(true)">Show more reviews</button>
+          <button id="show-less-reviews" onclick="toggleReviews(false)" style="display: none;">Show less reviews</button>
           <!-- Babonbo reviews end -->
         </div>
     </section>
@@ -1024,14 +1025,35 @@
     });
   </script>
   <script>
-    const toggleButton = document.getElementById("toggle-reviews");
-    const moreReviews = document.querySelector(".more-reviews");
-    let expanded = false;
-
-    toggleButton.addEventListener("click", () => {
-      expanded = !expanded;
-      moreReviews.style.display = expanded ? "block" : "none";
-      toggleButton.textContent = expanded ? "Show less reviews" : "Show more reviews";
+    function toggleReviews(show) {
+      const moreReviews = document.querySelector(".more-reviews");
+      const showMoreBtn = document.getElementById('show-more-reviews');
+      const showLessBtn = document.getElementById('show-less-reviews');
+      if (show) {
+        moreReviews.style.display = 'block';
+        showMoreBtn.style.display = 'none';
+        showLessBtn.style.display = 'inline-block';
+      } else {
+        moreReviews.style.display = 'none';
+        showMoreBtn.style.display = 'inline-block';
+        showLessBtn.style.display = 'none';
+        // Optionally scroll to reviews section
+        var reviewsSection = document.getElementById('trust');
+        if (reviewsSection) {
+          window.scrollTo({ top: reviewsSection.offsetTop, behavior: 'smooth' });
+        }
+      }
+    }
+    // Initial state: hide more reviews and show only the "show more" button
+    document.addEventListener("DOMContentLoaded", function() {
+      const moreReviews = document.querySelector(".more-reviews");
+      const showMoreBtn = document.getElementById('show-more-reviews');
+      const showLessBtn = document.getElementById('show-less-reviews');
+      if (moreReviews && showMoreBtn && showLessBtn) {
+        moreReviews.style.display = 'none';
+        showMoreBtn.style.display = 'inline-block';
+        showLessBtn.style.display = 'none';
+      }
     });
   </script>
 </body>
