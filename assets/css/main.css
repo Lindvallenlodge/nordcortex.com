@@ -1892,7 +1892,7 @@ body::before {
   }
 
   .top-nav a {
-    margin: 0.5em 0;
+    margin: 1.2em 0;
     width: 100%;
     text-align: center;
   }
@@ -1934,7 +1934,7 @@ body::before {
   /* --- Mobile .logo and .intro positioning adjustments --- */
   #header .logo {
     margin-top: 2.8em !important; /* Visually center logo above intro */
-    margin-bottom: 1.5em;
+    margin-bottom: 2.5em !important;
   }
   .intro-section,
   .intro-text-special,
