@@ -2483,10 +2483,18 @@ nav a:hover {
 }
 
 .contact-box-style {
-  max-width: 90%;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.88);
+  max-width: 960px;
+  width: 90%;
+  margin: 2em auto;
+  padding: 2em;
+  background-color: rgba(255, 255, 255, 0.95);
   border-radius: 12px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-box-style {
+    padding: 1.2em;
+  }
 }
