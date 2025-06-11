@@ -2548,3 +2548,32 @@ nav a:hover {
   cursor: pointer;
   margin-top: 1rem;
 }
+/* === Collapsible Reviews Section Styles === */
+.review-hidden {
+  display: none;
+}
+
+.review-section .show-more-button,
+.review-section .show-less-button {
+  display: block;
+  margin: 1em auto;
+  padding: 0.75em 1.5em;
+  text-align: center;
+  cursor: pointer;
+  background-color: #f2f2f2;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.review-section .show-less-button {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .review-section .show-more-button,
+  .review-section .show-less-button {
+    width: 100%;
+    font-size: 0.95rem;
+  }
+}
