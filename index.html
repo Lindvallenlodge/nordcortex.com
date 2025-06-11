@@ -8,6 +8,27 @@
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    .contact-box-style {
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 2rem 1.5rem;
+      max-width: 960px;
+      width: 95%;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 10;
+    }
+
+    @media (max-width: 768px) {
+      .contact-box-style {
+        width: calc(100vw - 2rem);
+        padding: 1.5rem 1rem;
+      }
+      .contact-box-style .section-text {
+        padding: 0 0.5rem;
+      }
+    }
     /* Remove all backgrounds */
     html, body, div, section, main, header, footer, article, aside, nav {
       background: transparent !important;
@@ -1368,7 +1389,7 @@
     <div class="contact-box-style">
       <div class="content-wrapper">
         <h2 class="section-title">Contact us in the way that suits you best</h2>
-        <p class="section-text" style="text-align: left;">
+        <p class="section-text" style="text-align: left; padding: 0 1rem;">
           - ✉️ Email us at: <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a><br>
           - 📞 Reach us via Call, SMS or WhatsApp at: <a href="tel:+46767667055">+46 76 766 70 55</a><br>
           - 📝 Or simply fill in the form below:
