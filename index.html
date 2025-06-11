@@ -407,14 +407,21 @@
             flex-direction: column;
             align-items: center;
             align-self: flex-end;
+            margin-top: 10px; /* Reduced vertical spacing */
+            margin-bottom: 10px;
+            padding-top: 5px; /* Reduced padding */
+            padding-bottom: 5px;
+            height: auto; /* Remove fixed height if any */
           }
           #gear-row .gear-category img.main-gear {
             cursor: pointer;
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.3em; /* Less space under icon */
             transition: transform 0.3s ease;
+            display: block;
+            margin-top: 0.3em; /* Reduce top margin if needed */
           }
           #gear-row .gear-category img.main-gear:hover {
             transform: scale(1.02);
@@ -436,16 +443,18 @@
           }
           #gear-row .gear-category {
             width: 100%;
-            margin-bottom: 2em;
-            padding: 0;
+            margin-bottom: 1em; /* Reduce vertical spacing */
+            padding: 5px 0;    /* Reduce vertical padding */
             text-align: center;
+            margin-top: 10px;
           }
           #gear-row .gear-category img.main-gear {
             max-width: 80%;
             height: auto;
-            margin: 0 auto 0.5em auto;
+            margin: 0.2em auto 0.2em auto; /* Less vertical margin */
             cursor: pointer;
             transition: transform 0.3s ease;
+            display: block;
           }
           #gear-row .gear-category img.main-gear:hover {
             transform: scale(1.02);
