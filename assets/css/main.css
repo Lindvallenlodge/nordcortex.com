@@ -2494,6 +2494,10 @@ nav a:hover {
 }
 
 
-.justify-text {
+
+/* Justify paragraphs in About, Trust, and Order sections only (not headings/titles) */
+#about p,
+#trust p,
+#order p {
   text-align: justify;
 }
