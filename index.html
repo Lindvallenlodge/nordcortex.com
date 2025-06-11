@@ -548,7 +548,7 @@
               <button id="show-more-reviews">Show more reviews</button>
             </div>
             <!-- Remaining reviews hidden by default -->
-              <div class="hidden-reviews" style="display:none;">
+              <div class="hidden-reviews">
                 <div class="review" style="text-align: center;">
                   <div class="review-header">
                     <span class="review-name">Margaux Brassinais</span>
@@ -691,23 +691,24 @@
         document.body.classList.remove('gallery-open');
       }
     });
-    // Reviews show more/less functionality
-    document.addEventListener('DOMContentLoaded', function() {
-      var showMoreBtn = document.getElementById('show-more-reviews');
-      var showLessBtn = document.getElementById('show-less-reviews');
-      var hiddenReviews = document.querySelector('.hidden-reviews');
-      if (showMoreBtn && showLessBtn && hiddenReviews) {
-        showMoreBtn.addEventListener('click', function () {
-          hiddenReviews.style.display = 'block';
-          showMoreBtn.style.display = 'none';
-          showLessBtn.style.display = 'inline-block';
-        });
-        showLessBtn.addEventListener('click', function () {
-          hiddenReviews.style.display = 'none';
-          showLessBtn.style.display = 'none';
-          showMoreBtn.style.display = 'inline-block';
-        });
-      }
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const showMoreBtn = document.getElementById('show-more-reviews');
+      const showLessBtn = document.getElementById('show-less-reviews');
+      const hiddenReviews = document.querySelector('.hidden-reviews');
+
+      showMoreBtn.addEventListener('click', function () {
+        hiddenReviews.classList.add('visible');
+        showMoreBtn.style.display = 'none';
+        showLessBtn.style.display = 'inline-block';
+      });
+
+      showLessBtn.addEventListener('click', function () {
+        hiddenReviews.classList.remove('visible');
+        showLessBtn.style.display = 'none';
+        showMoreBtn.style.display = 'inline-block';
+      });
     });
   </script>
 </body>
