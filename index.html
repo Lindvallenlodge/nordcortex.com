@@ -376,7 +376,9 @@
   <header id="header">
     <div class="inner" style="padding-top: 0; margin-top: -80px;">
       <a href="#" class="image avatar">
-        <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
+        <div class="logo-wrapper">
+          <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img" style="max-width: 874px; height: auto; display: block; margin: 0 auto 1em; border-radius: 50%;" />
+        </div>
       </a>
       <div class="box-style" style="background: rgba(255, 255, 255, 0.85); z-index: 10; margin-left: auto; margin-right: auto;">
         <p class="section-text" style="max-width: 960px; text-align: justify; line-height: 1.4; margin-bottom: 0;">
@@ -1077,3 +1079,20 @@
         margin-top: 1em;
       }
     }
+  <style>
+    .logo-wrapper {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 115%;
+      height: 115%;
+      background-color: transparent;
+      border-radius: 50%;
+    }
+    .logo {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
