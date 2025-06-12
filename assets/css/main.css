@@ -2553,3 +2553,8 @@ nav a:hover {
   font-size: 1.2em;
   text-decoration: underline;
 }
+  /* Scale logo image up on mobile */
+  .logo img {
+    width: 125%;
+    height: auto;
+  }
