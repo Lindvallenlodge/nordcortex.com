@@ -1056,6 +1056,7 @@
     @media (max-width: 767px) {
       .intro-top-actions {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         margin-bottom: 0.5em;
@@ -1063,19 +1064,24 @@
         max-width: 100%;
         margin-left: 0;
         margin-right: 0;
-        gap: 1em;
+        gap: 0; /* Remove gap, use margin-bottom for spacing */
       }
       .intro-top-actions .button {
-        width: 100%;
+        width: 75%;
+        max-width: 300px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
         align-items: center;
         justify-content: center;
       }
-      /* Adjust other mobile buttons for full width and centering */
+      .intro-top-actions .button:first-child {
+        margin-bottom: 16px; /* Increase spacing between Contact us and Order now */
+      }
+      /* Adjust other mobile buttons for 75% width and centering */
       .actions a.button {
-        width: 100%;
+        width: 75%;
+        max-width: 300px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
@@ -1084,7 +1090,8 @@
       }
       /* Also target review "Show more reviews" button */
       .section-text + div > a.button {
-        width: 100%;
+        width: 75%;
+        max-width: 300px;
         margin-left: auto;
         margin-right: auto;
         display: flex;
