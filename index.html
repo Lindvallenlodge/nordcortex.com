@@ -187,8 +187,9 @@
     }
     @media (max-width: 767px) {
       .logo-img {
-        max-width: 629px !important; /* 524px * 1.2 = 628.8px */
-        margin-top: 1em;
+        max-width: 629px !important;
+        margin-top: 2em; /* Increase margin-top to push logo down */
+        margin-bottom: 2em; /* Add margin-bottom to separate from intro text */
         border-radius: 50%;
         transform: scale(1.3);
       }
@@ -1065,6 +1066,7 @@
         margin-left: 0;
         margin-right: 0;
         gap: 2em;
+        margin-top: 1em; /* Add margin-top to push buttons away from top edge */
       }
     }
   </style>
