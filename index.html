@@ -187,7 +187,7 @@
     }
     @media (max-width: 767px) {
       .logo-img {
-        max-width: 524px !important;
+        max-width: 629px !important; /* 524px * 1.2 = 628.8px */
         margin-top: 1em;
         border-radius: 50%;
       }
@@ -368,7 +368,7 @@
   </video>
   <div class="video-bottom-fade-desktop"></div>
   <div class="container-max text-center">
-    <div class="top-buttons intro-top-actions">
+    <div class="intro-top-actions">
       <a href="#contact-form" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;" onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</a>
       <a href="#order" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
     </div>
@@ -1065,15 +1065,4 @@
         margin-right: 0;
       }
     }
-    @media (max-width: 768px) {
-      .top-buttons {
-        margin-top: 0;
-      }
-    }
   </style>
-    /* Mobile: Add margin to logo container to create spacing between top buttons and logo */
-    @media (max-width: 768px) {
-      .logo-container {
-        margin-top: 1em;
-      }
-    }
