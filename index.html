@@ -1310,7 +1310,44 @@
     });
   </script>
 </body>
-<section id="faq" class="box-style">
+<section id="faq" class="box-style spaced-section">
+</html>
+<style>
+  /* Desktop: Align top intro buttons to match .box-style (intro area) edges */
+  @media (min-width: 768px) {
+    .intro-top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 960px;
+      width: 95%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0.5em;
+      /* Match .box-style width and centering */
+    }
+  }
+
+  @media (max-width: 767px) {
+    .intro-top-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5em;
+      width: 100%;
+      max-width: 100%;
+      margin-left: 0;
+      margin-right: 0;
+      gap: 2em;
+    }
+  }
+
+  /* Consistent vertical spacing for major sections */
+  .spaced-section {
+    margin-top: 80px;
+    margin-bottom: 80px;
+  }
+</style>
   <div class="content-wrapper">
     <h2 class="section-title">FAQ – Renting Baby Gear in Stockholm</h2>
 
