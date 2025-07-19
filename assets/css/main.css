@@ -2248,7 +2248,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, .section-title, .se
 /* Update typography to match stenswed.com exactly */
 .section-title, h1, h2 {
     font-family: 'Questrial', sans-serif !important;
-    font-size: 48px !important;
+    font-size: 38px !important;
     line-height: 1.1 !important;
     font-weight: 400 !important;
     letter-spacing: -0.5px !important;
