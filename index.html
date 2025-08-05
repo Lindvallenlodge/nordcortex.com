@@ -263,15 +263,24 @@
 
     .category-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(5, 1fr);
       gap: 24px;
       padding: 24px;
+      justify-items: center;
+    }
+
+    @media (max-width: 1023px) {
+      .category-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
 
     @media (max-width: 768px) {
       .category-grid {
         grid-template-columns: repeat(2, 1fr);
         row-gap: 6px;
+        gap: 12px;
+        padding: 12px;
       }
 
       .category-item {
@@ -288,6 +297,13 @@
       .category-item p {
         margin-top: 0 !important;
         font-size: 1em;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .category-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
     }
 
@@ -699,6 +715,20 @@
         <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness">
         <p>Wellness</p>
       </div>
+      <!-- New icons start -->
+      <div class="category-item">
+        <a href="baby-gear-combo-deals/index.html" class="icon featured">
+          <img src="assets/images/icons/baby_gear_combo_deals.png" alt="Baby Gear Combo Deals" />
+        </a>
+        <p>Baby Gear Combo Deals</p>
+      </div>
+      <div class="category-item">
+        <a href="delivery-and-pickup/index.html" class="icon featured">
+          <img src="assets/images/icons/Delivery_and_pickup.png" alt="Delivery & Pickup" />
+        </a>
+        <p>Delivery & Pickup</p>
+      </div>
+      <!-- New icons end -->
     </section>
 
     <section id="about">
