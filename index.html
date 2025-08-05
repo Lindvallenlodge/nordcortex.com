@@ -286,6 +286,8 @@
       .category-item {
         padding: 4px 0;
         margin-bottom: 4px;
+        width: 100%;
+        /* Each category-item will fill half of the row by default in 2-col grid */
       }
 
       .category-item img {
@@ -302,7 +304,7 @@
 
     @media (max-width: 480px) {
       .category-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
       }
     }
@@ -709,7 +711,7 @@
       </div>
       <div class="category-item">
         <img src="assets/images/icons/travelcot_icon_trasnsparent.png" alt="Cribs and Cots">
-        <p>Cribs & Cots - Babybjörn</p>
+        <p>Baby Cots – Babybjörn</p>
       </div>
       <div class="category-item">
         <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness">
