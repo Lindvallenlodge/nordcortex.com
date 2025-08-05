@@ -278,20 +278,21 @@
     @media (max-width: 768px) {
       .category-grid {
         grid-template-columns: repeat(2, 1fr);
-        row-gap: 6px;
+        row-gap: 16px;
+        column-gap: 12px;
         gap: 12px;
         padding: 12px;
       }
 
       .category-item {
         padding: 4px 0;
-        margin-bottom: 4px;
+        margin-bottom: 8px;
       }
 
       .category-item img {
         max-width: 80%;
         height: auto;
-        margin-bottom: 2px;
+        margin-bottom: 6px;
       }
 
       .category-item p {
@@ -302,7 +303,7 @@
 
     @media (max-width: 480px) {
       .category-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 8px;
       }
     }
