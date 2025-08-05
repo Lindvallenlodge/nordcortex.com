@@ -684,66 +684,20 @@
       </style>
     </section>
 
-    <section class="category-grid">
-      <div class="category-item">
-        <a href="strollers/index.html" class="icon-link">
-          <img src="assets/images/icons/stroller_icon_trasnsparent.png" alt="Strollers icon">
-          <p>Strollers - Babyzen Yoyo, Bugaboo, Thule</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="car-seats/index.html" class="icon-link">
-          <img src="assets/images/icons/carseat_icon_trasnsparent.png" alt="Car Seats icon">
-          <p>Car Seats - Maxi Cosi, Bugaboo, Besafe</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="carriers-and-bouncers/index.html" class="icon-link">
-          <img src="assets/images/icons/carriers_n_bouncers_icon_trasnsparent.png" alt="Baby Carriers icon">
-          <p>Carriers & Bouncers - Babybjörn</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="outwear/index.html" class="icon-link">
-          <img src="assets/images/icons/Outdoor_icon_trasnsparent.png" alt="Outwear icon">
-          <p>Outwear - Polarn O. Pyret, Reima</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="toys-and-books/index.html" class="icon-link">
-          <img src="assets/images/icons/bookstoys_icon_trasnsparent.png" alt="Toys and Books icon">
-          <p>Toys & Books</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="highchairs/index.html" class="icon-link">
-          <img src="assets/images/icons/highchairs_icon_transparent.png" alt="High Chairs icon">
-          <p>Highchairs</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="baby-cots/index.html" class="icon-link">
-          <img src="assets/images/icons/travelcot_icon_trasnsparent.png" alt="Baby Cots – Babybjörn icon">
-          <p>Baby Cots – Babybjörn</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="wellness/index.html" class="icon-link">
-          <img src="assets/images/icons/wellness_icon_trasnsparent.png" alt="Wellness icon">
-          <p>Wellness</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="baby-gear-combo-deals/index.html" class="icon-link">
-          <img src="assets/images/icons/baby_gear_combo_deals.png" alt="Baby Gear Combo Deals icon">
-          <p>Baby Gear Combo Deals</p>
-        </a>
-      </div>
-      <div class="category-item">
-        <a href="delivery-pickup/index.html">
-          <img src="assets/images/icons/delivery_pickup.png" alt="Delivery & Pickup">
-          <span>Delivery & Pickup</span>
-        </a>
+    <section class="products">
+      <div class="product-list">
+        <div class="product-item">
+          <img src="/assets/images/products/BABYZEN - Car Seat (0-12 Months).jpg" alt="BABYZEN - Car Seat (0-12 Months)">
+          <h3>BABYZEN - Car Seat (0-12 Months)</h3>
+          <p>High-quality baby gear, car seat rental…</p>
+          <p><strong>€12/day</strong></p>
+        </div>
+        <div class="product-item">
+          <img src="/assets/images/products/BeSafe - Booster Car Seat / Up To 36 Kg.jpg" alt="BeSafe - Booster Car Seat / Up To 36 Kg">
+          <h3>BeSafe - Booster Car Seat / Up To 36 Kg</h3>
+          <p>High-quality baby gear, car seat rental…</p>
+          <p><strong>€14/day</strong></p>
+        </div>
       </div>
     </section>
 
@@ -1481,3 +1435,68 @@
     }
   }
 </style>
+  <style>
+    /* Product list styles for car seats category */
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      justify-content: center;
+      margin: 2em 0;
+    }
+    .product-item {
+      background: rgba(255,255,255,0.85);
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      padding: 1.5em 1.25em;
+      text-align: center;
+      max-width: 260px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: box-shadow 0.2s;
+    }
+    .product-item img {
+      width: 100%;
+      max-width: 180px;
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain;
+      margin-bottom: 1em;
+      background: #f8f8f8;
+    }
+    .product-item h3 {
+      font-size: 1.1em;
+      font-weight: 600;
+      margin: 0.5em 0 0.25em 0;
+      color: #222;
+    }
+    .product-item p {
+      margin: 0.25em 0;
+      color: #333;
+      font-size: 1em;
+    }
+    .product-item p strong {
+      color: #000;
+      font-size: 1.05em;
+    }
+    .product-item:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.07);
+    }
+    @media (max-width: 767px) {
+      .product-list {
+        flex-direction: column;
+        gap: 1.5em;
+        margin: 1.2em 0;
+      }
+      .product-item {
+        max-width: 100%;
+        width: 95vw;
+        margin: 0 auto;
+      }
+      .product-item img {
+        max-width: 95vw;
+      }
+    }
+  </style>
