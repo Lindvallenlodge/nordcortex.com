@@ -32,6 +32,22 @@
         p { text-align: justify; }
         .product-grid { display: block; }
       }
+      /* Shared fixes */
+      .product-card img {max-width:100%;height:auto;display:block;margin:0 auto 10px;border-radius:8px;}
+      .page-section {padding: 2rem;}
+
+      @media (max-width: 768px) {
+        /* Tighter vertical rhythm and smaller headings on mobile */
+        header img {height: 96px;}
+        h1 {font-size: 1.9rem; margin: 6px 16px 10px;}
+        h2 {font-size: 1.35rem; line-height: 1.25; margin: 0 16px 12px;}
+        h3 {font-size: 1.05rem; margin: 8px 0 6px;}
+        .page-section {max-width: 680px; padding: 1.25rem; margin: 1rem auto; border-radius: 12px;}
+        .product-grid {display:block !important;}
+        .product-grid > div {width:100% !important; max-width: 480px !important; margin: 0 auto 1rem !important; text-align:center;}
+        /* Justify body copy for readability */
+        p {text-align: justify; line-height: 1.55; margin-left: 0; margin-right: 0;}
+      }
     </style>
     <script type="application/ld+json">
     {
@@ -62,17 +78,17 @@
     <div class="page-section" style="max-width: 700px; margin: 2rem auto; padding: 2rem; border: 1px solid #e0e0e0; border-radius: 1rem; background: #fafbfc;">
       <h2 style="margin-top:0;">Stokke® Tripp Trapp® – 3 Configurations</h2>
       <div class="product-grid" style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
-        <div style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
+        <div class="product-card" style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
           <img src="/assets/images/products/TrippTrapp1.png" alt="Stokke Tripp Trapp Chair" loading="lazy" style="max-width:100%; border-radius:8px;">
           <h3 style="margin: 0.5em 0 0.3em;">Stokke Tripp Trapp Chair</h3>
           <p style="font-size: 0.98em; margin:0 0 1em;">Classic, adjustable highchair that grows with your child from toddler to adult. Ergonomic design with adjustable seat and footrest for optimal support.</p>
         </div>
-        <div style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
+        <div class="product-card" style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
           <img src="/assets/images/products/TrippTrapp2.png" alt="Stokke Tripp Trapp Newborn Set" loading="lazy" style="max-width:100%; border-radius:8px;">
           <h3 style="margin: 0.5em 0 0.3em;">Stokke Tripp Trapp Newborn Set 2.0</h3>
           <p style="font-size: 0.98em; margin:0 0 1em;">Newborn attachment for the Tripp Trapp® chair, allowing your baby to join family meals from birth. Comfortable, ergonomic and easy to attach.</p>
         </div>
-        <div style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
+        <div class="product-card" style="flex: 1 1 180px; min-width: 180px; max-width: 220px; text-align: center;">
           <img src="/assets/images/products/TrippTrapp3.png" alt="Stokke Tripp Trapp Baby Set" loading="lazy" style="max-width:100%; border-radius:8px;">
           <h3 style="margin: 0.5em 0 0.3em;">Stokke Tripp Trapp Baby Set 2</h3>
           <p style="font-size: 0.98em; margin:0 0 1em;">Baby set for the Tripp Trapp® chair, providing back and side support for your child once they can sit unaided. Includes a safety harness.</p>
@@ -85,7 +101,7 @@
     <div class="page-section" style="max-width: 700px; margin: 2rem auto; padding: 2rem; border: 1px solid #e0e0e0; border-radius: 1rem; background: #fafbfc;">
       <h2 style="margin-top:0;">IKEA Antilop Highchair</h2>
       <div class="product-grid" style="display: flex; flex-wrap: wrap; align-items: flex-start; gap: 1.5rem;">
-        <div style="flex: 0 0 180px; max-width: 200px;">
+        <div class="product-card" style="flex: 0 0 180px; max-width: 200px;">
           <img src="/assets/images/products/Antilop.png" alt="IKEA Antilop Highchair" loading="lazy" style="max-width:100%; border-radius:8px;">
         </div>
         <div style="flex: 1 1 250px;">
