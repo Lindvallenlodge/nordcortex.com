@@ -19,6 +19,7 @@
     <meta name="twitter:description" content="Rent baby outerwear in Stockholm – jackets, snowsuits, and weather gear.">
     <meta name="twitter:image" content="https://www.strollbystockholm.com/assets/images/og/strollby-logo-og.jpg">
     <title>Rent Baby Outerwear – Snowsuits, Jackets & Weather Gear | Strollby Stockholm</title>
+</head>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -28,15 +29,59 @@
       "description": "Rent baby outerwear in Stockholm – jackets, snowsuits, and weather gear. Clean, safe, and perfect for all seasons.",
       "mainEntity": {
         "@type": "ItemList",
-        "itemListElement": []
+        "itemListElement": [
+          {"@type":"Product","name":"Baby Winter Snowsuit","image":"https://www.strollbystockholm.com/assets/images/products/pop1.png","offers":{"@type":"Offer","price":"6","priceCurrency":"EUR","availability":"https://schema.org/InStock"}},
+          {"@type":"Product","name":"Waterproof Rain Set","image":"https://www.strollbystockholm.com/assets/images/products/pop2.png","offers":{"@type":"Offer","price":"4","priceCurrency":"EUR","availability":"https://schema.org/InStock"}},
+          {"@type":"Product","name":"Fleece Overall Layer","image":"https://www.strollbystockholm.com/assets/images/products/pop3.png","offers":{"@type":"Offer","price":"3","priceCurrency":"EUR","availability":"https://schema.org/InStock"}}
+        ]
       }
     }
     </script>
+<style>
+  body { margin:0; }
+  header, h1, h2, h3 { text-align:center; }
+  .page-section { max-width:1000px; margin:0 auto; }
+  .product-grid { display:flex; flex-wrap:wrap; gap:24px; justify-content:center; }
+  .product-card { flex: 1 1 280px; max-width:320px; background:#fff; border:1px solid #e6e6e6; border-radius:12px; padding:18px; text-align:center; }
+  .product-card img { max-width:100%; height:auto; display:block; margin:0 auto 12px; border-radius:8px; }
+  .product-card p { text-align:left; }
+  @media (max-width:768px) {
+    p { text-align: justify; }
+  }
+</style>
+</head>
 </head>
 <body>
-    <h1 style="text-align: center; margin-top: 24px;">Baby Outerwear Rentals in Stockholm</h1>
-    <p style="text-align: center; max-width: 700px; margin: 8px auto 0;">
-    Stay warm and comfortable with our premium selection of baby outerwear for rent in Stockholm – including jackets, snowsuits, and weather protection gear. Clean, safe, and perfect for all seasons.
-    </p>
+<header style="max-width:1000px;margin:20px auto 0;display:flex;align-items:center;justify-content:center;">
+  <a href="/" style="display:inline-block;">
+    <img src="/assets/images/strollbystockholm_logo.png" alt="Strollby Stockholm" style="height:120px;width:auto;" loading="eager">
+  </a>
+</header>
+<h1 style="text-align:center; margin-top:24px;">Baby Outerwear Rentals in Stockholm</h1>
+<p style="text-align:center; max-width:800px; margin:10px auto 6px;">
+  Travel light and keep your child comfortable in any weather. Rent <strong>snowsuits</strong>, <strong>rain sets</strong>, and <strong>fleece layers</strong> that are clean, safe, and ready on arrival. Simple daily pricing and flexible delivery across Stockholm.
+</p>
+<div class="page-section" style="padding: 12px 16px 36px;">
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="/assets/images/products/pop1.png" alt="Baby Winter Snowsuit rental in Stockholm" loading="lazy">
+      <h2 style="margin:6px 0 6px;">Baby Winter Snowsuit</h2>
+      <p>Insulated, weatherproof one‑piece for cold days. Easy on/off zippers, elastic cuffs, and hood for warmth. Ideal for outdoor play and stroller naps in winter.</p>
+      <p style="font-weight:600; margin:8px 0 0;">Daily Price: €6</p>
+    </div>
+    <div class="product-card">
+      <img src="/assets/images/products/pop2.png" alt="Waterproof Rain Set rental for babies (jacket + pants) in Stockholm" loading="lazy">
+      <h2 style="margin:6px 0 6px;">Waterproof Rain Set</h2>
+      <p>Lightweight jacket + bib pants with welded seams. Keeps little ones dry in drizzle or downpour. Works over fleece or base layers in spring/autumn.</p>
+      <p style="font-weight:600; margin:8px 0 0;">Daily Price: €4</p>
+    </div>
+    <div class="product-card">
+      <img src="/assets/images/products/pop3.png" alt="Fleece Overall layer rental for babies in Stockholm" loading="lazy">
+      <h2 style="margin:6px 0 6px;">Fleece Overall Layer</h2>
+      <p>Soft mid‑layer for extra warmth under outerwear or as a cozy suit indoors. Breathable, quick‑dry fabric that’s gentle on skin.</p>
+      <p style="font-weight:600; margin:8px 0 0;">Daily Price: €3</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
