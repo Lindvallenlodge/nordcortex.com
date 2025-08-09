@@ -7,7 +7,99 @@
     <title>Carriers And Bouncers - Strollby Stockholm</title>
 </head>
 <body>
-    <h1>Carriers And Bouncers</h1>
-    <p>This is the Carriers And Bouncers page for Strollby Stockholm.</p>
+    <!-- Logo at the top, centered -->
+    <div style="text-align: center; margin-top: 32px;">
+        <img src="/assets/images/logo.png" alt="Strollby Stockholm Logo" style="max-width: 200px; width: 100%; height: auto;">
+    </div>
+
+    <!-- Centered h1 title -->
+    <h1 style="text-align: center; margin-top: 24px;">Carriers and Bouncers</h1>
+
+    <!-- Responsive product grid -->
+    <div style="display: grid; grid-template-columns: 1fr; gap: 32px; max-width: 1000px; margin: 40px auto 0 auto; padding: 0 16px;
+        /* Responsive grid for desktop */
+    "
+    >
+        <style>
+            @media (min-width: 700px) {
+                .product-grid {
+                    grid-template-columns: repeat(3, 1fr);
+                }
+            }
+            .product-card {
+                background: #fff;
+                border-radius: 12px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 24px 18px 20px 18px;
+                text-align: center;
+                transition: box-shadow 0.2s;
+            }
+            .product-card:hover {
+                box-shadow: 0 6px 24px rgba(0,0,0,0.10);
+            }
+            .product-card img {
+                width: 100%;
+                max-width: 180px;
+                height: auto;
+                margin-bottom: 18px;
+            }
+            .product-title {
+                font-size: 1.18em;
+                font-weight: 600;
+                margin-bottom: 10px;
+            }
+            .product-desc {
+                text-align: justify;
+                font-size: 1em;
+                margin-bottom: 16px;
+                color: #222;
+            }
+            .product-price {
+                font-size: 1em;
+                font-weight: 500;
+                margin-bottom: 10px;
+                color: #0d7b6d;
+            }
+            .product-link {
+                color: #0d7b6d;
+                text-decoration: underline;
+                font-size: 0.98em;
+            }
+        </style>
+        <div class="product-grid" style="display: contents;">
+            <!-- Ergobaby Omni Classic -->
+            <div class="product-card">
+                <img src="/assets/images/products/ErgobabyOmniDelux.png" alt="Ergobaby Omni Classic (Omni 360) baby carrier">
+                <div class="product-title">Ergobaby Omni Classic (Omni 360)</div>
+                <div class="product-desc">
+                    Versatile, ergonomic baby carrier suitable from newborn to toddler. Multiple carry positions, adjustable seat, and padded straps for comfort all day.
+                </div>
+                <div class="product-price">Daily Price: €8</div>
+                <a class="product-link" href="https://ergobaby.eu/baby-carrier/omni/the-omni-360-baby-carrier" target="_blank" rel="noopener">Product details</a>
+            </div>
+            <!-- Baby Carrier Weather Cover -->
+            <div class="product-card">
+                <img src="/assets/images/products/babycarrierweather.png" alt="Baby Carrier Weather Cover">
+                <div class="product-title">Baby Carrier Weather Cover</div>
+                <div class="product-desc">
+                    Universal winter cover to keep your baby warm and protected in any carrier. Windproof and water-resistant.
+                </div>
+                <div class="product-price">Daily Price: €3</div>
+            </div>
+            <!-- Babybjörn Bouncer -->
+            <div class="product-card">
+                <img src="/assets/images/products/BabybjornB.png" alt="Babybjörn Bouncer">
+                <div class="product-title">Babybjörn Bouncer</div>
+                <div class="product-desc">
+                    Comfortable bouncer suitable from newborn up to 13 kg. Supports natural rocking and motor skills development.
+                </div>
+                <div class="product-price">Daily Price: €6</div>
+                <a class="product-link" href="https://www.babybjorn.eu/products/baby-bouncers/bouncer-balance-soft/sky-blue-white-mesh-light-grey/" target="_blank" rel="noopener">Product details</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
