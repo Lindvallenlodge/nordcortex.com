@@ -42,9 +42,12 @@
   const sumTotalEl = $('#sumTotal');
   const startEl    = $('#startDate');
   const endEl      = $('#endDate');
-  const methodEl   = $('#method');
-  const deliveryExtra = $('#deliveryExtra');
-  const deliveryDetailsEl = $('#deliveryDetails');
+  const receiveEl  = $('#receiveMethod');
+  const returnEl   = $('#returnMethod');
+  const receiveExtra = $('#receiveExtra');
+  const returnExtra  = $('#returnExtra');
+  const receiveDetailsEl = $('#receiveDetails');
+  const returnDetailsEl  = $('#returnDetails');
   const orderJsonEl= $('#order_json');
   const formEl     = $('#order-form');
 
@@ -54,7 +57,7 @@
   const quickSelect = $('#quickAddSelect');
   const quickBtn = $('#quickAddBtn');
 
-  if(!catalogEl || !formEl || !startEl || !endEl || !methodEl || !sumItemsEl || !sumDaysEl || !sumTotalEl || !orderJsonEl){
+  if(!catalogEl || !formEl || !startEl || !endEl || !receiveEl || !returnEl || !sumItemsEl || !sumDaysEl || !sumTotalEl || !orderJsonEl){
     return; // required nodes missing
   }
 
@@ -213,11 +216,11 @@
       }
     });
 
-    // delivery fee
-    const m = methodEl.value;
-    if (DELIVERY_FEES[m]) {
-      total += DELIVERY_FEES[m];
-    }
+    // delivery fees (receive + return)
+    const recv = receiveEl.value;
+    const ret  = returnEl.value;
+    if (DELIVERY_FEES[recv]) total += DELIVERY_FEES[recv];
+    if (DELIVERY_FEES[ret])  total += DELIVERY_FEES[ret];
 
     sumItemsEl.textContent = String(itemsCount);
     sumDaysEl.textContent  = String(days);
@@ -227,21 +230,27 @@
       startDate: startEl.value,
       endDate: endEl.value,
       daysCharged: days,
-      method: methodEl.value,
-      deliveryDetails: deliveryDetailsEl ? deliveryDetailsEl.value : '',
+      receiveMethod: recv,
+      receiveDetails: receiveDetailsEl ? receiveDetailsEl.value : '',
+      returnMethod: ret,
+      returnDetails: returnDetailsEl ? returnDetailsEl.value : '',
       items,
       totalEstimated: total,
-      deliveryFee: DELIVERY_FEES[methodEl.value] || 0,
+      deliveryFee: (DELIVERY_FEES[recv] || 0) + (DELIVERY_FEES[ret] || 0),
       quickAddLast: quickSelect ? quickSelect.value : '',
     };
     orderJsonEl.value = JSON.stringify(payload, null, 2);
   }
 
-  // ===== Delivery toggle =====
-  methodEl.addEventListener('change', ()=>{
-    const val = methodEl.value;
-    const show = val && val !== 'pickup';
-    if(deliveryExtra) deliveryExtra.style.display = show ? 'block' : 'none';
+  // ===== Delivery toggles (receive + return) =====
+  receiveEl.addEventListener('change', ()=>{
+    const show = receiveEl.value && receiveEl.value !== 'pickup';
+    if(receiveExtra) receiveExtra.style.display = show ? 'block' : 'none';
+    recalc();
+  });
+  returnEl.addEventListener('change', ()=>{
+    const show = returnEl.value && returnEl.value !== 'pickup';
+    if(returnExtra) returnExtra.style.display = show ? 'block' : 'none';
     recalc();
   });
 
