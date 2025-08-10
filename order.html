@@ -47,6 +47,13 @@
       .inline-time { grid-template-columns: 1fr 120px; }
     }
 
+    .method-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
     .scrollable-container {
       max-height: 520px;
       overflow-y: auto;
@@ -107,40 +114,48 @@
         <div class="order-grid">
           <div class="dates-methods">
             <div class="dates-row">
-              <label>Start date & time
-                <div class="inline-time">
-                  <input type="date" id="startDate" name="startDate" required>
-                  <input type="time" id="startTime" name="startTime" value="10:00">
-                </div>
-              </label>
-              <label>Receive method
-                <select id="receiveMethod" name="receiveMethod" required>
-                  <option value="pickup">Self pickup (T‑Centralen area)</option>
-                  <option value="zone1">Delivery – Zone 1 (€6 flat)</option>
-                  <option value="zone2">Delivery – Zone 2 (€20 flat)</option>
-                  <option value="zone3">Delivery – Zone 3 (€25 flat)</option>
-                  <option value="airport_arlanda">Delivery – Arlanda Airport (€20 flat)</option>
-                  <option value="custom">Delivery – Custom address (quote)</option>
-                </select>
-              </label>
+              <div class="method-box">
+                <label>Start date & time
+                  <div class="inline-time">
+                    <input type="date" id="startDate" name="startDate" required>
+                    <input type="time" id="startTime" name="startTime" value="10:00">
+                  </div>
+                </label>
+              </div>
+              <div class="method-box">
+                <label>Receive method
+                  <select id="receiveMethod" name="receiveMethod" required>
+                    <option value="pickup">Self pickup (T‑Centralen area)</option>
+                    <option value="zone1">Delivery – Zone 1 (€6 flat)</option>
+                    <option value="zone2">Delivery – Zone 2 (€20 flat)</option>
+                    <option value="zone3">Delivery – Zone 3 (€25 flat)</option>
+                    <option value="airport_arlanda">Delivery – Arlanda Airport (€20 flat)</option>
+                    <option value="custom">Delivery – Custom address (quote)</option>
+                  </select>
+                </label>
+              </div>
             </div>
             <div class="dates-row">
-              <label>End date & time
-                <div class="inline-time">
-                  <input type="date" id="endDate" name="endDate" required>
-                  <input type="time" id="endTime" name="endTime" value="10:00">
-                </div>
-              </label>
-              <label>Return method
-                <select id="returnMethod" name="returnMethod" required>
-                  <option value="pickup">Drop off to our location (free)</option>
-                  <option value="zone1">We collect – Zone 1 (€6 flat)</option>
-                  <option value="zone2">We collect – Zone 2 (€20 flat)</option>
-                  <option value="zone3">We collect – Zone 3 (€25 flat)</option>
-                  <option value="airport_arlanda">We collect – Arlanda Airport (€20 flat)</option>
-                  <option value="custom">We collect – Custom address (quote)</option>
-                </select>
-              </label>
+              <div class="method-box">
+                <label>End date & time
+                  <div class="inline-time">
+                    <input type="date" id="endDate" name="endDate" required>
+                    <input type="time" id="endTime" name="endTime" value="10:00">
+                  </div>
+                </label>
+              </div>
+              <div class="method-box">
+                <label>Return method
+                  <select id="returnMethod" name="returnMethod" required>
+                    <option value="pickup">Drop off to our location (free)</option>
+                    <option value="zone1">We collect – Zone 1 (€6 flat)</option>
+                    <option value="zone2">We collect – Zone 2 (€20 flat)</option>
+                    <option value="zone3">We collect – Zone 3 (€25 flat)</option>
+                    <option value="airport_arlanda">We collect – Arlanda Airport (€20 flat)</option>
+                    <option value="custom">We collect – Custom address (quote)</option>
+                  </select>
+                </label>
+              </div>
             </div>
           </div>
 
