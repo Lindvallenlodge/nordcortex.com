@@ -12,6 +12,14 @@
   <style>
     body { padding-top: 80px; }
     .order-page-header { text-align:center; }
+    .logo.logo-img {
+      max-width: 200px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      object-fit: cover;
+    }
     .order-wrap { max-width: 1000px; width: 95%; margin: 0 auto 48px; background: rgba(255,255,255,1); border-radius: 12px; padding: 24px; }
     .order-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     .controls-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px; }
@@ -50,7 +58,7 @@
 <body class="order-page">
   <header id="header" class="order-page-header">
     <a href="/" class="image avatar" aria-label="Back to home">
-      <img src="assets/images/avatar.png" alt="Strollby Stockholm" class="logo logo-img" style="max-width:200px;border-radius:50%;">
+      <img src="assets/images/avatar.png" alt="Strollby Stockholm" class="logo logo-img">
     </a>
   </header>
 
