@@ -1,5 +1,3 @@
-
-
 (function(){
   // ===== Helpers =====
   const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
@@ -147,7 +145,7 @@
         const img = document.createElement('img');
         img.alt = p.name || '';
         img.loading = 'lazy';
-        img.src = (p.image || '').startsWith('/') ? p.image : (p.image ? `assets/images/${p.image}` : '');
+        img.src = (p.image || '').startsWith('/') ? p.image : (p.image ? `/assets/images/${p.image}` : '');
 
         const meta = document.createElement('div');
         meta.className = 'product-meta';
@@ -202,6 +200,12 @@
   backdrop && backdrop.addEventListener('click', closeOverlay);
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeOverlay(); });
 
+  // Open overlay if URL hash includes #order
+  if (location.hash && location.hash.toLowerCase().includes('order')) {
+    // Wait a tick so DOM is ready
+    setTimeout(openOverlay, 0);
+  }
+
   // Recalc triggers
   startDateEl.addEventListener('change', ()=>{ if(endDateEl.value < startDateEl.value) endDateEl.value = startDateEl.value; recalc(); });
   endDateEl.addEventListener('change', recalc);
@@ -236,7 +240,7 @@
   // ===== Init =====
   initDates();
   loadState();
-  fetch('assets/data/products.json', { cache: 'no-store' })
+  fetch('/assets/data/products.json', { cache: 'no-store' })
     .then(r=>r.json())
     .then(json=>{ products = Array.isArray(json) ? json : (json.products || []); renderCatalog(); })
     .catch(()=>{ catalogEl.innerHTML = '<p style="text-align:center;">Could not load products. Please try again later.</p>'; });
