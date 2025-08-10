@@ -1,0 +1,241 @@
+(function(){
+  // ===== Helpers =====
+  const $ = (s, c=document) => c.querySelector(s);
+  const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
+  const toInt = (v, d=0) => { const n = parseInt(v, 10); return Number.isNaN(n) ? d : n; };
+  const euro = (n) => `€${(Math.round(n*100)/100).toFixed(0)}`;
+
+  // ===== Elements =====
+  const catalogEl = $('#catalog');
+  const sumItemsEl = $('#sumItems');
+  const sumDaysEl  = $('#sumDays');
+  const sumTotalEl = $('#sumTotal');
+  const startEl    = $('#startDate');
+  const endEl      = $('#endDate');
+  const methodEl   = $('#method');
+  const deliveryExtra = $('#deliveryExtra');
+  const deliveryDetailsEl = $('#deliveryDetails');
+  const orderJsonEl= $('#order_json');
+  const formEl     = $('#order-form');
+
+  if(!catalogEl || !formEl || !startEl || !endEl || !methodEl || !sumItemsEl || !sumDaysEl || !sumTotalEl || !orderJsonEl){
+    return; // required nodes missing
+  }
+
+  // ===== State =====
+  let products = [];
+  const selection = new Map(); // id -> qty
+
+  // ===== Dates =====
+  function isoToday(){
+    const d=new Date();
+    d.setHours(0,0,0,0);
+    return d.toISOString().slice(0,10);
+  }
+  function isoTomorrow(){
+    const d=new Date();
+    d.setDate(d.getDate()+1);
+    d.setHours(0,0,0,0);
+    return d.toISOString().slice(0,10);
+  }
+  function initDates(){
+    const t = isoToday();
+    const tm = isoTomorrow();
+    startEl.min = t; endEl.min = t;
+    if(!startEl.value) startEl.value = t;
+    if(!endEl.value || endEl.value < startEl.value) endEl.value = tm;
+  }
+  function diffDaysInclusive(){
+    const s = new Date(startEl.value);
+    const e = new Date(endEl.value);
+    if(isNaN(+s) || isNaN(+e)) return 1;
+    const ms = e - s;
+    const days = Math.floor(ms/(1000*60*60*24)) + 1;
+    return Math.max(1, days);
+  }
+
+  // ===== Category ordering =====
+  const PRIORITY = [
+    'Strollers',
+    'Sleeping Cot',
+    'Car Seats',
+    'High Chairs'
+  ];
+  function catKey(cat){
+    const c = String(cat||'').trim();
+    const idx = PRIORITY.findIndex(x => c.toLowerCase() === x.toLowerCase());
+    return idx >= 0 ? idx : 100 + c.toLowerCase().charCodeAt(0);
+  }
+
+  // ===== Rendering =====
+  function render(){
+    const days = diffDaysInclusive();
+    catalogEl.innerHTML = '';
+    const byCat = new Map();
+    products.forEach(p=>{
+      const cat = p.category || 'Other';
+      if(!byCat.has(cat)) byCat.set(cat, []);
+      byCat.get(cat).push(p);
+    });
+
+    const cats = Array.from(byCat.keys()).sort((a,b)=>{
+      const ka = catKey(a), kb = catKey(b);
+      if(ka !== kb) return ka - kb;
+      return String(a).localeCompare(String(b));
+    });
+
+    const frag = document.createDocumentFragment();
+    cats.forEach(cat=>{
+      const items = byCat.get(cat) || [];
+      // Skip Delivery category if present
+      if (String(cat).toLowerCase() === 'delivery') return;
+
+      const h = document.createElement('h3');
+      h.className = 'cat-title';
+      h.textContent = cat;
+      frag.appendChild(h);
+
+      items.sort((a,b)=> String(a.name||'').localeCompare(String(b.name||'')));
+      items.forEach(p=>{
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.backgroundColor = '#fff';
+        card.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+        card.style.borderRadius = '4px';
+        card.style.padding = '10px';
+        card.style.marginBottom = '10px';
+
+        const img = document.createElement('img');
+        const src = (p.image||'').startsWith('/') ? p.image : (p.image ? `/assets/images/${p.image}` : '');
+        img.src = src;
+        img.alt = p.name || '';
+        img.loading = 'lazy';
+
+        const meta = document.createElement('div');
+        meta.className = 'meta';
+        const nm = document.createElement('div');
+        nm.className = 'name';
+        if(p.link){
+          const a = document.createElement('a');
+          a.href = p.link; a.target = '_blank'; a.rel='noopener';
+          a.textContent = p.name;
+          nm.appendChild(a);
+        } else {
+          nm.textContent = p.name;
+        }
+        const pr = document.createElement('div');
+        pr.className = 'price';
+        const unit = toInt(p.pricePerDay ?? p.price ?? 0, 0);
+        pr.textContent = (p.priceType === 'flat')
+          ? `${euro(unit)} flat`
+          : `${euro(unit)} / day`;
+
+        meta.appendChild(nm);
+        meta.appendChild(pr);
+
+        const qtyWrap = document.createElement('div');
+        qtyWrap.className = 'qty';
+        const qty = document.createElement('input');
+        qty.type='number'; qty.min='0'; qty.max='10'; qty.step='1';
+        qty.value = selection.get(p.id) || 0;
+        qty.addEventListener('input', ()=>{
+          const v = Math.max(0, Math.min(10, toInt(qty.value, 0)));
+          if(v>0) selection.set(p.id, v); else selection.delete(p.id);
+          recalc();
+        });
+        qtyWrap.appendChild(qty);
+
+        card.appendChild(img);
+        card.appendChild(meta);
+        card.appendChild(qtyWrap);
+        frag.appendChild(card);
+      });
+    });
+
+    catalogEl.appendChild(frag);
+    recalc();
+  }
+
+  // ===== Recalc & serialize =====
+  function recalc(){
+    const days = diffDaysInclusive();
+    let itemsCount = 0;
+    let total = 0;
+    const items = [];
+
+    products.forEach(p=>{
+      const q = selection.get(p.id) || 0;
+      if(q>0){
+        itemsCount += q;
+        const unit = toInt(p.pricePerDay ?? p.price ?? 0, 0);
+        const subtotal = (p.priceType === 'flat') ? unit * q : unit * q * days;
+        total += subtotal;
+        items.push({
+          id: p.id, name: p.name, category: p.category,
+          qty: q, unitPrice: unit, priceType: p.priceType || 'per-day',
+          subtotal
+        });
+      }
+    });
+
+    sumItemsEl.textContent = String(itemsCount);
+    sumDaysEl.textContent  = String(days);
+    sumTotalEl.textContent = euro(total);
+
+    const payload = {
+      startDate: startEl.value,
+      endDate: endEl.value,
+      daysCharged: days,
+      method: methodEl.value,
+      deliveryDetails: deliveryDetailsEl ? deliveryDetailsEl.value : '',
+      items,
+      totalEstimated: total
+    };
+    orderJsonEl.value = JSON.stringify(payload, null, 2);
+  }
+
+  // ===== Delivery toggle =====
+  methodEl.addEventListener('change', ()=>{
+    const show = methodEl.value === 'delivery';
+    if(deliveryExtra) deliveryExtra.style.display = show ? 'block' : 'none';
+    recalc();
+  });
+
+  // Dates listeners
+  startEl.addEventListener('change', ()=>{
+    if(endEl.value < startEl.value) endEl.value = startEl.value;
+    recalc();
+  });
+  endEl.addEventListener('change', recalc);
+
+  // Validate minimal selection on submit
+  formEl.addEventListener('submit', (e)=>{
+    const hasItems = Array.from(selection.values()).some(q => q>0);
+    if(!hasItems){
+      e.preventDefault();
+      alert('Please add at least one item to your order.');
+      return false;
+    }
+    recalc(); // ensure hidden field up-to-date
+    return true;
+  });
+
+  // ===== Fetch products =====
+  function loadProducts(){
+    return fetch('/assets/data/products.json', { cache: 'no-store' })
+      .then(r=>{ if(!r.ok) throw new Error('root path failed'); return r.json(); })
+      .catch(()=> fetch('assets/data/products.json', { cache: 'no-store' }).then(r=>{
+        if(!r.ok) throw new Error('relative path failed'); return r.json();
+      }));
+  }
+
+  // ===== Init =====
+  initDates();
+  loadProducts()
+    .then(json => { products = Array.isArray(json) ? json : (json.products || []); render(); })
+    .catch(e => {
+      console.error('Product load error:', e);
+      const hint = (location && location.origin) ? `${location.origin}/assets/data/products.json` : '/assets/data/products.json';
+      catalogEl.innerHTML = `<p style="text-align:center;">Could not load products.<br><small>Expected at: <code>${hint}</code></small></p>`;
+    });
+})();
