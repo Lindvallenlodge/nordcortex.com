@@ -12,13 +12,22 @@
   <style>
     body { padding-top: 80px; }
     .order-page-header { text-align:center; }
-    .logo.logo-img {
-      max-width: 200px;
-      width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
+    .logo-wrap {
+      width: 164px;
+      height: 164px;
       border-radius: 50%;
-      object-fit: cover;
+      background: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto 8px;
+    }
+    .logo.logo-img {
+      width: 90%;
+      height: 90%;
+      object-fit: contain; /* show the full logo, no cropping */
+      border-radius: 0; /* image itself not clipped; circle comes from wrapper */
     }
     .order-wrap { max-width: 1000px; width: 95%; margin: 0 auto 48px; background: rgba(255,255,255,1); border-radius: 12px; padding: 24px; }
     .order-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
@@ -58,7 +67,9 @@
 <body class="order-page">
   <header id="header" class="order-page-header">
     <a href="/" class="image avatar" aria-label="Back to home">
-      <img src="assets/images/avatar.png" alt="Strollby Stockholm" class="logo logo-img">
+      <div class="logo-wrap">
+        <img src="assets/images/avatar.png" alt="Strollby Stockholm" class="logo logo-img">
+      </div>
     </a>
   </header>
 
