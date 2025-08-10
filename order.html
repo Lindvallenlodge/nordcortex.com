@@ -12,12 +12,21 @@
   <style>
     body { padding-top: 80px; }
     .order-page-header { text-align:center; }
-    .order-wrap { max-width: 1000px; width: 95%; margin: 0 auto 48px; background: rgba(255,255,255,.95); border-radius: 12px; padding: 24px; }
+    .order-wrap { max-width: 1000px; width: 95%; margin: 0 auto 48px; background: rgba(255,255,255,1); border-radius: 12px; padding: 24px; }
     .order-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
     .controls-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px; }
     .controls-grid label { font-weight:600; font-size:.95rem; display:flex; flex-direction:column; }
     .controls-grid input, .controls-grid select { margin-top:6px; padding:.55rem; border:1px solid #ccc; border-radius:6px; background:#fff; }
     @media (max-width: 820px){ .controls-grid{ grid-template-columns: 1fr; } }
+
+    .scrollable-container {
+      max-height: 520px;
+      overflow-y: auto;
+      background: rgba(255,255,255,1);
+      border-radius: 12px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
 
     .catalog { margin-top:16px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:12px; }
     @media (max-width: 820px){ .catalog{ grid-template-columns: 1fr; } }
@@ -31,7 +40,7 @@
     .qty { display:flex; align-items:center; gap:6px; }
     .qty input { width:78px; text-align:center; padding:.35rem; border:1px solid #ccc; border-radius:6px; }
 
-    .summary { position: sticky; bottom: 0; background:#fff; border-top:1px solid #eee; padding-top:12px; margin-top:16px; box-shadow: 0 -6px 12px rgba(0,0,0,.06); }
+    .summary { border-top:1px solid #eee; padding-top:12px; margin-top:16px; box-shadow: none; background:#fff; }
     .summary-line { display:flex; justify-content: space-between; margin: 6px 0; }
     .summary .actions { margin-top: 12px; display:flex; gap:10px; justify-content:flex-end; }
 
@@ -73,33 +82,39 @@
             </label>
           </div>
 
-          <div id="catalog" class="catalog" aria-live="polite"></div>
-
-          <div class="summary" id="summary">
-            <div class="summary-line"><span>Items:</span><strong id="sumItems">0</strong></div>
-            <div class="summary-line"><span>Rental days:</span><strong id="sumDays">1</strong></div>
-            <div class="summary-line"><span>Estimated total:</span><strong id="sumTotal">€0</strong></div>
-            <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
-            <div class="controls-grid" style="grid-template-columns: repeat(3, minmax(0,1fr)); margin-top:8px;">
-              <label>Your name
-                <input type="text" name="customerName" required>
-              </label>
-              <label>Email
-                <input type="email" name="customerEmail" required>
-              </label>
-              <label>Phone (with country code)
-                <input type="text" name="customerPhone" required>
-              </label>
+          <div class="scrollable-container">
+            <div id="catalog" class="catalog" aria-live="polite">
+              <!-- Products will be populated here by order.js in this category order:
+                   Strollers, Sleeping Cot, Car Seats, High Chairs, then the rest -->
             </div>
-            <label>Message to us (optional)
-              <input type="text" name="message" placeholder="Child age/weight for car seat, special requests, etc.">
-            </label>
-            <input type="hidden" name="order_json" id="order_json">
-            <div class="actions">
-              <a href="/" class="button">Back</a>
-              <button type="submit" class="button primary">Send Order Request</button>
+
+            <div class="summary" id="summary">
+              <div class="summary-line"><span>Items:</span><strong id="sumItems">0</strong></div>
+              <div class="summary-line"><span>Rental days:</span><strong id="sumDays">1</strong></div>
+              <div class="summary-line"><span>Estimated total:</span><strong id="sumTotal">€0</strong></div>
+              <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
+              <div class="controls-grid" style="grid-template-columns: repeat(3, minmax(0,1fr)); margin-top:8px;">
+                <label>Your name
+                  <input type="text" name="customerName" required>
+                </label>
+                <label>Email
+                  <input type="email" name="customerEmail" required>
+                </label>
+                <label>Phone (with country code)
+                  <input type="text" name="customerPhone" required>
+                </label>
+              </div>
+              <label>Message to us (optional)
+                <input type="text" name="message" placeholder="Child age/weight for car seat, special requests, etc.">
+              </label>
+              <input type="hidden" name="order_json" id="order_json">
+              <div class="actions">
+                <a href="/" class="button">Back</a>
+                <button type="submit" class="button primary">Send Order Request</button>
+              </div>
             </div>
           </div>
+
         </div>
       </form>
     </section>
