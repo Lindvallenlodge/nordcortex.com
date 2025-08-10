@@ -518,17 +518,6 @@
     ]
   }
   </script>
-  <!-- Google Translate: Language Selector and Script -->
-  <script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'en',
-      includedLanguages: 'en,sv,da,de,it,es,fr,nl',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-  </script>
-  <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <body>
@@ -553,18 +542,7 @@
     </div>
   </div>
   <header id="header" style="position:relative;">
-    <!-- Language Selector Flags (top right) -->
-    <div style="position:absolute; top:10px; right:10px; display:flex; gap:6px; font-size:14px; align-items:center; z-index:999;">
-      <span style="cursor:pointer;" onclick="doGTranslate('en|en')">🇬🇧 EN</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|sv')">🇸🇪 SV</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|da')">🇩🇰 DA</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|de')">🇩🇪 DE</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|it')">🇮🇹 IT</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|es')">🇪🇸 ES</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|fr')">🇫🇷 FR</span>
-      <span style="cursor:pointer;" onclick="doGTranslate('en|nl')">🇳🇱 NL</span>
-    </div>
-    <div id="google_translate_element" style="display:none;"></div>
+    <!-- Language Selector Flags removed -->
     <div class="inner" style="padding-top: 0; margin-top: -80px;">
       <a href="#" class="image avatar">
         <img src="assets/images/avatar.png" alt="Strollby Stockholm logo" class="logo logo-img"
@@ -1292,24 +1270,6 @@
         document.body.classList.remove('gallery-open');
       }
     });
-  </script>
-  <!-- Google Translate: Helper for flag selector -->
-  <script type="text/javascript">
-  function doGTranslate(lang_pair) {
-    if(lang_pair.value) lang_pair=lang_pair.value;
-    if(lang_pair=='') return;
-    var lang=lang_pair.split('|')[1];
-    var select=document.querySelector('select.goog-te-combo');
-    if(select && select.length) {
-      for(var i=0; i<select.options.length; i++) {
-        if(select.options[i].value==lang) {
-          select.selectedIndex=i;
-          select.dispatchEvent(new Event('change'));
-          break;
-        }
-      }
-    }
-  }
   </script>
 </body>
 <section id="faq" class="box-style section-spacing">
