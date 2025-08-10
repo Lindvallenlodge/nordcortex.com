@@ -9,6 +9,78 @@
     "link": "https://www.strollbystockholm.com/strollers/yoyo2-black"
   },
   {
+    "id": "stroller_cybex_gazelle_s",
+    "name": "Cybex Gazelle S",
+    "category": "Strollers",
+    "pricePerDay": 20,
+    "priceType": "per-day",
+    "image": "cybex_gazelle_s.png",
+    "link": "https://www.strollbystockholm.com/strollers/cybex-gazelle-s"
+  },
+  {
+    "id": "stroller_bugaboo_fox3",
+    "name": "Bugaboo Fox 3",
+    "category": "Strollers",
+    "pricePerDay": 22,
+    "priceType": "per-day",
+    "image": "bugaboo_fox3.png",
+    "link": "https://www.strollbystockholm.com/strollers/bugaboo-fox3"
+  },
+  {
+    "id": "sleeping_cot_stokke_sleepi",
+    "name": "Stokke Sleepi",
+    "category": "Sleeping Cot",
+    "pricePerDay": 12,
+    "priceType": "per-day",
+    "image": "stokke_sleepi.png",
+    "link": "https://www.strollbystockholm.com/sleeping-cots/stokke-sleepi"
+  },
+  {
+    "id": "sleeping_cot_ikea_sniglar",
+    "name": "IKEA SNIGLAR",
+    "category": "Sleeping Cot",
+    "pricePerDay": 8,
+    "priceType": "per-day",
+    "image": "ikea_sniglar.png",
+    "link": "https://www.strollbystockholm.com/sleeping-cots/ikea-sniglar"
+  },
+  {
+    "id": "car_seat_cybex_solution_z_i_fix",
+    "name": "Cybex Solution Z i-Fix",
+    "category": "Car Seats",
+    "pricePerDay": 10,
+    "priceType": "per-day",
+    "image": "cybex_solution_z_i_fix.png",
+    "link": "https://www.strollbystockholm.com/car-seats/cybex-solution-z-i-fix"
+  },
+  {
+    "id": "car_seat_maxi_cosi_pearl_pro_i_size",
+    "name": "Maxi-Cosi Pearl Pro i-Size",
+    "category": "Car Seats",
+    "pricePerDay": 14,
+    "priceType": "per-day",
+    "image": "maxi_cosi_pearl_pro_i_size.png",
+    "link": "https://www.strollbystockholm.com/car-seats/maxi-cosi-pearl-pro-i-size"
+  },
+  {
+    "id": "high_chair_ikea_antilop",
+    "name": "IKEA Antilop",
+    "category": "High Chairs",
+    "pricePerDay": 5,
+    "priceType": "per-day",
+    "image": "ikea_antilop.png",
+    "link": "https://www.strollbystockholm.com/high-chairs/ikea-antilop"
+  },
+  {
+    "id": "high_chair_stokke_tripp_trapp",
+    "name": "Stokke Tripp Trapp",
+    "category": "High Chairs",
+    "pricePerDay": 12,
+    "priceType": "per-day",
+    "image": "stokke_tripp_trapp.png",
+    "link": "https://www.strollbystockholm.com/high-chairs/stokke-tripp-trapp"
+  },
+  {
     "id": "ergobaby_omni_classic",
     "name": "Ergobaby Omni Classic",
     "category": "Carriers",
@@ -16,5 +88,86 @@
     "priceType": "per-day",
     "image": "ergobaby_omni_classic.png",
     "link": "https://www.strollbystockholm.com/carriers-and-bouncers/ergobaby-omni-classic"
+  },
+  {
+    "id": "babybjorn_bouncer_balance_soft",
+    "name": "BabyBjörn Bouncer Balance Soft",
+    "category": "Carriers",
+    "pricePerDay": 7,
+    "priceType": "per-day",
+    "image": "babybjorn_bouncer_balance_soft.png",
+    "link": "https://www.strollbystockholm.com/carriers-and-bouncers/babybjorn-bouncer-balance-soft"
+  },
+  {
+    "id": "toys_and_books_lillabo_train_set",
+    "name": "LILLABO Train Set",
+    "category": "Toys & Books",
+    "pricePerDay": 4,
+    "priceType": "per-day",
+    "image": "lillabo_train_set.png",
+    "link": "https://www.strollbystockholm.com/toys-and-books/lillabo-train-set"
+  },
+  {
+    "id": "toys_and_books_peppa_pig_book",
+    "name": "Peppa Pig Book",
+    "category": "Toys & Books",
+    "pricePerDay": 3,
+    "priceType": "per-day",
+    "image": "peppa_pig_book.png",
+    "link": "https://www.strollbystockholm.com/toys-and-books/peppa-pig-book"
+  },
+  {
+    "id": "outerwear_reima_padded_jacket",
+    "name": "Reima Padded Jacket",
+    "category": "Outerwear",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "reima_padded_jacket.png",
+    "link": "https://www.strollbystockholm.com/outerwear/reima-padded-jacket"
+  },
+  {
+    "id": "outerwear_polar_bear_snowsuit",
+    "name": "Polar Bear Snowsuit",
+    "category": "Outerwear",
+    "pricePerDay": 9,
+    "priceType": "per-day",
+    "image": "polar_bear_snowsuit.png",
+    "link": "https://www.strollbystockholm.com/outerwear/polar-bear-snowsuit"
+  },
+  {
+    "id": "baby_cot_ikea_gulliver",
+    "name": "IKEA Gulliver",
+    "category": "Baby Cots",
+    "pricePerDay": 10,
+    "priceType": "per-day",
+    "image": "ikea_gulliver.png",
+    "link": "https://www.strollbystockholm.com/baby-cots/ikea-gulliver"
+  },
+  {
+    "id": "baby_cot_stokke_sleepi_dream",
+    "name": "Stokke Sleepi Dream",
+    "category": "Baby Cots",
+    "pricePerDay": 14,
+    "priceType": "per-day",
+    "image": "stokke_sleepi_dream.png",
+    "link": "https://www.strollbystockholm.com/baby-cots/stokke-sleepi-dream"
+  },
+  {
+    "id": "wellness_nosefrida_snot_sucker",
+    "name": "NoseFrida Snot Sucker",
+    "category": "Wellness",
+    "pricePerDay": 2,
+    "priceType": "per-day",
+    "image": "nosefrida_snot_sucker.png",
+    "link": "https://www.strollbystockholm.com/wellness/nosefrida-snot-sucker"
+  },
+  {
+    "id": "wellness_baby_bjorn_thermometer",
+    "name": "Baby Björn Thermometer",
+    "category": "Wellness",
+    "pricePerDay": 3,
+    "priceType": "per-day",
+    "image": "baby_bjorn_thermometer.png",
+    "link": "https://www.strollbystockholm.com/wellness/baby-bjorn-thermometer"
   }
 ]
