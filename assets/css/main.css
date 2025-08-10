@@ -2569,3 +2569,23 @@ nav a:hover {
     width: 125%;
     height: auto;
   }
+/* === Order Now section alignment === */
+#order .order-now-container {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;        /* vertical center inside its box */
+  margin-top: 16px;
+  gap: 12px;
+}
+
+#order .order-now-container .button,
+#order .order-now-container a.button {
+  min-width: 12em;            /* consistent button width */
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  #order .order-now-container {
+    margin-top: 12px;
+  }
+}
