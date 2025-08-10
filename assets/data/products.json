@@ -1,0 +1,119 @@
+[
+  {
+    "id": "stoy16green",
+    "name": "Stoy 16\" Vintage Bicycle Army Green",
+    "pricePerDay": 6,
+    "category": "Bicycles",
+    "image": "bike4.png",
+    "link": "https://www.babyshop.com/en-es/p/5-7-y-11186/813514",
+    "description": "Classic 16-inch kids' bike, perfect for ages 5–7, with sturdy steel frame and vintage styling."
+  },
+  {
+    "id": "stoy12black",
+    "name": "Stoy 12\" Vintage Balance Bike Black",
+    "pricePerDay": 6,
+    "category": "Balance Bikes",
+    "image": "bike5.png",
+    "link": "https://www.babyshop.com/en-es/p/10-vintage-balance-bike-black/742782",
+    "description": "Stylish balance bike with 12-inch wheels for ages 3–5, ideal for learning balance."
+  },
+  {
+    "id": "stokke_tripp_trapp_chair",
+    "name": "Stokke Tripp Trapp Chair",
+    "pricePerDay": 18,
+    "category": "High Chairs",
+    "image": "TrippTrapp1.png",
+    "link": "https://www.babyworld.se/sv/varumarken/stokke/stokke-tripp-trapp-stol-white",
+    "description": "Iconic adjustable high chair that grows with your child, from baby to adult."
+  },
+  {
+    "id": "ikea_antilop",
+    "name": "IKEA Antilop High Chair",
+    "pricePerDay": 6,
+    "category": "High Chairs",
+    "image": "Antilop.png",
+    "link": "https://www.ikea.com/se/sv/p/antilop-barnstol-hoeg-med-bricka-vit-silverfaergad-s29067293/",
+    "description": "Lightweight and easy-to-clean high chair with detachable tray."
+  },
+  {
+    "id": "carraro_20_bicycle",
+    "name": "Carraro 20\" Kids Bicycle",
+    "pricePerDay": 8,
+    "category": "Bicycles",
+    "image": "carraro20.png",
+    "link": "https://www.carraro.com/products/20-bike",
+    "description": "Durable 20-inch bike suitable for kids aged 7-10 with front and rear brakes."
+  },
+  {
+    "id": "puky_lrm_balance_bike",
+    "name": "Puky LRM Balance Bike",
+    "pricePerDay": 7,
+    "category": "Balance Bikes",
+    "image": "puky_lrm.png",
+    "link": "https://www.puky.de/en/products/lrm",
+    "description": "Lightweight balance bike with adjustable seat, perfect for ages 2-4."
+  },
+  {
+    "id": "levoit_humidifier",
+    "name": "Levoit Cool Mist Humidifier",
+    "pricePerDay": 5,
+    "category": "Humidifiers",
+    "image": "levoit_humidifier.png",
+    "link": "https://www.levoit.com/products/cool-mist-humidifier",
+    "description": "Ultrasonic humidifier with quiet operation and 6L tank capacity."
+  },
+  {
+    "id": "summer_infant_baby_bathtub",
+    "name": "Summer Infant Baby Bath Tub",
+    "pricePerDay": 4,
+    "category": "Bathtubs",
+    "image": "summer_bathtub.png",
+    "link": "https://www.summerinfant.com/products/baby-bathtub",
+    "description": "Compact baby bathtub with contoured design for newborns and infants."
+  },
+  {
+    "id": "munchkin_bath_combo",
+    "name": "Munchkin Bath Combo",
+    "pricePerDay": 6,
+    "category": "Bath Combos",
+    "image": "munchkin_bath_combo.png",
+    "link": "https://www.munchkin.com/bath-combo",
+    "description": "Bath tub and seat combo designed for safe and comfortable bathing."
+  },
+  {
+    "id": "babybjorn_potty",
+    "name": "BabyBjörn Potty",
+    "pricePerDay": 3,
+    "category": "Potty",
+    "image": "babybjorn_potty.png",
+    "link": "https://www.babybjorn.com/potty",
+    "description": "Ergonomic potty with splash guard and non-slip feet."
+  },
+  {
+    "id": "ergobaby_carrier",
+    "name": "Ergobaby Omni 360 Carrier",
+    "pricePerDay": 10,
+    "category": "Carriers",
+    "image": "ergobaby_carrier.png",
+    "link": "https://ergobaby.com/products/omni-360",
+    "description": "Versatile baby carrier with multiple carrying positions and lumbar support."
+  },
+  {
+    "id": "fisher_price_bouncer",
+    "name": "Fisher-Price Baby Bouncer",
+    "pricePerDay": 7,
+    "category": "Bouncers",
+    "image": "fisher_price_bouncer.png",
+    "link": "https://www.fisher-price.com/baby-bouncer",
+    "description": "Comfortable bouncer with soothing vibrations and toy bar."
+  },
+  {
+    "id": "rent_the_runway_baby_clothing",
+    "name": "Rent the Runway Baby Clothing",
+    "pricePerDay": 12,
+    "category": "Clothing Rental",
+    "image": "rtr_baby_clothing.png",
+    "link": "https://www.renttherunway.com/baby-clothing",
+    "description": "Stylish baby clothing rental service with a variety of outfits."
+  }
+]
