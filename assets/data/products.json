@@ -116,4 +116,104 @@
     "link": "https://www.renttherunway.com/baby-clothing",
     "description": "Stylish baby clothing rental service with a variety of outfits."
   }
+  ,
+  {
+    "id": "babyzen_yoyo2",
+    "name": "Babyzen YOYO2",
+    "pricePerDay": 17,
+    "category": "Strollers",
+    "image": "yoyo2.png",
+    "link": "https://www.babyzen.com/en-us/strollers/yoyo2",
+    "description": "Ultra-compact travel stroller with one-hand fold; ideal for flights and city use."
+  },
+  {
+    "id": "babyzen_yoyo3",
+    "name": "Babyzen YOYO3",
+    "pricePerDay": 19,
+    "category": "Strollers",
+    "image": "yoyo3.png",
+    "link": "https://www.babyzen.com/en-us/strollers/yoyo3",
+    "description": "Latest generation YOYO with improved canopy and suspension; compact and lightweight."
+  },
+  {
+    "id": "babyzen_yoyo2_combo_2pack",
+    "name": "Babyzen YOYO2 – Combo (2 Pack)",
+    "pricePerDay": 32,
+    "category": "Strollers",
+    "image": "yoyo2_combo.png",
+    "link": "https://www.babyzen.com/en-us/strollers/yoyo2",
+    "description": "Two YOYO2 strollers bundled for twins or siblings; same compact fold and travel-friendly design."
+  },
+  {
+    "id": "bugaboo_fox_seat_or_bassinet",
+    "name": "Bugaboo Fox – Seat or Bassinet",
+    "pricePerDay": 30,
+    "category": "Strollers",
+    "image": "bugaboo_fox.png",
+    "link": "https://www.bugaboo.com/",
+    "description": "Premium all-terrain stroller with excellent suspension; choose seat or bassinet for your child’s age."
+  },
+  {
+    "id": "bugaboo_bee5",
+    "name": "Bugaboo Bee5",
+    "pricePerDay": 18,
+    "category": "Strollers",
+    "image": "bugaboo_bee5.png",
+    "link": "https://www.bugaboo.com/",
+    "description": "Agile city stroller with reversible seat and compact one-hand fold."
+  },
+  {
+    "id": "bugaboo_bee6",
+    "name": "Bugaboo Bee6",
+    "pricePerDay": 18,
+    "category": "Strollers",
+    "image": "bugaboo_bee6.png",
+    "link": "https://www.bugaboo.com/",
+    "description": "Updated Bee with breathable seat and enhanced suspension for smoother rides."
+  },
+  {
+    "id": "thule_urban_glide2_double",
+    "name": "Thule Urban Glide 2 Double",
+    "pricePerDay": 30,
+    "category": "Strollers",
+    "image": "thule_urban_glide2_double.png",
+    "link": "https://www.thule.com/",
+    "description": "Sleek double stroller that glides on any surface; perfect for twins or siblings."
+  },
+  {
+    "id": "maxicosi_mica_pro_eco",
+    "name": "Maxi-Cosi Mica Pro Eco – 0–4 Years",
+    "pricePerDay": 15,
+    "category": "Car Seats",
+    "image": "mica_pro_eco.png",
+    "link": "https://www.maxi-cosi.com/",
+    "description": "360° rotating i-Size seat for 0–4 years with eco fabrics; ISOFIX installation."
+  },
+  {
+    "id": "babyzen_izi_go_modular_besafe",
+    "name": "BABYZEN iZi Go Modular by BeSafe – Infant",
+    "pricePerDay": 15,
+    "category": "Car Seats",
+    "image": "izi_go_modular.png",
+    "link": "https://www.besafe.com/",
+    "description": "Lightweight infant seat compatible with YOYO; ISOFIX base or 3-point belt."
+  },
+  {
+    "id": "besafe_izi_up_x3_fix",
+    "name": "BeSafe iZi Up X3 Fix – Booster",
+    "pricePerDay": 10,
+    "category": "Car Seats",
+    "image": "izi_up_x3_fix.png",
+    "link": "https://www.besafe.com/",
+    "description": "ISOFIX-compatible high-back booster for 4–12 years with SIR side-impact rotation."
+  },
+  {
+    "id": "bugaboo_turtle_air_nuna_wingbase",
+    "name": "Bugaboo Turtle Air by Nuna with Wingbase",
+    "pricePerDay": 15,
+    "category": "Car Seats",
+    "image": "bugaboo_turtle_air.png",
+    "link": "https://www.bugaboo.com/",
+    "description": "Ultra-light infant seat paired with Isofix Wingbase; can also be used with vehicle belt only."
+  }
 ]
