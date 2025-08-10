@@ -11,6 +11,7 @@
   const openBtn   = $('#openOrderOverlay');
   const closeBtn  = $('#closeOrderOverlay');
   const backdrop  = overlay ? overlay.querySelector('.overlay-backdrop') : null;
+  const panel    = overlay ? overlay.querySelector('.overlay-panel') : null;
   const catalogEl = $('#catalogContainer');
   const linesEl   = $('#orderSummary .summary-lines');
   const totalEl   = $('#orderTotal');
@@ -193,20 +194,29 @@
     recalc();
   }
 
+  function scrollOverlayToTop(){
+    try {
+      if(overlay) overlay.scrollTop = 0;
+      if(panel) panel.scrollTop = 0;
+    } catch(_){}
+  }
+  
   // ===== Overlay open/close =====
   function openOverlay(){
     overlay.classList.add('show');
     overlay.setAttribute('aria-hidden','false');
-    if(!isOrderPage) document.body.style.overflow='hidden';
+    if(!isOrderPage) document.body.classList.add('order-overlay-open');
+    scrollOverlayToTop();
+    setTimeout(()=>{ try{ startDateEl && startDateEl.focus(); }catch(_){} }, 0);
   }
   function closeOverlay(){
     if(isOrderPage) return; // keep visible on dedicated page
     overlay.classList.remove('show');
     overlay.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
+    document.body.classList.remove('order-overlay-open');
   }
 
-  openBtn && openBtn.addEventListener('click', (e)=>{ e.preventDefault(); openOverlay(); });
+  openBtn && openBtn.addEventListener('click', (e)=>{ e.preventDefault(); openOverlay(); scrollOverlayToTop(); });
   closeBtn && closeBtn.addEventListener('click', closeOverlay);
   backdrop && backdrop.addEventListener('click', closeOverlay);
   document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !isOrderPage) closeOverlay(); });
@@ -260,5 +270,9 @@
 
   loadProducts()
     .then(json=>{ products = Array.isArray(json) ? json : (json.products || []); renderCatalog(); })
-    .catch((e)=>{ console.error('Product load error:', e); catalogEl.innerHTML = '<p style="text-align:center;">Could not load products. Please try again later.</p>'; });
+    .catch((e)=>{
+      console.error('Product load error:', e);
+      const hint = (location && location.origin) ? `${location.origin}/assets/data/products.json` : '/assets/data/products.json';
+      catalogEl.innerHTML = `<p style="text-align:center;">Could not load products. Please try again later.<br><small>Expected at: <code>${hint}</code></small></p>`;
+    });
 })();
