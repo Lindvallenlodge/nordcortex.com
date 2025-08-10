@@ -1218,7 +1218,7 @@
           Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Let us know what you need via the contact form below or by sending us an email, or simply by pressing this ORDER NOW button, and we’ll prepare a competitive offer tailored to your request.
         </p>
         <div class="order-now-container" style="display:flex; justify-content:center; align-items:center; margin-top: 16px;">
-          <a href="#order" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal;">ORDER NOW</a>
+          <a href="#" id="openOrderOverlay" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal;">ORDER NOW</a>
         </div>
         <style>
           .highlight-bb {
@@ -1252,6 +1252,45 @@
       }
     }
   </style>
+  <!-- Order Overlay -->
+  <div id="order-overlay" aria-hidden="true">
+    <div class="overlay-backdrop" tabindex="-1"></div>
+    <div class="overlay-panel" role="dialog" aria-modal="true" aria-labelledby="orderOverlayTitle">
+      <button class="overlay-close" id="closeOrderOverlay" aria-label="Close">×</button>
+      <h3 id="orderOverlayTitle">Create Your Order</h3>
+
+      <form id="orderForm" onsubmit="return false;">
+        <div class="order-controls">
+          <label>Start date
+            <input type="date" id="startDate" required>
+          </label>
+          <label>End date
+            <input type="date" id="endDate" required>
+          </label>
+          <label>Delivery
+            <select id="deliveryOption">
+              <option value="">Self pickup (free)</option>
+              <option value="zone1">Delivery Zone 1 (€6 flat)</option>
+              <option value="zone2">Delivery Zone 2 (€20 flat)</option>
+              <option value="zone3">Delivery Zone 3 (€25 flat)</option>
+              <option value="custom">Delivery Zone 4 (custom)</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="catalogContainer" class="catalog-container" aria-live="polite"></div>
+
+        <div id="orderSummary" class="order-summary">
+          <div class="summary-lines"></div>
+          <div class="summary-total"><span>Total:</span><strong id="orderTotal">€0</strong></div>
+          <button type="button" id="submitOrder" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal;">Send Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <!-- /Order Overlay -->
+
+  <script src="assets/js/cart.js"></script>
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.poptrox.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
