@@ -62,6 +62,11 @@
     .summary .actions { margin-top: 12px; display:flex; gap:10px; justify-content:flex-end; }
 
     .note { font-size:.9rem; opacity:.8; }
+
+    @media (min-width: 900px) {
+      .contact-grid { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid .message-field { grid-column: 1 / -1; }
+    }
   </style>
 </head>
 <body class="order-page">
@@ -143,7 +148,7 @@
                   <input type="text" name="customerPhone" required>
                 </label>
               </div>
-              <label>Message to us (optional)
+              <label class="form-field message-field">Message to us (optional)
                 <input type="text" name="message" placeholder="Child age/weight for car seat, special requests, etc.">
               </label>
               <input type="hidden" name="order_json" id="order_json">
