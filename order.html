@@ -34,6 +34,7 @@
     .controls-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px; }
     .controls-grid label { font-weight:600; font-size:.95rem; display:flex; flex-direction:column; }
     .controls-grid input, .controls-grid select { margin-top:6px; padding:.55rem; border:1px solid #ccc; border-radius:6px; background:#fff; }
+    .inline-time select { padding: .55rem; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
     @media (max-width: 820px){ .controls-grid{ grid-template-columns: 1fr; } }
 
     /* Dates + methods layout: 2 columns per row on desktop, stacked on mobile */
@@ -118,7 +119,33 @@
                 <label>Start date & time
                   <div class="inline-time">
                     <input type="date" id="startDate" name="startDate" required>
-                    <input type="time" id="startTime" name="startTime" value="10:00" step="3600" min="00:00" max="23:59" lang="sv-SE">
+                    <select id="startHour" name="startHour">
+                      <option value="00:00">00:00</option>
+                      <option value="01:00">01:00</option>
+                      <option value="02:00">02:00</option>
+                      <option value="03:00">03:00</option>
+                      <option value="04:00">04:00</option>
+                      <option value="05:00">05:00</option>
+                      <option value="06:00">06:00</option>
+                      <option value="07:00">07:00</option>
+                      <option value="08:00">08:00</option>
+                      <option value="09:00">09:00</option>
+                      <option value="10:00" selected>10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="21:00">21:00</option>
+                      <option value="22:00">22:00</option>
+                      <option value="23:00">23:00</option>
+                    </select>
+                    <input type="hidden" id="startTime" name="startTime" value="10:00">
                   </div>
                 </label>
               </div>
@@ -140,7 +167,33 @@
                 <label>End date & time
                   <div class="inline-time">
                     <input type="date" id="endDate" name="endDate" required>
-                    <input type="time" id="endTime" name="endTime" value="10:00" step="3600" min="00:00" max="23:59" lang="sv-SE">
+                    <select id="endHour" name="endHour">
+                      <option value="00:00">00:00</option>
+                      <option value="01:00">01:00</option>
+                      <option value="02:00">02:00</option>
+                      <option value="03:00">03:00</option>
+                      <option value="04:00">04:00</option>
+                      <option value="05:00">05:00</option>
+                      <option value="06:00">06:00</option>
+                      <option value="07:00">07:00</option>
+                      <option value="08:00">08:00</option>
+                      <option value="09:00">09:00</option>
+                      <option value="10:00" selected>10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="21:00">21:00</option>
+                      <option value="22:00">22:00</option>
+                      <option value="23:00">23:00</option>
+                    </select>
+                    <input type="hidden" id="endTime" name="endTime" value="10:00">
                   </div>
                 </label>
               </div>
