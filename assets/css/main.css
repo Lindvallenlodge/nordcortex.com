@@ -2619,3 +2619,13 @@ nav a:hover {
   #order-overlay .order-controls { grid-template-columns:1fr; }
   #order-overlay .catalog-container { grid-template-columns:1fr; }
 }
+# === Overlay scroll + background lock === */
+#order-overlay {
+  overflow-y: auto;      /* let the overlay content scroll */
+  max-height: 100vh;     /* never exceed viewport height */
+}
+
+/* lock background page scroll only while overlay is open */
+body.order-overlay-open {
+  overflow: hidden;
+}
