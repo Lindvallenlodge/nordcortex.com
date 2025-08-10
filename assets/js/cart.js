@@ -122,6 +122,15 @@
     saveState();
   }
 
+  function catPriority(cat){
+    const c = (cat||'').toLowerCase();
+    if(c.includes('stroller')) return 0;            // Strollers first
+    if(c.includes('cot') || c.includes('sleep')) return 1; // Sleeping cots
+    if(c.includes('car seat')) return 2;            // Car seats
+    if(c.includes('high chair') || c.includes('highchair')) return 3; // High chairs
+    return 100;                                     // others after
+  }
+
   function renderCatalog(){
     catalogEl.innerHTML = '';
 
@@ -135,11 +144,24 @@
     });
 
     const frag = document.createDocumentFragment();
-    for(const [cat, items] of byCat.entries()){
+
+    const catsOrdered = Array.from(byCat.keys()).sort((a,b)=>{
+      const pa = catPriority(a);
+      const pb = catPriority(b);
+      if(pa !== pb) return pa - pb;
+      return String(a).localeCompare(String(b));
+    });
+
+    catsOrdered.forEach(cat=>{
+      const items = byCat.get(cat) || [];
+
       const h = document.createElement('h4');
       h.textContent = cat;
       h.style.margin = '12px 0 6px';
       frag.appendChild(h);
+
+      // Optional: sort items by name for tidy listing
+      items.sort((x,y)=> String(x.name||'').localeCompare(String(y.name||'')));
 
       items.forEach(p=>{
         const card = document.createElement('div');
@@ -188,7 +210,7 @@
         card.appendChild(qtyWrap);
         frag.appendChild(card);
       });
-    }
+    });
 
     catalogEl.appendChild(frag);
     recalc();
