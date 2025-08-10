@@ -8,7 +8,7 @@
   // ===== Elements =====
   const catalogEl = $('#catalog');
   // Image resolution helpers – keep current image locations
-  const IMG_BASES = ['/assets/images/products/', '/assets/images/'];
+  const IMG_BASES = ['/assets/images/products/', '/assets/images/', '/images/'];
   function swapExt(name){
     if(!name) return name;
     const lower = name.toLowerCase();
@@ -19,19 +19,19 @@
   function setSmartSrc(img, filename){
     if(!filename){ img.removeAttribute('src'); return; }
     const candidates = [];
-    // If filename already contains a leading slash or folder, try as-is first
-    if(/^\//.test(filename) || /\//.test(filename)){
+    // If absolute path, try as-is and swapped extension first
+    if(/^\//.test(filename)){
       candidates.push(filename);
       candidates.push(swapExt(filename));
-    } else {
-      IMG_BASES.forEach(base => {
-        candidates.push(base + filename);
-        candidates.push(base + swapExt(filename));
-      });
     }
+    // Always try with our known bases, even if filename contains subfolders (e.g., "products/TrippTrapp1.png")
+    IMG_BASES.forEach(base => {
+      candidates.push(base + filename);
+      candidates.push(base + swapExt(filename));
+    });
     let i = 0;
     const tryNext = () => {
-      if(i >= candidates.length) return; // give up silently when exhausted
+      if(i >= candidates.length) return; // exhausted
       img.src = candidates[i++];
     };
     img.addEventListener('error', tryNext);
@@ -279,40 +279,6 @@
   }
 
   // ===== Image resolver =====
-  // Helper for swapping file extensions
-  function swapExt(filename){
-    return filename.replace(/\.(jpe?g|png|webp)$/i, (m) =>
-      m.toLowerCase() === '.jpg' ? '.png' : '.jpg'
-    );
-  }
-  // Known image base paths
-  const IMG_BASES = [
-    '/assets/images/',
-    '/images/',
-    '/static/images/',
-  ];
-  // Smarter image src resolver
-  function setSmartSrc(img, filename){
-    if(!filename){ img.removeAttribute('src'); return; }
-    const candidates = [];
-    // If filename is already absolute (starts with "/"), try it as-is and with swapped extension
-    if(/^\//.test(filename)){
-      candidates.push(filename);
-      candidates.push(swapExt(filename));
-    }
-    // Always try with our known bases, even if filename contains subfolders (e.g., "products/TrippTrapp1.png")
-    IMG_BASES.forEach(base => {
-      candidates.push(base + filename);
-      candidates.push(base + swapExt(filename));
-    });
-    let i = 0;
-    const tryNext = () => {
-      if(i >= candidates.length) return; // exhausted
-      img.src = candidates[i++];
-    };
-    img.addEventListener('error', tryNext);
-    tryNext();
-  }
 
   // ===== Fetch products =====
   function loadProducts(){
