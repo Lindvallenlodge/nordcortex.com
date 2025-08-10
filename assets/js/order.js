@@ -278,6 +278,42 @@
     });
   }
 
+  // ===== Image resolver =====
+  // Helper for swapping file extensions
+  function swapExt(filename){
+    return filename.replace(/\.(jpe?g|png|webp)$/i, (m) =>
+      m.toLowerCase() === '.jpg' ? '.png' : '.jpg'
+    );
+  }
+  // Known image base paths
+  const IMG_BASES = [
+    '/assets/images/',
+    '/images/',
+    '/static/images/',
+  ];
+  // Smarter image src resolver
+  function setSmartSrc(img, filename){
+    if(!filename){ img.removeAttribute('src'); return; }
+    const candidates = [];
+    // If filename is already absolute (starts with "/"), try it as-is and with swapped extension
+    if(/^\//.test(filename)){
+      candidates.push(filename);
+      candidates.push(swapExt(filename));
+    }
+    // Always try with our known bases, even if filename contains subfolders (e.g., "products/TrippTrapp1.png")
+    IMG_BASES.forEach(base => {
+      candidates.push(base + filename);
+      candidates.push(base + swapExt(filename));
+    });
+    let i = 0;
+    const tryNext = () => {
+      if(i >= candidates.length) return; // exhausted
+      img.src = candidates[i++];
+    };
+    img.addEventListener('error', tryNext);
+    tryNext();
+  }
+
   // ===== Fetch products =====
   function loadProducts(){
     // Fetch as TEXT first so we can show clear parse errors if JSON is malformed
