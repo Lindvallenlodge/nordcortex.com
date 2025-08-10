@@ -19,10 +19,12 @@
   const endDateEl   = $('#endDate');
   const deliveryEl  = $('#deliveryOption');
 
-  if(!overlay || !openBtn || !closeBtn || !catalogEl || !linesEl || !totalEl || !submitBtn || !startDateEl || !endDateEl || !deliveryEl){
+  if(!overlay || !catalogEl || !linesEl || !totalEl || !submitBtn || !startDateEl || !endDateEl || !deliveryEl){
     // Required nodes not present; abort quietly.
     return;
   }
+
+  const isOrderPage = document.body.classList.contains('order-page');
 
   // ===== Config =====
   const DELIVERY_FEES = { zone1: 6, zone2: 20, zone3: 25 }; // flat fees
@@ -192,13 +194,22 @@
   }
 
   // ===== Overlay open/close =====
-  function openOverlay(){ overlay.classList.add('show'); overlay.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-  function closeOverlay(){ overlay.classList.remove('show'); overlay.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+  function openOverlay(){
+    overlay.classList.add('show');
+    overlay.setAttribute('aria-hidden','false');
+    if(!isOrderPage) document.body.style.overflow='hidden';
+  }
+  function closeOverlay(){
+    if(isOrderPage) return; // keep visible on dedicated page
+    overlay.classList.remove('show');
+    overlay.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+  }
 
-  openBtn.addEventListener('click', (e)=>{ e.preventDefault(); openOverlay(); });
-  closeBtn.addEventListener('click', closeOverlay);
+  openBtn && openBtn.addEventListener('click', (e)=>{ e.preventDefault(); openOverlay(); });
+  closeBtn && closeBtn.addEventListener('click', closeOverlay);
   backdrop && backdrop.addEventListener('click', closeOverlay);
-  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') closeOverlay(); });
+  document.addEventListener('keydown', (e)=>{ if(e.key==='Escape' && !isOrderPage) closeOverlay(); });
 
   // Open overlay if URL hash includes #order
   if (location.hash && location.hash.toLowerCase().includes('order')) {
@@ -240,8 +251,14 @@
   // ===== Init =====
   initDates();
   loadState();
-  fetch('/assets/data/products.json', { cache: 'no-store' })
-    .then(r=>r.json())
+
+  function loadProducts(){
+    return fetch('/assets/data/products.json', { cache: 'no-store' })
+      .then(r=>{ if(!r.ok) throw new Error('root path failed'); return r.json(); })
+      .catch(()=> fetch('assets/data/products.json', { cache: 'no-store' }).then(r=>{ if(!r.ok) throw new Error('relative path failed'); return r.json(); }));
+  }
+
+  loadProducts()
     .then(json=>{ products = Array.isArray(json) ? json : (json.products || []); renderCatalog(); })
-    .catch(()=>{ catalogEl.innerHTML = '<p style="text-align:center;">Could not load products. Please try again later.</p>'; });
+    .catch((e)=>{ console.error('Product load error:', e); catalogEl.innerHTML = '<p style="text-align:center;">Could not load products. Please try again later.</p>'; });
 })();
