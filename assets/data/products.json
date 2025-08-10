@@ -36,85 +36,32 @@
     "description": "Lightweight and easy-to-clean high chair with detachable tray."
   },
   {
-    "id": "carraro_20_bicycle",
-    "name": "Carraro 20\" Kids Bicycle",
-    "pricePerDay": 8,
-    "category": "Bicycles",
-    "image": "carraro20.png",
-    "link": "https://www.carraro.com/products/20-bike",
-    "description": "Durable 20-inch bike suitable for kids aged 7-10 with front and rear brakes."
-  },
-  {
-    "id": "puky_lrm_balance_bike",
-    "name": "Puky LRM Balance Bike",
-    "pricePerDay": 7,
-    "category": "Balance Bikes",
-    "image": "puky_lrm.png",
-    "link": "https://www.puky.de/en/products/lrm",
-    "description": "Lightweight balance bike with adjustable seat, perfect for ages 2-4."
-  },
-  {
-    "id": "levoit_humidifier",
-    "name": "Levoit Cool Mist Humidifier",
-    "pricePerDay": 5,
+    "id": "levoit_600s_smart_humidifier",
+    "name": "Levoit 600S Smart Humidifier",
+    "pricePerDay": 11,
     "category": "Humidifiers",
-    "image": "levoit_humidifier.png",
-    "link": "https://www.levoit.com/products/cool-mist-humidifier",
-    "description": "Ultrasonic humidifier with quiet operation and 6L tank capacity."
-  },
-  {
-    "id": "summer_infant_baby_bathtub",
-    "name": "Summer Infant Baby Bath Tub",
-    "pricePerDay": 4,
-    "category": "Bathtubs",
-    "image": "summer_bathtub.png",
-    "link": "https://www.summerinfant.com/products/baby-bathtub",
-    "description": "Compact baby bathtub with contoured design for newborns and infants."
-  },
-  {
-    "id": "munchkin_bath_combo",
-    "name": "Munchkin Bath Combo",
-    "pricePerDay": 6,
-    "category": "Bath Combos",
-    "image": "munchkin_bath_combo.png",
-    "link": "https://www.munchkin.com/bath-combo",
-    "description": "Bath tub and seat combo designed for safe and comfortable bathing."
+    "image": "levoit600S.png",
+    "link": "https://levoit.com/products/lv600s-smart-warm-and-cool-mist-humidifier",
+    "description": "Warm & cool mist, 6L tank up to 50h, app control. Ideal for hotel rooms; comfort for babies and adults."
   },
   {
     "id": "babybjorn_potty",
-    "name": "BabyBjörn Potty",
-    "pricePerDay": 3,
+    "name": "BabyBjörn Potty Training Set",
+    "pricePerDay": 2,
     "category": "Potty",
-    "image": "babybjorn_potty.png",
-    "link": "https://www.babybjorn.com/potty",
-    "description": "Ergonomic potty with splash guard and non-slip feet."
+    "image": "Potty.png",
+    "link": "https://www.babybjorn.eu/products/bathroom/potty-training-kit/",
+    "description": "Potty training set / potty for toddlers. Ergonomic, easy to clean, BPA-/PVC-free. Great for short stays."
   },
   {
-    "id": "ergobaby_carrier",
-    "name": "Ergobaby Omni 360 Carrier",
-    "pricePerDay": 10,
+    "id": "ergobaby_omni_classic",
+    "name": "Ergobaby Omni Classic (Omni 360)",
+    "pricePerDay": 8,
     "category": "Carriers",
-    "image": "ergobaby_carrier.png",
-    "link": "https://ergobaby.com/products/omni-360",
-    "description": "Versatile baby carrier with multiple carrying positions and lumbar support."
+    "image": "ErgobabyOmniDelux.png",
+    "link": "https://ergobaby.eu/baby-carrier/omni/the-omni-360-baby-carrier",
+    "description": "Versatile ergonomic carrier from newborn to toddler. Multiple carry positions, adjustable seat, padded straps."
   },
-  {
-    "id": "fisher_price_bouncer",
-    "name": "Fisher-Price Baby Bouncer",
-    "pricePerDay": 7,
-    "category": "Bouncers",
-    "image": "fisher_price_bouncer.png",
-    "link": "https://www.fisher-price.com/baby-bouncer",
-    "description": "Comfortable bouncer with soothing vibrations and toy bar."
-  },
-  {
-    "id": "rent_the_runway_baby_clothing",
-    "name": "Rent the Runway Baby Clothing",
-    "pricePerDay": 12,
-    "category": "Clothing Rental",
-    "image": "rtr_baby_clothing.png",
-    "link": "https://www.renttherunway.com/baby-clothing",
-    "description": "Stylish baby clothing rental service with a variety of outfits."
   }
   ,
   {
@@ -215,5 +162,172 @@
     "image": "bugaboo_turtle_air.png",
     "link": "https://www.bugaboo.com/",
     "description": "Ultra-light infant seat paired with Isofix Wingbase; can also be used with vehicle belt only."
+  }
+,
+  {
+    "id": "stoy10_white_balance",
+    "name": "Stoy 10\" Vintage Balance Bike White",
+    "pricePerDay": 6,
+    "category": "Balance Bikes",
+    "image": "bike2.png",
+    "link": "https://www.babyshop.com/en-es/p/2-4-y-1736/742782",
+    "description": "Vintage-style balance bike in white with brown accents for early riders."
+  },
+  {
+    "id": "yosemite_yellow_bike",
+    "name": "Yosemite Yellow Bike",
+    "pricePerDay": 6,
+    "category": "Bicycles",
+    "image": "bike1.png",
+    "link": "",
+    "description": "Cheerful yellow bike with training wheels and rear handle for guidance."
+  },
+  {
+    "id": "stokke_flexi_bath_small",
+    "name": "Stokke® Flexi Bath® – Baby Bath",
+    "pricePerDay": 6,
+    "category": "Bathtubs",
+    "image": "bathtupsmall.png",
+    "link": "https://www.stokke.com/",
+    "description": "Foldable baby bath for newborns up to ~4 years. Non-slip base, heat-sensitive plug."
+  },
+  {
+    "id": "stokke_flexi_bath_xl",
+    "name": "Stokke® Flexi Bath® X-Large with Newborn Support",
+    "pricePerDay": 6,
+    "category": "Bathtubs",
+    "image": "bathtuplarge.png",
+    "link": "https://www.stokke.com/",
+    "description": "Extra large tub with included newborn support; room to splash and share up to ~6 years."
+  },
+  {
+    "id": "stokke_flexi_bath_combo",
+    "name": "Stokke® Flexi Bath® Combo – Baby Bath & XL Bath",
+    "pricePerDay": 10,
+    "category": "Bath Combos",
+    "image": "bathtupcombo.png",
+    "link": "https://www.stokke.com/",
+    "description": "Combo of small & XL tubs. Lightweight, portable, easy to store."
+  },
+  {
+    "id": "tripp_trapp_newborn_set_2_0",
+    "name": "Stokke Tripp Trapp Newborn Set 2.0",
+    "pricePerDay": 18,
+    "category": "High Chairs",
+    "image": "TrippTrapp2.png",
+    "link": "https://www.babyworld.se/sv/varumarken/stokke/stokke-tripp-trapp-stol-white",
+    "description": "Newborn attachment to bring baby to the table from birth."
+  },
+  {
+    "id": "tripp_trapp_baby_set_2",
+    "name": "Stokke Tripp Trapp Baby Set 2",
+    "pricePerDay": 18,
+    "category": "High Chairs",
+    "image": "TrippTrapp3.png",
+    "link": "https://www.babyworld.se/sv/varumarken/stokke/stokke-tripp-trapp-stol-white",
+    "description": "Back and side support for babies who can sit unaided; includes harness."
+  },
+  {
+    "id": "baby_carrier_weather_cover",
+    "name": "Baby Carrier Weather Cover",
+    "pricePerDay": 3,
+    "category": "Carriers",
+    "image": "babycarrierweather.png",
+    "link": "",
+    "description": "Universal winter cover; windproof, water-resistant; fits most carriers."
+  },
+  {
+    "id": "babybjorn_bouncer",
+    "name": "Babybjörn Bouncer (up to 13 kg)",
+    "pricePerDay": 6,
+    "category": "Bouncers",
+    "image": "BabybjornB.png",
+    "link": "https://www.babybjorn.eu/products/baby-bouncers/bouncer-balance-soft/sky-blue-white-mesh-light-grey/",
+    "description": "Comfortable bouncer that supports natural rocking and motor skills."
+  },
+  {
+    "id": "babybjorn_travel_cot",
+    "name": "BabyBjörn Travel Cot",
+    "pricePerDay": 15,
+    "category": "Baby Cots",
+    "image": "babybjorn_travel_cot.png",
+    "link": "https://www.babybjorn.eu/",
+    "description": "Light, compact travel cot with soft mattress and carry bag; sets up in seconds."
+  },
+  {
+    "id": "toys_books_set",
+    "name": "Toys & Books – Personalized Set",
+    "pricePerDay": 9,
+    "category": "Toys & Books",
+    "image": "toys_books_set.png",
+    "link": "",
+    "description": "Curated set tailored to age and interests; sanitized and ready for your stay."
+  },
+  {
+    "id": "outwear_snowsuit",
+    "name": "Baby Winter Snowsuit",
+    "pricePerDay": 3,
+    "category": "Outwear",
+    "image": "pop1.png",
+    "link": "",
+    "description": "Insulated, weatherproof one‑piece for cold days; easy zippers and hood."
+  },
+  {
+    "id": "outwear_rain_set",
+    "name": "Waterproof Rain Set",
+    "pricePerDay": 3,
+    "category": "Outwear",
+    "image": "pop2.png",
+    "link": "",
+    "description": "Light jacket + bib pants with welded seams; great over fleece in spring/autumn."
+  },
+  {
+    "id": "outwear_fleece_overall",
+    "name": "Fleece Overall Layer",
+    "pricePerDay": 3,
+    "category": "Outwear",
+    "image": "pop3.png",
+    "link": "",
+    "description": "Soft mid-layer for added warmth under outerwear or cozy indoor wear."
+  },
+  {
+    "id": "delivery_zone_1",
+    "name": "Delivery/Pickup – Zone 1 (Central Stockholm)",
+    "pricePerDay": 6,
+    "priceType": "flat",
+    "category": "Delivery",
+    "image": "delivery_zone1.png",
+    "link": "https://www.strollbystockholm.com/delivery-pickup/",
+    "description": "One-way service within central Stockholm."
+  },
+  {
+    "id": "delivery_zone_2",
+    "name": "Delivery/Pickup – Zone 2 (incl. Arlanda)",
+    "pricePerDay": 20,
+    "priceType": "flat",
+    "category": "Delivery",
+    "image": "delivery_zone2.png",
+    "link": "https://www.strollbystockholm.com/delivery-pickup/",
+    "description": "One-way service incl. Arlanda Airport."
+  },
+  {
+    "id": "delivery_zone_3",
+    "name": "Delivery/Pickup – Zone 3 (Outer Stockholm)",
+    "pricePerDay": 25,
+    "priceType": "flat",
+    "category": "Delivery",
+    "image": "delivery_zone3.png",
+    "link": "https://www.strollbystockholm.com/delivery-pickup/",
+    "description": "One-way service in outer Stockholm."
+  },
+  {
+    "id": "delivery_zone_custom",
+    "name": "Delivery/Pickup – Zone 4 (Custom)",
+    "pricePerDay": 0,
+    "priceType": "custom",
+    "category": "Delivery",
+    "image": "delivery_zone4.png",
+    "link": "https://www.strollbystockholm.com/delivery-pickup/",
+    "description": "Custom delivery outside regular zones — contact us for pricing."
   }
 ]
