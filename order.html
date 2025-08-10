@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Now - Strollby Stockholm</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>
+    #order-overlay {
+      position: static;
+      background: none;
+      box-shadow: none;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+      aria-hidden: false;
+    }
+    .overlay-content {
+      box-shadow: none;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Order Now</h1>
+    <p>Use this page to select your rental gear, choose dates and delivery options, and submit your request directly.</p>
+  </header>
+
+  <main>
+    <section id="order-overlay" aria-hidden="false">
+      <div class="overlay-content">
+        <div class="overlay-header">
+          <h2>Place Your Order</h2>
+        </div>
+        <div class="overlay-body">
+          <div>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate">
+          </div>
+          <div>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate">
+          </div>
+          <div>
+            <label for="deliveryOption">Delivery Option:</label>
+            <select id="deliveryOption">
+              <option value="">Pickup</option>
+              <option value="zone1">Zone 1</option>
+              <option value="zone2">Zone 2</option>
+              <option value="zone3">Zone 3</option>
+            </select>
+          </div>
+
+          <div id="catalogContainer"></div>
+
+          <div id="orderSummary">
+            <h3>Order Summary</h3>
+            <pre class="summary-lines"></pre>
+            <div>Total: <span id="orderTotal">€0</span></div>
+          </div>
+
+          <button id="submitOrder" class="btn-primary">Submit Order</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/assets/js/cart.js"></script>
+</body>
+</html>
