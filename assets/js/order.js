@@ -18,6 +18,12 @@
   const orderJsonEl= $('#order_json');
   const formEl     = $('#order-form');
 
+  // ===== Config =====
+  const DELIVERY_FEES = { zone1: 6, zone2: 20, zone3: 25 };
+
+  const quickSelect = $('#quickAddSelect');
+  const quickBtn = $('#quickAddBtn');
+
   if(!catalogEl || !formEl || !startEl || !endEl || !methodEl || !sumItemsEl || !sumDaysEl || !sumTotalEl || !orderJsonEl){
     return; // required nodes missing
   }
@@ -178,6 +184,12 @@
       }
     });
 
+    // delivery fee
+    const m = methodEl.value;
+    if (DELIVERY_FEES[m]) {
+      total += DELIVERY_FEES[m];
+    }
+
     sumItemsEl.textContent = String(itemsCount);
     sumDaysEl.textContent  = String(days);
     sumTotalEl.textContent = euro(total);
@@ -189,14 +201,17 @@
       method: methodEl.value,
       deliveryDetails: deliveryDetailsEl ? deliveryDetailsEl.value : '',
       items,
-      totalEstimated: total
+      totalEstimated: total,
+      deliveryFee: DELIVERY_FEES[methodEl.value] || 0,
+      quickAddLast: quickSelect ? quickSelect.value : '',
     };
     orderJsonEl.value = JSON.stringify(payload, null, 2);
   }
 
   // ===== Delivery toggle =====
   methodEl.addEventListener('change', ()=>{
-    const show = methodEl.value === 'delivery';
+    const val = methodEl.value;
+    const show = val && val !== 'pickup';
     if(deliveryExtra) deliveryExtra.style.display = show ? 'block' : 'none';
     recalc();
   });
@@ -220,6 +235,20 @@
     return true;
   });
 
+  if (quickBtn && quickSelect) {
+    quickBtn.addEventListener('click', ()=>{
+      const id = quickSelect.value;
+      if(!id) return;
+      const p = products.find(x=> x.id===id);
+      if(!p) return;
+      const q = (selection.get(id) || 0) + 1;
+      selection.set(id, Math.min(10, q));
+      render();
+      // keep same selection in dropdown
+      quickSelect.value = id;
+    });
+  }
+
   // ===== Fetch products =====
   function loadProducts(){
     return fetch('/assets/data/products.json', { cache: 'no-store' })
@@ -232,7 +261,15 @@
   // ===== Init =====
   initDates();
   loadProducts()
-    .then(json => { products = Array.isArray(json) ? json : (json.products || []); render(); })
+    .then(json => { products = Array.isArray(json) ? json : (json.products || []); render();
+      if (quickSelect) {
+        const list = products
+          .filter(p => String(p.category||'').toLowerCase() !== 'delivery')
+          .slice()
+          .sort((a,b)=> String(a.name||'').localeCompare(String(b.name||'')));
+        quickSelect.innerHTML = '<option value="">Select a product…</option>' + list.map(p=>`<option value="${p.id}">${p.name} — €${p.pricePerDay ?? p.price ?? 0}${p.priceType==='flat'?' flat':'/day'}</option>`).join('');
+      }
+    })
     .catch(e => {
       console.error('Product load error:', e);
       const hint = (location && location.origin) ? `${location.origin}/assets/data/products.json` : '/assets/data/products.json';
