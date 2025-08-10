@@ -251,28 +251,47 @@
 
   // ===== Fetch products =====
   function loadProducts(){
-    return fetch('/assets/data/products.json', { cache: 'no-store' })
-      .then(r=>{ if(!r.ok) throw new Error('root path failed'); return r.json(); })
-      .catch(()=> fetch('assets/data/products.json', { cache: 'no-store' }).then(r=>{
-        if(!r.ok) throw new Error('relative path failed'); return r.json();
-      }));
+    // Fetch as TEXT first so we can show clear parse errors if JSON is malformed
+    const fetchText = (url) => fetch(url, { cache: 'no-store' })
+      .then(r=>{ if(!r.ok) throw new Error(`HTTP ${r.status} @ ${url}`); return r.text(); });
+
+    return fetchText('/assets/data/products.json')
+      .catch(()=> fetchText('assets/data/products.json'))
+      .then(txt => {
+        // Trim BOM and odd whitespace
+        if (txt.charCodeAt(0) === 0xFEFF) txt = txt.slice(1);
+        const cleaned = txt.trim();
+        try {
+          const j = JSON.parse(cleaned);
+          return Array.isArray(j) ? j : (j.products || []);
+        } catch (e) {
+          // Surface a clear message in the UI with a snippet
+          const snippet = cleaned.slice(0, 400).replace(/[\n\r]/g, ' ');
+          catalogEl.innerHTML = `<p style="text-align:center;">Products JSON parse error.<br><small>${e.message}</small><br><small>Snippet: <code>${snippet}</code></small></p>`;
+          throw e;
+        }
+      });
   }
 
   // ===== Init =====
   initDates();
   loadProducts()
-    .then(json => { products = Array.isArray(json) ? json : (json.products || []); render();
+    .then(list => {
+      products = list;
+      render();
       if (quickSelect) {
-        const list = products
+        const dropdown = products
           .filter(p => String(p.category||'').toLowerCase() !== 'delivery')
           .slice()
           .sort((a,b)=> String(a.name||'').localeCompare(String(b.name||'')));
-        quickSelect.innerHTML = '<option value="">Select a product…</option>' + list.map(p=>`<option value="${p.id}">${p.name} — €${p.pricePerDay ?? p.price ?? 0}${p.priceType==='flat'?' flat':'/day'}</option>`).join('');
+        quickSelect.innerHTML = '<option value="">Select a product…</option>' + dropdown.map(p=>`<option value="${p.id}">${p.name} — €${p.pricePerDay ?? p.price ?? 0}${p.priceType==='flat'?' flat':'/day'}</option>`).join('');
       }
     })
     .catch(e => {
       console.error('Product load error:', e);
       const hint = (location && location.origin) ? `${location.origin}/assets/data/products.json` : '/assets/data/products.json';
-      catalogEl.innerHTML = `<p style="text-align:center;">Could not load products.<br><small>Expected at: <code>${hint}</code></small></p>`;
+      if (!catalogEl.innerHTML) {
+        catalogEl.innerHTML = `<p style="text-align:center;">Could not load products.<br><small>Expected at: <code>${hint}</code></small></p>`;
+      }
     });
 })();
