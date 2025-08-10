@@ -2589,3 +2589,33 @@ nav a:hover {
     margin-top: 12px;
   }
 }
+# === Order Overlay (Mini-Cart) === */
+#order-overlay { display:none; position:fixed; inset:0; z-index:10050; }
+#order-overlay.show { display:block; }
+#order-overlay .overlay-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.55); }
+#order-overlay .overlay-panel { position:relative; z-index:1; background:#fff; color:#000; width:min(980px, 95vw); max-height:90vh; overflow:auto; margin:4vh auto; padding:1.25rem 1.25rem 1.5rem; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.25); }
+#order-overlay .overlay-close { position:absolute; top:.5rem; right:.75rem; background:transparent; border:none; font-size:1.75rem; line-height:1; cursor:pointer; }
+#order-overlay h3 { margin: 0 0 .75rem 0; font-weight:600; }
+
+#order-overlay .order-controls { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap:12px; margin: .5rem 0 1rem; }
+#order-overlay .order-controls label { display:flex; flex-direction:column; font-weight:600; font-size:.95rem; }
+#order-overlay .order-controls input,
+#order-overlay .order-controls select { margin-top:6px; padding:.5rem; border:1px solid #ccc; border-radius:6px; background:#fff !important; }
+
+#order-overlay .catalog-container { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; }
+#order-overlay .product-card { display:grid; grid-template-columns: 72px 1fr auto; gap:10px; align-items:center; border:1px solid #eee; border-radius:8px; padding:10px; background:#fff; }
+#order-overlay .product-card img { width:72px; height:72px; object-fit:cover; border-radius:6px; }
+#order-overlay .product-meta { display:flex; flex-direction:column; }
+#order-overlay .product-meta .name { font-weight:600; }
+#order-overlay .qty-wrap { display:flex; align-items:center; gap:6px; }
+#order-overlay .qty-wrap input { width:70px; padding:.35rem; text-align:center; border:1px solid #ccc; border-radius:6px; background:#fff; }
+
+#order-overlay .order-summary { margin-top:1rem; border-top:1px solid #eee; padding-top:1rem; }
+#order-overlay .summary-lines { font-size:.95rem; margin-bottom:.5rem; white-space:pre-wrap; }
+#order-overlay .summary-total { display:flex; justify-content: space-between; align-items:center; font-size:1.1rem; margin:.5rem 0 1rem; }
+
+/* Responsive */
+@media (max-width: 768px){
+  #order-overlay .order-controls { grid-template-columns:1fr; }
+  #order-overlay .catalog-container { grid-template-columns:1fr; }
+}
