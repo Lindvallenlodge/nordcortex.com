@@ -68,19 +68,39 @@
             <label>End date
               <input type="date" id="endDate" name="endDate" required>
             </label>
-            <label>Pickup / Delivery
-              <select id="method" name="method" required>
+            <label>Receive method
+              <select id="receiveMethod" name="receiveMethod" required>
                 <option value="pickup">Self pickup (T‑Centralen area)</option>
-                <option value="delivery">Delivery (see Delivery & Pickup page)</option>
+                <option value="zone1">Delivery – Zone 1 (€6 flat)</option>
+                <option value="zone2">Delivery – Zone 2 (€20 flat)</option>
+                <option value="zone3">Delivery – Zone 3 (€25 flat)</option>
+                <option value="airport_arlanda">Delivery – Arlanda Airport (quote)</option>
+                <option value="custom">Delivery – Custom address (quote)</option>
+              </select>
+            </label>
+            <label>Return method
+              <select id="returnMethod" name="returnMethod" required>
+                <option value="pickup">Drop off to our location (free)</option>
+                <option value="zone1">We collect – Zone 1 (€6 flat)</option>
+                <option value="zone2">We collect – Zone 2 (€20 flat)</option>
+                <option value="zone3">We collect – Zone 3 (€25 flat)</option>
+                <option value="airport_arlanda">We collect – Arlanda Airport (quote)</option>
+                <option value="custom">We collect – Custom address (quote)</option>
               </select>
             </label>
           </div>
 
-          <div id="deliveryExtra" style="display:none;">
-            <label>Delivery address / hotel & room / preferred time
-              <input type="text" id="deliveryDetails" name="deliveryDetails" placeholder="Hotel/Address, time window, notes" />
+          <div id="receiveExtra" style="display:none;">
+            <label>Receive details (address/hotel, time window, notes)
+              <input type="text" id="receiveDetails" name="receiveDetails" placeholder="Hotel/Address, time window, notes" />
             </label>
           </div>
+          <div id="returnExtra" style="display:none;">
+            <label>Return details (address/hotel, time window, notes)
+              <input type="text" id="returnDetails" name="returnDetails" placeholder="Hotel/Address, time window, notes" />
+            </label>
+          </div>
+
 
           <div class="scrollable-container">
             <div id="catalog" class="catalog" aria-live="polite">
