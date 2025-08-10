@@ -2618,3 +2618,30 @@ nav a:hover {
   .order-page .contact-grid { grid-template-columns: repeat(3, 1fr); }
   .order-page .contact-grid .message-field { grid-column: 1 / -1; }
 }
+.order-page .date-time-box {
+  display: inline-block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+@media (min-width: 769px) {
+  .order-page .date-time-box { width: auto; }
+}
+
+/* Ensure the selects inside inline-time look like inputs */
+.order-page .inline-time select { 
+  padding: .55rem; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  background: #fff; 
+}
+
+/* === Order page: header spacing + date/time box styles (moved from order.js) === */
+@media (max-width: 768px) {
+  /* tighten spacing around the round logo on the order page */
+  .order-page .logo-wrap { margin-top: 10px; margin-bottom: 10px; }
+}
