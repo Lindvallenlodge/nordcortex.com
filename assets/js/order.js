@@ -5,7 +5,7 @@ const toInt = (v, d=0) => { const n = parseInt(v,10); return Number.isFinite(n)?
 
 // ===== DOM refs =====
 const catalogEl   = $('#catalog');
-const formEl      = $('#orderForm');
+const formEl      = $('#order-form') || $('#orderForm');
 const startEl     = $('#startDate') || $('#start');
 const endEl       = $('#endDate')   || $('#end');
 
