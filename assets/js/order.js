@@ -52,7 +52,7 @@
   const formEl     = $('#order-form');
 
   // ===== Config =====
-  const DELIVERY_FEES = { zone1: 6, zone2: 20, zone3: 25 };
+  const DELIVERY_FEES = { zone1: 6, zone2: 20, zone3: 25, airport_arlanda: 20 };
 
   const quickSelect = $('#quickAddSelect');
   const quickBtn = $('#quickAddBtn');
