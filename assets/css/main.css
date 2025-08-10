@@ -1668,7 +1668,7 @@ input, select, textarea {
 	}
 
 
-# Remove or override previous min-width:981px header/logo/h1/p rules for desktop so new header/logo/h1/p rules apply
+/* Remove or override previous min-width:981px header/logo/h1/p rules for desktop so new header/logo/h1/p rules apply */
 @media screen and (min-width: 981px) {
   #header {
     width: 100%;
@@ -1707,7 +1707,7 @@ input, select, textarea {
   color: #000000 !important;
 }
 
-# Centered Content Utility
+.centered-content {
 .centered-content {
   text-align: center;
   margin: 0 auto;
@@ -1734,7 +1734,7 @@ input, select, textarea {
   width: auto;
   margin-right: auto;
 }
-# Order Now button highlight
+/* Order Now button highlight */
 /* Remove black border from Order Now and Contact Us top buttons */
 .top-nav a.order-now,
 .top-nav a.contact-us {
@@ -1768,7 +1768,7 @@ input, select, textarea {
   color: #fff;
   border: none !important;
 }
-# Gear Gallery Layout */
+/* Gear Gallery Layout */
 .gear-category {
   margin-bottom: 4em;
 }
@@ -1828,7 +1828,7 @@ input, select, textarea {
     max-width: 90%;
   }
 }
-# Custom header logo and text styles
+/* Custom header logo and text styles */
 #header .logo-img {
   width: 280px;
   height: auto;
@@ -1887,7 +1887,7 @@ body::before {
   content: '';
   display: none;
 }
-# Mobile-specific layout for .top-nav
+/* Mobile-specific layout for .top-nav */
 @media screen and (max-width: 768px) {
   .top-nav {
     flex-direction: column;
@@ -1951,7 +1951,7 @@ body::before {
 
 /* === Override: Top Navigation - always fixed, full width, no margin/padding shift === */
 /* === Top Navigation Bar === */
-# Top Navigation Bar
+/* Top Navigation Bar */
 .top-nav {
   position: fixed;
   top: 0;
@@ -1987,7 +1987,7 @@ body::before {
   display: none !important;
 }
 
-# Ensure html has no margin/padding
+/* Ensure html has no margin/padding */
 html {
   margin: 0;
   padding: 0;
@@ -2090,7 +2090,7 @@ button:hover {
     display: block;
   }
 }
-# Remove sticky header and top bar styles (reverted)
+/* Remove sticky header and top bar styles (reverted) */
 
 /* Dynamic Background Animation */
 @keyframes gradientAnimation {
@@ -2589,11 +2589,39 @@ nav a:hover {
     margin-top: 12px;
   }
 }
-# === Order Overlay (Mini-Cart) === */
-#order-overlay { display:none; position:fixed; inset:0; z-index:10050; }
+#order-overlay .catalog-container { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap:12px; }
+#order-overlay .catalog-container { padding-bottom: 96px; }
+#order-overlay .order-summary { 
+  position: sticky; 
+  bottom: 0; 
+  background: #fff !important; 
+  padding-top: .75rem; 
+  box-shadow: 0 -6px 12px rgba(0,0,0,0.06); 
+}
+/* === Order Overlay (Mini-Cart) === */
+#order-overlay { 
+  display: none; 
+  position: fixed; 
+  inset: 0; 
+  z-index: 10050; 
+  overflow-y: auto; 
+  -webkit-overflow-scrolling: touch; 
+}
 #order-overlay.show { display:block; }
 #order-overlay .overlay-backdrop { position:absolute; inset:0; background:rgba(0,0,0,0.55); }
-#order-overlay .overlay-panel { position:relative; z-index:1; background:#fff; color:#000; width:min(980px, 95vw); max-height:90vh; overflow:auto; margin:4vh auto; padding:1.25rem 1.25rem 1.5rem; border-radius:12px; box-shadow:0 12px 40px rgba(0,0,0,0.25); }
+#order-overlay .overlay-panel { 
+  position: relative; 
+  z-index: 1; 
+  background: #fff !important; 
+  color: #000; 
+  width: min(980px, 95vw); 
+  max-height: 95vh; 
+  overflow-y: auto; 
+  margin: 4vh auto; 
+  padding: 1.25rem 1.25rem 1.5rem; 
+  border-radius: 12px; 
+  box-shadow: 0 12px 40px rgba(0,0,0,0.25); 
+}
 #order-overlay .overlay-close { position:absolute; top:.5rem; right:.75rem; background:transparent; border:none; font-size:1.75rem; line-height:1; cursor:pointer; }
 #order-overlay h3 { margin: 0 0 .75rem 0; font-weight:600; }
 
@@ -2626,6 +2654,4 @@ nav a:hover {
 }
 
 /* lock background page scroll only while overlay is open */
-body.order-overlay-open {
-  overflow: hidden;
-}
+body.order-overlay-open { overflow: hidden; }
