@@ -173,12 +173,21 @@
 
         const qtyWrap = document.createElement('div');
         qtyWrap.className = 'qty';
+        // Quantity input with number type and stepper controls for all platforms
         const qty = document.createElement('input');
-        qty.type='number'; qty.min='0'; qty.max='10'; qty.step='1';
+        qty.type = 'number';
+        qty.min = '0';
+        qty.max = '10';
+        qty.step = '1';
+        qty.inputMode = 'numeric'; // for better mobile UX
         qty.value = selection.get(p.id) || 0;
-        qty.addEventListener('input', ()=>{
+        qty.style.width = '60px';
+        qty.style.textAlign = 'center';
+        qty.setAttribute('aria-label', 'Quantity');
+        qty.addEventListener('input', () => {
           const v = Math.max(0, Math.min(10, toInt(qty.value, 0)));
-          if(v>0) selection.set(p.id, v); else selection.delete(p.id);
+          qty.value = v; // keep value clamped
+          if (v > 0) selection.set(p.id, v); else selection.delete(p.id);
           recalc();
         });
         qtyWrap.appendChild(qty);
