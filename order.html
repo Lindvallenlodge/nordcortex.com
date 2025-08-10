@@ -63,6 +63,15 @@
 
     .note { font-size:.9rem; opacity:.8; }
 
+    /* Contact section grid + fields */
+    .contact-grid { display:grid; grid-template-columns: 1fr; gap:12px; }
+    .form-field { display:flex; flex-direction:column; gap:6px; }
+    .form-field input, .form-field textarea { padding:.55rem; border:1px solid #ccc; border-radius:6px; background:#fff; }
+    .form-field textarea { min-height: 100px; resize: vertical; }
+
+    /* Reduce gap between logo and heading */
+    .section-title { margin-top: 8px; }
+
     @media (min-width: 900px) {
       .contact-grid { grid-template-columns: repeat(3, 1fr); }
       .contact-grid .message-field { grid-column: 1 / -1; }
@@ -137,20 +146,20 @@
               <div class="summary-line"><span>Rental days:</span><strong id="sumDays">1</strong></div>
               <div class="summary-line"><span>Estimated total:</span><strong id="sumTotal">€0</strong></div>
               <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
-              <div class="controls-grid" style="grid-template-columns: repeat(3, minmax(0,1fr)); margin-top:8px;">
-                <label>Your name
+              <div class="contact-grid" style="margin-top:8px;">
+                <label class="form-field">Your name
                   <input type="text" name="customerName" required>
                 </label>
-                <label>Email
+                <label class="form-field">Email
                   <input type="email" name="customerEmail" required>
                 </label>
-                <label>Phone (with country code)
+                <label class="form-field">Phone (with country code)
                   <input type="text" name="customerPhone" required>
                 </label>
+                <label class="form-field message-field">Message to us (optional)
+                  <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
+                </label>
               </div>
-              <label class="form-field message-field">Message to us (optional)
-                <input type="text" name="message" placeholder="Child age/weight for car seat, special requests, etc.">
-              </label>
               <input type="hidden" name="order_json" id="order_json">
               <div class="actions">
                 <a href="/" class="button">Back</a>
@@ -167,6 +176,3 @@
   <script src="assets/js/order.js"></script>
 </body>
 </html>
-    .section-title {
-      margin-top: 8px;
-    }
