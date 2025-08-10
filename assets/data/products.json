@@ -62,6 +62,8 @@
     "link": "https://ergobaby.eu/baby-carrier/omni/the-omni-360-baby-carrier",
     "description": "Versatile ergonomic carrier from newborn to toddler. Multiple carry positions, adjustable seat, padded straps."
   },
+  }
+  ,
   {
     "id": "babyzen_yoyo2",
     "name": "Babyzen YOYO2",
@@ -160,7 +162,8 @@
     "image": "bugaboo_turtle_air.png",
     "link": "https://www.bugaboo.com/",
     "description": "Ultra-light infant seat paired with Isofix Wingbase; can also be used with vehicle belt only."
-  },
+  }
+,
   {
     "id": "stoy10_white_balance",
     "name": "Stoy 10\" Vintage Balance Bike White",
