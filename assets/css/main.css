@@ -2589,3 +2589,32 @@ nav a:hover {
     margin-top: 12px;
   }
 }
+/* === Order page contact form: stacked on mobile, 3 columns on desktop === */
+.order-page .contact-grid { 
+  display: grid; 
+  grid-template-columns: 1fr; 
+  gap: 12px; 
+}
+.order-page .form-field { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 6px; 
+}
+.order-page .form-field input,
+.order-page .form-field textarea { 
+  width: 100%; 
+  padding: 0.6rem; 
+  border: 1px solid #ccc; 
+  border-radius: 6px; 
+  background: #fff; 
+  font-size: 1rem; 
+  box-sizing: border-box; 
+}
+.order-page .form-field textarea { 
+  min-height: 100px; 
+  resize: vertical; 
+}
+@media (min-width: 900px){
+  .order-page .contact-grid { grid-template-columns: repeat(3, 1fr); }
+  .order-page .contact-grid .message-field { grid-column: 1 / -1; }
+}
