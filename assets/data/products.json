@@ -1,173 +1,232 @@
 [
   {
-    "id": "stroller_yoyo2_black",
-    "name": "Babyzen YOYO2 - Black",
+    "id": "stroller_babyzen_yoyo2",
+    "name": "Babyzen Yoyo2",
     "category": "Strollers",
+    "pricePerDay": 17,
+    "priceType": "per-day",
+    "image": "Babyzen_Yoyo2.png",
+    "link": "/strollers/"
+  },
+  {
+    "id": "stroller_babyzen_yoyo3",
+    "name": "Babyzen Yoyo3",
+    "category": "Strollers",
+    "pricePerDay": 19,
+    "priceType": "per-day",
+    "image": "Babyzen_Yoyo3.png",
+    "link": "/strollers/"
+  },
+  {
+    "id": "stroller_babyzen_yoyo2_combo",
+    "name": "Babyzen Yoyo2 – Combo (2 Pack)",
+    "category": "Strollers",
+    "pricePerDay": 32,
+    "priceType": "per-day",
+    "image": "Babyzen_Yoyo2_Combo.png",
+    "link": "/strollers/"
+  },
+  {
+    "id": "stroller_bugaboo_fox_seat",
+    "name": "Bugaboo Fox – Seat",
+    "category": "Strollers",
+    "pricePerDay": 30,
+    "priceType": "per-day",
+    "image": "Bugaboo_Fox_Seat.png",
+    "link": "/strollers/"
+  },
+  {
+    "id": "stroller_bugaboo_fox_bassinet",
+    "name": "Bugaboo Fox – Bassinet",
+    "category": "Strollers",
+    "pricePerDay": 30,
+    "priceType": "per-day",
+    "image": "Bugaboo_Fox_Bassinet.png",
+    "link": "/strollers/"
+  },
+
+  {
+    "id": "sleeping_cot_babybjorn_travel_cot",
+    "name": "Baby Cots – BabyBjörn",
+    "category": "Sleeping Cot",
     "pricePerDay": 15,
     "priceType": "per-day",
-    "image": "yoyo2_black.png",
-    "link": "https://www.strollbystockholm.com/strollers/yoyo2-black"
+    "image": "babybjorn_travel_cot_posh.png",
+    "link": "/baby-cots/"
   },
+
   {
-    "id": "stroller_cybex_gazelle_s",
-    "name": "Cybex Gazelle S",
-    "category": "Strollers",
-    "pricePerDay": 20,
+    "id": "carseat_maxicosi_mica_pro_eco",
+    "name": "Maxi-Cosi Mica Pro Eco",
+    "category": "Car Seats",
+    "pricePerDay": 15,
     "priceType": "per-day",
-    "image": "cybex_gazelle_s.png",
-    "link": "https://www.strollbystockholm.com/strollers/cybex-gazelle-s"
+    "image": "MaxiCosi_MicaProEco.png",
+    "link": "/car-seats/"
   },
   {
-    "id": "stroller_bugaboo_fox3",
-    "name": "Bugaboo Fox 3",
-    "category": "Strollers",
-    "pricePerDay": 22,
+    "id": "carseat_babyzen_izi_go_modular",
+    "name": "BABYZEN iZi Go Modular by BeSafe",
+    "category": "Car Seats",
+    "pricePerDay": 15,
     "priceType": "per-day",
-    "image": "bugaboo_fox3.png",
-    "link": "https://www.strollbystockholm.com/strollers/bugaboo-fox3"
+    "image": "BABYZEN_CarSeat.png",
+    "link": "/car-seats/"
   },
   {
-    "id": "sleeping_cot_stokke_sleepi",
-    "name": "Stokke Sleepi",
-    "category": "Sleeping Cot",
-    "pricePerDay": 12,
-    "priceType": "per-day",
-    "image": "stokke_sleepi.png",
-    "link": "https://www.strollbystockholm.com/sleeping-cots/stokke-sleepi"
-  },
-  {
-    "id": "sleeping_cot_ikea_sniglar",
-    "name": "IKEA SNIGLAR",
-    "category": "Sleeping Cot",
-    "pricePerDay": 8,
-    "priceType": "per-day",
-    "image": "ikea_sniglar.png",
-    "link": "https://www.strollbystockholm.com/sleeping-cots/ikea-sniglar"
-  },
-  {
-    "id": "car_seat_cybex_solution_z_i_fix",
-    "name": "Cybex Solution Z i-Fix",
+    "id": "carseat_besafe_izi_up_x3_fix",
+    "name": "BeSafe iZi Up X3 Fix",
     "category": "Car Seats",
     "pricePerDay": 10,
     "priceType": "per-day",
-    "image": "cybex_solution_z_i_fix.png",
-    "link": "https://www.strollbystockholm.com/car-seats/cybex-solution-z-i-fix"
+    "image": "BeSafe_Booster.png",
+    "link": "/car-seats/"
   },
+
   {
-    "id": "car_seat_maxi_cosi_pearl_pro_i_size",
-    "name": "Maxi-Cosi Pearl Pro i-Size",
-    "category": "Car Seats",
-    "pricePerDay": 14,
+    "id": "highchair_stokke_tripp_trapp_chair",
+    "name": "Stokke Tripp Trapp Chair",
+    "category": "High Chairs",
+    "pricePerDay": 18,
     "priceType": "per-day",
-    "image": "maxi_cosi_pearl_pro_i_size.png",
-    "link": "https://www.strollbystockholm.com/car-seats/maxi-cosi-pearl-pro-i-size"
+    "image": "TrippTrapp1.png",
+    "link": "/highchairs/"
   },
   {
-    "id": "high_chair_ikea_antilop",
+    "id": "highchair_stokke_tripp_trapp_newborn",
+    "name": "Stokke Tripp Trapp Newborn Set 2.0",
+    "category": "High Chairs",
+    "pricePerDay": 18,
+    "priceType": "per-day",
+    "image": "TrippTrapp2.png",
+    "link": "/highchairs/"
+  },
+  {
+    "id": "highchair_stokke_tripp_trapp_babyset",
+    "name": "Stokke Tripp Trapp Babyset 2",
+    "category": "High Chairs",
+    "pricePerDay": 18,
+    "priceType": "per-day",
+    "image": "TrippTrapp3.png",
+    "link": "/highchairs/"
+  },
+  {
+    "id": "highchair_ikea_antilop",
     "name": "IKEA Antilop",
     "category": "High Chairs",
-    "pricePerDay": 5,
+    "pricePerDay": 6,
     "priceType": "per-day",
-    "image": "ikea_antilop.png",
-    "link": "https://www.strollbystockholm.com/high-chairs/ikea-antilop"
+    "image": "Antilop.png",
+    "link": "/highchairs/"
   },
+
   {
-    "id": "high_chair_stokke_tripp_trapp",
-    "name": "Stokke Tripp Trapp",
-    "category": "High Chairs",
-    "pricePerDay": 12,
-    "priceType": "per-day",
-    "image": "stokke_tripp_trapp.png",
-    "link": "https://www.strollbystockholm.com/high-chairs/stokke-tripp-trapp"
-  },
-  {
-    "id": "ergobaby_omni_classic",
-    "name": "Ergobaby Omni Classic",
+    "id": "carrier_ergobaby_omni_classic",
+    "name": "Ergobaby Omni Classic (Omni 360)",
     "category": "Carriers",
     "pricePerDay": 8,
     "priceType": "per-day",
-    "image": "ergobaby_omni_classic.png",
-    "link": "https://www.strollbystockholm.com/carriers-and-bouncers/ergobaby-omni-classic"
+    "image": "ErgobabyOmniDelux.png",
+    "link": "/carriers-and-bouncers/"
   },
   {
-    "id": "babybjorn_bouncer_balance_soft",
-    "name": "BabyBjörn Bouncer Balance Soft",
+    "id": "carrier_weather_cover",
+    "name": "Baby carrier weather cover",
     "category": "Carriers",
-    "pricePerDay": 7,
-    "priceType": "per-day",
-    "image": "babybjorn_bouncer_balance_soft.png",
-    "link": "https://www.strollbystockholm.com/carriers-and-bouncers/babybjorn-bouncer-balance-soft"
-  },
-  {
-    "id": "toys_and_books_lillabo_train_set",
-    "name": "LILLABO Train Set",
-    "category": "Toys & Books",
-    "pricePerDay": 4,
-    "priceType": "per-day",
-    "image": "lillabo_train_set.png",
-    "link": "https://www.strollbystockholm.com/toys-and-books/lillabo-train-set"
-  },
-  {
-    "id": "toys_and_books_peppa_pig_book",
-    "name": "Peppa Pig Book",
-    "category": "Toys & Books",
     "pricePerDay": 3,
     "priceType": "per-day",
-    "image": "peppa_pig_book.png",
-    "link": "https://www.strollbystockholm.com/toys-and-books/peppa-pig-book"
+    "image": "babycarrierweather.png",
+    "link": "/carriers-and-bouncers/"
   },
   {
-    "id": "outerwear_reima_padded_jacket",
-    "name": "Reima Padded Jacket",
-    "category": "Outerwear",
+    "id": "bouncer_babybjorn",
+    "name": "Babybjörn – Bouncer (up to 13 kg)",
+    "category": "Carriers",
     "pricePerDay": 6,
     "priceType": "per-day",
-    "image": "reima_padded_jacket.png",
-    "link": "https://www.strollbystockholm.com/outerwear/reima-padded-jacket"
+    "image": "BabybjornB.png",
+    "link": "/carriers-and-bouncers/"
   },
+
   {
-    "id": "outerwear_polar_bear_snowsuit",
-    "name": "Polar Bear Snowsuit",
-    "category": "Outerwear",
-    "pricePerDay": 9,
+    "id": "wellness_stoy_16_vintage_army_green",
+    "name": "Stoy 16\" Vintage Bicycle Army Green",
+    "category": "Wellness",
+    "pricePerDay": 6,
     "priceType": "per-day",
-    "image": "polar_bear_snowsuit.png",
-    "link": "https://www.strollbystockholm.com/outerwear/polar-bear-snowsuit"
+    "image": "bike4.png",
+    "link": "https://www.babyshop.com/en-es/p/5-7-y-11186/813514?utm_source=google&utm_medium=cpc&utm_campaign=p-shopping-eu-css-high&gad_source=1&gad_campaignid=18327538926&gbraid=0AAAAADwAd5dy31g5zzAypNxzey3rYJbet&gclid=CjwKCAjwwNbEBhBpEiwAFYLtGKIJ6MVX3wN8YCsDztxynROZV3OElqK_zvhUnUnis7cm6PcQt7Ke9xoCWr8QAvD_BwE"
   },
   {
-    "id": "baby_cot_ikea_gulliver",
-    "name": "IKEA Gulliver",
-    "category": "Baby Cots",
+    "id": "wellness_stoy_10_balance_white",
+    "name": "Stoy 10\" Vintage Balance Bike White",
+    "category": "Wellness",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "bike2.png",
+    "link": "https://www.babyshop.com/en-es/p/2-4-y-1736/742782?utm_source=google&utm_medium=cpc&utm_campaign=p-shopping-eu-css-high&gad_source=1&gad_campaignid=18327538926&gbraid=0AAAAADwAd5dy31g5zzAypNxzey3rYJbet&gclid=CjwKCAjwwNbEBhBpEiwAFYLtGNTIgrMOgGJeB_d8lsPke7b41gCjOd3Xe4i43KSmOz91kfTkCUFCSBoC1loQAvD_BwE"
+  },
+  {
+    "id": "wellness_stoy_12_balance_black",
+    "name": "Stoy 12'' Vintage Balance Bike Black",
+    "category": "Wellness",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "bike5.png",
+    "link": "https://www.babyshop.com/en-es/p/10-vintage-balance-bike-black/742782"
+  },
+  {
+    "id": "wellness_yosemite_yellow_bike",
+    "name": "Yosemite Yellow Bike",
+    "category": "Wellness",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "bike1.png",
+    "link": "/wellness/"
+  },
+  {
+    "id": "wellness_levoit_600s_humidifier",
+    "name": "Levoit 600S Smart Humidifier",
+    "category": "Wellness",
+    "pricePerDay": 11,
+    "priceType": "per-day",
+    "image": "levoit600S.png",
+    "link": "/wellness/"
+  },
+  {
+    "id": "wellness_stokke_flexi_bath_small",
+    "name": "Stokke® Flexi Bath® – Baby Bath",
+    "category": "Wellness",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "bathtupsmall.png",
+    "link": "/wellness/"
+  },
+  {
+    "id": "wellness_stokke_flexi_bath_xl",
+    "name": "Stokke® Flexi Bath® X-Large with Newborn Support",
+    "category": "Wellness",
+    "pricePerDay": 6,
+    "priceType": "per-day",
+    "image": "bathtuplarge.png",
+    "link": "/wellness/"
+  },
+  {
+    "id": "wellness_stokke_flexi_bath_combo",
+    "name": "Stokke® Flexi Bath® Combo – Baby Bath & XL Bath",
+    "category": "Wellness",
     "pricePerDay": 10,
     "priceType": "per-day",
-    "image": "ikea_gulliver.png",
-    "link": "https://www.strollbystockholm.com/baby-cots/ikea-gulliver"
+    "image": "bathtupcombo.png",
+    "link": "/wellness/"
   },
   {
-    "id": "baby_cot_stokke_sleepi_dream",
-    "name": "Stokke Sleepi Dream",
-    "category": "Baby Cots",
-    "pricePerDay": 14,
-    "priceType": "per-day",
-    "image": "stokke_sleepi_dream.png",
-    "link": "https://www.strollbystockholm.com/baby-cots/stokke-sleepi-dream"
-  },
-  {
-    "id": "wellness_nosefrida_snot_sucker",
-    "name": "NoseFrida Snot Sucker",
+    "id": "wellness_babybjorn_potty_training_set",
+    "name": "BabyBjörn Potty Training Set",
     "category": "Wellness",
     "pricePerDay": 2,
     "priceType": "per-day",
-    "image": "nosefrida_snot_sucker.png",
-    "link": "https://www.strollbystockholm.com/wellness/nosefrida-snot-sucker"
-  },
-  {
-    "id": "wellness_baby_bjorn_thermometer",
-    "name": "Baby Björn Thermometer",
-    "category": "Wellness",
-    "pricePerDay": 3,
-    "priceType": "per-day",
-    "image": "baby_bjorn_thermometer.png",
-    "link": "https://www.strollbystockholm.com/wellness/baby-bjorn-thermometer"
+    "image": "Potty.png",
+    "link": "https://www.babybjorn.eu/products/bathroom/smart-potty/grey-white/"
   }
 ]
