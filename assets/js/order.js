@@ -7,6 +7,36 @@
 
   // ===== Elements =====
   const catalogEl = $('#catalog');
+  // Image resolution helpers – keep current image locations
+  const IMG_BASES = ['/assets/images/products/', '/assets/images/'];
+  function swapExt(name){
+    if(!name) return name;
+    const lower = name.toLowerCase();
+    if(lower.endsWith('.png')) return name.replace(/\.png$/i, '.webp');
+    if(lower.endsWith('.webp')) return name.replace(/\.webp$/i, '.png');
+    return name;
+  }
+  function setSmartSrc(img, filename){
+    if(!filename){ img.removeAttribute('src'); return; }
+    const candidates = [];
+    // If filename already contains a leading slash or folder, try as-is first
+    if(/^\//.test(filename) || /\//.test(filename)){
+      candidates.push(filename);
+      candidates.push(swapExt(filename));
+    } else {
+      IMG_BASES.forEach(base => {
+        candidates.push(base + filename);
+        candidates.push(base + swapExt(filename));
+      });
+    }
+    let i = 0;
+    const tryNext = () => {
+      if(i >= candidates.length) return; // give up silently when exhausted
+      img.src = candidates[i++];
+    };
+    img.addEventListener('error', tryNext);
+    tryNext();
+  }
   const sumItemsEl = $('#sumItems');
   const sumDaysEl  = $('#sumDays');
   const sumTotalEl = $('#sumTotal');
@@ -112,8 +142,7 @@
         card.style.marginBottom = '10px';
 
         const img = document.createElement('img');
-        const src = (p.image||'').startsWith('/') ? p.image : (p.image ? `/assets/images/${p.image}` : '');
-        img.src = src;
+        setSmartSrc(img, p.image || '');
         img.alt = p.name || '';
         img.loading = 'lazy';
 
