@@ -3,9 +3,21 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Order Baby Gear | Strollby Stockholm</title>
-  <meta name="description" content="Reserve baby gear in Stockholm: strollers, car seats, travel cots, high chairs and more. Flexible pickup or delivery. Simple daily pricing." />
-  <meta name="robots" content="noindex, follow" />
+  <title>Order Baby Gear in Stockholm – Rent Strollers, Car Seats, Cots | Strollby Stockholm</title>
+  <meta name="description" content="Rent baby gear in Stockholm: strollers, car seats, travel cots, high chairs, carriers and more. Flexible pickup or delivery (incl. Arlanda). Simple daily pricing." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.strollbystockholm.com/order" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Order Baby Gear in Stockholm – Strollers, Car Seats, Cots" />
+  <meta property="og:description" content="Flexible pickup or delivery (incl. Arlanda). Simple daily pricing. Rent top brands in Stockholm." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.strollbystockholm.com/order" />
+  <meta property="og:image" content="https://www.strollbystockholm.com/assets/images/og/strollbystockholm_og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Order Baby Gear in Stockholm – Strollers, Car Seats, Cots" />
+  <meta name="twitter:description" content="Flexible pickup or delivery (incl. Arlanda). Simple daily pricing. Rent top brands in Stockholm." />
+  <meta name="twitter:image" content="https://www.strollbystockholm.com/assets/images/og/strollbystockholm_og.png" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
@@ -96,6 +108,20 @@
       .contact-grid .message-field { grid-column: 1 / -1; }
     }
   </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Rental Baby Gear in Stockholm",
+    "itemListElement": [
+      {"@type": "Product", "name": "Babyzen YOYO", "url": "https://www.strollbystockholm.com/strollers/"},
+      {"@type": "Product", "name": "Bugaboo Fox", "url": "https://www.strollbystockholm.com/strollers/"},
+      {"@type": "Product", "name": "BabyBjörn Travel Cot", "url": "https://www.strollbystockholm.com/baby-cots/"},
+      {"@type": "Product", "name": "Maxi-Cosi Mica Pro Eco", "url": "https://www.strollbystockholm.com/car-seats/"},
+      {"@type": "Product", "name": "Stokke Tripp Trapp", "url": "https://www.strollbystockholm.com/highchairs/"}
+    ]
+  }
+  </script>
 </head>
 <body class="order-page">
   <header id="header" class="order-page-header">
@@ -109,6 +135,45 @@
   <main id="main">
     <section class="order-wrap">
       <h1 class="section-title">Order Baby Gear</h1>
+      <section id="catalog-ssr" aria-label="Product list (HTML snapshot)">
+        <h2 class="visually-hidden">Available rental items</h2>
+        <div class="catalog-grid">
+          <h3>Strollers</h3>
+          <ul>
+            <li><a href="/strollers/">Babyzen YOYO (various configs)</a> – from €17/day</li>
+            <li><a href="/strollers/">Bugaboo Fox (Seat/Bassinet)</a> – €30/day</li>
+          </ul>
+          <h3>Sleeping Cot</h3>
+          <ul>
+            <li><a href="/baby-cots/">BabyBjörn Travel Cot</a> – €15/day</li>
+          </ul>
+          <h3>Car Seats</h3>
+          <ul>
+            <li><a href="/car-seats/">Maxi-Cosi Mica Pro Eco</a> – €15/day</li>
+            <li><a href="/car-seats/">BABYZEN iZi Go Modular by BeSafe</a> – €15/day</li>
+            <li><a href="/car-seats/">BeSafe iZi Up X3 Fix (booster)</a> – €10/day</li>
+          </ul>
+          <h3>High Chairs</h3>
+          <ul>
+            <li><a href="/highchairs/">Stokke Tripp Trapp (Chair / Newborn / Babyset)</a> – €18/day</li>
+            <li><a href="/highchairs/">IKEA Antilop</a> – €6/day</li>
+          </ul>
+          <h3>Carriers &amp; Bouncers</h3>
+          <ul>
+            <li><a href="/carriers-and-bouncers/">Ergobaby Omni 360</a> – €8/day</li>
+            <li><a href="/carriers-and-bouncers/">Babybjörn Bouncer</a> – €6/day</li>
+          </ul>
+          <h3>Wellness &amp; Extras</h3>
+          <ul>
+            <li><a href="/wellness/">Stokke Flexi Bath (small / XL / combo)</a> – from €6/day</li>
+            <li><a href="/wellness/">Humidifier (Levoit 600S)</a> – €11/day</li>
+            <li><a href="/wellness/">Bikes &amp; Potty set</a> – from €2/day</li>
+          </ul>
+        </div>
+      </section>
+      <noscript>
+        <p>JavaScript is disabled. You can still order by emailing <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a>. The items listed above link to details and pricing.</p>
+      </noscript>
       <p class="section-text" style="text-align:center;">Choose your dates, pick delivery or pickup, then add items. We’ll confirm availability and reply fast with a tailored quote.</p>
 
       <form id="order-form" action="https://formspree.io/f/mldnrgar" method="POST">
