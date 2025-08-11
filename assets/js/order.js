@@ -92,6 +92,10 @@ function groupByCategory(list){
 }
 
 function render(){
+  // Hide SSR snapshot if present
+  const ssr = document.getElementById('catalog-ssr');
+  if (ssr) ssr.style.display = 'none';
+
   if(!catalogEl) return;
   catalogEl.innerHTML = '';
   const groups = groupByCategory(products);
