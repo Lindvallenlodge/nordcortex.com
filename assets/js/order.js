@@ -115,6 +115,11 @@ function render(){
 
       const img = document.createElement('img');
       img.alt = p.name;
+      // Reserve space + speed up paint
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.width = 160;   // intrinsic width for aspect ratio
+      img.height = 120;  // intrinsic height (4:3)
       setSmartSrc(img, p.image || '');
 
       const info = document.createElement('div');
