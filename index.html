@@ -1263,55 +1263,77 @@
           document.querySelector('#review-list').after(showBtn);
         </script>
         <!-- REVIEWS END -->
-        <!-- Leave a Review button removed per request -->
+        <p style="text-align: center; margin-top: 2em;">
+          <a href="#review-form" class="button">Leave a Review</a>
+        </p>
         <p style="font-size: 0.9em; font-style: italic; color: #444; text-align: center; margin-top: 2em;">These reviews are collected from the Babonbo platform, where we’re listed under the profile name <strong>BB Stockholm</strong>.</p>
-  <!-- Leave a Review Section (at end of page, after footer) -->
-  <section id="leave-review" class="box-style" style="margin-top: 4em; text-align: center;">
-    <h3 style="font-size: 1.6em; margin-bottom: 0.5em;">Want to share your experience?</h3>
-    <button id="toggle-review-form" class="button">Leave a Review</button>
-    <div id="review-form-container" style="display: none; margin-top: 2em;">
-      <form action="https://formspree.io/f/mldnrgar" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
+    <!-- Leave Review Section moved and redesigned -->
+    <section id="leave-review" class="box-style alt">
+      <div class="content-wrapper">
+        <h2 class="section-title">Want to share your experience?</h2>
+        <a id="toggle-review-form" class="button primary" style="margin-top: 1.5em; display: inline-block;">Leave a Review</a>
+        <div id="review-form-container" style="display: none; margin-top: 2em;">
+          <form action="https://formspree.io/f/mldnrgar" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
 
-        <label for="delivery">Delivery & Pickup:</label><br>
-        <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
+            <label for="delivery">Delivery & Pickup:</label><br>
+            <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+              <option value="4">⭐️⭐️⭐️⭐️</option>
+              <option value="3">⭐️⭐️⭐️</option>
+              <option value="2">⭐️⭐️</option>
+              <option value="1">⭐️</option>
+            </select><br>
 
-        <label for="communication">Communication:</label><br>
-        <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
+            <label for="communication">Communication:</label><br>
+            <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+              <option value="4">⭐️⭐️⭐️⭐️</option>
+              <option value="3">⭐️⭐️⭐️</option>
+              <option value="2">⭐️⭐️</option>
+              <option value="1">⭐️</option>
+            </select><br>
 
-        <label for="product">Product Quality:</label><br>
-        <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
+            <label for="product">Product Quality:</label><br>
+            <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+              <option value="4">⭐️⭐️⭐️⭐️</option>
+              <option value="3">⭐️⭐️⭐️</option>
+              <option value="2">⭐️⭐️</option>
+              <option value="1">⭐️</option>
+            </select><br>
 
-        <label for="overall">Overall Experience (auto-generated):</label><br>
-        <div id="overall" style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;">⭐️⭐️⭐️⭐️⭐️ (5 stars)</div>
-        <input type="hidden" name="overallRating" id="overallRating" value="5">
+            <label for="overall">Overall Experience (auto-generated):</label><br>
+            <div id="overall" style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;">⭐️⭐️⭐️⭐️⭐️ (5 stars)</div>
+            <input type="hidden" name="overallRating" id="overallRating" value="5">
 
-        <label for="review">Your Review:</label><br>
-        <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea><br>
+            <label for="review">Your Review:</label><br>
+            <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea><br>
 
-        <button type="submit" class="button">Submit Review</button>
-      </form>
-      <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
+            <button type="submit" class="button">Submit Review</button>
+          </form>
+          <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
+        </div>
+      </div>
       <script>
+        // Toggle review form visibility
+        document.addEventListener('DOMContentLoaded', function() {
+          var toggleBtn = document.getElementById('toggle-review-form');
+          var formContainer = document.getElementById('review-form-container');
+          if (toggleBtn && formContainer) {
+            toggleBtn.addEventListener('click', function (e) {
+              e.preventDefault();
+              if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+                formContainer.style.display = 'block';
+                formContainer.scrollIntoView({behavior: "smooth", block: "center"});
+              } else {
+                formContainer.style.display = 'none';
+              }
+            });
+          }
+        });
+        // Review stars calculation (unchanged)
         function calculateAverage() {
           const delivery = parseInt(document.getElementById('delivery').value);
           const communication = parseInt(document.getElementById('communication').value);
@@ -1321,34 +1343,20 @@
           document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
           document.getElementById('overallRating').value = avg;
         }
-        document.getElementById('delivery').addEventListener('change', calculateAverage);
-        document.getElementById('communication').addEventListener('change', calculateAverage);
-        document.getElementById('product').addEventListener('change', calculateAverage);
+        document.addEventListener('DOMContentLoaded', function() {
+          var d = document.getElementById('delivery');
+          var c = document.getElementById('communication');
+          var p = document.getElementById('product');
+          if (d && c && p) {
+            d.addEventListener('change', calculateAverage);
+            c.addEventListener('change', calculateAverage);
+            p.addEventListener('change', calculateAverage);
+          }
+        });
       </script>
-    </div>
-  </section>
-  <script>
-    const toggleBtn = document.getElementById('toggle-review-form');
-    const formContainer = document.getElementById('review-form-container');
-    const form = formContainer.querySelector('form');
-
-    toggleBtn.addEventListener('click', () => {
-      formContainer.style.display = 'block';
-      toggleBtn.style.display = 'none';
-    });
-
-    form.addEventListener('submit', () => {
-      localStorage.setItem('reviewSubmitted', 'true');
-    });
-
-    window.addEventListener('load', () => {
-      if (localStorage.getItem('reviewSubmitted') === 'true') {
-        formContainer.style.display = 'none';
-        toggleBtn.style.display = 'block';
-        localStorage.removeItem('reviewSubmitted');
-      }
-    });
-  </script>
+    </section>
+</section>
+<!-- Leave Review Section inserted here -->
     </section>
 
     <section id="order">
