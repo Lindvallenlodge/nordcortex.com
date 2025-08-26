@@ -669,6 +669,7 @@
           in honest communication and strive to build lasting relationships with our customers. See what our happy
           customers are saying — we consistently receive 5-star reviews from families visiting Stockholm.</p>
         <!-- REVIEWS BEGIN -->
+        <div id="review-list">
         <div class="review">
           <p class="review-stars"><span style="color: gold;">⭐️⭐️⭐️⭐️⭐️</span></p>
           <p><strong>Clara Chow</strong><br>Aug 2025</p>
@@ -750,7 +751,7 @@
           <p><strong>Emily Strobell</strong><br><span style="color: gold;">⭐️⭐️⭐️⭐️⭐️</span><br><em><i>Jul 2025</i></em></p>
           <p>Communication was great. The car seat and travel crib were even delivered early. It was nice that she was able to drop off at our hotel so it was there when we arrived. So much better than traveling with all the stuff ourselves.</p>
         </div>
-        <div id="moreReviews" style="display: none;">
+        <!-- ...rest of reviews, including #moreReviews block... -->
         <div class="review">
           <p><strong>Diana Escudero</strong><br>⭐⭐⭐⭐⭐<br><em><i>Jul 2025</i></em></p>
           <p>A very good experience, they are really flexible in every way, and the product was like new. We would choose it again.</p>
@@ -1243,87 +1244,92 @@
               service was friendly and efficient, and the stroller was perfect for our needs. Highly recommend!</p>
           </div>
         </div>
-        <div style="text-align: center; margin-top: 1em;">
-          <a href="javascript:void(0);" class="button"
-            style="display: flex; align-items: center; justify-content: center; font-weight: normal;"
-            onclick="toggleReviews(this)">Show more reviews</a>
         </div>
         <script>
-          function toggleReviews(btn) {
-            var more = document.getElementById('moreReviews');
-            if (more.style.display === 'none' || more.style.display === '') {
-              more.style.display = 'block';
-              btn.textContent = 'Show less reviews';
-            } else {
-              more.style.display = 'none';
-              btn.textContent = 'Show more reviews';
-            }
-          }
+          const reviews = document.querySelectorAll('#review-list .review');
+          reviews.forEach((r, i) => { if (i >= 5) r.style.display = 'none'; });
+
+          const showBtn = document.createElement('button');
+          showBtn.textContent = 'Show more reviews';
+          showBtn.style.display = 'block';
+          showBtn.style.margin = '2em auto';
+          showBtn.className = 'button';
+
+          showBtn.addEventListener('click', () => {
+            reviews.forEach(r => r.style.display = 'block');
+            showBtn.style.display = 'none';
+          });
+
+          document.querySelector('#review-list').after(showBtn);
         </script>
         <!-- REVIEWS END -->
         <p style="text-align: center; margin-top: 2em;">
           <a href="#review-form" class="button">Leave a Review</a>
         </p>
-
-        <div id="review-form" class="box-style" style="margin-top: 2em;">
-          <h3 class="section-title" style="font-size: 1.5em;">Leave a Review</h3>
-          <form action="https://formspree.io/f/mldnrgar" method="POST">
-            <label for="name">Name:</label><br>
-            <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
-
-            <label for="delivery">Delivery & Pickup:</label><br>
-            <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-              <option value="4">⭐️⭐️⭐️⭐️</option>
-              <option value="3">⭐️⭐️⭐️</option>
-              <option value="2">⭐️⭐️</option>
-              <option value="1">⭐️</option>
-            </select><br>
-
-            <label for="communication">Communication:</label><br>
-            <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-              <option value="4">⭐️⭐️⭐️⭐️</option>
-              <option value="3">⭐️⭐️⭐️</option>
-              <option value="2">⭐️⭐️</option>
-              <option value="1">⭐️</option>
-            </select><br>
-
-            <label for="product">Product Quality:</label><br>
-            <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-              <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-              <option value="4">⭐️⭐️⭐️⭐️</option>
-              <option value="3">⭐️⭐️⭐️</option>
-              <option value="2">⭐️⭐️</option>
-              <option value="1">⭐️</option>
-            </select><br>
-
-            <label for="overall">Overall Experience (auto-generated):</label><br>
-            <input type="text" id="overall" name="overall" readonly style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;"><br>
-
-            <label for="review">Your Review:</label><br>
-            <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea><br>
-
-            <input type="submit" value="Submit Review" class="button">
-          </form>
-          <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
-        </div>
-
-        <script>
-          function calculateAverage() {
-            const delivery = parseInt(document.getElementById('delivery').value);
-            const communication = parseInt(document.getElementById('communication').value);
-            const product = parseInt(document.getElementById('product').value);
-            const avg = Math.round((delivery + communication + product) / 3);
-            const stars = '⭐️'.repeat(avg);
-            document.getElementById('overall').value = stars + ` (${avg} stars)`;
-          }
-
-          document.getElementById('delivery').addEventListener('change', calculateAverage);
-          document.getElementById('communication').addEventListener('change', calculateAverage);
-          document.getElementById('product').addEventListener('change', calculateAverage);
-        </script>
         <p style="font-size: 0.9em; font-style: italic; color: #444; text-align: center; margin-top: 2em;">These reviews are collected from the Babonbo platform, where we’re listed under the profile name <strong>BB Stockholm</strong>.</p>
+<!-- Review Form moved here after Contact section -->
+<section id="review-form-section">
+  <div class="content-wrapper">
+    <div id="review-form" class="box-style" style="margin-top: 2em;">
+      <h3 class="section-title" style="font-size: 1.5em;">Leave a Review</h3>
+      <form action="https://formspree.io/f/mldnrgar" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
+
+        <label for="delivery">Delivery & Pickup:</label><br>
+        <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+          <option value="4">⭐️⭐️⭐️⭐️</option>
+          <option value="3">⭐️⭐️⭐️</option>
+          <option value="2">⭐️⭐️</option>
+          <option value="1">⭐️</option>
+        </select><br>
+
+        <label for="communication">Communication:</label><br>
+        <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+          <option value="4">⭐️⭐️⭐️⭐️</option>
+          <option value="3">⭐️⭐️⭐️</option>
+          <option value="2">⭐️⭐️</option>
+          <option value="1">⭐️</option>
+        </select><br>
+
+        <label for="product">Product Quality:</label><br>
+        <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+          <option value="4">⭐️⭐️⭐️⭐️</option>
+          <option value="3">⭐️⭐️⭐️</option>
+          <option value="2">⭐️⭐️</option>
+          <option value="1">⭐️</option>
+        </select><br>
+
+        <label for="overall">Overall Experience (auto-generated):</label><br>
+        <div id="overall" style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;">⭐️⭐️⭐️⭐️⭐️ (5 stars)</div>
+        <input type="hidden" name="overallRating" id="overallRating" value="5">
+
+        <label for="review">Your Review:</label><br>
+        <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea><br>
+
+        <button type="submit" class="button">Submit Review</button>
+      </form>
+      <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
+    </div>
+  </div>
+  <script>
+    function calculateAverage() {
+      const delivery = parseInt(document.getElementById('delivery').value);
+      const communication = parseInt(document.getElementById('communication').value);
+      const product = parseInt(document.getElementById('product').value);
+      const avg = Math.round((delivery + communication + product) / 3);
+      const stars = '⭐️'.repeat(avg);
+      document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
+      document.getElementById('overallRating').value = avg;
+    }
+    document.getElementById('delivery').addEventListener('change', calculateAverage);
+    document.getElementById('communication').addEventListener('change', calculateAverage);
+    document.getElementById('product').addEventListener('change', calculateAverage);
+  </script>
+</section>
     </section>
 
     <section id="order">
