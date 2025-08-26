@@ -1299,121 +1299,9 @@
 <section id="contact-form">
 </section>
 
-<!-- LEAVE REVIEW SECTION MOVED TO END -->
-<section id="leave-review" class="box-style alt">
-  <div class="content-wrapper">
-    <h2 class="section-title">Want to share your experience?</h2>
-    <a id="toggle-review-form" class="button primary" style="margin: 2em auto 1em auto; display: inline-block; font-weight: bold; color: #000; text-align: center;">Leave a Review</a>
-    <div id="review-form-container" style="display: none; margin-top: 2em;">
-      <form action="https://formspree.io/f/mldnrgar" method="POST" onsubmit="handleReviewSubmit(event)">
-        <label for="name">Name:</label><br>
-        <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
-
-        <label for="delivery">Delivery & Pickup:</label><br>
-        <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
-
-        <label for="communication">Communication:</label><br>
-        <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
-
-        <label for="product">Product Quality:</label><br>
-        <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="1">⭐️</option>
-        </select><br>
-
-        <label for="overall">Overall Experience (auto-generated):</label><br>
-        <div id="overall" style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;">⭐️⭐️⭐️⭐️⭐️ (5 stars)</div>
-        <input type="hidden" name="overallRating" id="overallRating" value="5">
-
-        <label for="review">Your Review:</label><br>
-        <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea><br>
-
-        <button type="submit" class="button">Submit Review</button>
-      </form>
-      <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
-    </div>
-  </div>
-  <script>
-    // Toggle review form visibility
-    document.addEventListener('DOMContentLoaded', function() {
-      var toggleBtn = document.getElementById('toggle-review-form');
-      var formContainer = document.getElementById('review-form-container');
-      if (toggleBtn && formContainer) {
-        toggleBtn.addEventListener('click', function (e) {
-          e.preventDefault();
-          if (formContainer.style.display === 'none' || formContainer.style.display === '') {
-            formContainer.style.display = 'block';
-            formContainer.scrollIntoView({behavior: "smooth", block: "center"});
-          } else {
-            formContainer.style.display = 'none';
-          }
-        });
-      }
-    });
-    // Review stars calculation (unchanged)
-    function calculateAverage() {
-      const delivery = parseInt(document.getElementById('delivery').value);
-      const communication = parseInt(document.getElementById('communication').value);
-      const product = parseInt(document.getElementById('product').value);
-      const avg = Math.round((delivery + communication + product) / 3);
-      const stars = '⭐️'.repeat(avg);
-      document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
-      document.getElementById('overallRating').value = avg;
-    }
-    document.addEventListener('DOMContentLoaded', function() {
-      var d = document.getElementById('delivery');
-      var c = document.getElementById('communication');
-      var p = document.getElementById('product');
-      if (d && c && p) {
-        d.addEventListener('change', calculateAverage);
-        c.addEventListener('change', calculateAverage);
-        p.addEventListener('change', calculateAverage);
-      }
-    });
-  </script>
-  <script>
-    const toggleBtn = document.getElementById('toggle-review-form');
-    const formContainer = document.getElementById('review-form-container');
-    const form = formContainer.querySelector('form');
-
-    toggleBtn.addEventListener('click', () => {
-      formContainer.style.display = 'block';
-      toggleBtn.style.display = 'none';
-    });
-
-    function handleReviewSubmit(event) {
-      localStorage.setItem('reviewSubmitted', 'true');
-      formContainer.style.display = 'none';
-      toggleBtn.style.display = 'block';
-    }
-
-    window.addEventListener('load', () => {
-      if (localStorage.getItem('reviewSubmitted') === 'true') {
-        formContainer.style.display = 'none';
-        toggleBtn.style.display = 'block';
-        localStorage.removeItem('reviewSubmitted');
-      }
-    });
-  </script>
-</section>
   </main>
 
-  <footer id="footer">
+<footer id="footer">
     <div class="inner" style="margin-top: -1em;">
       <ul class="icons mobile-tight-spacing" style="display: flex !important; justify-content: center; align-items: center; margin: 1.5em auto 1.5em auto; gap: 1.5em;">
         <li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
@@ -1453,6 +1341,118 @@
       }
     });
   </script>
+  <!-- LEAVE REVIEW SECTION MOVED TO END -->
+  <section id="leave-review" class="box-style alt">
+    <div class="content-wrapper">
+      <h2 class="section-title">Want to share your experience?</h2>
+      <a id="toggle-review-form" class="button primary" style="margin: 2em auto 1em auto; display: inline-block; font-weight: bold; color: #000; text-align: center;">Leave a Review</a>
+      <div id="review-form-container" style="display: none; margin-top: 2em;">
+        <form action="https://formspree.io/f/mldnrgar" method="POST" onsubmit="handleReviewSubmit(event)">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+
+          <label for="delivery">Delivery & Pickup:</label>
+          <select id="delivery" name="delivery" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+            <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+            <option value="4">⭐️⭐️⭐️⭐️</option>
+            <option value="3">⭐️⭐️⭐️</option>
+            <option value="2">⭐️⭐️</option>
+            <option value="1">⭐️</option>
+          </select>
+
+          <label for="communication">Communication:</label>
+          <select id="communication" name="communication" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+            <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+            <option value="4">⭐️⭐️⭐️⭐️</option>
+            <option value="3">⭐️⭐️⭐️</option>
+            <option value="2">⭐️⭐️</option>
+            <option value="1">⭐️</option>
+          </select>
+
+          <label for="product">Product Quality:</label>
+          <select id="product" name="product" required style="width:100%; padding:0.5em; margin-bottom:1em;">
+            <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+            <option value="4">⭐️⭐️⭐️⭐️</option>
+            <option value="3">⭐️⭐️⭐️</option>
+            <option value="2">⭐️⭐️</option>
+            <option value="1">⭐️</option>
+          </select>
+
+          <label for="overall">Overall Experience (auto-generated):</label>
+          <div id="overall" style="width:100%; padding:0.5em; margin-bottom:1em; background-color:#eee;">⭐️⭐️⭐️⭐️⭐️ (5 stars)</div>
+          <input type="hidden" name="overallRating" id="overallRating" value="5" style="display: none;">
+
+          <label for="review">Your Review:</label>
+          <textarea id="review" name="review" rows="6" required style="width:100%; padding:0.5em; margin-bottom:1em;"></textarea>
+
+          <button type="submit" class="button">Submit Review</button>
+        </form>
+        <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
+      </div>
+    </div>
+    <script>
+      // Toggle review form visibility
+      document.addEventListener('DOMContentLoaded', function() {
+        var toggleBtn = document.getElementById('toggle-review-form');
+        var formContainer = document.getElementById('review-form-container');
+        if (toggleBtn && formContainer) {
+          toggleBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            if (formContainer.style.display === 'none' || formContainer.style.display === '') {
+              formContainer.style.display = 'block';
+              formContainer.scrollIntoView({behavior: "smooth", block: "center"});
+            } else {
+              formContainer.style.display = 'none';
+            }
+          });
+        }
+      });
+      // Review stars calculation (unchanged)
+      function calculateAverage() {
+        const delivery = parseInt(document.getElementById('delivery').value);
+        const communication = parseInt(document.getElementById('communication').value);
+        const product = parseInt(document.getElementById('product').value);
+        const avg = Math.round((delivery + communication + product) / 3);
+        const stars = '⭐️'.repeat(avg);
+        document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
+        document.getElementById('overallRating').value = avg;
+      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var d = document.getElementById('delivery');
+        var c = document.getElementById('communication');
+        var p = document.getElementById('product');
+        if (d && c && p) {
+          d.addEventListener('change', calculateAverage);
+          c.addEventListener('change', calculateAverage);
+          p.addEventListener('change', calculateAverage);
+        }
+      });
+    </script>
+    <script>
+      const toggleBtn = document.getElementById('toggle-review-form');
+      const formContainer = document.getElementById('review-form-container');
+      const form = formContainer.querySelector('form');
+
+      toggleBtn.addEventListener('click', () => {
+        formContainer.style.display = 'block';
+        toggleBtn.style.display = 'none';
+      });
+
+      function handleReviewSubmit(event) {
+        localStorage.setItem('reviewSubmitted', 'true');
+        formContainer.style.display = 'none';
+        toggleBtn.style.display = 'block';
+      }
+
+      window.addEventListener('load', () => {
+        if (localStorage.getItem('reviewSubmitted') === 'true') {
+          formContainer.style.display = 'none';
+          toggleBtn.style.display = 'block';
+          localStorage.removeItem('reviewSubmitted');
+        }
+      });
+    </script>
+  </section>
 </body>
 <section id="faq" class="box-style section-spacing">
 </html>
