@@ -1263,15 +1263,13 @@
           document.querySelector('#review-list').after(showBtn);
         </script>
         <!-- REVIEWS END -->
-        <p style="text-align: center; margin-top: 2em;">
-          <a href="#review-form" class="button">Leave a Review</a>
-        </p>
+        <!-- Leave a Review button removed per request -->
         <p style="font-size: 0.9em; font-style: italic; color: #444; text-align: center; margin-top: 2em;">These reviews are collected from the Babonbo platform, where we’re listed under the profile name <strong>BB Stockholm</strong>.</p>
-<!-- Review Form moved here after Contact section -->
-<section id="review-form-section">
-  <div class="content-wrapper">
-    <div id="review-form" class="box-style" style="margin-top: 2em;">
-      <h3 class="section-title" style="font-size: 1.5em;">Leave a Review</h3>
+  <!-- Leave a Review Section (at end of page, after footer) -->
+  <section id="leave-review" class="box-style" style="margin-top: 4em; text-align: center;">
+    <h3 style="font-size: 1.6em; margin-bottom: 0.5em;">Want to share your experience?</h3>
+    <button id="toggle-review-form" class="button">Leave a Review</button>
+    <div id="review-form-container" style="display: none; margin-top: 2em;">
       <form action="https://formspree.io/f/mldnrgar" method="POST">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name" required style="width:100%; padding:0.5em; margin-bottom:1em;"><br>
@@ -1313,23 +1311,44 @@
         <button type="submit" class="button">Submit Review</button>
       </form>
       <p style="font-size: 0.85em; color: #666; margin-top: 1em;">Submitted reviews may be published after moderation.</p>
+      <script>
+        function calculateAverage() {
+          const delivery = parseInt(document.getElementById('delivery').value);
+          const communication = parseInt(document.getElementById('communication').value);
+          const product = parseInt(document.getElementById('product').value);
+          const avg = Math.round((delivery + communication + product) / 3);
+          const stars = '⭐️'.repeat(avg);
+          document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
+          document.getElementById('overallRating').value = avg;
+        }
+        document.getElementById('delivery').addEventListener('change', calculateAverage);
+        document.getElementById('communication').addEventListener('change', calculateAverage);
+        document.getElementById('product').addEventListener('change', calculateAverage);
+      </script>
     </div>
-  </div>
+  </section>
   <script>
-    function calculateAverage() {
-      const delivery = parseInt(document.getElementById('delivery').value);
-      const communication = parseInt(document.getElementById('communication').value);
-      const product = parseInt(document.getElementById('product').value);
-      const avg = Math.round((delivery + communication + product) / 3);
-      const stars = '⭐️'.repeat(avg);
-      document.getElementById('overall').textContent = stars + ` (${avg} stars)`;
-      document.getElementById('overallRating').value = avg;
-    }
-    document.getElementById('delivery').addEventListener('change', calculateAverage);
-    document.getElementById('communication').addEventListener('change', calculateAverage);
-    document.getElementById('product').addEventListener('change', calculateAverage);
+    const toggleBtn = document.getElementById('toggle-review-form');
+    const formContainer = document.getElementById('review-form-container');
+    const form = formContainer.querySelector('form');
+
+    toggleBtn.addEventListener('click', () => {
+      formContainer.style.display = 'block';
+      toggleBtn.style.display = 'none';
+    });
+
+    form.addEventListener('submit', () => {
+      localStorage.setItem('reviewSubmitted', 'true');
+    });
+
+    window.addEventListener('load', () => {
+      if (localStorage.getItem('reviewSubmitted') === 'true') {
+        formContainer.style.display = 'none';
+        toggleBtn.style.display = 'block';
+        localStorage.removeItem('reviewSubmitted');
+      }
+    });
   </script>
-</section>
     </section>
 
     <section id="order">
