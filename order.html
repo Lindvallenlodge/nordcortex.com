@@ -185,7 +185,7 @@
               <div class="method-box">
                 <label>Start date & time
                   <div class="inline-time">
-                    <input type="date" id="startDate" name="startDate" required>
+                    <input type="date" id="startDate" name="startDate" required onchange="recalc()">
                     <select id="startHour" name="startHour">
                       <option value="00:00">00:00</option>
                       <option value="01:00">01:00</option>
@@ -233,7 +233,7 @@
               <div class="method-box">
                 <label>End date & time
                   <div class="inline-time">
-                    <input type="date" id="endDate" name="endDate" required>
+                    <input type="date" id="endDate" name="endDate" required onchange="recalc()">
                     <select id="endHour" name="endHour">
                       <option value="00:00">00:00</option>
                       <option value="01:00">01:00</option>
