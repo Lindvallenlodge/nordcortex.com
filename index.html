@@ -1458,8 +1458,10 @@
       if (category) {
         for (let i = 1; i <= 5; i++) {
           const star = document.createElement("span");
-          star.innerHTML = "★";
+          star.innerHTML = "&#11088;"; // Unicode star identical to Overall Experience
           star.style.cursor = "pointer";
+          star.style.fontSize = "1.5em";
+          star.style.transition = "color 0.2s, text-shadow 0.2s";
           star.dataset.index = i;
 
           star.addEventListener("click", () => {
@@ -1477,7 +1479,8 @@
     function updateStars(container, count) {
       const stars = container.querySelectorAll("span");
       stars.forEach((s, i) => {
-        s.style.color = i < count ? "#FFD700" : "#ccc";
+        s.style.color = i < count ? "#ffc107" : "#ccc";
+        s.style.textShadow = i < count ? "0 1px 3px rgba(0,0,0,0.3)" : "none";
       });
     }
 
