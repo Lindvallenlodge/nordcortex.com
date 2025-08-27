@@ -15,6 +15,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      padding: 1em 2em;
+    }
+
+    .nav-left, .nav-right {
+      font-size: 16px;
+    }
+
+    .nav-left {
+      text-align: left;
+    }
+
+    .nav-right {
+      text-align: right;
+    }
     .visually-hidden {
       position: absolute;
       left: -9999px;
@@ -536,13 +555,13 @@
     <source src="assets/videos/background-video-1-mobile.mp4" type="video/mp4">
   </video>
   <div class="video-bottom-fade-desktop"></div>
-  <div class="container-max text-center">
-    <div class="intro-top-actions">
-      <a href="#contact-form" class="button"
-        style="display: flex; align-items: center; justify-content: center; font-weight: normal;"
-        onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact
-        us</a>
-      <a href="/order.html" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
+  <div class="nav-container">
+    <div class="nav-left">
+      <a href="#contact-form"
+        onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact us</a>
+    </div>
+    <div class="nav-right">
+      <a href="/order.html">Order now</a>
     </div>
   </div>
   <header id="header" style="position:relative;">
