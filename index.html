@@ -1641,7 +1641,7 @@
       color: #000;
       border-color: #f3c14e;
     }
-    /* Keep stacked layout on mobile */
+    /* Keep stacked layout on mobile and match white content box width */
     @media (max-width: 767px) {
       .intro-top-actions {
         flex-direction: column;
@@ -1649,9 +1649,31 @@
         align-items: stretch;
       }
       .intro-top-actions .button {
-        margin: 0 auto;
+        display: block;
         width: 100%;
-        max-width: 340px;
+        max-width: calc(100vw - 3rem); /* match .box-style width on mobile */
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
       }
     }
   </style>
+    /* Mobile styles for order-now and contact/order buttons elsewhere */
+    @media (max-width: 767px) {
+      .order-now-container .button,
+      .order-now-container a.button,
+      .intro-top-actions .button,
+      .contact-btn,
+      .order-btn {
+        display: block;
+        width: 100%;
+        max-width: calc(100vw - 3rem);
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-sizing: border-box;
+      }
+    }
