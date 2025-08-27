@@ -237,6 +237,8 @@ function attachEvents(){
   if(!startEl || !endEl) return;
   startEl.addEventListener('change', recalc);
   endEl.addEventListener('change', recalc);
+  startEl.addEventListener('input', recalc);
+  endEl.addEventListener('input', recalc);
 
   // Time dropdown sync (forces 24h across browsers)
   function syncTimeHidden(){
