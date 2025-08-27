@@ -2220,6 +2220,7 @@ body::before {
   }
 }
 
+
 /* === Center the LEAVE A REVIEW button horizontally in its box === */
 .review-intro-box {
   display: flex;
@@ -2232,6 +2233,13 @@ body::before {
   margin-left: auto;
   margin-right: auto;
   display: block;
+}
+
+/* Vertically center text in .review-toggle button */
+.review-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Show More Reviews Button Styling */
