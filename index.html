@@ -1277,7 +1277,7 @@
           // Add collapse (Show less) button container after the reviews section
           const collapseContainer = document.createElement('div');
           collapseContainer.id = 'collapse-reviews-container';
-          collapseContainer.className = 'review-toggle-wrapper';
+          collapseContainer.className = 'centered-button review-toggle-wrapper';
           collapseContainer.style.display = 'none';
           const collapseBtn = document.createElement('button');
           collapseBtn.id = 'collapse-reviews';
@@ -1287,8 +1287,12 @@
 
           // Insert the buttons after the review list
           const reviewListElem = document.querySelector('#review-list');
-          reviewListElem.after(showBtn);
-          showBtn.after(collapseContainer);
+          // Wrap showBtn in a centered-button div for centering
+          const showBtnWrapper = document.createElement('div');
+          showBtnWrapper.className = 'centered-button';
+          showBtnWrapper.appendChild(showBtn);
+          reviewListElem.after(showBtnWrapper);
+          showBtnWrapper.after(collapseContainer);
 
           // Show more reviews logic
           showBtn.addEventListener('click', () => {
@@ -1436,6 +1440,10 @@
       align-items: center;
       justify-content: center;
       transition: background 0.2s;
+      float: none !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      text-align: center !important;
     }
 
     .button:hover {
@@ -1451,6 +1459,12 @@
     .gold-stars {
       font-size: 1.5em;
       color: #f3c14e;
+    }
+
+    /* Centered button container for review section */
+    .centered-button {
+      text-align: center;
+      margin-top: 20px;
     }
 
     /* Remove .content-box, replaced by .box-style for consistency */
