@@ -2670,3 +2670,21 @@ nav a:hover {
   /* tighten spacing around the round logo on the order page */
   .order-page .logo-wrap { margin-top: 10px; margin-bottom: 10px; }
 }
+/* === Order Summary Breakdown Layout === */
+.order-summary-breakdown {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.order-summary-breakdown span {
+  display: block;
+}
+
+.order-summary-breakdown .total {
+  font-weight: bold;
+  margin-top: 1em;
+}
