@@ -1479,8 +1479,10 @@
     function updateStars(container, count) {
       const stars = container.querySelectorAll("span");
       stars.forEach((s, i) => {
-        s.style.color = i < count ? "#ffc107" : "#ccc";
-        s.style.textShadow = i < count ? "0 1px 3px rgba(0,0,0,0.3)" : "none";
+        s.style.color = i < count ? "#f3c14e" : "#ccc";
+        s.style.textShadow = i < count
+          ? "0 0 2px rgba(0,0,0,0.2), 0 1px 1px rgba(255,255,255,0.2)"
+          : "0 0 2px rgba(0,0,0,0.2)";
       });
     }
 
