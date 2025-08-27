@@ -239,6 +239,9 @@ function attachEvents(){
   endEl.addEventListener('change', recalc);
   startEl.addEventListener('input', recalc);
   endEl.addEventListener('input', recalc);
+  // Also recalc on blur to ensure updates on desktop browsers that only trigger on blur
+  startEl.addEventListener('blur', recalc);
+  endEl.addEventListener('blur', recalc);
 
   // Time dropdown sync (forces 24h across browsers)
   function syncTimeHidden(){
