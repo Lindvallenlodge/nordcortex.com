@@ -1405,46 +1405,15 @@
     <div class="content-wrapper">
       <h2 class="section-title" style="margin-bottom: 1em;">Want to share your experience?</h2>
       <div style="display: flex; justify-content: center; margin-bottom: 2em;">
-        <button id="openReviewForm" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Leave a Review</button>
+        <!-- No popup, just show the form directly -->
       </div>
-      <div id="reviewFormContainer" style="display: none; margin: 0 auto; max-width: 500px;">
-        <form id="review-form" method="POST" action="https://formspree.io/f/mwpnpekw"
-          onsubmit="event.preventDefault(); document.getElementById('thank-you-message').style.display = 'block';">
-          <label for="name">Your Name</label><br>
-          <input type="text" name="name" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
-
-          <!-- Email -->
-          <label for="email">Email</label>
-          <input type="email" name="email" id="email" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
-
-          <!-- Phone -->
-          <label for="phone">Phone Number</label>
-          <input type="tel" name="phone" id="phone" pattern="[0-9+\-\s]*" style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
-
-          <label for="review">Your Review</label><br>
-          <textarea name="review" rows="4" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"></textarea><br>
-
-          <label>Delivery & Pickup</label><br>
-          <div class="star-rating" data-category="delivery" style="margin-bottom: 1em;"></div>
-
-          <label>Communication</label><br>
-          <div class="star-rating" data-category="communication" style="margin-bottom: 1em;"></div>
-
-          <label>Product Quality</label><br>
-          <div class="star-rating" data-category="product" style="margin-bottom: 1em;"></div>
-
-          <label>Overall Experience (auto-generated)</label><br>
-          <div id="overall-stars" class="star-rating gold-stars" style="margin-bottom: 1em;">⭐⭐⭐⭐⭐</div>
-          <input type="hidden" name="overallRating" id="overallRating" value="5"><br>
-
-          <div style="display: flex; justify-content: center; margin-top: 1em;">
-            <button type="submit" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Submit Review</button>
-          </div>
+      <div style="margin: 0 auto; max-width: 500px;">
+        <form action="https://formspree.io/f/mandnqpk" method="POST">
+          <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.5em;margin-bottom:1em;">
+          <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;padding:0.5em;margin-bottom:1em;">
+          <textarea name="message" placeholder="Write your review here..." required style="width:100%;padding:0.5em;margin-bottom:1em;"></textarea>
+          <button type="submit" style="width:100%;padding:0.7em 1.5em;font-size:1em;border-radius:4px;background-color:#f3c14e;color:black;border:none;cursor:pointer;">Submit Review</button>
         </form>
-        <div id="thank-you-message" style="display:none; text-align:center; padding:2em;">
-          <p>Thank you for your review!</p>
-          <a href="index.html" style="display:inline-block; background:white; padding:0.75em 1.5em; border-radius:6px; font-weight:bold; text-decoration:none; color:#000;">Return to Homepage</a>
-        </div>
       </div>
     </div>
   </section>
@@ -1524,57 +1493,6 @@
         document.body.classList.remove('gallery-open');
       }
     });
-  </script>
-  <script>
-    // Review Form Star Rating Logic
-    document.getElementById("openReviewForm").addEventListener("click", function () {
-      // Show the review form container, and scroll to it
-      document.getElementById("reviewFormContainer").style.display = "block";
-      document.getElementById("reviewFormContainer").scrollIntoView({ behavior: "smooth", block: "center" });
-    });
-
-    const ratings = {
-      delivery: 5,
-      communication: 5,
-      product: 5
-    };
-
-    document.querySelectorAll('.star-rating').forEach(container => {
-      const category = container.dataset.category;
-      if (category) {
-        for (let i = 1; i <= 5; i++) {
-          const star = document.createElement("span");
-          star.innerHTML = "★";
-          star.style.cursor = "pointer";
-          star.dataset.index = i;
-
-          star.addEventListener("click", () => {
-            ratings[category] = i;
-            updateStars(container, i);
-            updateOverall();
-          });
-
-          container.appendChild(star);
-        }
-        updateStars(container, 0);
-      }
-    });
-
-    function updateStars(container, count) {
-      const stars = container.querySelectorAll("span");
-      stars.forEach((s, i) => {
-        s.style.color = i < count ? "#FFD700" : "#ccc";
-        s.style.textShadow = "0 1px 3px rgba(0,0,0,0.3)";
-      });
-    }
-
-    function updateOverall() {
-      const avg = Math.round((ratings.delivery + ratings.communication + ratings.product) / 3);
-      const overallStars = document.getElementById("overall-stars");
-      const ratingInput = document.getElementById("overallRating");
-      overallStars.innerHTML = "⭐".repeat(avg);
-      ratingInput.value = avg;
-    }
   </script>
 </body>
   <style>
