@@ -1277,9 +1277,8 @@
           // Add collapse (Show less) button container after the reviews section
           const collapseContainer = document.createElement('div');
           collapseContainer.id = 'collapse-reviews-container';
+          collapseContainer.className = 'review-toggle-wrapper';
           collapseContainer.style.display = 'none';
-          collapseContainer.style.textAlign = 'center';
-          collapseContainer.style.marginTop = '2em';
           const collapseBtn = document.createElement('button');
           collapseBtn.id = 'collapse-reviews';
           collapseBtn.className = 'button';
@@ -1542,3 +1541,8 @@
     }
   </script>
 </body>
+    .review-toggle-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5em;
+    }
