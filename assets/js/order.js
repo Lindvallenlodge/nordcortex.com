@@ -186,6 +186,18 @@ function recalc(){
   if(DELIVERY_FEES[recv]) total += DELIVERY_FEES[recv];
   if(DELIVERY_FEES[ret])  total += DELIVERY_FEES[ret];
 
+  const breakdownEl = document.getElementById('priceBreakdown');
+  if (breakdownEl) {
+    const parts = [];
+    chosen.forEach(item => {
+      const subtotal = item.pricePerDay * item.qty * days;
+      parts.push(`${item.name} (${days} × €${item.pricePerDay} × ${item.qty}) = €${subtotal}`);
+    });
+    if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
+    if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
+    breakdownEl.innerHTML = parts.join('&lt;br&gt;');
+  }
+
   if(sumItemsEl) sumItemsEl.textContent = String(itemsCount);
   if(sumDaysEl)  sumDaysEl.textContent  = String(days);
   if(sumTotalEl) sumTotalEl.textContent = fmtMoney(total);
