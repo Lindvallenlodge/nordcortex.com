@@ -195,7 +195,13 @@ function recalc(){
     });
     if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
     if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
-    breakdownEl.innerHTML = parts.join('&lt;br&gt;');
+
+    breakdownEl.innerHTML = '';
+    parts.forEach(text => {
+      const div = document.createElement('div');
+      div.textContent = text;
+      breakdownEl.appendChild(div);
+    });
   }
 
   if(sumItemsEl) sumItemsEl.textContent = String(itemsCount);
