@@ -1251,15 +1251,31 @@
 
           const showBtn = document.createElement('button');
           showBtn.textContent = 'Show more reviews';
-          showBtn.style.display = 'block';
-          showBtn.style.margin = '2em auto';
           showBtn.className = 'button';
-
+          showBtn.style.display = 'flex';
+          showBtn.style.alignItems = 'center';
+          showBtn.style.justifyContent = 'center';
+          showBtn.style.fontWeight = 'bold';
+          showBtn.style.fontFamily = "'Montserrat', 'Questrial', Arial, sans-serif";
+          showBtn.style.fontSize = '1em';
+          showBtn.style.padding = '0.7em 1.5em';
+          showBtn.style.borderRadius = '4px';
+          showBtn.style.backgroundColor = '#f3c14e';
+          showBtn.style.color = 'black';
+          showBtn.style.border = 'none';
+          showBtn.style.margin = '2em auto';
+          showBtn.style.cursor = 'pointer';
+          showBtn.style.transition = 'background 0.2s';
+          showBtn.addEventListener('mouseenter', () => {
+            showBtn.style.backgroundColor = '#ffd980';
+          });
+          showBtn.addEventListener('mouseleave', () => {
+            showBtn.style.backgroundColor = '#f3c14e';
+          });
           showBtn.addEventListener('click', () => {
             reviews.forEach(r => r.style.display = 'block');
             showBtn.style.display = 'none';
           });
-
           document.querySelector('#review-list').after(showBtn);
         </script>
         <!-- REVIEWS END -->
