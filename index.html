@@ -1255,7 +1255,7 @@
           showBtn.style.display = 'flex';
           showBtn.style.alignItems = 'center';
           showBtn.style.justifyContent = 'center';
-          showBtn.style.fontWeight = 'bold';
+          // Removed fontWeight bold, will use text-transform uppercase via CSS
           showBtn.style.fontFamily = "'Montserrat', 'Questrial', Arial, sans-serif";
           showBtn.style.fontSize = '1em';
           showBtn.style.padding = '0.7em 1.5em';
@@ -1412,6 +1412,12 @@
 
     .button:hover {
       background-color: #ffd980;
+    }
+
+    /* Make the "Show more reviews" button text uppercase */
+    button.button {
+      text-transform: uppercase;
+      /* font-weight will be inherited or normal, not bold */
     }
 
     .gold-stars {
