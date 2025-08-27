@@ -538,11 +538,10 @@
   <div class="video-bottom-fade-desktop"></div>
   <div class="container-max text-center">
     <div class="intro-top-actions">
-      <a href="#contact-form" class="button"
-        style="display: flex; align-items: center; justify-content: center; font-weight: normal;"
+      <a href="#contact-form" class="button contact-btn"
         onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact
         us</a>
-      <a href="/order.html" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal;">Order now</a>
+      <a href="/order.html" class="button order-btn">Order now</a>
     </div>
   </div>
   <header id="header" style="position:relative;">
@@ -1566,3 +1565,81 @@
       margin-top: 1.5em;
       text-align: center;
     }
+  <style>
+    /* Top action buttons responsive flex layout for desktop only */
+    .intro-top-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: stretch;
+      width: 100%;
+      margin: 2em 0 2em 0;
+    }
+    .intro-top-actions .button {
+      width: 100%;
+      max-width: 340px;
+      margin: 0 auto;
+    }
+    @media (min-width: 768px) {
+      .intro-top-actions {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        gap: 0;
+      }
+      .intro-top-actions .contact-btn {
+        justify-content: flex-start;
+        margin-left: 0;
+        margin-right: auto;
+      }
+      .intro-top-actions .order-btn {
+        justify-content: flex-end;
+        margin-right: 0;
+        margin-left: auto;
+      }
+      .intro-top-actions .button {
+        max-width: 260px;
+        width: 100%;
+      }
+    }
+    /* Match white background button style */
+    .intro-top-actions .button {
+      background-color: #fff;
+      color: #000;
+      border: 1px solid #ddd;
+      font-family: 'Montserrat', 'Questrial', Arial, sans-serif;
+      font-size: 1em;
+      font-weight: 600;
+      padding: 0.7em 1.5em;
+      border-radius: 4px;
+      text-transform: uppercase;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+      transition: background 0.2s, color 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+    .intro-top-actions .button:hover {
+      background-color: #f3c14e;
+      color: #000;
+      border-color: #f3c14e;
+    }
+    /* Keep stacked layout on mobile */
+    @media (max-width: 767px) {
+      .intro-top-actions {
+        flex-direction: column;
+        gap: 1em;
+        align-items: stretch;
+      }
+      .intro-top-actions .button {
+        margin: 0 auto;
+        width: 100%;
+        max-width: 340px;
+      }
+    }
+  </style>
