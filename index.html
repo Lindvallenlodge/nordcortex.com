@@ -1325,9 +1325,7 @@
         <p style="font-size: 0.9em; font-style: italic; color: #444; text-align: center; margin-top: 2em;">
           Reviews shown here have been submitted by customers either via our Babonbo profile (BB Stockholm) or through this website.
         </p>
-        <div class="review-button-wrapper">
-          <button id="show-review-form" class="button">LEAVE A REVIEW</button>
-        </div>
+</section>
 </section>
     </section>
 
@@ -1419,7 +1417,9 @@
       </div>
       <div style="margin: 0 auto; max-width: 500px;">
         <!-- Toggle Review Form Button -->
-        <button id="toggleReviewForm" class="button">Leave a Review</button>
+        <div class="review-toggle-container">
+          <button id="toggleReviewForm" class="button review-toggle-btn">Leave a Review</button>
+        </div>
         <!-- Hidden Review Form Container -->
         <div id="reviewForm" style="display: none;">
           <div id="review-form-wrapper">
@@ -1747,5 +1747,15 @@
         padding-top: 0.7em;
         padding-bottom: 0.7em;
       }
+    }
+  </style>
+  <style>
+    .review-toggle-container {
+      display: flex;
+      justify-content: center;
+    }
+    .review-toggle-btn {
+      display: block;
+      margin: 0 auto;
     }
   </style>
