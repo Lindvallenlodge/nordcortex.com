@@ -1342,7 +1342,61 @@
       </ul>
     </div>
   </footer>
+
+  <!-- Want to share your experience? Review Form Section -->
+  <section id="want-to-share" class="content-box">
+    <h2>Want to share your experience?</h2>
+    <button id="openReviewForm" class="button">Leave a Review</button>
+    <div id="reviewFormContainer" style="display: none; margin-top: 2em;">
+      <form method="POST" action="https://formspree.io/f/mnqekgpl">
+        <label for="name">Your Name</label><br>
+        <input type="text" name="name" required><br><br>
+
+        <label for="review">Your Review</label><br>
+        <textarea name="review" rows="4" required></textarea><br><br>
+
+        <label>Delivery & Pickup</label><br>
+        <div class="star-rating" data-category="delivery"></div><br>
+
+        <label>Communication</label><br>
+        <div class="star-rating" data-category="communication"></div><br>
+
+        <label>Product Quality</label><br>
+        <div class="star-rating" data-category="product"></div><br>
+
+        <label>Overall Experience (auto-generated)</label><br>
+        <div id="overall-stars" class="star-rating gold-stars">⭐⭐⭐⭐⭐</div>
+        <input type="hidden" name="overallRating" id="overallRating" value="5"><br><br>
+
+        <button type="submit" class="button">Submit Review</button>
+      </form>
+    </div>
+  </section>
   <style>
+    .button {
+      background-color: #f3c14e;
+      color: black;
+      font-weight: bold;
+      border: none;
+      padding: 0.7em 1.5em;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .gold-stars {
+      font-size: 1.5em;
+      color: #f3c14e;
+    }
+
+    .content-box {
+      background-color: rgba(255,255,255,0.85);
+      border-radius: 16px;
+      padding: 2em;
+      margin: 3em auto;
+      max-width: 900px;
+      text-align: center;
+    }
     @media (max-width: 767px) {
       #footer .icons {
         display: flex !important;
@@ -1373,5 +1427,48 @@
         document.body.classList.remove('gallery-open');
       }
     });
+  </script>
+  <script>
+    // Review Form Star Rating Logic
+    document.getElementById("openReviewForm").addEventListener("click", function () {
+      document.getElementById("reviewFormContainer").style.display = "block";
+    });
+
+    const ratings = {
+      delivery: 5,
+      communication: 5,
+      product: 5
+    };
+
+    document.querySelectorAll('.star-rating').forEach(container => {
+      const category = container.dataset.category;
+      if (category) {
+        for (let i = 1; i <= 5; i++) {
+          const star = document.createElement("span");
+          star.innerHTML = "⭐";
+          star.style.cursor = "pointer";
+          star.addEventListener("click", () => {
+            ratings[category] = i;
+            updateStars(container, i);
+            updateOverall();
+          });
+          container.appendChild(star);
+        }
+        updateStars(container, 5);
+      }
+    });
+
+    function updateStars(container, count) {
+      const stars = container.querySelectorAll("span");
+      stars.forEach((s, i) => s.style.color = i < count ? "#f3c14e" : "#ccc");
+    }
+
+    function updateOverall() {
+      const avg = Math.round((ratings.delivery + ratings.communication + ratings.product) / 3);
+      const overallStars = document.getElementById("overall-stars");
+      const ratingInput = document.getElementById("overallRating");
+      overallStars.innerHTML = "⭐".repeat(avg);
+      ratingInput.value = avg;
+    }
   </script>
 </body>
