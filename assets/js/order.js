@@ -168,6 +168,10 @@ function render(){
 // ===== Calculation & payload =====
 function recalc(){
   const days = rentalDays();
+  const discountDay = days > 6 ? 1 : 0;
+  const effectiveDays = days - discountDay;
+  const discountNote = discountDay ? 'Long Rental Discount (7+ days): 1 day free' : '';
+
   let itemsCount = 0;
   let total = 0;
   const chosen = [];
@@ -176,7 +180,7 @@ function recalc(){
     const p = products.find(x=>x.id===id);
     if(!p) return;
     itemsCount += qty;
-    total += p.pricePerDay * qty * days;
+    total += p.pricePerDay * qty * effectiveDays;
     chosen.push({ id:p.id, name:p.name, qty, pricePerDay:p.pricePerDay, category:p.category });
   });
 
@@ -190,11 +194,12 @@ function recalc(){
   if (breakdownEl) {
     const parts = [];
     chosen.forEach(item => {
-      const subtotal = item.pricePerDay * item.qty * days;
-      parts.push(`${item.name} (${days} × €${item.pricePerDay} × ${item.qty}) = €${subtotal}`);
+      const subtotal = item.pricePerDay * item.qty * effectiveDays;
+      parts.push(`${item.name} (${effectiveDays} × €${item.pricePerDay} × ${item.qty}) = €${subtotal}`);
     });
     if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
     if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
+    if (discountNote) parts.push(discountNote);
 
     breakdownEl.innerHTML = '';
     parts.forEach(text => {
@@ -220,6 +225,8 @@ function recalc(){
     deliveryFee: (DELIVERY_FEES[recv]||0) + (DELIVERY_FEES[ret]||0),
     items: chosen,
     days,
+    effectiveDays,
+    discountCode: discountDay ? 'longrental7' : '',
     estimatedTotal: total
   };
   if(orderJsonEl) orderJsonEl.value = JSON.stringify(payload, null, 2);
