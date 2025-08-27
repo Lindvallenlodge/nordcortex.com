@@ -1351,32 +1351,30 @@
         <button id="openReviewForm" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Leave a Review</button>
       </div>
       <div id="reviewFormContainer" style="display: none; margin: 0 auto; max-width: 500px;">
-        <div class="box-style" style="background-color: rgba(255,255,255,0.9); padding: 2em 1.5em; margin: 0 auto;">
-          <form method="POST" action="https://formspree.io/f/mnqekgpl">
-            <label for="name">Your Name</label><br>
-            <input type="text" name="name" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
+        <form method="POST" action="https://formspree.io/f/mnqekgpl">
+          <label for="name">Your Name</label><br>
+          <input type="text" name="name" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
 
-            <label for="review">Your Review</label><br>
-            <textarea name="review" rows="4" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"></textarea><br>
+          <label for="review">Your Review</label><br>
+          <textarea name="review" rows="4" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"></textarea><br>
 
-            <label>Delivery & Pickup</label><br>
-            <div class="star-rating" data-category="delivery" style="margin-bottom: 1em;"></div>
+          <label>Delivery & Pickup</label><br>
+          <div class="star-rating" data-category="delivery" style="margin-bottom: 1em;"></div>
 
-            <label>Communication</label><br>
-            <div class="star-rating" data-category="communication" style="margin-bottom: 1em;"></div>
+          <label>Communication</label><br>
+          <div class="star-rating" data-category="communication" style="margin-bottom: 1em;"></div>
 
-            <label>Product Quality</label><br>
-            <div class="star-rating" data-category="product" style="margin-bottom: 1em;"></div>
+          <label>Product Quality</label><br>
+          <div class="star-rating" data-category="product" style="margin-bottom: 1em;"></div>
 
-            <label>Overall Experience (auto-generated)</label><br>
-            <div id="overall-stars" class="star-rating gold-stars" style="margin-bottom: 1em;">⭐⭐⭐⭐⭐</div>
-            <input type="hidden" name="overallRating" id="overallRating" value="5"><br>
+          <label>Overall Experience (auto-generated)</label><br>
+          <div id="overall-stars" class="star-rating gold-stars" style="margin-bottom: 1em;">⭐⭐⭐⭐⭐</div>
+          <input type="hidden" name="overallRating" id="overallRating" value="5"><br>
 
-            <div style="display: flex; justify-content: center; margin-top: 1em;">
-              <button type="submit" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Submit Review</button>
-            </div>
-          </form>
-        </div>
+          <div style="display: flex; justify-content: center; margin-top: 1em;">
+            <button type="submit" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Submit Review</button>
+          </div>
+        </form>
       </div>
     </div>
   </section>
