@@ -1403,9 +1403,18 @@
         <button id="openReviewForm" class="button" style="display: flex; align-items: center; justify-content: center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Leave a Review</button>
       </div>
       <div id="reviewFormContainer" style="display: none; margin: 0 auto; max-width: 500px;">
-        <form method="POST" action="https://formspree.io/f/mnqekgpl">
+        <form action="#" method="POST"
+          onsubmit="event.preventDefault(); document.getElementById('thank-you-message').style.display = 'block';">
           <label for="name">Your Name</label><br>
           <input type="text" name="name" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
+
+          <!-- Email -->
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
+
+          <!-- Phone -->
+          <label for="phone">Phone Number</label>
+          <input type="tel" name="phone" id="phone" pattern="[0-9+\-\s]*" style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"><br>
 
           <label for="review">Your Review</label><br>
           <textarea name="review" rows="4" required style="width: 100%; padding: 0.5em; margin-top: 0.2em; margin-bottom: 1em;"></textarea><br>
@@ -1427,6 +1436,10 @@
             <button type="submit" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal; font-size: 1em; padding: 0.7em 1.5em;">Submit Review</button>
           </div>
         </form>
+        <div id="thank-you-message" style="display:none; text-align:center; padding:2em;">
+          <p>Thank you for your review!</p>
+          <a href="index.html" style="display:inline-block; background:white; padding:0.75em 1.5em; border-radius:6px; font-weight:bold; text-decoration:none; color:#000;">Return to Homepage</a>
+        </div>
       </div>
     </div>
   </section>
