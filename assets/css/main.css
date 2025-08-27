@@ -1997,6 +1997,7 @@ html {
 #header .logo {
   /* margin-top: 30px; */
 }
+
 /* === Custom Button Styles for Contact/Order Section === */
 button {
   background: transparent !important;
@@ -2008,10 +2009,22 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-button:hover {
-  background: #000 !important;
-  color: #fff;
-  border: none !important;
+
+/* === FS Button Styles === */
+.fs-button {
+  background: transparent !important;
+  border: 2px solid #000;
+  color: #000;
+  padding: 10px 25px;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.fs-button:hover {
+  background-color: inherit;
+  color: #00b050; /* green color for text */
 }
 
 /* === Randomized Color Transitions for Background === */
@@ -2310,22 +2323,7 @@ h1, h2, h3, h4, h5, h6, p, a, span, button, input, textarea, .section-title, .se
     z-index: 10000;
 }
 
-button {
-    background: transparent !important;
-    border: none !important;
-    color: #000;
-    padding: 10px 25px;
-    border-radius: 3px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-button:hover {
-    background: #000 !important;
-    color: #fff;
-    border: none !important;
-}
+/* (button and button:hover already defined above, .fs-button rules override for .fs-button) */
 
 /* Button container styles */
 .button-container {
