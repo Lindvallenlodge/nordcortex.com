@@ -397,7 +397,11 @@
       /* Adjust based on content */
     }
 
-    .show-more-btn {
+    .show-more-btn,
+    .show-less-btn {
+      display: block;
+      margin: 20px auto;
+      text-align: center;
       background: #000;
       color: #fff;
       padding: 10px 20px;
@@ -406,7 +410,8 @@
       transition: all 0.3s ease;
     }
 
-    .show-more-btn:hover {
+    .show-more-btn:hover,
+    .show-less-btn:hover {
       background: #333;
     }
 
@@ -1559,4 +1564,5 @@
       display: flex;
       justify-content: center;
       margin-top: 1.5em;
+      text-align: center;
     }
