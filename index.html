@@ -537,11 +537,17 @@
   </video>
   <div class="video-bottom-fade-desktop"></div>
   <div class="container-max text-center">
-    <div class="intro-top-actions">
-      <a href="#contact-form" class="button contact-btn"
-        onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact
-        us</a>
-      <a href="/order.html" class="button order-btn">Order now</a>
+    <div class="intro-top-actions-buttons" style="display: flex; flex-direction: column; gap: 0;">
+      <div class="button-container" style="width: 100%; max-width: 500px; margin: 1rem auto;">
+        <a href="#contact-form" class="button contact-btn"
+          style="display: block; width: calc(100% - 3rem); margin: 1rem auto; max-width: 500px;"
+          onclick="event.preventDefault();document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' });">Contact
+          us</a>
+      </div>
+      <div class="button-container" style="width: 100%; max-width: 500px; margin: 1rem auto;">
+        <a href="/order.html" class="button order-btn"
+          style="display: block; width: calc(100% - 3rem); margin: 1rem auto; max-width: 500px;">Order now</a>
+      </div>
     </div>
   </div>
   <header id="header" style="position:relative;">
@@ -1328,13 +1334,16 @@
           Ready to rent? You can pick up your gear at our convenient location in Stockholm or choose delivery directly to your accommodation. Let us know what you need via the contact form below or by sending us an email, or simply by pressing this ORDER NOW button, and we’ll prepare a competitive offer tailored to your request.
         </p>
         <div class="order-now-container" style="display:flex; justify-content:center; align-items:center; margin-top: 16px;">
-          <a href="/order.html" class="button" style="display:flex; align-items:center; justify-content:center; font-weight: normal;">ORDER NOW</a>
+          <div class="button-container" style="width: 100%; max-width: 500px;">
+            <a href="/order.html" class="button"
+              style="display: block; width: calc(100% - 3rem); margin: 1rem auto; max-width: 500px;">ORDER NOW</a>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
-  <section id="faq" class="box-style section-spacing">
+  <section id="faq" class="box-style section-spacing" style="max-width: 500px; margin: 0 auto;">
     <div class="content-wrapper">
       <h2 class="section-title">FAQ – Renting Baby Gear in Stockholm</h2>
 
@@ -1401,7 +1410,7 @@
   </footer>
 
   <!-- Want to share your experience? Review Form Section -->
-  <section id="want-to-share" class="box-style" style="margin-top: 3em; margin-bottom: 3em;">
+  <section id="want-to-share" class="box-style" style="margin-top: 3em; margin-bottom: 3em; max-width: 500px; margin-left: auto; margin-right: auto;">
     <div class="content-wrapper">
       <h2 class="section-title" style="margin-bottom: 1em;">Want to share your experience?</h2>
       <div style="display: flex; justify-content: center; margin-bottom: 2em;">
