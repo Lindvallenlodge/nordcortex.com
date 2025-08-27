@@ -1473,6 +1473,7 @@
 
     function updateStars(container, count) {
       const stars = container.querySelectorAll("span");
+      // Ensure correct star coloring: gold for selected, silver for others
       stars.forEach((s, i) => s.style.color = i < count ? "#f3c14e" : "#ccc");
     }
 
