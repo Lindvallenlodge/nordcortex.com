@@ -1458,23 +1458,27 @@
       if (category) {
         for (let i = 1; i <= 5; i++) {
           const star = document.createElement("span");
-          star.innerHTML = "⭐";
+          star.innerHTML = "★";
           star.style.cursor = "pointer";
+          star.dataset.index = i;
+
           star.addEventListener("click", () => {
             ratings[category] = i;
             updateStars(container, i);
             updateOverall();
           });
+
           container.appendChild(star);
         }
-        updateStars(container, 5);
+        updateStars(container, 0); // Initially all gray
       }
     });
 
     function updateStars(container, count) {
       const stars = container.querySelectorAll("span");
-      // Ensure correct star coloring: gold for selected, silver for others
-      stars.forEach((s, i) => s.style.color = i < count ? "#f3c14e" : "#ccc");
+      stars.forEach((s, i) => {
+        s.style.color = i < count ? "#f3c14e" : "#ccc";
+      });
     }
 
     function updateOverall() {
