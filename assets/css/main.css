@@ -2220,6 +2220,20 @@ body::before {
   }
 }
 
+/* === Center the LEAVE A REVIEW button horizontally in its box === */
+.review-intro-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.review-intro-box .button,
+.review-intro-box button,
+.review-intro-box input[type="submit"] {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
 /* Show More Reviews Button Styling */
 .show-more-btn {
     background-color: #49bf9d !important;
