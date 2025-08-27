@@ -99,9 +99,7 @@ input, textarea, select {
     color: #000000;
     border: 1px solid #000000;
     padding: 0.7em 1.5em;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 3px;
@@ -109,11 +107,8 @@ input, textarea, select {
 
 #contact-form input[type="submit"]:hover {
     background-color: #ffffff !important;
-    color: #000000 !important;
+    color: #4CAF50 !important;
     border: 1px solid #4CAF50;
-    font-family: "Raleway", sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
 }
 
 /* Quality Gear section */
