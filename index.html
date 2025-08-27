@@ -1408,40 +1408,45 @@
         <!-- No popup, just show the form directly -->
       </div>
       <div style="margin: 0 auto; max-width: 500px;">
-        <div id="review-form-wrapper">
-          <form id="review-form" action="https://formspree.io/f/mandnqpk" method="POST">
-            <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.5em;margin-bottom:1em;">
-            <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;padding:0.5em;margin-bottom:1em;">
-            <!-- Star ratings block START -->
-            <div class="rating-group">
-              <label>Delivery & Pickup</label>
-              <div class="star-rating" data-category="delivery"></div>
-            </div>
-            <div class="rating-group">
-              <label>Communication</label>
-              <div class="star-rating" data-category="communication"></div>
-            </div>
-            <div class="rating-group">
-              <label>Products</label>
-              <div class="star-rating" data-category="products"></div>
-            </div>
-            <div class="rating-group">
-              <label>Overall Rating</label>
-              <div class="star-rating" data-category="overall"></div>
-            </div>
-            <!-- Hidden inputs for ratings (for Formspree submission) -->
-            <input type="hidden" name="delivery_rating" id="delivery_rating" />
-            <input type="hidden" name="communication_rating" id="communication_rating" />
-            <input type="hidden" name="product_rating" id="product_rating" />
-            <input type="hidden" name="overall_rating" id="overall_rating" />
-            <!-- Star ratings block END -->
-            <textarea name="message" placeholder="Write your review here..." required style="width:100%;padding:0.5em;margin-bottom:1em;"></textarea>
-            <button type="submit" style="width:100%;padding:0.7em 1.5em;font-size:1em;border-radius:4px;background-color:#f3c14e;color:black;border:none;cursor:pointer;">Submit Review</button>
-          </form>
-        </div>
-        <div id="review-success" style="display:none; text-align:center; padding:2rem;">
-          <h3>Thank you for your review!</h3>
-          <button onclick="resetReviewForm()">Write Another Review</button>
+        <!-- Toggle Review Form Button -->
+        <button id="toggleReviewForm" class="button">Leave a Review</button>
+        <!-- Hidden Review Form Container -->
+        <div id="reviewForm" style="display: none;">
+          <div id="review-form-wrapper">
+            <form id="review-form" action="https://formspree.io/f/mandnqpk" method="POST">
+              <input type="text" name="name" placeholder="Your name" required style="width:100%;padding:0.5em;margin-bottom:1em;">
+              <input type="email" name="email" placeholder="Your email (optional)" style="width:100%;padding:0.5em;margin-bottom:1em;">
+              <!-- Star ratings block START -->
+              <div class="rating-group">
+                <label>Delivery & Pickup</label>
+                <div class="star-rating" data-category="delivery"></div>
+              </div>
+              <div class="rating-group">
+                <label>Communication</label>
+                <div class="star-rating" data-category="communication"></div>
+              </div>
+              <div class="rating-group">
+                <label>Products</label>
+                <div class="star-rating" data-category="products"></div>
+              </div>
+              <div class="rating-group">
+                <label>Overall Rating</label>
+                <div class="star-rating" data-category="overall"></div>
+              </div>
+              <!-- Hidden inputs for ratings (for Formspree submission) -->
+              <input type="hidden" name="delivery_rating" id="delivery_rating" />
+              <input type="hidden" name="communication_rating" id="communication_rating" />
+              <input type="hidden" name="product_rating" id="product_rating" />
+              <input type="hidden" name="overall_rating" id="overall_rating" />
+              <!-- Star ratings block END -->
+              <textarea name="message" placeholder="Write your review here..." required style="width:100%;padding:0.5em;margin-bottom:1em;"></textarea>
+              <button type="submit" style="width:100%;padding:0.7em 1.5em;font-size:1em;border-radius:4px;background-color:#f3c14e;color:black;border:none;cursor:pointer;">Submit Review</button>
+            </form>
+          </div>
+          <div id="review-success" style="display:none; text-align:center; padding:2rem;">
+            <h3>Thank you for your review!</h3>
+            <button onclick="resetReviewForm()">Write Another Review</button>
+          </div>
         </div>
       </div>
     </div>
@@ -1635,6 +1640,13 @@
       document.getElementById("review-form-wrapper").style.display = "block";
       document.getElementById("review-form").scrollIntoView({ behavior: "smooth" });
     }
+  </script>
+  <script>
+    document.getElementById('toggleReviewForm').addEventListener('click', function () {
+      const form = document.getElementById('reviewForm');
+      form.style.display = form.style.display === 'none' ? 'block' : 'none';
+      this.style.display = 'none';
+    });
   </script>
 </body>
   <style>
