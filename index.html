@@ -1344,32 +1344,34 @@
   </footer>
 
   <!-- Want to share your experience? Review Form Section -->
-  <section id="want-to-share" class="content-box">
-    <h2>Want to share your experience?</h2>
-    <button id="openReviewForm" class="button">Leave a Review</button>
-    <div id="reviewFormContainer" style="display: none; margin-top: 2em;">
-      <form method="POST" action="https://formspree.io/f/mnqekgpl">
-        <label for="name">Your Name</label><br>
-        <input type="text" name="name" required><br><br>
+  <section id="want-to-share">
+    <div class="content-box">
+      <h2>Want to share your experience?</h2>
+      <button id="openReviewForm" class="button">Leave a Review</button>
+      <div id="reviewFormContainer" style="display: none; margin-top: 2em;">
+        <form method="POST" action="https://formspree.io/f/mnqekgpl">
+          <label for="name">Your Name</label><br>
+          <input type="text" name="name" required><br><br>
 
-        <label for="review">Your Review</label><br>
-        <textarea name="review" rows="4" required></textarea><br><br>
+          <label for="review">Your Review</label><br>
+          <textarea name="review" rows="4" required></textarea><br><br>
 
-        <label>Delivery & Pickup</label><br>
-        <div class="star-rating" data-category="delivery"></div><br>
+          <label>Delivery & Pickup</label><br>
+          <div class="star-rating" data-category="delivery"></div><br>
 
-        <label>Communication</label><br>
-        <div class="star-rating" data-category="communication"></div><br>
+          <label>Communication</label><br>
+          <div class="star-rating" data-category="communication"></div><br>
 
-        <label>Product Quality</label><br>
-        <div class="star-rating" data-category="product"></div><br>
+          <label>Product Quality</label><br>
+          <div class="star-rating" data-category="product"></div><br>
 
-        <label>Overall Experience (auto-generated)</label><br>
-        <div id="overall-stars" class="star-rating gold-stars">⭐⭐⭐⭐⭐</div>
-        <input type="hidden" name="overallRating" id="overallRating" value="5"><br><br>
+          <label>Overall Experience (auto-generated)</label><br>
+          <div id="overall-stars" class="star-rating gold-stars">⭐⭐⭐⭐⭐</div>
+          <input type="hidden" name="overallRating" id="overallRating" value="5"><br><br>
 
-        <button type="submit" class="button">Submit Review</button>
-      </form>
+          <button type="submit" class="button">Submit Review</button>
+        </form>
+      </div>
     </div>
   </section>
   <style>
