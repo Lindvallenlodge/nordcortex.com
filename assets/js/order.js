@@ -206,7 +206,9 @@ function recalc(){
     });
     if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
     if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
-    if (discountNote) parts.push(discountNote);
+    if (discountNote) {
+      parts.push({ text: discountNote });
+    }
 
     breakdownEl.innerHTML = '';
     parts.forEach(part => {
