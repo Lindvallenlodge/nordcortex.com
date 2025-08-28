@@ -2966,3 +2966,58 @@ body.order-page .order-page-header {
     padding: 0 !important;
   }
 }
+/* Make product cards scrollable horizontally in a clean container */
+.product-catalog-wrapper {
+  overflow-x: auto;
+  white-space: nowrap;
+  padding: 0 10px;
+  margin: 0 auto;
+  scroll-snap-type: x mandatory;
+}
+
+.product-card {
+  display: inline-block;
+  vertical-align: top;
+  width: 220px;
+  margin: 0 8px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 10px;
+  scroll-snap-align: start;
+  box-sizing: border-box;
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.product-card h4 {
+  font-size: 16px;
+  margin: 0 0 5px;
+}
+
+.product-card p {
+  font-size: 14px;
+  color: #555;
+  margin: 0 0 10px;
+}
+
+.product-card .qty-control {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-card .qty-control button {
+  font-size: 18px;
+  padding: 5px 10px;
+}
+
+.product-card .qty-control input {
+  width: 40px;
+  text-align: center;
+}
