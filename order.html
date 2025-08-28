@@ -29,13 +29,17 @@
     }
     .logo-wrap {
       width: 380px;
-      height: 180px;
+      height: 220px;
       background: #fff;
       display: flex;
       align-items: center;
       justify-content: center;
       overflow: hidden;
       margin: 0 auto 8px;
+    }
+    @media (max-width: 480px) {
+      body.order-page { padding-top: 20px; }
+      .logo-wrap { height: 200px; margin: 0 auto 4px; }
     }
     .logo.logo-img {
       width: 100%;
