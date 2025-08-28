@@ -295,6 +295,21 @@
             </label>
           </div>
 
+          <div class="contact-grid" style="margin-top:8px;">
+            <label class="form-field">Your name
+              <input type="text" name="customerName" required>
+            </label>
+            <label class="form-field">Email
+              <input type="email" name="customerEmail" required>
+            </label>
+            <label class="form-field">Phone (with country code)
+              <input type="text" name="customerPhone" required>
+            </label>
+            <label class="form-field message-field">Message to us (optional)
+              <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
+            </label>
+          </div>
+
 
           <div class="scrollable-container">
             <div id="catalog" class="catalog" aria-live="polite">
@@ -314,20 +329,6 @@
               </div>
               <div class="summary-line" style="margin-top: 8px; font-weight: bold;"><span>Estimated Total:</span><strong id="sumTotal">€0</strong></div>
               <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
-              <div class="contact-grid" style="margin-top:8px;">
-                <label class="form-field">Your name
-                  <input type="text" name="customerName" required>
-                </label>
-                <label class="form-field">Email
-                  <input type="email" name="customerEmail" required>
-                </label>
-                <label class="form-field">Phone (with country code)
-                  <input type="text" name="customerPhone" required>
-                </label>
-                <label class="form-field message-field">Message to us (optional)
-                  <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
-                </label>
-              </div>
               <input type="hidden" name="order_json" id="order_json">
               <div class="actions">
                 <a href="/" class="button">Back</a>
