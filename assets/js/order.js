@@ -213,23 +213,24 @@ function recalc(){
       const div = document.createElement('div');
       div.className = 'breakdown-item';
 
-      // Removed mobile-only condition to show images on all devices
-      if (typeof part === 'object' && part.image && part.text) {
-        const img = document.createElement('img');
-        img.src = part.image;
-        img.alt = '';
-        img.style.width = '40px';
-        img.style.height = 'auto';
-        img.style.marginRight = '8px';
-        img.style.verticalAlign = 'middle';
+      if (typeof part === 'object') {
+        if (part.image) {
+          const img = document.createElement('img');
+          img.src = part.image;
+          img.alt = '';
+          img.style.width = '40px';
+          img.style.height = 'auto';
+          img.style.marginRight = '8px';
+          img.style.verticalAlign = 'middle';
 
-        const span = document.createElement('span');
-        span.textContent = part.text;
+          const span = document.createElement('span');
+          span.textContent = part.text || '';
 
-        div.appendChild(img);
-        div.appendChild(span);
-      } else if (typeof part === 'object') {
-        div.textContent = part.text;
+          div.appendChild(img);
+          div.appendChild(span);
+        } else {
+          div.textContent = part.text || '';
+        }
       } else {
         div.textContent = part;
       }
