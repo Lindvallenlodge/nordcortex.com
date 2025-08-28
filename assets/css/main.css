@@ -2942,3 +2942,27 @@ body.order-page .order-page-header {
     font-size: 0.85rem;
   }
 }
+@media (max-width: 768px) {
+  /* Reduce quantity input size inside product cards */
+  .quantity-input,
+  .product-quantity input,
+  .quantity-selector input[type="number"],
+  .qty input {
+    width: 24px !important;
+    height: 16px !important;
+    font-size: 14px !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+  /* Increase font size for plus/minus buttons in quantity controls */
+  .plus-button,
+  .minus-button,
+  .product-quantity button,
+  .quantity-selector button {
+    font-size: 24px !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+  }
+}
