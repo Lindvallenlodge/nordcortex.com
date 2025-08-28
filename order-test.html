@@ -416,8 +416,31 @@
 
           <div class="scrollable-container">
             <div id="catalog" class="catalog" aria-live="polite">
-              <!-- Products will be populated here by order.js in this category order:
-                   Strollers, Sleeping Cot, Car Seats, High Chairs, then the rest -->
+              <div class="card">
+                <img src="assets/images/stroller.jpg" alt="Babyzen YOYO²">
+                <div class="meta">
+                  <div class="name">Babyzen YOYO²</div>
+                  <div class="price">€17/day</div>
+                </div>
+                <div class="qty">
+                  <button type="button" onclick="decreaseQty(this)">−</button>
+                  <input type="number" name="qty_yoyo2" min="0" value="0">
+                  <button type="button" onclick="increaseQty(this)">+</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="assets/images/bugaboo.jpg" alt="Bugaboo Fox">
+                <div class="meta">
+                  <div class="name">Bugaboo Fox</div>
+                  <div class="price">€30/day</div>
+                </div>
+                <div class="qty">
+                  <button type="button" onclick="decreaseQty(this)">−</button>
+                  <input type="number" name="qty_fox" min="0" value="0">
+                  <button type="button" onclick="increaseQty(this)">+</button>
+                </div>
+              </div>
             </div>
 
             <div class="summary" id="summary">
