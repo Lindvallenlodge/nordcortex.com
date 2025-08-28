@@ -229,8 +229,10 @@ function recalc(){
 
         div.appendChild(img);
         div.appendChild(span);
+      } else if (typeof part === 'object') {
+        div.textContent = part.text;
       } else {
-        div.textContent = typeof part === 'object' ? part.text : part;
+        div.textContent = part;
       }
 
       breakdownEl.appendChild(div);
