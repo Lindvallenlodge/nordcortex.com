@@ -197,16 +197,40 @@ function recalc(){
       const subtotal = item.pricePerDay * item.qty * effectiveDays;
       const dayLabel = effectiveDays === 1 ? 'day' : 'days';
       const qtyLabel = item.qty === 1 ? 'item' : 'items';
-      parts.push(`${item.name} (${effectiveDays} ${dayLabel} × €${item.pricePerDay} × ${item.qty} ${qtyLabel}) = €${subtotal}`);
+      const product = products.find(p => p.id === item.id);
+      const imagePath = product && product.image ? `/assets/images/products/${product.image}` : '';
+      parts.push({
+        text: `${item.name} (${effectiveDays} ${dayLabel} × €${item.pricePerDay} × ${item.qty} ${qtyLabel}) = €${subtotal}`,
+        image: imagePath
+      });
     });
     if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
     if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
     if (discountNote) parts.push(discountNote);
 
     breakdownEl.innerHTML = '';
-    parts.forEach(text => {
+    parts.forEach(part => {
       const div = document.createElement('div');
-      div.textContent = text;
+      div.className = 'breakdown-item';
+      
+      if (typeof part === 'object' && part.image && part.text) {
+        const img = document.createElement('img');
+        img.src = part.image;
+        img.alt = '';
+        img.style.width = '40px';
+        img.style.height = 'auto';
+        img.style.marginRight = '8px';
+        img.style.verticalAlign = 'middle';
+
+        const span = document.createElement('span');
+        span.textContent = part.text;
+
+        div.appendChild(img);
+        div.appendChild(span);
+      } else {
+        div.textContent = part;
+      }
+
       breakdownEl.appendChild(div);
     });
   }
