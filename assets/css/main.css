@@ -2735,3 +2735,28 @@ body.order-page .order-page-header {
     padding: 30px 0 10px;
   }
 }
+/* === Consistent Logo Styling for Both Mobile and Desktop === */
+.logo-wrap {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto 0px;
+}
+
+.logo.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 0;
+}
+
+.order-page-header {
+  text-align: center;
+  margin-bottom: 8px;
+  padding-top: 16px;
+}
