@@ -1,3 +1,6 @@
+.card {
+  /* desktop/mobile styles elsewhere; mobile-specific at end */
+}
 .product-row {
   /* No-op: placeholder for specificity, override in media query below */
 }
@@ -2912,5 +2915,30 @@ body.order-page .order-page-header {
 
   .product-card {
     overflow-x: hidden;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    grid-template-columns: 64px 1fr auto;
+    gap: 6px;
+    padding: 8px;
+  }
+
+  .card img {
+    width: 64px;
+    height: 64px;
+  }
+
+  .qty input {
+    width: 58px;
+    padding: 0.3rem;
+  }
+
+  .name {
+    font-size: 0.9rem;
+  }
+
+  .price {
+    font-size: 0.85rem;
   }
 }
