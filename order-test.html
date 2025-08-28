@@ -115,6 +115,42 @@
 
     /* Removed review-toggle-wrapper CSS block */
   </style>
+  <style>
+    /* Prevent horizontal scrolling on product catalog */
+    .catalog {
+      overflow-x: hidden;
+      word-break: break-word;
+    }
+
+    .card {
+      grid-template-columns: 64px 1fr auto;
+      padding: 8px;
+      gap: 8px;
+    }
+
+    .card img {
+      width: 64px;
+      height: 64px;
+    }
+
+    .qty input {
+      width: 60px;
+    }
+
+    @media (max-width: 480px) {
+      .catalog {
+        padding: 0 4px;
+      }
+
+      .name {
+        font-size: 0.95rem;
+      }
+
+      .price {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
