@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Order Baby Gear in Stockholm – Rent Strollers, Car Seats, Cots | Strollby Stockholm</title>
+  <meta name="description" content="Rent baby gear in Stockholm: strollers, car seats, travel cots, high chairs, carriers and more. Flexible pickup or delivery (incl. Arlanda). Simple daily pricing." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://www.strollbystockholm.com/order" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Order Baby Gear in Stockholm – Strollers, Car Seats, Cots" />
+  <meta property="og:description" content="Flexible pickup or delivery (incl. Arlanda). Simple daily pricing. Rent top brands in Stockholm." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.strollbystockholm.com/order" />
+  <meta property="og:image" content="https://www.strollbystockholm.com/assets/images/og/strollbystockholm_og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Order Baby Gear in Stockholm – Strollers, Car Seats, Cots" />
+  <meta name="twitter:description" content="Flexible pickup or delivery (incl. Arlanda). Simple daily pricing. Rent top brands in Stockholm." />
+  <meta name="twitter:image" content="https://www.strollbystockholm.com/assets/images/og/strollbystockholm_og.png" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { padding-top: 40px; }
+    .order-page-header {
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .logo-wrap {
+      width: 380px;
+      height: 220px;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      margin: 0 auto 8px;
+    }
+    @media (max-width: 480px) {
+      body.order-page { padding-top: 20px; }
+      .logo-wrap { height: 200px; margin: 0 auto 4px; }
+    }
+    .logo.logo-img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    .order-wrap { max-width: 1000px; width: 95%; margin: 0 auto 48px; background: rgba(255,255,255,1); border-radius: 12px; padding: 24px; }
+    .order-grid { display: grid; grid-template-columns: 1fr; gap: 16px; }
+    .controls-grid { display:grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap:12px; }
+    .controls-grid label { font-weight:600; font-size:.95rem; display:flex; flex-direction:column; }
+    .controls-grid input, .controls-grid select { margin-top:6px; padding:.55rem; border:1px solid #ccc; border-radius:6px; background:#fff; }
+    .inline-time select { padding: .55rem; border: 1px solid #ccc; border-radius: 6px; background: #fff; }
+    @media (max-width: 820px){ .controls-grid{ grid-template-columns: 1fr; } }
+
+    /* Dates + methods layout: 2 columns per row on desktop, stacked on mobile */
+    .dates-methods { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .dates-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .inline-time { display: grid; grid-template-columns: 1fr 140px; gap: 8px; align-items: end; }
+    @media (min-width: 900px){
+      .dates-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 480px){
+      .inline-time { grid-template-columns: 1fr 120px; }
+    }
+
+    .method-box {
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .scrollable-container {
+      max-height: 520px;
+      overflow-y: auto;
+      background: rgba(255,255,255,1);
+      border-radius: 12px;
+      padding: 12px;
+      box-sizing: border-box;
+    }
+
+    .catalog { margin-top:16px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:12px; }
+    @media (max-width: 820px){ .catalog{ grid-template-columns: 1fr; } }
+
+    .cat-title { grid-column: 1/-1; margin: 18px 0 4px; font-weight: 700; }
+    .card { display:grid; grid-template-columns: 76px 1fr auto; gap:10px; align-items:center; border:1px solid #eee; border-radius:10px; padding:10px; background:#fff; }
+    .card img { width:76px; height:76px; object-fit:cover; border-radius:8px; }
+    .meta { display:flex; flex-direction:column; }
+    .name { font-weight:600; }
+    .price { opacity:.8; font-size:.95rem; }
+    .qty { display:flex; align-items:center; gap:6px; }
+    .qty input { width:78px; text-align:center; padding:.35rem; border:1px solid #ccc; border-radius:6px; }
+
+    .summary { border-top:1px solid #eee; padding-top:12px; margin-top:16px; box-shadow: none; background:#fff; }
+    .summary-line { display:flex; justify-content: space-between; margin: 6px 0; }
+    .summary .actions { margin-top: 12px; display:flex; gap:10px; justify-content:flex-end; }
+
+    .note { font-size:.9rem; opacity:.8; }
+
+    /* Contact section grid + fields */
+    .contact-grid { display:grid; grid-template-columns: 1fr; gap:12px; }
+    .form-field { display:flex; flex-direction:column; gap:6px; }
+    .form-field input, .form-field textarea { padding:.55rem; border:1px solid #ccc; border-radius:6px; background:#fff; }
+    .form-field textarea { min-height: 100px; resize: vertical; }
+
+    /* Reduce gap between logo and heading */
+    .section-title { margin-top: 8px; }
+
+    @media (min-width: 900px) {
+      .contact-grid { grid-template-columns: repeat(3, 1fr); }
+      .contact-grid .message-field { grid-column: 1 / -1; }
+    }
+
+    /* Removed review-toggle-wrapper CSS block */
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Rental Baby Gear in Stockholm",
+    "itemListElement": [
+      {"@type": "Product", "name": "Babyzen YOYO", "url": "https://www.strollbystockholm.com/strollers/"},
+      {"@type": "Product", "name": "Bugaboo Fox", "url": "https://www.strollbystockholm.com/strollers/"},
+      {"@type": "Product", "name": "BabyBjörn Travel Cot", "url": "https://www.strollbystockholm.com/baby-cots/"},
+      {"@type": "Product", "name": "Maxi-Cosi Mica Pro Eco", "url": "https://www.strollbystockholm.com/car-seats/"},
+      {"@type": "Product", "name": "Stokke Tripp Trapp", "url": "https://www.strollbystockholm.com/highchairs/"}
+    ]
+  }
+  </script>
+</head>
+<body class="order-page">
+  <header id="header" class="order-page-header">
+    <a href="/" class="image avatar" aria-label="Back to home">
+      <div class="logo-wrap">
+        <img src="assets/images/strollbystockholm_logo.png" alt="Strollby Stockholm Logo" class="logo logo-img" />
+      </div>
+    </a>
+  </header>
+
+  <main id="main">
+    <section class="order-wrap">
+      <h1 class="section-title">Order Baby Gear</h1>
+      <section id="catalog-ssr" aria-label="Product list (HTML snapshot)">
+        <h2 class="visually-hidden">Available rental items</h2>
+        <div class="catalog-grid">
+          <h3>Strollers</h3>
+          <ul>
+            <li><a href="/strollers/">Babyzen YOYO (various configs)</a> – from €17/day</li>
+            <li><a href="/strollers/">Bugaboo Fox (Seat/Bassinet)</a> – €30/day</li>
+          </ul>
+          <h3>Sleeping Cot</h3>
+          <ul>
+            <li><a href="/baby-cots/">BabyBjörn Travel Cot</a> – €15/day</li>
+          </ul>
+          <h3>Car Seats</h3>
+          <ul>
+            <li><a href="/car-seats/">Maxi-Cosi Mica Pro Eco</a> – €15/day</li>
+            <li><a href="/car-seats/">BABYZEN iZi Go Modular by BeSafe</a> – €15/day</li>
+            <li><a href="/car-seats/">BeSafe iZi Up X3 Fix (booster)</a> – €10/day</li>
+          </ul>
+          <h3>High Chairs</h3>
+          <ul>
+            <li><a href="/highchairs/">Stokke Tripp Trapp (Chair / Newborn / Babyset)</a> – €18/day</li>
+            <li><a href="/highchairs/">IKEA Antilop</a> – €6/day</li>
+          </ul>
+          <h3>Carriers &amp; Bouncers</h3>
+          <ul>
+            <li><a href="/carriers-and-bouncers/">Ergobaby Omni 360</a> – €8/day</li>
+            <li><a href="/carriers-and-bouncers/">Babybjörn Bouncer</a> – €6/day</li>
+          </ul>
+          <h3>Wellness &amp; Extras</h3>
+          <ul>
+            <li><a href="/wellness/">Stokke Flexi Bath (small / XL / combo)</a> – from €6/day</li>
+            <li><a href="/wellness/">Humidifier (Levoit 600S)</a> – €11/day</li>
+            <li><a href="/wellness/">Bikes &amp; Potty set</a> – from €2/day</li>
+          </ul>
+        </div>
+      </section>
+      <noscript>
+        <p>JavaScript is disabled. You can still order by emailing <a href="mailto:hello@strollbystockholm.com">hello@strollbystockholm.com</a>. The items listed above link to details and pricing.</p>
+      </noscript>
+      <p class="section-text" style="text-align:center;">Choose your dates, pick delivery or pickup, then add items. We’ll confirm availability and reply fast with a tailored quote.</p>
+
+      <form id="order-form" action="https://formspree.io/f/mldnrgar" method="POST">
+        <div class="order-grid">
+          <div class="dates-methods">
+            <div class="dates-row">
+              <div class="method-box">
+                <label>Start date & time
+                  <div class="inline-time">
+                    <input type="date" id="startDate" name="startDate" required onchange="recalc()">
+                    <select id="startHour" name="startHour">
+                      <option value="00:00">00:00</option>
+                      <option value="01:00">01:00</option>
+                      <option value="02:00">02:00</option>
+                      <option value="03:00">03:00</option>
+                      <option value="04:00">04:00</option>
+                      <option value="05:00">05:00</option>
+                      <option value="06:00">06:00</option>
+                      <option value="07:00">07:00</option>
+                      <option value="08:00">08:00</option>
+                      <option value="09:00">09:00</option>
+                      <option value="10:00" selected>10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="21:00">21:00</option>
+                      <option value="22:00">22:00</option>
+                      <option value="23:00">23:00</option>
+                    </select>
+                    <input type="hidden" id="startTime" name="startTime" value="10:00">
+                  </div>
+                </label>
+              </div>
+              <div class="method-box">
+                <label>Receive method
+                  <select id="receiveMethod" name="receiveMethod" required>
+                    <option value="pickup">Pickup at our location (T‑Centralen area, free)</option>
+                    <option value="zone1">Delivery – Zone 1 (€6 flat)</option>
+                    <option value="zone2">Delivery – Zone 2 (€20 flat)</option>
+                    <option value="zone3">Delivery – Zone 3 (€25 flat)</option>
+                    <option value="airport_arlanda">Delivery – Arlanda Airport (€20 flat)</option>
+                    <option value="custom">Delivery – Custom address (quote)</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+            <div class="dates-row">
+              <div class="method-box">
+                <label>End date & time
+                  <div class="inline-time">
+                    <input type="date" id="endDate" name="endDate" required onchange="recalc()">
+                    <select id="endHour" name="endHour">
+                      <option value="00:00">00:00</option>
+                      <option value="01:00">01:00</option>
+                      <option value="02:00">02:00</option>
+                      <option value="03:00">03:00</option>
+                      <option value="04:00">04:00</option>
+                      <option value="05:00">05:00</option>
+                      <option value="06:00">06:00</option>
+                      <option value="07:00">07:00</option>
+                      <option value="08:00">08:00</option>
+                      <option value="09:00">09:00</option>
+                      <option value="10:00" selected>10:00</option>
+                      <option value="11:00">11:00</option>
+                      <option value="12:00">12:00</option>
+                      <option value="13:00">13:00</option>
+                      <option value="14:00">14:00</option>
+                      <option value="15:00">15:00</option>
+                      <option value="16:00">16:00</option>
+                      <option value="17:00">17:00</option>
+                      <option value="18:00">18:00</option>
+                      <option value="19:00">19:00</option>
+                      <option value="20:00">20:00</option>
+                      <option value="21:00">21:00</option>
+                      <option value="22:00">22:00</option>
+                      <option value="23:00">23:00</option>
+                    </select>
+                    <input type="hidden" id="endTime" name="endTime" value="10:00">
+                  </div>
+                </label>
+              </div>
+              <div class="method-box">
+                <label>Return method
+                  <select id="returnMethod" name="returnMethod" required>
+                    <option value="pickup">Return at our location (T‑Centralen area, free)</option>
+                    <option value="zone1">We collect – Zone 1 (€6 flat)</option>
+                    <option value="zone2">We collect – Zone 2 (€20 flat)</option>
+                    <option value="zone3">We collect – Zone 3 (€25 flat)</option>
+                    <option value="airport_arlanda">We collect – Arlanda Airport (€20 flat)</option>
+                    <option value="custom">We collect – Custom address (quote)</option>
+                  </select>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div id="receiveExtra" style="display:none;">
+            <label>Receive details (address/hotel, time window, notes)
+              <input type="text" id="receiveDetails" name="receiveDetails" placeholder="Address/hotel, time window, notes" />
+            </label>
+          </div>
+          <div id="returnExtra" style="display:none;">
+            <label>Return details (address/hotel, time window, notes)
+              <input type="text" id="returnDetails" name="returnDetails" placeholder="Address/hotel, time window, notes" />
+            </label>
+          </div>
+
+
+          <div class="scrollable-container">
+            <div id="catalog" class="catalog" aria-live="polite">
+              <!-- Products will be populated here by order.js in this category order:
+                   Strollers, Sleeping Cot, Car Seats, High Chairs, then the rest -->
+            </div>
+
+            <div class="summary" id="summary">
+              <div class="summary-line"><span>Items:</span><strong id="sumItems">0</strong></div>
+              <div class="summary-line"><span>Rental days:</span><strong id="sumDays">1</strong></div>
+              <div id="priceBreakdown" style="margin-top: 6px; display: flex; flex-direction: column; gap: 8px;">
+                <div class="summary-line"><span>Rental Items:</span><strong id="breakdownItems">€0</strong></div>
+                <div class="summary-line"><span>Delivery Fee:</span><strong id="breakdownDelivery">€0</strong></div>
+                <div class="summary-line"><span>Return Fee:</span><strong id="breakdownReturn">€0</strong></div>
+                <div class="summary-line"><span>Receive Method:</span><strong id="summaryReceiveMethod">–</strong></div>
+                <div class="summary-line"><span>Return Method:</span><strong id="summaryReturnMethod">–</strong></div>
+              </div>
+              <div class="summary-line" style="margin-top: 8px; font-weight: bold;"><span>Estimated Total:</span><strong id="sumTotal">€0</strong></div>
+              <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
+              <div class="contact-grid" style="margin-top:8px;">
+                <label class="form-field">Your name
+                  <input type="text" name="customerName" required>
+                </label>
+                <label class="form-field">Email
+                  <input type="email" name="customerEmail" required>
+                </label>
+                <label class="form-field">Phone (with country code)
+                  <input type="text" name="customerPhone" required>
+                </label>
+                <label class="form-field message-field">Message to us (optional)
+                  <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
+                </label>
+              </div>
+              <input type="hidden" name="order_json" id="order_json">
+              <div class="actions">
+                <a href="/" class="button">Back</a>
+                <button type="submit" class="button primary">Send Order Request</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </section>
+  </main>
+
+</script>
+  <script src="assets/js/order.js"></script>
+  <script>
+    if (window.innerWidth <= 820) {
+      const today = new Date();
+      const yyyy = today.getFullYear();
+      const mm = String(today.getMonth() + 1).padStart(2, '0');
+      const dd = String(today.getDate()).padStart(2, '0');
+      const todayStr = `${yyyy}-${mm}-${dd}`;
+      document.getElementById('startDate').value = todayStr;
+      document.getElementById('endDate').value = todayStr;
+    }
+  </script>
+</body>
+</html>
