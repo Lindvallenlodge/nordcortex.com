@@ -2760,3 +2760,27 @@ body.order-page .order-page-header {
   margin-bottom: 8px;
   padding-top: 16px;
 }
+
+
+/* === Mobile-specific logo and spacing adjustments for order page === */
+@media (max-width: 480px) {
+  .logo-wrap {
+    height: 220px;
+    margin: 0 auto 4px;
+  }
+
+  .logo.logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .order-page-header {
+    padding-top: 12px;
+    margin-bottom: 8px;
+  }
+
+  body.order-page {
+    padding-top: 16px;
+  }
+}
