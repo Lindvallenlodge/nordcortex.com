@@ -3064,3 +3064,23 @@ body.order-page .order-page-header {
   width: 35px;
   text-align: center;
 }
+. /* === Mobile: Remove mobile frames and allow full-width for product and summary sections === */
+@media (max-width: 768px) {
+  .product, .summary, .invoice, .order-items, .order-summary {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 10px !important;
+    box-shadow: none !important;
+    border: none !important;
+    background: none !important;
+  }
+
+  .order-item {
+    margin: 0 0 12px 0 !important;
+  }
+
+  body, html {
+    overflow-x: hidden !important;
+  }
+}
