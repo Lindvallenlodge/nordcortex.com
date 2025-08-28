@@ -213,9 +213,8 @@ function recalc(){
       const div = document.createElement('div');
       div.className = 'breakdown-item';
 
-      const isMobile = window.innerWidth <= 820;
-
-      if (typeof part === 'object' && part.image && part.text && isMobile) {
+      // Removed mobile-only condition to show images on all devices
+      if (typeof part === 'object' && part.image && part.text) {
         const img = document.createElement('img');
         img.src = part.image;
         img.alt = '';
