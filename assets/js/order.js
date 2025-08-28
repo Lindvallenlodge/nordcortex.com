@@ -195,7 +195,9 @@ function recalc(){
     const parts = [];
     chosen.forEach(item => {
       const subtotal = item.pricePerDay * item.qty * effectiveDays;
-      parts.push(`${item.name} (${effectiveDays} × €${item.pricePerDay} × ${item.qty}) = €${subtotal}`);
+      const dayLabel = effectiveDays === 1 ? 'day' : 'days';
+      const qtyLabel = item.qty === 1 ? 'item' : 'items';
+      parts.push(`${item.name} (${effectiveDays} ${dayLabel} × €${item.pricePerDay} × ${item.qty} ${qtyLabel}) = €${subtotal}`);
     });
     if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
     if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
