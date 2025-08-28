@@ -182,6 +182,29 @@ section {
         padding: 1.5em;
         margin: 1em auto;
     }
+
+    /* Mobile-specific layout for product quantity selector */
+    .product-quantity {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .product-quantity button {
+        width: 32px;
+        height: 32px;
+        font-size: 18px;
+        padding: 0;
+    }
+
+    .product-quantity input {
+        width: 40px;
+        height: 32px;
+        font-size: 16px;
+        text-align: center;
+        padding: 0;
+    }
 }
 
 .video-section {
