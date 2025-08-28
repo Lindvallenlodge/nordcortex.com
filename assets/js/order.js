@@ -6,8 +6,8 @@ const toInt = (v, d=0) => { const n = parseInt(v,10); return Number.isFinite(n)?
 // ===== DOM refs =====
 const catalogEl   = $('#catalog');
 const formEl      = $('#order-form') || $('#orderForm');
-const startEl     = $('#start') || $('#startDate');
-const endEl       = $('#end')   || $('#endDate');
+const startEl     = $('#startDate') || $('#start');
+const endEl       = $('#endDate') || $('#end');
 
 // 24h time controls (dropdowns + hidden HH:MM fields)
 const startTimeEl = $('#startTime');
