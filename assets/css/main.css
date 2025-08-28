@@ -2784,3 +2784,17 @@ body.order-page .order-page-header {
     padding-top: 16px;
   }
 }
+
+@media (max-width: 768px) {
+  .logo-wrapper {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+
+  .logo-wrapper img {
+    max-width: 220px !important;
+    height: auto !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+}
