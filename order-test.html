@@ -41,6 +41,11 @@
       body.order-page { padding-top: 20px; }
       .logo-wrap { height: 200px; margin: 0 auto 4px; }
     }
+
+    /* Prevent horizontal scrolling on all mobile devices */
+    html, body {
+      overflow-x: hidden;
+    }
     .logo.logo-img {
       width: 100%;
       height: auto;
@@ -81,8 +86,21 @@
       box-sizing: border-box;
     }
 
-    .catalog { margin-top:16px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:12px; }
+    .catalog {
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap:12px;
+      overflow-x: hidden !important;
+      /* word-break: break-word; -- moved to next style block */
+    }
     @media (max-width: 820px){ .catalog{ grid-template-columns: 1fr; } }
+
+    /* Ensure no element forces overflow */
+    .card, .catalog, .scrollable-container {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
 
     .cat-title { grid-column: 1/-1; margin: 18px 0 4px; font-weight: 700; }
     .card { display:grid; grid-template-columns: 76px 1fr auto; gap:10px; align-items:center; border:1px solid #eee; border-radius:10px; padding:10px; background:#fff; }
@@ -118,7 +136,6 @@
   <style>
     /* Prevent horizontal scrolling on product catalog */
     .catalog {
-      overflow-x: hidden;
       word-break: break-word;
     }
 
