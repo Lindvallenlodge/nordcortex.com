@@ -212,8 +212,10 @@ function recalc(){
     parts.forEach(part => {
       const div = document.createElement('div');
       div.className = 'breakdown-item';
-      
-      if (typeof part === 'object' && part.image && part.text) {
+
+      const isMobile = window.innerWidth <= 820;
+
+      if (typeof part === 'object' && part.image && part.text && isMobile) {
         const img = document.createElement('img');
         img.src = part.image;
         img.alt = '';
@@ -228,7 +230,7 @@ function recalc(){
         div.appendChild(img);
         div.appendChild(span);
       } else {
-        div.textContent = part;
+        div.textContent = typeof part === 'object' ? part.text : part;
       }
 
       breakdownEl.appendChild(div);
