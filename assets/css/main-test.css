@@ -2967,57 +2967,57 @@ body.order-page .order-page-header {
   }
 }
 /* Make product cards scrollable horizontally in a clean container */
+/* --- Updated product catalog styles for mobile readability and no horizontal scroll --- */
 .product-catalog-wrapper {
-  overflow-x: auto;
-  white-space: nowrap;
+  overflow-x: hidden;
+  max-width: 100vw;
   padding: 0 10px;
-  margin: 0 auto;
-  scroll-snap-type: x mandatory;
-}
-
-.product-card {
-  display: inline-block;
-  vertical-align: top;
-  width: 220px;
-  margin: 0 8px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  padding: 10px;
-  scroll-snap-align: start;
   box-sizing: border-box;
 }
 
-.product-card img {
+.product-card {
   width: 100%;
-  height: auto;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  padding: 0.75rem;
   border-radius: 8px;
-  margin-bottom: 10px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.product-card h4 {
-  font-size: 16px;
-  margin: 0 0 5px;
+.product-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.product-card h3 {
+  margin: 0;
+  font-size: 1rem;
 }
 
 .product-card p {
-  font-size: 14px;
+  margin: 0;
+  font-size: 0.9rem;
   color: #555;
-  margin: 0 0 10px;
 }
 
-.product-card .qty-control {
+.product-card .quantity-control {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 0.5rem;
 }
 
-.product-card .qty-control button {
-  font-size: 18px;
-  padding: 5px 10px;
+.product-card .quantity-control button {
+  font-size: 1.25rem;
+  width: 32px;
+  height: 32px;
 }
 
-.product-card .qty-control input {
-  width: 40px;
+.product-card .quantity-control input {
+  width: 50px;
   text-align: center;
 }
