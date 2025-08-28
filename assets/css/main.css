@@ -2799,22 +2799,17 @@ body.order-page .order-page-header {
   }
 }
 @media (max-width: 480px) {
-  body.order-page {
-    padding-top: 8px !important;
+  .logo-wrap img.logo-img {
+    width: 100% !important;
+    max-width: 300px !important;
+    height: auto !important;
+    display: block;
+    margin: 0 auto;
   }
 
   .logo-wrap {
-    height: auto !important;
     padding: 0 !important;
-    margin-top: 4px !important;
-    margin-bottom: 4px !important;
-  }
-
-  .logo-wrap img.logo-img {
-    max-height: 140px !important;
-    width: auto !important;
-    display: block;
-    margin: 0 auto;
+    margin: 4px auto !important;
   }
 
   .order-page-header {
