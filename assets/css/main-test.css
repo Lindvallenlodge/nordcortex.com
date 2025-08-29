@@ -3096,7 +3096,13 @@ body.order-page .order-page-header {
 }
 
 /* Remove max-width and inner paddings/margins for any container/wrapper around product-list */
-.product-list-container,
+.product-list-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 .product-catalog-wrapper,
 .product-list-wrapper,
 .product-list-outer {
