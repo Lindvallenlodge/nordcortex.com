@@ -1,3 +1,10 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+}
 .card {
   /* desktop/mobile styles elsewhere; mobile-specific at end */
 }
@@ -3115,8 +3122,9 @@ body.order-page .order-page-header {
   background: none !important;
 }
 .order-wrap {
-  max-width: 960px;
+  max-width: 100%;
+  width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
   box-sizing: border-box;
 }
