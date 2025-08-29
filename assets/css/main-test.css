@@ -3064,7 +3064,7 @@ body.order-page .order-page-header {
   width: 35px;
   text-align: center;
 }
-. /* === Mobile: Remove mobile frames and allow full-width for product and summary sections === */
+/* === Mobile: Remove mobile frames and allow full-width for product and summary sections === */
 @media (max-width: 768px) {
   .product, .summary, .invoice, .order-items, .order-summary {
     width: 100% !important;
@@ -3083,4 +3083,28 @@ body.order-page .order-page-header {
   body, html {
     overflow-x: hidden !important;
   }
+}
+
+/* === Ensure product list stretches full width and remove boxed layout === */
+.product-list {
+  max-width: 100vw !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Remove max-width and inner paddings/margins for any container/wrapper around product-list */
+.product-list-container,
+.product-catalog-wrapper,
+.product-list-wrapper,
+.product-list-outer {
+  max-width: 100vw !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: none !important;
 }
