@@ -3114,12 +3114,9 @@ body.order-page .order-page-header {
   box-shadow: none !important;
   background: none !important;
 }
-/* Updated layout for .order-wrap */
 .order-wrap {
-  max-width: none !important;
-  width: 100% !important;
-  padding: 0 !important;
-  margin: 0 auto !important;
-  box-shadow: none !important;
-  background: none !important;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  box-sizing: border-box;
 }
