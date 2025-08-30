@@ -18,7 +18,7 @@
   <meta name="twitter:title" content="Order Baby Gear in Stockholm – Strollers, Car Seats, Cots" />
   <meta name="twitter:description" content="Flexible pickup or delivery (incl. Arlanda). Simple daily pricing. Rent top brands in Stockholm." />
   <meta name="twitter:image" content="https://www.strollbystockholm.com/assets/images/og/strollbystockholm_og.png" />
-  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/css/main-test.css" />
   <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
@@ -40,6 +40,11 @@
     @media (max-width: 480px) {
       body.order-page { padding-top: 20px; }
       .logo-wrap { height: 200px; margin: 0 auto 4px; }
+    }
+
+    /* Prevent horizontal scrolling on all mobile devices */
+    html, body {
+      overflow-x: hidden;
     }
     .logo.logo-img {
       width: 100%;
@@ -81,17 +86,61 @@
       box-sizing: border-box;
     }
 
-    .catalog { margin-top:16px; display:grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap:12px; }
+    .catalog {
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(2,minmax(0,1fr));
+      gap:12px;
+      overflow-x: hidden !important;
+      /* word-break: break-word; -- moved to next style block */
+    }
     @media (max-width: 820px){ .catalog{ grid-template-columns: 1fr; } }
 
+    /* Ensure no element forces overflow */
+    .card, .catalog, .scrollable-container {
+      max-width: 100%;
+      box-sizing: border-box;
+    }
+
     .cat-title { grid-column: 1/-1; margin: 18px 0 4px; font-weight: 700; }
-    .card { display:grid; grid-template-columns: 76px 1fr auto; gap:10px; align-items:center; border:1px solid #eee; border-radius:10px; padding:10px; background:#fff; }
-    .card img { width:76px; height:76px; object-fit:cover; border-radius:8px; }
+    .card {
+      display: grid;
+      grid-template-columns: 52px 1fr auto;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 8px;
+      background: #fff;
+    }
+    .card img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
     .meta { display:flex; flex-direction:column; }
     .name { font-weight:600; }
     .price { opacity:.8; font-size:.95rem; }
     .qty { display:flex; align-items:center; gap:6px; }
-    .qty input { width:78px; text-align:center; padding:.35rem; border:1px solid #ccc; border-radius:6px; }
+    .qty input {
+      width: 50px;
+      text-align: center;
+      padding: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .qty button {
+      font-size: 1.25rem;
+      padding: 0 8px;
+      height: 30px;
+      width: 30px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
 
     .summary { border-top:1px solid #eee; padding-top:12px; margin-top:16px; box-shadow: none; background:#fff; }
     .summary-line { display:flex; justify-content: space-between; margin: 6px 0; }
@@ -114,6 +163,60 @@
     }
 
     /* Removed review-toggle-wrapper CSS block */
+  </style>
+  <style>
+    /* Prevent horizontal scrolling on product catalog */
+    .catalog {
+      word-break: break-word;
+    }
+
+    .card {
+      grid-template-columns: 52px 1fr auto;
+      gap: 6px;
+      align-items: center;
+      border: 1px solid #eee;
+      border-radius: 10px;
+      padding: 8px;
+      background: #fff;
+    }
+    .card img {
+      width: 52px;
+      height: 52px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .qty input {
+      width: 50px;
+      text-align: center;
+      padding: 0.3rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 0.9rem;
+    }
+    .qty button {
+      font-size: 1.25rem;
+      padding: 0 8px;
+      height: 30px;
+      width: 30px;
+      border-radius: 4px;
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      cursor: pointer;
+    }
+
+    @media (max-width: 480px) {
+      .catalog {
+        padding: 0 4px;
+      }
+
+      .name {
+        font-size: 0.95rem;
+      }
+
+      .price {
+        font-size: 0.85rem;
+      }
+    }
   </style>
   <script type="application/ld+json">
   {
@@ -295,11 +398,49 @@
             </label>
           </div>
 
+          <div class="contact-grid" style="margin-top:8px;">
+            <label class="form-field">Your name
+              <input type="text" name="customerName" required>
+            </label>
+            <label class="form-field">Email
+              <input type="email" name="customerEmail" required>
+            </label>
+            <label class="form-field">Phone (with country code)
+              <input type="text" name="customerPhone" required>
+            </label>
+            <label class="form-field message-field">Message to us (optional)
+              <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
+            </label>
+          </div>
+
 
           <div class="scrollable-container">
             <div id="catalog" class="catalog" aria-live="polite">
-              <!-- Products will be populated here by order.js in this category order:
-                   Strollers, Sleeping Cot, Car Seats, High Chairs, then the rest -->
+              <div class="card">
+                <img src="assets/images/stroller.jpg" alt="Babyzen YOYO²">
+                <div class="meta">
+                  <div class="name">Babyzen YOYO²</div>
+                  <div class="price">€17/day</div>
+                </div>
+                <div class="qty">
+                  <button type="button" onclick="decreaseQty(this)">−</button>
+                  <input type="number" name="qty_yoyo2" min="0" value="0">
+                  <button type="button" onclick="increaseQty(this)">+</button>
+                </div>
+              </div>
+
+              <div class="card">
+                <img src="assets/images/bugaboo.jpg" alt="Bugaboo Fox">
+                <div class="meta">
+                  <div class="name">Bugaboo Fox</div>
+                  <div class="price">€30/day</div>
+                </div>
+                <div class="qty">
+                  <button type="button" onclick="decreaseQty(this)">−</button>
+                  <input type="number" name="qty_fox" min="0" value="0">
+                  <button type="button" onclick="increaseQty(this)">+</button>
+                </div>
+              </div>
             </div>
 
             <div class="summary" id="summary">
@@ -314,20 +455,6 @@
               </div>
               <div class="summary-line" style="margin-top: 8px; font-weight: bold;"><span>Estimated Total:</span><strong id="sumTotal">€0</strong></div>
               <p class="note">Final quote may vary based on availability, delivery zone and accessories. You’ll receive a confirmation email first.</p>
-              <div class="contact-grid" style="margin-top:8px;">
-                <label class="form-field">Your name
-                  <input type="text" name="customerName" required>
-                </label>
-                <label class="form-field">Email
-                  <input type="email" name="customerEmail" required>
-                </label>
-                <label class="form-field">Phone (with country code)
-                  <input type="text" name="customerPhone" required>
-                </label>
-                <label class="form-field message-field">Message to us (optional)
-                  <textarea name="message" placeholder="Child age/weight for car seat, special requests, etc."></textarea>
-                </label>
-              </div>
               <input type="hidden" name="order_json" id="order_json">
               <div class="actions">
                 <a href="/" class="button">Back</a>
