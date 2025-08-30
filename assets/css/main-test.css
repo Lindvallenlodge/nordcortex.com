@@ -3157,3 +3157,15 @@ html, body {
   overflow-x: hidden;
   touch-action: pan-y;
 }
+
+.scrollable-container {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+  touch-action: auto;
+  scroll-behavior: smooth;
+}
+
+body, html, .order-wrap {
+  overscroll-behavior: none;
+}
