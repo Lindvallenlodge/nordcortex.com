@@ -535,7 +535,7 @@
 <body>
   <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();"
     id="bg-video" class="desktop-only bouncing-video"
-    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
+    style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2; animation-duration: 14s;">
     <source src="assets/videos/background-video-1-desktop.mp4" type="video/mp4">
   </video>
   <video autoplay muted loop playsinline id="video-bg-1-mobile" class="mobile-only"
@@ -1662,7 +1662,7 @@
     document.addEventListener('DOMContentLoaded', function () {
       const video = document.getElementById('bg-video');
       if (video) {
-        video.playbackRate = 0.7;
+        video.playbackRate = 0.5;
       }
     });
   </script>
