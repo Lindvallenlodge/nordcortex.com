@@ -534,7 +534,7 @@
 
 <body>
   <video autoplay muted loop playsinline preload="auto" onended="this.currentTime=0;this.play();"
-    id="video-bg-1-desktop" class="desktop-only bouncing-video"
+    id="bg-video" class="desktop-only bouncing-video"
     style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; object-fit: cover; z-index: -2;">
     <source src="assets/videos/background-video-1-desktop.mp4" type="video/mp4">
   </video>
@@ -1656,6 +1656,14 @@
       const form = document.getElementById('reviewForm');
       form.style.display = form.style.display === 'none' ? 'block' : 'none';
       this.style.display = 'none';
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const video = document.getElementById('bg-video');
+      if (video) {
+        video.playbackRate = 0.7;
+      }
     });
   </script>
 </body>
