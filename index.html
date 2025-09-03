@@ -1660,10 +1660,11 @@
   </script>
   <script>
     document.addEventListener('DOMContentLoaded', function () {
-      const video = document.getElementById('bg-video');
-      if (video) {
+      // Set playback rate for all video backgrounds (desktop and mobile)
+      var videos = document.querySelectorAll('video');
+      videos.forEach(function(video) {
         video.playbackRate = 0.5;
-      }
+      });
     });
   </script>
 </body>
