@@ -1,3 +1,17 @@
+/* === Hero Logo: Ensure logo image is fully visible and not clipped on mobile === */
+.hero-logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  padding: 1rem 0; /* Add spacing to prevent cropping */
+}
+
+@media (max-width: 768px) {
+  .hero-logo img {
+    padding: 2rem 0; /* Add extra spacing on mobile */
+  }
+}
 *, *::before, *::after {
   box-sizing: border-box;
 }
