@@ -2728,13 +2728,11 @@ body.order-page .logo {
 }
 
 body.order-page img.logo {
-  width: 100%;
-  height: 100%;
-  max-width: 300px;
-  max-height: 300px;
-  object-fit: contain;
+  max-width: 100%;
+  height: auto;
   display: block;
   margin: 0 auto;
+  padding: 1rem 0;
 }
 
 body.order-page {
@@ -3141,10 +3139,21 @@ html, body {
   box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+  .order-wrap {
+    margin: 0 auto;
+    padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
 img {
   max-width: 100%;
   height: auto;
   display: block;
+  margin: 0 auto;
+  padding: 1rem 0;
 }
 
 html, body {
