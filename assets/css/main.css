@@ -3169,3 +3169,24 @@ html, body {
 body, html, .order-wrap {
   overscroll-behavior: none;
 }
+/* === Responsive Date/Time Row and Form Inputs for Mobile === */
+@media (max-width: 600px) {
+  .date-time-row {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .date-time-row input,
+  .date-time-row select {
+    width: 100% !important;
+    box-sizing: border-box;
+  }
+
+  form input,
+  form select {
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
