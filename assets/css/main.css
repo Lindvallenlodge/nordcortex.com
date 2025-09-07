@@ -3158,21 +3158,25 @@ body.order-page .order-page-header {
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
-  overflow: visible; /* Prevent logo from being clipped */
   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 *, *::before, *::after {
   box-sizing: inherit;
 }
 
-.order-wrap {
-  width: 100%;
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-  box-sizing: border-box;
-}
+  .order-wrap {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
 @media (max-width: 768px) {
   .order-wrap {
@@ -3230,6 +3234,29 @@ body, html, .order-wrap {
   form input,
   form select {
     max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 600px) {
+  .logo img {
+    width: 90vw;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .order-wrap form {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .order-wrap input,
+  .order-wrap select,
+  .order-wrap textarea {
     width: 100%;
     box-sizing: border-box;
   }
