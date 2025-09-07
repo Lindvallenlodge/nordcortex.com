@@ -17,7 +17,9 @@
 }
 
 html, body {
+  max-width: 100vw;
   overflow-x: hidden;
+  box-sizing: border-box;
 }
 .card {
   /* desktop/mobile styles elsewhere; mobile-specific at end */
@@ -1921,7 +1923,20 @@ input, select, textarea {
   }
 
   /* Center and pad order form container on mobile */
-  .order-wrap,
+  .order-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+  .order-wrap input,
+  .order-wrap select,
+  .order-wrap textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 1rem;
+  }
   .order-container,
   .order-content,
   .order-section,
@@ -2121,10 +2136,11 @@ button {
 
 /* === Logo Alternating Animation === */
 .logo {
-  width: 300px;
-  height: 300px;
-  border-radius: 50%;
-  overflow: hidden;
+  display: block;
+  margin: 2rem auto;
+  padding: 0;
+  max-width: 90%;
+  height: auto;
 }
 
 
