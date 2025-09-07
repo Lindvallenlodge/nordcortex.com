@@ -2089,12 +2089,8 @@ button {
 .logo {
   width: 300px;
   height: 300px;
-  max-width: 100px;
-  height: auto;
   border-radius: 50%;
-  overflow: visible;
-  padding: 0.5rem;
-  box-sizing: content-box;
+  overflow: hidden;
 }
 
 
@@ -2729,9 +2725,6 @@ body.order-page .logo {
   max-height: 300px;
   margin: 0 auto;
   display: block;
-  overflow: visible;
-  padding: 0.5rem;
-  box-sizing: content-box;
 }
 
 body.order-page img.logo {
@@ -2742,9 +2735,6 @@ body.order-page img.logo {
   object-fit: contain;
   display: block;
   margin: 0 auto;
-  overflow: visible;
-  padding: 0.5rem;
-  box-sizing: content-box;
 }
 
 body.order-page {
@@ -2791,10 +2781,8 @@ body.order-page .order-page-header {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  overflow: visible;
+  overflow: hidden;
   margin: 0 auto 0px;
-  padding: 0.5rem;
-  box-sizing: content-box;
 }
 
 .logo.logo-img {
@@ -2802,9 +2790,6 @@ body.order-page .order-page-header {
   height: 100%;
   object-fit: contain;
   border-radius: 0;
-  overflow: visible;
-  padding: 0.5rem;
-  box-sizing: content-box;
 }
 
 .order-page-header {
