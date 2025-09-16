@@ -81,7 +81,7 @@ function rentalDays(){
   const d = Math.floor(ms/86400000) + 1; // min 1 day
   return Math.max(d,1);
 }
-function fmtMoney(n){ return `€${n}`; }
+function fmtMoney(n){ return `${n} SEK`; }
 
 // ===== Render =====
 function groupByCategory(list){
@@ -200,12 +200,12 @@ function recalc(){
       const product = products.find(p => p.id === item.id);
       const imagePath = product && product.image ? `/assets/images/products/${product.image}` : '';
       parts.push({
-        text: `${item.name} (${effectiveDays} ${dayLabel} × €${item.pricePerDay} × ${item.qty} ${qtyLabel}) = €${subtotal}`,
+        text: `${item.name} (${effectiveDays} ${dayLabel} × ${fmtMoney(item.pricePerDay)} × ${item.qty} ${qtyLabel}) = ${fmtMoney(subtotal)}`,
         image: imagePath
       });
     });
-    if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: €${DELIVERY_FEES[recv]}`);
-    if (DELIVERY_FEES[ret]) parts.push(`Return fee: €${DELIVERY_FEES[ret]}`);
+    if (DELIVERY_FEES[recv]) parts.push(`Delivery fee: ${fmtMoney(DELIVERY_FEES[recv])}`);
+    if (DELIVERY_FEES[ret]) parts.push(`Return fee: ${fmtMoney(DELIVERY_FEES[ret])}`);
     if (discountNote) {
       parts.push({ text: discountNote });
     }
