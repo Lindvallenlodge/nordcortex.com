@@ -35,7 +35,7 @@ if(!catalogEl || !formEl || !startEl || !endEl || !receiveEl || !returnEl || !su
 }
 
 // ===== Delivery fees =====
-const DELIVERY_FEES = { zone1: 6, zone2: 20, zone3: 25, airport_arlanda: 20 };
+const DELIVERY_FEES = { zone1: 60, zone2: 200, zone3: 250, airport_arlanda: 200 };
 
 // ===== Image resolver (works with multiple folders / extensions) =====
 const IMG_BASES = ['/assets/images/products/', '/assets/images/', '/images/'];
