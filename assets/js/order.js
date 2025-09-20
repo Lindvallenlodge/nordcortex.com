@@ -322,6 +322,13 @@ async function loadProducts(){
 // ===== Init =====
 attachEvents();
 
+// Redirect to homepage after successful form submit
+if(formEl){
+  formEl.addEventListener('submit', function(){
+    setTimeout(()=>{ window.location.href = '/'; }, 100);
+  });
+}
+
 // Auto-fill today's date into startDate and endDate on all devices if empty
 const today = new Date();
 const yyyy = today.getFullYear();
