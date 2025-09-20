@@ -296,36 +296,76 @@ function attachEvents(){
   });
 }
 
-// ===== Fetch products =====
-async function loadProducts(){
-  const url = '/assets/data/products.json';
-  try{
-    const res = await fetch(url, { cache:'no-store' });
-    if(!res.ok) throw new Error('HTTP ' + res.status);
-    const data = await res.json();
-    if(!Array.isArray(data)) throw new Error('Invalid products.json');
-    products = data;
-    render();
-    recalc();
-  }catch(err){
-    console.error('Could not load products:', err);
-    if(catalogEl){
-      const p = document.createElement('p');
-      p.className = 'error';
-      p.textContent = 'Could not load products. Please try again later.';
-      catalogEl.innerHTML = '';
-      catalogEl.appendChild(p);
-    }
+// Helper functions to show a thank-you overlay
+function showThankYou(message){
+  let overlay = document.getElementById('order-thanks-toast');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'order-thanks-toast';
+    overlay.setAttribute('role','status');
+    overlay.style.position = 'fixed';
+    overlay.style.inset = '0';
+    overlay.style.display = 'flex';
+    overlay.style.alignItems = 'center';
+    overlay.style.justifyContent = 'center';
+    overlay.style.background = 'rgba(0,0,0,0.5)';
+    overlay.style.zIndex = '9999';
+
+    const box = document.createElement('div');
+    box.id = 'order-thanks-toast-box';
+    box.style.background = '#fff';
+    box.style.padding = '16px 20px';
+    box.style.borderRadius = '8px';
+    box.style.maxWidth = '520px';
+    box.style.margin = '0 16px';
+    box.style.textAlign = 'center';
+    box.style.fontFamily = 'system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif';
+    box.style.fontSize = '16px';
+    box.style.lineHeight = '1.35';
+
+    overlay.appendChild(box);
+    document.body.appendChild(overlay);
   }
+  const box = document.getElementById('order-thanks-toast-box');
+  box.textContent = message || 'Thank you! Your order has been sent.';
+  overlay.style.display = 'flex';
+}
+function hideThankYou(){
+  const overlay = document.getElementById('order-thanks-toast');
+  if(overlay) overlay.style.display = 'none';
 }
 
 // ===== Init =====
 attachEvents();
 
-// Redirect to homepage after successful form submit
+// AJAX submit: show thank-you, then redirect home
 if(formEl){
-  formEl.addEventListener('submit', function(){
-    setTimeout(()=>{ window.location.href = '/'; }, 100);
+  formEl.addEventListener('submit', async function(e){
+    e.preventDefault();
+
+    const submitBtn = formEl.querySelector('button[type="submit"], input[type="submit"]');
+    if(submitBtn) submitBtn.disabled = true;
+
+    try{
+      const fd = new FormData(formEl);
+      const res = await fetch(formEl.action || formEl.getAttribute('action') || '#', {
+        method: (formEl.method || 'POST').toUpperCase(),
+        body: fd,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if(res.ok){
+        showThankYou('Thank you! Your order was received. Redirecting to the homepage…');
+        setTimeout(()=>{ window.location.href = '/'; }, 2500);
+      }else{
+        showThankYou('Hmm, something went wrong sending the order. Please try again or email hello@strollbystockholm.com.');
+        if(submitBtn) submitBtn.disabled = false;
+      }
+    }catch(err){
+      console.error('Order submit failed:', err);
+      showThankYou('Network error. Please try again in a moment, or email hello@strollbystockholm.com.');
+      if(submitBtn) submitBtn.disabled = false;
+    }
   });
 }
 
