@@ -1,2 +1,0 @@
-# strollbystockholm-site
-c site
