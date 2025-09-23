@@ -3,59 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kungsholmen Group — Entry</title>
+  <title>Kungsholmen Group</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
+      background-color: #000; /* Match logo background */
       display: flex;
-      flex-direction: column;
-      justify-content: center;
       align-items: center;
-      background: #0b3c4d;
-      color: #fff;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      text-align: center;
-    }
-    h1 {
-      font-size: clamp(26px, 4vw, 48px);
-      margin-bottom: 40px;
-      font-weight: 700;
-    }
-    .logo {
-      max-width: 280px;
-      width: 40%;
+      justify-content: center;
       cursor: pointer;
-      transition: transform 0.2s ease-in-out;
-      margin-bottom: 30px;
     }
-    .logo:hover {
-      transform: scale(1.05);
-    }
-    .button {
-      background: #fff;
-      color: #0b3c4d;
-      text-decoration: none;
-      font-size: 18px;
-      font-weight: 600;
-      padding: 12px 28px;
-      border-radius: 6px;
-      transition: background 0.3s, color 0.3s;
-    }
-    .button:hover {
-      background: #0b3c4d;
-      color: #fff;
-      border: 2px solid #fff;
+    img {
+      max-height: 30vh; /* Take ~30% of viewport height */
+      max-width: 80%;
     }
   </style>
 </head>
-<body>
-  <h1>We go beyond cost optimization,<br>we create advantage.</h1>
-  <!-- Logo linking to index.html -->
-  <a href="index.html">
-    <img src="/pictures/logo.png" alt="Kungsholmen Group Logo" class="logo">
-  </a>
-  <!-- Button linking to index.html -->
-  <a href="index.html" class="button">KUNGSHOLMEN GROUP</a>
+<body onclick="window.location.href='https://www.kungsholmengroup.com'">
+  <img src="Image.jpg" alt="Kungsholmen Group Logo">
 </body>
 </html>
