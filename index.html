@@ -67,11 +67,19 @@
     }
   </style>
 </head>
-<body onclick="window.location.href='https://www.kungsholmengroup.com/main.html'" ontouchstart="window.location.href='https://www.kungsholmengroup.com/main.html'">
+<body>
   <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" />
   <div class="text-block">
     <span class="baskerville">Kungsholmen Group</span>
     <span class="handwriting">— Turning Dreams into Results.</span>
   </div>
+  <script>
+    function goToMain() {
+      window.location.href = 'https://www.kungsholmengroup.com/main.html';
+    }
+    document.body.addEventListener('click', goToMain);
+    document.body.addEventListener('touchstart', goToMain);
+    document.body.addEventListener('touchmove', goToMain);
+  </script>
 </body>
 </html>
