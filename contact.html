@@ -9,7 +9,7 @@
   *, *::before, *::after { box-sizing: border-box; }
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     body {font-family: Inter, Arial, sans-serif; background: #fafafa; color: #111; margin: 0;}
-    .message {background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 720px; width: 90%; margin: auto;}
+    .message {background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); max-width: 720px; width: 90%; margin: 60px auto;}
     h1 {font-size: 32px; margin-bottom: 16px; text-align: center;}
     p {font-size: 18px; color: #444;}
   
@@ -74,7 +74,7 @@
     @media (max-width: 768px) {
       .nav { display: none; }
       .hamburger { display: block; }
-      .message { width: 90%; margin: auto; }
+      .message { width: 90%; margin: 60px auto; }
       form input, form textarea, form button {
         font-size: 1rem;
         padding: 12px;
@@ -141,7 +141,7 @@
     <div class="container">
       <a href="/main.html" style="display:flex; align-items:center; text-decoration:none;">
         <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
-        <span style="font-size:clamp(28px,2.5vw,36px);font-weight:normal;color:#6c7a89;">Kungsholmen Group</span>
+        <span style="font-family: 'Baskerville', 'Times New Roman', serif; font-size:clamp(28px,2.5vw,36px);font-weight:normal;color:#6c7a89;">Kungsholmen Group</span>
       </a>
       <nav>
         <div class="nav-left">
@@ -186,7 +186,7 @@
 
   <main>
     <div class="container">
-      <div class="message" style="max-width: 600px; margin: auto; padding: 40px;">
+      <div class="message" style="max-width: 720px; margin: 60px auto; padding: 40px;">
         <h1>Contact Us</h1>
         <form action="https://formspree.io/f/mblzjaok" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
           <label for="name" style="font-size: 1rem; color: #222;">Name</label>
