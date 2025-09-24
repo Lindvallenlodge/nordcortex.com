@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
 :root {
   --bg: #ffffff;
   --text: #111318;
@@ -8,13 +9,11 @@
 * { box-sizing: border-box; }
 html, body {
   margin: 0; padding: 0; background: var(--bg); color: var(--text);
-  font: 16px/1.6 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 16px/1.6 "Outfit", sans-serif;
+  font-weight: 300;
 }
 
-body, p, li {
-  text-align: justify;
-}
-h1, h2, h3, h4, h5, h6 {
+body, p, li, h1, h2, h3, h4, h5, h6 {
   text-align: justify;
 }
 .container { width: min(1100px, 92vw); margin: 0 auto; padding: 1rem; }
