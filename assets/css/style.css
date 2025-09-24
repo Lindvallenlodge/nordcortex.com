@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 :root {
   --bg: #ffffff;
   --text: #111318;
@@ -13,18 +13,24 @@ html, body {
   font-weight: 300;
 }
 
-body, p, li {
-  text-align: left;
-}
-h1, h2, h3, h4, h5, h6 {
-  text-align: justify;
-}
+/* Typography & alignment */
+p, li { text-align: justify; text-justify: inter-word; }
+h1, h2, h3, h4, h5, h6 { text-align: left; text-wrap: balance; }
+/* Keep hero title explicitly left-aligned */
+.hero h1 { text-align: left; }
+
 .container { width: min(1100px, 92vw); margin: 0 auto; padding: 1rem; }
 .site-header { position: sticky; top: 0; background: rgba(255,255,255,.9); backdrop-filter: blur(6px); border-bottom: 1px solid #eceff3; }
 .header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
 .brand { font-weight:700; letter-spacing:.2px; }
 .brand span {
-  font-family: "Baskerville", "Times New Roman", serif;
+  font-family: "Libre Baskerville", "Baskerville", "Times New Roman", serif;
+}
+.brand__name { 
+  font-weight: 400; /* not bold */
+  color: #6c7a89; /* cold light gray for the name */
+  font-size: clamp(28px, 3.2vw, 36px);
+  line-height: 1.05;
 }
 .nav a { text-decoration:none; color:var(--text); margin-left:1rem; padding:.5rem .25rem; }
 .nav a.active, .nav a:hover { color: var(--brand); }
