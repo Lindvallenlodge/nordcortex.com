@@ -239,7 +239,7 @@
     <div class="container">
       <div class="message" style="max-width: 1000px; margin: 120px auto 120px auto; padding: 40px;">
         <h1>Contact Us</h1>
-        <form action="https://formspree.io/f/mblzjaok?redirect=https://www.kungsholmengroup.com/thankyou.html" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
+        <form id="contact-form" action="https://formspree.io/f/mblzjaok" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
           <input type="hidden" name="_captcha" value="false">
           <label for="name" style="font-size: 1rem; color: #222;">Name</label>
           <input type="text" id="name" name="name" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
@@ -260,5 +260,26 @@
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
+<script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' },
+          redirect: 'manual'
+        }).then(function () {
+          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
+        }).catch(function () {
+          // Even if the request fails, send user to thank-you page to avoid Formspree default screen
+          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
