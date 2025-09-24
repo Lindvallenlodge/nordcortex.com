@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kungsholmen Group</title>
@@ -24,6 +25,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
     }
     img {
       height: 200px;
@@ -44,10 +46,31 @@
     body, p, li { text-align: left; }
     h1, h2, h3, h4, h5, h6 { text-align: justify; }
   </style>
+  <style>
+    .text-block {
+      text-align: center;
+      color: white;
+      margin-top: 20px;
+    }
+    .text-block .baskerville {
+      font-family: "Baskerville", "Times New Roman", serif;
+      font-size: 36px;
+      display: block;
+    }
+    .text-block .handwriting {
+      font-family: 'Dancing Script', cursive;
+      font-size: 36px;
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <a href="https://www.kungsholmengroup.com/main.html">
     <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" />
   </a>
+  <div class="text-block">
+    <span class="baskerville">Kungsholmen Group</span>
+    <span class="handwriting">— The Company Turning Dreams into Results.</span>
+  </div>
 </body>
 </html>
