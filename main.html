@@ -44,6 +44,17 @@
       font-weight: normal;
       color: #6c7a89;
     }
+    .brand img.logo {
+      height: 80px;
+      max-height: 12vw;
+    }
+
+    @media (max-width: 768px) {
+      .brand img.logo {
+        height: 50px;
+        max-height: 15vw;
+      }
+    }
   </style>
 </head>
 <body>
@@ -51,7 +62,7 @@
     <div class="container header-inner">
       <div class="brand">
         <a href="https://www.kungsholmengroup.com/main.html" style="display:flex;align-items:center;gap:10px;">
-          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
+          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" class="logo">
           <span>Kungsholmen Group</span>
         </a>
       </div>
