@@ -187,11 +187,11 @@
 <body>
   <header>
     <div class="container">
-      <a href="/main.html" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap;">
-        <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
-        <span style="font-family: 'Baskerville', 'Times New Roman', serif; font-size:clamp(28px,2.5vw,36px);font-weight:normal;color:#6c7a89;">Kungsholmen Group</span>
+      <a href="/main.html" class="brand" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap; gap: 12px;">
+        <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:60px; width:auto;">
+        <span style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: clamp(28px, 2.5vw, 36px); font-weight: normal; color: #6c7a89;">Kungsholmen Group</span>
       </a>
-      <nav>
+      <nav class="nav">
         <div class="nav-left">
           <a href="/main.html">Home</a>
           <a href="/about.html">About</a>
@@ -203,7 +203,7 @@
       </nav>
       <button class="hamburger" aria-label="Open menu">&#9776;</button>
       <div class="overlay"></div>
-      <div class="mobile-menu">
+      <div class="mobile-menu" aria-hidden="true">
         <button class="close-btn" aria-label="Close menu">&times;</button>
         <a href="/main.html">Home</a>
         <a href="/about.html">About</a>
@@ -219,14 +219,17 @@
         hamburger.addEventListener('click', function() {
           mobileMenu.classList.add('open');
           overlay.classList.add('show');
+          mobileMenu.setAttribute('aria-hidden', 'false');
         });
         closeBtn.addEventListener('click', function() {
           mobileMenu.classList.remove('open');
           overlay.classList.remove('show');
+          mobileMenu.setAttribute('aria-hidden', 'true');
         });
         overlay.addEventListener('click', function() {
           mobileMenu.classList.remove('open');
           overlay.classList.remove('show');
+          mobileMenu.setAttribute('aria-hidden', 'true');
         });
       </script>
     </div>
