@@ -7,7 +7,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
@@ -15,20 +15,17 @@
   <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
-      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      font-family: 'Outfit', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #fff;
       color: #222;
+      text-align: center;
     }
-    .brand span {
-      font-family: 'Baskerville', 'Times New Roman', Times, serif;
-      font-size: 2rem;
-      font-weight: 400;
-      letter-spacing: 0.5px;
-    }
-    .brand img {
-      height: 80px;
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1rem;
     }
     header {
       background: #fff;
@@ -40,22 +37,22 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0.5rem 0;
+      padding: 1rem 0;
     }
     nav.nav-left, nav.nav-right {
       display: flex;
       align-items: center;
       gap: 1.5rem;
     }
-    nav.nav-left a, nav.nav-right a {
+    nav a {
       text-decoration: none;
       color: #222;
-      font-weight: 500;
-      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      font-weight: 300;
+      font-family: 'Outfit', Arial, sans-serif;
       font-size: 1rem;
       transition: color 0.2s;
     }
-    nav.nav-left a.active, nav.nav-left a:hover, nav.nav-right a:hover {
+    nav a.active, nav a:hover {
       color: #0E4A7F;
     }
     .hamburger {
@@ -120,6 +117,7 @@
       gap: 1.5rem;
       transition: transform 0.2s;
       transform: translateX(100%);
+      text-align: left;
     }
     .mobile-menu.active {
       display: flex;
@@ -129,38 +127,50 @@
       text-decoration: none;
       color: #222;
       font-size: 1.15rem;
-      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      font-family: 'Outfit', Arial, sans-serif;
       margin-bottom: 1.1rem;
-      font-weight: 500;
+      font-weight: 300;
       transition: color 0.2s;
     }
     .mobile-menu a.active, .mobile-menu a:hover {
       color: #0E4A7F;
+    }
+    .brand span {
+      font-family: 'Baskerville', 'Times New Roman', Times, serif;
+      font-weight: normal;
+      font-size: 2rem;
+      letter-spacing: 0.5px;
+      color: #6c7a89;
+    }
+    .brand img {
+      height: 80px;
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
-      <div class="brand">
-        <a href="main.html" style="display:flex;align-items:center;gap:10px;">
+      <div class="brand" style="display:flex;align-items:center;gap:10px;">
+        <a href="main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
           <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo">
           <span>Kungsholmen Group</span>
         </a>
       </div>
-      <nav class="nav-left">
-        <a href="main.html">Home</a>
-        <a href="procurement.html">Procurement Strategy</a>
-        <a href="retail-production.html">Retail Production</a>
-        <a href="product-development.html">Product Development</a>
-        <a href="supply-chain.html">Supply Chain</a>
-        <a href="rfid.html">RFID & Digitalization</a>
-        <a href="sustainability.html">Sustainability & Compliance</a>
-        <a href="change-management.html" class="active">Change Management</a>
-      </nav>
-      <nav class="nav-right">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      <nav>
+        <div class="nav-left">
+          <a href="main.html">Home</a>
+          <a href="procurement.html">Procurement Strategy</a>
+          <a href="retail-production.html">Retail Production</a>
+          <a href="product-development.html">Product Development</a>
+          <a href="supply-chain.html">Supply Chain</a>
+        </div>
+        <div class="nav-right">
+          <a href="rfid.html">RFID & Digitalization</a>
+          <a href="sustainability.html">Sustainability & Compliance</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+          <a href="change-management.html" class="active">Change Management</a>
+        </div>
       </nav>
       <button class="hamburger" aria-label="Open menu">
         <span></span>
@@ -178,9 +188,9 @@
     <a href="supply-chain.html">Supply Chain</a>
     <a href="rfid.html">RFID & Digitalization</a>
     <a href="sustainability.html">Sustainability & Compliance</a>
-    <a href="change-management.html" class="active">Change Management</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
+    <a href="change-management.html" class="active">Change Management</a>
   </nav>
 
   <main class="container" style="margin-top:2.5rem;margin-bottom:2.5rem;">
@@ -204,7 +214,6 @@
     </div>
   </main>
 
-</body>
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
