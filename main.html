@@ -16,7 +16,9 @@
   <meta name="theme-color" content="#ffffff">
 
   <style>
-    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#111;line-height:1.6}
+    :root{--brand-serif:"Baskerville","Libre Baskerville","Times New Roman",Times,serif;--ui-sans:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    body{font-family:var(--ui-sans);margin:0;color:#111;line-height:1.6}
+    h1,h2,h3,h4,h5,h6,p,li,a,button,input,textarea,small{font-family:var(--ui-sans)}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -40,9 +42,16 @@
     @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
     .brand a {text-decoration:none; color:#111;}
     .brand span {
-      font-size: clamp(28px, 2.5vw, 36px);
+      font-family: var(--brand-serif);
+      font-size: clamp(22px, 5.5vw, 36px);
       font-weight: normal;
-      color: #6c7a89;
+      color: #6c7a89; /* keep existing cold gray */
+      white-space: nowrap; /* keep the name on one line */
+    }
+    @media (max-width: 390px){
+      .header-inner{gap:8px}
+      .brand a{gap:8px}
+      .brand span{font-size:28px}
     }
   </style>
 </head>
