@@ -51,21 +51,21 @@
       pointer-events: none;
       z-index: 999;
     }
-    .ticker-top { top: 0; }
-    .ticker-bottom { bottom: 0; }
     .ticker-text {
       display: inline-block;
-      padding-left: 100%;
       animation: ticker 60s linear infinite;
       font-family: 'Poppins', sans-serif;
       font-size: 20px;
       color: gray;
-      opacity: 0.7;
+      opacity: 0.85;
+      padding-right: 50px;
     }
     @keyframes ticker {
       0% { transform: translateX(100%); }
       100% { transform: translateX(-100%); }
     }
+    .ticker-top { top: 0; }
+    .ticker-bottom { bottom: 0; }
   </style>
   <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif; }
@@ -94,8 +94,14 @@
   </style>
 </head>
 <body>
-  <div class="ticker-container ticker-top"><div class="ticker-text" id="tickerTop"></div></div>
-  <div class="ticker-container ticker-bottom"><div class="ticker-text" id="tickerBottom"></div></div>
+  <div class="ticker-container ticker-top">
+    <div class="ticker-text" id="tickerTop"></div>
+    <div class="ticker-text" id="tickerTopClone"></div>
+  </div>
+  <div class="ticker-container ticker-bottom">
+    <div class="ticker-text" id="tickerBottom"></div>
+    <div class="ticker-text" id="tickerBottomClone"></div>
+  </div>
   <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" />
   <div class="text-block">
     <span class="baskerville">Kungsholmen Group</span>
@@ -158,27 +164,7 @@
       "Customer Retention",
       "Trend Analysis",
       "Product Lifecycle",
-      "Stakeholder Engagement",
-      "AI Solutions",
-      "Smart Manufacturing",
-      "Circular Economy",
-      "Green Logistics",
-      "Ethical Sourcing",
-      "Resilience",
-      "Digital Twins",
-      "Innovation Hub",
-      "Supply Accuracy",
-      "Automation Systems",
-      "Carbon Neutrality",
-      "Eco Design",
-      "Smart Retail",
-      "IoT Connectivity",
-      "Transparency",
-      "Value Chains",
-      "Global Trade",
-      "Renewables",
-      "Energy Efficiency",
-      "Process Innovation"
+      "Stakeholder Engagement"
     ];
 
     function shuffleArray(array) {
@@ -194,11 +180,19 @@
       const half = Math.ceil(shuffled.length / 2);
       const keywordsTop = shuffled.slice(0, half);
       const keywordsBottom = shuffled.slice(half);
-      document.getElementById('tickerTop').innerText = keywordsTop.join(" • ");
-      document.getElementById('tickerBottom').innerText = keywordsBottom.join(" • ");
+
+      const topText = keywordsTop.join(" • ");
+      const bottomText = keywordsBottom.join(" • ");
+
+      document.getElementById('tickerTop').innerText = topText;
+      document.getElementById('tickerTopClone').innerText = topText;
+      document.getElementById('tickerBottom').innerText = bottomText;
+      document.getElementById('tickerBottomClone').innerText = bottomText;
     }
 
+    // Initial load
     updateTickers();
+    // Refresh after each full cycle (60s)
     setInterval(updateTickers, 60000);
   </script>
 </body>
