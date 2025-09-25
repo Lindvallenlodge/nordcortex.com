@@ -43,33 +43,30 @@
     }
   </style>
   <style>
-    /* Floating animated keywords */
-    .floating-word {
-      position: absolute;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 300;
-      font-size: 22px;
-      opacity: 0;
-      pointer-events: none;
-      animation: fadeInOut 6s infinite;
-      z-index: 1000;
-      user-select: none;
+    .ticker-container {
+      position: fixed;
+      width: 100%;
+      overflow: hidden;
       white-space: nowrap;
+      pointer-events: none;
+      z-index: 999;
     }
-    @keyframes fadeInOut {
-      0% {
-        opacity: 0;
-      }
-      10% {
-        opacity: 1;
-      }
-      90% {
-        opacity: 1;
-      }
-      100% {
-        opacity: 0;
-      }
+    .ticker-top { top: 0; }
+    .ticker-bottom { bottom: 0; }
+    .ticker-text {
+      display: inline-block;
+      padding-left: 100%;
+      animation: ticker 30s linear infinite;
+      font-family: 'Poppins', sans-serif;
+      font-size: 20px;
+      color: white;
+      opacity: 0.7;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); opacity: 0; }
+      5% { opacity: 1; }
+      95% { opacity: 1; }
+      100% { transform: translateX(-100%); opacity: 0; }
     }
   </style>
   <style>
@@ -99,6 +96,8 @@
   </style>
 </head>
 <body>
+  <div class="ticker-container ticker-top"><div class="ticker-text" id="tickerTop"></div></div>
+  <div class="ticker-container ticker-bottom"><div class="ticker-text" id="tickerBottom"></div></div>
   <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" />
   <div class="text-block">
     <span class="baskerville">Kungsholmen Group</span>
@@ -112,7 +111,6 @@
     document.body.addEventListener('touchmove', goToMain);
   </script>
   <script>
-    // Animated floating keywords
     const keywords = [
       "Procurement",
       "Strategy",
@@ -164,98 +162,8 @@
       "Product Lifecycle",
       "Stakeholder Engagement"
     ];
-
-    // Function to shuffle an array
-    function shuffleArray(array) {
-      const arr = array.slice();
-      for (let i = arr.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [arr[i], arr[j]] = [arr[j], arr[i]];
-      }
-      return arr;
-    }
-
-    let shuffledKeywords = shuffleArray(keywords);
-
-    function isOverlap(left1, top1, width1, height1, left2, top2, width2, height2) {
-      return !(left1 + width1 <= left2 ||
-               left1 >= left2 + width2 ||
-               top1 + height1 <= top2 ||
-               top1 >= top2 + height2);
-    }
-
-    function createFloatingWord() {
-      if (shuffledKeywords.length === 0) {
-        shuffledKeywords = shuffleArray(keywords);
-      }
-      const word = shuffledKeywords.pop();
-      const div = document.createElement('div');
-      div.className = 'floating-word';
-      div.innerText = word;
-
-      // Random position within viewport, leaving room for word size
-      const vw = window.innerWidth;
-      const vh = window.innerHeight;
-      // Estimate width for positioning (approx 12px per char + padding)
-      const estWidth = word.length * 12 + 40;
-      const estHeight = 32;
-
-      // Define safe zone tightly covering the logo and "Kungsholmen Group" text
-      const logoHeight = 300; // match CSS image height
-      const textHeight = 80;  // approximate text block height
-      const safeZone = {
-        left: vw * 0.2,
-        right: vw * 0.8,
-        top: (vh / 2) - (logoHeight / 2) - 40,
-        bottom: (vh / 2) + (logoHeight / 2) + textHeight + 40
-      };
-
-      let left, top;
-      let attempts = 0;
-      do {
-        left = Math.random() * Math.max(0, vw - estWidth);
-        top = Math.random() * Math.max(0, vh - estHeight);
-        attempts++;
-
-        // Check if overlaps safe zone
-        if (
-          left + estWidth > safeZone.left &&
-          left < safeZone.right &&
-          top + estHeight > safeZone.top &&
-          top < safeZone.bottom
-        ) {
-          continue; // overlap with safe zone, retry
-        }
-
-        // Check overlap with existing floating words
-        const existingWords = document.querySelectorAll('.floating-word');
-        let overlapFound = false;
-        for (let i = 0; i < existingWords.length; i++) {
-          const existing = existingWords[i];
-          const rect = existing.getBoundingClientRect();
-          if (isOverlap(left, top, estWidth, estHeight, rect.left, rect.top, rect.width, rect.height)) {
-            overlapFound = true;
-            break;
-          }
-        }
-        if (!overlapFound) {
-          break; // no overlap found, break loop
-        }
-      } while (attempts < 100);
-
-      div.style.left = left + 'px';
-      div.style.top = top + 'px';
-
-      document.body.appendChild(div);
-
-      // Remove after animation (6s)
-      setTimeout(() => {
-        if (div.parentNode) div.parentNode.removeChild(div);
-      }, 6000);
-    }
-
-    // Start periodically creating floating words
-    setInterval(createFloatingWord, 1200);
+    document.getElementById('tickerTop').innerText = keywords.join(" • ");
+    document.getElementById('tickerBottom').innerText = keywords.join(" • ");
   </script>
 </body>
 </html>
