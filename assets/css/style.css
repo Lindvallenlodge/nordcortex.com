@@ -38,15 +38,21 @@ header {
   align-items: center;
 }
 
-.brand img {
-  height: 80px;
+/* Brand logo + text alignment and sizing */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
-
+.brand img {
+  height: 60px;
+}
 .brand span {
   font-family: 'Baskerville', 'Times New Roman', serif;
-  font-size: clamp(28px, 2.5vw, 36px);
+  font-size: clamp(26px, 2vw, 32px);
   font-weight: normal;
   color: #CEAF6F;
+  white-space: nowrap;
 }
 
 /* Navigation */
