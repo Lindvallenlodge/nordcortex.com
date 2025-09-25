@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 { text-align: left; text-wrap: balance; }
 .brand__name { 
   font-weight: 400; /* not bold */
   color: #6c7a89; /* cold light gray for the name */
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-size: clamp(28px, 2.4vw, 34px);
   line-height: 1.05;
 }
 .nav a { text-decoration:none; color:var(--text); margin-left:1rem; padding:.5rem .25rem; }
@@ -66,10 +66,11 @@ h1, h2, h3, h4, h5, h6 { text-align: left; text-wrap: balance; }
 }
 
 .brand__name {
-  font-size: clamp(28px, 3.2vw, 36px);
+  font-size: clamp(28px, 2.4vw, 34px);
   line-height: 1.05;
   white-space: nowrap;
   color: #CEAF6F;
+  font-family: "Libre Baskerville", "Baskerville", "Times New Roman", serif;
 }
 
 form input, form textarea {
