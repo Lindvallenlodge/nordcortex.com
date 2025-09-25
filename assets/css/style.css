@@ -66,9 +66,10 @@ h1, h2, h3, h4, h5, h6 { text-align: left; text-wrap: balance; }
 }
 
 .brand__name {
-  font-size: clamp(24px, 6vw, 36px);
-  line-height: 1.2;
+  font-size: clamp(28px, 3.2vw, 36px);
+  line-height: 1.05;
   white-space: nowrap;
+  color: #CEAF6F;
 }
 
 form input, form textarea {
