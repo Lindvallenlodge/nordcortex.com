@@ -42,6 +42,34 @@
     }
   </style>
   <style>
+    /* Floating animated keywords */
+    .floating-word {
+      position: absolute;
+      color: white;
+      font-size: 22px;
+      opacity: 0;
+      pointer-events: none;
+      animation: fadeInOut 6s infinite;
+      z-index: 1000;
+      user-select: none;
+      white-space: nowrap;
+    }
+    @keyframes fadeInOut {
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif; }
     body, p, li { text-align: left; }
     h1, h2, h3, h4, h5, h6 { text-align: justify; }
@@ -80,6 +108,48 @@
     document.body.addEventListener('click', goToMain);
     document.body.addEventListener('touchstart', goToMain);
     document.body.addEventListener('touchmove', goToMain);
+  </script>
+  <script>
+    // Animated floating keywords
+    const keywords = [
+      "Procurement",
+      "Strategy",
+      "Production",
+      "Manufacturing",
+      "RFID & Digitalization",
+      "RFID Solutions",
+      "Size availability",
+      "Sustainability",
+      "Compliance"
+    ];
+
+    function createFloatingWord() {
+      const word = keywords[Math.floor(Math.random() * keywords.length)];
+      const div = document.createElement('div');
+      div.className = 'floating-word';
+      div.innerText = word;
+
+      // Random position within viewport, leaving room for word size
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      // Estimate width for positioning (approx 12px per char + padding)
+      const estWidth = word.length * 12 + 40;
+      const estHeight = 32;
+      const left = Math.random() * Math.max(0, vw - estWidth);
+      const top = Math.random() * Math.max(0, vh - estHeight);
+      div.style.left = left + 'px';
+      div.style.top = top + 'px';
+
+      document.body.appendChild(div);
+
+      // Remove after animation (6s)
+      setTimeout(() => {
+        if (div.parentNode) div.parentNode.removeChild(div);
+      }, 6000);
+    }
+
+    // Start periodically creating floating words
+    setInterval(createFloatingWord, 1200);
   </script>
 </body>
 </html>
