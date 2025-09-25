@@ -4,18 +4,151 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Change Management — Kungsholmen Group</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    body {
+      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+    }
+    .brand span {
+      font-family: 'Baskerville', 'Times New Roman', Times, serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+    .brand img {
+      height: 80px;
+    }
+    header {
+      background: #fff;
+      border-bottom: 1px solid #e0e0e0;
+      position: relative;
+      z-index: 10;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+    }
+    nav.nav-left, nav.nav-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    nav.nav-left a, nav.nav-right a {
+      text-decoration: none;
+      color: #222;
+      font-weight: 500;
+      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      font-size: 1rem;
+      transition: color 0.2s;
+    }
+    nav.nav-left a.active, nav.nav-left a:hover, nav.nav-right a:hover {
+      color: #0E4A7F;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 101;
+      padding: 0;
+      margin-left: 1rem;
+    }
+    .hamburger span {
+      height: 3px;
+      width: 28px;
+      background: #222;
+      margin: 4px 0;
+      border-radius: 2px;
+      display: block;
+      transition: 0.3s;
+    }
+    @media (max-width: 950px) {
+      nav.nav-left, nav.nav-right {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+    /* Overlay and mobile menu */
+    .overlay {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(30, 40, 60, 0.25);
+      backdrop-filter: blur(2px);
+      transition: opacity 0.2s;
+    }
+    .overlay.active {
+      display: block;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      z-index: 101;
+      top: 0;
+      right: 0;
+      width: 82vw;
+      max-width: 350px;
+      height: 100vh;
+      background: #fff;
+      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
+      padding: 2.5rem 2rem 2rem 2rem;
+      flex-direction: column;
+      gap: 1.5rem;
+      transition: transform 0.2s;
+      transform: translateX(100%);
+    }
+    .mobile-menu.active {
+      display: flex;
+      transform: translateX(0);
+    }
+    .mobile-menu a {
+      text-decoration: none;
+      color: #222;
+      font-size: 1.15rem;
+      font-family: 'Outfit', 'Inter', Arial, sans-serif;
+      margin-bottom: 1.1rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .mobile-menu a.active, .mobile-menu a:hover {
+      color: #0E4A7F;
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
       <div class="brand">
         <a href="main.html" style="display:flex;align-items:center;gap:10px;">
-          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
+          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo">
           <span>Kungsholmen Group</span>
         </a>
       </div>
-      <nav class="nav">
+      <nav class="nav-left">
         <a href="main.html">Home</a>
         <a href="procurement.html">Procurement Strategy</a>
         <a href="retail-production.html">Retail Production</a>
@@ -23,31 +156,78 @@
         <a href="supply-chain.html">Supply Chain</a>
         <a href="rfid.html">RFID & Digitalization</a>
         <a href="sustainability.html">Sustainability & Compliance</a>
-        <a href="change-management.html">Change Management</a>
+        <a href="change-management.html" class="active">Change Management</a>
+      </nav>
+      <nav class="nav-right">
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <button class="hamburger" aria-label="Open menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </header>
+  <div class="overlay"></div>
+  <nav class="mobile-menu">
+    <a href="main.html">Home</a>
+    <a href="procurement.html">Procurement Strategy</a>
+    <a href="retail-production.html">Retail Production</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+    <a href="rfid.html">RFID & Digitalization</a>
+    <a href="sustainability.html">Sustainability & Compliance</a>
+    <a href="change-management.html" class="active">Change Management</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
-  <main class="container">
-    <section class="hero">
-      <h1>Change Management</h1>
-      <p class="lead">Supporting organizations through transformation with structured, people-focused approaches that deliver lasting results.</p>
-      <p>At Kungsholmen Group, we know that even the best strategies fall short without effective execution. Change Management bridges strategy and implementation, ensuring that transitions — whether organizational, technological, or process-driven — are embraced and sustained.</p>
-      <ul>
-        <li>Stakeholder engagement and alignment</li>
-        <li>Change readiness assessments</li>
-        <li>Clear communication frameworks</li>
-        <li>Training and capability building</li>
-        <li>Implementation roadmaps with measurable KPIs</li>
-      </ul>
-      <p>With global experience across industries, we guide clients through complexity, making change a catalyst for long-term success.</p>
-    </section>
+  <main class="container" style="margin-top:2.5rem;margin-bottom:2.5rem;">
+    <h1>Change Management</h1>
+    <p class="lead" style="font-size:1.35rem;margin-bottom:2.1rem;">
+      Supporting organizations through transformation with structured, people-focused approaches that deliver lasting results.
+    </p>
+    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.2rem;">
+      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
+        <h3 style="margin-top:0;">Stakeholder Alignment</h3>
+        <p>Engaging and aligning stakeholders to secure sponsorship and ownership of transformation.</p>
+      </div>
+      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
+        <h3 style="margin-top:0;">Capability Building</h3>
+        <p>Training programs and coaching to equip teams with the skills to manage change effectively.</p>
+      </div>
+      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
+        <h3 style="margin-top:0;">Roadmaps & KPIs</h3>
+        <p>Structured change roadmaps and measurable KPIs to track adoption and business impact.</p>
+      </div>
+    </div>
   </main>
 
+</body>
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
+<script>
+  // Hamburger and mobile menu
+  const hamburger = document.querySelector('.hamburger');
+  const overlay = document.querySelector('.overlay');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  function closeMenu() {
+    mobileMenu.classList.remove('active');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', function() {
+    mobileMenu.classList.add('active');
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+  overlay.addEventListener('click', closeMenu);
+  // Close menu on link click (mobile)
+  document.querySelectorAll('.mobile-menu a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+</script>
 </body>
 </html>
