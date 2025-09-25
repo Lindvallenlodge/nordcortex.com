@@ -193,12 +193,14 @@
       const estWidth = word.length * 12 + 40;
       const estHeight = 32;
 
-      // Define safe zone in center: 40% width, 30% height
+      // Define safe zone tightly covering the logo and "Kungsholmen Group" text
+      const logoHeight = 300; // match CSS image height
+      const textHeight = 80;  // approximate text block height
       const safeZone = {
-        left: vw * 0.3,
-        top: vh * 0.35,
-        right: vw * 0.7,
-        bottom: vh * 0.65
+        left: vw * 0.2,
+        right: vw * 0.8,
+        top: (vh / 2) - (logoHeight / 2) - 40,
+        bottom: (vh / 2) + (logoHeight / 2) + textHeight + 40
       };
 
       let left, top;
