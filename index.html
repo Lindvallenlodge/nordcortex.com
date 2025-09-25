@@ -3,6 +3,7 @@
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kungsholmen Group</title>
@@ -46,6 +47,8 @@
     .floating-word {
       position: absolute;
       color: white;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
       font-size: 22px;
       opacity: 0;
       pointer-events: none;
@@ -120,7 +123,47 @@
       "RFID Solutions",
       "Size availability",
       "Sustainability",
-      "Compliance"
+      "Compliance",
+      "Innovation",
+      "Quality Control",
+      "Supply Chain",
+      "Logistics",
+      "Automation",
+      "Data Analytics",
+      "Customer Focus",
+      "Collaboration",
+      "Efficiency",
+      "Scalability",
+      "Customization",
+      "Technology",
+      "Integration",
+      "Optimization",
+      "Forecasting",
+      "Inventory Management",
+      "Risk Management",
+      "Cost Reduction",
+      "Lean Processes",
+      "Agility",
+      "Digital Transformation",
+      "Product Development",
+      "Market Analysis",
+      "Branding",
+      "Customer Experience",
+      "Sourcing",
+      "Vendor Management",
+      "Sustainability Initiatives",
+      "Regulatory Compliance",
+      "Performance Metrics",
+      "Continuous Improvement",
+      "Training & Development",
+      "Resource Allocation",
+      "Project Management",
+      "Innovation Strategy",
+      "Business Intelligence",
+      "Customer Retention",
+      "Trend Analysis",
+      "Product Lifecycle",
+      "Stakeholder Engagement"
     ];
 
     function createFloatingWord() {
@@ -135,8 +178,30 @@
       // Estimate width for positioning (approx 12px per char + padding)
       const estWidth = word.length * 12 + 40;
       const estHeight = 32;
-      const left = Math.random() * Math.max(0, vw - estWidth);
-      const top = Math.random() * Math.max(0, vh - estHeight);
+
+      // Define safe zone in center: 40% width, 30% height
+      const safeZone = {
+        left: vw * 0.3,
+        top: vh * 0.35,
+        right: vw * 0.7,
+        bottom: vh * 0.65
+      };
+
+      let left, top;
+      let attempts = 0;
+      do {
+        left = Math.random() * Math.max(0, vw - estWidth);
+        top = Math.random() * Math.max(0, vh - estHeight);
+        attempts++;
+        // Retry if overlaps safe zone
+      } while (
+        left + estWidth > safeZone.left &&
+        left < safeZone.right &&
+        top + estHeight > safeZone.top &&
+        top < safeZone.bottom &&
+        attempts < 100
+      );
+
       div.style.left = left + 'px';
       div.style.top = top + 'px';
 
