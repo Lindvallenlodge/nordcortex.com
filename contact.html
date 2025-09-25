@@ -2,24 +2,13 @@
 
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
-<title>Contact — Kungsholmen Group</title>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Thank You — Kungsholmen Group</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; }
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    body {font-family: Inter, Arial, sans-serif; background: #fafafa; color: #111; margin: 0;}
-    .message {
-      background: #fff; 
-      padding: 24px; 
-      border-radius: 12px; 
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
-      max-width: 1000px; 
-      width: 90%; 
-      margin: 120px auto 120px auto;
-    }
-    h1 {font-size: 32px; margin-bottom: 16px; text-align: center;}
+    body {font-family: Inter, Arial, sans-serif; background: #fafafa; color: #111; margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center;}
+    .message {background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);}
+    h1 {font-size: 28px; margin-bottom: 16px;}
     p {font-size: 18px; color: #444;}
   
     .hamburger {
@@ -83,200 +72,32 @@
     @media (max-width: 768px) {
       .nav { display: none; }
       .hamburger { display: block; }
-      .message {
-        width: 95%;
-        margin: 120px auto 120px auto;
-        padding: 24px;
-      }
-      form input, form textarea {
-        font-size: 1.1rem;
-        padding: 18px;
-        width: 100%;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-family: inherit;
-      }
-      form button {
-        font-size: 1.1rem;
-        padding: 18px 0;
-        width: 100%;
-        border-radius: 6px;
-        cursor: pointer;
-        font-weight: 500;
-        background: #222;
-        color: #fff;
-        border: none;
-        font-family: inherit;
-        margin-top: 8px;
-      }
-      header img {
-        height: 50px;
-      }
     }
-    @media (min-width: 769px) {
-      form input, form textarea, form button {
-        font-size: 1.1rem;
-        padding: 14px;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        font-family: inherit;
-      }
-      form button {
-        background: #222;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        font-weight: 500;
-        margin-top: 8px;
-      }
-    }
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-    .muted {
-      color: #777;
-      font-size: 0.9rem;
-      margin-bottom: 100px;
-    }
-    header {
-      width: 100%;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 62px;
-      position: relative;
-    }
-    header img {
-      height: 60px;
-      width: auto;
-    }
-    header .container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      padding: 0 16px;
+
+
+    .brand span {
+      font-size: 32px;
       white-space: nowrap;
+      font-weight: normal;
+      color: #6c7a89;
+      font-family: "Baskerville", "Times New Roman", serif;
     }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      font-weight: 500;
-      font-size: 1rem;
-    }
-    nav .nav-left, nav .nav-right {
-      display: flex;
-      gap: 32px;
-    }
-    nav a {
-      text-decoration: none;
-      color: #222;
-    }
-  </style>
-<style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif !important; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
+    @media (max-width: 600px) {
+      .brand span {
+        font-size: 24px;
+      }
+    }</style>
+<script>
+    setTimeout(function() {
+      window.location.href = "https://www.kungsholmengroup.com/main.html";
+    }, 5000); // redirect after 5 seconds
+  </script>
 </head>
 <body>
-<header>
-<div class="container">
-<a class="brand" href="/main.html" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap; gap: 12px;">
-<img alt="Kungsholmen Group Logo" src="assets/images/kg-logo.png" style="height:60px; width:auto;"/>
-<span style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: clamp(28px, 2.5vw, 36px); font-weight: normal; color: #6c7a89;">Kungsholmen Group</span>
-</a>
-<nav class="nav">
-<div class="nav-left">
-<a href="/main.html">Home</a>
-<a href="/about.html">About</a>
+<div class="message">
+<h1>Thank You!</h1>
+<p>Your message has been sent successfully. You will be redirected to our main page shortly.</p>
+<p>If you are not redirected, <a href="https://www.kungsholmengroup.com/main.html">click here</a>.</p>
 </div>
-<div class="nav-right">
-<a href="/services.html">Services</a>
-<a href="/contact.html">Contact</a>
-</div>
-</nav>
-<button aria-label="Open menu" class="hamburger">☰</button>
-<div class="overlay"></div>
-<div aria-hidden="true" class="mobile-menu">
-<button aria-label="Close menu" class="close-btn">×</button>
-<a href="/main.html">Home</a>
-<a href="/about.html">About</a>
-<a href="/services.html">Services</a>
-<a href="/contact.html">Contact</a>
-</div>
-<script>
-        // Hamburger menu JS
-        const hamburger = document.querySelector('.hamburger');
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const overlay = document.querySelector('.overlay');
-        const closeBtn = document.querySelector('.close-btn');
-        hamburger.addEventListener('click', function() {
-          mobileMenu.classList.add('open');
-          overlay.classList.add('show');
-          mobileMenu.setAttribute('aria-hidden', 'false');
-        });
-        closeBtn.addEventListener('click', function() {
-          mobileMenu.classList.remove('open');
-          overlay.classList.remove('show');
-          mobileMenu.setAttribute('aria-hidden', 'true');
-        });
-        overlay.addEventListener('click', function() {
-          mobileMenu.classList.remove('open');
-          overlay.classList.remove('show');
-          mobileMenu.setAttribute('aria-hidden', 'true');
-        });
-      </script>
-</div>
-</header>
-<main>
-<div class="container">
-<div class="message" style="max-width: 1000px; margin: 120px auto 120px auto; padding: 40px;">
-<h1>Contact Us</h1>
-<form action="https://formspree.io/f/mblzjaok" id="contact-form" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
-<input name="_captcha" type="hidden" value="false"/>
-<label for="name" style="font-size: 1rem; color: #222;">Name</label>
-<input id="name" name="name" required="" style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;" type="text"/>
-<label for="email" style="font-size: 1rem; color: #222;">Email</label>
-<input id="email" name="email" required="" style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;" type="email"/>
-<label for="message" style="font-size: 1rem; color: #222;">Message</label>
-<textarea id="message" name="message" required="" rows="5" style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
-<button style="background: #222; color: #fff; border: none; border-radius: 6px; font-family: inherit; cursor: pointer; font-weight: 500; margin-top: 8px; padding: 16px; font-size: 1rem;" type="submit">
-            Submit
-          </button>
-</form>
-</div>
-</div>
-</main>
-<footer>
-<div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
-</footer>
-<script>
-    (function () {
-      var form = document.getElementById('contact-form');
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(form);
-        fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' },
-          redirect: 'manual'
-        }).then(function () {
-          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
-        }).catch(function () {
-          // Even if the request fails, send user to thank-you page to avoid Formspree default screen
-          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
-        });
-      });
-    })();
-  </script>
 </body>
 </html>

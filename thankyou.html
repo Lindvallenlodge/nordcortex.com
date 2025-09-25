@@ -2,12 +2,10 @@
 
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
 <title>Thank You — Kungsholmen Group</title>
 <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     body {font-family: Inter, Arial, sans-serif; background: #fafafa; color: #111; margin: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center;}
     header {background: #fff; border-bottom: 1px solid #eee; width: 100%; padding: 16px; position: absolute; top: 0; left: 0;}
     header .brand {font-weight: bold; font-size: 20px;}
@@ -80,17 +78,24 @@
       .hamburger { display: block; }
     }
 
-</style>
+
+    .brand span {
+      font-size: 32px;
+      white-space: nowrap;
+      font-weight: normal;
+      color: #6c7a89;
+      font-family: "Baskerville", "Times New Roman", serif;
+    }
+    @media (max-width: 600px) {
+      .brand span {
+        font-size: 24px;
+      }
+    }</style>
 <script>
-  setTimeout(function() {
-    window.location.href = "https://www.kungsholmengroup.com/main.html";
-  }, 5000);
-</script>
-<style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
+    setTimeout(function() {
+      window.location.href = "https://www.kungsholmengroup.com/main.html";
+    }, 5000); // redirect after 5 seconds
+  </script>
 </head>
 <body>
 <header>
@@ -156,8 +161,8 @@
   </script>
 <div class="message">
 <h1>Thank You!</h1>
-<p>We’ll reply soon. You will be redirected to our main page in a few seconds.</p>
-<p>If not redirected, <a href="https://www.kungsholmengroup.com/main.html">click here</a>.</p>
+<p>Your message has been sent successfully. You will be redirected to our main page shortly.</p>
+<p>If you are not redirected, <a href="https://www.kungsholmengroup.com/main.html">click here</a>.</p>
 </div>
 </body>
 </html>

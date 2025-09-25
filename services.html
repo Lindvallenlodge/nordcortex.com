@@ -2,7 +2,6 @@
 
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Services — Kungsholmen Group AB</title>
@@ -12,7 +11,6 @@
 <link href="assets/images/kungsholmengroup-logo.png" rel="icon" type="image/png"/>
 <meta content="https://www.kungsholmengroup.com/assets/images/kungsholmengroup-logo.png" property="og:image"/>
 <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     .hamburger {
       display: none;
       font-size: 26px;
@@ -75,12 +73,19 @@
       .nav { display: none; }
       .hamburger { display: block; }
     }
-</style>
-<style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
+
+    .brand span {
+      font-size: 32px;
+      white-space: nowrap;
+      font-weight: normal;
+      color: #6c7a89;
+      font-family: "Baskerville", "Times New Roman", serif;
+    }
+    @media (max-width: 600px) {
+      .brand span {
+        font-size: 24px;
+      }
+    }</style>
 </head>
 <body>
 <header class="site-header">

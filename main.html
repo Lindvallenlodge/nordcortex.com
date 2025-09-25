@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kungsholmen Group — Procurement Strategy, Retail Production, Product Development, Supply Chain & RFID</title>
@@ -17,14 +16,14 @@
   <meta name="theme-color" content="#ffffff">
 
   <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: left; }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#111;line-height:1.6}
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
     .nav a{margin:0 8px;text-decoration:none;color:#333}
     .nav a:hover{color:#000;text-decoration:underline}
     .hero{padding:56px 0}
-    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px; word-break: break-word; overflow-wrap: break-word;}
+    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
     p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
     .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
@@ -39,18 +38,11 @@
     .overlay.show {opacity:1;pointer-events:auto}
     .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
     @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
-    .brand a {text-decoration:none; color:#111; display:flex; align-items:center; gap:10px;}
+    .brand a {text-decoration:none; color:#111;}
     .brand span {
-      font-size: 32px;
-      white-space: nowrap;
+      font-size: clamp(28px, 2.5vw, 36px);
       font-weight: normal;
       color: #6c7a89;
-      font-family: "Baskerville", "Times New Roman", serif;
-    }
-    @media (max-width: 600px) {
-      .brand span {
-        font-size: 24px;
-      }
     }
   </style>
 </head>
@@ -75,7 +67,7 @@
           <a href="rfid.html">RFID & Digitalization</a>
           <a href="sustainability.html">Sustainability & Compliance</a>
           <a href="about.html">About</a>
-          <a href="/contact.html">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
       <button class="hamburger">☰</button>
@@ -93,7 +85,7 @@
     <a href="rfid.html">RFID & Digitalization</a>
     <a href="sustainability.html">Sustainability & Compliance</a>
     <a href="about.html">About</a>
-    <a href="/contact.html">Contact</a>
+    <a href="contact.html">Contact</a>
   </div>
 
   <script>
