@@ -52,6 +52,7 @@ body {
   user-select: none;
   font-family: var(--font-family-brand);
   color: var(--gold);
+  white-space: nowrap;
 }
 
 .brand span {
@@ -225,6 +226,11 @@ form.form textarea:focus {
 }
 
 @media (max-width: 480px) {
+  .brand {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+    letter-spacing: 0.03em;
+  }
+
   .brand span {
     font-size: clamp(1.25rem, 5vw, 2rem);
   }
