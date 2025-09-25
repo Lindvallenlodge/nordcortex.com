@@ -5,17 +5,6 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kungsholmen Group — Procurement Strategy, Retail Production, Product Development, Supply Chain & RFID</title>
-  
-  <!-- Favicon package -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-kungsholmengroup-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-kungsholmengroup-192.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-kungsholmengroup-apple.png">
-  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
-  <link rel="shortcut icon" href="/pictures/favicon-kungsholmengroup-32.png">
-  <link rel="icon" type="image/svg+xml" href="/pictures/kungsholmengroup-bimi.svg">
-  <meta name="msapplication-TileColor" content="#ffffff">
-  <meta name="theme-color" content="#ffffff">
-
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     .container{max-width:1100px;margin:0 auto;padding:24px}
@@ -31,14 +20,6 @@
     .card h3{margin-top:0}
     footer{border-top:1px solid #eee; margin-top:48px}
     .muted{color:#666; font-size:14px}
-    .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
-    .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
-    .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:500}
-    .mobile-menu.open {right:0}
-    .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
-    .overlay.show {opacity:1;pointer-events:auto}
-    .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
-    @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
     .brand a {text-decoration:none; color:#111;}
     .brand span {
       font-family: "Baskerville", "Times New Roman", serif;
@@ -54,14 +35,14 @@
   <header>
     <div class="container header-inner">
       <div class="brand">
-        <a href="https://www.kungsholmengroup.com/main.html" style="display:flex;align-items:center;gap:10px;">
+        <a href="main.html" style="display:flex;align-items:center;gap:10px;">
           <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
           <span>Kungsholmen Group</span>
         </a>
       </div>
       <nav class="nav">
         <div class="nav-left">
-          <a href="https://www.kungsholmengroup.com/main.html">Home</a>
+          <a href="main.html">Home</a>
           <a href="procurement.html">Procurement Strategy</a>
           <a href="retail-production.html">Retail Production</a>
           <a href="product-development.html">Product Development</a>
@@ -70,54 +51,18 @@
         <div class="nav-right">
           <a href="rfid.html">RFID & Digitalization</a>
           <a href="sustainability.html">Sustainability & Compliance</a>
+          <a href="change-management.html">Change Management</a>
           <a href="about.html">About</a>
-          <a href="/contact.html">Contact</a>
+          <a href="contact.html">Contact</a>
         </div>
       </nav>
-      <button class="hamburger">☰</button>
     </div>
   </header>
 
-  <div class="overlay"></div>
-  <div class="mobile-menu">
-    <button class="close-btn">✕</button>
-    <a href="https://www.kungsholmengroup.com/main.html">Home</a>
-    <a href="procurement.html">Procurement Strategy</a>
-    <a href="retail-production.html">Retail Production</a>
-    <a href="product-development.html">Product Development</a>
-    <a href="supply-chain.html">Supply Chain</a>
-    <a href="rfid.html">RFID & Digitalization</a>
-    <a href="sustainability.html">Sustainability & Compliance</a>
-    <a href="about.html">About</a>
-    <a href="/contact.html">Contact</a>
-  </div>
-
-  <script>
-    const burger = document.querySelector('.hamburger');
-    const menu = document.querySelector('.mobile-menu');
-    const overlay = document.querySelector('.overlay');
-    const closeBtn = document.querySelector('.close-btn');
-
-    burger.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('show');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('show');
-    });
-  </script>
-
   <main class="container">
     <section class="hero">
-      <h1>Procurement Strategy, Retail Production, Product Development, Supply Chain, RFID & Digitalization, and Sustainability — precision-driven strategies for lasting impact.</h1>
-      <p class="lead">Detail-driven expertise across procurement, production, supply chain, and RFID — built on global experience, delivered with precision.</p>
+      <h1>Procurement Strategy, Retail Production, Product Development, Supply Chain, RFID & Digitalization, Sustainability, and Change Management — precision-driven strategies for lasting impact.</h1>
+      <p class="lead">Detail-driven expertise across procurement, production, supply chain, RFID, sustainability, and change — built on global experience, delivered with precision.</p>
       <section class="grid">
         <article class="card"><h3><a href="procurement.html">Procurement Strategy</a></h3><p>Category strategies, supplier consolidation, and cost optimization with measurable impact. Expertise in open costing, negotiations, and value engineering.</p></article>
         <article class="card"><h3><a href="retail-production.html">Retail Production</a></h3><p>Efficient production planning, QA, and resilience across Asia, Turkey, and Europe. Strong focus on right-first-time delivery.</p></article>
@@ -125,6 +70,7 @@
         <article class="card"><h3><a href="supply-chain.html">Supply Chain</a></h3><p>Planning and logistics to balance cost, service, and resilience. Experience in network design and distribution integration.</p></article>
         <article class="card"><h3><a href="rfid.html">RFID & Digitalization</a></h3><p>Solutions for traceability, automation, and digital product passports. Expertise in RFID, BFBT, and QR integration.</p></article>
         <article class="card"><h3><a href="sustainability.html">Sustainability & Compliance</a></h3><p>Driving responsibility with certifications, traceability, and ESG reporting. Experience embedding sustainability into procurement and production.</p></article>
+        <article class="card"><h3><a href="change-management.html">Change Management</a></h3><p>Guiding organizations through transformation with structured frameworks, stakeholder alignment, and measurable results. Expertise in change readiness, communication strategies, and implementation roadmaps.</p></article>
       </section>
     </section>
   </main>
