@@ -6,50 +6,173 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Change Management — Kungsholmen Group</title>
   <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .nav a{margin:0 8px;text-decoration:none;color:#333}
-    .nav a:hover{color:#000;text-decoration:underline}
-    .hero{padding:56px 0}
-    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
-    p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
-    footer{border-top:1px solid #eee; margin-top:48px}
-    .muted{color:#666; font-size:14px}
-    .brand a {text-decoration:none; color:#111;}
-    .brand span {
-      font-family: "Baskerville", "Times New Roman", serif;
-      font-size: clamp(28px, 2.5vw, 36px);
-      font-weight: normal;
-      color: #6c7a89;
-      text-align: left;
-      white-space: nowrap;
+  body, p, li {
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    text-align: left;
+  }
+  h1, h2, h3 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 300;
+    text-align: justify;
+  }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand a {text-decoration:none; color:#111; display:flex; align-items:center; gap:10px;}
+  .brand span {
+    font-family: "Baskerville", "Times New Roman", serif;
+    font-size: clamp(28px, 2.5vw, 36px);
+    font-weight: normal;
+    color: #6c7a89;
+    white-space: nowrap;
+  }
+  .nav-left, .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .nav-left a, .nav-right a {
+    text-decoration:none;
+    color:#333;
+    font-weight: 300;
+  }
+  .nav-left a:hover, .nav-right a:hover {
+    color:#000;
+    text-decoration:underline;
+  }
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    width: 24px;
+    height: 20px;
+    justify-content: space-between;
+  }
+  .hamburger div {
+    height: 3px;
+    background: #333;
+    border-radius: 2px;
+  }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 64px;
+    right: 0;
+    background: #fff;
+    width: 250px;
+    height: calc(100% - 64px);
+    box-shadow: -2px 0 6px rgba(0,0,0,0.2);
+    padding: 24px;
+    flex-direction: column;
+    gap: 16px;
+    overflow-y: auto;
+    z-index: 20;
+  }
+  .mobile-menu a {
+    text-decoration:none;
+    color:#333;
+    font-weight: 300;
+  }
+  .mobile-menu a:hover {
+    color:#000;
+    text-decoration:underline;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 64px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 64px);
+    background: rgba(0,0,0,0.4);
+    z-index: 15;
+  }
+  .hero {
+    padding: 56px 0;
+  }
+  h1 {
+    font-size: clamp(24px, 3.5vw, 40px);
+    margin: 0 0 12px;
+  }
+  p.lead {
+    font-size: clamp(16px, 1.6vw, 20px);
+    color: #444;
+    margin: 0 0 16px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .card {
+    background: #f9f9f9;
+    padding: 16px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    font-weight: 300;
+  }
+  footer {
+    border-top: 1px solid #eee;
+    margin-top: 48px;
+  }
+  .muted {
+    color: #666;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+    .nav-left, .nav-right {
+      display: none;
     }
+    .hamburger {
+      display: flex;
+    }
+  }
   </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
       <div class="brand">
-        <a href="main.html" style="display:flex;align-items:center;gap:10px;">
+        <a href="main.html">
           <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
           <span>Kungsholmen Group</span>
         </a>
       </div>
-      <nav class="nav">
+      <nav class="nav-left">
         <a href="main.html">Home</a>
         <a href="procurement.html">Procurement Strategy</a>
         <a href="retail-production.html">Retail Production</a>
         <a href="product-development.html">Product Development</a>
         <a href="supply-chain.html">Supply Chain</a>
+      </nav>
+      <nav class="nav-right">
         <a href="rfid.html">RFID & Digitalization</a>
         <a href="sustainability.html">Sustainability & Compliance</a>
         <a href="change-management.html">Change Management</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </nav>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false" role="button" tabindex="0">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+      <a href="main.html">Home</a>
+      <a href="procurement.html">Procurement Strategy</a>
+      <a href="retail-production.html">Retail Production</a>
+      <a href="product-development.html">Product Development</a>
+      <a href="supply-chain.html">Supply Chain</a>
+      <a href="rfid.html">RFID & Digitalization</a>
+      <a href="sustainability.html">Sustainability & Compliance</a>
+      <a href="change-management.html">Change Management</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="overlay" id="overlay"></div>
   </header>
 
   <main class="container">
@@ -57,18 +180,40 @@
       <h1>Change Management</h1>
       <p class="lead">Supporting businesses through transformation with structured, people-focused approaches that drive measurable results.</p>
       <p>At Kungsholmen Group, we understand that even the best strategies fail without effective execution. Change Management ensures that transitions — whether organizational, technological, or process-driven — are embraced and sustained.</p>
-      <ul>
-        <li>Stakeholder engagement and alignment</li>
-        <li>Change readiness assessments</li>
-        <li>Clear communication frameworks</li>
-        <li>Training and capability building</li>
-        <li>Implementation roadmaps with measurable KPIs</li>
-      </ul>
+      <div class="grid">
+        <div class="card">Stakeholder engagement and alignment</div>
+        <div class="card">Change readiness assessments</div>
+        <div class="card">Clear communication frameworks</div>
+        <div class="card">Training and capability building</div>
+        <div class="card">Implementation roadmaps with measurable KPIs</div>
+      </div>
       <p>With global experience across industries, we guide clients through complexity, ensuring that change becomes a catalyst for long-term success.</p>
     </section>
   </main>
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('overlay');
+
+    function toggleMenu() {
+      const expanded = hamburger.getAttribute('aria-expanded') === 'true';
+      hamburger.setAttribute('aria-expanded', !expanded);
+      mobileMenu.style.display = expanded ? 'none' : 'flex';
+      overlay.style.display = expanded ? 'none' : 'block';
+      mobileMenu.setAttribute('aria-hidden', expanded);
+    }
+
+    hamburger.addEventListener('click', toggleMenu);
+    hamburger.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        toggleMenu();
+      }
+    });
+    overlay.addEventListener('click', toggleMenu);
+  </script>
 </body>
 </html>
