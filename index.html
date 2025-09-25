@@ -56,17 +56,15 @@
     .ticker-text {
       display: inline-block;
       padding-left: 100%;
-      animation: ticker 30s linear infinite;
+      animation: ticker 60s linear infinite;
       font-family: 'Poppins', sans-serif;
       font-size: 20px;
-      color: white;
+      color: gray;
       opacity: 0.7;
     }
     @keyframes ticker {
-      0% { transform: translateX(0); opacity: 0; }
-      5% { opacity: 1; }
-      95% { opacity: 1; }
-      100% { transform: translateX(-100%); opacity: 0; }
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
     }
   </style>
   <style>
@@ -160,10 +158,48 @@
       "Customer Retention",
       "Trend Analysis",
       "Product Lifecycle",
-      "Stakeholder Engagement"
+      "Stakeholder Engagement",
+      "AI Solutions",
+      "Smart Manufacturing",
+      "Circular Economy",
+      "Green Logistics",
+      "Ethical Sourcing",
+      "Resilience",
+      "Digital Twins",
+      "Innovation Hub",
+      "Supply Accuracy",
+      "Automation Systems",
+      "Carbon Neutrality",
+      "Eco Design",
+      "Smart Retail",
+      "IoT Connectivity",
+      "Transparency",
+      "Value Chains",
+      "Global Trade",
+      "Renewables",
+      "Energy Efficiency",
+      "Process Innovation"
     ];
-    document.getElementById('tickerTop').innerText = keywords.join(" • ");
-    document.getElementById('tickerBottom').innerText = keywords.join(" • ");
+
+    function shuffleArray(array) {
+      for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+      }
+      return array;
+    }
+
+    function updateTickers() {
+      const shuffled = shuffleArray([...keywords]);
+      const half = Math.ceil(shuffled.length / 2);
+      const keywordsTop = shuffled.slice(0, half);
+      const keywordsBottom = shuffled.slice(half);
+      document.getElementById('tickerTop').innerText = keywordsTop.join(" • ");
+      document.getElementById('tickerBottom').innerText = keywordsBottom.join(" • ");
+    }
+
+    updateTickers();
+    setInterval(updateTickers, 60000);
   </script>
 </body>
 </html>
