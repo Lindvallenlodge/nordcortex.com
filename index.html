@@ -177,6 +177,13 @@
 
     let shuffledKeywords = shuffleArray(keywords);
 
+    function isOverlap(left1, top1, width1, height1, left2, top2, width2, height2) {
+      return !(left1 + width1 <= left2 ||
+               left1 >= left2 + width2 ||
+               top1 + height1 <= top2 ||
+               top1 >= top2 + height2);
+    }
+
     function createFloatingWord() {
       if (shuffledKeywords.length === 0) {
         shuffledKeywords = shuffleArray(keywords);
@@ -209,14 +216,32 @@
         left = Math.random() * Math.max(0, vw - estWidth);
         top = Math.random() * Math.max(0, vh - estHeight);
         attempts++;
-        // Retry if overlaps safe zone
-      } while (
-        left + estWidth > safeZone.left &&
-        left < safeZone.right &&
-        top + estHeight > safeZone.top &&
-        top < safeZone.bottom &&
-        attempts < 100
-      );
+
+        // Check if overlaps safe zone
+        if (
+          left + estWidth > safeZone.left &&
+          left < safeZone.right &&
+          top + estHeight > safeZone.top &&
+          top < safeZone.bottom
+        ) {
+          continue; // overlap with safe zone, retry
+        }
+
+        // Check overlap with existing floating words
+        const existingWords = document.querySelectorAll('.floating-word');
+        let overlapFound = false;
+        for (let i = 0; i < existingWords.length; i++) {
+          const existing = existingWords[i];
+          const rect = existing.getBoundingClientRect();
+          if (isOverlap(left, top, estWidth, estHeight, rect.left, rect.top, rect.width, rect.height)) {
+            overlapFound = true;
+            break;
+          }
+        }
+        if (!overlapFound) {
+          break; // no overlap found, break loop
+        }
+      } while (attempts < 100);
 
       div.style.left = left + 'px';
       div.style.top = top + 'px';
