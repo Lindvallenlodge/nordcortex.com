@@ -39,21 +39,22 @@
       justify-content: space-between;
       padding: 1rem 0;
     }
-    nav.nav-left, nav.nav-right {
+    nav {
       display: flex;
       align-items: center;
       gap: 1.5rem;
     }
     nav a {
+      display: inline-block;
       text-decoration: none;
-      color: #222;
+      color: #333;
       font-weight: 300;
       font-family: 'Outfit', Arial, sans-serif;
       font-size: 1rem;
       transition: color 0.2s;
     }
     nav a.active, nav a:hover {
-      color: #0E4A7F;
+      color: #6c63ff;
     }
     .hamburger {
       display: none;
@@ -78,7 +79,7 @@
       transition: 0.3s;
     }
     @media (max-width: 950px) {
-      nav.nav-left, nav.nav-right {
+      nav {
         display: none;
       }
       .hamburger {
@@ -157,20 +158,16 @@
         </a>
       </div>
       <nav>
-        <div class="nav-left">
-          <a href="main.html">Home</a>
-          <a href="procurement.html">Procurement Strategy</a>
-          <a href="retail-production.html">Retail Production</a>
-          <a href="product-development.html">Product Development</a>
-          <a href="supply-chain.html">Supply Chain</a>
-        </div>
-        <div class="nav-right">
-          <a href="rfid.html">RFID & Digitalization</a>
-          <a href="sustainability.html">Sustainability & Compliance</a>
-          <a href="about.html">About</a>
-          <a href="contact.html">Contact</a>
-          <a href="change-management.html" class="active">Change Management</a>
-        </div>
+        <a href="main.html">Home</a>
+        <a href="procurement.html">Procurement Strategy</a>
+        <a href="retail-production.html">Retail Production</a>
+        <a href="product-development.html">Product Development</a>
+        <a href="supply-chain.html">Supply Chain</a>
+        <a href="rfid.html">RFID & Digitalization</a>
+        <a href="sustainability.html">Sustainability & Compliance</a>
+        <a href="change-management.html" class="active">Change Management</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <button class="hamburger" aria-label="Open menu">
         <span></span>
