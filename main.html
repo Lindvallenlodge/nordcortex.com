@@ -24,7 +24,7 @@
     .nav a{margin:0 8px;text-decoration:none;color:#333}
     .nav a:hover{color:#000;text-decoration:underline}
     .hero{padding:56px 0}
-    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
+    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px; word-break: break-word; overflow-wrap: break-word;}
     p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
     .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
@@ -44,7 +44,6 @@
       font-size:clamp(28px,2.5vw,36px);
       font-weight:normal;
       color:#6c7a89;
-      white-space:nowrap;
       font-family: "Baskerville", "Times New Roman", serif;
     }
   </style>
