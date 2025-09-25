@@ -67,8 +67,15 @@
       bottom: 0;
     }
     /* seamless scrolling animation */
-    .ticker-text.animate {
-      animation: ticker 60s linear infinite;
+    @media (min-width: 768px) {
+      .ticker-text.animate {
+        animation: ticker 60s linear infinite;
+      }
+    }
+    @media (max-width: 767px) {
+      .ticker-text.animate {
+        animation: ticker 90s linear infinite;
+      }
     }
     @keyframes ticker {
       0% { transform: translateX(0); }
