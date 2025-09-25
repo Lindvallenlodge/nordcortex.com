@@ -13,148 +13,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
   <link rel="stylesheet" href="assets/css/style.css">
-  <style>
-    body {
-      font-family: 'Outfit', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #222;
-      text-align: center;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
-      position: relative;
-      z-index: 10;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      display: inline-block;
-      text-decoration: none;
-      color: #333;
-      font-weight: 300;
-      font-family: 'Outfit', Arial, sans-serif;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-    nav a.active, nav a:hover {
-      color: #6c63ff;
-    }
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 101;
-      padding: 0;
-      margin-left: 1rem;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 28px;
-      background: #222;
-      margin: 4px 0;
-      border-radius: 2px;
-      display: block;
-      transition: 0.3s;
-    }
-    @media (max-width: 950px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-    /* Overlay and mobile menu */
-    .overlay {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(30, 40, 60, 0.25);
-      backdrop-filter: blur(2px);
-      transition: opacity 0.2s;
-    }
-    .overlay.active {
-      display: block;
-    }
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      z-index: 101;
-      top: 0;
-      right: 0;
-      width: 82vw;
-      max-width: 350px;
-      height: 100vh;
-      background: #fff;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
-      padding: 2.5rem 2rem 2rem 2rem;
-      flex-direction: column;
-      gap: 1.5rem;
-      transition: transform 0.2s;
-      transform: translateX(100%);
-      text-align: left;
-    }
-    .mobile-menu.active {
-      display: flex;
-      transform: translateX(0);
-    }
-    .mobile-menu a {
-      text-decoration: none;
-      color: #222;
-      font-size: 1.15rem;
-      font-family: 'Outfit', Arial, sans-serif;
-      margin-bottom: 1.1rem;
-      font-weight: 300;
-      transition: color 0.2s;
-    }
-    .mobile-menu a.active, .mobile-menu a:hover {
-      color: #0E4A7F;
-    }
-    .brand span {
-      font-family: 'Baskerville', 'Times New Roman', Times, serif;
-      font-weight: normal;
-      font-size: 2rem;
-      letter-spacing: 0.5px;
-      color: #6c7a89;
-    }
-    .brand img {
-      height: 80px;
-    }
-  </style>
 </head>
 <body>
   <header>
     <div class="container header-inner">
       <div class="brand" style="display:flex;align-items:center;gap:10px;">
         <a href="main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo">
-          <span>Kungsholmen Group</span>
+          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
+          <span style="font-family:'Baskerville','Times New Roman',serif;font-weight:normal;font-size:2rem;letter-spacing:0.5px;color:#6c7a89;">Kungsholmen Group</span>
         </a>
       </div>
       <nav>
@@ -176,6 +42,7 @@
       </button>
     </div>
   </header>
+
   <div class="overlay"></div>
   <nav class="mobile-menu">
     <a href="main.html">Home</a>
@@ -185,9 +52,9 @@
     <a href="supply-chain.html">Supply Chain</a>
     <a href="rfid.html">RFID & Digitalization</a>
     <a href="sustainability.html">Sustainability & Compliance</a>
+    <a href="change-management.html" class="active">Change Management</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="change-management.html" class="active">Change Management</a>
   </nav>
 
   <main class="container" style="margin-top:2.5rem;margin-bottom:2.5rem;">
@@ -214,26 +81,26 @@
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
-<script>
-  // Hamburger and mobile menu
-  const hamburger = document.querySelector('.hamburger');
-  const overlay = document.querySelector('.overlay');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  function closeMenu() {
-    mobileMenu.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  hamburger.addEventListener('click', function() {
-    mobileMenu.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-  overlay.addEventListener('click', closeMenu);
-  // Close menu on link click (mobile)
-  document.querySelectorAll('.mobile-menu a').forEach(function(link){
-    link.addEventListener('click', closeMenu);
-  });
-</script>
+
+  <script>
+    // Hamburger and mobile menu
+    const hamburger = document.querySelector('.hamburger');
+    const overlay = document.querySelector('.overlay');
+    const mobileMenu = document.querySelector('.mobile-menu');
+    function closeMenu() {
+      mobileMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    hamburger.addEventListener('click', function() {
+      mobileMenu.classList.add('active');
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    });
+    overlay.addEventListener('click', closeMenu);
+    document.querySelectorAll('.mobile-menu a').forEach(function(link){
+      link.addEventListener('click', closeMenu);
+    });
+  </script>
 </body>
 </html>
