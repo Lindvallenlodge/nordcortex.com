@@ -1,117 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Kungsholmen Group — Procurement Strategy, Retail Production, Product Development, Supply Chain &amp; RFID</title>
-<!-- Favicon package -->
-<link href="/pictures/favicon-kungsholmengroup-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/pictures/favicon-kungsholmengroup-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/pictures/favicon-kungsholmengroup-apple.png" rel="apple-touch-icon" sizes="180x180"/>
-<link color="#000000" href="/pictures/safari-pinned-tab.svg" rel="mask-icon"/>
-<link href="/pictures/favicon-kungsholmengroup-32.png" rel="shortcut icon"/>
-<link href="/pictures/kungsholmengroup-bimi.svg" rel="icon" type="image/svg+xml"/>
-<meta content="#ffffff" name="msapplication-TileColor"/>
-<meta content="#ffffff" name="theme-color"/>
-<link rel="stylesheet" href="assets/css/style.css"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kungsholmen Group — Procurement Strategy, Retail Production, Product Development, Supply Chain & RFID</title>
+
+  <!-- Favicon package -->
+  <link rel="icon" href="/pictures/favicon-kungsholmengroup-32.png" sizes="32x32" type="image/png"/>
+  <link rel="icon" href="/pictures/favicon-kungsholmengroup-192.png" sizes="192x192" type="image/png"/>
+  <link rel="apple-touch-icon" href="/pictures/favicon-kungsholmengroup-apple.png" sizes="180x180"/>
+  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000"/>
+  <link rel="shortcut icon" href="/pictures/favicon-kungsholmengroup-32.png"/>
+  <link rel="icon" href="/pictures/kungsholmengroup-bimi.svg" type="image/svg+xml"/>
+  <meta name="msapplication-TileColor" content="#ffffff"/>
+  <meta name="theme-color" content="#ffffff"/>
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
-<header>
-  <div class="container header-inner">
-    <div class="brand">
-      <a href="main.html" class="brand-link">
-        <img alt="Kungsholmen Group Logo" src="assets/images/kg-logo.png" class="brand-logo"/>
-        <span class="brand-name">Kungsholmen Group</span>
-      </a>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="main.html" class="brand-link">
+          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" class="brand-logo"/>
+          <span class="brand-name">Kungsholmen Group</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="main.html">Home</a>
+        <a href="procurement.html">Procurement Strategy</a>
+        <a href="retail-production.html">Retail Production</a>
+        <a href="product-development.html">Product Development</a>
+        <a href="supply-chain.html">Supply Chain</a>
+        <a href="change-management.html">Change Management</a>
+        <a href="rfid.html">RFID &amp; Digitalization</a>
+        <a href="sustainability.html">Sustainability &amp; Compliance</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu">☰</button>
     </div>
-    <nav class="nav">
-      <a href="main.html">Home</a>
-      <a href="procurement.html">Procurement Strategy</a>
-      <a href="retail-production.html">Retail Production</a>
-      <a href="product-development.html">Product Development</a>
-      <a href="supply-chain.html">Supply Chain</a>
-      <a href="change-management.html">Change Management</a>
-      <a href="rfid.html">RFID &amp; Digitalization</a>
-      <a href="sustainability.html">Sustainability &amp; Compliance</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <button class="hamburger" aria-label="Open menu">☰</button>
+  </header>
+
+  <div class="overlay"></div>
+  <div class="mobile-menu">
+    <button class="close-btn" aria-label="Close menu">✕</button>
+    <a href="main.html">Home</a>
+    <a href="procurement.html">Procurement Strategy</a>
+    <a href="retail-production.html">Retail Production</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+    <a href="change-management.html">Change Management</a>
+    <a href="rfid.html">RFID &amp; Digitalization</a>
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
   </div>
-</header>
-<div class="overlay"></div>
-<div class="mobile-menu">
-  <button class="close-btn" aria-label="Close menu">✕</button>
-  <a href="main.html">Home</a>
-  <a href="procurement.html">Procurement Strategy</a>
-  <a href="retail-production.html">Retail Production</a>
-  <a href="product-development.html">Product Development</a>
-  <a href="supply-chain.html">Supply Chain</a>
-  <a href="change-management.html">Change Management</a>
-  <a href="rfid.html">RFID &amp; Digitalization</a>
-  <a href="sustainability.html">Sustainability &amp; Compliance</a>
-  <a href="about.html">About</a>
-  <a href="contact.html">Contact</a>
-</div>
-<script>
-  const burger = document.querySelector('.hamburger');
-  const menu = document.querySelector('.mobile-menu');
-  const overlay = document.querySelector('.overlay');
-  const closeBtn = document.querySelector('.close-btn');
 
-  burger.addEventListener('click', () => {
-    menu.classList.toggle('open');
-    overlay.classList.toggle('show');
-  });
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
 
-  overlay.addEventListener('click', () => {
-    menu.classList.remove('open');
-    overlay.classList.remove('show');
-  });
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      overlay.classList.toggle('show');
+    });
 
-  closeBtn.addEventListener('click', () => {
-    menu.classList.remove('open');
-    overlay.classList.remove('show');
-  });
-</script>
-<main class="container">
-  <section class="hero">
-    <h1>Procurement Strategy, Retail Production, Product Development, Supply Chain, RFID &amp; Digitalization, and Sustainability — precision-driven strategies for lasting impact.</h1>
-    <p class="lead">Detail-driven expertise across procurement, production, supply chain, and RFID — built on global experience, delivered with precision.</p>
-  </section>
-  <section class="grid">
-    <article class="card">
-      <h3><a href="procurement.html">Procurement Strategy</a></h3>
-      <p>Category strategies, supplier consolidation, and cost optimization with measurable impact. Expertise in open costing, negotiations, and value engineering.</p>
-    </article>
-    <article class="card">
-      <h3><a href="retail-production.html">Retail Production</a></h3>
-      <p>Efficient production planning, QA, and resilience across Asia, Turkey, and Europe. Strong focus on right-first-time delivery.</p>
-    </article>
-    <article class="card">
-      <h3><a href="product-development.html">Product Development</a></h3>
-      <p>Concept-to-shelf creation with speed, quality, and brand identity. Expertise in packaging engineering and supplier onboarding.</p>
-    </article>
-    <article class="card">
-      <h3><a href="supply-chain.html">Supply Chain</a></h3>
-      <p>Planning and logistics to balance cost, service, and resilience. Experience in network design and distribution integration.</p>
-    </article>
-    <article class="card">
-      <h3><a href="change-management.html">Change Management</a></h3>
-      <p>Practical frameworks and leadership support to turn transformation goals into measurable business impact.</p>
-    </article>
-    <article class="card">
-      <h3><a href="rfid.html">RFID &amp; Digitalization</a></h3>
-      <p>Solutions for traceability, automation, and digital product passports. Expertise in RFID, BFBT, and QR integration.</p>
-    </article>
-    <article class="card">
-      <h3><a href="sustainability.html">Sustainability &amp; Compliance</a></h3>
-      <p>Driving responsibility with certifications, traceability, and ESG reporting. Experience embedding sustainability into procurement and production.</p>
-    </article>
-  </section>
-</main>
-<footer>
-  <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
-</footer>
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+  </script>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Procurement Strategy, Retail Production, Product Development, Supply Chain, RFID &amp; Digitalization, and Sustainability — precision-driven strategies for lasting impact.</h1>
+      <p class="lead">Detail-driven expertise across procurement, production, supply chain, and RFID — built on global experience, delivered with precision.</p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h3><a href="procurement.html">Procurement Strategy</a></h3>
+        <p>Category strategies, supplier consolidation, and cost optimization with measurable impact. Expertise in open costing, negotiations, and value engineering.</p>
+      </article>
+      <article class="card">
+        <h3><a href="retail-production.html">Retail Production</a></h3>
+        <p>Efficient production planning, QA, and resilience across Asia, Turkey, and Europe. Strong focus on right-first-time delivery.</p>
+      </article>
+      <article class="card">
+        <h3><a href="product-development.html">Product Development</a></h3>
+        <p>Concept-to-shelf creation with speed, quality, and brand identity. Expertise in packaging engineering and supplier onboarding.</p>
+      </article>
+      <article class="card">
+        <h3><a href="supply-chain.html">Supply Chain</a></h3>
+        <p>Planning and logistics to balance cost, service, and resilience. Experience in network design and distribution integration.</p>
+      </article>
+      <article class="card">
+        <h3><a href="change-management.html">Change Management</a></h3>
+        <p>Practical frameworks and leadership support to turn transformation goals into measurable business impact.</p>
+      </article>
+      <article class="card">
+        <h3><a href="rfid.html">RFID &amp; Digitalization</a></h3>
+        <p>Solutions for traceability, automation, and digital product passports. Expertise in RFID, BFBT, and QR integration.</p>
+      </article>
+      <article class="card">
+        <h3><a href="sustainability.html">Sustainability &amp; Compliance</a></h3>
+        <p>Driving responsibility with certifications, traceability, and ESG reporting. Experience embedding sustainability into procurement and production.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
+  </footer>
 </body>
 </html>
