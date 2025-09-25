@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Development — Kungsholmen Group</title>
+  
+  <!-- Favicon package -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-strollby-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-strollby-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-strollby-apple.png">
+  <link rel="mask-icon" href="/pictures/strollby-bimi.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/pictures/favicon-strollby-32.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  
+  <style>
+    body{margin:0;color:#111;line-height:1.6}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav a{margin:0 8px;text-decoration:none;color:#333}
+    .nav a:hover{color:#000;text-decoration:underline}
+    .hero{padding:56px 0}
+    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
+    p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
+    .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
+    .card h3{margin-top:0}
+    footer{border-top:1px solid #eee; margin-top:48px}
+    .muted{color:#666; font-size:14px}
+  
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 240px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 6px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      padding: 60px 20px 20px 20px;
+      transition: right 0.3s ease;
+      z-index: 1002;
+      overflow-y: auto;
+    }
+    .mobile-menu a {
+      padding: 14px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .mobile-menu.open {
+      right: 0;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: block; }
+    }
+
+</style>
+
+</head>
+<body>
+  
+  <header>
+    <div class="container header-inner">
+      
+<div class="brand">
+  <a href="https://www.kungsholmengroup.com/main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
+    <span style="font-size:clamp(28px,2.5vw,36px);font-weight:normal;color:#6c7a89;">Kungsholmen Group</span>
+  </a>
+</div>
+
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="https://www.kungsholmengroup.com/main.html">Home</a>
+          <a href="procurement.html">Procurement Strategy</a>
+          <a href="retail-production.html">Retail Production</a>
+          <a href="product-development.html">Product Development</a>
+          <a href="supply-chain.html">Supply Chain</a>
+        </div>
+        <div class="nav-right">
+          <a href="rfid.html">RFID & Digitalization</a>
+          <a href="sustainability.html">Sustainability & Compliance</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+
+  <!-- mobile slide-in menu -->
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
+    <a href="https://www.kungsholmengroup.com/main.html">Home</a>
+    <a href="procurement.html">Procurement Strategy</a>
+    <a href="retail-production.html">Retail Production</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+    <a href="rfid.html">RFID & Digitalization</a>
+    <a href="sustainability.html">Sustainability & Compliance</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+  </script>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Product Development</h1>
+      
+<p class="lead">We bridge design, engineering, and sourcing — reducing lead times, securing quality, and enabling innovation.</p>
+<div class="grid">
+  <div class="card">
+    <h3>End-to-End Process</h3>
+    <p>Stage-gates, RACI, and PLM structures that keep teams aligned.</p>
+  </div>
+  <div class="card">
+    <h3>Packaging & Engineering</h3>
+    <p>Cost and CO₂ reduction through optimized packaging and design-for-manufacture.</p>
+  </div>
+  <div class="card">
+    <h3>Supplier Collaboration</h3>
+    <p>Digital tech packs, clear specs, and fast iteration with suppliers.</p>
+  </div>
+</div>
+
+    </section>
+  </main>
+  <footer>
+    <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
+  </footer>
+</body>
+</html>
