@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Kungsholmen Group — Procurement Strategy, Retail Production, Product Development, Supply Chain & RFID</title>
@@ -15,66 +16,6 @@
   <link rel="icon" type="image/svg+xml" href="/pictures/kungsholmengroup-bimi.svg">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
-
-  <style>
-    body, p, li { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: left; }
-    .container { max-width: 1100px; width: 100%; margin: 0 auto; padding: 24px; }
-    header { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #eee; z-index: 10; }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
-    .nav a { margin: 0 8px; text-decoration: none; color: #333; }
-    .nav a:hover { color: #000; text-decoration: underline; }
-    .hero { padding: 56px 0; }
-    h1 { font-size: clamp(24px, 3.5vw, 40px); margin: 0 0 12px; }
-    h1.page-title {
-      font-size: clamp(20px, 2.5vw, 28px);
-      line-height: 1.4;
-      font-weight: 400;
-      text-align: left;
-    }
-    p.lead {
-      font-size: clamp(14px, 1.2vw, 18px);
-      line-height: 1.5;
-      color: #444;
-      margin: 0 0 16px;
-      text-align: left;
-    }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; margin-top: 24px; }
-    .card { border: 1px solid #eee; border-radius: 12px; padding: 16px; background: #fff; }
-    .card h3 { margin-top: 0; }
-    footer { border-top: 1px solid #eee; margin-top: 48px; }
-    .muted { color: #666; font-size: 14px; }
-    .hamburger { display: none; font-size: 26px; background: none; border: none; cursor: pointer; z-index: 1001; }
-    .mobile-menu { position: fixed; top: 0; right: -260px; width: 240px; height: 100%; background: #fff; box-shadow: -2px 0 6px rgba(0,0,0,0.15); display: flex; flex-direction: column; padding: 60px 20px 20px 20px; transition: right 0.3s ease; z-index: 1002; overflow-y: auto; }
-    .mobile-menu a { padding: 14px 0; text-decoration: none; color: #333; font-size: 16px; font-weight: 500; }
-    .mobile-menu.open { right: 0; }
-    .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); opacity: 0; pointer-events: none; transition: opacity 0.3s ease; z-index: 1000; }
-    .overlay.show { opacity: 1; pointer-events: auto; }
-    .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 26px; cursor: pointer; }
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .hamburger { display: block; }
-    }
-    .brand a { text-decoration: none; color: #111; }
-    .brand span {
-      font-family: "Baskerville", "Times New Roman", serif;
-      font-size: clamp(28px, 2.5vw, 36px);
-      font-weight: normal;
-      color: #6c7a89;
-    }
-    @media (max-width: 480px) {
-      .container { padding: 12px; }
-      .brand img { height: 60px; }
-      .brand span { font-size: 24px; }
-    }
-    @media (max-width: 430px) {
-      .brand img { height: 60px; }
-      .brand span { font-size: 22px; line-height: 1.2; }
-      h1 { font-size: 20px; line-height: 1.3; }
-      p.lead { font-size: 15px; line-height: 1.4; }
-      .card { padding: 12px; }
-    }
-  </style>
 </head>
 <body>
   <header>
