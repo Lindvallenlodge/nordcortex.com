@@ -41,11 +41,16 @@
     @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
     .brand a {text-decoration:none; color:#111; display:flex; align-items:center; gap:10px;}
     .brand span {
-      font-size:clamp(28px,3vw,36px);
-      white-space:nowrap;
-      font-weight:normal;
-      color:#6c7a89;
+      font-size: 32px;
+      white-space: nowrap;
+      font-weight: normal;
+      color: #6c7a89;
       font-family: "Baskerville", "Times New Roman", serif;
+    }
+    @media (max-width: 600px) {
+      .brand span {
+        font-size: 24px;
+      }
     }
   </style>
 </head>
