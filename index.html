@@ -53,19 +53,27 @@
     }
     .ticker-text {
       display: inline-block;
-      animation: ticker 60s linear infinite;
       font-family: 'Poppins', sans-serif;
       font-size: 20px;
       color: gray;
       opacity: 0.85;
       padding-right: 50px;
+      white-space: nowrap;
+    }
+    .ticker-top {
+      top: 0;
+    }
+    .ticker-bottom {
+      bottom: 0;
+    }
+    /* seamless scrolling animation */
+    .ticker-text.animate {
+      animation: ticker 60s linear infinite;
     }
     @keyframes ticker {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
-    .ticker-top { top: 0; }
-    .ticker-bottom { bottom: 0; }
   </style>
   <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif; }
@@ -164,7 +172,24 @@
       "Customer Retention",
       "Trend Analysis",
       "Product Lifecycle",
-      "Stakeholder Engagement"
+      "Stakeholder Engagement",
+      "Clothing",
+      "Apparel",
+      "Textiles",
+      "Automotive",
+      "Packaging",
+      "Labeling",
+      "Cosmetics",
+      "Footwear",
+      "Home Goods",
+      "Furniture",
+      "Electronics",
+      "Accessories",
+      "Luxury Goods",
+      "Sportswear",
+      "Outdoor Gear",
+      "Stationery",
+      "Personal Care"
     ];
 
     function shuffleArray(array) {
@@ -181,19 +206,40 @@
       const keywordsTop = shuffled.slice(0, half);
       const keywordsBottom = shuffled.slice(half);
 
-      const topText = keywordsTop.join(" • ");
-      const bottomText = keywordsBottom.join(" • ");
+      // Join keywords with bullet and add extra space for seamless scroll
+      const topText = keywordsTop.join(" • ") + " • " + keywordsTop.join(" • ");
+      const bottomText = keywordsBottom.join(" • ") + " • " + keywordsBottom.join(" • ");
 
-      document.getElementById('tickerTop').innerText = topText;
-      document.getElementById('tickerTopClone').innerText = topText;
-      document.getElementById('tickerBottom').innerText = bottomText;
-      document.getElementById('tickerBottomClone').innerText = bottomText;
+      const tickerTop = document.getElementById('tickerTop');
+      const tickerTopClone = document.getElementById('tickerTopClone');
+      const tickerBottom = document.getElementById('tickerBottom');
+      const tickerBottomClone = document.getElementById('tickerBottomClone');
+
+      tickerTop.innerText = topText;
+      tickerTopClone.innerText = topText;
+      tickerBottom.innerText = bottomText;
+      tickerBottomClone.innerText = bottomText;
+
+      // Add animation class to start scrolling immediately
+      tickerTop.classList.add('animate');
+      tickerTopClone.classList.add('animate');
+      tickerBottom.classList.add('animate');
+      tickerBottomClone.classList.add('animate');
     }
 
     // Initial load
     updateTickers();
     // Refresh after each full cycle (60s)
-    setInterval(updateTickers, 60000);
+    setInterval(() => {
+      // Remove animation class to reset animation
+      document.getElementById('tickerTop').classList.remove('animate');
+      document.getElementById('tickerTopClone').classList.remove('animate');
+      document.getElementById('tickerBottom').classList.remove('animate');
+      document.getElementById('tickerBottomClone').classList.remove('animate');
+      // Force reflow to restart animation
+      void document.getElementById('tickerTop').offsetWidth;
+      updateTickers();
+    }, 60000);
   </script>
 </body>
 </html>
