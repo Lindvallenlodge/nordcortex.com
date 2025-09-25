@@ -1,184 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Change Management — Kungsholmen Group</title>
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <title>Retail Production — Kungsholmen Group</title>
+  
+  <!-- Favicon package -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-strollby-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-strollby-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-strollby-apple.png">
+  <link rel="mask-icon" href="/pictures/strollby-bimi.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/pictures/favicon-strollby-32.png">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
+  
   <style>
-    body {
-      font-family: 'Outfit', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #222;
-      text-align: center;
-    }
-    .container {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 1rem;
-    }
-    header {
-      background: #fff;
-      border-bottom: 1px solid #e0e0e0;
-      position: relative;
-      z-index: 10;
-    }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 0;
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    nav a {
-      display: inline-block;
-      text-decoration: none;
-      color: #333;
-      font-weight: 300;
-      font-family: 'Outfit', Arial, sans-serif;
-      font-size: 1rem;
-      transition: color 0.2s;
-    }
-    nav a.active, nav a:hover {
-      color: #6c63ff;
-    }
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#111;line-height:1.6}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .nav a{margin:0 8px;text-decoration:none;color:#333}
+    .nav a:hover{color:#000;text-decoration:underline}
+    .hero{padding:56px 0}
+    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
+    p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
+    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
+    .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
+    .card h3{margin-top:0}
+    footer{border-top:1px solid #eee; margin-top:48px}
+    .muted{color:#666; font-size:14px}
+  
     .hamburger {
       display: none;
-      flex-direction: column;
-      justify-content: center;
-      width: 44px;
-      height: 44px;
+      font-size: 26px;
       background: none;
       border: none;
       cursor: pointer;
-      z-index: 101;
-      padding: 0;
-      margin-left: 1rem;
-    }
-    .hamburger span {
-      height: 3px;
-      width: 28px;
-      background: #222;
-      margin: 4px 0;
-      border-radius: 2px;
-      display: block;
-      transition: 0.3s;
-    }
-    @media (max-width: 950px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-    }
-    /* Overlay and mobile menu */
-    .overlay {
-      display: none;
-      position: fixed;
-      z-index: 100;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(30, 40, 60, 0.25);
-      backdrop-filter: blur(2px);
-      transition: opacity 0.2s;
-    }
-    .overlay.active {
-      display: block;
+      z-index: 1001;
     }
     .mobile-menu {
-      display: none;
       position: fixed;
-      z-index: 101;
       top: 0;
-      right: 0;
-      width: 82vw;
-      max-width: 350px;
-      height: 100vh;
+      right: -260px;
+      width: 240px;
+      height: 100%;
       background: #fff;
-      box-shadow: -4px 0 24px rgba(0,0,0,0.08);
-      padding: 2.5rem 2rem 2rem 2rem;
-      flex-direction: column;
-      gap: 1.5rem;
-      transition: transform 0.2s;
-      transform: translateX(100%);
-      text-align: left;
-    }
-    .mobile-menu.active {
+      box-shadow: -2px 0 6px rgba(0,0,0,0.15);
       display: flex;
-      transform: translateX(0);
+      flex-direction: column;
+      padding: 60px 20px 20px 20px;
+      transition: right 0.3s ease;
+      z-index: 1002;
+      overflow-y: auto;
     }
     .mobile-menu a {
+      padding: 14px 0;
       text-decoration: none;
-      color: #222;
-      font-size: 1.15rem;
-      font-family: 'Outfit', Arial, sans-serif;
-      margin-bottom: 1.1rem;
-      font-weight: 300;
-      transition: color 0.2s;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
     }
-    .mobile-menu a.active, .mobile-menu a:hover {
-      color: #0E4A7F;
+    .mobile-menu.open {
+      right: 0;
     }
-    .brand span {
-      font-family: 'Baskerville', 'Times New Roman', Times, serif;
-      font-weight: normal;
-      font-size: 2rem;
-      letter-spacing: 0.5px;
-      color: #6c7a89;
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
     }
-    .brand img {
-      height: 80px;
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
     }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: block; }
+    }
+
+</style>
+
+  <style>
+    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
+    body, p, li { text-align: left; }
+    h1, h2, h3, h4, h5, h6 { text-align: justify; }
   </style>
 </head>
 <body>
+  
   <header>
     <div class="container header-inner">
-      <div class="brand" style="display:flex;align-items:center;gap:10px;">
-        <a href="main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-          <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo">
-          <span>Kungsholmen Group</span>
-        </a>
-      </div>
-      <nav>
-        <a href="main.html">Home</a>
-        <a href="procurement.html">Procurement Strategy</a>
-        <a href="retail-production.html">Retail Production</a>
-        <a href="product-development.html">Product Development</a>
-        <a href="supply-chain.html">Supply Chain</a>
-        <a href="rfid.html">RFID & Digitalization</a>
-        <a href="sustainability.html">Sustainability & Compliance</a>
-        <a href="change-management.html" class="active">Change Management</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+      
+<div class="brand">
+  <a href="https://www.kungsholmengroup.com/main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+    <img src="assets/images/kg-logo.png" alt="Kungsholmen Group Logo" style="height:80px;">
+    <span style="font-size:clamp(28px,2.5vw,36px);font-weight:normal;color:#6c7a89;">Kungsholmen Group</span>
+  </a>
+</div>
+
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="https://www.kungsholmengroup.com/main.html">Home</a>
+          <a href="procurement.html">Procurement Strategy</a>
+          <a href="retail-production.html">Retail Production</a>
+          <a href="product-development.html">Product Development</a>
+          <a href="supply-chain.html">Supply Chain</a>
+        </div>
+        <div class="nav-right">
+          <a href="rfid.html">RFID & Digitalization</a>
+          <a href="sustainability.html">Sustainability & Compliance</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
       </nav>
-      <button class="hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <button class="hamburger">☰</button>
     </div>
   </header>
+
   <div class="overlay"></div>
-  <nav class="mobile-menu">
-    <a href="main.html">Home</a>
+
+  <!-- mobile slide-in menu -->
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
+    <a href="https://www.kungsholmengroup.com/main.html">Home</a>
     <a href="procurement.html">Procurement Strategy</a>
     <a href="retail-production.html">Retail Production</a>
     <a href="product-development.html">Product Development</a>
@@ -187,53 +149,54 @@
     <a href="sustainability.html">Sustainability & Compliance</a>
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
-    <a href="change-management.html" class="active">Change Management</a>
-  </nav>
+  </div>
 
-  <main class="container" style="margin-top:2.5rem;margin-bottom:2.5rem;">
-    <h1>Change Management</h1>
-    <p class="lead" style="font-size:1.35rem;margin-bottom:2.1rem;">
-      Supporting organizations through transformation with structured, people-focused approaches that deliver lasting results.
-    </p>
-    <div class="grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2.2rem;">
-      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
-        <h3 style="margin-top:0;">Stakeholder Alignment</h3>
-        <p>Engaging and aligning stakeholders to secure sponsorship and ownership of transformation.</p>
-      </div>
-      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
-        <h3 style="margin-top:0;">Capability Building</h3>
-        <p>Training programs and coaching to equip teams with the skills to manage change effectively.</p>
-      </div>
-      <div class="card" style="background:#f9fafb;border-radius:15px;box-shadow:0 2px 12px rgba(30,40,60,0.06);padding:2rem 1.5rem;">
-        <h3 style="margin-top:0;">Roadmaps & KPIs</h3>
-        <p>Structured change roadmaps and measurable KPIs to track adoption and business impact.</p>
-      </div>
-    </div>
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+  </script>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Retail Production</h1>
+      
+<p class="lead">From capacity planning to right-first-time delivery, we manage production to secure both speed and quality in retail.</p>
+<div class="grid">
+  <div class="card">
+    <h3>Production Planning</h3>
+    <p>Line planning, supplier capacity management, and make–buy decisions.</p>
+  </div>
+  <div class="card">
+    <h3>Quality & Compliance</h3>
+    <p>Clear QA/QC routines, proactive testing, and compliance with ESG and audit frameworks.</p>
+  </div>
+  <div class="card">
+    <h3>Efficiency & Scale</h3>
+    <p>Automation pilots, supplier onboarding, and scalable production methods.</p>
+  </div>
+</div>
+
+    </section>
   </main>
-
   <footer>
     <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
   </footer>
-<script>
-  // Hamburger and mobile menu
-  const hamburger = document.querySelector('.hamburger');
-  const overlay = document.querySelector('.overlay');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  function closeMenu() {
-    mobileMenu.classList.remove('active');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-  hamburger.addEventListener('click', function() {
-    mobileMenu.classList.add('active');
-    overlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  });
-  overlay.addEventListener('click', closeMenu);
-  // Close menu on link click (mobile)
-  document.querySelectorAll('.mobile-menu a').forEach(function(link){
-    link.addEventListener('click', closeMenu);
-  });
-</script>
 </body>
 </html>
