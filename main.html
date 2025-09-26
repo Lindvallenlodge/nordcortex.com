@@ -21,28 +21,14 @@
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .nav {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      grid-template-rows: repeat(2, auto);
-      justify-items: center;
-      align-items: center;
-      row-gap: 6px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .nav a {
-      margin: 0;
-      text-decoration: none;
-      color: #333;
-      font-size: clamp(14px, 1.4vw, 17px);
-    }
-    .nav a:hover {color:#000;text-decoration:underline}
+    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px)}
+    .nav a:hover{color:#000;text-decoration:underline}
     /* Two-line desktop nav layout */
-    /* .nav-left,.nav-right{flex:0 0 100%;display:flex;justify-content:center;gap:28px} */
+    .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+    .nav-left,.nav-right{flex:0 0 100%;display:flex;justify-content:center;gap:28px}
     @media (min-width:1200px){
-      /* .nav-left,.nav-right{gap:36px} */
-      /* .nav a{font-size:17.5px} */
+      .nav-left,.nav-right{gap:36px}
+      .nav a{font-size:17.5px}
     }
     .hero{padding:56px 0}
     h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
@@ -81,13 +67,15 @@
         </a>
       </div>
       <nav class="nav">
-        <div>
+        <div class="nav-left">
           <a href="https://www.kungsholmengroup.com/main.html">Home</a>
           <a href="procurement.html">Procurement Strategy</a>
           <a href="retail-production.html">Retail Production</a>
           <a href="product-development.html">Product Development</a>
           <a href="supply-chain.html">Supply Chain</a>
           <a href="change-management.html">Change Management</a>
+        </div>
+        <div class="nav-right">
           <a href="rfid.html">RFID & Digitalization</a>
           <a href="sustainability.html">Sustainability & Compliance</a>
           <a href="about.html">About</a>
