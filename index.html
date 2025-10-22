@@ -36,10 +36,20 @@
       display: block;
       cursor: pointer;
     }
+    .logo-wrap {
+      height: 675px;        /* keep previous visual height window */
+      width: 100%;
+      display: flex;
+      align-items: flex-start;  /* anchor image to the top edge */
+      justify-content: center;  /* keep image centered horizontally */
+    }
     @media (max-width: 400px) {
       img {
         height: 337px;
         max-width: 105vw;
+      }
+      .logo-wrap {
+        height: 337px;   /* match previous mobile image height */
       }
     }
   </style>
@@ -171,7 +181,9 @@
     <div class="ticker-text" id="tickerBottom"></div>
     <div class="ticker-text" id="tickerBottomClone"></div>
   </div>
-  <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo Grey Final No Text" />
+  <div class="logo-wrap">
+    <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo Grey Final No Text" />
+  </div>
   <div class="overlay-text">
     <span class="wordmark">NordCortex</span><br />
     <span class="tagline">Business Development & Innovation Advisory</span>
