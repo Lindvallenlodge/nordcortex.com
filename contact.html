@@ -4,7 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-  <title>Contact — Kungsholmen Group</title>
+  <title>Contact — NordCordex</title>
   <style>
   *, *::before, *::after { box-sizing: border-box; }
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
@@ -177,6 +177,23 @@
       text-decoration: none;
       color: #222;
     }
+  .brand a { text-decoration:none; color:#111; }
+  header .brand span {
+    font-family: "Baskerville", "Times New Roman", serif;
+    font-size: clamp(45px, 4.3vw, 57px);
+    font-weight: normal;
+    color: #6c7a89;
+    text-align: left;
+    white-space: nowrap;
+  }
+  header .brand-logo {
+    height: 138px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 25%;
+  }
   </style>
   <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif !important; }
@@ -187,13 +204,13 @@
 <body>
   <header>
     <div class="container">
-      <a href="/main.html" class="brand" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap; gap: 12px;">
-        <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" style="height:60px; width:auto;" class="brand-logo">
-        <span style="font-family: 'Baskerville', 'Times New Roman', serif; font-size: clamp(28px, 2.5vw, 36px); font-weight: normal; color: #6c7a89;">Kungsholmen Group</span>
+      <a href="https://www.nordcortex.com/main.html" class="brand" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap; gap: 12px;">
+        <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+        <span>NordCordex</span>
       </a>
       <nav class="nav">
         <div class="nav-left">
-          <a href="/main.html">Home</a>
+          <a href="https://www.nordcortex.com/main.html">Home</a>
           <a href="/about.html">About</a>
         </div>
         <div class="nav-right">
@@ -205,7 +222,7 @@
       <div class="overlay"></div>
       <div class="mobile-menu" aria-hidden="true">
         <button class="close-btn" aria-label="Close menu">&times;</button>
-        <a href="/main.html">Home</a>
+        <a href="https://www.nordcortex.com/main.html">Home</a>
         <a href="/about.html">About</a>
         <a href="/services.html">Services</a>
         <a href="/contact.html">Contact</a>
@@ -258,7 +275,7 @@
     </div>
   </main>
   <footer>
-    <div class="container muted">© 2025 Kungsholmen Group. All rights reserved.</div>
+    <div class="container muted">© 2025 NordCordex. All rights reserved.</div>
   </footer>
 <script>
     (function () {
@@ -273,10 +290,10 @@
           headers: { 'Accept': 'application/json' },
           redirect: 'manual'
         }).then(function () {
-          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
+          window.location.href = 'https://www.nordcortex.com/thankyou.html';
         }).catch(function () {
           // Even if the request fails, send user to thank-you page to avoid Formspree default screen
-          window.location.href = 'https://www.kungsholmengroup.com/thankyou.html';
+          window.location.href = 'https://www.nordcortex.com/thankyou.html';
         });
       });
     })();
