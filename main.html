@@ -110,6 +110,35 @@
   }
 
     /* Four Principles – corporate tech styling */
+    /* Dark background wrapper for Four Principles */
+    .principles-section {
+      background: linear-gradient(180deg, #0c1118 0%, #1a1f2b 100%);
+      color: #fff;
+      padding: 64px 0 72px;
+      margin: 0;
+    }
+    .principles-section h2 {
+      color: #fff;
+      text-align: center;
+    }
+    .principles-section .sublead {
+      color: #cfd3d9;
+      text-align: center;
+    }
+    .principles-section .principle-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+    }
+    .principles-section .principle-card h3 {
+      color: #fff;
+    }
+    .principles-section .principle-card p {
+      color: #cfd3d9;
+    }
+    .principles-section .cta-link {
+      color: #7aa2ff;
+    }
     .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
     .principle-card{border:1px solid #eee;border-radius:14px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.03)}
     .principle-card .thumb{height:140px;display:flex;align-items:center;justify-content:center}
@@ -293,37 +322,40 @@
         </div>
       </section>
       <!-- FOUR PRINCIPLES (Corporate tech style) -->
-      <section class="container" style="padding-top:12px">
-        <h2 style="margin:0 0 6px;font-size:clamp(22px,2.6vw,30px);text-align:left">Our Four Principles to Run Reliable, Data-Driven Operations</h2>
-        <p class="sublead" style="margin:0 0 14px;color:#444;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
-        <div class="principles-grid">
-          <article class="principle-card">
-            <div class="thumb gradient-1"><span class="icon">🔍</span></div>
-            <h3>Procure with Insight</h3>
-            <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
-            <a class="cta-link" href="procurement.html">Explore Procurement Strategy →</a>
-          </article>
+      <div style="background:#fff;height:1cm;"></div>
+      <section class="principles-section">
+        <div class="container">
+          <h2 style="margin:0 0 6px;font-size:clamp(22px,2.6vw,30px);text-align:left">Our Four Principles to Run Reliable, Data-Driven Operations</h2>
+          <p class="sublead" style="margin:0 0 14px;color:#444;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
+          <div class="principles-grid">
+            <article class="principle-card">
+              <div class="thumb gradient-1"><span class="icon">🔍</span></div>
+              <h3>Procure with Insight</h3>
+              <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
+              <a class="cta-link" href="procurement.html">Explore Procurement Strategy →</a>
+            </article>
 
-          <article class="principle-card">
-            <div class="thumb gradient-2"><span class="icon">🧰</span></div>
-            <h3>Engineer it Right-First-Time</h3>
-            <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
-            <a class="cta-link" href="retail-production.html">Explore Production & Development →</a>
-          </article>
+            <article class="principle-card">
+              <div class="thumb gradient-2"><span class="icon">🧰</span></div>
+              <h3>Engineer it Right-First-Time</h3>
+              <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
+              <a class="cta-link" href="retail-production.html">Explore Production & Development →</a>
+            </article>
 
-          <article class="principle-card">
-            <div class="thumb gradient-3"><span class="icon">📶</span></div>
-            <h3>Connect and Perform</h3>
-            <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
-            <a class="cta-link" href="rfid.html">Explore IoT & RFID →</a>
-          </article>
+            <article class="principle-card">
+              <div class="thumb gradient-3"><span class="icon">📶</span></div>
+              <h3>Connect and Perform</h3>
+              <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
+              <a class="cta-link" href="rfid.html">Explore IoT & RFID →</a>
+            </article>
 
-          <article class="principle-card">
-            <div class="thumb gradient-4"><span class="icon">🌿</span></div>
-            <h3>Operate Responsibly</h3>
-            <p>Compliance and sustainability built into daily routines — certified sourcing, transparent materials, and traceable supply chains that strengthen brand trust and readiness.</p>
-            <a class="cta-link" href="sustainability.html">Explore Sustainability & Compliance →</a>
-          </article>
+            <article class="principle-card">
+              <div class="thumb gradient-4"><span class="icon">🌿</span></div>
+              <h3>Operate Responsibly</h3>
+              <p>Compliance and sustainability built into daily routines — certified sourcing, transparent materials, and traceable supply chains that strengthen brand trust and readiness.</p>
+              <a class="cta-link" href="sustainability.html">Explore Sustainability & Compliance →</a>
+            </article>
+          </div>
         </div>
       </section>
   </main>
