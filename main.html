@@ -46,14 +46,35 @@
     .overlay.show {opacity:1;pointer-events:auto}
     .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
     @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
-    .brand a {text-decoration:none; color:#111;}
+    .brand a { text-decoration:none; color:#111; }
+
     .brand span {
       font-family: "Baskerville", "Times New Roman", serif;
-      font-size: clamp(28px, 2.5vw, 36px);
+      font-size: clamp(32px, 3vw, 44px); /* fills second rectangle on desktop */
       font-weight: normal;
       color: #6c7a89;
       text-align: left;
       white-space: nowrap;
+    }
+
+    /* Logo sized to first rectangle */
+    .brand-logo {
+      height: 64px;      /* baseline desktop/tablet */
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+    }
+
+    /* Wide desktop bump */
+    @media (min-width: 1200px) {
+      .brand-logo { height: 72px; }
+      .brand span { font-size: 44px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .brand-logo { height: 40px; }
+      .brand span { font-size: 28px; }
     }
   </style>
 </head>
@@ -62,7 +83,7 @@
     <div class="container header-inner">
       <div class="brand">
         <a href="/main.html" style="display:flex;align-items:center;gap:10px;">
-          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" style="height:80px;" class="brand-logo">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
           <span>NordCortex</span>
         </a>
       </div>
