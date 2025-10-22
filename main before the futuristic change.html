@@ -43,16 +43,6 @@
       .nav a{font-size:17.5px}
     }
     .hero{padding:56px 0}
-    /* Dark, futuristic hero */
-    .hero-dark{position:relative;padding:80px 0 72px;margin:0 -24px;background:#0e1116;color:#fff;overflow:hidden}
-    .hero-dark .inner{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-    .hero-dark h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:left}
-    .hero-dark p.sub{max-width:720px;margin:0 0 26px;color:#cfd3d9;font-size:clamp(15px,1.6vw,18px);text-align:left}
-    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{background:#ffffff;color:#0e1116;border:1px solid #fff;border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
-    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
-    .hero-dark .fx{position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 40% at 20% 30%, rgba(120,132,160,.25), rgba(14,17,22,0)), radial-gradient(55% 45% at 90% 20%, rgba(72,85,114,.18), rgba(14,17,22,0));filter:blur(24px);z-index:1}
-    @media (max-width:700px){.hero-dark{padding:64px 0 56px}.hero-ctas{flex-direction:column;align-items:flex-start}}
     h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
     p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
@@ -281,16 +271,13 @@
   </script>
 
   <main class="container">
-      <section class="hero-dark">
-        <div class="fx"></div>
-        <div class="inner">
-          <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
-          <p class="sub">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
-          <div class="hero-ctas">
-            <a class="btn-primary" href="services.html">Explore our solutions →</a>
-            <a class="btn-secondary" href="contact.html">Book a consultation →</a>
-          </div>
-        </div>
+    <section class="hero">
+      <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
+      <section class="transformation-statement" style="padding:40px 0;text-align:center;">
+        <p style="font-size:clamp(18px,2vw,22px);color:#333;max-width:900px;margin:0 auto;line-height:1.5;text-align:center;">
+          Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI. 
+          At NordCortex, we turn that shift into clarity, control, and measurable impact — connecting data, people, and processes into one intelligent supply ecosystem.
+        </p>
       </section>
       <!-- FOUR PRINCIPLES (Corporate tech style) -->
       <section class="container" style="padding-top:12px">
@@ -326,6 +313,7 @@
           </article>
         </div>
       </section>
+    </section>
   </main>
   <footer>
     <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
