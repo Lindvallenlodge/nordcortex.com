@@ -182,11 +182,22 @@
       overlay.classList.remove('show');
     });
 
-    // Mobile grouped menu toggles
+    // Mobile grouped menu toggles (accordion: one open at a time)
     document.querySelectorAll('.menu-toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
         const group = btn.parentElement;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all other groups
+        document.querySelectorAll('.menu-group').forEach((g) => {
+          if (g !== group) {
+            g.classList.remove('open');
+            const b = g.querySelector('.menu-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current group
         btn.setAttribute('aria-expanded', String(!expanded));
         group.classList.toggle('open');
       });
