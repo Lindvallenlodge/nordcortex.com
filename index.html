@@ -131,46 +131,6 @@
       display: block;
     }
   </style>
-  <style>
-    /* Overlay text that sits on top of the logo image */
-    .overlay-text {
-      position: relative;
-      margin-top: -160px; /* pulls text up over the image; tweak as needed */
-      text-align: center;
-      z-index: 5;
-    }
-    .overlay-text .wordmark {
-      font-family: 'EB Garamond', serif;
-      font-weight: 700;
-      font-size: clamp(48px, 6vw, 96px);
-      line-height: 1.06;
-      letter-spacing: 0.02em;
-      color: #7A7A7A;
-      display: inline-block;
-      background: #000; /* covers any blurred text underneath */
-      padding: 4px 12px;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    .overlay-text .tagline {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: clamp(14px, 1.6vw, 22px);
-      line-height: 1.25;
-      color: #7A7A7A;
-      display: inline-block;
-      background: #000; /* mask behind text for sharpness */
-      padding: 2px 10px;
-      margin-top: 6px;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: geometricPrecision;
-    }
-    @media (max-width: 400px) {
-      .overlay-text { margin-top: -90px; }
-    }
-  </style>
 </head>
 <body>
   <div class="ticker-container ticker-top">
@@ -183,10 +143,6 @@
   </div>
   <div class="logo-wrap">
     <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo Grey Final No Text" />
-  </div>
-  <div class="overlay-text">
-    <span class="wordmark">NordCortex</span><br />
-    <span class="tagline">Business Development & Innovation Advisory</span>
   </div>
   <div class="text-block">
     <span class="wordmark">NordCortex</span>
