@@ -51,6 +51,7 @@
       .logo-wrap {
         height: 337px;   /* match previous mobile image height */
       }
+      .text-block { margin-top: -70px; }
     }
   </style>
   <style>
@@ -102,7 +103,9 @@
     .text-block {
       text-align: center;
       color: white;
-      margin-top: 20px;
+      margin-top: -120px; /* pull text up under the logo */
+      position: relative;
+      z-index: 2;
     }
     .text-block .wordmark {
       font-family: 'EB Garamond', serif;
@@ -110,7 +113,7 @@
       font-size: clamp(48px, 6vw, 96px);
       line-height: 1.06;
       display: block;
-      margin-top: -40px;   /* closer to logo */
+      margin-top: 0;
       color: #7A7A7A;
     }
 
