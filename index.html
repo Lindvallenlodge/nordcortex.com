@@ -4,6 +4,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NordCortex</title>
@@ -93,13 +94,25 @@
       color: white;
       margin-top: 20px;
     }
-    .text-block .baskerville {
-      font-family: "Baskerville", "Times New Roman", serif;
-      font-size: 34px;
+    .text-block .wordmark {
+      font-family: 'EB Garamond', serif;
+      font-weight: 700;
+      font-size: clamp(48px, 6vw, 96px);
+      line-height: 1.06;
       display: block;
-      font-weight: normal;
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: 14px;   /* closer to logo */
+      color: #7A7A7A;
+    }
+
+    .text-block .tagline {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: clamp(14px, 1.5vw, 22px);
+      line-height: 1.25;
+      display: block;
+      margin-top: 6px;
       color: #7A7A7A;
     }
     .text-block .handwriting {
@@ -120,7 +133,8 @@
   </div>
   <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo Grey Final No Text" />
   <div class="text-block">
-    <span class="baskerville">NordCortex<br>Business Development & Innovation Advisory</span>
+    <span class="wordmark">NordCortex</span>
+    <span class="tagline">Business Development & Innovation Advisory</span>
   </div>
   <script>
     function goToMain() {
