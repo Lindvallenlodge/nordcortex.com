@@ -109,33 +109,48 @@
     .brand span { font-size: 28px; }
   }
 
-    .icons-section {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 60px;
-      padding: 80px 0;
-      background: transparent;
+    /* Four Principles – corporate tech styling */
+    /* Dark background wrapper for Four Principles */
+    .principles-section {
+      background: linear-gradient(180deg, #07101f 0%, #0d1b31 100%);
+      color: #fff;
+      padding: 64px 0 72px;
+      margin: 0 -24px;
     }
-
-    .icon-container {
-      text-align: center;
-      width: 220px;
+    .principles-section h2{ color:#fff; text-align:center; }
+    .principles-section .sublead{ color:#cfd3d9; text-align:center; }
+    .principles-section .principle-card {
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
-
-    .value-icon {
-      width: 100px;
-      height: auto;
-      margin-bottom: 20px;
-      filter: drop-shadow(0 0 8px rgba(0, 180, 255, 0.4));
+    .principles-section .principle-card h3 {
+      color: #fff;
     }
+    .principles-section .principle-card p {
+      color: #cfd3d9;
+    }
+    .principles-section .thumb img { display:block; margin:auto; }
+    .principles-section .principle-card .thumb { height:160px; display:flex; align-items:center; justify-content:center; }
+    .principles-section .cta-link {
+      color: #7aa2ff;
+    }
+    .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
+    .principle-card{border:1px solid #eee;border-radius:14px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.03)}
+    .principle-card .thumb{height:140px;display:flex;align-items:center;justify-content:center}
+    .principle-card .icon{font-size:34px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.1))}
+    .principle-card h3{margin:12px 14px 6px;font-size:clamp(16px,1.8vw,20px)}
+    .principle-card p{margin:0 14px 10px;color:#444;font-size:clamp(14px,1.4vw,16px)}
+    .principle-card .cta-link{margin:0 14px 14px;text-decoration:none;font-weight:600}
 
-    .icons-section h3 {
-      color: #eaf2f8;
-      font-weight: 500;
-      font-size: 1.1rem;
-      letter-spacing: 0.5px;
+    /* Subtle gradient headers (neutral corporate tones) */
+    .gradient-1{background:linear-gradient(135deg, rgba(53,63,84,.14), rgba(96,106,128,.06))}
+    .gradient-2{background:linear-gradient(135deg, rgba(62,74,96,.14), rgba(110,120,146,.06))}
+    .gradient-3{background:linear-gradient(135deg, rgba(72,85,114,.14), rgba(120,132,160,.06))}
+    .gradient-4{background:linear-gradient(135deg, rgba(48,58,76,.14), rgba(90,100,120,.06))}
+
+    @media (max-width:700px){
+      .principle-card .thumb{height:120px}
     }
   </style>
 </head>
@@ -302,26 +317,113 @@
           </div>
         </div>
       </section>
-      <!-- CORE VALUES ICONS SECTION -->
-      <section id="core-values" class="icons-section">
-        <div class="icon-container">
-          <img src="assets/images/Procure with Insight icon.png" alt="Procure with Insight icon" class="value-icon">
-          <h3>Procure with Insight</h3>
-        </div>
+      <!-- FOUR PRINCIPLES (Corporate tech style) -->
+      <div style="background:#fff;height:1cm;margin:0 -24px;"></div>
+      <section class="principles-section">
+        <div class="container">
+          <h2 style="margin:0 0 12px;font-size:clamp(30px,4vw,48px);text-align:center">Our Four Principles to Run Reliable, Data-Driven Operations</h2>
+          <p class="sublead" style="margin:0 0 16px;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
+          <div class="principles-grid">
+            <article class="principle-card">
+              <div class="thumb gradient-1">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- layered sheets -->
+                  <rect x="10" y="18" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                  <rect x="16" y="12" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2" opacity="0.7"/>
+                  <!-- magnifier -->
+                  <circle cx="46" cy="40" r="8" stroke="url(#g1)" stroke-width="2"/>
+                  <line x1="51" y1="45" x2="58" y2="52" stroke="url(#g1)" stroke-width="2.8" stroke-linecap="round"/>
+                  <!-- small data nodes -->
+                  <circle cx="12" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                  <circle cx="26" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3>Procure with Insight</h3>
+              <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
+              <a class="cta-link" href="procurement.html">Explore Procurement Strategy →</a>
+            </article>
 
-        <div class="icon-container">
-          <img src="assets/images/Engineer it Right-First-Time icon.png" alt="Engineer it Right-First-Time icon" class="value-icon">
-          <h3>Engineer it Right-First-Time</h3>
-        </div>
+            <article class="principle-card">
+              <div class="thumb gradient-2">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g2" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- cube wireframe -->
+                  <path d="M18 28 L35 18 L52 28 L35 38 Z" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M18 28 L18 46 L35 56 L35 38" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M52 28 L52 46 L35 56" stroke="url(#g2)" stroke-width="2"/>
+                  <!-- cog simple -->
+                  <circle cx="50" cy="52" r="6" stroke="url(#g2)" stroke-width="2"/>
+                  <circle cx="50" cy="52" r="2.5" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="43" x2="50" y2="47" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="57" x2="50" y2="61" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="41" y1="52" x2="45" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="55" y1="52" x2="59" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Engineer it Right-First-Time</h3>
+              <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
+              <a class="cta-link" href="retail-production.html">Explore Production & Development →</a>
+            </article>
 
-        <div class="icon-container">
-          <img src="assets/images/connect and perform icon.png" alt="Connect and Perform icon" class="value-icon">
-          <h3>Connect and Perform</h3>
-        </div>
+            <article class="principle-card">
+              <div class="thumb gradient-3">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g3" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- arcs -->
+                  <path d="M20 44 A15 15 0 0 1 50 44" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M26 38 A9 9 0 0 1 44 38" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M32 34 A3 3 0 0 1 38 34" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <!-- nodes -->
+                  <circle cx="20" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="50" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="35" cy="49" r="4" fill="#7AA2FF"/>
+                  <line x1="20" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                  <line x1="50" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Connect and Perform</h3>
+              <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
+              <a class="cta-link" href="rfid.html">Explore IoT & RFID →</a>
+            </article>
 
-        <div class="icon-container">
-          <img src="assets/images/Operate Responsibly icon.png" alt="Operate Responsibly icon" class="value-icon">
-          <h3>Operate Responsibly</h3>
+            <article class="principle-card">
+              <div class="thumb gradient-4">
+                <svg width="70" height="70" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g4" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- circular arrows -->
+                  <path d="M21 40 A14 14 0 1 0 49 40" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="49,40 45,36 49,36" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="21,40 25,44 21,44" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <!-- leaf -->
+                  <path d="M33 30 C36 28, 41 28, 44 32 C40 34, 36 36, 33 34 Z" fill="none" stroke="url(#g4)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Operate Responsibly</h3>
+              <p>Compliance and sustainability built into daily routines — certified sourcing, transparent materials, and traceable supply chains that strengthen brand trust and readiness.</p>
+              <a class="cta-link" href="sustainability.html">Explore Sustainability & Compliance →</a>
+            </article>
+          </div>
         </div>
       </section>
   </main>
