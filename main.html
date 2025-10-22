@@ -26,6 +26,18 @@
     /* Two-line desktop nav layout */
     .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
     .nav-left,.nav-right{flex:0 0 100%;display:flex;justify-content:center;gap:28px}
+
+    /* Desktop dropdown nav */
+    .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+    .nav .dropdown { position: relative; }
+    .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+    .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+    .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+    .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+    .nav .dropdown:hover .dropdown-menu { display:block; }
+    @media (min-width:1200px){ .nav .menu{ gap:36px } }
+    @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+
     @media (min-width:1200px){
       .nav-left,.nav-right{gap:36px}
       .nav a{font-size:17.5px}
@@ -98,18 +110,45 @@
         </a>
       </div>
       <nav class="nav">
-        <div class="nav-left">
+        <div class="menu">
           <a href="https://www.nordcortex.com/main.html">Home</a>
-          <a href="procurement.html">Procurement Strategy</a>
-          <a href="retail-production.html">Retail Production</a>
-          <a href="product-development.html">Product Development</a>
-          <a href="supply-chain.html">Supply Chain</a>
-          <a href="change-management.html">Change Management</a>
-        </div>
-        <div class="nav-right">
-          <a href="rfid.html">RFID & Digitalization</a>
-          <a href="sustainability.html">Sustainability & Compliance</a>
-          <a href="about.html">About</a>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Solutions <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="procurement.html">Procurement Strategy</a>
+              <a href="retail-production.html">Retail Production</a>
+              <a href="product-development.html">Product Development</a>
+              <a href="supply-chain.html">Supply Chain</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Transformation <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="change-management.html">Change Management</a>
+              <a href="sustainability.html">Sustainability &amp; Compliance</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="rfid.html">Digitalization</a>
+              <a href="rfid.html">RFID</a>
+              <a href="rfid.html">NFC</a>
+              <a href="rfid.html">BFBT</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="services.html">Services</a>
+              <a href="about.html">About</a>
+            </div>
+          </div>
+
           <a href="/contact.html">Contact</a>
         </div>
       </nav>
