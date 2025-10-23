@@ -49,6 +49,16 @@
   header .brand-logo {height:138px;width:auto;display:inline-block;vertical-align:middle;position:relative;top:25%}
   @media (min-width: 1200px){ .brand-logo{height:155px} .brand span{font-size:44px} }
   @media (max-width: 600px){ .brand-logo{height:60px} .brand span{font-size:28px} }
+  .accordion{border-top:1px solid #e7e7e7;margin-top:8px}
+  .acc-item{border-bottom:1px solid #e7e7e7}
+  .acc-trigger{width:100%;text-align:left;background:#fafafa;border:0;padding:18px 16px;font-size:20px;line-height:1.2;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+  .acc-trigger:hover{background:#f3f3f3}
+  .acc-trigger .chev{transition:transform .2s ease}
+  .acc-item.open .acc-trigger .chev{transform:rotate(90deg)}
+  .acc-panel{display:none;padding:14px 22px 20px;background:#fff}
+  .acc-item.open .acc-panel{display:block}
+  .acc-panel ul{margin:6px 0 0 18px}
+  @media (max-width:700px){.acc-trigger{font-size:18px;padding:16px 14px}}
   /* page styles */
   h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
   .services-section h2{ margin-top:32px; margin-bottom:8px; font-weight:400; letter-spacing:.2px; line-height:1.25 }
@@ -154,112 +164,168 @@
   closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
   document.querySelectorAll('.menu-toggle').forEach(btn=>{btn.addEventListener('click',()=>{const g=btn.parentElement;const exp=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.menu-group').forEach(x=>{if(x!==g){x.classList.remove('open');const b=x.querySelector('.menu-toggle');if(b) b.setAttribute('aria-expanded','false')}});btn.setAttribute('aria-expanded',String(!exp));g.classList.toggle('open')})});
   document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')}));
+  // Accordion one-open behavior
+  const accItems=document.querySelectorAll('.acc-item');
+  document.querySelectorAll('.acc-trigger').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const item=btn.parentElement;
+      const isOpen=item.classList.contains('open');
+      accItems.forEach(i=>i.classList.remove('open'));
+      accItems.forEach(i=>{const t=i.querySelector('.acc-trigger'); if(t) t.setAttribute('aria-expanded','false');});
+      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      // smooth scroll to opened header on mobile/desktop
+      const y=item.getBoundingClientRect().top + window.scrollY - 90;
+      window.scrollTo({top:y, behavior:'smooth'});
+    });
+  });
 </script>
 <main class="container">
   <section class="services-section">
     <h1>Services</h1>
-    <h2>1) Interim &amp; Advisory (B2B)</h2>
-    <ul>
-      <li>Interim leadership: Head of Procurement, Head of Production, RFID/DPP Program Lead (3–12 months).</li>
-      <li>Operational turnaround projects: stabilizing operations post-M&amp;A or supplier failure.</li>
-      <li>Board-level advisory: category, cost, and supply chain due diligence for investors.</li>
-      <li>Procurement and supply audits: red/amber/green diagnostics with 90-day action plans.</li>
-      <li>Innovation scouting: automation, digital, and material innovation opportunities.</li>
-    </ul>
+    <div class="accordion" id="services-accordion">
+      <div class="acc-item open">
+        <button class="acc-trigger" aria-expanded="true">1) Interim &amp; Advisory (B2B) <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Interim leadership: Head of Procurement, Head of Production, RFID/DPP Program Lead (3–12 months).</li>
+            <li>Operational turnaround projects: stabilizing operations post-M&amp;A or supplier failure.</li>
+            <li>Board-level advisory: category, cost, and supply chain due diligence for investors.</li>
+            <li>Procurement and supply audits: red/amber/green diagnostics with 90-day action plans.</li>
+            <li>Innovation scouting: automation, digital, and material innovation opportunities.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>2) Procurement &amp; Category Strategy</h2>
-    <ul>
-      <li>Category leadership: sourcing strategy, supplier mapping, cost &amp; risk control.</li>
-      <li>Operating model: governance, RASIC, KPI hierarchy, category playbooks.</li>
-      <li>Should-cost and benchmarking: fact-based negotiation packs and savings tracking.</li>
-      <li>Digital procurement: analytics dashboards, ERP integration, spend transparency.</li>
-      <li>Capability building: training buyers in open-costing and fact-based negotiations.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">2) Procurement &amp; Category Strategy <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Category leadership: sourcing strategy, supplier mapping, cost &amp; risk control.</li>
+            <li>Operating model: governance, RASIC, KPI hierarchy, category playbooks.</li>
+            <li>Should-cost and benchmarking: fact-based negotiation packs and savings tracking.</li>
+            <li>Digital procurement: analytics dashboards, ERP integration, spend transparency.</li>
+            <li>Capability building: training buyers in open-costing and fact-based negotiations.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>3) Supplier Development &amp; Open-Costing</h2>
-    <ul>
-      <li>Open-cost breakdowns from raw materials, tier 1–2–3 suppliers, packaging, NCG, and logistics.</li>
-      <li>Supplier maturity programs: process mapping, line efficiency audits, improvement roadmaps.</li>
-      <li>Factory capability: lean implementation, automation alignment, and quality gate setup.</li>
-      <li>Partnership models: co-creation and performance‑linked incentives.</li>
-      <li>Supplier onboarding: compliance, capacity, financial, and technical scoring systems.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">3) Supplier Development &amp; Open-Costing <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Open-cost breakdowns from raw materials, tier 1–2–3 suppliers, packaging, NCG, and logistics.</li>
+            <li>Supplier maturity programs: process mapping, line efficiency audits, improvement roadmaps.</li>
+            <li>Factory capability: lean implementation, automation alignment, and quality gate setup.</li>
+            <li>Partnership models: co-creation and performance‑linked incentives.</li>
+            <li>Supplier onboarding: compliance, capacity, financial, and technical scoring systems.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>4) Supplier / Key Account Enablement</h2>
-    <ul>
-      <li>Preparing suppliers to meet global retailer requirements.</li>
-      <li>Costing methodology alignment and open‑cost transparency expectations.</li>
-      <li>Lead‑time modeling, production capacity planning, and commitment management.</li>
-      <li>Readiness for multi‑sourcing, including shared product‑development cost structures.</li>
-      <li>Investment readiness: CAPEX/OPEX planning for scalable production.</li>
-      <li>Supplier engagement programs driving trust, innovation, and transparency.</li>
-      <li>Account management routines with KPI and business performance alignment.</li>
-    </ul>
-    <h3 style="margin-top:8px">Commercial Enablement &amp; Training — Customer / Procurement</h3>
-    <ul>
-      <li>RFP &amp; contract playbooks: templates, scoring matrices, and risk clauses.</li>
-      <li>Negotiation programs: analytics‑driven capability enhancement.</li>
-      <li>Digital learning tools for buyers and category managers.</li>
-      <li>Certification systems for vendor and buyer development.</li>
-      <li>Customer‑side commercial playbooks for pricing transparency and value creation.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">4) Supplier / Key Account Enablement <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Preparing suppliers to meet global retailer requirements.</li>
+            <li>Costing methodology alignment and open‑cost transparency expectations.</li>
+            <li>Lead‑time modeling, production capacity planning, and commitment management.</li>
+            <li>Readiness for multi‑sourcing, including shared product‑development cost structures.</li>
+            <li>Investment readiness: CAPEX/OPEX planning for scalable production.</li>
+            <li>Supplier engagement programs driving trust, innovation, and transparency.</li>
+            <li>Account management routines with KPI and business performance alignment.</li>
+          </ul>
+          <h3 style="margin-top:10px">Commercial Enablement &amp; Training — Customer / Procurement</h3>
+          <ul>
+            <li>RFP &amp; contract playbooks: templates, scoring matrices, and risk clauses.</li>
+            <li>Negotiation programs: analytics‑driven capability enhancement.</li>
+            <li>Digital learning tools for buyers and category managers.</li>
+            <li>Certification systems for vendor and buyer development.</li>
+            <li>Customer‑side commercial playbooks for pricing transparency and value creation.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>5) Product Development &amp; Industrialization</h2>
-    <ul>
-      <li>Concept‑to‑bulk standards connecting PD, design, manufacturing, returns, and reuse.</li>
-      <li>Tech pack &amp; BOM accuracy: version control, traceability, and structured feedback loops.</li>
-      <li>Material optimization: specification harmonization and alternative sourcing.</li>
-      <li>Digital sampling: 3D design, virtual approvals, CAD integration.</li>
-      <li>Factory automation with cost‑neutral CAPEX — creating value through industrial engineering solutions for both the producer and the customer.</li>
-      <li>Industrial readiness: pilot runs, cycle‑time optimization, yield and capability improvements.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">5) Product Development &amp; Industrialization <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Concept‑to‑bulk standards connecting PD, design, manufacturing, returns, and reuse.</li>
+            <li>Tech pack &amp; BOM accuracy: version control, traceability, and structured feedback loops.</li>
+            <li>Material optimization: specification harmonization and alternative sourcing.</li>
+            <li>Digital sampling: 3D design, virtual approvals, CAD integration.</li>
+            <li>Factory automation with cost‑neutral CAPEX — creating value through industrial engineering solutions for both the producer and the customer.</li>
+            <li>Industrial readiness: pilot runs, cycle‑time optimization, yield and capability improvements.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>6) IoT, RFID &amp; Digital Product Passport</h2>
-    <ul>
-      <li>RFID source‑tagging: rollout design, read‑point mapping, packaging and DC/store integration.</li>
-      <li>RFID tagging in stores or DCs for live inbound/outbound and inventory visibility.</li>
-      <li>Digital Product Passport (DPP): architecture for traceability, recyclability, and compliance.</li>
-      <li>BFBT pilots: wireless sensor deployment for environment &amp; location tracking.</li>
-      <li>Heat‑map analytics: in‑store behavior — which areas drive sales, where customers engage, where products remain untouched.</li>
-      <li>Data utilization frameworks: real‑time linkage between production, logistics, and retail; predictive replenishment and demand sensing; exception management for shrinkage and stockouts; retail behavior analysis for planogram and assortment optimization.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">6) IoT, RFID &amp; Digital Product Passport <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>RFID source‑tagging: rollout design, read‑point mapping, packaging and DC/store integration.</li>
+            <li>RFID tagging in stores or DCs for live inbound/outbound and inventory visibility.</li>
+            <li>Digital Product Passport (DPP): architecture for traceability, recyclability, and compliance.</li>
+            <li>BFBT pilots: wireless sensor deployment for environment &amp; location tracking.</li>
+            <li>Heat‑map analytics: in‑store behavior — which areas drive sales, where customers engage, where products remain untouched.</li>
+            <li>Data utilization frameworks: real‑time linkage between production, logistics, and retail; predictive replenishment and demand sensing; exception management for shrinkage and stockouts; retail behavior analysis for planogram and assortment optimization.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>7) Packaging, Logistics &amp; Automation</h2>
-    <ul>
-      <li>Transit packaging optimization: right‑sizing, material efficiency, cost‑per‑unit modeling.</li>
-      <li>Labeling and packaging of commercial goods for brand and regulatory compliance.</li>
-      <li>Automation audits: ROI and payback models for packing, folding, and labeling.</li>
-      <li>Vendor packaging support: global guidelines, 3D pack optimization, testing routines.</li>
-      <li>DC automation: scanning, content verification, and gate‑reader systems.</li>
-      <li>Environmental packaging: lifecycle analysis, recyclability, and recycled content standards.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">7) Packaging, Logistics &amp; Automation <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Transit packaging optimization: right‑sizing, material efficiency, cost‑per‑unit modeling.</li>
+            <li>Labeling and packaging of commercial goods for brand and regulatory compliance.</li>
+            <li>Automation audits: ROI and payback models for packing, folding, and labeling.</li>
+            <li>Vendor packaging support: global guidelines, 3D pack optimization, testing routines.</li>
+            <li>DC automation: scanning, content verification, and gate‑reader systems.</li>
+            <li>Environmental packaging: lifecycle analysis, recyclability, and recycled content standards.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>8) Quality, Compliance &amp; Sustainability</h2>
-    <ul>
-      <li>QA systems and governance: standardized routines for TCs, CoCs, and AQL testing.</li>
-      <li>Root cause &amp; CAPA frameworks tied to vendor scorecards.</li>
-      <li>Social &amp; environmental compliance: BSCI, BEPI, OCS, SMETA, RCS, FSC.</li>
-      <li>Labeling compliance and product information traceability.</li>
-      <li>Sustainability dashboards: tracking CO₂, compliance, and recycling metrics.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">8) Quality, Compliance &amp; Sustainability <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>QA systems and governance: standardized routines for TCs, CoCs, and AQL testing.</li>
+            <li>Root cause &amp; CAPA frameworks tied to vendor scorecards.</li>
+            <li>Social &amp; environmental compliance: BSCI, BEPI, OCS, SMETA, RCS, FSC.</li>
+            <li>Labeling compliance and product information traceability.</li>
+            <li>Sustainability dashboards: tracking CO₂, compliance, and recycling metrics.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>9) Process &amp; Change Management</h2>
-    <ul>
-      <li>Process architecture &amp; SOP creation linking PD, procurement, production, and sustainability.</li>
-      <li>Change enablement: communication, training, and adoption programs.</li>
-      <li>Performance dashboards with real‑time escalation.</li>
-      <li>Governance and RACI models across HQ and production offices.</li>
-      <li>Continuous improvement embedded into everyday operations.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">9) Process &amp; Change Management <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Process architecture &amp; SOP creation linking PD, procurement, production, and sustainability.</li>
+            <li>Change enablement: communication, training, and adoption programs.</li>
+            <li>Performance dashboards with real‑time escalation.</li>
+            <li>Governance and RACI models across HQ and production offices.</li>
+            <li>Continuous improvement embedded into everyday operations.</li>
+          </ul>
+        </div>
+      </div>
 
-    <h2>10) Added Services</h2>
-    <ul>
-      <li>Tech‑stack advisory: PLM, WMS, RFID middleware, ERP integration.</li>
-      <li>Data &amp; KPI visualization: Power BI, Looker Studio dashboards.</li>
-      <li>Sustainability data automation: EU/ESG reporting pipelines.</li>
-      <li>PMO support for cross‑functional transformation projects.</li>
-      <li>Audit‑ready documentation for compliance and product data traceability.</li>
-    </ul>
+      <div class="acc-item">
+        <button class="acc-trigger" aria-expanded="false">10) Added Services <span class="chev">›</span></button>
+        <div class="acc-panel">
+          <ul>
+            <li>Tech‑stack advisory: PLM, WMS, RFID middleware, ERP integration.</li>
+            <li>Data &amp; KPI visualization: Power BI, Looker Studio dashboards.</li>
+            <li>Sustainability data automation: EU/ESG reporting pipelines.</li>
+            <li>PMO support for cross-functional transformation projects.</li>
+            <li>Audit‑ready documentation for compliance and product data traceability.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
 </main>
 <footer>
