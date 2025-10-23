@@ -170,15 +170,35 @@
   // Accordion one-open behavior (run after DOM is ready)
   document.addEventListener('DOMContentLoaded', function(){
     const accItems = document.querySelectorAll('.acc-item');
+    const headerEl = document.querySelector('header');
+    const getOffset = () => {
+      // Dynamic offset based on sticky header height + small margin
+      const h = headerEl ? headerEl.offsetHeight : 0;
+      return h + 14; // 14px breathing room
+    };
+    const scrollHeaderIntoView = (triggerEl) => {
+      const y = triggerEl.getBoundingClientRect().top + window.scrollY - getOffset();
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    };
+
     document.querySelectorAll('.acc-trigger').forEach(btn=>{
       btn.addEventListener('click',()=>{
         const item = btn.parentElement;
         const isOpen = item.classList.contains('open');
+
+        // Close all
         accItems.forEach(i=>i.classList.remove('open'));
-        accItems.forEach(i=>{const t=i.querySelector('.acc-trigger'); if(t) t.setAttribute('aria-expanded','false');});
-        if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-        const y = item.getBoundingClientRect().top + window.scrollY - 90;
-        window.scrollTo({top:y, behavior:'smooth'});
+        accItems.forEach(i=>{ const t=i.querySelector('.acc-trigger'); if(t) t.setAttribute('aria-expanded','false'); });
+
+        // Open clicked if it was closed
+        if(!isOpen){
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded','true');
+        }
+
+        // Always ensure the clicked header is visible under the sticky header
+        // Delay slightly to account for layout changes when panel opens
+        setTimeout(()=>scrollHeaderIntoView(btn), 10);
       });
     });
   });
