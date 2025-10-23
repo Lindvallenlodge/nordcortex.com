@@ -11,7 +11,7 @@
   <link rel="icon" href="assets/images/NordCortex logo grey final no text.png" type="image/png">
   <meta property="og:image" content="https://www.nordcortex.com/assets/images/NordCortex logo grey final no text.png">
 <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: left; }
     .hamburger {
       display: none;
       font-size: 26px;
@@ -95,7 +95,12 @@
   <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif; }
     body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
+    h1, h2, h3, h4, h5, h6 { text-align: left; }
+    .services-section h2 { margin-top: 32px; margin-bottom: 10px; font-weight: 400; letter-spacing: 0.2px; line-height: 1.25; }
+    @media (max-width: 768px) {
+      .services-section h2 { font-size: clamp(20px, 5.2vw, 26px); text-wrap: balance; word-break: keep-all; hyphens: auto; }
+      .services-section ul { padding-left: 1.1rem; }
+    }
   </style>
 </head>
 <body>
