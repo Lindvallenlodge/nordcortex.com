@@ -2,235 +2,174 @@
 <html lang="en">
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services — NordCordex</title>
-  <meta name="description" content="Consulting services from NordCordex">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Services — NordCortex</title>
   <link rel="canonical" href="https://www.nordcortex.com/services.html">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="icon" href="assets/images/NordCortex logo grey final no text.png" type="image/png">
-  <meta property="og:image" content="https://www.nordcortex.com/assets/images/NordCortex logo grey final no text.png">
-<style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: left; }
-    .hamburger {
-      display: none;
-      font-size: 26px;
-      background: none;
-      border: none;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    .mobile-menu {
-      position: fixed;
-      top: 0;
-      right: -260px;
-      width: 240px;
-      height: 100%;
-      background: #fff;
-      box-shadow: -2px 0 6px rgba(0,0,0,0.15);
-      display: flex;
-      flex-direction: column;
-      padding: 60px 20px 20px 20px;
-      transition: right 0.3s ease;
-      z-index: 1002;
-      overflow-y: auto;
-    }
-    .mobile-menu a {
-      padding: 14px 0;
-      text-decoration: none;
-      color: #333;
-      font-size: 16px;
-      font-weight: 500;
-    }
-    .mobile-menu.open {
-      right: 0;
-    }
-    .overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.4);
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      z-index: 1000;
-    }
-    .overlay.show {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    .close-btn {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      background: none;
-      border: none;
-      font-size: 26px;
-      cursor: pointer;
-    }
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .hamburger { display: block; }
-    }
-  .brand a { text-decoration:none; color:#111; }
-  header .brand span {
-    font-family: "Baskerville", "Times New Roman", serif;
-    font-size: clamp(45px, 4.3vw, 57px);
-    font-weight: normal;
-    color: #6c7a89;
-    text-align: left;
-    white-space: nowrap;
-  }
-  header .brand-logo {
-    height: 138px;
-    width: auto;
-    display: inline-block;
-    vertical-align: middle;
-    position: relative;
-    top: 25%;
-  }
-</style>
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <link rel="icon" type="image/svg+xml" href="/pictures/nordcortex-bimi.svg">
+  <meta name="theme-color" content="#ffffff">
   <style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: left; }
-    .services-section h2 { margin-top: 32px; margin-bottom: 10px; font-weight: 400; letter-spacing: 0.2px; line-height: 1.25; }
-    @media (max-width: 768px) {
-      .services-section h2 { font-size: clamp(20px, 5.2vw, 26px); text-wrap: balance; word-break: keep-all; hyphens: auto; }
-      .services-section ul { padding-left: 1.1rem; }
-    }
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px)}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+  .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+  .nav .dropdown { position: relative; }
+  .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+  .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+  .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+  .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+  .nav .dropdown:hover .dropdown-menu { display:block; }
+  @media (min-width:1200px){ .nav .menu{ gap:36px } }
+  @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+  @media (min-width:1200px){ .nav a{font-size:17.5px} }
+  .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:500}
+  .menu-group { margin-top:10px; border-top:1px solid #f0f0f0; padding-top:8px; }
+  .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .menu-toggle .chev { transition: transform 0.2s ease; }
+  .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
+  .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
+  .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
+  .menu-group.open .submenu { display:flex; }
+  .mobile-menu.open {right:0}
+  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+  .overlay.show {opacity:1;pointer-events:auto}
+  .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
+  .brand a { text-decoration:none; color:#111; }
+  header .brand span {font-family:"Baskerville","Times New Roman",serif;font-size:clamp(45px,4.3vw,57px);font-weight:normal;color:#6c7a89;white-space:nowrap}
+  header .brand-logo {height:138px;width:auto;display:inline-block;vertical-align:middle;position:relative;top:25%}
+  @media (min-width: 1200px){ .brand-logo{height:155px} .brand span{font-size:44px} }
+  @media (max-width: 600px){ .brand-logo{height:60px} .brand span{font-size:28px} }
+  /* page styles */
+  h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
+  .services-section h2{ margin-top:32px; margin-bottom:8px; font-weight:400; letter-spacing:.2px; line-height:1.25 }
+  footer{border-top:1px solid #eee; margin-top:48px}
+  .muted{color:#666; font-size:14px}
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      
-<div class="brand">
-  <a href="https://www.nordcortex.com/main.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-    <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
-    <span>NordCordex</span>
-  </a>
-</div>
-
-      <nav class="nav">
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="https://www.nordcortex.com/main.html" style="display:flex;align-items:center;gap:10px;">
+        <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+        <span>NordCortex</span>
+      </a>
+    </div>
+    <nav class="nav">
+      <div class="menu">
         <a href="https://www.nordcortex.com/main.html">Home</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+        <div class="dropdown">
+          <a href="#">Solutions <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="procurement.html">Procurement Strategy</a>
+            <a href="retail-production.html">Retail Production</a>
+            <a href="product-development.html">Product Development</a>
+            <a href="supply-chain.html">Supply Chain</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Transformation <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="change-management.html">Change Management</a>
+            <a href="sustainability.html">Sustainability &amp; Compliance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">IoT <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a href="rfid.html">Digitalization</a>
+            <a href="rfid.html">RFID</a>
+            <a href="rfid.html">NFC</a>
+            <a href="rfid.html">BFBT</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#">Company <span class="caret">▾</span></a>
+          <div class="dropdown-menu">
+            <a class="active" href="services.html">Services</a>
+            <a href="about.html">About</a>
+          </div>
+        </div>
+        <a href="/contact.html">Contact</a>
+      </div>
+    </nav>
+    <button class="hamburger">☰</button>
+  </div>
+</header>
+<div class="overlay"></div>
+<div class="mobile-menu">
+  <button class="close-btn">✕</button>
+  <a href="https://www.nordcortex.com/main.html">Home</a>
+  <div class="menu-group">
+    <button class="menu-toggle" aria-expanded="false">Solutions <span class="chev">›</span></button>
+    <div class="submenu">
+      <a href="procurement.html">Procurement Strategy</a>
+      <a href="retail-production.html">Retail Production</a>
+      <a href="product-development.html">Product Development</a>
+      <a href="supply-chain.html">Supply Chain</a>
     </div>
-  </header>
-
-  <main class="container">
-    <section class="services-section">
-      <h1>Services</h1>
-
-      <h2>Procurement Strategy & Category Management</h2>
-      <ul>
-        <li>End-to-end category leadership – sourcing strategy, supplier mapping, cost & risk optimization.</li>
-        <li>Operating model setup – governance, RASIC roles, KPI hierarchy, category playbooks.</li>
-        <li>Benchmarking & should-cost models – data-based cost structures, negotiation support, and savings tracking.</li>
-        <li>Procurement digitalization – system implementation, analytics dashboards, spend transparency.</li>
-        <li>Procurement capability training – coaching buyers on fact-based negotiations, open-costing, and supplier evaluation.</li>
-      </ul>
-
-      <h2>Supplier Development & Open-Costing</h2>
-      <ul>
-        <li>Open-costing frameworks – full transparency from raw materials to logistics using standardized cost breakdowns.</li>
-        <li>Supplier maturity programs – process mapping, line efficiency audits, improvement roadmaps.</li>
-        <li>Technical capability enhancement – lean implementation, automation alignment, and quality gate systems.</li>
-        <li>Strategic partnership models – co-creation projects, JV structures, and performance-linked incentives.</li>
-        <li>Supplier onboarding due diligence – compliance, capacity, financial, and technical scoring systems.</li>
-      </ul>
-
-      <h2>Product Development & Industrialization</h2>
-      <ul>
-        <li>Concept-to-bulk standardization – connecting PD, design, and manufacturing through structured routines.</li>
-        <li>Tech pack and BOM accuracy – version control, traceability, and feedback loops.</li>
-        <li>Material optimization – specification harmonization and alternative sourcing for cost and sustainability gains.</li>
-        <li>Automation and digital sampling – 3D design, virtual approvals, CAD integration.</li>
-        <li>Production feasibility studies – factory readiness, pilot run evaluation, yield and cycle time optimization.</li>
-      </ul>
-
-      <h2>RFID, IoT & Digital Product Passport</h2>
-      <ul>
-        <li>RFID source-tagging programs – rollout design, read-point mapping, packaging integration.</li>
-        <li>Digital Product Passport (DPP) – building data architecture for traceability, recyclability, and reporting.</li>
-        <li>IoT-driven inventory systems – linking production, logistics, and retail visibility in real-time.</li>
-        <li>Battery-free Bluetooth (BFBT) pilots – IoT sensor deployment for environment & location tracking.</li>
-        <li>Data utilization frameworks – integrating supply and retail data for forecasting, replenishment, and demand sensing.</li>
-      </ul>
-
-      <h2>Packaging, Logistics & Automation</h2>
-      <ul>
-        <li>Transit packaging optimization – right-sizing, material substitution, cost per unit modeling.</li>
-        <li>Automation audits – ROI and payback models for packing, folding, and labeling.</li>
-        <li>Vendor packaging support – global packaging guidelines, 3D pack optimization.</li>
-        <li>DC integration – carton scanning, content verification, and gate-reader design.</li>
-        <li>Environmental packaging – lifecycle analysis, recyclability and recycled content standards.</li>
-      </ul>
-
-      <h2>Quality, Compliance & Sustainability</h2>
-      <ul>
-        <li>QA systems and governance – standardized routines for TCs, CoCs, and AQL testing.</li>
-        <li>Root cause & CAPA frameworks – preventive and corrective actions linked to vendor scorecards.</li>
-        <li>Social & environmental compliance – managing BSCI, BEPI, OCS, SMETA, RCS, and FSC certification.</li>
-        <li>Traceability architecture – factory-to-store mapping for material flow and environmental footprint.</li>
-        <li>Sustainability dashboards – tracking compliance, CO₂, and recycling rates.</li>
-      </ul>
-
-      <h2>Supply Chain Optimization</h2>
-      <ul>
-        <li>Network redesign & nearshoring evaluation – cost, CO₂, and service level modeling.</li>
-        <li>S&OP setup – demand planning, parameter calibration, and alignment between PD and logistics.</li>
-        <li>Digital planning tools – linking ERP, WMS, and PLM to real-time data layers.</li>
-        <li>Lead-time compression – milestone automation, calendar redesign.</li>
-        <li>Inventory health improvement – visibility, obsolescence control, and predictive replenishment.</li>
-      </ul>
-
-      <h2>Process & Change Management</h2>
-      <ul>
-        <li>Process architecture & SOP creation – connecting PD, procurement, production, and sustainability flows.</li>
-        <li>Change enablement – communication and training programs for adoption.</li>
-        <li>Performance dashboards – real-time KPI tracking and escalations.</li>
-        <li>RACI & governance models – clear accountability between HQ and production offices.</li>
-        <li>Continuous improvement culture – agile routines aligned to business rhythm.</li>
-      </ul>
-
-      <h2>Interim & Advisory Roles (B2B)</h2>
-      <ul>
-        <li>Interim leadership – Head of Procurement, Head of Production, or RFID/DPP Program Lead (3–12 months).</li>
-        <li>Operational turnaround projects – stabilizing operations post-M&A or supplier failure.</li>
-        <li>Board-level advisory – category, cost, and supply chain due diligence for investors.</li>
-        <li>Procurement and supply audits – red/amber/green diagnostics with 90-day improvement plans.</li>
-        <li>Innovation scouting – identifying automation, digital, or material innovation opportunities.</li>
-      </ul>
-
-      <h2>Commercial Enablement & Training</h2>
-      <ul>
-        <li>RFP & contract playbooks – templates, scoring matrices, and risk clauses.</li>
-        <li>Negotiation capability programs – analytics-driven training and supplier performance improvement.</li>
-        <li>Digital learning tools – modular e-learning for factories and sourcing offices.</li>
-        <li>Vendor and buyer certification – benchmarking and continuous improvement frameworks.</li>
-      </ul>
-
-      <h2>Added Services</h2>
-      <ul>
-        <li>Tech stack consulting – PLM, WMS, RFID middleware, or ERP integration advisory.</li>
-        <li>Data analytics & KPI visualization – Power BI and Looker Studio dashboards.</li>
-        <li>Sustainability data collection – automated EU/ESG reporting pipelines.</li>
-        <li>Cross-functional project PMO – program management for transformation projects.</li>
-        <li>Audit-ready documentation setup – compliance, TC/CoC, and product data capture standardization.</li>
-      </ul>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 NordCordex. All rights reserved.</p>
+  </div>
+  <div class="menu-group">
+    <button class="menu-toggle" aria-expanded="false">Transformation <span class="chev">›</span></button>
+    <div class="submenu">
+      <a href="change-management.html">Change Management</a>
+      <a href="sustainability.html">Sustainability &amp; Compliance</a>
     </div>
-  </footer>
+  </div>
+  <div class="menu-group">
+    <button class="menu-toggle" aria-expanded="false">IoT <span class="chev">›</span></button>
+    <div class="submenu">
+      <a href="rfid.html">Digitalization</a>
+      <a href="rfid.html">RFID</a>
+      <a href="rfid.html">NFC</a>
+      <a href="rfid.html">BFBT</a>
+    </div>
+  </div>
+  <div class="menu-group">
+    <button class="menu-toggle" aria-expanded="false">Company <span class="chev">›</span></button>
+    <div class="submenu">
+      <a class="active" href="services.html">Services</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+  <a href="/contact.html">Contact</a>
+</div>
+<script>
+  const burger=document.querySelector('.hamburger');
+  const menu=document.querySelector('.mobile-menu');
+  const overlay=document.querySelector('.overlay');
+  const closeBtn=document.querySelector('.close-btn');
+  burger.addEventListener('click',()=>{menu.classList.toggle('open');overlay.classList.toggle('show')});
+  overlay.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+  closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+  document.querySelectorAll('.menu-toggle').forEach(btn=>{btn.addEventListener('click',()=>{const g=btn.parentElement;const exp=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.menu-group').forEach(x=>{if(x!==g){x.classList.remove('open');const b=x.querySelector('.menu-toggle');if(b) b.setAttribute('aria-expanded','false')}});btn.setAttribute('aria-expanded',String(!exp));g.classList.toggle('open')})});
+  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')}));
+</script>
+<main class="container">
+  <section class="services-section">
+    <h1>Services</h1>
+    <h2>Procurement Strategy &amp; Category Management</h2>
+    <ul>
+      <li>End-to-end category leadership – sourcing strategy, supplier mapping, cost &amp; risk optimization.</li>
+      <li>Operating model setup – governance, RASIC roles, KPI hierarchy, category playbooks.</li>
+      <li>Benchmarking &amp; should-cost models – data-based cost structures, negotiation support, and savings tracking.</li>
+      <li>Procurement digitalization – system implementation, analytics dashboards, spend transparency.</li>
+      <li>Procurement capability training – coaching buyers on fact-based negotiations, open-costing, and supplier evaluation.</li>
+    </ul>
+  </section>
+</main>
+<footer>
+  <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
+</footer>
 </body>
 </html>
