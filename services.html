@@ -164,18 +164,22 @@
   closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
   document.querySelectorAll('.menu-toggle').forEach(btn=>{btn.addEventListener('click',()=>{const g=btn.parentElement;const exp=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.menu-group').forEach(x=>{if(x!==g){x.classList.remove('open');const b=x.querySelector('.menu-toggle');if(b) b.setAttribute('aria-expanded','false')}});btn.setAttribute('aria-expanded',String(!exp));g.classList.toggle('open')})});
   document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')}));
-  // Accordion one-open behavior
-  const accItems=document.querySelectorAll('.acc-item');
-  document.querySelectorAll('.acc-trigger').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const item=btn.parentElement;
-      const isOpen=item.classList.contains('open');
-      accItems.forEach(i=>i.classList.remove('open'));
-      accItems.forEach(i=>{const t=i.querySelector('.acc-trigger'); if(t) t.setAttribute('aria-expanded','false');});
-      if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
-      // smooth scroll to opened header on mobile/desktop
-      const y=item.getBoundingClientRect().top + window.scrollY - 90;
-      window.scrollTo({top:y, behavior:'smooth'});
+</script>
+  <!-- Accordion one-open behavior (run after DOM is ready) -->
+  <script>
+  // Accordion one-open behavior (run after DOM is ready)
+  document.addEventListener('DOMContentLoaded', function(){
+    const accItems = document.querySelectorAll('.acc-item');
+    document.querySelectorAll('.acc-trigger').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const item = btn.parentElement;
+        const isOpen = item.classList.contains('open');
+        accItems.forEach(i=>i.classList.remove('open'));
+        accItems.forEach(i=>{const t=i.querySelector('.acc-trigger'); if(t) t.setAttribute('aria-expanded','false');});
+        if(!isOpen){ item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+        const y = item.getBoundingClientRect().top + window.scrollY - 90;
+        window.scrollTo({top:y, behavior:'smooth'});
+      });
     });
   });
 </script>
