@@ -1,0 +1,22 @@
+<!DOCTYPE html><html><body><main><h1>Expertise</h1></main>
+<script>
+document.addEventListener('click', function(e){
+  const a = e.target.closest('a[href^="#"]');
+  if(!a) return;
+  const target = document.querySelector(a.getAttribute('href'));
+  if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+});
+document.addEventListener('DOMContentLoaded', function(){
+  const all = Array.from(document.querySelectorAll('details'));
+  all.forEach(d => {
+    d.addEventListener('toggle', () => {
+      if (d.open) {
+        all.forEach(o => { if (o !== d) o.open = false; });
+        d.scrollIntoView({behavior:'smooth', block:'start'});
+      }
+    });
+  });
+});
+</script>
+
+</body></html>
