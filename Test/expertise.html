@@ -1,22 +1,131 @@
-<!DOCTYPE html><html><body><main><h1>Expertise</h1></main>
-<script>
-document.addEventListener('click', function(e){
-  const a = e.target.closest('a[href^="#"]');
-  if(!a) return;
-  const target = document.querySelector(a.getAttribute('href'));
-  if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
-});
-document.addEventListener('DOMContentLoaded', function(){
-  const all = Array.from(document.querySelectorAll('details'));
-  all.forEach(d => {
-    d.addEventListener('toggle', () => {
-      if (d.open) {
-        all.forEach(o => { if (o !== d) o.open = false; });
-        d.scrollIntoView({behavior:'smooth', block:'start'});
-      }
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Expertise | NordCortex (Test)</title>
+  <style>
+    :root{--ink:#111;--muted:#666;--line:#e9e9e9;}
+    html,body{margin:0;padding:0}
+    body{font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; color:var(--ink);}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    h1{font-size:clamp(26px,3.2vw,40px);margin:8px 0 10px}
+    p.lead{color:var(--muted);margin:0 0 16px}
+    nav.breadcrumb{font-size:14px;margin:6px 0 8px;color:var(--muted)}
+    nav.breadcrumb a{color:var(--muted);text-decoration:none}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;margin:10px 0 14px}
+    .card{border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+    .card a{display:inline-block;margin-top:6px;text-decoration:none;color:var(--ink)}
+    details{border:1px solid var(--line);border-radius:12px;background:#fff;margin:10px 0; padding:14px 16px}
+    summary{cursor:pointer;font-weight:600;font-size:16px;outline:none;list-style:none}
+    summary::-webkit-details-marker{display:none}
+    ul{margin:10px 0 0 20px}
+    li{margin:6px 0}
+    .cta{display:inline-block;padding:10px 14px;border:1px solid var(--ink);border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600;margin-right:8px}
+    .anchors a{font-size:14px;color:var(--muted);text-decoration:none;margin-right:12px}
+    header.simple{border-bottom:1px solid var(--line);}
+    header .brand{display:flex;align-items:center;gap:10px}
+    header .brand a{color:var(--ink);text-decoration:none;font-weight:600}
+  </style>
+</head>
+<body>
+  <header class="simple">
+    <div class="container brand">
+      <a href="main.html">NordCortex</a>
+      <span style="color:#bbb">/</span>
+      <strong>Expertise</strong>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Expertise</h1>
+    <p class="lead">Capabilities that deliver measurable results. Click a section to expand.</p>
+
+    <div class="anchors">
+      <a href="#interim">Interim Leadership & Advisory</a>
+      <a href="#procurement">Procurement & Supply Excellence</a>
+      <a href="#product">Product & Process Engineering</a>
+      <a href="#digital">Digital & Automation Solutions</a>
+      <a href="#quality">Quality, Sustainability & Transformation</a>
+    </div>
+
+    <details id="interim" open>
+      <summary>Interim Leadership & Advisory</summary>
+      <ul>
+        <li>Interim Head of Procurement/Production; RFID/DPP Program Lead (3–12 months).</li>
+        <li>Operational turnarounds post‑M&amp;A or supplier failure.</li>
+        <li>Board briefings: category, cost, and supply due diligence.</li>
+        <li>RAG diagnostics with 90‑day action plans.</li>
+      </ul>
+    </details>
+
+    <details id="procurement">
+      <summary>Procurement &amp; Supply Excellence</summary>
+      <ul>
+        <li>Category strategy, supplier mapping, cost &amp; risk control.</li>
+        <li>Operating model: governance, RACI, KPI hierarchy, playbooks.</li>
+        <li>Should‑cost &amp; benchmarks; negotiation packs &amp; savings tracking.</li>
+        <li>Digital spend analytics; ERP integration.</li>
+        <li>Capability building: open‑costing &amp; fact‑based negotiations.</li>
+      </ul>
+    </details>
+
+    <details id="product">
+      <summary>Product &amp; Process Engineering</summary>
+      <ul>
+        <li>Concept‑to‑bulk standards linking PD, design, manufacturing, returns &amp; reuse.</li>
+        <li>Tech pack &amp; BOM accuracy; versioning &amp; traceability.</li>
+        <li>Material optimization &amp; alternative sourcing.</li>
+        <li>Digital sampling (3D/CAD) &amp; virtual approvals.</li>
+        <li>Factory automation with cost‑neutral CAPEX; pilot runs, cycle‑time &amp; yield.</li>
+      </ul>
+    </details>
+
+    <details id="digital">
+      <summary>Digital &amp; Automation Solutions</summary>
+      <ul>
+        <li>Packaging engineering &amp; transit optimization.</li>
+        <li>DC automation: scanning, content verification, gate readers.</li>
+        <li>KPI dashboards (Power BI/Looker); ESG/EU data pipelines.</li>
+        <li>PLM/WMS/RFID middleware/ERP advisory &amp; integration.</li>
+      </ul>
+    </details>
+
+    <details id="quality">
+      <summary>Quality, Sustainability &amp; Transformation</summary>
+      <ul>
+        <li>QA systems; TCs/CoCs/AQL; root‑cause &amp; CAPA tied to scorecards.</li>
+        <li>BSCI, BEPI, OCS, SMETA, RCS, FSC compliance and labeling traceability.</li>
+        <li>Process architecture &amp; SOPs; change enablement &amp; training.</li>
+        <li>Governance &amp; escalation routines; continuous improvement.</li>
+      </ul>
+    </details>
+
+    <div style="margin-top:18px">
+      <a class="cta" href="contact.html">Book a consultation →</a>
+    </div>
+  </main>
+
+  <script>
+  // Smooth scroll to anchors
+  document.addEventListener('click', function(e){
+    const a = e.target.closest('a[href^="#"]');
+    if(!a) return;
+    const target = document.querySelector(a.getAttribute('href'));
+    if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+  // Only one accordion open at a time
+  document.addEventListener('DOMContentLoaded', function(){
+    const all = Array.from(document.querySelectorAll('details'));
+    all.forEach(d => {
+      d.addEventListener('toggle', () => {
+        if (d.open) {
+          all.forEach(o => { if (o !== d) o.open = false; });
+          d.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
     });
   });
-});
-</script>
-
-</body></html>
+  </script>
+</body>
+</html>
