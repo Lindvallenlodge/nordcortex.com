@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Contact — NordCordex</title>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; }
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+    body {font-family: Inter, Arial, sans-serif; background: #fafafa; color: #111; margin: 0;}
+    .message {
+      background: #fff; 
+      padding: 24px; 
+      border-radius: 12px; 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1); 
+      max-width: 1000px; 
+      width: 90%; 
+      margin: 120px auto 120px auto;
+    }
+    h1 {font-size: 32px; margin-bottom: 16px; text-align: center;}
+    p {font-size: 18px; color: #444;}
+  
+    .hamburger {
+      display: none;
+      font-size: 26px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      right: -260px;
+      width: 240px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -2px 0 6px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      padding: 60px 20px 20px 20px;
+      transition: right 0.3s ease;
+      z-index: 1002;
+      overflow-y: auto;
+    }
+    .mobile-menu a {
+      padding: 14px 0;
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      font-weight: 500;
+    }
+    .mobile-menu.open {
+      right: 0;
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .nav { display: none; }
+      .hamburger { display: block; }
+      .message {
+        width: 95%;
+        margin: 120px auto 120px auto;
+        padding: 24px;
+      }
+      form input, form textarea {
+        font-size: 1.1rem;
+        padding: 18px;
+        width: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-family: inherit;
+      }
+      form button {
+        font-size: 1.1rem;
+        padding: 18px 0;
+        width: 100%;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 500;
+        background: #222;
+        color: #fff;
+        border: none;
+        font-family: inherit;
+        margin-top: 8px;
+      }
+      header img {
+        height: 50px;
+      }
+    }
+    @media (min-width: 769px) {
+      form input, form textarea, form button {
+        font-size: 1.1rem;
+        padding: 14px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-family: inherit;
+      }
+      form button {
+        background: #222;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .muted {
+      color: #777;
+      font-size: 0.9rem;
+      margin-bottom: 100px;
+    }
+    header {
+      width: 100%;
+      background: #fff;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 62px;
+      position: relative;
+    }
+    header img {
+      height: 60px;
+      width: auto;
+    }
+    header .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 16px;
+      white-space: nowrap;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    nav .nav-left, nav .nav-right {
+      display: flex;
+      gap: 32px;
+    }
+    nav a {
+      text-decoration: none;
+      color: #222;
+    }
+  .brand a { text-decoration:none; color:#111; }
+  header .brand span {
+    font-family: "Baskerville", "Times New Roman", serif;
+    font-size: clamp(45px, 4.3vw, 57px);
+    font-weight: normal;
+    color: #6c7a89;
+    text-align: left;
+    white-space: nowrap;
+  }
+  header .brand-logo {
+    height: 138px;
+    width: auto;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    top: 25%;
+  }
+  </style>
+  <style>
+    .brand span { font-family: "Baskerville", "Times New Roman", serif !important; }
+    body, p, li { text-align: left; }
+    h1, h2, h3, h4, h5, h6 { text-align: justify; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="main.html" class="brand" style="display:flex; align-items:center; text-decoration:none; white-space: nowrap; gap: 12px;">
+        <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+        <span>NordCordex</span>
+      </a>
+      <nav class="nav">
+        <div class="nav-left">
+          <a href="main.html">Home</a>
+          <a href="about.html">About</a>
+        </div>
+        <div class="nav-right">
+          <a href="services.html">Services</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+      <button class="hamburger" aria-label="Open menu">&#9776;</button>
+      <div class="overlay"></div>
+      <div class="mobile-menu" aria-hidden="true">
+        <button class="close-btn" aria-label="Close menu">&times;</button>
+        <a href="main.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <script>
+        // Hamburger menu JS
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const overlay = document.querySelector('.overlay');
+        const closeBtn = document.querySelector('.close-btn');
+        hamburger.addEventListener('click', function() {
+          mobileMenu.classList.add('open');
+          overlay.classList.add('show');
+          mobileMenu.setAttribute('aria-hidden', 'false');
+        });
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          overlay.classList.remove('show');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        });
+        overlay.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          overlay.classList.remove('show');
+          mobileMenu.setAttribute('aria-hidden', 'true');
+        });
+      </script>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="message" style="max-width: 1000px; margin: 120px auto 120px auto; padding: 40px;">
+        <h1>Contact Us</h1>
+        <form id="contact-form" action="https://formspree.io/f/mblzjaok" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
+          <input type="hidden" name="_captcha" value="false">
+          <label for="name" style="font-size: 1rem; color: #222;">Name</label>
+          <input type="text" id="name" name="name" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
+
+          <label for="email" style="font-size: 1rem; color: #222;">Email</label>
+          <input type="email" id="email" name="email" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
+
+          <label for="message" style="font-size: 1rem; color: #222;">Message</label>
+          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+
+          <button type="submit" style="background: #222; color: #fff; border: none; border-radius: 6px; font-family: inherit; cursor: pointer; font-weight: 500; margin-top: 8px; padding: 16px; font-size: 1rem;">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container muted">© 2025 NordCordex. All rights reserved.</div>
+  </footer>
+<script>
+    (function () {
+      var form = document.getElementById('contact-form');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(form.action, {
+          method: 'POST',
+          body: data,
+          headers: { 'Accept': 'application/json' },
+          redirect: 'manual'
+        }).then(function () {
+          window.location.href = 'thankyou.html';
+        }).catch(function () {
+          // Even if the request fails, send user to thank-you page to avoid Formspree default screen
+          window.location.href = 'thankyou.html';
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
