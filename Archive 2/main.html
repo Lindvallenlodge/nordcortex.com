@@ -4,7 +4,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact — NordCortex</title>
+  <title>NordCortex — Procurement Strategy, Retail Production, Product Development, Supply Chain & RFID</title>
+  
+  <!-- Favicon package -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/svg+xml" href="/pictures/nordcortex-bimi.svg">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     .container{max-width:1100px;margin:0 auto;padding:24px}
@@ -146,11 +157,6 @@
       .principles-section .principle-card .thumb{height:180px}
     }
   </style>
-  <style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif !important; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
 </head>
 <body>
   <header>
@@ -207,7 +213,8 @@
       <button class="hamburger">☰</button>
     </div>
   </header>
-<div class="overlay"></div>
+
+  <div class="overlay"></div>
   <div class="mobile-menu">
     <button class="close-btn">✕</button>
     <a href="https://www.nordcortex.com/main.html">Home</a>
@@ -300,51 +307,134 @@
       });
     });
   </script>
-<main>
-    <div class="container">
-      <div class="message" style="max-width: 1000px; margin: 48px auto 64px auto; padding: 40px;">
-        <h1>Contact Us</h1>
-        <form id="contact-form" action="https://formspree.io/f/mblzjaok" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
-          <input type="hidden" name="_captcha" value="false">
-          <label for="name" style="font-size: 1rem; color: #222;">Name</label>
-          <input type="text" id="name" name="name" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
 
-          <label for="email" style="font-size: 1rem; color: #222;">Email</label>
-          <input type="email" id="email" name="email" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
+  <main class="container">
+      <section class="hero-dark">
+        <div class="fx"></div>
+        <div class="inner">
+          <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
+          <div class="sub-spacer"></div>
+          <p class="sub">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
+          <div class="sub-spacer"></div>
+          <div class="sub-spacer"></div>
+          <div class="hero-ctas">
+            <a class="btn-primary" href="services.html">Explore our solutions →</a>
+            <a class="btn-secondary" href="contact.html">Book a consultation →</a>
+          </div>
+        </div>
+      </section>
+      <!-- FOUR PRINCIPLES (Corporate tech style) -->
+      <div style="background:#fff;height:1cm;margin:0 -24px;"></div>
+      <section class="principles-section">
+        <div class="container">
+          <h2 style="margin:0 0 12px;font-size:clamp(30px,4vw,48px);text-align:center">Our Four Principles to Run Reliable, Data-Driven Operations</h2>
+          <p class="sublead" style="margin:0 0 16px;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
+          <div class="principles-grid">
+            <article class="principle-card">
+              <div class="thumb gradient-1">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- layered sheets -->
+                  <rect x="10" y="18" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                  <rect x="16" y="12" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2" opacity="0.7"/>
+                  <!-- magnifier -->
+                  <circle cx="46" cy="40" r="8" stroke="url(#g1)" stroke-width="2"/>
+                  <line x1="51" y1="45" x2="58" y2="52" stroke="url(#g1)" stroke-width="2.8" stroke-linecap="round"/>
+                  <!-- small data nodes -->
+                  <circle cx="12" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                  <circle cx="26" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3>Procure with Insight</h3>
+              <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
+              <a class="cta-link" href="procurement.html">Explore Procurement Strategy →</a>
+            </article>
 
-          <label for="message" style="font-size: 1rem; color: #222;">Message</label>
-          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+            <article class="principle-card">
+              <div class="thumb gradient-2">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g2" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- cube wireframe -->
+                  <path d="M18 28 L35 18 L52 28 L35 38 Z" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M18 28 L18 46 L35 56 L35 38" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M52 28 L52 46 L35 56" stroke="url(#g2)" stroke-width="2"/>
+                  <!-- cog simple -->
+                  <circle cx="50" cy="52" r="6" stroke="url(#g2)" stroke-width="2"/>
+                  <circle cx="50" cy="52" r="2.5" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="43" x2="50" y2="47" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="57" x2="50" y2="61" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="41" y1="52" x2="45" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="55" y1="52" x2="59" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Engineer it Right-First-Time</h3>
+              <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
+              <a class="cta-link" href="retail-production.html">Explore Production & Development →</a>
+            </article>
 
-          <button type="submit" style="background: #222; color: #fff; border: none; border-radius: 6px; font-family: inherit; cursor: pointer; font-weight: 500; margin-top: 8px; padding: 16px; font-size: 1rem;">
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
+            <article class="principle-card">
+              <div class="thumb gradient-3">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g3" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- arcs -->
+                  <path d="M20 44 A15 15 0 0 1 50 44" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M26 38 A9 9 0 0 1 44 38" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M32 34 A3 3 0 0 1 38 34" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <!-- nodes -->
+                  <circle cx="20" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="50" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="35" cy="49" r="4" fill="#7AA2FF"/>
+                  <line x1="20" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                  <line x1="50" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Connect and Perform</h3>
+              <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
+              <a class="cta-link" href="rfid.html">Explore IoT & RFID →</a>
+            </article>
+
+            <article class="principle-card">
+              <div class="thumb gradient-4">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g4" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- circular arrows -->
+                  <path d="M21 40 A14 14 0 1 0 49 40" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="49,40 45,36 49,36" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="21,40 25,44 21,44" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <!-- leaf -->
+                  <path d="M33 30 C36 28, 41 28, 44 32 C40 34, 36 36, 33 34 Z" fill="none" stroke="url(#g4)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Operate Responsibly</h3>
+              <p>Compliance and sustainability built into daily routines — certified sourcing, transparent materials, and traceable supply chains that strengthen brand trust and readiness.</p>
+              <a class="cta-link" href="sustainability.html">Explore Sustainability & Compliance →</a>
+            </article>
+          </div>
+        </div>
+      </section>
   </main>
   <footer>
     <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
   </footer>
-<script>
-    (function () {
-      var form = document.getElementById('contact-form');
-      if (!form) return;
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var data = new FormData(form);
-        fetch(form.action, {
-          method: 'POST',
-          body: data,
-          headers: { 'Accept': 'application/json' },
-          redirect: 'manual'
-        }).then(function () {
-          window.location.href = 'https://www.nordcortex.com/thankyou.html';
-        }).catch(function () {
-          // Even if the request fails, send user to thank-you page to avoid Formspree default screen
-          window.location.href = 'https://www.nordcortex.com/thankyou.html';
-        });
-      });
-    })();
-  </script>
 </body>
 </html>

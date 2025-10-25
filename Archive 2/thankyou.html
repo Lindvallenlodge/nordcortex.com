@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You — NordCortex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#111; --muted:#6c7a89; --border:#eee; }
+    * { box-sizing:border-box; }
+    body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+    body { margin:0; background:#fafafa; color:var(--ink); min-height:100vh; display:flex; flex-direction:column; }
+    .container{max-width:1100px;margin:0 auto;padding:0 24px}
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--border);z-index:10}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 0}
+    .brand a { text-decoration:none; color:var(--ink); display:flex; align-items:center; gap:10px; }
+    header .brand span {
+      font-family: "Baskerville", "Times New Roman", serif;
+      font-size: clamp(45px, 4.3vw, 57px);
+      font-weight: normal;
+      color: #6c7a89;
+      white-space: nowrap;
+    }
+    header .brand-logo {
+      height: 138px;
+      width: auto;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      top: 25%;
+    }
+    @media (min-width:1200px) {
+      .brand-logo { height: 155px; }
+      .brand span { font-size: 44px; }
+    }
+    @media (max-width:600px) {
+      .brand-logo { height: 60px; top: 0; }
+      .brand span { font-size: 28px; }
+    }
+
+    /* Nav (desktop) – mirrors main site */
+    .nav { display:flex; gap:28px; align-items:center; }
+    .nav a { margin:0; text-decoration:none; color:#333; font-size:clamp(15px,1.6vw,18px) }
+    .nav a:hover { color:#000; text-decoration:underline }
+    .dropdown { position: relative; }
+    .dropdown > a { display:flex; align-items:center; gap:6px; }
+    .caret { font-size:.8em; line-height:1; }
+    .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+    .dropdown-menu a { display:block; padding:8px 10px; white-space:nowrap; }
+    .dropdown:hover .dropdown-menu { display:block; }
+
+    /* Mobile */
+    .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer}
+    .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,.15);display:flex;flex-direction:column;padding:60px 20px 20px;transition:right .3s ease;z-index:1002;overflow-y:auto}
+    .mobile-menu a {padding:12px 0;text-decoration:none;color:#333}
+    .mobile-menu.open {right:0}
+    .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1000}
+    .overlay.show {opacity:1;pointer-events:auto}
+    .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+    @media (max-width:900px){.nav{display:none}.hamburger{display:block}}
+
+    main { flex:1; display:flex; align-items:center; justify-content:center; padding:48px 16px; }
+    .message { background:#fff; padding:40px; border-radius:12px; box-shadow:0 2px 6px rgba(0,0,0,.1); max-width:720px; width:100% }
+    .message h1 { font-size:28px; margin:0 0 12px; text-align:left }
+    .message p { font-size:18px; color:#444; text-align:left }
+  </style>
+
+  <script>
+    // Redirect to main page after 5 seconds
+    setTimeout(function(){ window.location.href = "https://www.nordcortex.com/main.html"; }, 5000);
+  </script>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="https://www.nordcortex.com/main.html">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+          <span>NordCortex</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <a href="https://www.nordcortex.com/main.html">Home</a>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="procurement.html">Procurement</a>
+            <a href="retail-production.html">Manufacturing</a>
+            <a href="product-development.html">Product Development</a>
+            <a href="supply-chain.html">Supply Chain</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Transformation <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="change-management.html">Change Management</a>
+            <a href="sustainability.html">Sustainability &amp; Compliance</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="rfid.html">Digitalization</a>
+            <a href="rfid.html">RFID</a>
+            <a href="rfid.html">NFC</a>
+            <a href="rfid.html">BFBT</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="about.html">About</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
+    <a href="https://www.nordcortex.com/main.html">Home</a>
+    <a href="procurement.html">Procurement</a>
+    <a href="retail-production.html">Manufacturing</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+    <a href="change-management.html">Change Management</a>
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="rfid.html">Digitalization / RFID</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <script>
+    const burger = document.querySelector('.hamburger');
+    const menu = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+    burger.addEventListener('click', () => { menu.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+    closeBtn.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+  </script>
+
+  <main>
+    <div class="message">
+      <h1>Thank You!</h1>
+      <p>We’ll reply soon. You will be redirected to our main page in a few seconds.</p>
+      <p>If not redirected, <a href="https://www.nordcortex.com/main.html">click here</a>.</p>
+    </div>
+  </main>
+</body>
+</html>
