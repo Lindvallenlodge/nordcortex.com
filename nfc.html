@@ -78,7 +78,17 @@
   .sources{max-width:1100px;margin:0 auto 36px;padding:0 24px;color:#a8b0bc}
   .sources a{color:#bcd3ff;text-decoration:none}
   .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:12px;color:#fff;text-decoration:none}
-  </style>
+  
+    /* Grouped mobile menu (accordion) */
+    .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
+    .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .menu-toggle .chev { transition: transform 0.2s ease; }
+    .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
+    .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
+    .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
+    .menu-group.open .submenu { display:flex; }
+
+</style>
 </head>
 <body>
   <header>
@@ -133,22 +143,50 @@
       <button class="hamburger">☰</button>
     </div>
   </header>
-
   <div class="overlay"></div>
   <div class="mobile-menu">
     <button class="close-btn">✕</button>
     <a href="https://www.nordcortex.com/main.html">Home</a>
-    <a href="procurement.html">Procurement</a>
-    <a href="retail-production.html">Manufacturing</a>
-    <a href="product-development.html">Product Development</a>
-    <a href="supply-chain.html">Supply Chain</a>
-    <a href="change-management.html">Change Management</a>
-    <a href="sustainability.html">Sustainability &amp; Compliance</a>
-    <a href="digitalisation.html">Digitalisation</a>
-    <a href="rfid.html">RFID</a>
-    <a href="nfc.html">NFC</a>
-    <a href="bfbt.html">BFBT</a>
-    <a href="about.html">About</a>
+
+    <div class="menu-group" id="mg-expertise">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+      <div class="submenu" id="sm-expertise" role="menu">
+        <a href="procurement.html">Procurement</a>
+        <a href="retail-production.html">Manufacturing</a>
+        <a href="product-development.html">Product Development</a>
+        <a href="supply-chain.html">Supply Chain</a>
+      </div>
+    </div>
+
+    <div class="menu-group" id="mg-services">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+      <div class="submenu" id="sm-services" role="menu">
+        <a href="change-management.html">Change Management</a>
+        <a href="sustainability.html">Sustainability &amp; Compliance</a>
+        <a href="interim-advisory.html">Interim &amp; Advisory</a>
+        <a href="process-change.html">Process &amp; Change Management</a>
+        <a href="services-added.html">Added Services</a>
+      </div>
+    </div>
+
+    <div class="menu-group" id="mg-iot">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+      <div class="submenu" id="sm-iot" role="menu">
+        <a href="digitalisation.html">Digitalisation</a>
+        <a href="rfid.html">RFID</a>
+        <a href="nfc.html">NFC</a>
+        <a href="bfbt.html">BFBT</a>
+      </div>
+    </div>
+
+    <div class="menu-group" id="mg-company">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
+      <div class="submenu" id="sm-company" role="menu">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
     <a href="contact.html">Contact</a>
   </div>
 
@@ -157,10 +195,52 @@
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.overlay');
     const closeBtn = document.querySelector('.close-btn');
-    burger.addEventListener('click', () => { menu.classList.toggle('open'); overlay.classList.toggle('show'); });
-    overlay.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
-    closeBtn.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+
+    burger.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      overlay.classList.toggle('show');
+    });
+
+    overlay.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    closeBtn.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+
+    // Mobile grouped menu toggles (accordion)
+    document.querySelectorAll('.menu-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const group = btn.parentElement;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close other groups
+        document.querySelectorAll('.menu-group').forEach((g) => {
+          if (g !== group) {
+            g.classList.remove('open');
+            const b = g.querySelector('.menu-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle
+        btn.setAttribute('aria-expanded', String(!expanded));
+        group.classList.toggle('open');
+      });
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        overlay.classList.remove('show');
+      });
+    });
   </script>
+
 
   <!-- hero full-bleed -->
   <section class="hero-dark full-bleed">
