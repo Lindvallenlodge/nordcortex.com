@@ -4,18 +4,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RFID Solutions — NordCortex</title>
+  <title>Interim & Advisory — NordCortex</title>
   
   <!-- Favicon package -->
   <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
-  <link <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
+  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
   <link rel="shortcut icon" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/svg+xml" href="/pictures/nordcortex-bimi.svg">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
 
-  
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
     .container{max-width:1100px;margin:0 auto;padding:24px}
@@ -157,15 +157,8 @@
       .principles-section .principle-card .thumb{height:180px}
     }
   </style>
-
-  <style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
 </head>
 <body>
-  
   <header>
     <div class="container header-inner">
       <div class="brand">
@@ -230,22 +223,47 @@
   </header>
 
   <div class="overlay"></div>
-
-  
   <div class="mobile-menu">
     <button class="close-btn">✕</button>
     <a href="https://www.nordcortex.com/main.html">Home</a>
-    <a href="procurement.html">Procurement</a>
-    <a href="retail-production.html">Manufacturing</a>
-    <a href="product-development.html">Product Development</a>
-    <a href="supply-chain.html">Supply Chain</a>
-    <a href="change-management.html">Change Management</a>
-    <a href="sustainability.html">Sustainability &amp; Compliance</a>
-    <a href="rfid.html">Digitalization / RFID</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </div>
 
+    <div class="menu-group" id="mg-expertise">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+      <div class="submenu" id="sm-expertise" role="menu"><a href="procurement.html">Procurement</a>
+<a href="retail-production.html">Manufacturing</a>
+<a href="product-development.html">Product Development</a>
+<a href="supply-chain.html">Supply Chain</a>
+</div>
+    </div>
+
+    <div class="menu-group" id="mg-transformation">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-transformation">Transformation <span class="chev">›</span></button>
+      <div class="submenu" id="sm-transformation" role="menu">
+        <a href="change-management.html">Change Management</a>
+        <a href="sustainability.html">Sustainability &amp; Compliance</a>
+      </div>
+    </div>
+
+    <div class="menu-group" id="mg-iot">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+      <div class="submenu" id="sm-iot" role="menu">
+        <a href="rfid.html">Digitalization</a>
+        <a href="rfid.html">RFID</a>
+        <a href="rfid.html">NFC</a>
+        <a href="rfid.html">BFBT</a>
+      </div>
+    </div>
+
+    <div class="menu-group" id="mg-company">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
+      <div class="submenu" id="sm-company" role="menu">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+
+    <a href="/contact.html">Contact</a>
+  </div>
 
   <script>
     const burger = document.querySelector('.hamburger');
@@ -267,30 +285,38 @@
       menu.classList.remove('open');
       overlay.classList.remove('show');
     });
+
+    // Mobile grouped menu toggles (accordion: one open at a time)
+    document.querySelectorAll('.menu-toggle').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const group = btn.parentElement;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all other groups
+        document.querySelectorAll('.menu-group').forEach((g) => {
+          if (g !== group) {
+            g.classList.remove('open');
+            const b = g.querySelector('.menu-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // Toggle current group
+        btn.setAttribute('aria-expanded', String(!expanded));
+        group.classList.toggle('open');
+      });
+    });
+
+    // Close menu when any submenu link is clicked
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        overlay.classList.remove('show');
+      });
+    });
   </script>
 
-  <main class="container">
-    <section class="hero">
-      <h1>RFID Solutions</h1>
-      
-<p class="lead">From Digital Product Passports to in-store accuracy, we design RFID programs that create measurable value.</p>
-<div class="grid">
-  <div class="card">
-    <h3>Retail & DC Use Cases</h3>
-    <p>Stock accuracy, loss prevention, source tagging, and automated goods receipt.</p>
-  </div>
-  <div class="card">
-    <h3>Implementation</h3>
-    <p>Pilots, middleware, tag strategy, and scalable rollout playbooks.</p>
-  </div>
-  <div class="card">
-    <h3>ROI & Compliance</h3>
-    <p>Business case creation, measurable KPIs, and sustainability data integration.</p>
-  </div>
-</div>
-
-    </section>
-  </main>
+  <main class="container"><section class="container"><details open class="accordion"><summary>Overview</summary><h1>Interim & Advisory (B2B)</h1><ul><li>Interim Head of Procurement/Production</li><li>RFID/DPP Program Lead</li><li>Turnarounds post‑M&A or supplier failure</li><li>Board advisory & due diligence</li></ul></details></section></main>
   <footer>
     <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
   </footer>
