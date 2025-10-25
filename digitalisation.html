@@ -1,395 +1,237 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&amp;display=swap" rel="stylesheet"/>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>RFID Solutions — NordCortex</title>
-<!-- Favicon package -->
-<link href="/pictures/favicon-nordcortex-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/pictures/favicon-nordcortex-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/pictures/favicon-nordcortex-apple.png" rel="apple-touch-icon" sizes="180x180"/>
-<link <link="" color="#000000" href="/pictures/safari-pinned-tab.svg" rel="mask-icon"/>
-<link href="/pictures/favicon-nordcortex-32.png" rel="shortcut icon"/>
-<meta content="#ffffff" name="msapplication-TileColor"/>
-<meta content="#ffffff" name="theme-color"/>
-<style>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digitalisation — NordCortex</title>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/pictures/favicon-nordcortex-32.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    .container{max-width:1100px;margin:0 auto;padding:24px}
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px)}
-    .nav a:hover{color:#000;text-decoration:underline}
-    /* Two-line desktop nav layout */
-    .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
-    .nav-left,.nav-right{flex:0 0 100%;display:flex;justify-content:center;gap:28px}
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px)}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+  .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+  .nav .dropdown { position: relative; }
+  .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+  .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+  .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+  .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+  .nav .dropdown:hover .dropdown-menu { display:block; }
+  @media (min-width:1200px){ .nav .menu{ gap:36px } }
+  @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
 
-    /* Desktop dropdown nav */
-    .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
-    .nav .dropdown { position: relative; }
-    .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
-    .nav .dropdown .caret { font-size: .8em; line-height: 1; }
-    .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
-    .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
-    .nav .dropdown:hover .dropdown-menu { display:block; }
-    @media (min-width:1200px){ .nav .menu{ gap:36px } }
-    @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+  .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
 
-    @media (min-width:1200px){
-      .nav-left,.nav-right{gap:36px}
-      .nav a{font-size:17.5px}
-    }
-    .hero{padding:56px 0}
-    /* Dark, futuristic hero */
-    .hero-dark{position:relative;padding:80px 0 72px;margin:0 -24px;background:#0e1116;color:#fff;overflow:hidden}
-    .hero-dark .inner{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-    .hero-dark h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:left}
-    .hero-dark p.sub{max-width:720px;margin:0 auto;color:#cfd3d9;font-size:clamp(15px,1.6vw,18px);text-align:center}
-    .sub-spacer{height:16px}
-    .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
-    .btn-primary{background:#ffffff;color:#0e1116;border:1px solid #fff;border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
-    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
-    .hero-dark .fx{position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 40% at 20% 30%, rgba(120,132,160,.25), rgba(14,17,22,0)), radial-gradient(55% 45% at 90% 20%, rgba(72,85,114,.18), rgba(14,17,22,0));filter:blur(24px);z-index:1}
-    @media (max-width:700px){.hero-dark{padding:64px 0 56px}.hero-ctas{flex-direction:column;align-items:flex-start}}
-    h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
-    p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
-    .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
-    .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
-    .card h3{margin-top:0}
-    footer{border-top:1px solid #eee; margin-top:48px}
-    .muted{color:#666; font-size:14px}
-    .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
-    .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
-    .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:500}
-    /* Grouped mobile menu */
-    .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
-    .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
-    .menu-toggle .chev { transition: transform 0.2s ease; }
-    .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
-    .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
-    .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
-    .menu-group.open .submenu { display:flex; }
-    .mobile-menu.open {right:0}
-    .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
-    .overlay.show {opacity:1;pointer-events:auto}
-    .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
-    @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
-    .brand a { text-decoration:none; color:#111; }
+  .brand a { text-decoration:none; color:#111; }
+  header .brand span { font-family: "Baskerville","Times New Roman",serif; font-size: clamp(45px, 4.3vw, 57px); font-weight: normal; color: #6c7a89; text-align: left; white-space: nowrap; }
+  header .brand-logo { height: 138px; width: auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
+  @media (min-width: 1200px) { .brand-logo { height: 155px; } .brand span { font-size: 44px; } }
+  @media (max-width: 600px) { .brand-logo { height: 60px; } .brand span { font-size: 28px; } }
 
-    header .brand span {
-      font-family: "Baskerville", "Times New Roman", serif;
-      font-size: clamp(45px, 4.3vw, 57px); /* increased by additional 2px */
-      font-weight: normal;
-      color: #6c7a89;
-      text-align: left;
-      white-space: nowrap;
-    }
+  .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:500}
+  .mobile-menu.open {right:0}
+  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+  .overlay.show {opacity:1;pointer-events:auto}
+  .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
 
-    /* Logo sized to first rectangle */
-    header .brand-logo {
-      height: 138px; /* increased by another 20% from 115px */
-      width: auto;
-      display: inline-block;
-      vertical-align: middle;
-      position: relative;
-      top: 25%;
-    }
+  /* Full-bleed wrapper */
+  .full-bleed{ margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
 
-    /* Wide desktop bump */
-    @media (min-width: 1200px) {
-      .brand-logo { height: 155px; }
-      .brand span { font-size: 44px; }
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-    .brand-logo { height: 60px; }
-    .brand span { font-size: 28px; }
+  /* Palette */
+  :root{
+    --bg:#0e1116;
+    --ink:#e9eef5;
+    --muted:#cfd3d9;
+    --brand:#7AA2FF;
+    --accent:#4BD4C6;
+    --accent2:#F6B73C;
   }
 
-    /* Four Principles – corporate tech styling */
-    /* Dark background wrapper for Four Principles */
-    .principles-section {
-      background: linear-gradient(180deg, #07101f 0%, #0d1b31 100%);
-      color: #fff;
-      padding: 64px 0 72px;
-      margin: 0 -24px;
-    }
-    .principles-section h2{ color:#fff; text-align:center; }
-    .principles-section .sublead{ color:#cfd3d9; text-align:center; }
-    .principles-section .principle-card {
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
-    }
-    .principles-section .principle-card h3 {
-      color: #fff;
-    }
-    .principles-section .principle-card p {
-      color: #cfd3d9;
-    }
-    .principles-section .thumb img { display:block; margin:auto; }
-    .principles-section .principle-card .thumb { height:240px; display:flex; align-items:center; justify-content:center; }
-    .principles-section .cta-link {
-      color: #7aa2ff;
-    }
-    .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
-    .principle-card{border:1px solid #eee;border-radius:14px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.03)}
-    .principle-card .thumb{height:140px;display:flex;align-items:center;justify-content:center}
-    .principle-card .icon{font-size:34px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.1))}
-    .principle-card h3{margin:12px 14px 6px;font-size:clamp(16px,1.8vw,20px)}
-    .principle-card p{margin:0 14px 10px;color:#444;font-size:clamp(14px,1.4vw,16px)}
-    .principle-card .cta-link{margin:0 14px 14px;text-decoration:none;font-weight:600}
+  /* Dark hero (same as main.html gradient) */
+  .hero-dark{background:linear-gradient(180deg,#07101f 0%,#0d1b31 100%); color:#fff; padding:64px 0 72px;}
+  .hero-dark .inner{max-width:1100px;margin:0 auto;padding:0 24px}
+  .hero-dark h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:center}
+  .hero-dark p.sub{max-width:720px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
 
-    /* Subtle gradient headers (neutral corporate tones) */
-    .gradient-1{background:linear-gradient(135deg, rgba(53,63,84,.14), rgba(96,106,128,.06))}
-    .gradient-2{background:linear-gradient(135deg, rgba(62,74,96,.14), rgba(110,120,146,.06))}
-    .gradient-3{background:linear-gradient(135deg, rgba(72,85,114,.14), rgba(120,132,160,.06))}
-    .gradient-4{background:linear-gradient(135deg, rgba(48,58,76,.14), rgba(90,100,120,.06))}
-
-    @media (max-width:700px){
-      .principle-card .thumb{height:120px}
-    }
-    @media (max-width:700px){
-      .principles-section .principle-card .thumb{height:180px}
-    }
-  </style>
-<style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
+  /* Cards grid */
+  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(122,162,255,.15);border:1px solid rgba(122,162,255,.35);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
+  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
+  .kpi strong{font-size:22px}
+  .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
+  .seg{display:flex;gap:8px;align-items:center;margin:12px 0 2px}
+  .sources{max-width:1100px;margin:0 auto 36px;padding:0 24px;color:#a8b0bc}
+  .sources a{color:#bcd3ff;text-decoration:none}
+  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:12px;color:#fff;text-decoration:none}
   </style>
 </head>
 <body>
-<header>
-<div class="container header-inner">
-<div class="brand">
-<a href="https://www.nordcortex.com/main.html" style="display:flex;align-items:center;gap:10px;">
-<img alt="NordCortex Logo" class="brand-logo" src="assets/images/NordCortex logo grey final no text.png"/>
-<span>NordCortex</span>
-</a>
-</div>
-<nav class="nav">
-<div class="menu">
-<a href="https://www.nordcortex.com/main.html">Home</a>
-<div class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" href="#">Expertise <span class="caret">▾</span></a>
-<div class="dropdown-menu" role="menu">
-<a href="procurement.html">Procurement</a>
-<a href="retail-production.html">Manufacturing</a>
-<a href="product-development.html">Product Development</a>
-<a href="supply-chain.html">Supply Chain</a>
-</div>
-</div>
-<div class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" href="#">Services <span class="caret">▾</span></a>
-<div class="dropdown-menu" role="menu">
-<a href="change-management.html">Change Management</a>
-<a href="sustainability.html">Sustainability &amp; Compliance</a>
-<a href="interim-advisory.html">Interim &amp; Advisory</a>
-<a href="process-change.html">Process &amp; Change Management</a>
-<a href="services-added.html">Added Services</a>
-</div>
-</div>
-<div class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" href="#">IoT <span class="caret">▾</span></a>
-<div class="dropdown-menu" role="menu">
-<a href="rfid.html">Digitalization</a>
-<a href="rfid.html">RFID</a>
-<a href="rfid.html">NFC</a>
-<a href="rfid.html">BFBT</a>
-</div>
-</div>
-<div class="dropdown">
-<a aria-expanded="false" aria-haspopup="true" href="#">Company <span class="caret">▾</span></a>
-<div class="dropdown-menu" role="menu">
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-</div>
-</div>
-<a href="/contact.html">Contact</a>
-</div>
-</nav>
-<button class="hamburger">☰</button>
-</div>
-</header>
-<div class="overlay"></div>
-<div class="mobile-menu">
-<button class="close-btn">✕</button>
-<a href="https://www.nordcortex.com/main.html">Home</a>
-<a href="procurement.html">Procurement</a>
-<a href="retail-production.html">Manufacturing</a>
-<a href="product-development.html">Product Development</a>
-<a href="supply-chain.html">Supply Chain</a>
-<a href="change-management.html">Change Management</a>
-<a href="sustainability.html">Sustainability &amp; Compliance</a>
-<a href="rfid.html">Digitalization / RFID</a>
-<a href="about.html">About</a>
-<a href="contact.html">Contact</a>
-</div>
-<script>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="https://www.nordcortex.com/main.html" style="display:flex;align-items:center;gap:10px;">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+          <span>NordCortex</span>
+        </a>
+      </div>
+      <nav class="nav">
+        <div class="menu">
+          <a href="https://www.nordcortex.com/main.html">Home</a>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="procurement.html">Procurement</a>
+              <a href="retail-production.html">Manufacturing</a>
+              <a href="product-development.html">Product Development</a>
+              <a href="supply-chain.html">Supply Chain</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="change-management.html">Change Management</a>
+              <a href="sustainability.html">Sustainability &amp; Compliance</a>
+              <a href="interim-advisory.html">Interim & Advisory</a>
+              <a href="process-change.html">Process & Change Management</a>
+              <a href="services-added.html">Added Services</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="digitalisation.html">Digitalisation</a>
+              <a href="rfid.html">RFID</a>
+              <a href="nfc.html">NFC</a>
+              <a href="bfbt.html">BFBT</a>
+            </div>
+          </div>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="services.html">Services</a>
+              <a href="about.html">About</a>
+            </div>
+          </div>
+          <a href="/contact.html">Contact</a>
+        </div>
+      </nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+
+  <div class="overlay"></div>
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
+    <a href="https://www.nordcortex.com/main.html">Home</a>
+    <a href="procurement.html">Procurement</a>
+    <a href="retail-production.html">Manufacturing</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+    <a href="change-management.html">Change Management</a>
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="digitalisation.html">Digitalisation</a>
+    <a href="rfid.html">RFID</a>
+    <a href="nfc.html">NFC</a>
+    <a href="bfbt.html">BFBT</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <script>
     const burger = document.querySelector('.hamburger');
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.overlay');
     const closeBtn = document.querySelector('.close-btn');
-
-    burger.addEventListener('click', () => {
-      menu.classList.toggle('open');
-      overlay.classList.toggle('show');
-    });
-
-    overlay.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('show');
-    });
-
-    closeBtn.addEventListener('click', () => {
-      menu.classList.remove('open');
-      overlay.classList.remove('show');
-    });
+    burger.addEventListener('click', () => { menu.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+    closeBtn.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
   </script>
-<main class="container"><div style="height:0;"></div>
-<!-- Digitalisation section (inserted) -->
-<section class="full-bleed" id="digitalisation">
-<style>
-/* --- Scoped Digitalisation styles --- */
-#digitalisation {
-  --bg:#0e1116;
-  --card:#121720;
-  --ink:#e9eef5;
-  --muted:#a8b0bc;
-  --brand:#7AA2FF;
-  --accent:#4BD4C6;
-  --accent2:#F6B73C;
-  color: var(--ink);
-  background: var(--bg);
-}
-#digitalisation .inner{max-width:1100px;margin:0 auto;padding:28px 24px}
-#digitalisation h1,#digitalisation h2,#digitalisation h3,#digitalisation p,#digitalisation li{font-family:Outfit,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;line-height:1.45}
-#digitalisation header{padding:28px 24px 8px;max-width:1100px;margin:0 auto}
-#digitalisation .grid{max-width:1100px;margin:8px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
-#digitalisation .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;position:relative;overflow:hidden}
-#digitalisation .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(122,162,255,.15);border:1px solid rgba(122,162,255,.35);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
-#digitalisation .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
-#digitalisation .kpi strong{font-size:22px}
-#digitalisation .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
-#digitalisation .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
-#digitalisation .seg{display:flex;gap:8px;align-items:center;margin:12px 0 2px}
-#digitalisation .sources{margin-top:22px;border-top:1px solid rgba(255,255,255,.08);padding-top:12px;color:#a8b0bc}
 
-/* Full-bleed helper to span edge-to-edge under your fixed-width header */
-.full-bleed{
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
-}
-</style>
-<div class="inner">
-<header>
-<h1>Digitalisation for Retail &amp; Manufacturers</h1>
-<p class="lead">We help big retailers, medium retailers, and large manufacturers move from paper-and-spreadsheet processes to measurable digital flows — sourced from the line, the DC, and the store — with clean IDs, read‑points, and exception playbooks.</p>
-</header>
-<section class="grid">
-<article class="card">
-<span class="pill">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-<path d="M6 6h15l-1.5 8H8z"></path><circle cx="9" cy="20" r="1.5"></circle><circle cx="18" cy="20" r="1.5"></circle>
-</svg>
-        Big Retailers
-      </span>
-<div class="seg">
-<svg fill="none" height="42" viewbox="0 0 48 48" width="42">
-<rect height="24" rx="4" stroke="#7AA2FF" stroke-width="2" width="36" x="6" y="10"></rect>
-<path d="M10 26h6m4 0h8m4 0h6" stroke="#4BD4C6" stroke-width="2"></path>
-<circle cx="24" cy="28" r="9" stroke="#F6B73C" stroke-width="2"></circle>
-</svg>
-<h3 style="margin:0">Single source of truth</h3>
-</div>
-<ul>
-<li>Item/lot/serial IDs aligned across ERP, WMS, POS</li>
-<li>Source tagging + backroom &amp; salesfloor read‑points</li>
-<li>Exception playbooks: shrink, mispick, dwell</li>
-</ul>
-<div class="kpi"><span>Inventory accuracy</span><strong>98–99%</strong></div>
-<div class="bar"><span style="width:94%"></span></div>
-<span class="badge"></span>
+  <!-- hero full-bleed -->
+  <section class="hero-dark full-bleed">
+    <div class="inner">
+      <h1>Digitalisation for Retail & Manufacturers</h1>
+      <p class="sub">We help big retailers, medium retailers, and large manufacturers move from paper‑and‑spreadsheet processes to measurable digital flows — sourced from the line, the DC, and the store — with clean IDs, read‑points, and exception playbooks.</p>
+    </div>
+  </section>
+
+  <!-- cards -->
+  <section style="background:#0e1116;color:#e9eef5" class="full-bleed">
+    <div class="dcx-grid">
+      
+<article class="dcx-card">
+  <span class="pill">Big Retailers</span>
+  <div class="seg"><h3 style="margin:0">Single source of truth</h3></div>
+  <ul>
+    <li>Item/lot/serial IDs aligned across ERP, WMS, POS</li>
+    <li>Source tagging + backroom & salesfloor read‑points</li>
+    <li>Exception playbooks: shrink, mispick, dwell</li>
+  </ul>
+  <div class="kpi"><span>Inventory accuracy</span><strong>98–99%</strong></div>
+  <div class="bar"><span style="width:94%"></span></div>
 </article>
-<article class="card">
-<span class="pill">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-<path d="M4 10h16l-1-4H5z"></path><path d="M6 10v8h12v-8"></path><path d="M9 14h6"></path>
-</svg>
-        Medium Retailers
-      </span>
-<div class="seg">
-<svg fill="none" height="42" viewbox="0 0 48 48" width="42">
-<path d="M8 30h32" stroke="#7AA2FF" stroke-width="2"></path>
-<rect fill="#4BD4C6" height="12" width="8" x="10" y="18"></rect><rect fill="#7AA2FF" height="16" width="8" x="22" y="14"></rect><rect fill="#F6B73C" height="10" width="8" x="34" y="20"></rect>
-</svg>
-<h3 style="margin:0">Fast pilot, clear ROI</h3>
-</div>
-<ul>
-<li>Start with one store + one DC lane + 100 SKUs</li>
-<li>Cycle counts in minutes; shelf heat‑maps</li>
-<li>Payback model on exceptions recovered</li>
-</ul>
-<div class="kpi"><span>Typical pilot payback</span><strong>3–6 mo</strong></div>
-<div class="bar"><span style="width:70%"></span></div>
-<span class="badge" style="background:radial-gradient(60% 60% at 40% 40%, rgba(122,162,255,.5), rgba(122,162,255,0));"></span>
+<article class="dcx-card">
+  <span class="pill">Medium Retailers</span>
+  <div class="seg"><h3 style="margin:0">Fast pilot, clear ROI</h3></div>
+  <ul>
+    <li>One store + one DC lane + 100 SKUs</li>
+    <li>Cycle counts in minutes; shelf heat‑maps</li>
+    <li>Payback model on exceptions recovered</li>
+  </ul>
+  <div class="kpi"><span>Typical pilot payback</span><strong>3–6 mo</strong></div>
+  <div class="bar"><span style="width:70%"></span></div>
 </article>
-<article class="card">
-<span class="pill">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18">
-<path d="M3 21V9l7 4V9l7 4V9l4 2v10H3z"></path>
-</svg>
-        Manufacturers
-      </span>
-<div class="seg">
-<svg fill="none" height="42" viewbox="0 0 48 48" width="42">
-<rect height="24" rx="3" stroke="#7AA2FF" stroke-width="2" width="36" x="6" y="8"></rect>
-<path d="M12 26c4-6 8-6 12 0s8 6 12 0" fill="none" stroke="#4BD4C6" stroke-width="2"></path>
-<circle cx="24" cy="20" fill="#F6B73C" r="4"></circle>
-</svg>
-<h3 style="margin:0">Traceability by design</h3>
-</div>
-<ul>
-<li>Serialised materials → work orders → finished goods</li>
-<li>Line read‑points; pack verification; ASN accuracy</li>
-<li>DPP‑ready records (origin, composition, repair)</li>
-</ul>
-<div class="kpi"><span>Right‑first‑time</span><strong>+3–7 pp</strong></div>
-<div class="bar"><span style="width:55%"></span></div>
-<span class="badge" style="background:radial-gradient(60% 60% at 40% 40%, rgba(246,183,60,.5), rgba(246,183,60,0));"></span>
+<article class="dcx-card">
+  <span class="pill">Manufacturers</span>
+  <div class="seg"><h3 style="margin:0">Traceability by design</h3></div>
+  <ul>
+    <li>Serialised materials → work orders → finished goods</li>
+    <li>Line read‑points; pack verification; ASN accuracy</li>
+    <li>DPP‑ready records (origin, composition, repair)</li>
+  </ul>
+  <div class="kpi"><span>Right‑first‑time</span><strong>+3–7 pp</strong></div>
+  <div class="bar"><span style="width:55%"></span></div>
 </article>
-</section>
-<section class="grid" style="margin-top:0">
-<article class="card" style="grid-column:1/-1">
-<h3>How we onboard you (design → pilot → scale)</h3>
-<ul>
-<li><strong>Design:</strong> process → data model → tag/ID rules → read‑points → dashboards</li>
-<li><strong>Pilot:</strong> single site/flow; prove accuracy, speed, and exception capture</li>
-<li><strong>Scale:</strong> supplier onboarding kit, templates, SLAs, training</li>
-<li><strong>Operate:</strong> KPIs, alerts, and continuous improvement routines</li>
-</ul>
-<a class="cta" href="#">Book a 30‑min scoping call →</a>
-</article>
-</section>
-<footer>
-<div class="sources">
-<strong>Sources (for deeper reading)</strong>
-<ul>
-<li>McKinsey — Digital transformation in retail &amp; supply chain: <a href="https://www.mckinsey.com">mckinsey.com</a></li>
-<li>BCG — RFID &amp; inventory accuracy impact: <a href="https://www.bcg.com">bcg.com</a></li>
-<li>GS1 — Digital Product Passport guidance: <a href="https://www.gs1.org">gs1.org</a></li>
-<li>EU — Ecodesign for Sustainable Products Regulation (DPP): <a href="https://ec.europa.eu">ec.europa.eu</a></li>
-</ul>
-</div>
-</footer>
-</div>
-</section>
-</main>
-<footer>
-<div class="container muted">© 2025 NordCortex. All rights reserved.</div>
-</footer>
+
+      <article class="dcx-card" style="grid-column:1/-1">
+        <h3>How we onboard you (design → pilot → scale)</h3>
+        <ul>
+          <li><strong>Design:</strong> process → data model → tag/ID rules → read‑points → dashboards</li>
+          <li><strong>Pilot:</strong> single site/flow; prove accuracy, speed, and exception capture</li>
+          <li><strong>Scale:</strong> supplier onboarding kit, templates, SLAs, training</li>
+          <li><strong>Operate:</strong> KPIs, alerts, and continuous improvement routines</li>
+        </ul>
+        <a class="cta" href="contact.html">Book a 30‑min scoping call →</a>
+      </article>
+    </div>
+    <div class="sources">
+      <strong>Sources (for deeper reading)</strong>
+      <ul>
+        <li>McKinsey — Digital/IoT in retail & supply chain</li>
+        <li>BCG — Inventory accuracy and RFID case studies</li>
+        <li>GS1 — Digital Product Passport / ID standards</li>
+        <li>EU — ESPR (DPP) policies</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="color:#666">© 2025 NordCortex. All rights reserved.</div>
+  </footer>
 </body>
 </html>
