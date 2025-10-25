@@ -81,15 +81,16 @@
 
     header .brand span {
       font-family: "Baskerville", "Times New Roman", serif;
-      font-size: clamp(45px, 4.3vw, 57px);
+      font-size: clamp(45px, 4.3vw, 57px); /* increased by additional 2px */
       font-weight: normal;
       color: #6c7a89;
       text-align: left;
       white-space: nowrap;
     }
 
+    /* Logo sized to first rectangle */
     header .brand-logo {
-      height: 138px;
+      height: 138px; /* increased by another 20% from 115px */
       width: auto;
       display: inline-block;
       vertical-align: middle;
@@ -97,16 +98,20 @@
       top: 25%;
     }
 
+    /* Wide desktop bump */
     @media (min-width: 1200px) {
       .brand-logo { height: 155px; }
       .brand span { font-size: 44px; }
     }
 
+    /* Mobile */
     @media (max-width: 600px) {
     .brand-logo { height: 60px; }
     .brand span { font-size: 28px; }
   }
 
+    /* Four Principles – corporate tech styling */
+    /* Dark background wrapper for Four Principles */
     .principles-section {
       background: linear-gradient(180deg, #07101f 0%, #0d1b31 100%);
       color: #fff;
@@ -120,11 +125,17 @@
       border-color: rgba(255, 255, 255, 0.12);
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
     }
-    .principles-section .principle-card h3 { color: #fff; }
-    .principles-section .principle-card p { color: #cfd3d9; }
+    .principles-section .principle-card h3 {
+      color: #fff;
+    }
+    .principles-section .principle-card p {
+      color: #cfd3d9;
+    }
     .principles-section .thumb img { display:block; margin:auto; }
     .principles-section .principle-card .thumb { height:240px; display:flex; align-items:center; justify-content:center; }
-    .principles-section .cta-link { color: #7aa2ff; }
+    .principles-section .cta-link {
+      color: #7aa2ff;
+    }
     .principles-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:10px}
     .principle-card{border:1px solid #eee;border-radius:14px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,.03)}
     .principle-card .thumb{height:140px;display:flex;align-items:center;justify-content:center}
@@ -132,10 +143,19 @@
     .principle-card h3{margin:12px 14px 6px;font-size:clamp(16px,1.8vw,20px)}
     .principle-card p{margin:0 14px 10px;color:#444;font-size:clamp(14px,1.4vw,16px)}
     .principle-card .cta-link{margin:0 14px 14px;text-decoration:none;font-weight:600}
+
+    /* Subtle gradient headers (neutral corporate tones) */
     .gradient-1{background:linear-gradient(135deg, rgba(53,63,84,.14), rgba(96,106,128,.06))}
     .gradient-2{background:linear-gradient(135deg, rgba(62,74,96,.14), rgba(110,120,146,.06))}
     .gradient-3{background:linear-gradient(135deg, rgba(72,85,114,.14), rgba(120,132,160,.06))}
     .gradient-4{background:linear-gradient(135deg, rgba(48,58,76,.14), rgba(90,100,120,.06))}
+
+    @media (max-width:700px){
+      .principle-card .thumb{height:120px}
+    }
+    @media (max-width:700px){
+      .principles-section .principle-card .thumb{height:180px}
+    }
   </style>
 </head>
 <body>
@@ -201,12 +221,11 @@
 
     <div class="menu-group" id="mg-expertise">
       <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
-      <div class="submenu" id="sm-expertise" role="menu">
-        <a href="procurement.html">Procurement</a>
-        <a href="retail-production.html">Manufacturing</a>
-        <a href="product-development.html">Product Development</a>
-        <a href="supply-chain.html">Supply Chain</a>
-      </div>
+      <div class="submenu" id="sm-expertise" role="menu"><a href="procurement.html">Procurement</a>
+<a href="retail-production.html">Manufacturing</a>
+<a href="product-development.html">Product Development</a>
+<a href="supply-chain.html">Supply Chain</a>
+</div>
     </div>
 
     <div class="menu-group" id="mg-transformation">
@@ -259,10 +278,13 @@
       overlay.classList.remove('show');
     });
 
+    // Mobile grouped menu toggles (accordion: one open at a time)
     document.querySelectorAll('.menu-toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
         const group = btn.parentElement;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+        // Close all other groups
         document.querySelectorAll('.menu-group').forEach((g) => {
           if (g !== group) {
             g.classList.remove('open');
@@ -270,11 +292,14 @@
             if (b) b.setAttribute('aria-expanded', 'false');
           }
         });
+
+        // Toggle current group
         btn.setAttribute('aria-expanded', String(!expanded));
         group.classList.toggle('open');
       });
     });
 
+    // Close menu when any submenu link is clicked
     document.querySelectorAll('.mobile-menu a').forEach((link) => {
       link.addEventListener('click', () => {
         menu.classList.remove('open');
@@ -298,11 +323,113 @@
           </div>
         </div>
       </section>
+      <!-- FOUR PRINCIPLES (Corporate tech style) -->
       <div style="background:#fff;height:1cm;margin:0 -24px;"></div>
       <section class="principles-section">
         <div class="container">
           <h2 style="margin:0 0 12px;font-size:clamp(30px,4vw,48px);text-align:center">Our Four Principles to Run Reliable, Data-Driven Operations</h2>
           <p class="sublead" style="margin:0 0 16px;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
+          <div class="principles-grid">
+            <article class="principle-card">
+              <div class="thumb gradient-1">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g1" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- layered sheets -->
+                  <rect x="10" y="18" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2"/>
+                  <rect x="16" y="12" width="30" height="22" rx="3" stroke="url(#g1)" stroke-width="2" opacity="0.7"/>
+                  <!-- magnifier -->
+                  <circle cx="46" cy="40" r="8" stroke="url(#g1)" stroke-width="2"/>
+                  <line x1="51" y1="45" x2="58" y2="52" stroke="url(#g1)" stroke-width="2.8" stroke-linecap="round"/>
+                  <!-- small data nodes -->
+                  <circle cx="12" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                  <circle cx="26" cy="44" r="2" fill="#7AA2FF" opacity="0.6"/>
+                </svg>
+              </div>
+              <h3>Procure with Insight</h3>
+              <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
+              <a class="cta-link" href="procurement.html">Explore Procurement Strategy →</a>
+            </article>
+
+            <article class="principle-card">
+              <div class="thumb gradient-2">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g2" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- cube wireframe -->
+                  <path d="M18 28 L35 18 L52 28 L35 38 Z" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M18 28 L18 46 L35 56 L35 38" stroke="url(#g2)" stroke-width="2"/>
+                  <path d="M52 28 L52 46 L35 56" stroke="url(#g2)" stroke-width="2"/>
+                  <!-- cog simple -->
+                  <circle cx="50" cy="52" r="6" stroke="url(#g2)" stroke-width="2"/>
+                  <circle cx="50" cy="52" r="2.5" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="43" x2="50" y2="47" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="50" y1="57" x2="50" y2="61" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="41" y1="52" x2="45" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                  <line x1="55" y1="52" x2="59" y2="52" stroke="url(#g2)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Engineer it Right-First-Time</h3>
+              <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
+              <a class="cta-link" href="retail-production.html">Explore Production & Development →</a>
+            </article>
+
+            <article class="principle-card">
+              <div class="thumb gradient-3">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g3" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- arcs -->
+                  <path d="M20 44 A15 15 0 0 1 50 44" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M26 38 A9 9 0 0 1 44 38" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <path d="M32 34 A3 3 0 0 1 38 34" stroke="url(#g3)" stroke-width="2" fill="none"/>
+                  <!-- nodes -->
+                  <circle cx="20" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="50" cy="44" r="3" fill="#7AA2FF"/>
+                  <circle cx="35" cy="49" r="4" fill="#7AA2FF"/>
+                  <line x1="20" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                  <line x1="50" y1="44" x2="35" y2="49" stroke="url(#g3)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Connect and Perform</h3>
+              <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
+              <a class="cta-link" href="rfid.html">Explore IoT & RFID →</a>
+            </article>
+
+            <article class="principle-card">
+              <div class="thumb gradient-4">
+                <svg width="210" height="210" viewBox="0 0 70 70" fill="none" xmlns="http://www.w3.org/2000/svg" style="filter:drop-shadow(0 0 8px rgba(122,162,255,.4));">
+                  <defs>
+                    <linearGradient id="g4" x1="0" y1="0" x2="70" y2="70" gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#7AA2FF"/>
+                      <stop offset="1" stop-color="#AEC7FF"/>
+                    </linearGradient>
+                  </defs>
+                  <!-- circular arrows -->
+                  <path d="M21 40 A14 14 0 1 0 49 40" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="49,40 45,36 49,36" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <polyline points="21,40 25,44 21,44" stroke="url(#g4)" stroke-width="2" fill="none"/>
+                  <!-- leaf -->
+                  <path d="M33 30 C36 28, 41 28, 44 32 C40 34, 36 36, 33 34 Z" fill="none" stroke="url(#g4)" stroke-width="2"/>
+                </svg>
+              </div>
+              <h3>Operate Responsibly</h3>
+              <p>Compliance and sustainability built into daily routines — certified sourcing, transparent materials, and traceable supply chains that strengthen brand trust and readiness.</p>
+              <a class="cta-link" href="sustainability.html">Explore Sustainability & Compliance →</a>
+            </article>
+          </div>
         </div>
       </section>
   </main>
