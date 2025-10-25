@@ -218,40 +218,45 @@
 
   <div class="overlay"></div>
   <div class="mobile-menu">
-    <button class="close-btn">✕</button>
-    <a href="https://www.nordcortex.com/main.html">Home</a>
+  <button class="close-btn">✕</button>
+  <a href="https://www.nordcortex.com/main.html">Home</a>
 
-    <div class="menu-group" id="mg-expertise">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
-      <div class="submenu" id="sm-expertise" role="menu"><a href="procurement.html">Procurement</a>
-<a href="retail-production.html">Manufacturing</a>
-<a href="product-development.html">Product Development</a>
-<a href="supply-chain.html">Supply Chain</a>
-</div>
-    </div></div>
-
-    <div class="menu-group" id="mg-iot">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
-      <div class="submenu" id="sm-iot" role="menu">
-        <a href="rfid.html">Digitalization</a>
-        <a href="rfid.html">RFID</a>
-        <a href="rfid.html">NFC</a>
-        <a href="rfid.html">BFBT</a>
-      </div>
+  <div class="menu-group" id="mg-expertise">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">
+      Expertise <span class="chev">›</span>
+    </button>
+    <div class="submenu" id="sm-expertise" role="menu">
+      <a href="procurement.html">Procurement</a>
+      <a href="retail-production.html">Manufacturing</a>
+      <a href="product-development.html">Product Development</a>
+      <a href="supply-chain.html">Supply Chain</a>
     </div>
-
-    <div class="menu-group" id="mg-company">
-      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
-      <div class="submenu" id="sm-company" role="menu">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-      </div>
-    </div>
-
-    <a href="/contact.html">Contact</a>
   </div>
 
-  <script>
+  <div class="menu-group" id="mg-iot">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">
+      IoT <span class="chev">›</span>
+    </button>
+    <div class="submenu" id="sm-iot" role="menu">
+      <a href="rfid.html">Digitalization</a>
+      <a href="rfid.html">RFID</a>
+      <a href="rfid.html">NFC</a>
+      <a href="rfid.html">BFBT</a>
+    </div>
+  </div>
+
+  <div class="menu-group" id="mg-company">
+    <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">
+      Company <span class="chev">›</span>
+    </button>
+    <div class="submenu" id="sm-company" role="menu">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <a href="/contact.html">Contact</a>
+</div><script>
     const burger = document.querySelector('.hamburger');
     const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.overlay');
