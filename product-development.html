@@ -21,7 +21,7 @@
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:500;}
+    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
     .nav a:hover{color:#000;text-decoration:underline}
     /* Two-line desktop nav layout */
     .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
@@ -33,7 +33,7 @@
     .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
     .nav .dropdown .caret { font-size: .8em; line-height: 1; }
     .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
-    .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+    .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; font-weight:400; }
     .nav .dropdown:hover .dropdown-menu { display:block; }
     @media (min-width:1200px){ .nav .menu{ gap:36px } }
     @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
@@ -66,7 +66,7 @@
     .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
     /* Grouped mobile menu */
     .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
-    .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .menu-toggle { background:none; border:none; font-size:18px; font-weight:400; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
     .menu-toggle .chev { transition: transform 0.2s ease; }
     .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
     .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
