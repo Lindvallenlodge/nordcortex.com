@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NordCortex Manufacturing Framework</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <!-- Favicons/theme (reuse structure) -->
   <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
@@ -33,6 +33,12 @@
   .nav .dropdown .caret{font-size:.8em;line-height:1}
   .nav .dropdown-menu{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid #eee;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.08);padding:10px 12px;display:none;z-index:1003}
   .nav .dropdown-menu a{display:block;padding:8px 10px;margin:0;white-space:nowrap;font-weight:400;}
+  /* Force slim weight consistently for all header links */
+  .nav a,
+  .nav .dropdown > a,
+  .nav .dropdown-menu a {
+    font-weight: 400 !important;
+  }
   .nav .dropdown:hover .dropdown-menu{display:block}
   .hamburger{display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
   @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
