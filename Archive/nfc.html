@@ -5,7 +5,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;600&amp;display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>BFBT — NordCortex</title>
+<title>NFC — NordCortex</title>
 <link href="/pictures/favicon-nordcortex-32.png" rel="icon" sizes="32x32" type="image/png"/>
 <link href="/pictures/favicon-nordcortex-192.png" rel="icon" sizes="192x192" type="image/png"/>
 <link href="/pictures/favicon-nordcortex-apple.png" rel="apple-touch-icon" sizes="180x180"/>
@@ -17,7 +17,7 @@
   .container{max-width:1100px;margin:0 auto;padding:24px}
   header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
   .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:500;}
   .nav a:hover{color:#000;text-decoration:underline}
   .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
   .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
@@ -40,7 +40,7 @@
   @media (max-width: 600px) { .brand-logo { height: 60px; } .brand span { font-size: 28px; } }
 
   .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
-  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:500;font-weight:400;}
   .mobile-menu.open {right:0}
   .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
   .overlay.show {opacity:1;pointer-events:auto}
@@ -103,99 +103,62 @@ body{margin:0;overflow-x:hidden}
 <span>NordCortex</span>
 </a>
 </div>
-<nav class="nav"><div class="menu">
-  <a href="main.html">Home</a>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="procurement.html">Procurement</a>
-      <a href="retail-production.html">Manufacturing</a>
-      <a href="product-development.html">Product Development</a>
-      <a href="supply-chain.html">Supply Chain</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="change-management.html">Change Management</a>
-      <a href="sustainability.html">Sustainability &amp; Compliance</a>
-      <a href="interim-advisory.html">Interim &amp; Advisory</a>
-      <a href="process-change.html">Process &amp; Change Management</a>
-      <a href="services-added.html">Added Services</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="digitalisation.html">Digitalisation</a>
-      <a href="rfid.html">RFID</a>
-      <a href="nfc.html">NFC</a>
-      <a href="bfbt.html">BFBT</a>
-      <a href="dpp.html">DPP</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-
-  <a href="contact.html">Contact</a>
-</div></nav>
+<nav class="nav">
+<div class="menu">
+<a href="https://www.nordcortex.com/main.html">Home</a>
+<div class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" href="#">Expertise <span class="caret">▾</span></a>
+<div class="dropdown-menu" role="menu">
+<a href="procurement.html">Procurement</a>
+<a href="retail-production.html">Manufacturing</a>
+<a href="product-development.html">Product Development</a>
+<a href="supply-chain.html">Supply Chain</a>
+</div>
+</div>
+<div class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" href="#">Services <span class="caret">▾</span></a>
+<div class="dropdown-menu" role="menu">
+<a href="change-management.html">Change Management</a>
+<a href="sustainability.html">Sustainability &amp; Compliance</a>
+<a href="interim-advisory.html">Interim &amp; Advisory</a>
+<a href="process-change.html">Process &amp; Change Management</a>
+<a href="services-added.html">Added Services</a>
+</div>
+</div>
+<div class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" href="#">IoT <span class="caret">▾</span></a>
+<div class="dropdown-menu" role="menu">
+<a href="digitalisation.html">Digitalisation</a>
+<a href="rfid.html">RFID</a>
+<a href="nfc.html">NFC</a>
+<a href="bfbt.html">BFBT</a>
+</div>
+</div>
+<div class="dropdown">
+<a aria-expanded="false" aria-haspopup="true" href="#">Company <span class="caret">▾</span></a>
+<div class="dropdown-menu" role="menu">
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+</div>
+</div>
+<a href="/contact.html">Contact</a>
+</div>
+</nav>
 <button class="hamburger">☰</button>
 </div>
 </header>
 <div class="overlay"></div>
-<div class="mobile-menu"><button class="close-btn">✕</button>
-<a href="main.html">Home</a>
-
+<div class="mobile-menu">
+<button class="close-btn">✕</button>
+<a href="https://www.nordcortex.com/main.html">Home</a>
 <div class="menu-group" id="mg-expertise">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
-  <div class="submenu" id="sm-expertise" role="menu">
-    <a href="procurement.html">Procurement</a>
-    <a href="retail-production.html">Manufacturing</a>
-    <a href="product-development.html">Product Development</a>
-    <a href="supply-chain.html">Supply Chain</a>
-  </div>
+<button aria-controls="sm-expertise" aria-expanded="false" class="menu-toggle">Expertise <span class="chev">›</span></button>
+<div class="submenu" id="sm-expertise" role="menu">
+<a href="procurement.html">Procurement</a>
+<a href="retail-production.html">Manufacturing</a>
+<a href="product-development.html">Product Development</a>
+<a href="supply-chain.html">Supply Chain</a>
 </div>
-
-<div class="menu-group" id="mg-services">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
-  <div class="submenu" id="sm-services" role="menu">
-    <a href="change-management.html">Change Management</a>
-    <a href="sustainability.html">Sustainability &amp; Compliance</a>
-    <a href="interim-advisory.html">Interim &amp; Advisory</a>
-    <a href="process-change.html">Process &amp; Change Management</a>
-    <a href="services-added.html">Added Services</a>
-  </div>
-</div>
-
-<div class="menu-group" id="mg-iot">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
-  <div class="submenu" id="sm-iot" role="menu">
-    <a href="digitalisation.html">Digitalisation</a>
-    <a href="rfid.html">RFID</a>
-    <a href="nfc.html">NFC</a>
-    <a href="bfbt.html">BFBT</a>
-    <a href="dpp.html">DPP</a>
-  </div>
-</div>
-
-<div class="menu-group" id="mg-company">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
-  <div class="submenu" id="sm-company" role="menu">
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-  </div>
-</div>
-
-<a href="contact.html">Contact</a></div>
 </div>
 <div class="menu-group" id="mg-services">
 <button aria-controls="sm-services" aria-expanded="false" class="menu-toggle">Services <span class="chev">›</span></button>
@@ -208,15 +171,15 @@ body{margin:0;overflow-x:hidden}
 </div>
 </div>
 <div class="menu-group" id="mg-iot">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
-  <div class="submenu" id="sm-iot" role="menu">
-    <a href="digitalisation.html">Digitalisation</a>
-    <a href="rfid.html">RFID</a>
-    <a href="nfc.html">NFC</a>
-    <a href="bfbt.html">BFBT</a>
-    <a href="dpp.html">DPP</a>
-  </div>
-</div>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+      <div class="submenu" id="sm-iot" role="menu">
+        <a href="digitalisation.html">Digitalisation</a>
+        <a href="rfid.html">RFID</a>
+        <a href="nfc.html">NFC</a>
+        <a href="bfbt.html">BFBT</a>
+        <a href="dpp.html">DPP</a>
+      </div>
+    </div>
 <div class="menu-group" id="mg-company">
 <button aria-controls="sm-company" aria-expanded="false" class="menu-toggle">Company <span class="chev">›</span></button>
 <div class="submenu" id="sm-company" role="menu">
@@ -279,45 +242,45 @@ body{margin:0;overflow-x:hidden}
 <!-- hero full-bleed -->
 <section class="hero-dark full-bleed">
 <div class="inner">
-<h1>BFBT: battery‑free sensing for environment &amp; location</h1>
-<p class="sub">Low‑maintenance sensors unlock visibility for cold‑chain, storage and loss‑prevention — without batteries.</p>
+<h1>NFC: secure identity &amp; engagement on every product</h1>
+<p class="sub">Enable authenticity checks, rich post‑purchase services and circularity with standards‑based, tap‑to‑read product IDs.</p>
 </div>
 </section>
 <!-- cards -->
 <section class="full-bleed" style="background:#0e1116;color:#e9eef5">
 <div class="dcx-grid">
 <article class="dcx-card">
-<span class="pill">Environment</span>
-<div class="seg"><h3 style="margin:0">Cold chain &amp; storage</h3></div>
+<span class="pill">Brand Protection</span>
+<div class="seg"><h3 style="margin:0">Secure product ID</h3></div>
 <ul>
-<li>Battery‑free sensors for temp/humidity</li>
-<li>Door events; dwell &amp; excursion alerts</li>
-<li>Compliance reporting</li>
+<li>NFC tags with cryptographic signatures</li>
+<li>Consumer scan → authenticity check</li>
+<li>Counterfeit detection &amp; trace</li>
 </ul>
-<div class="kpi"><span>Spoilage</span><strong>↓</strong></div>
-<div class="bar"><span style="width:60%"></span></div>
-</article>
-<article class="dcx-card">
-<span class="pill">Location</span>
-<div class="seg"><h3 style="margin:0">Flow &amp; loss prevention</h3></div>
-<ul>
-<li>Zone/portal presence without batteries</li>
-<li>Exception events to WMS/ERP</li>
-<li>Geo‑fencing at gates</li>
-</ul>
-<div class="kpi"><span>Shrink</span><strong>↓</strong></div>
+<div class="kpi"><span>Fake returns</span><strong>↓ significantly</strong></div>
 <div class="bar"><span style="width:65%"></span></div>
 </article>
 <article class="dcx-card">
-<span class="pill">Retail &amp; DC</span>
-<div class="seg"><h3 style="margin:0">Simple installs</h3></div>
+<span class="pill">Engagement</span>
+<div class="seg"><h3 style="margin:0">Post‑purchase services</h3></div>
 <ul>
-<li>Stick‑on sensor labels; long life</li>
-<li>Readers at key points</li>
-<li>Dashboards &amp; alerts</li>
+<li>Tap for care, repair, warranty</li>
+<li>Personalised content; loyalty linkage</li>
+<li>Consent‑based data capture</li>
 </ul>
-<div class="kpi"><span>Maintenance</span><strong>Low</strong></div>
-<div class="bar"><span style="width:45%"></span></div>
+<div class="kpi"><span>Repeat visits</span><strong>↑</strong></div>
+<div class="bar"><span style="width:50%"></span></div>
+</article>
+<article class="dcx-card">
+<span class="pill">Operations</span>
+<div class="seg"><h3 style="margin:0">Closed‑loop ID</h3></div>
+<ul>
+<li>Tooling, assets, RTIs with NFC</li>
+<li>Repair/reuse tracking &amp; provenance</li>
+<li>DPP link to consumer‑facing ID</li>
+</ul>
+<div class="kpi"><span>Reuse rate</span><strong>↑</strong></div>
+<div class="bar"><span style="width:55%"></span></div>
 </article>
 <article class="dcx-card" style="grid-column:1/-1">
 <h3>How we onboard you (design → pilot → scale)</h3>
@@ -333,9 +296,9 @@ body{margin:0;overflow-x:hidden}
 </section>
 <section class="sources full-bleed" id="sources" style="background:linear-gradient(180deg,#07101f 0%,#0d1b31 100%);color:#cfd3d9;padding:48px 0 64px;margin:0;border-top:1px solid rgba(255,255,255,.08);width:100vw;max-width:100vw">
 <div class="container" style="max-width:900px">
-<h2 style="color:#fff;text-align:center;margin-bottom:20px">Sources &amp; References — Battery‑Free Sensing (BFBT)</h2>
+<h2 style="color:#fff;text-align:center;margin-bottom:20px">Sources &amp; References — NFC</h2>
 <ul style="list-style:none;padding:0;line-height:1.7">
-<li style="margin-bottom:10px"><strong>Bluetooth SIG — Core Specification (Bluetooth LE):</strong> <a href="https://www.bluetooth.com/specifications/specs/core-specification/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.bluetooth.com/specifications/specs/core-specification/</a></li><li style="margin-bottom:10px"><strong>Bluetooth SIG — LE Overview &amp; Tech Primer:</strong> <a href="https://www.bluetooth.com/learn-about-bluetooth/tech-overview/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.bluetooth.com/learn-about-bluetooth/tech-overview/</a></li><li style="margin-bottom:10px"><strong>Bluetooth SIG — Direction Finding (AoA/AoD):</strong> <a href="https://www.bluetooth.com/blog/bluetooth-direction-finding-feature/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.bluetooth.com/blog/bluetooth-direction-finding-feature/</a></li><li style="margin-bottom:10px"><strong>Bluetooth SIG — Periodic Advertising / Broadcast:</strong> <a href="https://www.bluetooth.com/blog/periodic-advertising/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.bluetooth.com/blog/periodic-advertising/</a></li><li style="margin-bottom:10px"><strong>RAIN RFID Alliance — Sensor Tags Overview:</strong> <a href="https://rainrfid.org/solutions/sensors/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://rainrfid.org/solutions/sensors/</a></li><li style="margin-bottom:10px"><strong>RAIN RFID Alliance — Getting Started:</strong> <a href="https://rainrfid.org/getting-started/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://rainrfid.org/getting-started/</a></li><li style="margin-bottom:10px"><strong>Wiliot — Battery‑Free Bluetooth Tags (overview):</strong> <a href="https://www.wiliot.com/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.wiliot.com/</a></li><li style="margin-bottom:10px"><strong>Wiliot — Battery‑Free IoT Whitepapers:</strong> <a href="https://www.wiliot.com/resources/whitepapers" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.wiliot.com/resources/whitepapers</a></li><li style="margin-bottom:10px"><strong>GS1 — IoT &amp; Identification (overview):</strong> <a href="https://www.gs1.org/industries/internet-of-things" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.gs1.org/industries/internet-of-things</a></li><li style="margin-bottom:10px"><strong>IEEE Spectrum — Battery‑Free IoT (overview article):</strong> <a href="https://spectrum.ieee.org/battery-free-iot" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://spectrum.ieee.org/battery-free-iot</a></li>
+<li style="margin-bottom:10px"><strong>NFC Forum — What is NFC:</strong> <a href="https://nfc-forum.org/what-is-nfc/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/what-is-nfc/</a></li><li style="margin-bottom:10px"><strong>NFC Forum — Specifications (incl. NDEF):</strong> <a href="https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 14443 — Proximity Cards (Type A/B):</strong> <a href="https://www.iso.org/standard/79368.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/79368.html</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 15693 — Vicinity Cards:</strong> <a href="https://www.iso.org/standard/73508.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/73508.html</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 18092 — NFCIP‑1:</strong> <a href="https://www.iso.org/standard/64757.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/64757.html</a></li><li style="margin-bottom:10px"><strong>GS1 — Digital Link Standard:</strong> <a href="https://www.gs1.org/standards/gs1-digital-link" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.gs1.org/standards/gs1-digital-link</a></li><li style="margin-bottom:10px"><strong>W3C — Web NFC (Draft Spec):</strong> <a href="https://w3c.github.io/web-nfc/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://w3c.github.io/web-nfc/</a></li><li style="margin-bottom:10px"><strong>Apple Developer — Core NFC:</strong> <a href="https://developer.apple.com/documentation/corenfc" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://developer.apple.com/documentation/corenfc</a></li><li style="margin-bottom:10px"><strong>Android Developers — NFC Basics:</strong> <a href="https://developer.android.com/guide/topics/connectivity/nfc" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://developer.android.com/guide/topics/connectivity/nfc</a></li><li style="margin-bottom:10px"><strong>NFC Forum — Tag Types &amp; Technology Overview:</strong> <a href="https://nfc-forum.org/our-work/specifications-and-application-documents/tag-technology/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/our-work/specifications-and-application-documents/tag-technology/</a></li>
 </ul>
 <p style="color:#8a93a2;text-align:center;margin-top:24px;font-size:14px">Links curated for NordCortex IoT practice.</p>
 </div>
