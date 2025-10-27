@@ -169,9 +169,16 @@
           <span>NordCortex</span>
         </a>
       </div>
-      <nav class="nav"><div class="menu">
+  <nav class="nav"><div class="menu">
   <a href="main.html">Home</a>
-  <a href="interim-advisory.html">Interim &amp; Advisory</a>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="interim-leadership.html">Interim Leadership &amp; Program Delivery</a>
+      <a href="interim-about.html">About NordCortex</a>
+    </div>
+  </div>
 
   <div class="dropdown">
     <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
@@ -212,7 +219,14 @@
   <div class="overlay"></div>
   <div class="mobile-menu"><button class="close-btn">✕</button>
 <a href="main.html">Home</a>
-<a href="interim-advisory.html">Interim &amp; Advisory</a>
+
+<div class="menu-group" id="mg-interim">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-interim">Interim &amp; Advisory <span class="chev">›</span></button>
+  <div class="submenu" id="sm-interim" role="menu">
+    <a href="interim-leadership.html">Interim Leadership &amp; Program Delivery</a>
+    <a href="interim-about.html">About NordCortex</a>
+  </div>
+</div>
 
 <div class="menu-group" id="mg-expertise">
   <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
