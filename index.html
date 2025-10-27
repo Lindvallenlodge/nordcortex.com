@@ -1,155 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NordCortex — Because clarity is a strategy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    :root{
-      --text:#111;
-      --muted:#6c7a89;
-      --line:#eceff2;
-      --brand:#6c7a89;
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:#fff;color:var(--text);}
-    body{font-family:"Outfit",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-weight:300;}
+    body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+    .nav a:hover{color:#000;text-decoration:underline}
+    .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+    .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+    .nav .dropdown { position: relative; }
+    .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+    .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+    .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+    .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+    .nav .dropdown:hover .dropdown-menu { display:block; }
+    @media (min-width:1200px){ .nav .menu{ gap:36px } }
+    @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
 
-    /* Top navigation without logo */
-    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
-    .nav{display:flex;align-items:center;justify-content:space-evenly;gap:10px;max-width:1200px;margin:0 auto;padding:14px 16px}
-    .nav > .dropdown, .nav > a{flex:1;display:flex;justify-content:center}
-    .nav a{color:#222;text-decoration:none;font-weight:400;font-size:clamp(15px,1.6vw,18px);padding:10px 8px;border-radius:8px}
-    .nav a:hover{background:#f6f8fb}
-    .dropdown{position:relative}
-    .caret{font-size:.8em;margin-left:6px}
-    .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:260px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.08);padding:8px 10px;display:none}
-    .dropdown-menu a{display:block;text-align:left;padding:10px 10px;margin:0;border-radius:8px}
-    .dropdown-menu a:hover{background:#f6f8fb}
-    .dropdown:hover .dropdown-menu{display:block}
+    .header-inner{display:flex;align-items:center;justify-content:center;padding:14px 16px}
 
-    /* Mobile */
-    .hamburger{display:none;background:none;border:0;font-size:26px;padding:10px 12px}
-    .mobile-menu{position:fixed;top:0;right:-280px;width:260px;height:100%;background:#fff;border-left:1px solid var(--line);box-shadow:-2px 0 10px rgba(0,0,0,.08);transition:right .25s ease;display:flex;flex-direction:column;padding:60px 20px;z-index:1001}
-    .mobile-menu.open{right:0}
-    .mobile-menu a{padding:12px 0;color:#222;text-decoration:none;font-weight:400}
-    .menu-group{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
-    .menu-toggle{background:none;border:0;width:100%;text-align:left;font-size:16px;font-weight:600;padding:10px 0;display:flex;justify-content:space-between;align-items:center}
-    .submenu{display:none;flex-direction:column;margin-left:8px}
-    .menu-group.open .submenu{display:flex}
-    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:1000}
-    .overlay.show{opacity:1;pointer-events:auto}
-    .close-btn{position:absolute;top:14px;right:14px;font-size:24px;background:none;border:0;cursor:pointer}
+    .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+    .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+    .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+    .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
+    .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+    .menu-toggle .chev { transition: transform 0.2s ease; }
+    .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
+    .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
+    .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
+    .menu-group.open .submenu { display:flex; }
+    .mobile-menu.open {right:0}
+    .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+    .overlay.show {opacity:1;pointer-events:auto}
+    .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+    @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
 
-    @media (max-width:860px){
-      .nav{display:none}
-      .hamburger{display:block;position:absolute;right:8px;top:8px}
-      header{padding-right:48px}
-    }
-
-    /* Hero with centered slogan */
-    .hero{display:flex;align-items:center;justify-content:center;min-height:44vh;padding:24px}
-    .slogan{font-weight:400;font-size:clamp(24px,3.8vw,44px);text-align:center;letter-spacing:.2px}
-    .slogan .dot{opacity:.2}
-
-    /* Brand block under slogan */
-    .brand-block{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 20px 8vh}
-    .brand-logo{height:140px;width:auto;display:block;filter:drop-shadow(0 1px 0 rgba(0,0,0,.02))}
-    .brand-name{font-family:"Libre Baskerville",serif;color:var(--brand);font-size:clamp(44px,4.2vw,60px);font-weight:700;margin:16px 0 6px;letter-spacing:.2px}
+    .hero{display:flex;align-items:center;justify-content:center;min-height:42vh;padding:32px 16px;background:#fff}
+    .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.2;text-align:center;font-weight:300;text-align:center}
+    .brand-block{display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 16px 64px}
+    .brand-logo{height:140px;width:auto}
+    .brand-name{font-family:"Baskerville","Times New Roman",serif;color:#6c7a89;font-size:clamp(44px,4.2vw,58px);font-weight:400;letter-spacing:.2px}
     .brand-sub{letter-spacing:3px;color:#888;text-transform:uppercase;font-weight:500;font-size:clamp(10px,1.2vw,13px)}
-
-    /* Footer line (optional) */
-    footer{border-top:1px solid var(--line);padding:18px 16px;color:#666;font-size:14px;text-align:center}
+    footer{border-top:1px solid #eee;padding:18px 16px;color:#666;font-size:14px;text-align:center}
   </style>
 </head>
 <body>
   <header>
-    <!-- hamburger for mobile -->
-    <button class="hamburger" aria-label="Open menu">☰</button>
+    <div class="header-inner">
+      <nav class="nav" aria-label="Primary">
+        <div class="menu">
+          <a href="main.html">Home</a>
 
-    <!-- desktop nav only (no logo) -->
-    <nav class="nav" aria-label="Primary">
-      <a href="main.html">Home</a>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="interim-leadership.html">Interim Leadership B2B</a>
+              <a href="interim-about.html">About NordCortex</a>
+            </div>
+          </div>
 
-      <div class="dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
-        <div class="dropdown-menu" role="menu">
-          <a href="interim-leadership.html">Interim Leadership B2B</a>
-          <a href="advisory-project.html">Project-Based Advisory</a>
-          <a href="collaboration-support.html">Brand–Manufacturer Bridge</a>
-          <a href="interim-about.html">About NordCortex</a>
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="procurement.html">Procurement</a>
+              <a href="retail-production.html">Manufacturing</a>
+              <a href="product-development.html">Product Development</a>
+              <a href="supply-chain.html">Supply Chain</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="sustainability.html">Sustainability &amp; Compliance</a>
+              <a href="process-change.html">Process &amp; Change Management</a>
+              <a href="services-added.html">Added Services</a>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+            <div class="dropdown-menu" role="menu">
+              <a href="digitalisation.html">Digitalisation</a>
+              <a href="rfid.html">RFID</a>
+              <a href="nfc.html">NFC</a>
+              <a href="bfbt.html">BFBT</a>
+              <a href="dpp.html">DPP</a>
+            </div>
+          </div>
+
+          <a href="contact.html">Contact</a>
         </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
-        <div class="dropdown-menu" role="menu">
-          <a href="procurement.html">Procurement</a>
-          <a href="retail-production.html">Manufacturing</a>
-          <a href="product-development.html">Product Development</a>
-          <a href="supply-chain.html">Supply Chain</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
-        <div class="dropdown-menu" role="menu">
-          <a href="sustainability.html">Sustainability &amp; Compliance</a>
-          <a href="process-change.html">Process &amp; Change Management</a>
-          <a href="services-added.html">Added Services</a>
-        </div>
-      </div>
-
-      <div class="dropdown">
-        <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
-        <div class="dropdown-menu" role="menu">
-          <a href="digitalisation.html">Digitalisation</a>
-          <a href="rfid.html">RFID</a>
-          <a href="nfc.html">NFC</a>
-          <a href="bfbt.html">BFBT</a>
-          <a href="dpp.html">DPP</a>
-        </div>
-      </div>
-
-      <a href="contact.html">Contact</a>
-    </nav>
+      </nav>
+      <button class="hamburger">☰</button>
+    </div>
   </header>
 
-  <!-- Mobile drawer -->
   <div class="overlay"></div>
-  <aside class="mobile-menu" aria-label="Mobile">
-    <button class="close-btn" aria-label="Close">✕</button>
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
     <a href="main.html">Home</a>
-    <div class="menu-group">
-      <button class="menu-toggle" aria-expanded="false">Interim &amp; Advisory <span>›</span></button>
-      <div class="submenu">
+
+    <div class="menu-group" id="mg-interim">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-interim">Interim &amp; Advisory <span class="chev">›</span></button>
+      <div class="submenu" id="sm-interim" role="menu">
         <a href="interim-leadership.html">Interim Leadership B2B</a>
-        <a href="advisory-project.html">Project-Based Advisory</a>
-        <a href="collaboration-support.html">Brand–Manufacturer Bridge</a>
         <a href="interim-about.html">About NordCortex</a>
       </div>
     </div>
-    <div class="menu-group">
-      <button class="menu-toggle" aria-expanded="false">Expertise <span>›</span></button>
-      <div class="submenu">
+
+    <div class="menu-group" id="mg-expertise">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+      <div class="submenu" id="sm-expertise" role="menu">
         <a href="procurement.html">Procurement</a>
         <a href="retail-production.html">Manufacturing</a>
         <a href="product-development.html">Product Development</a>
         <a href="supply-chain.html">Supply Chain</a>
       </div>
     </div>
-    <div class="menu-group">
-      <button class="menu-toggle" aria-expanded="false">Services <span>›</span></button>
-      <div class="submenu">
+
+    <div class="menu-group" id="mg-services">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+      <div class="submenu" id="sm-services" role="menu">
         <a href="sustainability.html">Sustainability &amp; Compliance</a>
         <a href="process-change.html">Process &amp; Change Management</a>
         <a href="services-added.html">Added Services</a>
       </div>
     </div>
-    <div class="menu-group">
-      <button class="menu-toggle" aria-expanded="false">IoT <span>›</span></button>
-      <div class="submenu">
+
+    <div class="menu-group" id="mg-iot">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+      <div class="submenu" id="sm-iot" role="menu">
         <a href="digitalisation.html">Digitalisation</a>
         <a href="rfid.html">RFID</a>
         <a href="nfc.html">NFC</a>
@@ -157,56 +142,51 @@
         <a href="dpp.html">DPP</a>
       </div>
     </div>
+
     <a href="contact.html">Contact</a>
-  </aside>
+  </div>
 
-  <!-- Centered slogan -->
-  <section class="hero" aria-label="Slogan">
-    <h1 class="slogan">Because clarity is a strategy<span class="dot">.</span></h1>
-  </section>
+  <main>
+    <section class="hero">
+      <h1>Because clarity is a strategy.</h1>
+    </section>
 
-  <!-- Brand block -->
-  <section class="brand-block" aria-label="Brand">
-    <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
-    <div class="brand-name">NordCortex</div>
-    <div class="brand-sub">BUSINESS DEVELOPMENT &amp; INNOVATION ADVISORY</div>
-  </section>
+    <section class="brand-block">
+      <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+      <div class="brand-name">NordCortex</div>
+      <div class="brand-sub">BUSINESS DEVELOPMENT &amp; INNOVATION ADVISORY</div>
+    </section>
+  </main>
 
   <footer>© 2025 NordCortex</footer>
 
   <script>
-    // Mobile menu logic
     const burger = document.querySelector('.hamburger');
-    const drawer = document.querySelector('.mobile-menu');
+    const menu = document.querySelector('.mobile-menu');
     const overlay = document.querySelector('.overlay');
     const closeBtn = document.querySelector('.close-btn');
-    const toggles = document.querySelectorAll('.menu-toggle');
-
-    function closeMenu(){
-      drawer.classList.remove('open');
-      overlay.classList.remove('show');
-    }
-    burger?.addEventListener('click', () => {
-      drawer.classList.add('open');
-      overlay.classList.add('show');
-    });
-    closeBtn?.addEventListener('click', closeMenu);
-    overlay?.addEventListener('click', closeMenu);
-
-    toggles.forEach(btn => {
+    function closeMenu(){ menu.classList.remove('open'); overlay.classList.remove('show'); }
+    burger.addEventListener('click', () => { menu.classList.toggle('open'); overlay.classList.toggle('show'); });
+    overlay.addEventListener('click', closeMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    document.querySelectorAll('.menu-toggle').forEach((btn) => {
       btn.addEventListener('click', () => {
         const group = btn.parentElement;
         const expanded = btn.getAttribute('aria-expanded') === 'true';
-        document.querySelectorAll('.menu-group').forEach(g => {
-          if(g !== group){ g.classList.remove('open'); g.querySelector('.menu-toggle').setAttribute('aria-expanded','false'); }
+        document.querySelectorAll('.menu-group').forEach((g) => {
+          if (g !== group) {
+            g.classList.remove('open');
+            const b = g.querySelector('.menu-toggle');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
         });
         btn.setAttribute('aria-expanded', String(!expanded));
         group.classList.toggle('open');
       });
     });
-
-    // Close drawer when any link is clicked
-    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', closeMenu));
+    document.querySelectorAll('.mobile-menu a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
   </script>
 </body>
 </html>
