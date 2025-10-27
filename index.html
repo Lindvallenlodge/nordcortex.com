@@ -1,288 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NordCortex</title>
-  <!-- Favicons for NordCortex -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-nordcortex-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="/favicons/favicon-nordcortex-192.png">
-  <link rel="apple-touch-icon" href="/favicons/favicon-nordcortex-apple.png">
-
-  <!-- BIMI (Brand Indicators for Message Identification) -->
-  <link rel="bimi" href="/favicons/nordcortex-bimi.svg" />
-
-  <!-- Recommended metadata -->
-  <meta name="theme-color" content="#000000">
+  <title>NordCortex — Because clarity is a strategy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
   <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    html, body {
-      margin: 0;
-      height: 100%;
-      background-color: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
+    :root{
+      --text:#111;
+      --muted:#6c7a89;
+      --line:#eceff2;
+      --brand:#6c7a89;
     }
-    img {
-      height: 675px;
-      max-width: 180vw;
-      width: auto;
-      display: block;
-      cursor: pointer;
-    }
-    .logo-wrap {
-      height: 675px;        /* keep previous visual height window */
-      width: 100%;
-      display: flex;
-      align-items: flex-start;  /* anchor image to the top edge */
-      justify-content: center;  /* keep image centered horizontally */
-    }
-    @media (max-width: 400px) {
-      img {
-        height: 337px;
-        max-width: 105vw;
-      }
-      .logo-wrap {
-        height: 337px;   /* match previous mobile image height */
-      }
-      .text-block { margin-top: -70px; }
-    }
-  
-.nav a{font-weight:500;}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:#fff;color:var(--text);}
+    body{font-family:"Outfit",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;font-weight:300;}
 
-.mobile-menu a{font-weight:400;}
+    /* Top navigation without logo */
+    header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);z-index:10}
+    .nav{display:flex;align-items:center;justify-content:space-evenly;gap:10px;max-width:1200px;margin:0 auto;padding:14px 16px}
+    .nav > .dropdown, .nav > a{flex:1;display:flex;justify-content:center}
+    .nav a{color:#222;text-decoration:none;font-weight:400;font-size:clamp(15px,1.6vw,18px);padding:10px 8px;border-radius:8px}
+    .nav a:hover{background:#f6f8fb}
+    .dropdown{position:relative}
+    .caret{font-size:.8em;margin-left:6px}
+    .dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);min-width:260px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.08);padding:8px 10px;display:none}
+    .dropdown-menu a{display:block;text-align:left;padding:10px 10px;margin:0;border-radius:8px}
+    .dropdown-menu a:hover{background:#f6f8fb}
+    .dropdown:hover .dropdown-menu{display:block}
 
-.hero h1{font-weight:300;}
-</style>
-  <style>
-    .ticker-container {
-      position: fixed;
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      pointer-events: none;
-      z-index: 999;
-    }
-    .ticker-text {
-      display: inline-block;
-      font-family: 'Poppins', sans-serif;
-      font-size: 20px;
-      color: gray;
-      opacity: 0.85;
-      padding-right: 50px;
-      white-space: nowrap;
-    }
-    .ticker-top {
-      top: 0;
-    }
-    .ticker-bottom {
-      bottom: 0;
-    }
-    /* seamless scrolling animation */
-    @media (min-width: 768px) {
-      .ticker-text.animate {
-        animation: ticker 60s linear infinite;
-      }
-    }
-    @media (max-width: 767px) {
-      .ticker-text.animate {
-        animation: ticker 90s linear infinite;
-      }
-    }
-    @keyframes ticker {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
-  </style>
-  <style>
-    .brand span { font-family: "Baskerville", "Times New Roman", serif; }
-    body, p, li { text-align: left; }
-    h1, h2, h3, h4, h5, h6 { text-align: justify; }
-  </style>
-  <style>
-    .text-block {
-      text-align: center;
-      color: white;
-      margin-top: -120px; /* pull text up under the logo */
-      position: relative;
-      z-index: 2;
-    }
-    .text-block .wordmark {
-      font-family: 'EB Garamond', serif;
-      font-weight: 700;
-      font-size: clamp(48px, 6vw, 96px);
-      line-height: 1.06;
-      display: block;
-      margin-top: 0;
-      color: #7A7A7A;
+    /* Mobile */
+    .hamburger{display:none;background:none;border:0;font-size:26px;padding:10px 12px}
+    .mobile-menu{position:fixed;top:0;right:-280px;width:260px;height:100%;background:#fff;border-left:1px solid var(--line);box-shadow:-2px 0 10px rgba(0,0,0,.08);transition:right .25s ease;display:flex;flex-direction:column;padding:60px 20px;z-index:1001}
+    .mobile-menu.open{right:0}
+    .mobile-menu a{padding:12px 0;color:#222;text-decoration:none;font-weight:400}
+    .menu-group{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}
+    .menu-toggle{background:none;border:0;width:100%;text-align:left;font-size:16px;font-weight:600;padding:10px 0;display:flex;justify-content:space-between;align-items:center}
+    .submenu{display:none;flex-direction:column;margin-left:8px}
+    .menu-group.open .submenu{display:flex}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .25s ease;z-index:1000}
+    .overlay.show{opacity:1;pointer-events:auto}
+    .close-btn{position:absolute;top:14px;right:14px;font-size:24px;background:none;border:0;cursor:pointer}
+
+    @media (max-width:860px){
+      .nav{display:none}
+      .hamburger{display:block;position:absolute;right:8px;top:8px}
+      header{padding-right:48px}
     }
 
-    .text-block .tagline {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 500;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      font-size: clamp(14px, 1.5vw, 22px);
-      line-height: 1.25;
-      display: block;
-      margin-top: 2px;
-      color: #7A7A7A;
-    }
-    .text-block .handwriting {
-      font-family: 'Great Vibes', cursive;
-      font-size: 36px;
-      display: block;
-    }
+    /* Hero with centered slogan */
+    .hero{display:flex;align-items:center;justify-content:center;min-height:44vh;padding:24px}
+    .slogan{font-weight:400;font-size:clamp(24px,3.8vw,44px);text-align:center;letter-spacing:.2px}
+    .slogan .dot{opacity:.2}
+
+    /* Brand block under slogan */
+    .brand-block{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6vh 20px 8vh}
+    .brand-logo{height:140px;width:auto;display:block;filter:drop-shadow(0 1px 0 rgba(0,0,0,.02))}
+    .brand-name{font-family:"Libre Baskerville",serif;color:var(--brand);font-size:clamp(44px,4.2vw,60px);font-weight:700;margin:16px 0 6px;letter-spacing:.2px}
+    .brand-sub{letter-spacing:3px;color:#888;text-transform:uppercase;font-weight:500;font-size:clamp(10px,1.2vw,13px)}
+
+    /* Footer line (optional) */
+    footer{border-top:1px solid var(--line);padding:18px 16px;color:#666;font-size:14px;text-align:center}
   </style>
 </head>
 <body>
-  <div class="ticker-container ticker-top">
-    <div class="ticker-text" id="tickerTop"></div>
-    <div class="ticker-text" id="tickerTopClone"></div>
-  </div>
-  <div class="ticker-container ticker-bottom">
-    <div class="ticker-text" id="tickerBottom"></div>
-    <div class="ticker-text" id="tickerBottomClone"></div>
-  </div>
-  <div class="logo-wrap">
-    <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo Grey Final No Text" />
-  </div>
-  <div class="text-block">
-    <span class="wordmark">NordCortex</span>
-    <span class="tagline">Business Development & Innovation Advisory</span>
-  </div>
+  <header>
+    <!-- hamburger for mobile -->
+    <button class="hamburger" aria-label="Open menu">☰</button>
+
+    <!-- desktop nav only (no logo) -->
+    <nav class="nav" aria-label="Primary">
+      <a href="main.html">Home</a>
+
+      <div class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
+        <div class="dropdown-menu" role="menu">
+          <a href="interim-leadership.html">Interim Leadership B2B</a>
+          <a href="advisory-project.html">Project-Based Advisory</a>
+          <a href="collaboration-support.html">Brand–Manufacturer Bridge</a>
+          <a href="interim-about.html">About NordCortex</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+        <div class="dropdown-menu" role="menu">
+          <a href="procurement.html">Procurement</a>
+          <a href="retail-production.html">Manufacturing</a>
+          <a href="product-development.html">Product Development</a>
+          <a href="supply-chain.html">Supply Chain</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+        <div class="dropdown-menu" role="menu">
+          <a href="sustainability.html">Sustainability &amp; Compliance</a>
+          <a href="process-change.html">Process &amp; Change Management</a>
+          <a href="services-added.html">Added Services</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+        <div class="dropdown-menu" role="menu">
+          <a href="digitalisation.html">Digitalisation</a>
+          <a href="rfid.html">RFID</a>
+          <a href="nfc.html">NFC</a>
+          <a href="bfbt.html">BFBT</a>
+          <a href="dpp.html">DPP</a>
+        </div>
+      </div>
+
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Mobile drawer -->
+  <div class="overlay"></div>
+  <aside class="mobile-menu" aria-label="Mobile">
+    <button class="close-btn" aria-label="Close">✕</button>
+    <a href="main.html">Home</a>
+    <div class="menu-group">
+      <button class="menu-toggle" aria-expanded="false">Interim &amp; Advisory <span>›</span></button>
+      <div class="submenu">
+        <a href="interim-leadership.html">Interim Leadership B2B</a>
+        <a href="advisory-project.html">Project-Based Advisory</a>
+        <a href="collaboration-support.html">Brand–Manufacturer Bridge</a>
+        <a href="interim-about.html">About NordCortex</a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <button class="menu-toggle" aria-expanded="false">Expertise <span>›</span></button>
+      <div class="submenu">
+        <a href="procurement.html">Procurement</a>
+        <a href="retail-production.html">Manufacturing</a>
+        <a href="product-development.html">Product Development</a>
+        <a href="supply-chain.html">Supply Chain</a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <button class="menu-toggle" aria-expanded="false">Services <span>›</span></button>
+      <div class="submenu">
+        <a href="sustainability.html">Sustainability &amp; Compliance</a>
+        <a href="process-change.html">Process &amp; Change Management</a>
+        <a href="services-added.html">Added Services</a>
+      </div>
+    </div>
+    <div class="menu-group">
+      <button class="menu-toggle" aria-expanded="false">IoT <span>›</span></button>
+      <div class="submenu">
+        <a href="digitalisation.html">Digitalisation</a>
+        <a href="rfid.html">RFID</a>
+        <a href="nfc.html">NFC</a>
+        <a href="bfbt.html">BFBT</a>
+        <a href="dpp.html">DPP</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+  </aside>
+
+  <!-- Centered slogan -->
+  <section class="hero" aria-label="Slogan">
+    <h1 class="slogan">Because clarity is a strategy<span class="dot">.</span></h1>
+  </section>
+
+  <!-- Brand block -->
+  <section class="brand-block" aria-label="Brand">
+    <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+    <div class="brand-name">NordCortex</div>
+    <div class="brand-sub">BUSINESS DEVELOPMENT &amp; INNOVATION ADVISORY</div>
+  </section>
+
+  <footer>© 2025 NordCortex</footer>
+
   <script>
-    function goToMain() {
-      window.location.href = 'main.html';
+    // Mobile menu logic
+    const burger = document.querySelector('.hamburger');
+    const drawer = document.querySelector('.mobile-menu');
+    const overlay = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+    const toggles = document.querySelectorAll('.menu-toggle');
+
+    function closeMenu(){
+      drawer.classList.remove('open');
+      overlay.classList.remove('show');
     }
-    document.body.addEventListener('click', goToMain);
-    document.body.addEventListener('touchstart', goToMain);
-    document.body.addEventListener('touchmove', goToMain);
-  </script>
-  <script>
-    const keywords = [
-      "Procurement",
-      "Strategy",
-      "Production",
-      "Manufacturing",
-      "RFID & Digitalization",
-      "RFID Solutions",
-      "Size availability",
-      "Sustainability",
-      "Compliance",
-      "Innovation",
-      "Quality Control",
-      "Supply Chain",
-      "Logistics",
-      "Automation",
-      "Data Analytics",
-      "Customer Focus",
-      "Collaboration",
-      "Efficiency",
-      "Scalability",
-      "Customization",
-      "Technology",
-      "Integration",
-      "Optimization",
-      "Forecasting",
-      "Inventory Management",
-      "Risk Management",
-      "Cost Reduction",
-      "Lean Processes",
-      "Agility",
-      "Digital Transformation",
-      "Product Development",
-      "Market Analysis",
-      "Branding",
-      "Customer Experience",
-      "Sourcing",
-      "Vendor Management",
-      "Sustainability Initiatives",
-      "Regulatory Compliance",
-      "Performance Metrics",
-      "Continuous Improvement",
-      "Training & Development",
-      "Resource Allocation",
-      "Project Management",
-      "Innovation Strategy",
-      "Business Intelligence",
-      "Customer Retention",
-      "Trend Analysis",
-      "Product Lifecycle",
-      "Stakeholder Engagement",
-      "Clothing",
-      "Apparel",
-      "Textiles",
-      "Automotive",
-      "Packaging",
-      "Labeling",
-      "Cosmetics",
-      "Footwear",
-      "Home Goods",
-      "Furniture",
-      "Electronics",
-      "Accessories",
-      "Luxury Goods",
-      "Sportswear",
-      "Outdoor Gear",
-      "Stationery",
-      "Personal Care"
-    ];
+    burger?.addEventListener('click', () => {
+      drawer.classList.add('open');
+      overlay.classList.add('show');
+    });
+    closeBtn?.addEventListener('click', closeMenu);
+    overlay?.addEventListener('click', closeMenu);
 
-    function shuffleArray(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.parentElement;
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.menu-group').forEach(g => {
+          if(g !== group){ g.classList.remove('open'); g.querySelector('.menu-toggle').setAttribute('aria-expanded','false'); }
+        });
+        btn.setAttribute('aria-expanded', String(!expanded));
+        group.classList.toggle('open');
+      });
+    });
 
-    function updateTickers() {
-      const shuffled = shuffleArray([...keywords]);
-      const half = Math.ceil(shuffled.length / 2);
-      const keywordsTop = shuffled.slice(0, half);
-      const keywordsBottom = shuffled.slice(half);
-
-      // Join keywords with bullet and add extra space for seamless scroll
-      const topText = keywordsTop.join(" • ") + " • " + keywordsTop.join(" • ");
-      const bottomText = keywordsBottom.join(" • ") + " • " + keywordsBottom.join(" • ");
-
-      const tickerTop = document.getElementById('tickerTop');
-      const tickerTopClone = document.getElementById('tickerTopClone');
-      const tickerBottom = document.getElementById('tickerBottom');
-      const tickerBottomClone = document.getElementById('tickerBottomClone');
-
-      tickerTop.innerText = topText;
-      tickerTopClone.innerText = topText;
-      tickerBottom.innerText = bottomText;
-      tickerBottomClone.innerText = bottomText;
-
-      // Add animation class to start scrolling immediately
-      tickerTop.classList.add('animate');
-      tickerTopClone.classList.add('animate');
-      tickerBottom.classList.add('animate');
-      tickerBottomClone.classList.add('animate');
-    }
-
-    // Initial load
-    updateTickers();
-    // Refresh after each full cycle (60s)
-    setInterval(() => {
-      // Remove animation class to reset animation
-      document.getElementById('tickerTop').classList.remove('animate');
-      document.getElementById('tickerTopClone').classList.remove('animate');
-      document.getElementById('tickerBottom').classList.remove('animate');
-      document.getElementById('tickerBottomClone').classList.remove('animate');
-      // Force reflow to restart animation
-      void document.getElementById('tickerTop').offsetWidth;
-      updateTickers();
-    }, 60000);
+    // Close drawer when any link is clicked
+    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', closeMenu));
   </script>
 </body>
 </html>
