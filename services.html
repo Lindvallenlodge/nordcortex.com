@@ -262,15 +262,66 @@
 <a href="contact.html">Contact</a>
 </div>
 <script>
-  const burger=document.querySelector('.hamburger');
-  const menu=document.querySelector('.mobile-menu');
-  const overlay=document.querySelector('.overlay');
-  const closeBtn=document.querySelector('.close-btn');
-  burger.addEventListener('click',()=>{menu.classList.toggle('open');overlay.classList.toggle('show')});
-  overlay.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
-  closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
-  document.querySelectorAll('.menu-toggle').forEach(btn=>{btn.addEventListener('click',()=>{const g=btn.parentElement;const exp=btn.getAttribute('aria-expanded')==='true';document.querySelectorAll('.menu-group').forEach(x=>{if(x!==g){x.classList.remove('open');const b=x.querySelector('.menu-toggle');if(b) b.setAttribute('aria-expanded','false')}});btn.setAttribute('aria-expanded',String(!exp));g.classList.toggle('open')})});
-  document.querySelectorAll('.mobile-menu a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')}));
+  document.addEventListener('DOMContentLoaded', () => {
+    const burger   = document.querySelector('.hamburger');
+    const menu     = document.querySelector('.mobile-menu');
+    const overlay  = document.querySelector('.overlay');
+    const closeBtn = document.querySelector('.close-btn');
+
+    const openMenu = () => {
+      if (menu) menu.classList.add('open');
+      if (overlay) overlay.classList.add('show');
+    };
+    const closeMenu = () => {
+      if (menu) menu.classList.remove('open');
+      if (overlay) overlay.classList.remove('show');
+    };
+    const toggleMenu = () => {
+      if (!menu || !overlay) return;
+      menu.classList.toggle('open');
+      overlay.classList.toggle('show');
+    };
+
+    if (burger) burger.addEventListener('click', toggleMenu);
+    if (overlay) overlay.addEventListener('click', closeMenu);
+    if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+
+    // Accordion for mobile submenus
+    const toggles = document.querySelectorAll('.mobile-menu .menu-toggle');
+    toggles.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const group = btn.closest('.menu-group');
+        if (!group) return;
+        const isOpen = group.classList.contains('open');
+
+        // close others
+        document.querySelectorAll('.mobile-menu .menu-group.open').forEach(g => {
+          if (g !== group) {
+            g.classList.remove('open');
+            const t = g.querySelector('.menu-toggle');
+            if (t) t.setAttribute('aria-expanded', 'false');
+          }
+        });
+
+        // toggle current
+        group.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
+
+      // keyboard support
+      btn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          btn.click();
+        }
+      });
+    });
+
+    // Close drawer when a link is clicked
+    document.querySelectorAll('.mobile-menu a[href]').forEach(a => {
+      a.addEventListener('click', closeMenu);
+    });
+  });
 </script>
   <!-- Accordion one-open behavior (run after DOM is ready) -->
   <script>
