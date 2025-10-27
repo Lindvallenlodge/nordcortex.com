@@ -79,6 +79,29 @@
     @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
     .brand a { text-decoration:none; color:#111; }
 
+    /* Brand block for homepage */
+    .brand-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 26px;
+    }
+    .brand-block .brand-logo {
+      height: 96px;
+      width: auto;
+      margin-bottom: 6px;
+    }
+    .brand-block .brand-name {
+      font-family: "Baskerville", "Times New Roman", serif;
+      font-size: clamp(36px, 4vw, 56px);
+      color: #6c7a89;
+      font-weight: normal;
+      margin-bottom: 0;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    .brand-sub{letter-spacing:3px;color:#888;text-transform:uppercase;font-weight:500;font-size:clamp(10px,1.2vw,13px);margin-top:12px;}
+
     header .brand span {
       font-family: "Baskerville", "Times New Roman", serif;
       font-size: clamp(45px, 4.3vw, 57px); /* increased by additional 2px */
