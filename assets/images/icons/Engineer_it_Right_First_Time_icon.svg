@@ -1,40 +1,10 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <linearGradient id="ncBlue" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#3b82f6"/>
-    </linearGradient>
-    <style>
-      .s { fill:none; stroke:url(#ncBlue); stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
-      .sf { fill:url(#ncBlue); }
-    </style>
-  </defs>
 
-  <!-- Isometric cube -->
-  <path class="s" d="M96 64l64 32 0 72 -64 -32z"/>
-  <path class="s" d="M96 64l64 32 -32 16 -64 -32z"/>
-  <path class="s" d="M64 80l0 72 64 32 0 -72z"/>
-  <path class="s" d="M64 116l64 32"/>
-
-  <!-- Gear (8 teeth) -->
-  <g transform="translate(158,152)">
-    <circle r="28" class="s"/>
-    <circle r="12" class="s"/>
-    <g class="sf">
-      <rect x="-5" y="-44" width="10" height="10" rx="2"/>
-      <rect x="-5" y="34" width="10" height="10" rx="2"/>
-      <rect x="-44" y="-5" width="10" height="10" rx="2"/>
-      <rect x="34" y="-5" width="10" height="10" rx="2"/>
-      <g transform="rotate(45)">
-        <rect x="-5" y="-44" width="10" height="10" rx="2"/>
-        <rect x="-5" y="34" width="10" height="10" rx="2"/>
-        <rect x="-44" y="-5" width="10" height="10" rx="2"/>
-        <rect x="34" y="-5" width="10" height="10" rx="2"/>
-      </g>
-    </g>
-  </g>
-
-  <circle cx="88" cy="52" r="6" class="sf"/>
-  <circle cx="72" cy="188" r="6" class="sf"/>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<polygon points="300,200 500,200 600,350 500,500 300,500 200,350"
+stroke="#55C0FF" stroke-width="18" fill="none" stroke-linejoin="round"/>
+<circle cx="550" cy="450" r="70" stroke="#55C0FF" stroke-width="18" fill="none"/>
+<line x1="550" y1="380" x2="550" y2="320" stroke="#55C0FF" stroke-width="18" stroke-linecap="round"/>
+<line x1="550" y1="520" x2="550" y2="580" stroke="#55C0FF" stroke-width="18" stroke-linecap="round"/>
+<line x1="480" y1="450" x2="420" y2="450" stroke="#55C0FF" stroke-width="18" stroke-linecap="round"/>
+<line x1="620" y1="450" x2="680" y2="450" stroke="#55C0FF" stroke-width="18" stroke-linecap="round"/>
 </svg>
