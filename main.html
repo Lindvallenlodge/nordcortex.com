@@ -198,16 +198,27 @@
 
     /* Fallback visual clean-up for legacy icons with baked checkerboard */
     .principles-section .thumb img.neutralize-bg {
-      mix-blend-mode: screen;
-      opacity: .92;
+      /* Neutralize checkerboard artifacts baked in PNGs */
+      mix-blend-mode: multiply;           /* darkens the light checker squares into the dark card */
+      filter: brightness(1.35) saturate(1.2) contrast(1.05);
+      opacity: .98;
     }
+    .principles-section .thumb::before{
+      content:"";
+      position:absolute;
+      inset:18px;
+      border-radius:14px;
+      background: rgba(6, 12, 22, .40);   /* subtle dark base behind icons */
+      z-index:0;
+    }
+    .principles-section .thumb img{ position:relative; z-index:1; }
 
     /* Smooth hover effect */
     .principle-card:hover .thumb img {
       transform: scale(1.03);
       transition: transform .25s ease;
     }
-    .principles-section .principle-card .thumb { height:240px; display:flex; align-items:center; justify-content:center; }
+    .principles-section .principle-card .thumb{height:240px;display:flex;align-items:center;justify-content:center;position:relative;isolation:isolate}
     .principles-section .cta-link {
       color: #7aa2ff;
     }
