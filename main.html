@@ -196,6 +196,12 @@
       margin: auto;
     }
 
+    /* Fallback visual clean-up for legacy icons with baked checkerboard */
+    .principles-section .thumb img.neutralize-bg {
+      mix-blend-mode: screen;
+      opacity: .92;
+    }
+
     /* Smooth hover effect */
     .principle-card:hover .thumb img {
       transform: scale(1.03);
@@ -416,7 +422,7 @@
           <div class="principles-grid">
             <article class="principle-card">
               <div class="thumb gradient-1">
-                <img src="assets/images/icons/Procure_with_Insigh_icon.png" alt="Procure with Insight icon">
+                <img class="neutralize-bg" src="assets/images/icons/Procure_with_Insigh_icon_clean.png" alt="Procure with Insight icon">
               </div>
               <h3>Procure with Insight</h3>
               <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
@@ -425,7 +431,7 @@
 
             <article class="principle-card">
               <div class="thumb gradient-2">
-                <img src="assets/images/icons/Engineer_it_Right_First_Time_icon.png" alt="Engineer it Right-First-Time icon">
+                <img class="neutralize-bg" src="assets/images/icons/Engineer_it_Right_First_Time_icon_clean.png" alt="Engineer it Right-First-Time icon">
               </div>
               <h3>Engineer it Right-First-Time</h3>
               <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
