@@ -1,35 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Interim Leadership B2B — NordCortex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <style>
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+  body { margin:0; padding:0; background:#f6f8fb; color:#222; }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  /* Sticky white header */
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand a { text-decoration:none; color:#111; display:flex; align-items:center; gap:10px; }
+  header .brand-logo { height: 138px; width:auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
+  header .brand span { font-family:"Baskerville","Times New Roman",serif; font-size: clamp(45px,4.3vw,57px); font-weight: normal; color:#6c7a89; white-space:nowrap; }
+
+  /* Desktop nav */
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+  .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+  .nav .dropdown { position: relative; }
+  .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+  .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+  .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+  .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; }
+  .nav .dropdown:hover .dropdown-menu { display:block; }
+  @media (min-width:1200px){ .nav .menu{ gap:36px } .nav a{font-size:17.5px} }
+  @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+
+  /* Mobile drawer */
+  .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+  .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
+  .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .menu-toggle .chev { transition: transform 0.2s ease; }
+  .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
+  .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
+  .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
+  .menu-group.open .submenu { display:flex; }
+  .mobile-menu.open {right:0}
+  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+  .overlay.show {opacity:1;pointer-events:auto}
+  .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
+
+  /* Page content */
+  main { max-width:900px; margin:0 auto; padding:40px 20px; }
+  h1 { font-weight:300; font-size:clamp(28px,4vw,44px); margin:0 0 6px; text-align:left; }
+  h2 { font-weight:400; border-bottom:1px solid #ddd; padding-bottom:6px; }
+  ul { line-height:1.6; }
+  section { margin-bottom:40px; }
+  footer { text-align:center; font-size:14px; color:#666; padding:20px 0; border-top:1px solid #eee; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="https://www.nordcortex.com/main.html" style="display:flex;align-items:center;gap:10px;">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+          <span>NordCortex</span>
+        </a>
+      </div>
+      <nav class="nav"><div class="menu">
+        <a href="main.html">Home</a>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="interim-leadership.html">Interim Leadership B2B</a>
+            <a href="interim-about.html">About NordCortex</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="procurement.html">Procurement</a>
+            <a href="retail-production.html">Manufacturing</a>
+            <a href="product-development.html">Product Development</a>
+            <a href="supply-chain.html">Supply Chain</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="sustainability.html">Sustainability &amp; Compliance</a>
+            <a href="process-change.html">Process &amp; Change Management</a>
+            <a href="services-added.html">Added Services</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="digitalisation.html">Digitalisation</a>
+            <a href="rfid.html">RFID</a>
+            <a href="nfc.html">NFC</a>
+            <a href="bfbt.html">BFBT</a>
+            <a href="dpp.html">DPP</a>
+          </div>
+        </div>
+        <a href="contact.html">Contact</a>
+      </div></nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+  <div class="overlay"></div>
+  <div class="mobile-menu">
+    <button class="close-btn">✕</button>
+    <a href="main.html">Home</a>
+    <div class="menu-group" id="mg-interim">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-interim">Interim &amp; Advisory <span class="chev">›</span></button>
+      <div class="submenu" id="sm-interim" role="menu">
+        <a href="interim-leadership.html">Interim Leadership B2B</a>
+        <a href="interim-about.html">About NordCortex</a>
+      </div>
+    </div>
+    <div class="menu-group" id="mg-expertise">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+      <div class="submenu" id="sm-expertise" role="menu">
+        <a href="procurement.html">Procurement</a>
+        <a href="retail-production.html">Manufacturing</a>
+        <a href="product-development.html">Product Development</a>
+        <a href="supply-chain.html">Supply Chain</a>
+      </div>
+    </div>
+    <div class="menu-group" id="mg-services">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+      <div class="submenu" id="sm-services" role="menu">
+        <a href="sustainability.html">Sustainability &amp; Compliance</a>
+        <a href="process-change.html">Process &amp; Change Management</a>
+        <a href="services-added.html">Added Services</a>
+      </div>
+    </div>
+    <div class="menu-group" id="mg-iot">
+      <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+      <div class="submenu" id="sm-iot" role="menu">
+        <a href="digitalisation.html">Digitalisation</a>
+        <a href="rfid.html">RFID</a>
+        <a href="nfc.html">NFC</a>
+        <a href="bfbt.html">BFBT</a>
+        <a href="dpp.html">DPP</a>
+      </div>
+    </div>
+    <a href="contact.html">Contact</a>
+  </div>
   <main>
     
 <section>
-  <h2>Interim Leadership with Measurable Impact</h2>
+  <h2>Scope of Engagement</h2>
   <ul>
-    <li>Step-in leadership for Procurement, Production & Product Development (3–12 months)</li>
-    <li>Hands-on governance and operational clarity to stabilize daily execution</li>
-    <li>Structured decision-making and prioritization based on data, cost, risks & ROI</li>
-    <li>Clear target-setting and KPI alignment that drives accountable performance</li>
+    <li>Interim leadership for Procurement, Production, or Product Development functions (3–12 months)</li>
+    <li>Program management for RFID, DPP, and digital transformation rollouts</li>
+    <li>Operational turnaround and post-M&A supplier stabilization</li>
   </ul>
 </section>
-
 <section>
-  <h2>Operational Efficiency & Profitability Uplift</h2>
+  <h2>Procurement Advisory Support</h2>
   <ul>
-    <li>Tier-mapped sourcing strategy with proactive supplier performance control</li>
-    <li>Open costing & should-cost modelling driving fact‑based negotiations</li>
-    <li>Process standardization across development → sourcing → production → logistics</li>
-    <li>Near‑term COGS savings & long‑term EBITDA improvement delivered together</li>
-    <li>Inventory‑linked planning to free working capital and increase availability</li>
-  </ul>
-</section>
-
-<section>
-  <h2>Digital & Transformation Program Delivery</h2>
-  <ul>
-    <li>RFID & DPP rollout leadership — from pilot logic to full network deployment</li>
-    <li>Process automation & IT‑enabled efficiency with existing system footprint</li>
-    <li>Insights activation through analytics, dashboards & governance routines</li>
-    <li>Change adoption support — training, communication, and role clarity</li>
-    <li>Embedding continuous improvement behaviors into business-as-usual</li>
+    <li>On-demand category leadership for RFx and supplier negotiations</li>
+    <li>Open-costing, should-cost modelling, and clean-sheet analysis</li>
+    <li>Contract and KPI setup for sourcing governance</li>
+    <li>Supplier performance and compliance management across Tier 1–3</li>
   </ul>
 </section>
 
   </main>
+  <footer>© 2025 NordCortex</footer>
+<script>
+  const burger = document.querySelector('.hamburger');
+  const menu = document.querySelector('.mobile-menu');
+  const overlay = document.querySelector('.overlay');
+  const closeBtn = document.querySelector('.close-btn');
+
+  burger.addEventListener('click', () => {
+    menu.classList.toggle('open');
+    overlay.classList.toggle('show');
+  });
+  overlay.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+  closeBtn.addEventListener('click', () => { menu.classList.remove('open'); overlay.classList.remove('show'); });
+
+  document.querySelectorAll('.menu-toggle').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const group = btn.parentElement;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.menu-group').forEach((g) => {
+        if (g !== group) {
+          g.classList.remove('open');
+          const b = g.querySelector('.menu-toggle');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        }
+      });
+      btn.setAttribute('aria-expanded', String(!expanded));
+      group.classList.toggle('open');
+    });
+  });
+
+  document.querySelectorAll('.mobile-menu a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.remove('open');
+      overlay.classList.remove('show');
+    });
+  });
+</script>
+</body>
+</html>
