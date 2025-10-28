@@ -50,6 +50,7 @@
     .hero-dark p.sub{max-width:720px;margin:0 auto;color:#cfd3d9;font-size:clamp(15px,1.6vw,18px);text-align:center}
     .sub-spacer{height:16px}
     .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-ctas.solutions-open{flex-direction:column;align-items:flex-start}
     /* Inline solutions reveal (Option A) */
     .solutions-panel{display:none;margin-top:12px;border:1px solid #eee;border-radius:12px;background:#fff;box-shadow:0 8px 20px rgba(0,0,0,.06);overflow:hidden}
     .solutions-panel.open{display:block}
@@ -489,10 +490,21 @@
     const toggle = document.getElementById('solutions-toggle');
     const panel = document.getElementById('solutions-panel');
     const wrapper = toggle ? toggle.closest('.solutions-wrapper') : null;
+    const ctas = document.querySelector('.hero-ctas');
     if(!toggle || !panel || !wrapper) return;
 
-    const open = () => { panel.classList.add('open'); toggle.setAttribute('aria-expanded','true'); toggle.textContent = 'Hide solutions ↑'; };
-    const close = () => { panel.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.textContent = 'Explore our solutions ↓'; };
+    const open = () => {
+      panel.classList.add('open');
+      toggle.setAttribute('aria-expanded','true');
+      toggle.textContent = 'Hide solutions ↑';
+      if(ctas) ctas.classList.add('solutions-open');
+    };
+    const close = () => {
+      panel.classList.remove('open');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.textContent = 'Explore our solutions ↓';
+      if(ctas) ctas.classList.remove('solutions-open');
+    };
     const isOpen = () => panel.classList.contains('open');
 
     // Hover or focus opens
