@@ -185,13 +185,21 @@
     .principles-section .principle-card p {
       color: #cfd3d9;
     }
+    /* Icon improvements — better visibility over gradient */
     .principles-section .thumb img {
-      display:block;
-      margin:auto;
-      width:auto;
-      height:72%;
-      background:transparent !important;
-      image-rendering:auto;
+      width: 82%;
+      height: auto;
+      background: transparent !important;
+      filter: drop-shadow(0 0 10px rgba(0,0,0,.18));
+      image-rendering: auto;
+      display: block;
+      margin: auto;
+    }
+
+    /* Smooth hover effect */
+    .principle-card:hover .thumb img {
+      transform: scale(1.03);
+      transition: transform .25s ease;
     }
     .principles-section .principle-card .thumb { height:240px; display:flex; align-items:center; justify-content:center; }
     .principles-section .cta-link {
@@ -426,7 +434,7 @@
 
             <article class="principle-card">
               <div class="thumb gradient-3">
-                <img src="assets/images/icons/connect_and_perfor_icon.png" alt="Connect and Perform icon">
+                <img src="assets/images/icons/connect_and_perform_icon.png" alt="Connect and Perform icon">
               </div>
               <h3>Connect and Perform</h3>
               <p>IoT/RFID data from supplier → DC → store powers forecasting, allocation, and on‑shelf availability — driving 3–15% sales uplift and generating multi‑use data for planning, audits, and insights.</p>
