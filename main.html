@@ -550,6 +550,13 @@
     [toggle, panel].forEach(el => el.addEventListener('keydown', (e) => {
       if(e.key==='Escape' && isOpen()){ close(); toggle.focus(); }
     }));
+
+    // Auto-close the solutions panel when a link is selected (mobile & desktop)
+    document.querySelectorAll('#solutions-panel .solutions-links a').forEach((lnk)=>{
+      lnk.addEventListener('click', () => {
+        close();
+      }, { passive:true });
+    });
   })();
 </script>
 </html>
