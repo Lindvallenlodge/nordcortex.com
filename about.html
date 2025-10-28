@@ -175,9 +175,16 @@
           <span>NordCortex</span>
         </a>
       </div>
-      <nav class="nav">
-<div class="menu">
+      <nav class="nav"><div class="menu">
   <a href="main.html">Home</a>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Interim &amp; Advisory <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="interim-leadership.html">Interim Leadership B2B</a>
+      <a href="interim-about.html">About NordCortex</a>
+    </div>
+  </div>
 
   <div class="dropdown">
     <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
@@ -192,9 +199,7 @@
   <div class="dropdown">
     <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
     <div class="dropdown-menu" role="menu">
-      <a href="change-management.html">Change Management</a>
       <a href="sustainability.html">Sustainability &amp; Compliance</a>
-      <a href="interim-advisory.html">Interim &amp; Advisory</a>
       <a href="process-change.html">Process &amp; Change Management</a>
       <a href="services-added.html">Added Services</a>
     </div>
@@ -211,17 +216,8 @@
     </div>
   </div>
 
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-
   <a href="contact.html">Contact</a>
-</div>
-</nav>
+</div></nav>
       <button class="hamburger">☰</button>
     </div>
   </header>
@@ -230,9 +226,16 @@
 
   
   
-  <div class="mobile-menu">
-<button class="close-btn">✕</button>
+<div class="mobile-menu"><button class="close-btn">✕</button>
 <a href="main.html">Home</a>
+
+<div class="menu-group" id="mg-interim">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-interim">Interim &amp; Advisory <span class="chev">›</span></button>
+  <div class="submenu" id="sm-interim" role="menu">
+    <a href="interim-leadership.html">Interim Leadership B2B</a>
+    <a href="interim-about.html">About NordCortex</a>
+  </div>
+</div>
 
 <div class="menu-group" id="mg-expertise">
   <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
@@ -244,12 +247,27 @@
   </div>
 </div>
 
-</div>
+<div class="menu-group" id="mg-services">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+  <div class="submenu" id="sm-services" role="menu">
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="process-change.html">Process &amp; Change Management</a>
+    <a href="services-added.html">Added Services</a>
+  </div>
 </div>
 
+<div class="menu-group" id="mg-iot">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+  <div class="submenu" id="sm-iot" role="menu">
+    <a href="digitalisation.html">Digitalisation</a>
+    <a href="rfid.html">RFID</a>
+    <a href="nfc.html">NFC</a>
+    <a href="bfbt.html">BFBT</a>
+    <a href="dpp.html">DPP</a>
+  </div>
 </div>
 
-
+<a href="contact.html">Contact</a></div>
 
   <script>
     const burger = document.querySelector('.hamburger');
@@ -274,26 +292,56 @@
   </script>
 
   <main class="container">
-    <section class="hero">
-      <h1>About</h1>
-      <p class="lead">NordCortex is built on global experience in procurement, production, and supply chains.</p>
+  <section class="hero">
+    <h1>About NordCortex</h1>
+    <p class="lead">NordCortex is a Nordic-minded advisory that turns analytical clarity into operational results across procurement, product development, manufacturing, and IoT-enabled supply chains.</p>
 
     <div class="grid">
       <div class="card">
-        <h3>Who We Are</h3>
-        <p>A consultancy combining procurement strategy, supply chain resilience, and product development expertise, with a focus on measurable results.</p>
+        <h3>Logic Behind the Name</h3>
+        <p><strong>Nord</strong> — Nordic values: clarity, trust, pragmatism, and strategic calm. The Scandinavian mindset of precision, balance, and rationality.</p>
+        <p><strong>Cortex</strong> — From the cerebral cortex — analytical thinking, decision-making, complex problem‑solving. A symbol of intelligence, structure, and data‑driven logic.</p>
+        <p><strong>Combined</strong> — A Nordic intelligence hub that blends Northern integrity with deep analytical and strategic capability.</p>
       </div>
+
       <div class="card">
-        <h3>Our Approach</h3>
-        <p>We balance cost optimization with long-term sustainability, integrating digital tools and innovative solutions such as RFID and product passports.</p>
+        <h3>How We Operate</h3>
+        <ul>
+          <li>Fact‑based, data‑driven decisions</li>
+          <li>System‑level problem‑solving and straight prioritisation</li>
+          <li>Calm, structured execution in the Scandinavian style</li>
+          <li>Open costings, tier mapping, and RFx discipline across any industry</li>
+        </ul>
       </div>
+
       <div class="card">
-        <h3>Experience</h3>
-        <p>15+ years leading projects with global scale, across procurement, product development, retail production, and sustainability initiatives.</p>
+        <h3>Because clarity is a strategy.</h3>
+        <p>Clarity aligns people, shortens lead‑times, and exposes waste. We make goals, governance, and hand‑offs explicit — so decisions move fast and outcomes are measurable.</p>
+        <p>We often find that teams don’t challenge what “already works”. That’s a mistake — contexts change, cost structures shift, and old methods stop scaling. We bring the structured challenge and the proof.</p>
       </div>
     </div>
-    </section>
-  </main>
+
+    <div class="grid" style="margin-top:16px">
+      <div class="card">
+        <h3>What We Do</h3>
+        <ul>
+          <li>Procurement &amp; category strategy with open‑book costing</li>
+          <li>Manufacturing &amp; industrial engineering — textiles, packaging, labels</li>
+          <li>Product development governance — specs, testing, right‑first‑time</li>
+          <li>IoT/RFID &amp; DPP — traceability and data for planning, audits, and CX</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>How We Engage</h3>
+        <ul>
+          <li>Interim leadership (3–12 months): Head of Procurement / Production, RFID/DPP Program Lead</li>
+          <li>Program &amp; change delivery with measurable business outcomes</li>
+          <li>Board‑level and steering‑group advisory to keep transformation aligned</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
   <footer>
     <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
   </footer>
