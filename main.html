@@ -211,6 +211,17 @@
       background: rgba(6, 12, 22, .40);   /* subtle dark base behind icons */
       z-index:0;
     }
+    /* Force a solid deep-blue plate behind icons when needed */
+    .principles-section .thumb.blue-base::before{
+      background: linear-gradient(180deg, #0b1628 0%, #0d1b31 100%) !important;
+      opacity: .9;
+    }
+    /* Ensure normal blending for icons on blue base */
+    .principles-section .thumb.blue-base img{
+      mix-blend-mode: normal !important;
+      filter: drop-shadow(0 0 10px rgba(0,0,0,.18));
+      opacity: 1;
+    }
     .principles-section .thumb img{ position:relative; z-index:1; }
 
     /* Smooth hover effect */
@@ -432,8 +443,8 @@
           <p class="sublead" style="margin:0 0 16px;font-size:clamp(15px,1.5vw,18px)">We connect procurement, product development, production, and digitalization into one system of clarity, control, and accountability — built on structured processes and measurable outcomes.</p>
           <div class="principles-grid">
             <article class="principle-card">
-              <div class="thumb gradient-1">
-                <img class="neutralize-bg" src="assets/images/icons/Procure_with_Insigh_icon.png" alt="Procure with Insight icon">
+              <div class="thumb gradient-1 blue-base">
+                <img src="assets/images/icons/Procure_with_Insigh_icon.png" alt="Procure with Insight icon">
               </div>
               <h3>Procure with Insight</h3>
               <p>Open costings, clear specs, and full landed‑cost visibility — materials, processes, logistics — powered by data‑driven analytics so negotiations run on facts.</p>
@@ -441,8 +452,8 @@
             </article>
 
             <article class="principle-card">
-              <div class="thumb gradient-2">
-                <img class="neutralize-bg" src="assets/images/icons/Engineer_it_Right_First_Time_icon.png" alt="Engineer it Right-First-Time icon">
+              <div class="thumb gradient-2 blue-base">
+                <img src="assets/images/icons/Engineer_it_Right_First_Time_icon.png" alt="Engineer it Right-First-Time icon">
               </div>
               <h3>Engineer it Right-First-Time</h3>
               <p>Standardised methods and routines across product and non‑product development — from packaging to factory automation — ensuring quality, scalability, and cost precision.</p>
