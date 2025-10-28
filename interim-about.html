@@ -40,7 +40,22 @@
     @media (max-width:600px){ .brand-logo{height:60px} .brand span{font-size:28px} }
 
     /* Desktop menu (cloned from main.html) */
-    .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+    .nav a{
+      margin:0;
+      text-decoration:none;
+      color:#333;
+      font-size:clamp(15px,1.6vw,18px);
+      font-weight:400 !important;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
+    .nav .dropdown > a{
+      font-weight:400 !important;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
     .nav a:hover{color:#000;text-decoration:underline}
     .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
     .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
@@ -56,7 +71,16 @@
     /* Mobile menu (cloned) */
     .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
     .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
-    .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+    .mobile-menu a {
+      padding:14px 0;
+      text-decoration:none;
+      color:#333;
+      font-size:16px;
+      font-weight:400 !important;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      text-rendering:optimizeLegibility;
+    }
     .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
     .menu-toggle { background:none; border:none; font-size:18px; font-weight:600; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
     .menu-toggle .chev { transition: transform 0.2s ease; }
