@@ -1,29 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <linearGradient id="ncBlue" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="1" stop-color="#3b82f6"/>
-    </linearGradient>
-    <style>
-      .s { fill:none; stroke:url(#ncBlue); stroke-width:8; stroke-linecap:round; stroke-linejoin:round; }
-      .g { fill:none; stroke:url(#ncBlue); stroke-width:3; opacity:.55; }
-    </style>
-  </defs>
 
-  <!-- Grid panel -->
-  <rect x="40" y="56" width="136" height="104" rx="6" class="s"/>
-  <!-- inner grid lines -->
-  <path class="g" d="M40 88h136M40 120h136M40 152h136M72 56v104M104 56v104M136 56v104"/>
-  
-  <!-- Magnifier -->
-  <circle cx="124" cy="120" r="44" class="s"/>
-  <path class="s" d="M156 152l34 34"/>
-  <!-- Decorative nodes -->
-  <circle cx="64" cy="40" r="6" fill="url(#ncBlue)"/>
-  <path class="s" d="M64 40v16"/>
-
-  <!-- Dots (detail) -->
-  <circle cx="120" cy="200" r="4" fill="#3b82f6"/>
-  <circle cx="140" cy="214" r="4" fill="#22d3ee"/>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="350" cy="350" r="200" stroke="#55C0FF" stroke-width="18"/>
+<line x1="500" y1="500" x2="650" y2="650" stroke="#55C0FF" stroke-width="18" stroke-linecap="round"/>
+<rect x="200" y="200" width="300" height="300" stroke="#55C0FF" stroke-width="10" stroke-linejoin="round" opacity="0.4"/>
 </svg>
