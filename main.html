@@ -60,8 +60,29 @@
     .solutions-links a:hover{background:#f6f8fb}
     @media (max-width:700px){.solutions-links{gap:8px}}
     .solutions-wrapper{position:relative;display:inline-block}
-    .btn-primary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
-    .btn-secondary{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.6);border-radius:10px;padding:10px 14px;text-decoration:none;font-weight:600}
+    /* Unified button styling */
+    .btn-primary,
+    .btn-secondary {
+      font-family: "Outfit", sans-serif;
+      font-size: clamp(14px, 1.6vw, 18px);
+      line-height: 1;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      background: transparent;
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.6);
+      text-decoration: none;
+      -webkit-appearance: none;
+      appearance: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover { background: rgba(255,255,255,.06); border-color: rgba(255,255,255,.8); }
     .hero-dark .fx{position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 40% at 20% 30%, rgba(120,132,160,.25), rgba(14,17,22,0)), radial-gradient(55% 45% at 90% 20%, rgba(72,85,114,.18), rgba(14,17,22,0));filter:blur(24px);z-index:1}
     @media (max-width:700px){.hero-dark{padding:64px 0 56px}.hero-ctas{flex-direction:column;align-items:flex-start}}
     h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
