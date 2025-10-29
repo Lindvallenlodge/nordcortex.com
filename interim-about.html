@@ -367,33 +367,28 @@
     .founder-quote { margin-top:10px; color:#e5eaf6; font-weight:500; }
     .founder-quote em { font-style:normal; opacity:.95; }
     .founder-headshot { justify-self:center; }
-    .founder-headshot .imgwrap {
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      overflow: hidden;                     /* hard clip to a perfect circle */
-      background: transparent;              /* remove thick dark plate */
-      box-shadow: 0 10px 28px rgba(0,0,0,.35); /* soft outer shadow only */
-      outline: 2px solid rgba(255,255,255,.05); /* slimmer ring */
-      outline-offset: -1px;
-      -webkit-mask-image: radial-gradient(circle, #000 98%, transparent 100%);
-              mask-image: radial-gradient(circle, #000 98%, transparent 100%);
-      will-change: transform;
-    }
-    .founder-headshot img {
+    /* Founder photo — full portrait (no circular crop) */
+    .founder-headshot .imgwrap{
+      max-width: 360px;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 40%;             /* nudge up so head is fully visible */
-      display: block;
-      transform: scale(.68);                /* zoom OUT more so full portrait fits */
-      transform-origin: center center;
-      border-radius: 50%;
-      background: transparent !important;
+      border-radius: 14px;
+      overflow: hidden;                 /* keeps corners tidy */
+      background: transparent;          /* keep hero background dark underneath */
+      box-shadow: 0 16px 36px rgba(0,0,0,.45);
+    }
+    .founder-headshot img{
+      display:block;
+      width:100%;
+      height:auto;                      /* keep full portrait aspect */
+      object-fit: contain;              /* no cropping */
+      object-position:center;           /* center the photo */
+      transform:none;                   /* remove zoom/cutoff */
+      border-radius:14px;
+      background:transparent !important;
     }
     @media (max-width: 860px){
-      .founder-headshot .imgwrap { width: 220px; height: 220px; }
-      .founder-headshot img { transform: scale(.74); object-position: 50% 38%; border-radius: 50%; }
+      .founder-headshot .imgwrap{ max-width: 300px; }
+      .founder-headshot img{ border-radius:14px; }
     }
     .founder-name { margin-top:10px; text-align:center; color:#cfd3d9; }
     .founder-name strong { color:#fff; font-weight:600; }
