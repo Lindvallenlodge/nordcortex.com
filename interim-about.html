@@ -311,6 +311,18 @@
     @media (min-width:1200px){ .nav .menu{ gap:36px } }
     @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
 
+    /* --- Keep desktop menu labels on one line (match main.html) --- */
+    .nav .menu { flex-wrap: nowrap; gap: 28px; }       /* never wrap items */
+    .nav .menu > * { flex: 0 0 auto; }                 /* prevent flex shrink causing wraps */
+    .nav a,
+    .nav .dropdown > a { white-space: nowrap; }        /* keep each label on one line */
+
+    /* Slightly tighter spacing / font scaling on narrower desktops to avoid edge cases */
+    @media (max-width: 1200px){
+      .nav .menu { gap: 24px; }
+      .nav a { font-size: clamp(15px, 1.45vw, 17px); }
+    }
+
     /* Mobile menu (cloned) */
     .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
     .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
