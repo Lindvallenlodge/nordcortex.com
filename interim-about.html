@@ -372,7 +372,7 @@
       height: 220px;
       border-radius: 50%;
       overflow: hidden;                     /* hard clip to a perfect circle */
-      background: transparent !important;   /* remove any plate that reads as a square */
+      background: rgba(5, 10, 20, 0.55) !important;  /* darker circular plate */
       box-shadow: 0 12px 28px rgba(0,0,0,.35); /* soft drop only; no inset */
       -webkit-mask-image: radial-gradient(circle, #000 98%, transparent 100%); /* smooth Safari edges */
               mask-image: radial-gradient(circle, #000 98%, transparent 100%);
@@ -383,14 +383,14 @@
       height: 100%;
       object-fit: cover;
       display: block;
-      transform: scale(.82);                /* zoom out a touch more */
+      transform: scale(.76);                /* zoomed out more so whole portrait fits */
       transform-origin: center center;
       border-radius: 50%;                   /* ensure the bitmap edge is circular */
       background: transparent !important;   /* no square plate behind */
     }
     @media (max-width: 860px){
       .founder-headshot .imgwrap { width: 200px; height: 200px; }
-      .founder-headshot img { transform: scale(.88); border-radius: 50%; }
+      .founder-headshot img { transform: scale(.84); border-radius: 50%; } /* slightly zoomed out on mobile too */
     }
     .founder-name { margin-top:10px; text-align:center; color:#cfd3d9; }
     .founder-name strong { color:#fff; font-weight:600; }
