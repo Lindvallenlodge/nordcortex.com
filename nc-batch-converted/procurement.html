@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Procurement — NordCortex</title>
+
+  <!-- Favicons/theme (same structure as Digitalisation) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <link rel="mask-icon" href="/pictures/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="/pictures/favicon-nordcortex-32.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+  /* ——— Base ——— */
+  body { margin: 0; }
+  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
+  .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
+  .nav .dropdown { position: relative; }
+  .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
+  .nav .dropdown .caret { font-size: .8em; line-height: 1; }
+  .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
+  .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; font-weight:400; }
+  .nav .dropdown:hover .dropdown-menu { display:block; }
+  @media (min-width:1200px){ .nav .menu{ gap:36px } }
+  @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+
+  .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
+
+  .brand a { text-decoration:none; color:#111; }
+  header .brand span { font-family: "Baskerville","Times New Roman",serif; font-size: clamp(45px, 4.3vw, 57px); font-weight: normal; color: #6c7a89; text-align: left; white-space: nowrap; }
+  header .brand-logo { height: 138px; width: auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
+  @media (min-width: 1200px) { .brand-logo { height: 155px; } .brand span { font-size: 44px; } }
+  @media (max-width: 600px) { .brand-logo { height: 60px; } .brand span { font-size: 28px; } }
+
+  .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+  .mobile-menu.open {right:0}
+  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+  .overlay.show {opacity:1;pointer-events:auto}
+
+  /* Grouped mobile menu (accordion) */
+  .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
+  .menu-toggle { background:none; border:none; font-size:18px; font-weight:400; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
+  .menu-toggle .chev { transition: transform 0.2s ease; }
+  .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
+  .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
+  .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
+  .menu-group.open .submenu { display:flex; }
+
+  /* Full-bleed wrapper */
+  .full-bleed{ margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
+  #sources.full-bleed{ margin-left: calc(50% - 50vw) !important; margin-right: calc(50% - 50vw) !important; width: 100vw !important; max-width: 100vw !important; }
+  body { overflow-x: hidden; }
+
+  /* ——— New colour palette for Procurement (distinct from Digitalisation) ——— */
+  :root{
+    --bg:#0e1311;
+    --ink:#e9f3ef;
+    --muted:#c6d5d0;
+    --brand:#6ed1a8;   /* mint/teal */
+    --accent:#8ab4ff;  /* soft blue */
+    --accent2:#ffd36e; /* warm yellow */
+  }
+
+  /* Dark hero */
+  .hero-dark{background:linear-gradient(180deg,#061415 0%,#0d2520 100%); color:#fff; padding:64px 0 72px;}
+  .hero-dark .inner{max-width:1100px;margin:0 auto;padding:0 24px}
+  .hero-dark h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:center}
+  .hero-dark p.sub{max-width:900px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
+
+  /* Cards grid */
+  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
+  .dcx-card h3{ text-align:left; }
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(110,209,168,.18);border:1px solid rgba(110,209,168,.45);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
+  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
+  .kpi strong{font-size:22px}
+  .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.12);overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
+  .seg{display:flex;gap:8px;align-items:center;margin:12px 0 2px}
+  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.25);border-radius:12px;color:#fff;text-decoration:none}
+
+  /* Section title helpers */
+  .section-title{max-width:1100px;margin:0 auto;padding:0 24px;color:#d9e6e1}
+  
+.hero h1{font-weight:300;}
+</style>
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <!-- HERO -->
+  <section class="hero-dark full-bleed">
+    <div class="inner">
+      <h1>NordCortex Procurement Blueprint — 10 Core Pillars</h1>
+      <p class="sub">Industry‑agnostic procurement backbone with <strong>tier mapping</strong>, <strong>open costing</strong>, and <strong>RFX discipline</strong>. Built for clarity, speed, and measurable outcomes across any category or spend type.</p>
+    </div>
+  </section>
+
+  <!-- CARDS: 10 Pillars -->
+  <section style="background:#0d2520;color:#e9f3ef" class="full-bleed">
+    <div class="dcx-grid">
+      
+      <article class="dcx-card">
+        <span class="pill">01 · Strategy</span>
+        <div class="seg"><h3 style="margin:0">Strategy & Governance</h3></div>
+        <ul>
+          <li>Category strategies aligned to business & risk</li>
+          <li>Make‑or‑buy; supplier segmentation</li>
+          <li>Policy, DoA, approvals, sustainability</li>
+          <li>Digital roadmap & operating cadence</li>
+        </ul>
+        <div class="kpi"><span>Alignment</span><strong>one‑page per category</strong></div>
+        <div class="bar"><span style="width:70%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">02 · Spend</span>
+        <div class="seg"><h3 style="margin:0">Spend & Category Management</h3></div>
+        <ul>
+          <li>Spend cube; demand control</li>
+          <li>Pipeline & prioritisation model</li>
+          <li>Market intel & benchmarking</li>
+          <li>Kraljic/Maturity assessments</li>
+        </ul>
+        <div class="kpi"><span>Visibility</span><strong>100% categorised</strong></div>
+        <div class="bar"><span style="width:82%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">03 · RFX</span>
+        <div class="seg"><h3 style="margin:0">Sourcing & RFX</h3></div>
+        <ul>
+          <li>RFI → RFQ → RFP with clear gates</li>
+          <li>Templates & scoring models</li>
+          <li>e‑Auctions when specs mature</li>
+          <li>Onboarding: legal, bank, ESG</li>
+        </ul>
+        <div class="kpi"><span>Cycle time</span><strong>‑25–35%</strong></div>
+        <div class="bar"><span style="width:60%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">04 · Cost</span>
+        <div class="seg"><h3 style="margin:0">Costing & TCO</h3></div>
+        <ul>
+          <li>Should‑cost & cost breakdowns</li>
+          <li>TCO: price + freight + duty + risk</li>
+          <li>FX, indexation, scenarios</li>
+          <li>Value engineering pipeline</li>
+        </ul>
+        <div class="kpi"><span>Negotiation delta</span><strong>‑5–10%</strong></div>
+        <div class="bar"><span style="width:72%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">05 · Contracts</span>
+        <div class="seg"><h3 style="margin:0">Negotiation & Contracting</h3></div>
+        <ul>
+          <li>BATNA/ZOPA prep & playbooks</li>
+          <li>SLAs/KPIs; change control</li>
+          <li>CLM repository & versions</li>
+          <li>Signature workflow</li>
+        </ul>
+        <div class="kpi"><span>Compliance</span><strong>contracted ≥95%</strong></div>
+        <div class="bar"><span style="width:78%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">06 · SRM</span>
+        <div class="seg"><h3 style="margin:0">Supplier Relationship Mgmt</h3></div>
+        <ul>
+          <li>Segmentation: strategic / preferred / transactional</li>
+          <li>Scorecards & QBRs; joint CI backlog</li>
+          <li>Innovation & sustainability reviews</li>
+        </ul>
+        <div class="kpi"><span>Performance</span><strong>tracked monthly</strong></div>
+        <div class="bar"><span style="width:66%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">07 · P2P</span>
+        <div class="seg"><h3 style="margin:0">Operational Procurement (P2P)</h3></div>
+        <ul>
+          <li>PR → PO → GR → Invoice (3‑way match)</li>
+          <li>Catalogs & guided buying</li>
+          <li>Supplier master data governance</li>
+          <li>DPO optimisation & payment terms</li>
+        </ul>
+        <div class="kpi"><span>PO compliance</span><strong>≥ 95%</strong></div>
+        <div class="bar"><span style="width:75%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">08 · Risk</span>
+        <div class="seg"><h3 style="margin:0">Risk & Compliance</h3></div>
+        <ul>
+          <li>Risk register; continuity & dual‑sourcing</li>
+          <li>Audits (quality, social, cyber)</li>
+          <li>Sanctions/PEP, ethics, modern slavery</li>
+          <li>ESG & regulatory reporting</li>
+        </ul>
+        <div class="kpi"><span>Continuity</span><strong>BCP on critical</strong></div>
+        <div class="bar"><span style="width:84%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">09 · Digital</span>
+        <div class="seg"><h3 style="margin:0">Data, Systems & Tools</h3></div>
+        <ul>
+          <li>ERP, e‑sourcing, CLM, SRM</li>
+          <li>Spend analytics dashboards</li>
+          <li>Supplier portals & integrations</li>
+          <li>AI for opportunity/contract mining</li>
+        </ul>
+        <div class="kpi"><span>Data quality</span><strong>single source</strong></div>
+        <div class="bar"><span style="width:68%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">10 · People</span>
+        <div class="seg"><h3 style="margin:0">Organisation & Performance</h3></div>
+        <ul>
+          <li>Org model (central/local/hybrid)</li>
+          <li>Skills matrix & training (CIPS/ISM/Lean)</li>
+          <li>KPIs: savings, TCO, compliance, SRM</li>
+          <li>Stakeholder engagement model</li>
+        </ul>
+        <div class="kpi"><span>Maturity</span><strong>stepping up yearly</strong></div>
+        <div class="bar"><span style="width:64%"></span></div>
+      </article>
+
+      <article class="dcx-card" style="grid-column:1/-1">
+        <h3>Operating Rhythm (Design → Source → Validate → Award → Operate)</h3>
+        <ul>
+          <li><strong>Design:</strong> category brief, tier map, costing logic, contracting plan</li>
+          <li><strong>Source:</strong> RFI shortlist → RFQ breakdowns → negotiations</li>
+          <li><strong>Validate:</strong> samples/tests (if applicable), due diligence</li>
+          <li><strong>Award:</strong> contracts, KPIs, onboarding, change control</li>
+          <li><strong>Operate:</strong> scorecards, QBRs, CI backlog, savings tracking</li>
+        </ul>
+        <a class="cta" href="contact.html">Book a 30‑min scoping call →</a>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="color:#666">© 2025 NordCortex. All rights reserved.</div>
+  </footer>
+</body>
+</html>
