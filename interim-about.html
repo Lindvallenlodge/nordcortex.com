@@ -367,7 +367,7 @@
     .founder-quote { margin-top:10px; color:#e5eaf6; font-weight:500; }
     .founder-quote em { font-style:normal; opacity:.95; }
     .founder-headshot { justify-self:center; }
-    /* Founder photo — circular portrait with intentional placeholder (aura + ring) */
+    /* Founder photo — circular portrait with soft glow */
     .founder-headshot .imgwrap{
       position: relative;
       height: 280px;
@@ -375,38 +375,73 @@
       margin: 0 auto;
       border-radius: 50%;
       overflow: hidden;
-      background: radial-gradient(65% 65% at 45% 35%, #0f1b30 0%, #0a1426 45%, #081120 100%);
-      box-shadow:
-        0 18px 36px rgba(0,0,0,.45),           /* drop */
-        inset 0 2px 12px rgba(255,255,255,.04); /* soft inner */
+      background: linear-gradient(180deg, #030a16 0%, #0a1426 100%); /* dark plate */
+      box-shadow: 0 14px 30px rgba(0,0,0,.45);
       display: flex;
       align-items: center;
       justify-content: center;
-      isolation: isolate;
+      isolation: isolate; /* ensures proper layering for glow */
     }
+    /* Soft glow plate behind the circular portrait */
     .founder-headshot .imgwrap::before{
       content: "";
       position: absolute;
-      inset: -22px;                  /* larger than circle for halo */
+      inset: -18px;                 /* slightly larger than the circle */
       border-radius: 50%;
       background:
-        radial-gradient(58% 58% at 50% 35%, rgba(122, 162, 255, .18), rgba(122, 162, 255, 0) 70%),
-        radial-gradient(52% 52% at 62% 72%, rgba(60, 110, 220, .16), rgba(60, 110, 220, 0) 78%);
-      filter: blur(22px);
-      z-index: 0;
-      opacity: .9;
-      pointer-events: none;
+        radial-gradient(60% 60% at 50% 35%, rgba(90,120,200,.30), rgba(90,120,200,0) 70%),
+        radial-gradient(50% 50% at 60% 70%, rgba(40,70,160,.28), rgba(40,70,160,0) 75%);
+      filter: blur(16px);
+      z-index: 0;                   /* sits behind the photo */
+      opacity: .65;
     }
-    .founder-headshot .imgwrap::after{
-      content: "";
-      position: absolute;
-      inset: 0;
+    .founder-headshot img{
+      position: relative;
+      z-index: 1;                   /* above the glow */
+      display: block;
+      height: 100%;
+      width: auto;
+      object-fit: cover;            /* fill the circle cleanly */
+      object-position: 50% 38%;     /* nudge up slightly for a flattering crop */
+      transform: none;
+      background: transparent !important;
       border-radius: 50%;
-      box-shadow:
-        inset 0 0 0 1px rgba(255,255,255,.06),
-        inset 0 0 38px rgba(110,140,220,.10);
-      pointer-events: none;
+      /* Keep the portrait true-to-source (no darkening) */
+      mix-blend-mode: normal;
+      filter: none;
+      opacity: 1;
+    }
+
+    /* Scenario 3C — circular portrait with feathered edge into the dark plate */
+    .founder-headshot .imgwrap .feather {
+      /* keep the image filling the circle */
+      position: relative;
       z-index: 1;
+      height: 100%;
+      width: auto;
+      object-fit: cover;
+      object-position: 50% 42%;
+
+      /* soft circular mask fade (Safari + all modern browsers) */
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
+      -webkit-mask-size: 100% 100%;
+      mask-size: 100% 100%;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+
+      /* ensure no unintended blending/darkening */
+      mix-blend-mode: normal !important;
+      filter: none !important;
+      opacity: 1 !important;
+      background: transparent !important;
+    }
+
+    /* If a transparent PNG is used in the future, disable blending by adding class="png-alpha" to the <img> */
+    .founder-headshot img.png-alpha {
+      mix-blend-mode: normal !important;
+      filter: none !important;
+      opacity: 1 !important;
     }
     .founder-name { margin-top:10px; text-align:center; color:#cfd3d9; }
     .founder-name strong { color:#fff; font-weight:600; }
@@ -602,7 +637,8 @@
       <div class="founder-inner">
         <div class="founder-headshot">
           <div class="imgwrap">
-            <!-- Portrait intentionally omitted — placeholder circle only -->
+            <!-- Replace with your photo (transparent PNG or JPEG). Recommended 600×600px -->
+            <img src="assets/images/founder.png?v=3" alt="Audas Jakaitis headshot" class="feather">
           </div>
           <p class="founder-name">— <strong>Audas Jakaitis</strong><br>Founder, NordCortex</p>
         </div>
