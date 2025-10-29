@@ -383,11 +383,11 @@
     }
     .founder-headshot img{
       display: block;
-      height: 100%;                     /* fill the tall container vertically */
-      width: auto;                      /* maintain original aspect ratio */
-      object-fit: contain;              /* never crop — show full body */
-      object-position: center bottom;   /* anchor near bottom so head has space */
-      transform: scale(1.08);
+      height: 100%;                 /* fill vertically within wrapper */
+      width: auto;                  /* preserve aspect ratio */
+      object-fit: contain;          /* never crop */
+      object-position: center center; /* center the portrait vertically to reveal the top */
+      transform: scale(0.93);       /* slight zoom-out */
       border-radius: 0;
       background: transparent !important;
     }
