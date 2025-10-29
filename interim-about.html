@@ -369,22 +369,39 @@
     .founder-headshot { justify-self:center; }
     /* Founder photo — full portrait (no circular crop) */
     .founder-headshot .imgwrap{
-      max-width: 360px;
+      height: 640px;                    /* tall container to show full body */
+      max-width: 420px;                 /* cap width so portrait stays elegant */
       width: 100%;
+      margin: 0 auto;
       border-radius: 14px;
-      overflow: hidden;                 /* keeps corners tidy */
-      background: transparent;          /* keep hero background dark underneath */
+      overflow: hidden;
+      background: linear-gradient(180deg,#0b1323 0%, #0d1b31 100%); /* dark hero plate */
       box-shadow: 0 16px 36px rgba(0,0,0,.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .founder-headshot img{
-      display:block;
-      width:100%;
-      height:auto;                      /* keep full portrait aspect */
-      object-fit: contain;              /* no cropping */
-      object-position:center;           /* center the photo */
-      transform:none;                   /* remove zoom/cutoff */
-      border-radius:14px;
-      background:transparent !important;
+      display: block;
+      height: 100%;                     /* fill the tall container vertically */
+      width: auto;                      /* maintain original aspect ratio */
+      object-fit: contain;              /* never crop — show full body */
+      object-position: center bottom;   /* anchor near bottom so head has space */
+      transform: none;
+      border-radius: 0;
+      background: transparent !important;
+    }
+    @media (max-width: 1200px){
+      .founder-headshot .imgwrap{ height: 560px; max-width: 400px; }
+    }
+    @media (max-width: 992px){
+      .founder-headshot .imgwrap{ height: 500px; max-width: 360px; }
+    }
+    @media (max-width: 860px){
+      .founder-headshot .imgwrap{ height: 440px; max-width: 340px; }
+    }
+    @media (max-width: 600px){
+      .founder-headshot .imgwrap{ height: 380px; max-width: 300px; }
     }
     @media (max-width: 860px){
       .founder-headshot .imgwrap{ max-width: 300px; }
