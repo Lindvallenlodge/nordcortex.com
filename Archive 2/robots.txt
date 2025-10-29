@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.kungsholmengroup.com/sitemap.xml

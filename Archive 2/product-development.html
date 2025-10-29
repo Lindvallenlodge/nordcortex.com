@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Product Development — NordCortex</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Favicons/theme -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <style>
+  /* Base */
+  html, body { margin:0; padding:0; }
+  body { font-family:"Outfit",sans-serif; font-weight:300; color:#111; }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand a{ text-decoration:none; color:#111; display:flex; align-items:center; gap:10px; }
+  header .brand span{ font-family:"Baskerville","Times New Roman",serif; font-size: clamp(45px,4.3vw,57px); font-weight:normal; color:#6c7a89; }
+  .brand-logo{ height:138px; width:auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
+  @media (min-width:1200px){ .brand-logo{height:155px} }
+  @media (max-width:600px){ .brand-logo{height:60px} header .brand span{font-size:28px} }
+
+  /* Desktop nav */
+  .nav{display:flex;gap:28px;align-items:center}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav .menu{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:nowrap}
+  .nav .dropdown{position:relative}
+  .nav .dropdown>a{display:flex;align-items:center;gap:6px}
+  .nav .dropdown .caret{font-size:.8em;line-height:1}
+  .nav .dropdown-menu{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid #eee;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.08);padding:10px 12px;display:none;z-index:1003}
+  .nav .dropdown-menu a{display:block;padding:8px 10px;margin:0;white-space:nowrap;font-weight:400;}
+  .nav .dropdown:hover .dropdown-menu{display:block}
+  .hamburger{display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
+
+  /* Mobile menu (accordion) */
+  .mobile-menu{position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a{padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+  .mobile-menu.open{right:0}
+  .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+
+  .menu-group{margin-top:10px;border-top:1px solid #f0f0f0;padding-top:8px}
+  .menu-toggle{background:none;border:none;font-size:18px;font-weight:400;text-align:left;padding:10px 0;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between}
+  .menu-toggle .chev{transition:transform .2s ease}
+  .menu-group.open .menu-toggle .chev{transform:rotate(90deg)}
+  .submenu{display:none;flex-direction:column;margin-left:10px;padding-bottom:4px}
+  .submenu a{font-size:16px;font-weight:400;padding:6px 0}
+  .menu-group.open .submenu{display:flex}
+
+  /* Full-bleed helper */
+  .full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+  body{overflow-x:hidden}
+
+  /* Color palette for Product Development (teal + ink, slightly different from Manufacturing) */
+  :root{
+    --bg:#0b1f20;          /* deep teal */
+    --bg2:#0f2a2c;
+    --ink:#eaf4f5;
+    --muted:#cde2e3;
+    --brand:#7fe0cf;       /* aqua */
+    --accent:#79a7ff;      /* blue accent */
+  }
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%); color:#fff; padding:64px 0 72px;}
+  .hero .inner{max-width:1100px;margin:0 auto;padding:0 24px}
+  .hero h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:center;font-weight:300;}
+  .hero p.sub{max-width:900px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
+
+  /* Cards */
+  .pd-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  .pd-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
+  .pd-card h3{margin:0 0 6px;text-align:left}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(127,224,207,.18);border:1px solid rgba(127,224,207,.45);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
+  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
+  .kpi strong{font-size:22px}
+  .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.12);overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
+  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.25);border-radius:12px;color:#fff;text-decoration:none}
+
+  footer{border-top:1px solid #eee;margin-top:32px}
+  footer .container{color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="https://www.nordcortex.com/main.html">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+          <span>NordCortex</span>
+        </a>
+      </div>
+      <nav class="nav"><div class="menu">
+  <a href="main.html">Home</a>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="procurement.html">Procurement</a>
+      <a href="retail-production.html">Manufacturing</a>
+      <a href="product-development.html">Product Development</a>
+      <a href="supply-chain.html">Supply Chain</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="change-management.html">Change Management</a>
+      <a href="sustainability.html">Sustainability &amp; Compliance</a>
+      <a href="interim-advisory.html">Interim &amp; Advisory</a>
+      <a href="process-change.html">Process &amp; Change Management</a>
+      <a href="services-added.html">Added Services</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="digitalisation.html">Digitalisation</a>
+      <a href="rfid.html">RFID</a>
+      <a href="nfc.html">NFC</a>
+      <a href="bfbt.html">BFBT</a>
+      <a href="dpp.html">DPP</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <a href="contact.html">Contact</a>
+</div></nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+  <div class="overlay"></div>
+  <div class="mobile-menu"><button class="close-btn">✕</button>
+<a href="main.html">Home</a>
+
+<div class="menu-group" id="mg-expertise">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+  <div class="submenu" id="sm-expertise" role="menu">
+    <a href="procurement.html">Procurement</a>
+    <a href="retail-production.html">Manufacturing</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-services">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+  <div class="submenu" id="sm-services" role="menu">
+    <a href="change-management.html">Change Management</a>
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="interim-advisory.html">Interim &amp; Advisory</a>
+    <a href="process-change.html">Process &amp; Change Management</a>
+    <a href="services-added.html">Added Services</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-iot">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+  <div class="submenu" id="sm-iot" role="menu">
+    <a href="digitalisation.html">Digitalisation</a>
+    <a href="rfid.html">RFID</a>
+    <a href="nfc.html">NFC</a>
+    <a href="bfbt.html">BFBT</a>
+    <a href="dpp.html">DPP</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-company">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
+  <div class="submenu" id="sm-company" role="menu">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+<a href="contact.html">Contact</a></div>
+
+  <script>
+    // Mobile menu behaviour (drawer + accordion)
+    const burger=document.querySelector('.hamburger');
+    const menu=document.querySelector('.mobile-menu');
+    const overlay=document.querySelector('.overlay');
+    const closeBtn=document.querySelector('.close-btn');
+    if (burger) burger.addEventListener('click',()=>{menu.classList.toggle('open');overlay.classList.toggle('show')});
+    if (overlay) overlay.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    if (closeBtn) closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    document.querySelectorAll('.menu-toggle').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const group=btn.parentElement;
+        const expanded=btn.getAttribute('aria-expanded')==='true';
+        document.querySelectorAll('.menu-group').forEach(g=>{ if(g!==group){ g.classList.remove('open'); const b=g.querySelector('.menu-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
+        btn.setAttribute('aria-expanded',String(!expanded));
+        group.classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(link=>{
+      link.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero full-bleed">
+    <div class="inner">
+      <h1>NordCortex Product Development — Concept to Scalable Reality</h1>
+      <p class="sub">Textiles, materials, wellness products, labels & packaging, and RFID carriers. We turn briefs into manufacturable, compliant, costed products — ready for scale.</p>
+    </div>
+  </section>
+
+  <!-- CONTENT GRID -->
+  <section style="background:var(--bg2);color:var(--ink)" class="full-bleed">
+    <div class="pd-grid">
+
+      <article class="pd-card">
+        <span class="pill">01 · Discovery</span>
+        <h3>Brief & Discovery</h3>
+        <ul>
+          <li>Clarify use cases, constraints, volumes, and target COGS</li>
+          <li>Voice of customer; risk & regulatory mapping per market</li>
+          <li>Define success metrics and first milestones</li>
+        </ul>
+        <div class="kpi"><span>Clarity</span><strong>sharp brief</strong></div>
+        <div class="bar"><span style="width:72%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">02 · Roadmap</span>
+        <h3>Roadmapping & Governance</h3>
+        <ul>
+          <li>Stage‑gate plan: concept → proto → SMS → PP → launch</li>
+          <li>RACI, templates, tooling & test plans, DPP/RFID readiness</li>
+          <li>Decision cadence across functions</li>
+        </ul>
+        <div class="kpi"><span>Flow</span><strong>predictable</strong></div>
+        <div class="bar"><span style="width:64%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">03 · Specs</span>
+        <h3>Tech Packs & BOM Integrity</h3>
+        <ul>
+          <li>Complete specs, tolerances, colorways, labeling & packaging</li>
+          <li>BOM version control; change management & approvals</li>
+          <li>Material tests: durability, colorfastness, wellness claims</li>
+        </ul>
+        <div class="kpi"><span>Data</span><strong>single source</strong></div>
+        <div class="bar"><span style="width:80%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">04 · Digital</span>
+        <h3>Digital Prototyping</h3>
+        <ul>
+          <li>3D/CAD patterns, virtual fit/appearance, texture simulation</li>
+          <li>Rapid changes pre‑sampling; fewer physical iterations</li>
+          <li>Supplier‑ready files & annotations</li>
+        </ul>
+        <div class="kpi"><span>Speed</span><strong>iterations ↓</strong></div>
+        <div class="bar"><span style="width:68%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">05 · DFM</span>
+        <h3>Design for Manufacturability & Cost</h3>
+        <ul>
+          <li>Open costing with suppliers; yield & waste optimization</li>
+          <li>Operations choices: make/buy, tooling, line design</li>
+          <li>RFID/label/packaging integration without rework</li>
+        </ul>
+        <div class="kpi"><span>COGS</span><strong>optimized</strong></div>
+        <div class="bar"><span style="width:76%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">06 · Materials</span>
+        <h3>Materials & Compliance</h3>
+        <ul>
+          <li>Fiber → yarn → fabric/component mapping; performance targets</li>
+          <li>Regulatory matrix by market; REACH, labeling, safety</li>
+          <li>Supplier QA kits, test plans, and approval loops</li>
+        </ul>
+        <div class="kpi"><span>Risk</span><strong>controlled</strong></div>
+        <div class="bar"><span style="width:70%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">07 · Sourcing</span>
+        <h3>Supplier Sourcing & NPI</h3>
+        <ul>
+          <li>Right‑fit Tier‑1/2/3 networks in textiles, wellness, labels/pack</li>
+          <li>NPI onboarding: capability, capacity, and data readiness</li>
+          <li>Dual‑sourcing & risk buffers where needed</li>
+        </ul>
+        <div class="kpi"><span>Network</span><strong>ready</strong></div>
+        <div class="bar"><span style="width:74%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">08 · Pilot</span>
+        <h3>Pilot, PP & Industrialization</h3>
+        <ul>
+          <li>Pilot lines, takt & balance; first‑article/PPAP where required</li>
+          <li>IE methods: layout, throughput, changeover reduction</li>
+          <li>Automation with clear ROI; training & work instructions</li>
+        </ul>
+        <div class="kpi"><span>Ramp</span><strong>fast & stable</strong></div>
+        <div class="bar"><span style="width:82%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">09 · Quality</span>
+        <h3>Quality by Design</h3>
+        <ul>
+          <li>Critical‑to‑quality points, inline checks, SPC where relevant</li>
+          <li>CAPA with root cause; continuous improvement backlog</li>
+          <li>DPP/RFID traceability, labels & packaging controls</li>
+        </ul>
+        <div class="kpi"><span>Defects</span><strong>prevented</strong></div>
+        <div class="bar"><span style="width:66%"></span></div>
+      </article>
+
+      <article class="pd-card">
+        <span class="pill">10 · Launch</span>
+        <h3>Launch & Post‑Launch</h3>
+        <ul>
+          <li>Cutover planning, approvals, logistics & humidity plan</li>
+          <li>Run‑rate monitoring; cost & quality stabilization</li>
+          <li>Change control and roadmap for Gen‑2</li>
+        </ul>
+        <div class="kpi"><span>Market</span><strong>on time</strong></div>
+        <div class="bar"><span style="width:72%"></span></div>
+      </article>
+
+      <article class="pd-card" style="grid-column:1/-1">
+        <h3>How We Work</h3>
+        <ul>
+          <li><strong>Design:</strong> specs, materials, tests, packaging & humidity control</li>
+          <li><strong>Pilot:</strong> prototypes, line trials, PP/PPAP, data capture</li>
+          <li><strong>Scale:</strong> supplier enablement, automation ROI, governance</li>
+          <li><strong>Operate:</strong> KPIs, CI, open costing updates, DPP/RFID integration</li>
+        </ul>
+        <a class="cta" href="contact.html">Discuss your development brief →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 NordCortex. All rights reserved.</div>
+  </footer>
+</body>
+</html>

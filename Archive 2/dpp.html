@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Digital Product Passport — NordCortex Approach</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet">
+
+  <!-- Favicons/theme -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/pictures/favicon-nordcortex-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/pictures/favicon-nordcortex-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/pictures/favicon-nordcortex-apple.png">
+  <meta name="theme-color" content="#1C1433">
+
+  <style>
+  /* Base */
+  body { margin:0; font-family:"Outfit",sans-serif; font-weight:300; }
+  .container{max-width:1100px;margin:0 auto;padding:24px}
+  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .brand a{ text-decoration:none; color:#111; display:flex; align-items:center; gap:10px; }
+  header .brand span{ font-family:"Baskerville","Times New Roman",serif; font-size: clamp(45px,4.3vw,57px); font-weight:normal; color:#6c7a89; }
+  .brand-logo{ height:138px; width:auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
+  @media (min-width:1200px){ .brand-logo{height:155px} }
+  @media (max-width:600px){ .brand-logo{height:60px} header .brand span{font-size:28px} }
+
+  .nav{display:flex;gap:28px;align-items:center}
+  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
+  .nav a:hover{color:#000;text-decoration:underline}
+  .nav .menu{display:flex;gap:28px;align-items:center;justify-content:center;flex-wrap:nowrap}
+  .nav .dropdown{position:relative}
+  .nav .dropdown>a{display:flex;align-items:center;gap:6px}
+  .nav .dropdown .caret{font-size:.8em;line-height:1}
+  .nav .dropdown-menu{position:absolute;top:100%;left:0;min-width:260px;background:#fff;border:1px solid #eee;border-radius:10px;box-shadow:0 8px 20px rgba(0,0,0,.08);padding:10px 12px;display:none;z-index:1003}
+  .nav .dropdown-menu a{display:block;padding:8px 10px;margin:0;white-space:nowrap;font-weight:400}
+  .nav .dropdown:hover .dropdown-menu{display:block}
+  .hamburger{display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
+  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
+
+  .mobile-menu{position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,.15);display:flex;flex-direction:column;padding:60px 20px 20px;transition:right .3s ease;z-index:1002;overflow-y:auto}
+  .mobile-menu a{padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
+  .mobile-menu.open{right:0}
+  .overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.4);opacity:0;pointer-events:none;transition:opacity .3s ease;z-index:1000}
+  .overlay.show{opacity:1;pointer-events:auto}
+  .close-btn{position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
+
+  /* Grouped mobile menu (accordion) */
+  .menu-group{margin-top:10px;border-top:1px solid #f0f0f0;padding-top:8px}
+  .menu-toggle{background:none;border:none;font-size:18px;font-weight:400;text-align:left;padding:10px 0;cursor:pointer;width:100%;display:flex;align-items:center;justify-content:space-between}
+  .menu-toggle .chev{transition:transform .2s ease}
+  .menu-group.open .menu-toggle .chev{transform:rotate(90deg)}
+  .submenu{display:none;flex-direction:column;margin-left:10px;padding-bottom:4px}
+  .submenu a{font-size:16px;font-weight:400;padding:6px 0}
+  .menu-group.open .submenu{display:flex}
+
+  /* Full-bleed */
+  .full-bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
+  body{overflow-x:hidden}
+
+  /* Color palette (violet + mint) */
+  :root{
+    --bg:#1C1433;          /* deep violet */
+    --bg2:#2B1E5A;
+    --ink:#eef2ff;
+    --muted:#cdd3e6;
+    --brand:#9ef8d8;       /* mint */
+    --accent:#8baaff;      /* steel blue */
+  }
+
+  /* Hero */
+  .hero{background:linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%); color:#fff; padding:64px 0 72px;}
+  .hero .inner{max-width:1100px;margin:0 auto;padding:0 24px}
+.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:center;font-weight:300;}
+  .hero p.sub{max-width:900px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
+
+  /* Cards */
+  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.05),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
+  .dcx-card h3{margin:0 0 6px;text-align:left}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(158,248,216,.16);border:1px solid rgba(158,248,216,.42);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
+  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
+  .kpi strong{font-size:22px}
+  .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.12);overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
+  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.25);border-radius:12px;color:#fff;text-decoration:none}
+
+  footer{border-top:1px solid #eee;margin-top:32px}
+  footer .container{color:#666}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <a href="https://www.nordcortex.com/main.html">
+          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
+          <span>NordCortex</span>
+        </a>
+      </div>
+      <nav class="nav">
+<div class="menu">
+  <a href="main.html">Home</a>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="procurement.html">Procurement</a>
+      <a href="retail-production.html">Manufacturing</a>
+      <a href="product-development.html">Product Development</a>
+      <a href="supply-chain.html">Supply Chain</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="change-management.html">Change Management</a>
+      <a href="sustainability.html">Sustainability &amp; Compliance</a>
+      <a href="interim-advisory.html">Interim &amp; Advisory</a>
+      <a href="process-change.html">Process &amp; Change Management</a>
+      <a href="services-added.html">Added Services</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="digitalisation.html">Digitalisation</a>
+      <a href="rfid.html">RFID</a>
+      <a href="nfc.html">NFC</a>
+      <a href="bfbt.html">BFBT</a>
+      <a href="dpp.html">DPP</a>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
+    <div class="dropdown-menu" role="menu">
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+    </div>
+  </div>
+
+  <a href="contact.html">Contact</a>
+</div>
+</nav>
+      <button class="hamburger">☰</button>
+    </div>
+  </header>
+  <div class="overlay"></div>
+  <div class="mobile-menu">
+<button class="close-btn">✕</button>
+<a href="main.html">Home</a>
+
+<div class="menu-group" id="mg-expertise">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
+  <div class="submenu" id="sm-expertise" role="menu">
+    <a href="procurement.html">Procurement</a>
+    <a href="retail-production.html">Manufacturing</a>
+    <a href="product-development.html">Product Development</a>
+    <a href="supply-chain.html">Supply Chain</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-services">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
+  <div class="submenu" id="sm-services" role="menu">
+    <a href="change-management.html">Change Management</a>
+    <a href="sustainability.html">Sustainability &amp; Compliance</a>
+    <a href="interim-advisory.html">Interim &amp; Advisory</a>
+    <a href="process-change.html">Process &amp; Change Management</a>
+    <a href="services-added.html">Added Services</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-iot">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
+  <div class="submenu" id="sm-iot" role="menu">
+    <a href="digitalisation.html">Digitalisation</a>
+    <a href="rfid.html">RFID</a>
+    <a href="nfc.html">NFC</a>
+    <a href="bfbt.html">BFBT</a>
+    <a href="dpp.html">DPP</a>
+  </div>
+</div>
+
+<div class="menu-group" id="mg-company">
+  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
+  <div class="submenu" id="sm-company" role="menu">
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+  </div>
+</div>
+
+<a href="contact.html">Contact</a>
+</div>
+
+  <script>
+    // Mobile menu behaviour
+    const burger=document.querySelector('.hamburger');
+    const menu=document.querySelector('.mobile-menu');
+    const overlay=document.querySelector('.overlay');
+    const closeBtn=document.querySelector('.close-btn');
+    burger.addEventListener('click',()=>{menu.classList.toggle('open');overlay.classList.toggle('show')});
+    overlay.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    document.querySelectorAll('.menu-toggle').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const group=btn.parentElement;
+        const expanded=btn.getAttribute('aria-expanded')==='true';
+        document.querySelectorAll('.menu-group').forEach(g=>{if(g!==group){g.classList.remove('open'); const b=g.querySelector('.menu-toggle'); if(b) b.setAttribute('aria-expanded','false')}});
+        btn.setAttribute('aria-expanded',String(!expanded));
+        group.classList.toggle('open');
+      });
+    });
+    document.querySelectorAll('.mobile-menu a').forEach(link=>{
+      link.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
+    });
+  </script>
+
+  <!-- HERO -->
+  <section class="hero full-bleed">
+    <div class="inner">
+      <h1>Digital Product Passport — NordCortex Approach</h1>
+      <p class="sub">Design once, capture at source, reuse everywhere. We build interoperable product passports that connect materials, manufacturing, logistics, retail, and recycling data — ready for EU DPP and practical business value today.</p>
+    </div>
+  </section>
+
+  <!-- CARDS -->
+  <section style="background:var(--bg2);color:var(--ink)" class="full-bleed">
+    <div class="dcx-grid">
+
+      <article class="dcx-card">
+        <span class="pill">01 · Overview</span>
+        <h3>What is a DPP?</h3>
+        <ul>
+          <li>Traceability & circularity passport attached to each product</li>
+          <li>Core data: origin, composition, certifications, care/repair, end‑of‑life</li>
+          <li>Works with RFID, NFC, QR, and IoT signals</li>
+        </ul>
+        <div class="kpi"><span>Goal</span><strong>trusted product data</strong></div>
+        <div class="bar"><span style="width:70%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">02 · Model</span>
+        <h3>Data Model & Taxonomy</h3>
+        <ul>
+          <li>Identity: GTIN/EPC/serial; product ↔ batch ↔ item hierarchy</li>
+          <li>Composition %, chemicals, claims, certificates</li>
+          <li>Events: manufacture, pack, ship, sell, repair, recycle</li>
+        </ul>
+        <div class="kpi"><span>Completeness</span><strong>category‑ready</strong></div>
+        <div class="bar"><span style="width:82%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">03 · IDs</span>
+        <h3>IDs & Carriers</h3>
+        <ul>
+          <li>When to use RFID vs NFC vs QR (or dual‑ID)</li>
+          <li>On‑pack, in‑product, or on‑document strategies</li>
+          <li>GS1 & EPCIS alignment; EU DPP schema mapping</li>
+        </ul>
+        <div class="kpi"><span>Fit</span><strong>use‑case led</strong></div>
+        <div class="bar"><span style="width:64%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">04 · Capture</span>
+        <h3>Capture at Source</h3>
+        <ul>
+          <li>Line read‑points at assembly/pack; ASN enrichment</li>
+          <li>ERP/MES integrations; supplier portals for structured data</li>
+          <li>Create once → reuse for operations, service, and compliance</li>
+        </ul>
+        <div class="kpi"><span>Integrity</span><strong>authoritative</strong></div>
+        <div class="bar"><span style="width:76%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">05 · UX</span>
+        <h3>Consumer & Trade Experience</h3>
+        <ul>
+          <li>Tap/scan → authenticity, care, repair, circular services</li>
+          <li>Role‑aware views for consumer, retailer, recycler, regulator</li>
+          <li>Updates over time; service history & parts availability</li>
+        </ul>
+        <div class="kpi"><span>Trust</span><strong>usable data</strong></div>
+        <div class="bar"><span style="width:66%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">06 · Signals</span>
+        <h3>Environmental & Condition Data</h3>
+        <ul>
+          <li>Battery‑free and passive sensors for temp/humidity/shock</li>
+          <li>Humidity program from packing through logistics (desiccants, ventilation, QC)</li>
+          <li>Events appended to lifecycle record for claims & quality</li>
+        </ul>
+        <div class="kpi"><span>Quality</span><strong>fewer disputes</strong></div>
+        <div class="bar"><span style="width:72%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">07 · Governance</span>
+        <h3>Governance & Compliance</h3>
+        <ul>
+          <li>Data ownership & stewardship by role (brand, supplier, 3PL, recycler)</li>
+          <li>Access control, audit trails, retention & sovereignty</li>
+          <li>EU readiness (Textiles/Battery/ESPR), CSRD alignment</li>
+        </ul>
+        <div class="kpi"><span>Assurance</span><strong>audit‑ready</strong></div>
+        <div class="bar"><span style="width:78%"></span></div>
+      </article>
+
+      <article class="dcx-card">
+        <span class="pill">08 · Rollout</span>
+        <h3>Rollout Playbook</h3>
+        <ul>
+          <li>Design → Pilot → Scale across suppliers & SKUs</li>
+          <li>Data readiness, onboarding, training, and support</li>
+          <li>KPIs: coverage, completeness, read success, dispute rate</li>
+        </ul>
+        <div class="kpi"><span>Scale</span><strong>repeatable</strong></div>
+        <div class="bar"><span style="width:74%"></span></div>
+      </article>
+
+      <article class="dcx-card" style="grid-column:1/-1">
+        <h3>Why NordCortex</h3>
+        <ul>
+          <li>Hands‑on experience across textiles, garments, wellness, labels & packaging</li>
+          <li>Industrial engineering roots: pragmatic integrations and factory‑floor adoption</li>
+          <li>Balanced approach: compliance‑ready and business‑useful from day one</li>
+        </ul>
+        <a class="cta" href="contact.html">Book a 30‑min DPP scoping call →</a>
+      </article>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">© 2025 NordCortex. All rights reserved.</div>
+  </footer>
+</body>
+</html>
