@@ -256,6 +256,29 @@
     }
   
 .hero h1{font-weight:300;}
+  /* --- Mobile-only auto-fit for principle icons --- */
+  @media (max-width: 600px){
+    /* keep cards compact and prevent icon overflow */
+    .principles-section .principle-card .thumb{
+      height: 120px;
+      padding: 6px 0;
+    }
+    .principles-section .thumb img{
+      /* scale responsively, never overflow the card */
+      width: clamp(84px, 44vw, 160px);
+      max-width: 100%;
+      max-height: 100%;
+      height: auto;
+      object-fit: contain;
+      transform: none !important;      /* cancel hover scale on tiny screens */
+    }
+  }
+
+  /* Extra-small devices safety net */
+  @media (max-width: 380px){
+    .principles-section .principle-card .thumb{ height: 100px; }
+    .principles-section .thumb img{ width: clamp(72px, 40vw, 140px); }
+  }
 </style>
   <link rel="stylesheet" href="assets/css/nav.css">
   <script defer src="assets/js/header-loader.js"></script>
