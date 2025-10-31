@@ -68,6 +68,20 @@
   @media(max-width:820px){.mini-list{grid-template-columns:1fr}}
   .bullets-lean{margin:10px 0 0;padding-left:18px}
   .bullets-lean li{margin:6px 0}
+
+  /* ——— Light hero + cards (inspired by Procurement page visuals) ——— */
+  .hero-light{background:linear-gradient(180deg,#f5f8fb 0%, #eef3f7 100%); color:#0f2230; padding:64px 0 56px; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw);}
+  .hero-light .inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
+  .hero-light h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 10px;font-weight:300;color:#0f2230}
+  .hero-light p.sub{max-width:900px;margin:0 auto;color:#41515c;font-size:clamp(15px,1.6vw,18px)}
+  .grid{max-width:1100px;margin:18px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  .card{background:#ffffff;border:1px solid #e5ebf1;border-radius:16px;padding:18px;position:relative;overflow:hidden;box-shadow:0 6px 18px rgba(16,42,66,0.05);}
+  .card h3{margin:0 0 8px;font-weight:400;font-size:18px;text-align:left;color:#0f2230}
+  .pill{display:inline-flex;gap:8px;align-items:center;background:#eef6ff;border:1px solid #d6e8ff;color:#0f2230;padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
+  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px;color:#284257}
+  .bar{height:8px;border-radius:8px;background:#eef3f7;overflow:hidden}
+  .bar>span{display:block;height:100%;background:linear-gradient(90deg,#8ab4ff,#6ed1a8)}
+  .full-bleed{ margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
   </style>
 </head>
 <body>
@@ -163,40 +177,99 @@
     <a href="contact.html">Contact</a>
   </div>
   <main>
-    <!-- Hero intro -->
-    <section style="margin-bottom:22px;">
-      <h1 style="text-align:left;margin-bottom:8px;">Interim Leadership</h1>
-      <p class="section-note">
-        Accountable leadership across <strong>Procurement, Manufacturing, Product Development, and Supply Chain</strong> — stabilising operations quickly, restoring clarity, and delivering measurable results while internal capability builds behind.
-      </p>
+    <!-- Light hero -->
+    <section class="hero-light">
+      <div class="inner">
+        <h1>Interim Leadership</h1>
+        <p class="sub">
+          Accountable leadership across <strong>Procurement, Manufacturing, Product Development, and Supply Chain</strong> — stabilising operations quickly, restoring clarity, and delivering measurable results while internal capability builds behind.
+        </p>
+      </div>
     </section>
 
-    <!-- Scope of Engagement -->
+    <!-- Cards: scope & approach -->
     <section>
-      <h2 style="margin-bottom:10px;">Scope of Engagement</h2>
-      <ul class="bullets-lean">
-        <li>Step-in leadership for Procurement, Production, and Product Development — accountable from Day 1</li>
-        <li>Restore clarity: ownership, escalation, and decision-making that keeps operations moving</li>
-        <li>Fast governance setup — KPIs, tier control, risk and supplier performance routines</li>
-        <li>RFID, DPP, and digital program delivery — from pilot logic to full-scale adoption</li>
-        <li>Supplier turnaround and post-M&amp;A stabilization with measurable impact</li>
-        <li>RFx leadership and negotiations driven by open-costing and facts</li>
-        <li>Profit and cost improvement woven into every step — not a separate project</li>
-        <li>Executive and board advisory to keep transformation aligned and fast</li>
-      </ul>
-    </section>
+      <div class="grid">
 
-    <!-- How We Work -->
-    <section>
-      <h2 style="margin-bottom:10px;">How We Work</h2>
-      <ul class="bullets-lean">
-        <li>Lead → deliver → enable: results now, capability built for later</li>
-        <li>Clear priorities and weekly results tracking — no noise, no drift</li>
-        <li>Direct access to decision-makers — transparency and speed</li>
-        <li>Handover that secures continuity after the assignment ends</li>
-      </ul>
-    </section>
+        <article class="card">
+          <span class="pill">01 · Step-in Control</span>
+          <h3>Day‑1 Accountability</h3>
+          <ul class="bullets-lean">
+            <li>Step in as accountable leader for Procurement, Production/Manufacturing, and Product Development.</li>
+            <li>Stabilise operations fast; unblock decisions and risks.</li>
+          </ul>
+          <div class="kpi"><span>Start</span><strong>Accountable from Day 1</strong></div>
+          <div class="bar"><span style="width:85%"></span></div>
+        </article>
 
+        <article class="card">
+          <span class="pill">02 · Governance</span>
+          <h3>Restore Clarity & Cadence</h3>
+          <ul class="bullets-lean">
+            <li>Ownership, escalation paths, weekly operating rhythm.</li>
+            <li>KPIs, tier control, risk & supplier‑performance routines.</li>
+          </ul>
+          <div class="kpi"><span>Cadence</span><strong>Weekly results</strong></div>
+          <div class="bar"><span style="width:70%"></span></div>
+        </article>
+
+        <article class="card">
+          <span class="pill">03 · Turnaround</span>
+          <h3>Supplier & Post‑M&amp;A Stabilisation</h3>
+          <ul class="bullets-lean">
+            <li>Supplier turnaround with measurable impact.</li>
+            <li>Post‑M&amp;A stabilisation across processes & data.</li>
+          </ul>
+          <div class="kpi"><span>Impact</span><strong>Stability in 30–60 days</strong></div>
+          <div class="bar"><span style="width:65%"></span></div>
+        </article>
+
+        <article class="card">
+          <span class="pill">04 · Digital</span>
+          <h3>RFID, DPP & Digital Delivery</h3>
+          <ul class="bullets-lean">
+            <li>From pilot logic to full‑scale adoption.</li>
+            <li>Data model & dashboards prepared for handover.</li>
+          </ul>
+          <div class="kpi"><span>Scale</span><strong>Pilot → rollout</strong></div>
+          <div class="bar"><span style="width:60%"></span></div>
+        </article>
+
+        <article class="card">
+          <span class="pill">05 · RFx</span>
+          <h3>Open‑Costing & Negotiations</h3>
+          <ul class="bullets-lean">
+            <li>RFx leadership driven by open‑costing and facts.</li>
+            <li>Contracts with SLAs/KPIs and change control.</li>
+          </ul>
+          <div class="kpi"><span>Cost</span><strong>Fact‑based deltas</strong></div>
+          <div class="bar"><span style="width:68%"></span></div>
+        </article>
+
+        <article class="card">
+          <span class="pill">06 · Profit</span>
+          <h3>Improvement Woven In</h3>
+          <ul class="bullets-lean">
+            <li>Profit & cost improvement in every step — not a side project.</li>
+            <li>Executive/board advisory to keep change aligned and fast.</li>
+          </ul>
+          <div class="kpi"><span>Outcomes</span><strong>Measured monthly</strong></div>
+          <div class="bar"><span style="width:72%"></span></div>
+        </article>
+
+        <article class="card" style="grid-column:1/-1">
+          <span class="pill">How We Work</span>
+          <h3>Lead → Deliver → Enable</h3>
+          <ul class="bullets-lean">
+            <li>Results now, capability built for later.</li>
+            <li>Clear priorities & weekly tracking — no noise, no drift.</li>
+            <li>Direct access to decision‑makers for speed and transparency.</li>
+            <li>Clean handover that secures continuity after the assignment ends.</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
   </main>
   <section style="margin:34px auto 10px; text-align:center; max-width:900px;">
     <div style="display:inline-block;background:#ffffff;border:1px solid #e8ecf3;border-radius:12px;padding:18px 22px;box-shadow:0 8px 20px rgba(0,0,0,0.05);">
