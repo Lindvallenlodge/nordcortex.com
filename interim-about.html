@@ -372,23 +372,23 @@
     /* Founder photo — circular portrait with soft glow */
     .founder-headshot .imgwrap{
       position: relative;
-      height: 280px;
-      width: 280px;
+      width: clamp(220px, 26vw, 360px);  /* responsive width */
+      aspect-ratio: 1 / 1;              /* guarantees 1:1 circle */
       margin: 0 auto;
       border-radius: 50%;
       overflow: hidden;
-      background: linear-gradient(180deg, #030a16 0%, #0a1426 100%); /* dark plate */
+      background: linear-gradient(180deg, #030a16 0%, #0a1426 100%);
       box-shadow: 0 14px 30px rgba(0,0,0,.45);
       display: flex;
       align-items: center;
       justify-content: center;
-      isolation: isolate; /* ensures proper layering for glow */
+      isolation: isolate;
     }
     /* Soft glow plate behind the circular portrait */
     .founder-headshot .imgwrap::before{
       content: "";
       position: absolute;
-      inset: -18px;                 /* slightly larger than the circle */
+      inset: -14px;                 /* slightly larger than the circle */
       border-radius: 50%;
       background:
         radial-gradient(60% 60% at 50% 35%, rgba(90,120,200,.30), rgba(90,120,200,0) 70%),
@@ -403,12 +403,10 @@
       display: block;
       height: 100%;
       width: auto;
-      object-fit: cover;            /* fill the circle cleanly */
-      object-position: 50% 38%;     /* nudge up slightly for a flattering crop */
-      transform: none;
+      object-fit: cover;
+      object-position: 50% 42%;
       background: transparent !important;
       border-radius: 50%;
-      /* Keep the portrait true-to-source (no darkening) */
       mix-blend-mode: normal;
       filter: none;
       opacity: 1;
@@ -425,8 +423,8 @@
       object-position: 50% 42%;
 
       /* soft circular mask fade (Safari + all modern browsers) */
-      -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
-      mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 72%, rgba(0,0,0,0) 100%);
+      -webkit-mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%);
+      mask-image: radial-gradient(circle at 50% 50%, rgba(0,0,0,1) 78%, rgba(0,0,0,0) 100%);
       -webkit-mask-size: 100% 100%;
       mask-size: 100% 100%;
       -webkit-mask-repeat: no-repeat;
@@ -449,7 +447,10 @@
     .founder-name strong { color:#fff; font-weight:600; }
 
     @media (max-width: 600px){
-      .founder-headshot .imgwrap{ height: 220px; width: 220px; }
+      .founder-headshot .imgwrap{
+        width: 220px;
+        aspect-ratio: 1 / 1;
+      }
     }
 
     @media (max-width:860px){
