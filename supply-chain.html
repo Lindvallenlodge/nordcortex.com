@@ -14,6 +14,7 @@
   <link rel="shortcut icon" href="/pictures/favicon-nordcortex-32.png">
   <meta name="msapplication-TileColor" content="#ffffff">
   <meta name="theme-color" content="#ffffff">
+  <link rel="stylesheet" href="assets/css/nav.css">
 
   <style>
     /* Base */
@@ -94,131 +95,8 @@
   </style>
 </head>
 <body>
-  <header>
-    <div class="container header-inner">
-      <div class="brand">
-        <a href="https://www.nordcortex.com/main.html">
-          <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
-          <span>NordCortex</span>
-        </a>
-      </div>
-      <nav class="nav"><div class="menu">
-  <a href="main.html">Home</a>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Expertise <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="procurement.html">Procurement</a>
-      <a href="retail-production.html">Manufacturing</a>
-      <a href="product-development.html">Product Development</a>
-      <a href="supply-chain.html">Supply Chain</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Services <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="change-management.html">Change Management</a>
-      <a href="sustainability.html">Sustainability &amp; Compliance</a>
-      <a href="interim-advisory.html">Interim &amp; Advisory</a>
-      <a href="process-change.html">Process &amp; Change Management</a>
-      <a href="services-added.html">Added Services</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">IoT <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="digitalisation.html">Digitalisation</a>
-      <a href="rfid.html">RFID</a>
-      <a href="nfc.html">NFC</a>
-      <a href="bfbt.html">BFBT</a>
-      <a href="dpp.html">DPP</a>
-    </div>
-  </div>
-
-  <div class="dropdown">
-    <a href="#" aria-haspopup="true" aria-expanded="false">Company <span class="caret">▾</span></a>
-    <div class="dropdown-menu" role="menu">
-      <a href="services.html">Services</a>
-      <a href="about.html">About</a>
-    </div>
-  </div>
-
-  <a href="contact.html">Contact</a>
-</div></nav>
-      <button class="hamburger">☰</button>
-    </div>
-  </header>
-  <div class="overlay"></div>
-
-  <div class="mobile-menu"><button class="close-btn">✕</button>
-<a href="main.html">Home</a>
-
-<div class="menu-group" id="mg-expertise">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-expertise">Expertise <span class="chev">›</span></button>
-  <div class="submenu" id="sm-expertise" role="menu">
-    <a href="procurement.html">Procurement</a>
-    <a href="retail-production.html">Manufacturing</a>
-    <a href="product-development.html">Product Development</a>
-    <a href="supply-chain.html">Supply Chain</a>
-  </div>
-</div>
-
-<div class="menu-group" id="mg-services">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-services">Services <span class="chev">›</span></button>
-  <div class="submenu" id="sm-services" role="menu">
-    <a href="change-management.html">Change Management</a>
-    <a href="sustainability.html">Sustainability &amp; Compliance</a>
-    <a href="interim-advisory.html">Interim &amp; Advisory</a>
-    <a href="process-change.html">Process &amp; Change Management</a>
-    <a href="services-added.html">Added Services</a>
-  </div>
-</div>
-
-<div class="menu-group" id="mg-iot">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-iot">IoT <span class="chev">›</span></button>
-  <div class="submenu" id="sm-iot" role="menu">
-    <a href="digitalisation.html">Digitalisation</a>
-    <a href="rfid.html">RFID</a>
-    <a href="nfc.html">NFC</a>
-    <a href="bfbt.html">BFBT</a>
-    <a href="dpp.html">DPP</a>
-  </div>
-</div>
-
-<div class="menu-group" id="mg-company">
-  <button class="menu-toggle" aria-expanded="false" aria-controls="sm-company">Company <span class="chev">›</span></button>
-  <div class="submenu" id="sm-company" role="menu">
-    <a href="services.html">Services</a>
-    <a href="about.html">About</a>
-  </div>
-</div>
-
-<a href="contact.html">Contact</a></div>
-
-  <script>
-    // Mobile menu behaviour (drawer + accordion)
-    const burger=document.querySelector('.hamburger');
-    const menu=document.querySelector('.mobile-menu');
-    const overlay=document.querySelector('.overlay');
-    const closeBtn=document.querySelector('.close-btn');
-    if (burger) burger.addEventListener('click',()=>{menu.classList.toggle('open');overlay.classList.toggle('show')});
-    if (overlay) overlay.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
-    if (closeBtn) closeBtn.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
-    document.querySelectorAll('.menu-toggle').forEach(btn=>{
-      btn.addEventListener('click',()=>{
-        const group=btn.parentElement;
-        const expanded=btn.getAttribute('aria-expanded')==='true';
-        document.querySelectorAll('.menu-group').forEach(g=>{ if(g!==group){ g.classList.remove('open'); const b=g.querySelector('.menu-toggle'); if(b) b.setAttribute('aria-expanded','false'); }});
-        btn.setAttribute('aria-expanded',String(!expanded));
-        group.classList.toggle('open');
-      });
-    });
-    document.querySelectorAll('.mobile-menu a').forEach(link=>{
-      link.addEventListener('click',()=>{menu.classList.remove('open');overlay.classList.remove('show')});
-    });
-  </script>
+  <div id="nc-header"></div>
+  <script src="assets/js/header-loader.js" defer></script>
 
   <!-- HERO -->
   <section class="hero full-bleed">
