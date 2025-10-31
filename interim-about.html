@@ -372,8 +372,8 @@
     /* Founder photo — circular portrait with soft glow */
     .founder-headshot .imgwrap{
       position: relative;
-      width: clamp(220px, 26vw, 360px);  /* responsive width */
-      aspect-ratio: 1 / 1;              /* guarantees 1:1 circle */
+      width: clamp(220px, 26vw, 360px);
+      height: clamp(220px, 26vw, 360px);  /* force square: height equals width */
       margin: 0 auto;
       border-radius: 50%;
       overflow: hidden;
@@ -383,6 +383,7 @@
       align-items: center;
       justify-content: center;
       isolation: isolate;
+      flex: 0 0 auto; /* prevent grid/flex stretching */
     }
     /* Soft glow plate behind the circular portrait */
     .founder-headshot .imgwrap::before{
@@ -401,15 +402,15 @@
       position: relative;
       z-index: 1;                   /* above the glow */
       display: block;
+      width: 100%;                  /* fill the circle both ways */
       height: 100%;
-      width: auto;
       object-fit: cover;
       object-position: 50% 42%;
       background: transparent !important;
-      border-radius: 50%;
       mix-blend-mode: normal;
       filter: none;
       opacity: 1;
+      border-radius: 0;             /* clipping done by the wrapper */
     }
 
     /* Scenario 3C — circular portrait with feathered edge into the dark plate */
