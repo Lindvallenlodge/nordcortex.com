@@ -437,6 +437,12 @@
       background: transparent !important;
     }
 
+    /* Hard circular crop (no feather) */
+    .founder-headshot .imgwrap .no-feather{
+      -webkit-mask-image: none !important;
+      mask-image: none !important;
+    }
+
     /* If a transparent PNG is used in the future, disable blending by adding class="png-alpha" to the <img> */
     .founder-headshot img.png-alpha {
       mix-blend-mode: normal !important;
@@ -631,7 +637,7 @@
         <div class="founder-headshot">
           <div class="imgwrap">
             <!-- Replace with your photo (transparent PNG or JPEG). Recommended 600×600px -->
-            <img src="assets/images/founder2.png?v=1" alt="Audas Jakaitis headshot" class="feather">
+            <img src="assets/images/founder2.png?v=1" alt="Audas Jakaitis headshot" class="no-feather">
           </div>
           <p class="founder-name">— <strong>Audas Jakaitis</strong><br>Founder, NordCortex</p>
         </div>
