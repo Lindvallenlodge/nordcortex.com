@@ -342,7 +342,14 @@
 }
 .intro-hero-white .fx { display:none; } /* remove dark gradient layer */
 .intro-hero-white .inner { color:#0D1B31 !important; }
+
 .intro-hero-white .sub { color:#0D1B31 !important; font-size: clamp(30px, 2.6vw, 34px) !important; line-height: 1.45; }
+
+@media (max-width: 600px) {
+  .intro-hero-white .sub {
+    font-size: clamp(20px, 5.5vw, 24px) !important;
+  }
+}
 
 </style>
   <link rel="stylesheet" href="assets/css/nav.css">
