@@ -409,8 +409,20 @@
       text-align: justify !important;
     }
 
-    /* Keep hero headline mobile size already aligned */
-    .hero-dark h1{ font-size: clamp(20px, 5.5vw, 24px); }
+    /* Keep hero headline mobile size aligned with intro; match formatting */
+    .hero-dark h1{
+      font-size: clamp(20px, 5.5vw, 24px) !important;
+      line-height: 1.45;
+      max-width: 100% !important;
+      margin: 0 !important;
+      text-align: justify !important;
+      hyphens: auto;
+      overflow-wrap: break-word;
+    }
+    /* Match intro paragraph size on mobile */
+    .hero-dark .sub{
+      font-size: clamp(20px, 5.5vw, 24px) !important;
+    }
   }
 
 .intro-hero-white .sub { color:#0D1B31 !important; font-size: clamp(30px, 2.6vw, 34px) !important; line-height: 1.45; }
