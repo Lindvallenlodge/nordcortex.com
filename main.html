@@ -341,7 +341,20 @@
   margin-bottom: 56px; /* spacing before next hero */
 }
 .intro-hero-white .fx { display:none; } /* remove dark gradient layer */
+
 .intro-hero-white .inner { color:#0D1B31 !important; }
+
+@media (max-width: 600px) {
+  .intro-hero-white .inner {
+    padding-right: calc(24px + env(safe-area-inset-right));
+    padding-left: 24px;
+  }
+  .intro-hero-white .sub {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
 .intro-hero-white .sub { color:#0D1B31 !important; font-size: clamp(30px, 2.6vw, 34px) !important; line-height: 1.45; }
 
