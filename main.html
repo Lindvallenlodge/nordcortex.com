@@ -88,9 +88,10 @@
       .solutions-wrapper{ width:100%; }
       #solutions-panel{ width:100%; box-sizing: border-box; }
       #solutions-panel .solutions-inner{
-        padding-left: calc(2ch + env(safe-area-inset-left));
-        padding-right: calc(2ch + env(safe-area-inset-right));
-        margin: 0 auto; /* center inner content */
+        /* Shift content slightly left on mobile for better optical centering */
+        padding-left: calc(1ch + env(safe-area-inset-left));
+        padding-right: calc(3ch + env(safe-area-inset-right));
+        margin: 0 auto;
       }
       .solutions-links{ width:100%; justify-items: stretch; }
       .solutions-links{
