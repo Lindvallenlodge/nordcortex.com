@@ -355,8 +355,13 @@
 
 @media (max-width: 600px) {
   .intro-hero-white .inner {
-    padding-right: calc(24px + env(safe-area-inset-right));
-    padding-left: 24px;
+    /* Add ~2 characters of safe gutter on both sides for phones/tablets */
+    padding-left: calc(2ch + env(safe-area-inset-left));
+    padding-right: calc(2ch + env(safe-area-inset-right));
+  }
+  .hero-dark .inner {
+    padding-left: calc(2ch + env(safe-area-inset-left));
+    padding-right: calc(2ch + env(safe-area-inset-right));
   }
   .intro-hero-white .sub {
     max-width: 100% !important;
