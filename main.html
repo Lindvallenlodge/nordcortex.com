@@ -68,9 +68,9 @@
       .solutions-links a{ font-size: 12.5px; padding: 6px 8px; }
     }
 
-    /* Default: show full label, hide mobile abbreviation */
-    .solutions-links a .label-full{ display:inline; }
-    .solutions-links a .label-abbr{ display:none; }
+    /* Default: use abbreviated label to keep one-line desktop */
+    .solutions-links a .label-full{ display:none; }
+    .solutions-links a .label-abbr{ display:inline; }
 
     /* ≤600px: 2-col grid; last chip full width; show mobile abbreviation for long label */
     @media (max-width:600px){
