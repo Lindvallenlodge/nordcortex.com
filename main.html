@@ -87,25 +87,6 @@
     .hero-dark .fx{position:absolute;inset:-20% -10% auto -10%;height:120%;background:radial-gradient(60% 40% at 20% 30%, rgba(120,132,160,.25), rgba(14,17,22,0)), radial-gradient(55% 45% at 90% 20%, rgba(72,85,114,.18), rgba(14,17,22,0));filter:blur(24px);z-index:1}
     @media (max-width:700px){.hero-dark{padding:64px 0 56px}.hero-ctas{flex-direction:column;align-items:flex-start}}
     h1{font-size: clamp(24px, 3.5vw, 40px); margin:0 0 12px}
-/* Visually hidden but accessible (SEO + screen readers) */
-.visually-hidden {
-  position: absolute !important;
-  width: 1px; height: 1px;
-  padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  border: 0; white-space: nowrap;
-}
-
-/* Hero headline as paragraph (desktop visuals unchanged) */
-.hero-dark .hero-headline{
-  font-size: clamp(30px, 2.6vw, 34px);
-  line-height: 1.45;
-  margin: 0 0 14px;
-  color: #fff;
-  text-align: left;
-}
-
     p.lead{font-size: clamp(16px, 1.6vw, 20px); color:#444; margin:0 0 16px}
     .grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:24px}
     .card{border:1px solid #eee; border-radius:12px; padding:16px; background:#fff}
@@ -458,7 +439,6 @@
 </head>
 <body>
 <div id="site-header"></div>
-<h1 class="visually-hidden">NordCortex – Advisory & Consultancy for Procurement, Product Development, Supply Chain & IoT/RFID</h1>
 
 <!-- INTRO (W1): Hero-structure, white background, navy top border -->
 <section class="intro-hero-white no-bleed">
@@ -472,7 +452,7 @@
 <section class="hero-dark">
         <div class="fx"></div>
         <div class="inner">
-          <p class="hero-headline">Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</p>
+          <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
           <div class="sub-spacer"></div>
           <p class="sub">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
           <div class="sub-spacer"></div>
