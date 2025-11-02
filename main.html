@@ -334,6 +334,36 @@
 }
 
 
+.no-bleed {
+  background: #fff;
+  margin: 0;
+  padding: 48px 0 40px;
+}
+.no-bleed .inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.no-bleed p.sub {
+  max-width: 70ch !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Mobile overrides – Option B: new dedicated block under .no-bleed */
+@media (max-width: 600px) {
+  .intro-hero-white.no-bleed .inner {
+    padding-left: calc(2ch + env(safe-area-inset-left));
+    padding-right: calc(2ch + env(safe-area-inset-right));
+  }
+  .intro-hero-white.no-bleed .sub {
+    max-width: 100% !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+}
+
 /* --- INTRO W1: white hero clone --- */
 .intro-hero-white { 
   background:#ffffff !important; 
@@ -387,7 +417,7 @@
 <div id="site-header"></div>
 
 <!-- INTRO (W1): Hero-structure, white background, navy top border -->
-<section class="hero-dark intro-hero-white">
+<section class="intro-hero-white no-bleed">
   <div class="fx"></div>
   <div class="inner">
     <p class="sub"><strong>NordCortex</strong> is an advisory and consultancy firm helping product-driven brands — retailers and manufacturers — run smarter, leaner, and more transparent operations from product creation to store.</p>
