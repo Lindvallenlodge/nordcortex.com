@@ -394,13 +394,8 @@
       padding-right: calc(2ch + env(safe-area-inset-right));
     }
 
-    /* Match fitting to intro; on mobile keep hero H1 left-aligned to avoid wide gaps */
-    .hero-dark h1 {
-      max-width: 100% !important;
-      margin: 0 !important;
-      text-align: left !important;
-      text-wrap: balance;
-    }
+    /* Match fitting + justification to intro */
+    .hero-dark h1,
     .hero-dark .sub {
       max-width: 100% !important;
       margin: 0 !important;
@@ -414,24 +409,14 @@
       text-align: justify !important;
     }
 
-    /* Mobile formatting – separate H1 and sub for best mobile fit */
-    .hero-dark h1 {
-      font-size: clamp(20px, 5vw, 23px) !important; /* slightly smaller cap than sub to prevent overflow */
+    /* Mobile formatting for hero headline & sub (match intro white block, Option A size) */
+    .hero-dark h1,
+    .hero-dark .sub{
+      font-size: clamp(20px, 5.5vw, 24px) !important;
       line-height: 1.45;
       max-width: 100% !important;
       margin: 0 !important;
-      text-align: left !important;            /* left-align H1 to avoid justification gaps */
-      text-wrap: balance;                      /* balance line breaks on supporting browsers */
-      hyphens: auto;
-      overflow-wrap: break-word;
-      word-break: normal;
-    }
-    .hero-dark .sub {
-      font-size: clamp(20px, 5.5vw, 24px) !important; /* keep sub matching intro paragraph size */
-      line-height: 1.45;
-      max-width: 100% !important;
-      margin: 0 !important;
-      text-align: justify !important;         /* match white block behavior */
+      text-align: justify !important;
       text-justify: inter-word;
       hyphens: auto;
       overflow-wrap: break-word;
