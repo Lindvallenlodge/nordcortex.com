@@ -383,23 +383,29 @@
   color: #0D1B31 !important;     /* ensure navy */
 }
 
-@media (max-width: 600px) {
-  .intro-hero-white .inner {
-    /* Add ~2 characters of safe gutter on both sides for phones/tablets */
-    padding-left: calc(2ch + env(safe-area-inset-left));
-    padding-right: calc(2ch + env(safe-area-inset-right));
+  @media (max-width: 600px) {
+    .intro-hero-white .inner {
+      /* Add ~2 characters of safe gutter on both sides for phones/tablets */
+      padding-left: calc(2ch + env(safe-area-inset-left));
+      padding-right: calc(2ch + env(safe-area-inset-right));
+    }
+    .hero-dark .inner {
+      padding-left: calc(2ch + env(safe-area-inset-left));
+      padding-right: calc(2ch + env(safe-area-inset-right));
+    }
+    .hero-dark h1,
+    .hero-dark .sub {
+      max-width: 100% !important;
+      margin: 0 !important;
+      text-align: justify !important;
+    }
+    .intro-hero-white .sub {
+      max-width: 100% !important;
+      margin: 0 !important;
+      text-align: justify !important;
+    }
+    .hero-dark h1{ font-size: clamp(20px, 5.5vw, 24px); }
   }
-  .hero-dark .inner {
-    padding-left: calc(2ch + env(safe-area-inset-left));
-    padding-right: calc(2ch + env(safe-area-inset-right));
-  }
-  .intro-hero-white .sub {
-    max-width: 100% !important;
-    margin: 0 !important;
-    text-align: justify !important;
-  }
-  .hero-dark h1{ font-size: clamp(20px, 5.5vw, 24px); }
-}
 
 .intro-hero-white .sub { color:#0D1B31 !important; font-size: clamp(30px, 2.6vw, 34px) !important; line-height: 1.45; }
 
