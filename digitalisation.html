@@ -50,6 +50,17 @@
   .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
 
   /* Full-bleed wrapper */
+  /* Technology gateway chips */
+  .tech-gateway{background:linear-gradient(180deg,#07101f 0%,#0d1b31 100%);color:#fff;padding:22px 0 26px}
+  .tech-gateway .inner{max-width:1100px;margin:0 auto;padding:0 24px;text-align:center}
+  .tech-gateway h2{margin:0 0 6px;font-size:clamp(18px,2.6vw,26px);font-weight:300}
+  .tech-gateway p{margin:0 0 14px;color:#cfd3d9;font-size:clamp(14px,1.7vw,17px);text-align:center}
+  .tech-links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+  .tech-links a{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:999px;text-decoration:none;border:1px solid rgba(255,255,255,.25);
+               background:rgba(255,255,255,.06);backdrop-filter:saturate(140%) blur(2px);color:#fff;font-size:15px}
+  .tech-links a:hover{border-color:rgba(255,255,255,.5)}
+  .tech-links small{opacity:.85;font-size:12px}
+  @media (max-width:600px){ .tech-links a{font-size:14px;padding:9px 12px} }
   .full-bleed{ margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
   /* Ensure full-bleed sections truly span the viewport on desktop */
   #sources.full-bleed{
@@ -115,6 +126,20 @@
     </div>
   </section>
 
+  <!-- technology gateway -->
+  <section class="tech-gateway full-bleed" aria-label="Digital enablers">
+    <div class="inner">
+      <h2>Enablers that make digitalisation work</h2>
+      <p>Choose a domain to dive deeper — what to use, where it pays off, and how to scale.</p>
+      <nav class="tech-links" aria-label="Technology links">
+        <a href="rfid.html" title="RFID use cases and playbooks">RFID <small>inventory, DC, stores</small></a>
+        <a href="nfc.html" title="NFC for consumer and service journeys">NFC <small>consumer & service</small></a>
+        <a href="bfbt.html" title="Battery‑Free Bluetooth Tags (BFBT)">BFBT <small>sensing & telemetry</small></a>
+        <a href="dpp.html" title="Digital Product Passport (DPP)">DPP <small>traceability & compliance</small></a>
+      </nav>
+    </div>
+  </section>
+
   <!-- cards -->
   <section style="background:#0e1116;color:#e9eef5" class="full-bleed">
     <div class="dcx-grid">
@@ -161,6 +186,12 @@
           <li><strong>Scale:</strong> supplier onboarding kit, templates, SLAs, training</li>
           <li><strong>Operate:</strong> KPIs, alerts, and continuous improvement routines</li>
         </ul>
+        <div style="margin-top:10px;display:flex;flex-wrap:wrap;gap:8px">
+          <a class="cta" href="rfid.html" style="border-color:rgba(255,255,255,.25)">RFID →</a>
+          <a class="cta" href="nfc.html" style="border-color:rgba(255,255,255,.25)">NFC →</a>
+          <a class="cta" href="bfbt.html" style="border-color:rgba(255,255,255,.25)">BFBT →</a>
+          <a class="cta" href="dpp.html" style="border-color:rgba(255,255,255,.25)">DPP →</a>
+        </div>
         <a class="cta" href="contact.html">Book a 30‑min scoping call →</a>
       </article>
     </div>
