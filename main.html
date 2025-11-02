@@ -19,8 +19,6 @@
 
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-    /* Visually hidden (SEO + a11y, not display:none) */
-    .visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);border:0;white-space:nowrap}
     .container{max-width:1040px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -49,8 +47,7 @@
     /* Dark, futuristic hero */
     .hero-dark{position:relative;padding:80px 0 72px;margin:0 -24px;background:#0e1116;color:#fff;overflow:hidden}
     .hero-dark .inner{max-width:1040px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-    .hero-dark h1,
-    .hero-dark .hero-headline{font-size: clamp(30px, 2.6vw, 34px); line-height: 1.45; margin: 0 0 14px; color: #fff; text-align: left}
+    .hero-dark h1{font-size: clamp(30px, 2.6vw, 34px); line-height: 1.45; margin: 0 0 14px; color: #fff; text-align: left}
     .hero-dark p.sub{max-width:720px;margin:0 auto;color:#cfd3d9;font-size:clamp(15px,1.6vw,18px);text-align:center}
     .sub-spacer{height:16px}
     .hero-ctas{display:flex;gap:12px;flex-wrap:wrap}
@@ -393,13 +390,12 @@
       padding-right: calc(2ch + env(safe-area-inset-right));
     }
     .hero-dark .inner {
-      padding-left: calc(2ch + env(safe-area-inset-left)) !important;
-      padding-right: calc(2ch + env(safe-area-inset-right)) !important;
+      padding-left: calc(2ch + env(safe-area-inset-left));
+      padding-right: calc(2ch + env(safe-area-inset-right));
     }
 
     /* Match fitting + justification to intro */
     .hero-dark h1,
-    .hero-dark .hero-headline,
     .hero-dark .sub {
       max-width: 100% !important;
       margin: 0 !important;
@@ -415,7 +411,6 @@
 
     /* Mobile formatting for hero headline & sub (match intro white block, Option A size) */
     .hero-dark h1,
-    .hero-dark .hero-headline,
     .hero-dark .sub{
       font-size: clamp(20px, 5.5vw, 24px) !important;
       line-height: 1.45;
@@ -437,17 +432,12 @@
   }
 }
 
-/* Mobile-only: center the specific hero sub paragraph */
-@media (max-width: 600px) {
-  .hero-dark .sub.sub-center { text-align: center !important; }
-}
 </style>
   <link rel="stylesheet" href="assets/css/nav.css">
   <script defer src="assets/js/header-loader.js"></script>
 </head>
 <body>
 <div id="site-header"></div>
-<h1 class="visually-hidden">NordCortex – Advisory & Consultancy for Procurement, Product Development, Supply Chain & IoT/RFID</h1>
 
 <!-- INTRO (W1): Hero-structure, white background, navy top border -->
 <section class="intro-hero-white no-bleed">
@@ -461,9 +451,9 @@
 <section class="hero-dark">
         <div class="fx"></div>
         <div class="inner">
-          <p class="sub hero-headline">Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</p>
+          <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
           <div class="sub-spacer"></div>
-          <p class="sub sub-center">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
+          <p class="sub">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
           <div class="sub-spacer"></div>
           <div class="sub-spacer"></div>
           <div class="sub-spacer"></div>
