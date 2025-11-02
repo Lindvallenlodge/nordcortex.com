@@ -19,6 +19,8 @@
 
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+/* Visually hidden (SEO + a11y, not display:none) */
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);border:0;white-space:nowrap}
     .container{max-width:1040px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -390,8 +392,8 @@
       padding-right: calc(2ch + env(safe-area-inset-right));
     }
     .hero-dark .inner {
-      padding-left: calc(2ch + env(safe-area-inset-left));
-      padding-right: calc(2ch + env(safe-area-inset-right));
+      padding-left: calc(3.2ch + env(safe-area-inset-left)) !important;
+      padding-right: calc(3.2ch + env(safe-area-inset-right)) !important;
     }
 
     /* Match fitting + justification to intro */
@@ -422,13 +424,7 @@
       overflow-wrap: break-word;
       word-break: normal;
     }
-  
-  /* Mobile override: center + -3px for hero transformation line */
-  .hero-dark .sub.sub-center-mobile {
-    font-size: clamp(17px, 5vw, 21px) !important;
-    text-align: center !important;
   }
-}
 
 .intro-hero-white .sub { color:#0D1B31 !important; font-size: clamp(30px, 2.6vw, 34px) !important; line-height: 1.45; }
 
@@ -444,6 +440,7 @@
 </head>
 <body>
 <div id="site-header"></div>
+<h1 class="visually-hidden">NordCortex – Advisory & Consultancy for Procurement, Product Development, Supply Chain & IoT/RFID</h1>
 
 <!-- INTRO (W1): Hero-structure, white background, navy top border -->
 <section class="intro-hero-white no-bleed">
@@ -459,7 +456,7 @@
         <div class="inner">
           <h1>Clarity and trust across the entire value chain — from sourcing and production to IoT-enabled visibility — achieved through transparent processes, data-driven insight, and strategic alignment that deliver measurable results.</h1>
           <div class="sub-spacer"></div>
-          <p class="sub sub-center-mobile">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
+          <p class="sub">Procurement, product development, and production models are entering a once-in-a-generation transformation — powered by digitalization, data, and AI.</p>
           <div class="sub-spacer"></div>
           <div class="sub-spacer"></div>
           <div class="sub-spacer"></div>
