@@ -384,8 +384,8 @@
 }
 
   @media (max-width: 600px) {
+    /* Safe gutters on both intro and hero */
     .intro-hero-white .inner {
-      /* Add ~2 characters of safe gutter on both sides for phones/tablets */
       padding-left: calc(2ch + env(safe-area-inset-left));
       padding-right: calc(2ch + env(safe-area-inset-right));
     }
@@ -393,17 +393,23 @@
       padding-left: calc(2ch + env(safe-area-inset-left));
       padding-right: calc(2ch + env(safe-area-inset-right));
     }
+
+    /* Match fitting + justification to intro */
     .hero-dark h1,
     .hero-dark .sub {
       max-width: 100% !important;
       margin: 0 !important;
       text-align: justify !important;
     }
+
+    /* Keep intro justified as requested */
     .intro-hero-white .sub {
       max-width: 100% !important;
       margin: 0 !important;
       text-align: justify !important;
     }
+
+    /* Keep hero headline mobile size already aligned */
     .hero-dark h1{ font-size: clamp(20px, 5.5vw, 24px); }
   }
 
