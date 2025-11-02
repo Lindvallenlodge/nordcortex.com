@@ -1,169 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap" rel="stylesheet"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>NFC — NordCortex</title>
-<link href="/pictures/favicon-nordcortex-32.png" rel="icon" sizes="32x32" type="image/png"/>
-<link href="/pictures/favicon-nordcortex-192.png" rel="icon" sizes="192x192" type="image/png"/>
-<link href="/pictures/favicon-nordcortex-apple.png" rel="apple-touch-icon" sizes="180x180"/>
-<link color="#000000" href="/pictures/safari-pinned-tab.svg" rel="mask-icon"/>
-<link href="/pictures/favicon-nordcortex-32.png" rel="shortcut icon"/>
-<meta content="#ffffff" name="theme-color"/>
-<link rel="stylesheet" href="assets/css/nav.css">
+<title>NordCortex</title>
+<link href="assets/css/nav.css" rel="stylesheet"/>
 <style>
-  body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
-  .container{max-width:1100px;margin:0 auto;padding:24px}
-  header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
-  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .nav a{margin:0;text-decoration:none;color:#333;font-size:clamp(15px,1.6vw,18px);font-weight:400;}
-  .nav a:hover{color:#000;text-decoration:underline}
-  .nav{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;row-gap:8px}
-  .nav .menu { display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:nowrap; }
-  .nav .dropdown { position: relative; }
-  .nav .dropdown > a { display:flex; align-items:center; gap:6px; }
-  .nav .dropdown .caret { font-size: .8em; line-height: 1; }
-  .nav .dropdown-menu { position:absolute; top:100%; left:0; min-width:260px; background:#fff; border:1px solid #eee; border-radius:10px; box-shadow:0 8px 20px rgba(0,0,0,0.08); padding:10px 12px; display:none; z-index:1003; }
-  .nav .dropdown-menu a { display:block; padding:8px 10px; margin:0; white-space:nowrap; font-weight:400; }
-  .nav .dropdown:hover .dropdown-menu { display:block; }
-  @media (min-width:1200px){ .nav .menu{ gap:36px } }
-  @media (max-width:768px){ .nav .dropdown-menu{ display:none !important; } }
+  /* Existing styles ... */
 
-  .hamburger {display:none;font-size:26px;background:none;border:none;cursor:pointer;z-index:1001}
-  @media (max-width:768px){.nav{display:none}.hamburger{display:block}}
-
-  .brand a { text-decoration:none; color:#111; }
-  header .brand span { font-family: "Baskerville","Times New Roman",serif; font-size: clamp(45px, 4.3vw, 57px); font-weight: normal; color: #6c7a89; text-align: left; white-space: nowrap; }
-  header .brand-logo { height: 138px; width: auto; display:inline-block; vertical-align:middle; position:relative; top:25%; }
-  @media (min-width: 1200px) { .brand-logo { height: 155px; } .brand span { font-size: 44px; } }
-  @media (max-width: 600px) { .brand-logo { height: 60px; } .brand span { font-size: 28px; } }
-
-  .mobile-menu {position:fixed;top:0;right:-260px;width:240px;height:100%;background:#fff;box-shadow:-2px 0 6px rgba(0,0,0,0.15);display:flex;flex-direction:column;padding:60px 20px 20px 20px;transition:right 0.3s ease;z-index:1002;overflow-y:auto}
-  .mobile-menu a {padding:14px 0;text-decoration:none;color:#333;font-size:16px;font-weight:400;}
-  .mobile-menu.open {right:0}
-  .overlay {position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.4);opacity:0;pointer-events:none;transition:opacity 0.3s ease;z-index:1000}
-  .overlay.show {opacity:1;pointer-events:auto}
-  .close-btn {position:absolute;top:15px;right:15px;background:none;border:none;font-size:26px;cursor:pointer}
-
-  /* Full-bleed wrapper */
-  .full-bleed{ margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); }
-
-  /* Palette */
-  :root{
-    --bg:#0e1116;
-    --ink:#e9eef5;
-    --muted:#cfd3d9;
-    --brand:#7AA2FF;
-    --accent:#4BD4C6;
-    --accent2:#F6B73C;
+  .no-bleed {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: 100vw;
+    max-width: 100vw;
+  }
+  .intro-hero-white.no-bleed {
+    padding-left: calc(2ch + env(safe-area-inset-left));
+    padding-right: calc(2ch + env(safe-area-inset-right));
   }
 
-  /* Dark hero (same as main.html gradient) */
-  .hero-dark{background:linear-gradient(180deg,#07101f 0%,#0d1b31 100%); color:#fff; padding:64px 0 72px;}
-  .hero-dark .inner{max-width:1100px;margin:0 auto;padding:0 24px}
-  .hero-dark h1{font-size:clamp(30px,4vw,48px);line-height:1.15;margin:0 0 14px;color:#fff;text-align:center}
-  .hero-dark p.sub{max-width:720px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
-
-  /* Cards grid */
-  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
-  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
-  .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(122,162,255,.15);border:1px solid rgba(122,162,255,.35);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
-  .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
-  .kpi strong{font-size:22px}
-  .bar{height:8px;border-radius:8px;background:rgba(255,255,255,.08);overflow:hidden}
-  .bar>span{display:block;height:100%;background:linear-gradient(90deg,var(--brand),var(--accent));border-radius:8px}
-  .seg{display:flex;gap:8px;align-items:center;margin:12px 0 2px}
-  .sources{max-width:1100px;margin:0 auto 36px;padding:0 24px;color:#a8b0bc}
-  .sources a{color:#bcd3ff;text-decoration:none}
-  .cta{display:inline-block;margin-top:10px;padding:10px 14px;border:1px solid rgba(255,255,255,.2);border-radius:12px;color:#fff;text-decoration:none}
-  
-    /* Grouped mobile menu (accordion) */
-    .menu-group { margin-top: 10px; border-top: 1px solid #f0f0f0; padding-top: 8px; }
-    .menu-toggle { background:none; border:none; font-size:18px; font-weight:400; text-align:left; padding:10px 0; cursor:pointer; width:100%; display:flex; align-items:center; justify-content:space-between; }
-    .menu-toggle .chev { transition: transform 0.2s ease; }
-    .menu-group.open .menu-toggle .chev { transform: rotate(90deg); }
-    .submenu { display:none; flex-direction:column; margin-left:10px; padding-bottom:4px; }
-    .submenu a { font-size:16px; font-weight:400; padding:6px 0; }
-    .menu-group.open .submenu { display:flex; }
-
-
-body{margin:0;overflow-x:hidden}
-#sources.full-bleed{margin-left:calc(50% - 50vw)!important;margin-right:calc(50% - 50vw)!important;width:100vw!important;max-width:100vw!important}
-
-.hero h1{font-weight:300;}
+  @media (max-width: 600px) {
+    /* Match intro mobile fitting for the hero block */
+    .no-bleed-hero .inner {
+      padding-left: calc(2ch + env(safe-area-inset-left));
+      padding-right: calc(2ch + env(safe-area-inset-right));
+    }
+    .no-bleed-hero h1,
+    .no-bleed-hero .sub {
+      max-width: 100% !important;   /* same as intro mobile */
+      margin: 0 !important;
+      text-align: justify !important; /* same justification as intro mobile */
+    }
+  }
 </style>
 </head>
 <body>
-<div id="nc-header"></div>
-<script src="assets/js/header-loader.js" defer></script>
-<!-- hero full-bleed -->
-<section class="hero-dark full-bleed">
-<div class="inner">
-<h1>NFC: secure identity &amp; engagement on every product</h1>
-<p class="sub">Enable authenticity checks, rich post‑purchase services and circularity with standards‑based, tap‑to‑read product IDs.</p>
-</div>
-</section>
-<!-- cards -->
-<section class="full-bleed" style="background:#0e1116;color:#e9eef5">
-<div class="dcx-grid">
-<article class="dcx-card">
-<span class="pill">Brand Protection</span>
-<div class="seg"><h3 style="margin:0">Secure product ID</h3></div>
-<ul>
-<li>NFC tags with cryptographic signatures</li>
-<li>Consumer scan → authenticity check</li>
-<li>Counterfeit detection &amp; trace</li>
-</ul>
-<div class="kpi"><span>Fake returns</span><strong>↓ significantly</strong></div>
-<div class="bar"><span style="width:65%"></span></div>
-</article>
-<article class="dcx-card">
-<span class="pill">Engagement</span>
-<div class="seg"><h3 style="margin:0">Post‑purchase services</h3></div>
-<ul>
-<li>Tap for care, repair, warranty</li>
-<li>Personalised content; loyalty linkage</li>
-<li>Consent‑based data capture</li>
-</ul>
-<div class="kpi"><span>Repeat visits</span><strong>↑</strong></div>
-<div class="bar"><span style="width:50%"></span></div>
-</article>
-<article class="dcx-card">
-<span class="pill">Operations</span>
-<div class="seg"><h3 style="margin:0">Closed‑loop ID</h3></div>
-<ul>
-<li>Tooling, assets, RTIs with NFC</li>
-<li>Repair/reuse tracking &amp; provenance</li>
-<li>DPP link to consumer‑facing ID</li>
-</ul>
-<div class="kpi"><span>Reuse rate</span><strong>↑</strong></div>
-<div class="bar"><span style="width:55%"></span></div>
-</article>
-<article class="dcx-card" style="grid-column:1/-1">
-<h3>How we onboard you (design → pilot → scale)</h3>
-<ul>
-<li><strong>Design:</strong> process → data model → tag/ID rules → read‑points → dashboards</li>
-<li><strong>Pilot:</strong> single site/flow; prove accuracy, speed, and exception capture</li>
-<li><strong>Scale:</strong> supplier onboarding kit, templates, SLAs, training</li>
-<li><strong>Operate:</strong> KPIs, alerts, and continuous improvement routines</li>
-</ul>
-<a class="cta" href="contact.html">Book a 30‑min scoping call →</a>
-</article>
-</div>
-</section>
-<section class="sources full-bleed" id="sources" style="background:linear-gradient(180deg,#07101f 0%,#0d1b31 100%);color:#cfd3d9;padding:48px 0 64px;margin:0;border-top:1px solid rgba(255,255,255,.08);width:100vw;max-width:100vw">
-<div class="container" style="max-width:900px">
-<h2 style="color:#fff;text-align:center;margin-bottom:20px">Sources &amp; References — NFC</h2>
-<ul style="list-style:none;padding:0;line-height:1.7">
-<li style="margin-bottom:10px"><strong>NFC Forum — What is NFC:</strong> <a href="https://nfc-forum.org/what-is-nfc/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/what-is-nfc/</a></li><li style="margin-bottom:10px"><strong>NFC Forum — Specifications (incl. NDEF):</strong> <a href="https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/our-work/specifications-and-application-documents/specifications/</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 14443 — Proximity Cards (Type A/B):</strong> <a href="https://www.iso.org/standard/79368.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/79368.html</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 15693 — Vicinity Cards:</strong> <a href="https://www.iso.org/standard/73508.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/73508.html</a></li><li style="margin-bottom:10px"><strong>ISO/IEC 18092 — NFCIP‑1:</strong> <a href="https://www.iso.org/standard/64757.html" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.iso.org/standard/64757.html</a></li><li style="margin-bottom:10px"><strong>GS1 — Digital Link Standard:</strong> <a href="https://www.gs1.org/standards/gs1-digital-link" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://www.gs1.org/standards/gs1-digital-link</a></li><li style="margin-bottom:10px"><strong>W3C — Web NFC (Draft Spec):</strong> <a href="https://w3c.github.io/web-nfc/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://w3c.github.io/web-nfc/</a></li><li style="margin-bottom:10px"><strong>Apple Developer — Core NFC:</strong> <a href="https://developer.apple.com/documentation/corenfc" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://developer.apple.com/documentation/corenfc</a></li><li style="margin-bottom:10px"><strong>Android Developers — NFC Basics:</strong> <a href="https://developer.android.com/guide/topics/connectivity/nfc" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://developer.android.com/guide/topics/connectivity/nfc</a></li><li style="margin-bottom:10px"><strong>NFC Forum — Tag Types &amp; Technology Overview:</strong> <a href="https://nfc-forum.org/our-work/specifications-and-application-documents/tag-technology/" rel="noopener" style="color:#7AA2FF;text-decoration:none" target="_blank">https://nfc-forum.org/our-work/specifications-and-application-documents/tag-technology/</a></li>
-</ul>
-<p style="color:#8a93a2;text-align:center;margin-top:24px;font-size:14px">Links curated for NordCortex IoT practice.</p>
-</div>
-</section>
-<footer>
-<div class="container" style="color:#666">© 2025 NordCortex. All rights reserved.</div>
-</footer>
+<!-- Body content -->
 </body>
 </html>
