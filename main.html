@@ -67,6 +67,41 @@
     @media (max-width: 380px){
       .solutions-links a{ font-size: 12.5px; padding: 6px 8px; }
     }
+
+    /* Default: show full label, hide mobile abbreviation */
+    .solutions-links a .label-full{ display:inline; }
+    .solutions-links a .label-abbr{ display:none; }
+
+    /* ≤600px: 2-col grid; last chip full width; show mobile abbreviation for long label */
+    @media (max-width:600px){
+      .solutions-links{
+        display:grid;
+        grid-template-columns: 1fr 1fr;
+        gap:10px 12px;
+      }
+      .solutions-links a{
+        width:100%;
+        text-align:center;
+        white-space:nowrap;
+        padding:10px 12px;
+        font-size:13.5px; /* keep compact for small phones */
+      }
+      .solutions-links a:last-child{
+        grid-column: 1 / -1; /* Digitalisation full width */
+      }
+      .solutions-links a .label-full{ display:none; }
+      .solutions-links a .label-abbr{ display:inline; }
+    }
+
+    /* 520–768px: 3-col grid; center the last (7th) chip */
+    @media (min-width:520px) and (max-width:768px){
+      .solutions-links{
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .solutions-links a:last-child{
+        grid-column: 2 / span 1; /* center column */
+      }
+    }
     .solutions-wrapper{position:relative;display:inline-block}
     /* Unified button styling */
     .btn-primary,
@@ -480,9 +515,10 @@
                     <a href="procurement.html">Procurement</a>
                     <a href="retail-production.html">Manufacturing</a>
                     <a href="product-development.html">Product Development</a>
-                    <a href="https://www.nordcortex.com/sustainability.html">Sustainability</a>
                     <a href="supply-chain.html">Supply Chain</a>
-                    <a href="https://www.nordcortex.com/process-change.html">Process &amp; Change Management</a>
+                    <a href="https://www.nordcortex.com/process-change.html"><span class="label-full">Process &amp; Change Management</span><span class="label-abbr">Process &amp; Change Mgmt</span></a>
+                    <a href="https://www.nordcortex.com/sustainability.html">Sustainability</a>
+                    <a href="https://www.nordcortex.com/digitalisation.html">Digitalisation</a>
                   </div>
                 </div>
               </div>
