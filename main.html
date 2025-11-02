@@ -19,6 +19,8 @@
 
   <style>
   body, p, li, h1, h2, h3, h4, h5, h6 { font-family: "Outfit", sans-serif; font-weight: 300; text-align: justify; }
+/* Visually hidden (SEO + a11y, not display:none) */
+.visually-hidden{position:absolute!important;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);border:0;white-space:nowrap}
     .container{max-width:1040px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:10}
     .header-inner{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -438,6 +440,7 @@
 </head>
 <body>
 <div id="site-header"></div>
+<h1 class="visually-hidden">NordCortex – Advisory & Consultancy for Procurement, Product Development, Supply Chain & IoT/RFID</h1>
 
 <!-- INTRO (W1): Hero-structure, white background, navy top border -->
 <section class="intro-hero-white no-bleed">
