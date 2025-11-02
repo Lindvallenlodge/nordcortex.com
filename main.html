@@ -60,6 +60,13 @@
     .solutions-links a{display:inline-block;text-decoration:none;color:#111;border:1px solid #e6e9ee;border-radius:999px;padding:8px 10px;font-weight:500}
     .solutions-links a:hover{background:#f6f8fb}
     @media (max-width:700px){.solutions-links{gap:8px}}
+    /* Tighter chips on small phones so 6 items fit in ~3 lines */
+    @media (max-width: 600px){
+      .solutions-links a{ font-size: 13.5px; padding: 6px 9px; }
+    }
+    @media (max-width: 380px){
+      .solutions-links a{ font-size: 12.5px; padding: 6px 8px; }
+    }
     .solutions-wrapper{position:relative;display:inline-block}
     /* Unified button styling */
     .btn-primary,
