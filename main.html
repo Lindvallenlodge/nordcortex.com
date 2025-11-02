@@ -409,19 +409,18 @@
       text-align: justify !important;
     }
 
-    /* Keep hero headline mobile size aligned with intro; match formatting */
-    .hero-dark h1{
+    /* Mobile formatting for hero headline & sub (match intro white block, Option A size) */
+    .hero-dark .hero-headline,
+    .hero-dark .sub{
       font-size: clamp(20px, 5.5vw, 24px) !important;
       line-height: 1.45;
       max-width: 100% !important;
       margin: 0 !important;
       text-align: justify !important;
+      text-justify: inter-word;
       hyphens: auto;
       overflow-wrap: break-word;
-    }
-    /* Match intro paragraph size on mobile */
-    .hero-dark .sub{
-      font-size: clamp(20px, 5.5vw, 24px) !important;
+      word-break: normal;
     }
   }
 
