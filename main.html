@@ -83,6 +83,16 @@
 
     /* ≤600px: 2-col grid; last chip full width; show mobile abbreviation for long label */
     @media (max-width:600px){
+      /* Ensure the solutions panel stretches full width and is symmetrically padded on mobile */
+      .hero-ctas.solutions-open{ align-items: stretch; width:100%; }
+      .solutions-wrapper{ width:100%; }
+      #solutions-panel{ width:100%; box-sizing: border-box; }
+      #solutions-panel .solutions-inner{
+        padding-left: calc(2ch + env(safe-area-inset-left));
+        padding-right: calc(2ch + env(safe-area-inset-right));
+        margin: 0 auto; /* center inner content */
+      }
+      .solutions-links{ width:100%; justify-items: stretch; }
       .solutions-links{
         display:grid;
         grid-template-columns: 1fr 1fr;
@@ -404,11 +414,11 @@
 
 /* Mobile overrides – Option B: new dedicated block under .no-bleed */
 @media (max-width: 600px) {
-  .intro-hero-white.no-bleed .inner {
+      .intro-hero-white.no-bleed .inner {
     padding-left: calc(2ch + env(safe-area-inset-left));
     padding-right: calc(2ch + env(safe-area-inset-right));
   }
-  .intro-hero-white.no-bleed .sub {
+      .intro-hero-white.no-bleed .sub {
     max-width: 100% !important;
     margin: 0 !important;
     text-align: justify !important;
@@ -439,6 +449,11 @@
     .intro-hero-white .inner {
       padding-left: calc(2ch + env(safe-area-inset-left));
       padding-right: calc(2ch + env(safe-area-inset-right));
+    }
+
+    @media (max-width:600px){
+      /* Keep grid content visually centered within white panel */
+      .solutions-links{ margin-left:auto; margin-right:auto; }
     }
     .hero-dark .inner {
       padding-left: calc(4ch + env(safe-area-inset-left)) !important;
