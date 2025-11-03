@@ -147,7 +147,20 @@
       .principles-section .principle-card .thumb{height:180px}
     }
   
-.hero h1{font-weight:300;}
+</style>
+/* Contact layout */
+.contact-grid{max-width:1100px;margin:48px auto 64px auto;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:start}
+.contact-form,.contact-card{background:#fff;border:1px solid #eee;border-radius:12px;padding:24px}
+.contact-form h1{margin-top:0;text-align:left}
+.contact-card h2{margin:0 0 8px 0;font-size:22px;color:#111;text-align:left}
+.contact-card p{margin:0 0 14px 0;color:#444;text-align:left}
+.contact-card ul{list-style:none;margin:0;padding:0;display:grid;row-gap:10px}
+.contact-card li{display:flex;gap:10px;align-items:center;color:#222}
+.contact-card li .em{width:24px;display:inline-flex;justify-content:center}
+.contact-card a{color:#0e1116;text-decoration:none}
+.contact-card a:hover{text-decoration:underline}
+.badge{display:inline-block;padding:6px 10px;border:1px solid #e5e7eb;border-radius:999px;font-size:13px;color:#444;background:#fafafa;margin-right:6px}
+@media (max-width:900px){.contact-grid{grid-template-columns:1fr;margin:32px auto}.contact-form,.contact-card{padding:18px}}
 </style>
   <style>
     .brand span { font-family: "Baskerville", "Times New Roman", serif !important; }
@@ -159,27 +172,48 @@
   <div id="nc-header"></div>
   <script src="assets/js/header-loader.js" defer></script>
 <main>
-    <div class="container">
-      <div class="message" style="max-width: 1000px; margin: 48px auto 64px auto; padding: 40px;">
-        <h1>Contact Us</h1>
-        <form id="contact-form" action="https://formspree.io/f/mzzkbdjr" method="POST" style="display: flex; flex-direction: column; gap: 18px;">
+  <div class="container">
+    <div class="contact-grid">
+      <!-- Contact form -->
+      <div class="contact-form">
+        <h1>Contact NordCortex</h1>
+        <form id="contact-form" action="https://formspree.io/f/mzzkbdjr" method="POST" style="display:flex;flex-direction:column;gap:18px;">
           <input type="hidden" name="_captcha" value="false">
-          <label for="name" style="font-size: 1rem; color: #222;">Name</label>
-          <input type="text" id="name" name="name" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
+          <label for="name" style="font-size:1rem;color:#222;">Name</label>
+          <input type="text" id="name" name="name" required style="width:100%;padding:16px;font-size:1rem;border-radius:6px;border:1px solid #ccc;font-family:inherit;">
 
-          <label for="email" style="font-size: 1rem; color: #222;">Email</label>
-          <input type="email" id="email" name="email" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit;">
+          <label for="email" style="font-size:1rem;color:#222;">Email</label>
+          <input type="email" id="email" name="email" required style="width:100%;padding:16px;font-size:1rem;border-radius:6px;border:1px solid #ccc;font-family:inherit;">
 
-          <label for="message" style="font-size: 1rem; color: #222;">Message</label>
-          <textarea id="message" name="message" rows="5" required style="width: 100%; padding: 16px; font-size: 1rem; border-radius: 6px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+          <label for="message" style="font-size:1rem;color:#222;">Message</label>
+          <textarea id="message" name="message" rows="5" required style="width:100%;padding:16px;font-size:1rem;border-radius:6px;border:1px solid #ccc;font-family:inherit;resize:vertical;"></textarea>
 
-          <button type="submit" style="background: #222; color: #fff; border: none; border-radius: 6px; font-family: inherit; cursor: pointer; font-weight: 500; margin-top: 8px; padding: 16px; font-size: 1rem;">
+          <button type="submit" style="background:#222;color:#fff;border:none;border-radius:6px;font-family:inherit;cursor:pointer;font-weight:500;margin-top:8px;padding:16px;font-size:1rem;">
             Submit
           </button>
         </form>
       </div>
+
+      <!-- Direct contact card -->
+      <aside class="contact-card" aria-labelledby="direct-contact">
+        <h2 id="direct-contact">Direct contact</h2>
+        <p class="muted" style="text-align:left;">Prefer to reach me directly? Here are my details.</p>
+        <ul>
+          <li><span class="em">👤</span><strong>Audas Jakaitis</strong><span class="badge">Management Consultant</span><span class="badge">NordCortex</span></li>
+          <li><span class="em">📧</span><a href="mailto:audas@nordcortex.com" rel="me">audas@nordcortex.com</a></li>
+          <li><span class="em">📞</span><a href="tel:+46762066128" rel="me">+46&nbsp;76&nbsp;206&nbsp;6128</a></li>
+          <li><span class="em">🌐</span><a href="https://www.nordcortex.com" target="_blank" rel="noopener">www.nordcortex.com</a></li>
+          <li><span class="em">📍</span>Kaplansbacken&nbsp;5, SE‑11224 Stockholm, Sweden</li>
+        </ul>
+        <div style="margin-top:14px">
+          <a class="badge" href="mailto:audas@nordcortex.com?subject=NordCortex%20enquiry">Email me</a>
+          <a class="badge" href="tel:+46762066128">Call</a>
+          <a class="badge" href="https://www.google.com/maps/search/?api=1&query=Kaplansbacken+5,+SE-11224+Stockholm" target="_blank" rel="noopener">Open in Maps</a>
+        </div>
+      </aside>
     </div>
-  </main>
+  </div>
+</main>
   <footer>
     <div class="container muted">© 2025 NordCortex. All rights reserved.</div>
   </footer>
