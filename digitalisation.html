@@ -88,8 +88,11 @@
   .hero-dark p.sub{max-width:720px;margin:0 auto;color:var(--muted);font-size:clamp(15px,1.6vw,18px);text-align:center}
 
   /* Cards grid */
-  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
-  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink)}
+  .dcx-grid{max-width:1100px;margin:16px auto 28px;display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));padding:0 24px}
+  @media (min-width:1024px){.dcx-grid{grid-template-columns:repeat(3,1fr)}}
+  @media (max-width:720px){.dcx-grid{gap:14px}}
+  .dcx-card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;position:relative;overflow:hidden;color:var(--ink);display:flex;flex-direction:column}
+  .dcx-card .kpi{margin-top:auto}
   .pill{display:inline-flex;gap:8px;align-items:center;background:rgba(122,162,255,.15);border:1px solid rgba(122,162,255,.35);color:var(--ink);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:8px}
   .kpi{display:flex;justify-content:space-between;align-items:center;margin:10px 0 4px}
   .kpi strong{font-size:22px}
@@ -173,6 +176,7 @@
     <li>Serialised materials → work orders → finished goods</li>
     <li>Line read‑points; pack verification; ASN accuracy</li>
     <li>DPP‑ready records (origin, composition, repair)</li>
+    <li>In‑line RFID reads publish live WIP/FG to retail systems — syncing supply ↔ demand in near‑real‑time</li>
   </ul>
   <div class="kpi"><span>Right‑first‑time</span><strong>+3–7 pp</strong></div>
   <div class="bar"><span style="width:55%"></span></div>
