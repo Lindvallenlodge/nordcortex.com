@@ -41,7 +41,7 @@
 
     .hero{display:flex;align-items:center;justify-content:center;min-height:42vh;padding:32px 16px;background:#fff}
     .hero h1{font-size:clamp(28px,4vw,48px);line-height:1.2;text-align:center;font-weight:300;text-align:center}
-    .brand-block{display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 16px 64px}
+    .brand-block{display:flex;flex-direction:column;align-items:center;gap:10px;padding:40px 16px 64px;text-decoration:none;color:inherit;cursor:pointer}
     .brand-logo{height:140px;width:auto}
     .brand-name{font-family:"Baskerville","Times New Roman",serif;color:#6c7a89;font-size:clamp(44px,4.2vw,58px);font-weight:400;letter-spacing:.2px}
     .brand-sub{letter-spacing:3px;color:#888;text-transform:uppercase;font-weight:500;font-size:clamp(10px,1.2vw,13px)}
@@ -148,14 +148,14 @@
 
   <main>
     <section class="hero">
-      <h1><a href="main.html" style="text-decoration:none; color:inherit;">Because clarity is a strategy.</a></h1>
+      <h1><a href="https://www.nordcortex.com/main" style="text-decoration:none; color:inherit;">Because clarity is a strategy.</a></h1>
     </section>
 
-    <section class="brand-block">
+    <a class="brand-block" href="https://www.nordcortex.com/main" aria-label="Go to NordCortex main page">
       <img src="assets/images/NordCortex logo grey final no text.png" alt="NordCortex Logo" class="brand-logo">
       <div class="brand-name">NordCortex</div>
       <div class="brand-sub">BUSINESS DEVELOPMENT &amp; INNOVATION ADVISORY</div>
-    </section>
+    </a>
   </main>
 
   <footer>© 2025 NordCortex</footer>
