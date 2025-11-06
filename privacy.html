@@ -11,7 +11,7 @@ header, footer { border-bottom: 1px solid #eee; padding: 14px 16px; background: 
 footer { border-top: 1px solid #eee; border-bottom: none; color: #666; font-size: 14px; text-align: center; }
 main { max-width: 900px; margin: 28px auto; padding: 0 16px; }
 a { color: #1a1a1a; }
-.back { display:inline-block; margin-bottom: 8px; text-decoration:none; }
+.back { display:inline-block; margin-bottom: 8px; text-decoration:none; cursor:pointer; }
 h1 { font-weight: 500; }
 h2 { margin-top: 28px; }
 small, .meta { color: #777; }
@@ -19,7 +19,7 @@ small, .meta { color: #777; }
 </head>
 <body>
   <header>
-    <a class="back" href="main.html">← Back to site</a>
+    <a class="back" href="javascript:history.back()">← Back to site</a>
   </header>
   <main>
     <h1>Privacy Policy</h1>
