@@ -424,9 +424,8 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
     padding-right: calc(6ch + env(safe-area-inset-right));
   }
       .intro-hero-white.no-bleed .sub {
-    max-width: 70ch !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
+    max-width: none !important;   /* match founder block width */
+    margin: 0 !important;         /* no auto-centering */
     text-align: justify !important;
   }
   .no-bleed { margin: 0 !important; }
@@ -483,9 +482,8 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
 
     /* Keep intro justified as requested */
     .intro-hero-white .sub {
-      max-width: 70ch !important;
-      margin-left: auto !important;
-      margin-right: auto !important;
+      max-width: none !important;   /* match founder block width */
+      margin: 0 !important;         /* no auto-centering */
       text-align: justify !important;
     }
 
