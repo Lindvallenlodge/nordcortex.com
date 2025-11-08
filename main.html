@@ -452,8 +452,15 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
   @media (max-width: 600px) {
     /* Safe gutters on both intro and hero */
     .intro-hero-white .inner {
-      padding-left: calc(2ch + env(safe-area-inset-left));
-      padding-right: calc(2ch + env(safe-area-inset-right));
+      /* generous mobile side gutters for readability */
+      padding-left: calc(4ch + env(safe-area-inset-left));
+      padding-right: calc(4ch + env(safe-area-inset-right));
+    }
+
+    /* Founder line: justify on mobile */
+    .founder-intro .sub {
+      text-align: justify !important;
+      margin: 0 !important;
     }
 
     @media (max-width:600px){
