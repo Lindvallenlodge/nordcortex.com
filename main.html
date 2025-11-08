@@ -424,8 +424,9 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
     padding-right: calc(6ch + env(safe-area-inset-right));
   }
       .intro-hero-white.no-bleed .sub {
-    max-width: 100% !important;
-    margin: 0 !important;
+    max-width: 70ch !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     text-align: justify !important;
   }
   .no-bleed { margin: 0 !important; }
@@ -444,16 +445,17 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
 
 /* Intro text should use the same inner width and left/justified alignment as the hero headline */
 .intro-hero-white p.sub {
-  max-width: 100% !important;   /* same width box as the hero h1 area */
-  margin: 0 !important;          /* remove auto-centering */
-  text-align: justify !important;/* not centered on any screen */
-  color: #0D1B31 !important;     /* ensure navy */
+  max-width: 70ch !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  text-align: justify !important;
+  color: #0D1B31 !important;
 }
 
   @media (max-width: 600px) {
     .intro-hero-white .inner {
-      padding-left: calc(6ch + env(safe-area-inset-left));
-      padding-right: calc(6ch + env(safe-area-inset-right));
+      padding-left: calc(24px + env(safe-area-inset-left));
+      padding-right: calc(24px + env(safe-area-inset-right));
     }
 
     /* Founder line: justify on mobile */
@@ -481,8 +483,9 @@ footer{ margin-top:8px; padding:6px 0; display:flex; justify-content:center; }
 
     /* Keep intro justified as requested */
     .intro-hero-white .sub {
-      max-width: 100% !important;
-      margin: 0 !important;
+      max-width: 70ch !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
       text-align: justify !important;
     }
 
